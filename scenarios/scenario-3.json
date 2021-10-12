@@ -21,7 +21,7 @@
             {
                 "dropdown_label": "Configuration 2",
                 "short_description": "Lorem ipsum dolor sit amet, consectetur",
-                "dropdown_description": [
+                "resource_details": [
                     "1 vNet", "5 VMs", "40 cores"
                 ],
                 "create":"VirtualMachineExtensionsBlade",
