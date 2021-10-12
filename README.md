@@ -37,7 +37,7 @@ A scenario includes:
     2. dropdown_description - up to 80 characters, the description for what will be deployed.
     3. resource_details - an array of up to 6 strings, this specifies a quick overview of what Azure services will be deployed.
     4. create - a link to a create URL that resolves in the Azure Portal or a blade name in portal.
-    5. type - an enum "New" or "Existing", defining whether the scenario is intended to deploy or configure on new or existing Azure services.
+    5. type - an enum "New" or "Existing", defining whether the scenario is intended to deploy or configure on new or existing Azure services. 
 
 #### Example
 ```
@@ -59,8 +59,8 @@ A scenario includes:
             "dropdown_description": [
                 "1 vNet", "5 VMs", "40 cores"
             ],
-            "create":"https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure_arc%2Fmain%2Fazure_jumpstart_arcbox%2Fazuredeploy.json",
-            "type": "New"
+            "create":"VirtualMachineExtensionsBlade",
+            "type": "Existing"
         }
     ]
 }
