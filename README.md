@@ -28,7 +28,7 @@ A scenario includes:
 }
 ```
 #### Implementation
-![How L1 is visible in the Azure Portal](./l1.png "L1 Hierarchy")
+![How L1 is visible in the Azure Portal](./images/l1.png "L1 Hierarchy")
 
 ### l2 (Level 2 hierarchy)
 1. long_description - up to 1000 charaters, this describes when and why to deploy or configure the scenario.
@@ -66,7 +66,7 @@ A scenario includes:
 }
 ```
 #### Implementation
-![How L2 is visible in the Azure Portal](./l2.png "L2 Hierarchy")
+![How L2 is visible in the Azure Portal](./images/l2.png "L2 Hierarchy")
 
 
 ### l3 (level 3 hierarchy)
@@ -80,4 +80,4 @@ A scenario includes:
 ```
 
 #### Implementation
-![How L3 is visible in the Azure Portal](./l3.png "L3 Hierarchy")
+![How L3 is visible in the Azure Portal](./images/l3.png "L3 Hierarchy")
