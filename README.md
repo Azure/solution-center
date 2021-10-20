@@ -1,12 +1,12 @@
-# Welcome to the Azure Cloud Hub GitHub! :wave:
+# Welcome to the Azure Compute Hub GitHub! :wave:
       
 ## Overview
 
-This repository is the central repository for the metadata defined within the [Azure Cloud Hub]() in the Azure Portal.
+This repository is the central repository for the metadata defined within the [Azure Compute Hub]() in the Azure Portal.
 
 ## How to submit a scenario
 
-The Azure Cloud Hub allows you to deploy and manage Azure and open-source services and software all in a single location. Some examples could be hosting websites or using inexpensive virtual machines for machine learning. Azure Cloud Hub uses the concept of a "scenario" to help customers understand and configure services and software with ease.
+The Azure Compute Hub allows you to deploy and manage Azure and open-source services and software all in a single location. Some examples could be hosting websites or using inexpensive virtual machines for machine learning. Azure Compute Hub uses the concept of a "scenario" to help customers understand and configure services and software with ease.
 
 A scenario includes:
 
