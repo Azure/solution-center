@@ -1,35 +1,35 @@
 {
     "l1": {
-        "title": "Scenario 1 - Create URL",
-        "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-        "cost_estimate": 2,
-        "maintenance_estimate": null,
+        "title": "Use VMSS and a Layer 4 load balancer and TLS termination",
+        "short_description": "Best for inbound/outbound connectivity.",
+        "cost_estimate": 3,
+        "maintenance_estimate": 3,
         "image": "../icons/scenario.svg"
     },
     "l2": {
         "long_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "config_options": [
             {
-                "dropdown_label": "Configuration 1",
+                "dropdown_label": "Termination on the LB",
                 "dropdown_description": "Lorem ipsum dolor sit amet, consectetur",
                 "resource_details": [
-                    "1 vNet", "5 VMs", "40 cores"
+                    "Load balancer (public)"
                 ],
-                "create":"https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure_arc%2Fmain%2Fazure_jumpstart_arcbox%2Fazuredeploy.json",
+                "create":"CreateVmssBladeV2",
                 "type": "New"
             },
             {
-                "dropdown_label": "Configuration 2",
+                "dropdown_label": "Termination on the VMs + Firewall",
                 "short_description": "Lorem ipsum dolor sit amet, consectetur",
                 "resource_details": [
-                    "1 vNet", "5 VMs", "40 cores"
+                    "Load balancer (private)", "Firewall preinstalled", "Termination on the VM"
                 ],
-                "create":"https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure_arc%2Fmain%2Fazure_jumpstart_arcbox%2Fazuredeploy.json",
+                "create":"CreateVmssBladeV2",
                 "type": "New"
             }
         ]
     },
     "l3": {
-        "documentation": "https://raw.githubusercontent.com/microsoft/azure_arc/main/README.md"
+        "documentation": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/load-balancer/load-balancer-overview.md"
     }
 }
