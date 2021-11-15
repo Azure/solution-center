@@ -16,7 +16,8 @@
                     "1 vNet", "5 VMs", "40 cores"
                 ],
                 "create":"CreateAksBlade",
-                "type": "New"
+                "extension":"Microsoft_Azure_ContainerService",
+                "type": "Blade"
             }
         ]
     },

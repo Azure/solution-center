@@ -16,7 +16,8 @@
                     "A-Series VM (A2_v2)", "128GB SSD", "2 cores"
                 ],
                 "create":"CreateVmBlade",
-                "type": "New"
+                "extension":"Microsoft_Azure_Compute",
+                "type": "Blade"
             },
             {
                 "dropdown_label": "D series VM",
@@ -25,7 +26,8 @@
                     "D-Series VM (D2s_v3)", "256GB SSD", "4 cores"
                 ],
                 "create":"CreateVmBlade",
-                "type": "New"
+                "extension":"Microsoft_Azure_Compute",
+                "type": "Blade"
             },
             {
                 "dropdown_label": "A series VM",
@@ -34,7 +36,8 @@
                     "F-Series VM (Fs_v2)", "1TB SSD", "8 cores"
                 ],
                 "create":"CreateVmBlade",
-                "type": "New"
+                "extension":"Microsoft_Azure_Compute",
+                "type": "Blade"
             }
         ]
     },
