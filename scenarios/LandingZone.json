@@ -15,7 +15,7 @@
                 "resource_details": [
                     "1 vNet", "5 VMs", "40 cores"
                 ],
-                "create":"https://raw.githubusercontent.com/Azure/Enterprise-Scale/main/eslzArm/eslzArm.json/uiFormDefinitionUri/https://raw.githubusercontent.com/Azure/Enterprise-Scale/main/eslzArm/eslz-portal.json",
+                "create":"https://raw.githubusercontent.com/Azure/Enterprise-Scale/main/eslzArm/eslzArm.json",
                 "type": "Template"
             }
         ]
