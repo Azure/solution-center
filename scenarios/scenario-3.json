@@ -16,7 +16,8 @@
                     "1 vNet", "5 VMs", "40 cores"
                 ],
                 "create":"VirtualMachineExtensionsBlade",
-                "type": "Existing"
+                "extension":"Microsoft_Azure_Compute",
+                "type": "Blade"
             },
             {
                 "dropdown_label": "Configuration 2",
@@ -25,7 +26,8 @@
                     "1 vNet", "5 VMs", "40 cores"
                 ],
                 "create":"VirtualMachineExtensionsBlade",
-                "type": "Existing"
+                "extension":"Microsoft_Azure_Compute",
+                "type": "Blade"
             }
         ]
     },

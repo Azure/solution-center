@@ -16,7 +16,8 @@
                     "1 VM image"
                 ],
                 "create":"CreateImageBladeV2",
-                "type": "New"
+                "extension":"Microsoft_Azure_DiskMgmt",
+                "type": "Blade"
             },
             {
                 "dropdown_label": "Use Azure compute galleries",
@@ -25,7 +26,8 @@
                     "1 shared image gallery", "1 VM image defintion", "1 VM image"
                 ],
                 "create":"CreateSharedImageGalleryBlade",
-                "type": "New"
+                "extension":"Microsoft_Azure_DiskMgmt",
+                "type": "Blade"
             }
         ]
     },

@@ -16,7 +16,8 @@
                     "Load balancer (public)"
                 ],
                 "create":"CreateVmssBladeV2",
-                "type": "New"
+                "extension":"Microsoft_Azure_Compute",
+                "type": "Blade"
             },
             {
                 "dropdown_label": "Termination on the VMs + Firewall",
@@ -25,7 +26,8 @@
                     "Load balancer (private)", "Firewall preinstalled", "Termination on the VM"
                 ],
                 "create":"CreateVmssBladeV2",
-                "type": "New"
+                "extension":"Microsoft_Azure_Compute",
+                "type": "Blade"
             }
         ]
     },
