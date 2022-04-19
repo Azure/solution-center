@@ -1,0 +1,8 @@
+{
+  icon: null,
+  title: "Sample Azure Scenario",
+  shortDescription: "This sample scenario template helps illustrate how the metadata will show up in solutions center",
+  cost: null,
+  activationString: "Click to view details of the Solution",
+  keywords: ["Sample","solution", "template"]
+}
