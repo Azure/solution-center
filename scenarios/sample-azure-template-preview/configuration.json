@@ -1,0 +1,33 @@
+{
+  overviewContent: "This is some overview that will show up on the Solutions page",
+  associatedResources:[
+    {
+      resourceType: "Microsoft.Compute/virtualmachines"
+    },
+    {
+      resourceType: "Microsoft.Network/loadbalancers"
+    }],
+  pivots:[
+    {
+      name: "virtualMachines",
+      displayName: "Virtual Machines"
+    },
+    {
+      name: "disks",
+      displayName: "Disks"
+    }
+  ],
+  documentationPath: "File path to the doc content",
+  options:[
+    {
+      id: "2-Core-F-series",
+      title: "2 Core F-Series (Preview)",
+      subTitle: "Best for development and test scenarios where reliability and availability are not concerns.",
+      cost: {
+        value: "20",
+        score: 1,  // low
+        currency: "USD"
+      }
+    }
+  ]
+}
