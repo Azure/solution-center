@@ -17,7 +17,7 @@
       displayName: "Disks"
     }
   ],
-  documentationPath: "File path to the doc content",
+  documentationPath: "/sampledocs.md",
   options:[
     {
       id: "2-Core-F-series",
@@ -27,7 +27,18 @@
         value: "20",
         score: 1,  // low
         currency: "USD"
-      }
+      },
+      maintenanceScore: 1,
+      pivotValues: [
+        {
+          pivotName: "virtualMachines",
+          content: ["Ubuntu 20.04 LTS - Gen 2", "Uses the image's default patch upgrade options"]
+        },
+        {
+          pivotName:"disks",
+          content: ["Premium SSD", "20 GiB storage, 3600 IOPS"]
+        }
+      ]
     }
   ]
 }
