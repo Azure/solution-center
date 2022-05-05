@@ -1,42 +1,42 @@
 {
-  overviewContent: "This is some overview that will show up on the Solutions page",
-  associatedResources:[
+  "overviewContent": "This is some overview that will show up on the Solutions page",
+  "associatedResources":[
     {
-      resourceType: "Microsoft.Compute/virtualmachines"
+      "resourceType": "Microsoft.Compute/virtualmachines"
     },
     {
-      resourceType: "Microsoft.Network/loadbalancers"
+      "resourceType": "Microsoft.Network/loadbalancers"
     }],
-  pivots:[
+  "pivots":[
     {
-      name: "virtualMachines",
-      displayName: "Virtual Machines"
+      "name": "virtualMachines",
+     "displayName": "Virtual Machines"
     },
     {
-      name: "disks",
-      displayName: "Disks"
+      "name": "disks",
+      "displayName": "Disks"
     }
   ],
-  documentationPath: "/sampledocs.md",
-  options:[
+  "documentationPath": "/sampledocs.md",
+  "options":[
     {
-      id: "2-Core-F-series",
-      title: "2 Core F-Series (Preview)",
-      subTitle: "Best for development and test scenarios where reliability and availability are not concerns.",
-      cost: {
-        value: "20",
-        score: 1,  // low
-        currency: "USD"
+      "id": "2-Core-F-series",
+      "title": "2 Core F-Series (Preview)",
+      "subTitle": "Best for development and test scenarios where reliability and availability are not concerns.",
+      "cost": {
+        "value": "20",
+        "score": 1,
+        "currency": "USD"
       },
-      maintenanceScore: 1,
-      pivotValues: [
+      "maintenanceScore": 1,
+      "pivotValues": [
         {
-          pivotName: "virtualMachines",
-          content: ["Ubuntu 20.04 LTS - Gen 2", "Uses the image's default patch upgrade options"]
+          "pivotName": "virtualMachines",
+          "content": ["Ubuntu 20.04 LTS - Gen 2", "Uses the image's default patch upgrade options"]
         },
         {
-          pivotName:"disks",
-          content: ["Premium SSD", "20 GiB storage, 3600 IOPS"]
+          "pivotName":"disks",
+          "content": ["Premium SSD", "20 GiB storage, 3600 IOPS"]
         }
       ]
     }
