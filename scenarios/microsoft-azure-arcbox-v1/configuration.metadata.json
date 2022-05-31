@@ -81,51 +81,59 @@
     ],
     "pivots": [
         {
-            "name": "virtualMachines",
-            "displayName": "Virtual Machines"
+            "name": "arcServer",
+            "displayName": "Arc-enabled servers"
         },
         {
-            "name": "disks",
-            "displayName": "Disks"
+            "name": "arcK8s",
+            "displayName": "Arc-enabled Kubernetes"
         },
         {
-            "name": "loadBalancer",
-            "displayName": "Load Balancer"
+            "name": "arcDataServices",
+            "displayName": "Arc-enabled data services"
         }
     ],
     "documentationPath": "/sampledocs.md",
     "options": [
         {
-            "id": "2-Core-F-series",
-            "title": "2-Core F Series (Preview)",
-            "subTitle": "Best for development and test scenarios where reliability and availability are not concerns.",
+            "id": "arcBoxFull",
+            "title": "ArcBox Full",
+            "subTitle": "ArcBox Full includes all ArcBox features. Use this flavor if you want to experience everything ArcBox has to offer.",
             "cost": {
                 "value": "20",
-                "score": 1,
+                "score": 3,
                 "currency": "USD"
             },
-            "maintenanceScore": 1,
+            "maintenanceScore": 2,
             "pivotValues": [
                 {
-                    "pivotName": "virtualMachines",
+                    "pivotName": "arcServer",
                     "content": [
-                        "Ubuntu 20.04 LTS - Gen 2",
-                        "Uses the image's default patch upgrade options"
+                        "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "Enabled using native Azure virtual machines."
                     ]
                 },
                 {
-                    "pivotName": "disks",
+                    "pivotName": "arcK8s",
                     "content": [
-                        "Premium SSD",
-                        "20 GiB storage, 3600 IOPS"
+                        "Single node Rancher K8s cluster"
+                    ]
+                },
+                {
+                    "pivotName": "arcDataServices",
+                    "content": [
+                        "Data controller",
+                        "SQL managed instance",
+                        "PostgreSQL Hyperscaler"
                     ]
                 }
             ]
         },
         {
-            "id": "4-Core-D-series",
-            "title": "4-Core D Series",
-            "subTitle": "Best for production ready applications that may not experience growth at scale.",
+            "id": "arcBoxITPros",
+            "title": "ArcBox for IT Pros",
+            "subTitle": "ArcBox for IT Pros focuses specifically on Azure Arc-enabled servers and Azure Arc-enabled SQL Server functionality.",
             "cost": {
                 "value": "40",
                 "score": 2,
@@ -134,24 +142,11 @@
             "maintenanceScore": 2,
             "pivotValues": [
                 {
-                    "pivotName": "virtualMachines",
+                    "pivotName": "arcServer",
                     "content": [
-                        "Ubuntu 20.04 LTS - Gen 2",
-                        "Uses the image's default patch upgrade options",
-                        "4-core D series with 2 initial instances"
-                    ]
-                },
-                {
-                    "pivotName": "disks",
-                    "content": [
-                        "Additional data disk",
-                        "32 GiB storage, 16000 IOPS"
-                    ]
-                },
-                {
-                    "pivotName": "loadBalancer",
-                    "content": [
-                        "Creates an Azure load balancer for TCP/UDP network traffic"
+                        "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "Enabled using native Azure virtual machines."
                     ]
                 }
             ]
