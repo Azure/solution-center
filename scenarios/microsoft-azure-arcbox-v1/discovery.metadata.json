@@ -1,0 +1,21 @@
+{
+  "icon": null,
+  "title": "Sample Azure Scenario",
+  "shortDescription": "This sample scenario template helps illustrate how the metadata will show up in solutions center",
+  "cost": null,
+  "activationString": "Click to view details of the Solution",
+  "keywords": ["Sample","solution", "template"],
+  "detailsDescription": "Soe more contextual details about what happens with this solution and why this is useful and why a user should use it.",
+  "learnMoreLink": "aka.ms/learnmoreaboutme",
+  "learnMoreLinkText": "Learn more about Sample solution",
+  "highlights": [
+    {
+      "content": "Some highlight content 1",
+      "highlightLearnMoreLink": "aka.ms/hightlight1",
+      "highlightLearnMoreLinkText": "Learn more about highlight 1"
+    },
+    {
+      "content": "Some highlight content 2"
+    }
+  ]
+}
