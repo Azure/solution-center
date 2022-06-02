@@ -1,0 +1,151 @@
+{
+    "$schema": "../../Definitions/dx.schema.json",
+    "__internal__skipValidation": true,
+    "stringSource": "../Resources/CreateStrings.resjson",
+    "view": {
+        "kind": "Form",
+        "parameters": [
+            {
+                "name": "subscriptionId",
+                "type": "key"
+            },
+            {
+                "name": "subscriptionName",
+                "type": "key"
+            },
+            {
+                "name": "spnClientId",
+                "type": "key"
+            },
+            {
+                "name": "spnClientSecret",
+                "type": "key"
+            },
+            {
+                "name": "spnTenantId",
+                "type": "key"
+            },
+            {
+                "name": "logAnalyticsWorkspaceName",
+                "type": "key"
+            },
+            {
+                "name": "flavor",
+                "type": "key"
+            }
+        ],
+        "properties": {
+            "title": "createTitle",
+            "steps": [
+                {
+                    "name": "Create",
+                    "label": "createLabel",
+                    "elements": [
+                        {
+                            "name": "subscription",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "subscriptionLabel",
+                            "defaultValue": "[parameters('subscriptionName')]",
+                            "readOnly": true,
+                            "visible": true
+                        },
+                        {
+                            "type": "Microsoft.Common.ResourceGroupSelector",
+                            "name": "resourceGroup",
+                            "scope": {
+                                "subscriptionId": "[parameters('subscriptionId')]"
+                            },
+                            "allowedMode": "Both",
+                            "visible": true
+                        },
+                        {
+                            "type": "Microsoft.Common.LocationSelector",
+                            "name": "location",
+                            "label": "locationLabel",
+                            "visible": true,
+                            "scope": {
+                                "subscriptionId": "[parameters('subscriptionId')]"
+                            }
+                        },
+                        {
+                            "name": "vmClientUserName",
+                            "type": "Microsoft.Compute.UserNameTextBox",
+                            "label": "adminUserNameLabel",
+                            "defaultValue": "",
+                            "toolTip": "",
+                            "constraints": {
+                                "required": true,
+                                "regex": "^[a-z0-9A-Z]{1,30}$",
+                                "validationMessage": "userNameValidationMessage"
+                            },
+                            "osPlatform": "Windows",
+                            "visible": true
+                        },
+                        {
+                            "name": "vmClientCredentials",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                                "password": "passwordLabel",
+                                "confirmPassword": "confirmPasswordLabel"
+                            },
+                            "constraints": {
+                                "required": true,
+                                "customPasswordRegex": "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=|{}:;!.?\\()\\[\\]-]{8,}$",
+                                "customValidationMessage": "passwordValidationMessage"
+                            },
+                            "options": {
+                                "hideConfirmation": false
+                            },
+                            "osPlatform": "Windows",
+                            "visible": true
+                        },
+                       {
+                            "name": "vmCredentials",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                                "authenticationType": "authenticationTypeLabel",
+                                "password": "passwordLabel",
+                                "confirmPassword": "confirmPasswordLabel",
+                                "sshPublicKey": "sshPublicKeyLabel"
+                            },
+                            "constraints": {
+                                "required": true,
+                                "customPasswordRegex": "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=|{}:;!.?\\()\\[\\]-]{8,}$",
+                                "customValidationMessage": "passwordValidationMessage"
+                            },
+                            "options": {
+                                "hideConfirmation": true,
+								"hidePassword": true
+                            },
+                            "osPlatform": "Linux",
+                            "visible": true,
+                            "scope": {
+                                "subscriptionId": "[parameters('subscriptionId')]",
+                                "resourceGroupName": "[steps('Create').resourceGroup.value.name]",
+                                "location": "[steps('Create').location.name]"
+                            }
+                        },
+                        {
+                            "name": "servicePrincipalSecret",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "spnClientSecretLabel",
+                            "defaultValue": "[parameters('spnClientSecret')]",
+                            "readOnly": true,
+                            "visible": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "outputs": {
+            "sshRSAPublicKey": "[steps('Create').vmCredentials.sshPublicKey]",
+            "spnClientId": "[parameters('spnClientId')]",
+            "spnClientSecret": "[parameters('spnClientSecret')]",
+            "spnTenantId": "[parameters('spnTenantId')]",
+            "windowsAdminUsername": "[steps('Create').vmClientUserName]",
+            "windowsAdminPassword": "[steps('Create').vmClientCredentials.password]",
+            "logAnalyticsWorkspaceName": "[parameters('logAnalyticsWorkspaceName')]",
+            "flavor": "[if(equals(parameters('flavor'), 'arcBoxITPros'), 'ITPro', if(equals(parameters('flavor'), 'arcBoxFull'), 'Full', 'DevOps'))]"
+        }
+    }
+}
