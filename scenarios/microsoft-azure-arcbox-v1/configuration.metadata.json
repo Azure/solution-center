@@ -103,7 +103,7 @@
     "documentationPath": "/sampledocs.md",
     "options": [
         {
-            "id": "arcBoxFull",
+            "id": "Full",
             "title": "ArcBox Full",
             "subTitle": "ArcBox Full includes all ArcBox features. Use this flavor if you want to experience everything ArcBox has to offer.",
             "cost": {
@@ -138,7 +138,7 @@
             ]
         },
         {
-            "id": "arcBoxITPros",
+            "id": "ITPro",
             "title": "ArcBox for IT Pros",
             "subTitle": "ArcBox for IT Pros focuses specifically on Azure Arc-enabled servers and Azure Arc-enabled SQL Server functionality.",
             "cost": {
