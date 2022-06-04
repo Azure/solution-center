@@ -112,42 +112,6 @@
             ]
         },
         {
-            "id": "DevTestVMSS",
-            "title": "Confidential dev/test virtual machine scale set (VMSS)",
-            "subTitle": "Best for testing the security features functionality of a confidential VMSS.",
-            "cost": {
-                "value": "40",
-                "score": 2,
-                "currency": "USD"
-            },
-            "maintenanceScore": 2,
-            "pivotValues": [
-                {
-                    "pivotName": "virtualMachine",
-                    "content": [
-                        "Confidential virtual machines within a flexible VM scale set for maximum scaling",
-                        "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
-                        "Standard_DC2as_v5 - 2 vcpu, 8 GiB memory",
-                        "Confidential compute encryption unavailable"
-                    ]
-                },
-                {
-                    "pivotName": "virtualMachineScaleSet",
-                    "content": [
-                        "Flexible scale set used for load balancing against the virtual machine instances",
-                        "Autoscaler enabled with a minimum instance count of 2"
-                    ]
-                },
-                {
-                    "pivotName": "disks",
-                    "content": [
-                        "32 GiB / Premium SSD LRS",
-                        "Disk encryption unavailable"
-                    ]
-                }
-            ]
-        },
-        {
             "id": "ProdVMSS",
             "title": "Confidential production ready VMSS",
             "subTitle": "Best for production and active protection against advanced and persistent attack techniques..",
