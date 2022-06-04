@@ -1,21 +1,25 @@
 {
   "icon": null,
-  "title": "Get hands-on with ArcBox!",
-  "shortDescription": "This sample scenario template helps illustrate how the metadata will show up in solutions center",
+  "title": "Spot instances",
+  "shortDescription": "Purchase unused compute capacity at significant cost savings, deploying workloads that can handle interruptions and don't need to be completed within a specific period of time.",
   "cost": null,
   "activationString": "Click to view details of the Solution",
   "keywords": ["Sample","solution", "template"],
   "detailsDescription": "Soe more contextual details about what happens with this solution and why this is useful and why a user should use it.",
-  "learnMoreLink": "aka.ms/learnmoreaboutme",
-  "learnMoreLinkText": "Learn more about Sample solution",
+  "learnMoreLink": "http://go.microsoft.com/fwlink/?LinkId=2104270",
+  "learnMoreLinkText": "Learn more about Azure Spot instances",
   "highlights": [
     {
-      "content": "Some highlight content 1",
-      "highlightLearnMoreLink": "aka.ms/hightlight1",
-      "highlightLearnMoreLinkText": "Learn more about highlight 1"
+      "content": "Ideal for quick proof of concept applications when workload interruption is tolerable."
     },
     {
-      "content": "Some highlight content 2"
+      "content": "Scale with a mix of on-demand VMs and interruptible Spot VMs."
+    },
+    {
+      "content": "Ideal for scalable development, quality assurance, and testing enviroments."
+    },
+    {
+      "content": "Ideal for risk modeling and advanced data analytics, where a part of your workload will be guaranteed."
     }
   ]
 }
