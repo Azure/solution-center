@@ -129,7 +129,7 @@
                     "content": [
                         "Mix of 4 VMs and 6 interruptible Spot VMs",
                         "4-core D series 16 GiB memory",
-                        "UUbuntu Server 20.04 LTS - Gen 2"
+                        "Ubuntu Server 20.04 LTS - Gen 2"
                     ]
                 },
                 {
