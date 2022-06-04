@@ -1,0 +1,162 @@
+{
+    "overviewContent": "ArcBox is a solution that provides an easy-to-deploy sandbox for all things Azure Arc. It's completely self-contained within a single Azure subscription and resource group. With a pre-installed set of tools, ArcBox is great for traning, demos, testing, and exploration.",
+    "associatedResources": [
+        {
+            "resourceName": "Public IP address",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "141"
+            }
+        },
+        {
+            "resourceName": "Virtual network",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "245"
+            }
+        },
+        {
+            "resourceName": "Automation account",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "164"
+            }
+        },
+        {
+            "resourceName": "Azure Policy",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconNumber": "AzurePolicy"
+            }
+        },
+        {
+            "resourceName": "Azure Sentinel",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "Service principal",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "Network security group",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "Disk",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "Defender for Cloud",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "Log Analytics workspace",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "SSH key",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "Azure Monitor",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        }
+    ],
+    "pivots": [
+        {
+            "name": "arcServer",
+            "displayName": "Arc-enabled servers"
+        },
+        {
+            "name": "arcK8s",
+            "displayName": "Arc-enabled Kubernetes"
+        },
+        {
+            "name": "arcDataServices",
+            "displayName": "Arc-enabled data services"
+        }
+    ],
+    "documentationPath": "/sampledocs.md",
+    "options": [
+        {
+            "id": "Full",
+            "title": "ArcBox Full",
+            "subTitle": "ArcBox Full includes all ArcBox features. Use this flavor if you want to experience everything ArcBox has to offer.",
+            "cost": {
+                "value": "20",
+                "score": 3,
+                "currency": "USD"
+            },
+            "maintenanceScore": 2,
+            "pivotValues": [
+                {
+                    "pivotName": "arcServer",
+                    "content": [
+                        "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "Enabled using native Azure virtual machines."
+                    ]
+                },
+                {
+                    "pivotName": "arcK8s",
+                    "content": [
+                        "Single node Rancher K8s cluster"
+                    ]
+                },
+                {
+                    "pivotName": "arcDataServices",
+                    "content": [
+                        "Data controller",
+                        "SQL managed instance",
+                        "PostgreSQL Hyperscaler"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ITPro",
+            "title": "ArcBox for IT Pros",
+            "subTitle": "ArcBox for IT Pros focuses specifically on Azure Arc-enabled servers and Azure Arc-enabled SQL Server functionality.",
+            "cost": {
+                "value": "40",
+                "score": 2,
+                "currency": "USD"
+            },
+            "maintenanceScore": 2,
+            "pivotValues": [
+                {
+                    "pivotName": "arcServer",
+                    "content": [
+                        "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "Enabled using native Azure virtual machines."
+                    ]
+                }
+            ]
+        }
+    ]
+}
