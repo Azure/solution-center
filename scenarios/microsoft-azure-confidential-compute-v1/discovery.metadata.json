@@ -1,0 +1,25 @@
+{
+  "icon": null,
+  "title": "Confidential virtual machine",
+  "shortDescription": "All the features of trusted virtual machine and more—with added hardware-guaranteed confidentiality.",
+  "cost": null,
+  "activationString": "Click to view details of the Solution",
+  "keywords": ["Sample","solution", "template"],
+  "detailsDescription": "See more contextual details about what happens with this solution and why this is useful and why a user should use it.",
+  "learnMoreLink": "http://go.microsoft.com/fwlink/?LinkId=2104270",
+  "learnMoreLinkText": "Learn more about Azure Spot instances",
+  "highlights": [
+    {
+      "content": "Virtual machine memory encryption with integrity protection, where encryption key is protected by hardware and out of reach of sofware."
+    },
+    {
+      "content": "Full OS disk encryption with keys sealed to vTPM, and optional cloud-based pre-encryption before the VM is provisioned."
+    },
+    {
+      "content": "Secure Boot: ensures that the machine boots using only trusted software."
+    },
+    {
+      "content": "Customizable attestation policies to ensure the host's compliance before deployment."
+    }
+  ]
+}
