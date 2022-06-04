@@ -1,5 +1,5 @@
 {
-    "overviewContent": "ArcBox is a solution that provides an easy-to-deploy sandbox for all things Azure Arc. It's completely self-contained within a single Azure subscription and resource group. With a pre-installed set of tools, ArcBox is great for traning, demos, testing, and exploration.",
+    "overviewContent": "Deploy a highly scalable, cost-effective Spot virtual machine scale set for your applications that don't need to be completed within a certain timeframe. Run workloads for development, testing, quality assurance, advanced analytics, big data, machine learning and AI, batch jobs, rendering and transcoding of videos, graphics, and images at a very low cost.",
     "associatedResources": [
         {
             "resourceName": "Public IP address",
@@ -16,56 +16,7 @@
             }
         },
         {
-            "resourceName": "Automation account",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "164"
-            }
-        },
-        {
-            "resourceName": "Azure Policy",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconNumber": "AzurePolicy"
-            }
-        },
-        {
-            "resourceName": "Azure Sentinel",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Service principal",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
             "resourceName": "Network security group",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Disk",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Defender for Cloud",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Log Analytics workspace",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
@@ -79,7 +30,7 @@
             }
         },
         {
-            "resourceName": "Azure Monitor",
+            "resourceName": "Network interface",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
@@ -88,59 +39,51 @@
     ],
     "pivots": [
         {
-            "name": "arcServer",
-            "displayName": "Arc-enabled servers"
+            "name": "virtualMachine",
+            "displayName": "Virtual machines"
         },
         {
-            "name": "arcK8s",
-            "displayName": "Arc-enabled Kubernetes"
+            "name": "virtualMachineScaleSet",
+            "displayName": "Virtual machine scale set"
         },
         {
-            "name": "arcDataServices",
-            "displayName": "Arc-enabled data services"
+            "name": "disks",
+            "displayName": "Disks"
         }
     ],
     "documentationPath": "/sampledocs.md",
     "options": [
         {
-            "id": "Full",
-            "title": "ArcBox Full",
-            "subTitle": "ArcBox Full includes all ArcBox features. Use this flavor if you want to experience everything ArcBox has to offer.",
+            "id": "Noncritical",
+            "title": "Virtual machine for non-critical workloads",
+            "subTitle": "Best for one-time-use applications, proof of concept, and prototyping.",
             "cost": {
                 "value": "20",
-                "score": 3,
+                "score": 1,
                 "currency": "USD"
             },
-            "maintenanceScore": 2,
+            "maintenanceScore": 1,
             "pivotValues": [
                 {
-                    "pivotName": "arcServer",
+                    "pivotName": "virtualMachine",
                     "content": [
-                        "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL server running on a Windows VM.",
-                        "Enabled using native Azure virtual machines."
+                        "Interruptible Spot VM",
+                        "2-core D series (D2s_v3)",
+                        "Ubuntu Server 20.04 LTS - Gen 2"
                     ]
                 },
                 {
-                    "pivotName": "arcK8s",
+                    "pivotName": "disks",
                     "content": [
-                        "Single node Rancher K8s cluster"
-                    ]
-                },
-                {
-                    "pivotName": "arcDataServices",
-                    "content": [
-                        "Data controller",
-                        "SQL managed instance",
-                        "PostgreSQL Hyperscaler"
+                        "32 GiB"
                     ]
                 }
             ]
         },
         {
-            "id": "ITPro",
-            "title": "ArcBox for IT Pros",
-            "subTitle": "ArcBox for IT Pros focuses specifically on Azure Arc-enabled servers and Azure Arc-enabled SQL Server functionality.",
+            "id": "Batch",
+            "title": "Virtual machine scale sets (VMSS) for batch processing + rendering",
+            "subTitle": "Best for development or test environments where virtual machine interuption isn't a concern.",
             "cost": {
                 "value": "40",
                 "score": 2,
@@ -149,11 +92,56 @@
             "maintenanceScore": 2,
             "pivotValues": [
                 {
-                    "pivotName": "arcServer",
+                    "pivotName": "virtualMachine",
                     "content": [
-                        "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL server running on a Windows VM.",
-                        "Enabled using native Azure virtual machines."
+                        "Starts with 2 instances",
+                        "4-core F series VMSS Flex",
+                        "Ubuntu Server 20.04 LTS - Gen 2"
+                    ]
+                },
+                {
+                    "pivotName": "virtualMachineScaleSet",
+                    "content": [
+                        "Flexible scale set with auto-scale enabled"
+                    ]
+                },
+                {
+                    "pivotName": "disks",
+                    "content": [
+                        "128 GiB"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "Mix",
+            "title": "Mix regular and interruptible  VMs for consistent uptime",
+            "subTitle": "Best for scaling with continuous uninterruptible VMs and discounted interruptible Spot VMs, like big data analytics.",
+            "cost": {
+                "value": "40",
+                "score": 3,
+                "currency": "USD"
+            },
+            "maintenanceScore": 3,
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachine",
+                    "content": [
+                        "Mix of 4 VMs and 6 interruptible Spot VMs",
+                        "4-core D series 16 GiB memory",
+                        "UUbuntu Server 20.04 LTS - Gen 2"
+                    ]
+                },
+                {
+                    "pivotName": "virtualMachineScaleSet",
+                    "content": [
+                        "Flexible scale set with auto-scale enabled"
+                    ]
+                },
+                {
+                    "pivotName": "disks",
+                    "content": [
+                        "128 GiB, attached SSD"
                     ]
                 }
             ]
