@@ -1,5 +1,5 @@
 {
-    "overviewContent": "Azure confidential virtual machines include all of the features of Trusted Launch and more. Trusted Launch allows administrators to deploy virtual machines with verified and signed bootloaders, OS kernels, and drivers. Trusted launch protects against advanced and persistent attack techniques. Trusted Launch is composed of several, coordinated infrastructure technologies that can be enabled independently. Each technology provides another layer of defense against sophisticated threats. By leveraging secure and measured boot, administrators gain insights and confidence of the entire boot chain's integrity. By using Azure confidential computing, you’ll utilize AMD processors with SEV-SNP technology. Confidential VMs are for tenants with high security, confidentiality, and integrity requirements. These VMs provide a strong, hardware-enforced boundary to help meet your security needs. You can use confidential VMs for migrations without making changes to your code, with the platform protecting your VM's state from being read or modified.",
+    "overviewContent": "Azure confidential virtual machines include all of the features of Trusted Launch and more. \n \n Trusted Launch allows administrators to deploy virtual machines with verified and signed bootloaders, OS kernels, and drivers. Trusted launch protects against advanced and persistent attack techniques. Trusted Launch is composed of several, coordinated infrastructure technologies that can be enabled independently. Each technology provides another layer of defense against sophisticated threats. By leveraging secure and measured boot, administrators gain insights and confidence of the entire boot chain's integrity. \n \n By using Azure confidential computing, you’ll utilize AMD processors with SEV-SNP technology. Confidential VMs are for tenants with high security, confidentiality, and integrity requirements. These VMs provide a strong, hardware-enforced boundary to help meet your security needs. You can use confidential VMs for migrations without making changes to your code, with the platform protecting your VM's state from being read or modified.",
     "associatedResources": [
         {
             "resourceName": "Public IP address",
@@ -69,7 +69,7 @@
                     "content": [
                         "Confidential virtual machine",
                         "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
-                        "Standard_DC2as_v5 - 2 vcpu, 8 GiB memory",
+                        "Standard_DC2as_v5 - 2 vcpu 8 GiB memory",
                         "Confidential compute encryption disabled"
                     ]
                 },
@@ -97,7 +97,7 @@
                     "pivotName": "virtualMachine",
                     "content": [
                         "Confidential virtual machine",
-                        "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
+                        "Ubuntu Server 20.04 LTS (Confidential VM preview) Gen 2 image",
                         "Standard_DC4ads_v5 - 4 vcpus, 16 GiB memory",
                         "Confidential compute encryption enabled"
                     ]
@@ -112,9 +112,45 @@
             ]
         },
         {
+            "id": "DevTestVMSS",
+            "title": "Confidential dev/test virtual machine scale set (VMSS)",
+            "subTitle": "Best for testing the security features functionality of a confidential VMSS.",
+            "cost": {
+                "value": "40",
+                "score": 2,
+                "currency": "USD"
+            },
+            "maintenanceScore": 2,
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachine",
+                    "content": [
+                        "Confidential virtual machines within a flexible VM scale set for maximum scaling",
+                        "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
+                        "Standard_DC2as_v5 - 2 vcpu 8 GiB memory",
+                        "Confidential compute encryption unavailable"
+                    ]
+                },
+                {
+                    "pivotName": "virtualMachineScaleSet",
+                    "content": [
+                        "Flexible scale set used for load balancing against the virtual machine instances",
+                        "Autoscaler enabled with a minimum instance count of 2"
+                    ]
+                },
+                {
+                    "pivotName": "disks",
+                    "content": [
+                        "32 GiB / Premium SSD LRS",
+                        "Disk encryption unavailable"
+                    ]
+                }
+            ]
+        },
+        {
             "id": "ProdVMSS",
             "title": "Confidential production ready VMSS",
-            "subTitle": "Best for production and active protection against advanced and persistent attack techniques..",
+            "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
             "cost": {
                 "value": "40",
                 "score": 3,
@@ -127,7 +163,7 @@
                     "content": [
                         "Confidential virtual machines within a flexible VM scale set for maximum scaling",
                         "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
-                        "Standard_DC4ads_v5 - 4 vcpus, 16 GiB memory",
+                        "Standard_DC4ads_v5 - 4 vcpus 16 GiB memory",
                         "Confidential compute encryption unavailable"
                     ]
                 },
