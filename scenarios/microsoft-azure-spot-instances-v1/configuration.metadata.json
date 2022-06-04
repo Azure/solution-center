@@ -1,0 +1,150 @@
+{
+    "overviewContent": "Deploy a highly scalable, cost-effective Spot virtual machine scale set for your applications that don't need to be completed within a certain timeframe. Run workloads for development, testing, quality assurance, advanced analytics, big data, machine learning and AI, batch jobs, rendering and transcoding of videos, graphics, and images at a very low cost.",
+    "associatedResources": [
+        {
+            "resourceName": "Public IP address",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "141"
+            }
+        },
+        {
+            "resourceName": "Virtual network",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "245"
+            }
+        },
+        {
+            "resourceName": "Network security group",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "SSH key",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        },
+        {
+            "resourceName": "Network interface",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "143"
+            }
+        }
+    ],
+    "pivots": [
+        {
+            "name": "virtualMachine",
+            "displayName": "Virtual machines"
+        },
+        {
+            "name": "virtualMachineScaleSet",
+            "displayName": "Virtual machine scale set"
+        },
+        {
+            "name": "disks",
+            "displayName": "Disks"
+        }
+    ],
+    "documentationPath": "/sampledocs.md",
+    "options": [
+        {
+            "id": "Noncritical",
+            "title": "Virtual machine for non-critical workloads",
+            "subTitle": "Best for one-time-use applications, proof of concept, and prototyping.",
+            "cost": {
+                "value": "20",
+                "score": 1,
+                "currency": "USD"
+            },
+            "maintenanceScore": 1,
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachine",
+                    "content": [
+                        "Interruptible Spot VM",
+                        "2-core D series (D2s_v3)",
+                        "Ubuntu Server 20.04 LTS - Gen 2"
+                    ]
+                },
+                {
+                    "pivotName": "disks",
+                    "content": [
+                        "32 GiB"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "Batch",
+            "title": "Virtual machine scale sets (VMSS) for batch processing + rendering",
+            "subTitle": "Best for development or test environments where virtual machine interuption isn't a concern.",
+            "cost": {
+                "value": "40",
+                "score": 2,
+                "currency": "USD"
+            },
+            "maintenanceScore": 2,
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachine",
+                    "content": [
+                        "Starts with 2 instances",
+                        "4-core F series VMSS Flex",
+                        "Ubuntu Server 20.04 LTS - Gen 2"
+                    ]
+                },
+                {
+                    "pivotName": "virtualMachineScaleSet",
+                    "content": [
+                        "Flexible scale set with auto-scale enabled"
+                    ]
+                },
+                {
+                    "pivotName": "disks",
+                    "content": [
+                        "128 GiB"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "Mix",
+            "title": "Mix regular and interruptible  VMs for consistent uptime",
+            "subTitle": "Best for scaling with continuous uninterruptible VMs and discounted interruptible Spot VMs, like big data analytics.",
+            "cost": {
+                "value": "40",
+                "score": 3,
+                "currency": "USD"
+            },
+            "maintenanceScore": 3,
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachine",
+                    "content": [
+                        "Mix of 4 VMs and 6 interruptible Spot VMs",
+                        "4-core D series 16 GiB memory",
+                        "UUbuntu Server 20.04 LTS - Gen 2"
+                    ]
+                },
+                {
+                    "pivotName": "virtualMachineScaleSet",
+                    "content": [
+                        "Flexible scale set with auto-scale enabled"
+                    ]
+                },
+                {
+                    "pivotName": "disks",
+                    "content": [
+                        "128 GiB, attached SSD"
+                    ]
+                }
+            ]
+        }
+    ]
+}
