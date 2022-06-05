@@ -123,7 +123,7 @@
                     "pivotName": "virtualMachine",
                     "content": [
                         "3 E series VMs",
-                        "3 availability zones (Test, Test) - Test"
+                        "3 availability zones_Test"
                     ]
                 },
                 {
