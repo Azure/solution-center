@@ -69,7 +69,7 @@
                     "content": [
                         "Confidential virtual machine",
                         "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
-                        "Standard_DC2as_v5 - 2 vcpu 8 GiB memory",
+                        "Standard_DC2as_v5 - 2 vcpu, 8 GiB memory",
                         "Confidential compute encryption disabled"
                     ]
                 },
@@ -163,7 +163,7 @@
                     "content": [
                         "Confidential virtual machines within a flexible VM scale set for maximum scaling",
                         "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
-                        "Standard_DC4ads_v5 - 4 vcpus 16 GiB memory",
+                        "Standard_DC4ads_v5 - 4 vcpus, 16 GiB memory",
                         "Confidential compute encryption unavailable"
                     ]
                 },
