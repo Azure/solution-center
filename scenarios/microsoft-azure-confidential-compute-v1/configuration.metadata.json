@@ -141,7 +141,7 @@
                 {
                     "pivotName": "disks",
                     "content": [
-                        "32 GiB / Premium SSD LRS",
+                        "32 GiB Premium SSD LRS",
                         "Disk encryption unavailable"
                     ]
                 }
@@ -177,7 +177,7 @@
                 {
                     "pivotName": "disks",
                     "content": [
-                        "32 GiB / Premium SSD LRS",
+                        "32 GiB Premium SSD LRS",
                         "Disk encryption unavailable"
                     ]
                 }
