@@ -1,20 +1,7 @@
 {
     "overviewContent": "sometext",
     "associatedResources": [],
-    "pivots": [
-        {
-            "name": "virtualMachine",
-            "displayName": "Virtual machines"
-        },
-        {
-            "name": "virtualMachineScaleSet",
-            "displayName": "Virtual machine scale set"
-        },
-        {
-            "name": "disks",
-            "displayName": "Disks"
-        }
-    ],
+    "pivots": [],
     "documentationPath": "",
     "options": []
 }
