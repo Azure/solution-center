@@ -1,42 +1,6 @@
 {
     "overviewContent": "sometext",
-    "associatedResources": [
-        {
-            "resourceName": "Public IP address",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
-        },
-        {
-            "resourceName": "Virtual network",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "245"
-            }
-        },
-        {
-            "resourceName": "Network security group",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "SSH key",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Network interface",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        }
-    ],
+    "associatedResources": [],
     "pivots": [
         {
             "name": "virtualMachine",
