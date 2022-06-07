@@ -32,15 +32,15 @@
         {
             "resourceName": "Azure Sentinel",
             "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureSentinel"
             }
         },
         {
             "resourceName": "Service principal",
             "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
+                "iconType": "CustomIcon",
+                "iconFileName": "KeyVault"
             }
         },
         {
@@ -89,15 +89,27 @@
     "pivots": [
         {
             "name": "arcServer",
-            "displayName": "Arc-enabled servers"
+            "displayName": "Arc-enabled servers",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcMachines"
+            }
         },
         {
             "name": "arcK8s",
-            "displayName": "Arc-enabled Kubernetes"
+            "displayName": "Arc-enabled Kubernetes",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcKubernetes"
+            }
         },
         {
             "name": "arcDataServices",
-            "displayName": "Arc-enabled data services"
+            "displayName": "Arc-enabled data services",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcDataServices"
+            }
         }
     ],
     "documentationPath": "/sampledocs.md",
