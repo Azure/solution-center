@@ -19,14 +19,14 @@
             "resourceName": "Automation account",
             "icon": {
                 "iconType": "FrameworkIcon",
-                "iconFileName": "164"
+                "iconNumber": "164"
             }
         },
         {
             "resourceName": "Azure Policy",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconNumber": "AzurePolicy"
+                "iconFileName": "AzurePolicy"
             }
         },
         {
