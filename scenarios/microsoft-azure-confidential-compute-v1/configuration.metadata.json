@@ -40,15 +40,27 @@
     "pivots": [
         {
             "name": "virtualMachine",
-            "displayName": "Virtual machines"
+            "displayName": "Virtual machines",
+             "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "141"
+            }
         },
         {
             "name": "virtualMachineScaleSet",
-            "displayName": "Virtual machine scale set"
+            "displayName": "Virtual machine scale set",
+             "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "141"
+            }
         },
         {
             "name": "disks",
-            "displayName": "Disks"
+            "displayName": "Disks",
+             "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": "141"
+            }
         }
     ],
     "documentationPath": "/sampledocs.md",
