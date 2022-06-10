@@ -168,13 +168,6 @@
                         "Includes Arc-enabled SQL server running on a Windows VM.",
                         "Enabled using native Azure virtual machines."
                     ]
-                },
-                {
-                    "pivotName": "arcK8s",
-                    "content": [
-                        "Single node Rancher K3s cluster",
-                        "3-node Cluster API Kubernetes cluster"
-                    ]
                 }
             ]
         }
