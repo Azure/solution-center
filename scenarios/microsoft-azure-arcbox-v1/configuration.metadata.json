@@ -136,7 +136,8 @@
                 {
                     "pivotName": "arcK8s",
                     "content": [
-                        "Single node Rancher K8s cluster"
+                        "Single node Rancher K3s cluster",
+                        "Cluster API Kubernetes cluster"
                     ]
                 },
                 {
@@ -166,6 +167,13 @@
                         "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
                         "Includes Arc-enabled SQL server running on a Windows VM.",
                         "Enabled using native Azure virtual machines."
+                    ]
+                },
+                {
+                    "pivotName": "arcK8s",
+                    "content": [
+                        "Single node Rancher K3s cluster",
+                        "Cluster API Kubernetes cluster"
                     ]
                 }
             ]
