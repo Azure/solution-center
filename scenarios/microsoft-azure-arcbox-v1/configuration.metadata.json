@@ -137,7 +137,7 @@
                     "pivotName": "arcK8s",
                     "content": [
                         "Single node Rancher K3s cluster",
-                        "Cluster API Kubernetes cluster"
+                        "3-node Cluster API Kubernetes cluster"
                     ]
                 },
                 {
@@ -173,7 +173,7 @@
                     "pivotName": "arcK8s",
                     "content": [
                         "Single node Rancher K3s cluster",
-                        "Cluster API Kubernetes cluster"
+                        "3-node Cluster API Kubernetes cluster"
                     ]
                 }
             ]
