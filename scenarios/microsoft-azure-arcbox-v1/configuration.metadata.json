@@ -68,6 +68,10 @@
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
             }
+        },
+        {
+            "resourceType": "Microsoft.HybridCompute/machines",
+            "type": "AzureResource"
         }
     ],
     "pivots": [
