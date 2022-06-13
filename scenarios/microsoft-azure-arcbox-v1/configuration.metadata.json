@@ -2,84 +2,54 @@
     "overviewContent": "ArcBox is a solution that provides an easy-to-deploy sandbox for all things Azure Arc. It's completely self-contained within a single Azure subscription and resource group. With a pre-installed set of tools, ArcBox is great for traning, demos, testing, and exploration.",
     "associatedResources": [
         {
-            "resourceName": "Public IP address",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
+            "resourceType": "Microsoft.Network/PublicIpAddresses"
         },
         {
-            "resourceName": "Virtual network",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "245"
-            }
+            "resourceType": "Microsoft.Network/virtualNetworks"
         },
         {
-            "resourceName": "Automation account",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "164"
-            }
+            "resourceType": "Microsoft.Automation/AutomationAccounts"
         },
         {
-            "resourceName": "Azure Policy",
+            "resourceType": "",
+            "displayName": "Azure Policy",
+            "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "AzurePolicy"
             }
         },
         {
-            "resourceName": "Azure Sentinel",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "AzureSentinel"
-            }
+            "resourceType": "microsoft.securityinsightsarg/sentinel"
         },
         {
-            "resourceName": "Service principal",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "KeyVault"
-            }
+            "resourceType": "Microsoft.KeyVault/vaults"
         },
         {
-            "resourceName": "Network security group",
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups"
+        },
+        {
+            "resourceType": "Microsoft.Compute/disks"
+        },
+        {
+            "resourceType": "Defender for Cloud",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
             }
         },
         {
-            "resourceName": "Disk",
+            "resourceType": "Microsoft.OperationalInsights/workspaces"
+        },
+        {
+            "resourceType": "SSH key",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
             }
         },
         {
-            "resourceName": "Defender for Cloud",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Log Analytics workspace",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "SSH key",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Azure Monitor",
+            "resourceType": "Azure Monitor",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
