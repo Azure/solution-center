@@ -2,13 +2,16 @@
     "overviewContent": "ArcBox is a solution that provides an easy-to-deploy sandbox for all things Azure Arc. It's completely self-contained within a single Azure subscription and resource group. With a pre-installed set of tools, ArcBox is great for traning, demos, testing, and exploration.",
     "associatedResources": [
         {
-            "resourceType": "Microsoft.Network/PublicIpAddresses"
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
         },
         {
-            "resourceType": "Microsoft.Network/virtualNetworks"
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
         },
         {
-            "resourceType": "Microsoft.Automation/AutomationAccounts"
+            "resourceType": "Microsoft.Automation/AutomationAccounts",
+            "type": "AzureResource"
         },
         {
             "resourceType": "",
@@ -20,36 +23,47 @@
             }
         },
         {
-            "resourceType": "microsoft.securityinsightsarg/sentinel"
+            "resourceType": "microsoft.securityinsightsarg/sentinel",
+            "type": "AzureResource"
         },
         {
-            "resourceType": "Microsoft.KeyVault/vaults"
+            "resourceType": "Microsoft.KeyVault/vaults",
+            "type": "AzureResource"
         },
         {
-            "resourceType": "Microsoft.Network/NetworkSecurityGroups"
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
         },
         {
-            "resourceType": "Microsoft.Compute/disks"
+            "resourceType": "Microsoft.Compute/disks",
+            "type": "AzureResource"
         },
         {
-            "resourceType": "Defender for Cloud",
+            "resourceType": "",
+            "displayName": "Defender for Cloud",
+            "type": "Custom",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
             }
         },
         {
-            "resourceType": "Microsoft.OperationalInsights/workspaces"
+            "resourceType": "Microsoft.OperationalInsights/workspaces",
+            "type": "AzureResource"
         },
         {
-            "resourceType": "SSH key",
+            "resourceType": "",
+            "displayName": "SSH key",
+            "type": "Custom",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
             }
         },
         {
-            "resourceType": "Azure Monitor",
+            "resourceType": "",
+            "displayName": "Azure Monitor",
+            "type": "Custom",
             "icon": {
                 "iconType": "FrameworkIcon",
                 "iconNumber": "143"
@@ -59,14 +73,12 @@
     "pivots": [
         {
             "name": "arcServer",
-            "displayName": "Arc-enabled servers",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "ArcMachines"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.HybridCompute/machines"
         },
         {
             "name": "arcK8s",
+            "type": "Custom",
             "displayName": "Arc-enabled Kubernetes",
             "icon": {
                 "iconType": "CustomIcon",
@@ -75,6 +87,7 @@
         },
         {
             "name": "arcDataServices",
+            "type": "Custom",
             "displayName": "Arc-enabled data services",
             "icon": {
                 "iconType": "CustomIcon",
