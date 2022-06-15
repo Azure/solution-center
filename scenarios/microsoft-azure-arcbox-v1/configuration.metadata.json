@@ -1,5 +1,6 @@
 {
     "overviewContent": "ArcBox is a solution that provides an easy-to-deploy sandbox for all things Azure Arc. It's completely self-contained within a single Azure subscription and resource group. With a pre-installed set of tools, ArcBox is great for traning, demos, testing, and exploration.",
+    "documentationFileName": "arcbox-overview.md",
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
