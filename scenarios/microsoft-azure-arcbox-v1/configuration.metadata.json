@@ -103,6 +103,27 @@
     "documentationPath": "/sampledocs.md",
     "options": [
         {
+            "id": "ITPro",
+            "title": "ArcBox for IT Pros",
+            "subTitle": "ArcBox for IT Pros focuses specifically on Azure Arc-enabled servers and Azure Arc-enabled SQL Server functionality.",
+            "cost": {
+                "value": "40",
+                "score": 2,
+                "currency": "USD"
+            },
+            "maintenanceScore": 2,
+            "pivotValues": [
+                {
+                    "pivotName": "arcServer",
+                    "content": [
+                        "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "Enabled using native Azure virtual machines."
+                    ]
+                }
+            ]
+        },
+        {
             "id": "Full",
             "title": "ArcBox Full",
             "subTitle": "ArcBox Full includes all ArcBox features. Use this flavor if you want to experience everything ArcBox has to offer.",
@@ -134,27 +155,6 @@
                         "Data controller",
                         "SQL managed instance",
                         "PostgreSQL Hyperscaler"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "ITPro",
-            "title": "ArcBox for IT Pros",
-            "subTitle": "ArcBox for IT Pros focuses specifically on Azure Arc-enabled servers and Azure Arc-enabled SQL Server functionality.",
-            "cost": {
-                "value": "40",
-                "score": 2,
-                "currency": "USD"
-            },
-            "maintenanceScore": 2,
-            "pivotValues": [
-                {
-                    "pivotName": "arcServer",
-                    "content": [
-                        "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL server running on a Windows VM.",
-                        "Enabled using native Azure virtual machines."
                     ]
                 }
             ]
