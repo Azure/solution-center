@@ -53,13 +53,8 @@
             "type": "AzureResource"
         },
         {
-            "resourceType": "",
-            "displayName": "SSH key",
-            "type": "Custom",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
+            "resourceType": "Microsoft.Compute/sshPublicKeys",
+            "type": "AzureResource"
         },
         {
             "resourceType": "",
