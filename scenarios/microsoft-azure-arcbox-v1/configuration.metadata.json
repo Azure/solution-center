@@ -104,7 +104,9 @@
             "cost": {
                 "value": "40",
                 "score": 2,
-                "currency": "USD"
+                "currency": "USD",
+                "type": "absolute",
+                "cadence":"daily"
             },
             "maintenanceScore": 2,
             "pivotValues": [
@@ -125,7 +127,8 @@
             "cost": {
                 "value": "20",
                 "score": 3,
-                "currency": "USD"
+                "currency": "USD",
+                "type": "score"
             },
             "maintenanceScore": 2,
             "pivotValues": [
