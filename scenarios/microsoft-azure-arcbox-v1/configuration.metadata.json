@@ -156,6 +156,28 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "DevOps",
+            "title": "ArcBox DevOps",
+            "subTitle": "ArcBox for DevOps is a special “flavor” of ArcBox that is intended for users who want to experience Azure Arc-enabled Kubernetes capabilities in a sandbox environment.",
+            "cost": {
+                "value": "57",
+                "score": 3,
+                "currency": "USD",
+                "type": "score"
+            },
+            "maintenanceScore": 2,
+            "pivotValues": [
+                {
+                    "pivotName": "arcK8s",
+                    "content": [
+                        "Single node Rancher K3s cluster",
+                        "3-node Cluster API Kubernetes cluster",
+                        "Includes GitOps, Open Service Mesh, Container Insights, and Microsoft Defender for Containers"
+                    ]
+                }
+            ]
         }
     ]
 }
