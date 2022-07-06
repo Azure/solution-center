@@ -165,7 +165,8 @@
                 "value": "57",
                 "score": 3,
                 "currency": "USD",
-                "type": "score"
+                "type": "absolute",
+                "cadence": "daily"
             },
             "maintenanceScore": 2,
             "pivotValues": [
