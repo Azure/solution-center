@@ -44,7 +44,7 @@ ArcBox comes in multiple "flavors", or configurations, which can be selected to 
     ![ArcBox for IT Pros architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_itpro.png)
 
 - [ArcBox for DevOps](https://azurearcjumpstart.io/azure_jumpstart_arcbox/DevOps)
-    This essential Azure Arc-enabled Kubernetes sandbox with the included capabilities such as GitOps, Open Service Mesh (OSM), secrets management, monitoring, and more.
+    This essential Azure Arc-enabled Kubernetes sandbox includes capabilities such as GitOps, Open Service Mesh (OSM), secrets management, monitoring, and more.
 
     ![ArcBox for DevOps architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_devops.png)
 
