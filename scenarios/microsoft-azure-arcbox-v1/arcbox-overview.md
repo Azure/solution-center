@@ -1,45 +1,59 @@
-# Welcome to Solution center! :wave:
-      
-## Overview
+# JumpStart ArcBox
 
-This repository is the central repository for the metadata defined in the Azure Portal's [Solution center](https://aka.ms/solutioncenter/portal).
+## In This Guide
 
-## How to submit a solution
+- [Azure Arc Overview](#azure-arc-overview)
+- [Jumpstart ArcBox Overview](#jumpstart-arcbox-overview)
 
-Solution center enables our partners to deploy and manage Azure and open-source services and software all with a single metadata-driven repository. Some examples could be deploying webapps or using inexpensive virtual machines for machine learning. Solution center uses the concept of a "solution" to help customers understand and configure services and software with ease.
+> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to the [Jumpstart website](https://azurearcjumpstart.io/azure_jumpstart_arcbox/) to start the post-deployment automation that will complete your ArcBox Set-Up.**
 
-A solution includes:
+## Azure Arc Overview
 
-### configuration.metadata
+For customers who want to simplify complex and distributed environments across on-premises, edge and multi-cloud, [Azure Arc](https://docs.microsoft.com/en-us/azure/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure.
 
-- overviewContent: a single paragraph defining the solution, when & why customers might consider your solution, and its use case.
-- associatedResources: a list of resources which will be deployed as apart of the deployment.
-   - resourceName: the friendly name of the resource which will be deployed
-   - icon: the icon of the resource
-- pivots: the differences between the configurations
-- documentationPath: a relative link to the markdown file in the repository which helps with architecture diagrams and addditional resources for deployment (2nd tab of solution).
-- options: the details for each configuration option
-   - id: Vertical column unique ID.
-   - title: Vertical column header 1.
-   - subTitle: Vertical column header 2.
-   - cost
-   - maintenanceScore
-   - pivotValues
-      - pivotName
-      - content
+- **Organize and govern across environments** - Get databases, Kubernetes clusters, and servers sprawling across on-premises, edge and multi-cloud environments under control by centrally organizing and governing from a single place.
 
-### discovery.metadata
+- **Manage Kubernetes Apps at scale** - Deploy and manage Kubernetes applications across environments using DevOps techniques. Ensure that applications are deployed and configured from source control consistently.
 
-- icon
-- title
-- shortDescription
-- cost
-- activationString
-- keywords
-- detailsDescription
-- learnMoreLink
-- learnMoreLinkText
-- highlights: info on the card when expanded
-   - content
-   - highlightLearnMoreLink: optional
-   - highlightLearnMoreLinkText: optional
+- **Run Azure services anywhere** - Get automated patching, upgrades, security and scale on-demand across on-premises, edge and multi-cloud environments for your data estate.
+
+## Jumpstart ArcBox Overview
+
+ArcBox is a solution that provides an easy to deploy sandbox for all things Azure Arc. ArcBox is designed to be completely self-contained within a single Azure subscription and resource group, which will make it easy for a user to get hands-on with all available Azure Arc technology with nothing more than an available Azure subscription.
+
+### Use cases
+
+- Sandbox environment for getting hands-on with Azure Arc
+- Accelerator for Proof-of-concepts or pilots
+- Training tool for Azure Arc skills development
+- Demo environment for customer presentations or events
+- Rapid integration testing platform
+
+### ArcBox "Flavors"
+
+ArcBox comes in multiple "flavors", or configurations, which can be selected to best suit your needs. Currently, the available flavors are:
+
+- [ArcBox "Full"](https://azurearcjumpstart.io/azure_jumpstart_arcbox/Full)
+    The core ArcBox experience with Azure Arc-enabled servers, Kubernetes, and data services capabilities.
+
+    ![ArcBox architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_full.png)
+
+- [ArcBox for IT Pros](https://azurearcjumpstart.io/azure_jumpstart_arcbox/ITPro)
+    This essential Azure Arc-enabled servers sandbox includes a mix of Microsoft Windows and Linux servers managed using the included capabilities such Azure Monitor, Microsoft Defender for Cloud, Azure Policy, Update Management and more.
+
+    ![ArcBox for IT Pros architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_itpro.png)
+
+- [ArcBox for DevOps](https://azurearcjumpstart.io/azure_jumpstart_arcbox/DevOps)
+    This essential Azure Arc-enabled Kubernetes sandbox includes capabilities such as GitOps, Open Service Mesh (OSM), secrets management, monitoring, and more.
+
+    ![ArcBox for DevOps architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_devops.png)
+
+To get started with one of the flavors of ArcBox, click the relevant links above to view the detailed README for each flavor. For additional questions, please review the [Jumpstart FAQ](https://aka.ms/Jumpstart-FAQ).
+
+### ArcBox Pricing
+
+ArcBox incurs normal Azure consumption charges for various Azure resources such as virtual machines and storage. Each flavor of ArcBox uses a different combination of Azure resources and therefore costs vary depending on the flavor used. You can view example estimates of ArcBox costs per flavor by clicking the links below.
+
+- [ArcBox Full cost estimate](https://aka.ms/ArcBoxFullCost)
+- [ArcBox for ITPro cost estimate](https://aka.ms/ArcBoxITProCost)
+- [ArcBox for DevOps cost estimate](https://aka.ms/ArcBoxDevOpsCost)
