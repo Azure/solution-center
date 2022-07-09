@@ -20,5 +20,5 @@ jobs:
         with:
           github_token: ${{ github.token }}
           source_ref: 'staging'
-          target_branch: 'master'
+          target_branch: 'main'
           commit_message_template: '[Automated] Merged staging into target main'
