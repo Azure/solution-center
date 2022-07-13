@@ -4,7 +4,7 @@
 
 Get hands on with Azure Arc with ArcBox, the definitive Azure Arc sandbox. Learn more about ArcBox options, features, and deployment methods.
 
-> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to the [Jumpstart website](https://azurearcjumpstart.io/azure_jumpstart_arcbox/) to start the post-deployment automation that will complete your ArcBox Set-Up.**
+> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to appropriate ArcBox flavor guides to start the post-deployment automation that will complete your ArcBox Set-Up: [ArcBox Full](https://azurearcjumpstart.io/azure_jumpstart_arcbox/full/), [ArcBox IT Pros](https://azurearcjumpstart.io/azure_jumpstart_arcbox/itpro/), [ArcBox DevOps](https://azurearcjumpstart.io/azure_jumpstart_arcbox/devops/)**
 
 ## Azure Arc Overview
 
