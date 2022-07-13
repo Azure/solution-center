@@ -164,6 +164,71 @@
                         "Includes GitOps, Open Service Mesh, Container Insights, and Microsoft Defender for Containers"
                     ]
                 }
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.Network/PublicIpAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Automation/AutomationAccounts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Policy",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzurePolicy"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/disks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Defender for Cloud",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureDefender"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/sshPublicKeys",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureMonitor"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.KeyVault/vaults",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Kubernetes/connectedClusters",
+                    "type": "AzureResource"
+                }
             ]
         }
     ]
