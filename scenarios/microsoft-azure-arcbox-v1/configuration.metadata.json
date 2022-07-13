@@ -24,14 +24,6 @@
             }
         },
         {
-            "resourceType": "microsoft.securityinsightsarg/sentinel",
-            "type": "AzureResource"
-        },
-        {
-            "resourceType": "Microsoft.KeyVault/vaults",
-            "type": "AzureResource"
-        },
-        {
             "resourceType": "Microsoft.Network/NetworkSecurityGroups",
             "type": "AzureResource"
         },
@@ -64,10 +56,6 @@
                 "iconType": "CustomIcon",
                 "iconFileName": "AzureMonitor"
             }
-        },
-        {
-            "resourceType": "Microsoft.HybridCompute/machines",
-            "type": "AzureResource"
         }
     ],
     "pivots": [
