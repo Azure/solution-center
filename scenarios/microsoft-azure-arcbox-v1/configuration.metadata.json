@@ -1,5 +1,5 @@
 {
-    "overviewContent": "ArcBox is a solution that provides an easy-to-deploy sandbox for all things Azure Arc. It's completely self-contained within a single Azure subscription and resource group. With a pre-installed set of tools, ArcBox is great for traning, demos, testing, and exploration.",
+    "overviewContent": "Ready to experience managing infrastructure with our hybrid cloud platform? ArcBox provides an easy-to-deploy sandbox for all things Azure Arc. It is completely self-contained within a single subscription and resource group, giving you room to train, demo, test, and explore with a pre-installed set of tools.",
     "documentationFileName": "arcbox-overview.md",
     "associatedResources": [
         {
@@ -106,9 +106,11 @@
                 "score": 2,
                 "currency": "USD",
                 "type": "absolute",
-                "cadence":"daily"
+                "cadence": "daily"
             },
-            "maintenanceScore": 2,
+            "maintenance": {
+                "score": 2
+            },
             "pivotValues": [
                 {
                     "pivotName": "arcServer",
@@ -131,7 +133,9 @@
                 "type": "absolute",
                 "cadence": "daily"
             },
-            "maintenanceScore": 2,
+            "maintenance": {
+                "score": 2
+            },
             "pivotValues": [
                 {
                     "pivotName": "arcServer",
@@ -169,7 +173,9 @@
                 "type": "absolute",
                 "cadence": "daily"
             },
-            "maintenanceScore": 2,
+            "maintenance": {
+                "score": 2
+            },
             "pivotValues": [
                 {
                     "pivotName": "arcK8s",
