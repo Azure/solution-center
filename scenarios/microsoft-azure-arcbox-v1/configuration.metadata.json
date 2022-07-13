@@ -44,8 +44,8 @@
             "displayName": "Defender for Cloud",
             "type": "Custom",
             "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureDefender"
             }
         },
         {
@@ -61,8 +61,8 @@
             "displayName": "Azure Monitor",
             "type": "Custom",
             "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureMonitor"
             }
         },
         {
