@@ -1,0 +1,8 @@
+{
+    "title": "Sample Solution Group",
+    "description": "This is a description for the solution group.",
+    "solutions": [
+        "microsoft-azure-arcbox-v1", 
+        "microsoft-azure-confidential-compute-v1"
+    ]
+}
