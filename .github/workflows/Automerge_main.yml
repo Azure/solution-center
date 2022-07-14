@@ -1,9 +1,7 @@
 name: Automerge staging -> main
 
 on:
-  # Triggers the workflow on push or pull request close events but only for the "staging" branch
-  push:
-    branches: [ "staging" ]
+  # Triggers the workflow on pull request close events but only for the "staging" branch
   pull_request:
     branches: [ "staging" ]
     types:
