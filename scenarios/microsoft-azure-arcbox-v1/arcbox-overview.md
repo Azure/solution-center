@@ -1,4 +1,4 @@
-# JumpStart ArcBox
+# Jumpstart ArcBox
 
 ## In This Guide
 
