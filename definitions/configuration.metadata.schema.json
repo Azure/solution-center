@@ -1,0 +1,260 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "supportsManualConfiguration": {
+            "type": "boolean"
+        },
+        "documentationFileName": {
+            "type": "string"
+        },
+        "overviewContent": {
+            "type": "string"
+        },
+        "associatedResources": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/associatedResource"
+            }
+        },
+        "pivots": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/pivot"
+            }
+        },
+        "options": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/configurationOption"
+            },
+            "minItems": 1,
+            "description": "The configuration options for this solution."
+        }
+    },
+    "required": [
+        "options",
+        "overviewContent",
+        "associatedResources",
+        "pivots"
+    ],
+    "definitions": {
+        "configurationOption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The unique identifier for this option."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of this option."
+                },
+                "subTitle": {
+                    "type": "string",
+                    "description": "The sub title of this option."
+                },
+                "pivotValues": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/pivotValue"
+                    }
+                },
+                "associatedResources": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/associatedResource"
+                    }
+                },
+                "maintenance": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "score": {
+                            "type": "integer",
+                            "enum": [
+                                1,
+                                2,
+                                3
+                            ],
+                            "description": "The maintenance score of the configuration. 1 = Low, 2= Medium, 3 = High."
+                        },
+                        "tooltip": {
+                            "type": "string",
+                            "description": "The tooltip string shown for the maintenance score."
+                        }
+                    }
+                },
+                "cost": {
+                    "$ref": "#/definitions/cost"
+                }
+            },
+            "required": [
+                "id",
+                "title",
+                "subTitle",
+                "pivotValues"
+            ]
+        },
+        "cost": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "absolute",
+                        "score"
+                    ],
+                    "description": "The type of cost. Either absolute or a score. Absolute value is displayed as a combination of currency/value/cadence. Eg: USD 10/month. Score is a relative grading."
+                },
+                "tooltip": {
+                    "type": "string",
+                    "description": "The tooltip string shown for the cost."
+                },
+                "score": {
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "description": "The cost score of the configuration. 1 = Low, 2= Medium, 3 = High."
+                },
+                "currency": {
+                    "type": "string",
+                    "description": "The currency of the cost. Eg: USD, INR"
+                },
+                "value": {
+                    "type": "integer",
+                    "description": "The value of the cost.",
+                    "minimum": 0
+                },
+                "cadence": {
+                    "type": "string",
+                    "enum": [
+                        "daily",
+                        "monthly"
+                    ],
+                    "description": "The cadence of the cost. Eg: daily, monthly"
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        "pivotValue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pivotName": {
+                    "type": "string",
+                    "description": "This should be one of the names specified in the pivots array."
+                },
+                "content": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The content of this pivot value. Specify multiple strings that will be displayed as separate lines."
+                }
+            }
+        },
+        "pivot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the pivot. Will be used to specify PivotValues."
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "The display name of the pivot."
+                },
+                "icon": {
+                    "$ref": "#/definitions/icon",
+                    "description": "Specify the icon to be used in case of a Custom Pivot"
+                },
+                "type": {
+                    "$ref": "#/definitions/pivotType"
+                },
+                "azureResourceType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "pivotType": {
+            "type": "string",
+            "enum": [
+                "Custom",
+                "AzureResource"
+            ]
+        },
+        "icon": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "iconFileName": {
+                    "type": "string",
+                    "description": "Specify if iconType is 'CustomIcon'. This will be the name of the svg file used to render the icon."
+                },
+                "iconNumber": {
+                    "type": "integer",
+                    "description": "Specify if iconType is 'FrameworkIcon'. This will be the number of the icon corresponding to the preset Fx icons."
+                },
+                "iconType": {
+                    "$ref": "#/definitions/iconType"
+                }
+            },
+            "required": [
+                "iconType"
+            ]
+        },
+        "iconType": {
+            "type": "string",
+            "enum": [
+                "FrameworkIcon",
+                "CustomIcon"
+            ]
+        },
+        "associatedResource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "resourceType": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/associatedResourceType",
+                    "description": "Two types are supported: AzureResource and Custom. Set type to AzureResource to specify a supported resource type in Azure. This will enable automatic fetch of Icon and Display name."
+                },
+                "icon": {
+                    "$ref": "#/definitions/icon",
+                    "description": "Specify if the associatedResourceType is 'Custom'.  This will be the icon used."
+                }
+            },
+            "required": [
+                "resourceType"
+            ]
+        },
+        "associatedResourceType": {
+            "type": "string",
+            "enum": [
+                "AzureResource",
+                "Custom"
+            ]
+        }
+    }
+}
