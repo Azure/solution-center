@@ -70,15 +70,6 @@
             }
         },
         {
-            "name": "arcSQLServer",
-            "type": "Custom",
-            "displayName": "Arc-enabled SQL Server",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "ArcSQLServer"
-            }
-        },
-        {
             "name": "arcK8s",
             "type": "Custom",
             "displayName": "Arc-enabled Kubernetes",
@@ -94,33 +85,6 @@
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcDataServices"
-            }
-        },
-        {
-            "name": "arcDataController",
-            "type": "Custom",
-            "displayName": "Arc Data Controller",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "ArcDataController"
-            }
-        },
-        {
-            "name": "arcSQLManagedInstance",
-            "type": "Custom",
-            "displayName": "Arc-enabled SQL Managed Instance",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "ArcSQLManagedInstance"
-            }
-        },
-        {
-            "name": "arcPostgreSQL",
-            "type": "Custom",
-            "displayName": "Arc-enabled PostgreSQL",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "ArcPostgreSQL"
             }
         }
     ],
