@@ -38,7 +38,7 @@
             "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "AzureDefender"
+                "iconFileName": "MicrosoftDefender"
             }
         },
         {
@@ -62,8 +62,12 @@
     "pivots": [
         {
             "name": "arcServer",
-            "type": "AzureResource",
-            "azureResourceType": "Microsoft.HybridCompute/machines"
+            "type": "Custom",
+            "displayName": "Arc-enabled servers",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcServer"
+            }
         },
         {
             "name": "arcK8s",
@@ -101,7 +105,7 @@
                     "pivotName": "arcServer",
                     "content": [
                         "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "Includes Arc-enabled SQL Server running on a Windows VM.",
                         "Enabled using native Azure virtual machines."
                     ]
                 },
@@ -109,15 +113,16 @@
                     "pivotName": "arcK8s",
                     "content": [
                         "Single node Rancher K3s cluster",
-                        "3-node Cluster API Kubernetes cluster"
+                        "3-node Cluster API Kubernetes cluster",
+                        "Includes Container Insights, and Microsoft Defender for Containers"
                     ]
                 },
                 {
                     "pivotName": "arcDataServices",
                     "content": [
-                        "Data controller",
-                        "SQL managed instance",
-                        "PostgreSQL"
+                        "Azure Arc Data Controller",
+                        "Azure Arc-enabled SQL Managed Instance",
+                        "Azure Arc-enabled PostgreSQL"
                     ]
                 }
             ],
@@ -157,7 +162,7 @@
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
-                        "iconFileName": "AzureDefender"
+                        "iconFileName": "MicrosoftDefender"
                     }
                 },
                 {
@@ -178,34 +183,63 @@
                     }
                 },
                 {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcServer"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled SQL Server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcSQLServer"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled Kubernetes",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcKubernetes"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc Data Controller",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcDataController"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled SQL Managed Instance",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcSQLManagedInstance"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled PostgreSQL",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcPostgreSQL"
+                    }
+                },
+                {
                     "resourceType": "Microsoft.Compute/virtualMachines",
                     "type": "AzureResource"
-                },
-                {
-                    "resourceType": "Microsoft.HybridCompute/machines",
-                    "type": "AzureResource"
-                },
-                {
-                    "resourceType": "Microsoft.AzureArcData/SqlServerInstances",
-                    "type": "AzureResource"
-                },
-                {
-                    "resourceType": "Microsoft.Kubernetes/connectedClusters",
-                    "type": "AzureResource"
-                },
-                {
-                    "resourceType": "Microsoft.AzureArcData/DataControllers",
-                    "type": "AzureResource"
-                },
-                {
-                    "resourceType": "Microsoft.AzureArcData/SqlManagedInstances",
-                    "type": "AzureResource"
-                },
-                {
-                    "resourceType": "Microsoft.AzureArcData/PostgresInstances",
-                    "type": "AzureResource"
                 }
-
             ]
         },
         {
@@ -223,8 +257,8 @@
                 {
                     "pivotName": "arcServer",
                     "content": [
-                        "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                        "Includes Arc-enabled SQL Server running on a Windows VM.",
                         "Enabled using native Azure virtual machines."
                     ]
                 }
@@ -265,7 +299,7 @@
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
-                        "iconFileName": "AzureDefender"
+                        "iconFileName": "MicrosoftDefender"
                     }
                 },
                 {
@@ -290,12 +324,22 @@
                     "type": "AzureResource"
                 },
                 {
-                    "resourceType": "Microsoft.HybridCompute/machines",
-                    "type": "AzureResource"
+                    "resourceType": "",
+                    "displayName": "Arc-enabled server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcServer"
+                    }
                 },
                 {
-                    "resourceType": "Microsoft.AzureArcData/SqlServerInstances",
-                    "type": "AzureResource"
+                    "resourceType": "",
+                    "displayName": "Arc-enabled SQL Server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcSQLServer"
+                    }
                 }
             ]
         },
@@ -356,7 +400,7 @@
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
-                        "iconFileName": "AzureDefender"
+                        "iconFileName": "MicrosoftDefender"
                     }
                 },
                 {
@@ -381,8 +425,13 @@
                     "type": "AzureResource"
                 },
                 {
-                    "resourceType": "Microsoft.Kubernetes/connectedClusters",
-                    "type": "AzureResource"
+                    "resourceType": "",
+                    "displayName": "Arc-enabled Kubernetes",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcKubernetes"
+                    }
                 }
             ]
         }
