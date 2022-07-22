@@ -92,7 +92,7 @@
         {
             "id": "Full",
             "title": "ArcBox Full",
-            "subTitle": "ArcBox Full includes various Azure Arc products deployed within a fully automated sandbox experience and will provide you with an easy way to explore the various integrations with other Azure services and capabilities such as Azure Monitor, Defender for Cloud, Azure Policy, and more.",
+            "subTitle": "Access all ArcBox resources, including Azure Arc-enabled servers, Kubernetes and data services.",
             "cost": {
                 "value": "112",
                 "score": 3,
@@ -245,7 +245,7 @@
         {
             "id": "ITPro",
             "title": "ArcBox for IT Pros",
-            "subTitle": "ArcBox for IT Pros provides a fully automated sandbox experience for performing operations on multiple Azure Arc-enabled servers and Azure Arc-enabled SQL Server, and explore it's various integrations with other Azure services and capabilities such as Azure Monitor, Defender for Cloud, Azure Policy, and more.",
+            "subTitle": "Limited to Azure Arc-enabled servers and SQL Server capabilities.",
             "cost": {
                 "value": "40",
                 "score": 2,
@@ -346,7 +346,7 @@
         {
             "id": "DevOps",
             "title": "ArcBox DevOps",
-            "subTitle": "ArcBox for DevOps provides a fully automated sandbox experience for performing operations on multiple Azure Arc-enabled Kubernetes clusters and exploring it's various integrations with other Azure services and capabilities such as GitOps, Open Service Mesh, Azure Monitor, and more.",
+            "subTitle": "Limited to Azure Arc-enabled Kubernetes capabilities.",
             "cost": {
                 "value": "57",
                 "score": 3,
