@@ -92,6 +92,10 @@
                 },
                 "cost": {
                     "$ref": "#/definitions/cost"
+                },
+                "templateFileName" :{
+                    "type": "string",
+                    "description": "The file name of the ARM template file associated with this config option."
                 }
             },
             "required": [

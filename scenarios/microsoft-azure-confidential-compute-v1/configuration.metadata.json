@@ -69,6 +69,7 @@
         {
             "id": "DevTestVM",
             "title": "Confidential dev/test virtual machine",
+            "templateFileName": "devtest.json",
             "subTitle": "Best for testing the security features functionality of a confidential virtual machine.",
             "cost": {
                 "value": "20",
