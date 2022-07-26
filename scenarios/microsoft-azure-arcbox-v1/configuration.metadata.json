@@ -92,6 +92,7 @@
         {
             "id": "Full",
             "title": "ArcBox Full",
+            "templateFileName": "azuredeploy.json",
             "subTitle": "Access all ArcBox resources, including Azure Arc-enabled servers, Kubernetes and data services.",
             "cost": {
                 "value": "112",
@@ -244,6 +245,7 @@
         },
         {
             "id": "ITPro",
+            "templateFileName": "azuredeploy.json",
             "title": "ArcBox for IT Pros",
             "subTitle": "Limited to Azure Arc-enabled servers and SQL Server capabilities.",
             "cost": {
@@ -345,6 +347,7 @@
         },
         {
             "id": "DevOps",
+            "templateFileName": "azuredeploy.json",
             "title": "ArcBox DevOps",
             "subTitle": "Limited to Azure Arc-enabled Kubernetes capabilities.",
             "cost": {
