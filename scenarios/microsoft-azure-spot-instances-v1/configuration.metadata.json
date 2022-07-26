@@ -1,68 +1,37 @@
 {
+    "$schema": "../../definitions/configuration.metadata.schema.json",
     "overviewContent": "Deploy a highly scalable, cost-effective Spot virtual machine scale set for your applications that don't need to be completed within a certain timeframe. Run workloads for development, testing, quality assurance, advanced analytics, big data, machine learning and AI, batch jobs, rendering and transcoding of videos, graphics, and images at a very low cost.",
     "associatedResources": [
-        {
-            "resourceName": "Public IP address",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
-        },
-        {
-            "resourceName": "Virtual network",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "245"
-            }
-        },
-        {
-            "resourceName": "Network security group",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "SSH key",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        },
-        {
-            "resourceName": "Network interface",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
-        }
     ],
     "pivots": [
         {
             "name": "virtualMachine",
-            "displayName": "Virtual machines"
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualmachines"
         },
         {
             "name": "virtualMachineScaleSet",
-            "displayName": "Virtual machine scale set"
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualmachinescalesets"
         },
         {
             "name": "disks",
-            "displayName": "Disks"
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/disks"
         }
     ],
-    "documentationPath": "/sampledocs.md",
+    "documentationFileName": "",
     "options": [
         {
-            "id": "Noncritical",
+            "id": "noncritical",
             "title": "Virtual machine for non-critical workloads",
             "subTitle": "Best for one-time-use applications, proof of concept, and prototyping.",
+            "templateFileName": "Noncritical.json",
             "cost": {
-                "value": "20",
-                "score": 1,
-                "currency": "USD"
+                "type":"score",
+                "score": 1
             },
-            "maintenanceScore": 1,
+            "maintenance": { "score": 1, "tooltip": "The relative cost for maintenance of this solution."},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
@@ -81,15 +50,14 @@
             ]
         },
         {
-            "id": "Batch",
+            "id": "batch",
             "title": "Virtual machine scale sets (VMSS) for batch processing + rendering",
             "subTitle": "Best for development or test environments where virtual machine interuption isn't a concern.",
             "cost": {
-                "value": "40",
-                "score": 2,
-                "currency": "USD"
+                "type":"score",
+                "score": 2
             },
-            "maintenanceScore": 2,
+            "maintenance": { "score": 2, "tooltip": "The relative cost for maintenance of this solution."},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
@@ -114,15 +82,14 @@
             ]
         },
         {
-            "id": "Mix",
+            "id": "mix",
             "title": "Mix regular and interruptible  VMs for consistent uptime",
             "subTitle": "Best for scaling with continuous uninterruptible VMs and discounted interruptible Spot VMs, like big data analytics.",
             "cost": {
-                "value": "40",
-                "score": 3,
-                "currency": "USD"
+                "type":"score",
+                "score": 3
             },
-            "maintenanceScore": 3,
+            "maintenance": { "score": 3, "tooltip": "The relative cost for maintenance of this solution."},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
