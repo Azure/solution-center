@@ -8,7 +8,7 @@ Learn more about ArcBox options, features, and deployment methods.
 
 ## Azure Arc Overview
 
-For customers who want to simplify complex and distributed environments across on-premises, edge and multi-cloud, [Azure Arc](https://docs.microsoft.com/en-us/azure/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure.
+For customers who want to simplify complex and distributed environments across on-premises, edge and multi-cloud, [Azure Arc](https://docs.microsoft.com/azure/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure.
 
 - **Organize and govern across environments** - Get databases, Kubernetes clusters, and servers sprawling across on-premises, edge and multi-cloud environments under control by centrally organizing and governing from a single place.
 
