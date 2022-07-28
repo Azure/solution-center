@@ -58,4 +58,4 @@ ArcBox incurs normal Azure consumption charges for various Azure resources such 
 - [ArcBox for DevOps cost estimate](https://aka.ms/ArcBoxDevOpsCost)
 
 
-https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.sctestbranch=arcboxlinks&Microsoft_Azure_SolutionCenter=flight1#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/microsoft-azure-arcbox-v1
+https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.sctestbranch=staging&Microsoft_Azure_SolutionCenter=flight1#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/microsoft-azure-arcbox-v1
