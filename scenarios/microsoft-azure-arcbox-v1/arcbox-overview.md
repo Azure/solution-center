@@ -4,7 +4,7 @@
 
 Learn more about ArcBox options, features, and deployment methods.
 
-> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to appropriate ArcBox flavor guides to start the post-deployment automation that will complete your ArcBox configuration: [ArcBox Full](https://aka.ms/ArcBoxFullPortal){:target="_blank"}, [ArcBox IT Pros](https://aka.ms/ArcBoxITProPortal), [ArcBox DevOps](https://aka.ms/ArcBoxDevOpsPortal)**
+> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to appropriate ArcBox flavor guides to start the post-deployment automation that will complete your ArcBox configuration: [ArcBox Full](https://aka.ms/ArcBoxFullPortal){target="_blank"}, [ArcBox IT Pros](https://aka.ms/ArcBoxITProPortal), [ArcBox DevOps](https://aka.ms/ArcBoxDevOpsPortal)**
 
 ## Azure Arc Overview
 
@@ -56,3 +56,6 @@ ArcBox incurs normal Azure consumption charges for various Azure resources such 
 - [ArcBox Full cost estimate](https://aka.ms/ArcBoxFullCost)
 - [ArcBox for ITPro cost estimate](https://aka.ms/ArcBoxITProCost)
 - [ArcBox for DevOps cost estimate](https://aka.ms/ArcBoxDevOpsCost)
+
+
+https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.sctestbranch=arcboxlinks&Microsoft_Azure_SolutionCenter=flight1#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/microsoft-azure-arcbox-v1
