@@ -71,7 +71,7 @@
         },
         {
             "id": "batch",
-            "title": "Virtual machine scale sets (VMSS) for batch processing + rendering",
+            "title": "Virtual machine scale set for batch processing + rendering",
             "subTitle": "Best for development or test environments where virtual machine interuption isn't a concern.",
             "templateFileName": "batch.json",
             "cost": {
@@ -83,8 +83,9 @@
                 {
                     "pivotName": "virtualMachine",
                     "content": [
+                        "Interruptible Spot VM",
                         "Starts with 2 instances",
-                        "4-core F series VMSS Flex (Standard F8s v2)",
+                        "4-core F series VMSS Flex (F8s v2)",
                         "Ubuntu Server 20.04 LTS - Gen 2"
                     ]
                 },
@@ -104,22 +105,23 @@
         },
         {
             "id": "tryrestore",
-            "title": "Spot scale set with automatic restoration",
+            "title": "Virtual machine scale set with automatic restoration",
             "subTitle": "Best for scaling workloads expected to run for a longer duration, like big data analytics.",
             "templateFileName": "tryrestore.json",
             "cost": {
                 "type":"score",
-                "score": 3
+                "score": 2
             },
             "maintenance": { "score": 3, "tooltip": "The relative cost for maintenance of this solution."},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
+                        "Interruptible Spot VM",
+                        "Starts with 2 instances",
                         "8-core D series 32 GiB memory (D8as v4)",
                         "Ubuntu Server 20.04 LTS - Gen 2",
-                        "Attempt restoration after eviction for 2 hours",
-                        "Delete instances upon eviction"
+                        "Attempts restoration after eviction for 2 hours"
                     ]
                 },
                 {
