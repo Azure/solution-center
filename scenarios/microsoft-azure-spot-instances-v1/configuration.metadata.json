@@ -21,6 +21,14 @@
         {
             "resourceType": "Microsoft.Compute/sshPublicKeys",
             "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachinescalesets",
+            "type": "AzureResource"
         }
     ],
     "pivots": [
