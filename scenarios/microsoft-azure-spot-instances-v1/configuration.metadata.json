@@ -103,9 +103,10 @@
             ]
         },
         {
-            "id": "mix",
-            "title": "Mix regular and interruptible  VMs for consistent uptime",
-            "subTitle": "Best for scaling with continuous uninterruptible VMs and discounted interruptible Spot VMs, like big data analytics.",
+            "id": "tryrestore",
+            "title": "Spot scale set with automatic restoration",
+            "subTitle": "Best for scaling workloads expected to run for a longer duration, like big data analytics.",
+            "templateFileName": "tryrestore.json",
             "cost": {
                 "type":"score",
                 "score": 3
@@ -115,21 +116,23 @@
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Mix of 4 VMs and 6 interruptible Spot VMs",
-                        "4-core D series 16 GiB memory",
-                        "Ubuntu Server 20.04 LTS - Gen 2"
+                        "8-core D series 32 GiB memory (D8as v4)",
+                        "Ubuntu Server 20.04 LTS - Gen 2",
+                        "Attempt restoration after eviction for 2 hours",
+                        "Delete instances upon eviction"
                     ]
                 },
                 {
                     "pivotName": "virtualMachineScaleSet",
                     "content": [
-                        "Flexible scale set with auto-scale enabled"
+                        "Uniform virtual machine scale set",
+                        ""
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "128 GiB, attached SSD"
+                        "Ephemeral OS disk at no additional cost"
                     ]
                 }
             ]
