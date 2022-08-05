@@ -78,19 +78,7 @@
             "location": "[parameters('location')]",
             "properties": {
                 "securityRules": [
-                    {
-                        "name": "SSH",
-                        "properties": {
-                            "priority": 300,
-                            "protocol": "TCP",
-                            "access": "Allow",
-                            "direction": "Inbound",
-                            "sourceAddressPrefix": "*",
-                            "sourcePortRange": "*",
-                            "destinationAddressPrefix": "*",
-                            "destinationPortRange": "22"
-                        }
-                    }
+                    
                 ]
             }
         },
