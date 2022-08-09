@@ -38,7 +38,7 @@
             "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "AzureDefender"
+                "iconFileName": "MicrosoftDefender"
             }
         },
         {
@@ -62,8 +62,12 @@
     "pivots": [
         {
             "name": "arcServer",
-            "type": "AzureResource",
-            "azureResourceType": "Microsoft.HybridCompute/machines"
+            "type": "Custom",
+            "displayName": "Arc-enabled servers",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcServer"
+            }
         },
         {
             "name": "arcK8s",
@@ -88,7 +92,7 @@
         {
             "id": "Full",
             "title": "ArcBox Full",
-            "subTitle": "ArcBox Full includes all ArcBox features. Use this flavor if you want to experience everything ArcBox has to offer.",
+            "subTitle": "Access all ArcBox resources, including Azure Arc-enabled servers, Kubernetes and data services.",
             "cost": {
                 "value": "112",
                 "score": 3,
@@ -101,7 +105,7 @@
                     "pivotName": "arcServer",
                     "content": [
                         "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "Includes Arc-enabled SQL Server running on a Windows VM.",
                         "Enabled using native Azure virtual machines."
                     ]
                 },
@@ -109,23 +113,139 @@
                     "pivotName": "arcK8s",
                     "content": [
                         "Single node Rancher K3s cluster",
-                        "3-node Cluster API Kubernetes cluster"
+                        "3-node Cluster API Kubernetes cluster",
+                        "Includes Container Insights, and Microsoft Defender for Containers"
                     ]
                 },
                 {
                     "pivotName": "arcDataServices",
                     "content": [
-                        "Data controller",
-                        "SQL managed instance",
-                        "PostgreSQL"
+                        "Azure Arc Data Controller",
+                        "Azure Arc-enabled SQL Managed Instance",
+                        "Azure Arc-enabled PostgreSQL"
                     ]
+                }
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.Network/PublicIpAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Automation/AutomationAccounts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Policy",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzurePolicy"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/disks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Defender for Cloud",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "MicrosoftDefender"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/sshPublicKeys",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureMonitor"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcServer"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled SQL Server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcSQLServer"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled Kubernetes",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcKubernetes"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc Data Controller",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcDataController"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled SQL Managed Instance",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcSQLManagedInstance"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled PostgreSQL",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcPostgreSQL"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.Compute/virtualMachines",
+                    "type": "AzureResource"
                 }
             ]
         },
         {
             "id": "ITPro",
             "title": "ArcBox for IT Pros",
-            "subTitle": "ArcBox for IT Pros focuses specifically on Azure Arc-enabled servers and Azure Arc-enabled SQL Server functionality.",
+            "subTitle": "Limited to Azure Arc-enabled servers and SQL Server capabilities.",
             "cost": {
                 "value": "40",
                 "score": 2,
@@ -137,17 +257,96 @@
                 {
                     "pivotName": "arcServer",
                     "content": [
-                        "3 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL server running on a Windows VM.",
+                        "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                        "Includes Arc-enabled SQL Server running on a Windows VM.",
                         "Enabled using native Azure virtual machines."
                     ]
+                }
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.Network/PublicIpAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Automation/AutomationAccounts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Policy",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzurePolicy"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/disks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Defender for Cloud",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "MicrosoftDefender"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/sshPublicKeys",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureMonitor"
+                    }
+                },
+                {
+                    "resourceType": "Microsoft.Compute/virtualMachines",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcServer"
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Arc-enabled SQL Server",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcSQLServer"
+                    }
                 }
             ]
         },
         {
             "id": "DevOps",
             "title": "ArcBox DevOps",
-            "subTitle": "ArcBox for DevOps is a special “flavor” of ArcBox that is intended for users who want to experience Azure Arc-enabled Kubernetes capabilities in a sandbox environment.",
+            "subTitle": "Limited to Azure Arc-enabled Kubernetes capabilities.",
             "cost": {
                 "value": "57",
                 "score": 3,
@@ -201,7 +400,7 @@
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
-                        "iconFileName": "AzureDefender"
+                        "iconFileName": "MicrosoftDefender"
                     }
                 },
                 {
@@ -226,8 +425,13 @@
                     "type": "AzureResource"
                 },
                 {
-                    "resourceType": "Microsoft.Kubernetes/connectedClusters",
-                    "type": "AzureResource"
+                    "resourceType": "",
+                    "displayName": "Arc-enabled Kubernetes",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "ArcKubernetes"
+                    }
                 }
             ]
         }

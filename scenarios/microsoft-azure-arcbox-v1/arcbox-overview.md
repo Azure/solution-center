@@ -1,14 +1,14 @@
-# JumpStart ArcBox
+# Jumpstart ArcBox
 
 ## In This Guide
 
-Get hands on with Azure Arc with ArcBox, the definitive Azure Arc sandbox. Learn more about ArcBox options, features, and deployment methods.
+Learn more about ArcBox options, features, and deployment methods.
 
-> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to appropriate ArcBox flavor guides to start the post-deployment automation that will complete your ArcBox configuration: [ArcBox Full](https://azurearcjumpstart.io/azure_jumpstart_arcbox/full/), [ArcBox IT Pros](https://azurearcjumpstart.io/azure_jumpstart_arcbox/itpro/), [ArcBox DevOps](https://azurearcjumpstart.io/azure_jumpstart_arcbox/devops/)**
+> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to appropriate ArcBox flavor guides to start the post-deployment automation that will complete your ArcBox configuration: [ArcBox Full](https://aka.ms/ArcBoxFullPortal), [ArcBox IT Pros](https://aka.ms/ArcBoxITProPortal), [ArcBox DevOps](https://aka.ms/ArcBoxDevOpsPortal)**
 
 ## Azure Arc Overview
 
-For customers who want to simplify complex and distributed environments across on-premises, edge and multi-cloud, [Azure Arc](https://docs.microsoft.com/en-us/azure/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure.
+For customers who want to simplify complex and distributed environments across on-premises, edge and multi-cloud, [Azure Arc](https://docs.microsoft.com/azure/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure.
 
 - **Organize and govern across environments** - Get databases, Kubernetes clusters, and servers sprawling across on-premises, edge and multi-cloud environments under control by centrally organizing and governing from a single place.
 
