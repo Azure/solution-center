@@ -57,10 +57,6 @@
                 "iconType": "CustomIcon",
                 "iconFileName": "AzureMonitor"
             }
-        },
-        {
-            "resourceType": "Microsoft.Network/bastionHosts",
-            "type": "AzureResource"      
         }
     ],
     "pivots": [
@@ -243,6 +239,10 @@
                 {
                     "resourceType": "Microsoft.Compute/virtualMachines",
                     "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"      
                 }
             ]
         },
@@ -344,6 +344,10 @@
                         "iconType": "CustomIcon",
                         "iconFileName": "ArcSQLServer"
                     }
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"      
                 }
             ]
         },
@@ -436,6 +440,11 @@
                         "iconType": "CustomIcon",
                         "iconFileName": "ArcKubernetes"
                     }
+                }
+                ,
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"      
                 }
             ]
         }
