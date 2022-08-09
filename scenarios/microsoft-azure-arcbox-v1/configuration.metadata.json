@@ -64,7 +64,7 @@
             "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "AzureMonitor"
+                "iconFileName": "AzureBastion"
             }       
         }
     ],
