@@ -94,7 +94,7 @@
             "title": "ArcBox Full",
             "subTitle": "Access all ArcBox resources, including Azure Arc-enabled servers, Kubernetes and data services.",
             "cost": {
-                "value": "112",
+                "value": "117",
                 "score": 3,
                 "currency": "USD",
                 "type": "absolute",
@@ -239,6 +239,10 @@
                 {
                     "resourceType": "Microsoft.Compute/virtualMachines",
                     "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"      
                 }
             ]
         },
@@ -247,7 +251,7 @@
             "title": "ArcBox for IT Pros",
             "subTitle": "Limited to Azure Arc-enabled servers and SQL Server capabilities.",
             "cost": {
-                "value": "40",
+                "value": "45",
                 "score": 2,
                 "currency": "USD",
                 "type": "absolute",
@@ -340,6 +344,10 @@
                         "iconType": "CustomIcon",
                         "iconFileName": "ArcSQLServer"
                     }
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"      
                 }
             ]
         },
@@ -348,7 +356,7 @@
             "title": "ArcBox DevOps",
             "subTitle": "Limited to Azure Arc-enabled Kubernetes capabilities.",
             "cost": {
-                "value": "57",
+                "value": "62",
                 "score": 3,
                 "currency": "USD",
                 "type": "absolute",
@@ -432,6 +440,11 @@
                         "iconType": "CustomIcon",
                         "iconFileName": "ArcKubernetes"
                     }
+                }
+                ,
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"      
                 }
             ]
         }
