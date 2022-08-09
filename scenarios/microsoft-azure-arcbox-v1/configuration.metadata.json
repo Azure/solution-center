@@ -59,13 +59,8 @@
             }
         },
         {
-            "resourceType": "",
-            "displayName": "Azure Bastion"
-            "type": "Custom",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "AzureBastion"
-            }       
+            "resourceType": "Microsoft.Network/bastionHosts",
+            "type": "AzureResource"      
         }
     ],
     "pivots": [
