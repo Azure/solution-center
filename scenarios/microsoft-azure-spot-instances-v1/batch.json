@@ -5,19 +5,13 @@
         "location": {
             "type": "string"
         },
-        "virtualNetworkId": {
-            "type": "string"
-        },
         "virtualNetworkName": {
             "type": "string"
         },
         "networkSecurityGroups": {
             "type": "array"
         },
-        "networkInterfaceConfigurations": {
-            "type": "array"
-        },
-        "vmName": {
+        "networkInterfaceName": {
             "type": "string"
         },
         "virtualMachineScaleSetName": {
@@ -165,27 +159,18 @@
                         "copy": [
                             {
                                 "name": "networkInterfaceConfigurations",
-                                "count": "[length(parameters('networkInterfaceConfigurations'))]",
+                                "count": "1",
                                 "input": {
-                                    "name": "[parameters('networkInterfaceConfigurations')[copyIndex('networkInterfaceConfigurations')].name]",
+                                    "name": "[parameters('networkInterfaceName')]",
                                     "properties": {
                                         "primary": true,
                                         "enableAcceleratedNetworking": false,
                                         "ipConfigurations": [
                                             {
-                                                "name": "[concat(take(parameters('networkInterfaceConfigurations')[copyIndex('networkInterfaceConfigurations')].name, sub(80, length('-defaultIpConfiguration'))), '-defaultIpConfiguration')]",
-                                                "properties": {
-                                                    "subnet": {
-                                                        "id": "[parameters('networkInterfaceConfigurations')[copyIndex('networkInterfaceConfigurations')].subnetId]"
-                                                    },
-                                                    "primary": true,
-                                                    "applicationGatewayBackendAddressPools": [],
-                                                    "loadBalancerBackendAddressPools": [],
-                                                    "publicIPAddressConfiguration": "[if( equals( parameters('networkInterfaceConfigurations')[copyIndex('networkInterfaceConfigurations')].pipName, ''), json('null'), union(json(concat('{\"name\": \"', parameters('networkInterfaceConfigurations')[copyIndex('networkInterfaceConfigurations')].pipName, '\"}')),json('{\"properties\": { \"idleTimeoutInMinutes\": 15}}')))]"
-                                                }
+                                                
                                             }
                                         ],
-                                        "networkSecurityGroup": "[if( equals( parameters('networkInterfaceConfigurations')[copyIndex('networkInterfaceConfigurations')].nsgId, ''), json('null'),json(concat('{\"id\": \"', parameters('networkInterfaceConfigurations')[copyIndex('networkInterfaceConfigurations')].nsgId, '\"}')))]"
+                                        "networkSecurityGroup": ""
                                     }
                                 }
                             }
