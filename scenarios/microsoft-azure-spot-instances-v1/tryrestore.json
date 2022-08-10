@@ -5,9 +5,6 @@
         "location": {
             "type": "string"
         },
-        "virtualNetworkId": {
-            "type": "string"
-        },
         "virtualNetworkName": {
             "type": "string"
         },
@@ -17,9 +14,6 @@
         "networkInterfaceConfigurations": {
             "type": "array"
         },
-        "vmName": {
-            "type": "string"
-        },
         "virtualMachineScaleSetName": {
             "type": "string"
         },
@@ -28,7 +22,6 @@
         }
     },
     "variables": {
-        "storageApiVersion": "2019-06-01",
         "virtualMachineScaleSetApiVersion": "2021-07-01",
         "namingInfix": "[toLower(substring(concat(parameters('virtualMachineScaleSetName'), uniqueString(resourceGroup().id)), 0, 9))]"
     },
