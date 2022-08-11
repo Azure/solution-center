@@ -81,6 +81,7 @@
             "id": "ProdVM",
             "title": "Confidential production ready virtual machine",
             "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
+            "templateFileName": "azuredeploy.json",
             "cost": {
                 "type": "score",
                 "score": 2
@@ -111,6 +112,7 @@
             "id": "ProdVMSS",
             "title": "Confidential production ready VMSS",
             "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
+            "templateFileName": "azuredeploy.json",
             "cost": {
                 "type": "score",
                 "score": 3
