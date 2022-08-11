@@ -49,7 +49,7 @@
         {
             "id": "DevTestVM",
             "title": "Confidential dev/test virtual machine",
-            "templateFileName": "devtest.json",
+            "templateFileName": "azuredeploy.json",
             "subTitle": "Best for testing the security features functionality of a confidential virtual machine.",
             "cost": {
                 "type": "score",
