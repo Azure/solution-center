@@ -1,10 +1,13 @@
 {
-  "icon": null,
+  "icon": {
+    "resourceType": "Microsoft.Network/PublicIpAddresses",
+    "type": "AzureResource"
+  },
   "title": "Spot instances",
   "shortDescription": "Purchase unused compute capacity at significant cost savings, deploying workloads that can handle interruptions and don't need to be completed within a specific period of time.",
   "cost": null,
   "activationString": "Click to view details of the Solution",
-  "keywords": ["Sample","solution", "template"],
+  "keywords": ["Spot","low cost", "interruptible"],
   "detailsDescription": "Soe more contextual details about what happens with this solution and why this is useful and why a user should use it.",
   "learnMoreLink": "http://go.microsoft.com/fwlink/?LinkId=2104270",
   "learnMoreLinkText": "Learn more about Azure Spot instances",

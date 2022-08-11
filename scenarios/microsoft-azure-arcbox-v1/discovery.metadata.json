@@ -1,5 +1,5 @@
 {
-  "icon": null,
+  "icon": "Microsoft.Arc/all",
   "title": "Get hands-on with ArcBox",
   "shortDescription": "This sample scenario template helps illustrate how the metadata will show up in solutions center",
   "cost": null,
