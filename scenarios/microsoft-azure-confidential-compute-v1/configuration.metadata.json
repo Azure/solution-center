@@ -44,7 +44,7 @@
             "azureResourceType": "Microsoft.Compute/disks"
         }
     ],
-    "documentationFileName": "./sampledocs.md",
+    "documentationFileName": null,
     "options": [
         {
             "id": "DevTestVM",
