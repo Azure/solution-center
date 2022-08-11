@@ -8,8 +8,43 @@
     ],
     "options": [
         {
-            
+            "id": "unique_id",
+            "title": "Solution title",
+            "subTitle": "A one sentence description of your solution.",
+            "cost": {
+                "type": "score",
+                "score": 1,
+                "tooltip": "A relative cost measurement across the configurations."
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "uniqueColumnName",
+                    "content": [
+                        "A description of what will get deployed.",
+                        "A second description of the features specific to this configuration."
+                    ]
+                }
+            ]
+
         }
     ],
-    "associatedResources": []
+    "associatedResources": [
+        {
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "type": "AzureResource"
+        },
+        {  
+            "resourceType": "",
+            "displayName": "Custom resource",
+            "type": "Custom",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "MicrosoftDefender"
+            }
+        }
+    ]
 }
