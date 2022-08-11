@@ -3,80 +3,61 @@
     "overviewContent": "Azure today provides powerful controls around protecting data at rest and data in transit. Aligned with the Confidential Computing Consortium (CCC) definition, Azure confidential computing protects data in use using hardware-based Trusted Execution Environments (TEEs), which provides customers hardware-backed security protection of code execution and data. Azure confidential VMs are designed to offer a new, hardware-based TEE leveraging SEV-SNP, which hardens guest protections to deny the hypervisor and other host management code access to VM memory and state, protecting against operator access.  Customers in regulated industries such as banking, healthcare, and public sector, can easily migrate their legacy workloads from on-prem environments to the cloud with minimal performance impact and without code changes by leveraging Azure confidential VMs(DCasv5/ECasv5).",
     "associatedResources": [
         {
-            "resourceName": "Public IP address",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "Virtual network",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "245"
-            }
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "Network security group",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "SSH key",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
+            "resourceType": "Microsoft.Compute/disks",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "Network interface",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
+            "resourceType": "Microsoft.Compute/sshPublicKeys",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/networkinterfaces",
+            "type": "AzureResource"
         }
     ],
     "pivots": [
         {
             "name": "virtualMachine",
-            "displayName": "Virtual machines",
-             "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachines"
         },
         {
             "name": "virtualMachineScaleSet",
-            "displayName": "Virtual machine scale set",
-             "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
         },
         {
             "name": "disks",
-            "displayName": "Disks",
-             "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/disks"
         }
     ],
-    "documentationFileName": "./sampledocs.md",
+    "documentationFileName": null,
     "options": [
         {
             "id": "DevTestVM",
             "title": "Confidential dev/test virtual machine",
-            "templateFileName": "devtest.json",
+            "templateFileName": "azuredeploy.json",
             "subTitle": "Best for testing the security features functionality of a confidential virtual machine.",
             "cost": {
-                "value": "20",
-                "score": 1,
-                "currency": "USD"
+                "type": "score",
+                "score": 1
             },
-            "maintenanceScore": 1,
+            "maintenance": {
+                "score": 1
+            },
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
@@ -100,12 +81,14 @@
             "id": "ProdVM",
             "title": "Confidential production ready virtual machine",
             "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
+            "templateFileName": "azuredeploy.json",
             "cost": {
-                "value": "40",
-                "score": 2,
-                "currency": "USD"
+                "type": "score",
+                "score": 2
             },
-            "maintenanceScore": 2,
+            "maintenance": {
+                "score": 2
+            },
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
@@ -129,12 +112,14 @@
             "id": "ProdVMSS",
             "title": "Confidential production ready VMSS",
             "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
+            "templateFileName": "azuredeploy.json",
             "cost": {
-                "value": "40",
-                "score": 3,
-                "currency": "USD"
+                "type": "score",
+                "score": 3
             },
-            "maintenanceScore": 3,
+            "maintenance": {
+                "score": 3
+            },
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
