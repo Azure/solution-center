@@ -1,74 +1,71 @@
 {
+    "$schema": "../../definitions/configuration.metadata.schema.json",
     "overviewContent": "Deploy a highly scalable, cost-effective Spot virtual machine scale set for your applications that don't need to be completed within a certain timeframe. Run workloads for development, testing, quality assurance, advanced analytics, big data, machine learning and AI, batch jobs, rendering and transcoding of videos, graphics, and images at a very low cost.",
     "associatedResources": [
         {
-            "resourceName": "Public IP address",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "141"
-            }
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "Virtual network",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "245"
-            }
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "Network security group",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "SSH key",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
+            "resourceType": "Microsoft.Compute/disks",
+            "type": "AzureResource"
         },
         {
-            "resourceName": "Network interface",
-            "icon": {
-                "iconType": "FrameworkIcon",
-                "iconNumber": "143"
-            }
+            "resourceType": "Microsoft.Compute/sshPublicKeys",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachinescalesets",
+            "type": "AzureResource"
         }
     ],
     "pivots": [
         {
             "name": "virtualMachine",
-            "displayName": "Virtual machines"
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualmachines"
         },
         {
             "name": "virtualMachineScaleSet",
-            "displayName": "Virtual machine scale set"
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualmachinescalesets"
         },
         {
             "name": "disks",
-            "displayName": "Disks"
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/disks"
         }
     ],
-    "documentationPath": "/sampledocs.md",
+    "documentationFileName": "",
     "options": [
         {
-            "id": "Noncritical",
+            "id": "noncritical",
             "title": "Virtual machine for non-critical workloads",
             "subTitle": "Best for one-time-use applications, proof of concept, and prototyping.",
+            "templateFileName": "noncritical.json",
             "cost": {
-                "value": "20",
-                "score": 1,
-                "currency": "USD"
+                "type":"score",
+                "score": 1
             },
-            "maintenanceScore": 1,
+            "maintenance": { "score": 1, "tooltip": "The relative cost for maintenance of this solution."},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
                         "Interruptible Spot VM",
-                        "2-core D series (D2s_v3)",
+                        "2-core D series (Standard D2s v4)",
                         "Ubuntu Server 20.04 LTS - Gen 2"
                     ]
                 },
@@ -81,21 +78,22 @@
             ]
         },
         {
-            "id": "Batch",
-            "title": "Virtual machine scale sets (VMSS) for batch processing + rendering",
+            "id": "batch",
+            "title": "Virtual machine scale set for batch processing + rendering",
             "subTitle": "Best for development or test environments where virtual machine interuption isn't a concern.",
+            "templateFileName": "batch.json",
             "cost": {
-                "value": "40",
-                "score": 2,
-                "currency": "USD"
+                "type":"score",
+                "score": 2
             },
-            "maintenanceScore": 2,
+            "maintenance": { "score": 2, "tooltip": "The relative cost for maintenance of this solution."},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
+                        "Interruptible Spot VM",
                         "Starts with 2 instances",
-                        "4-core F series VMSS Flex",
+                        "4-core F series VMSS Flex (F8s v2)",
                         "Ubuntu Server 20.04 LTS - Gen 2"
                     ]
                 },
@@ -114,34 +112,37 @@
             ]
         },
         {
-            "id": "Mix",
-            "title": "Mix regular and interruptible  VMs for consistent uptime",
-            "subTitle": "Best for scaling with continuous uninterruptible VMs and discounted interruptible Spot VMs, like big data analytics.",
+            "id": "tryrestore",
+            "title": "Virtual machine scale set with automatic restoration",
+            "subTitle": "Best for scaling workloads expected to run for a longer duration, like big data analytics.",
+            "templateFileName": "tryrestore.json",
             "cost": {
-                "value": "40",
-                "score": 3,
-                "currency": "USD"
+                "type":"score",
+                "score": 2
             },
-            "maintenanceScore": 3,
+            "maintenance": { "score": 3, "tooltip": "The relative cost for maintenance of this solution."},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Mix of 4 VMs and 6 interruptible Spot VMs",
-                        "4-core D series 16 GiB memory",
-                        "Ubuntu Server 20.04 LTS - Gen 2"
+                        "Interruptible Spot VM",
+                        "Starts with 2 instances",
+                        "8-core D series 32 GiB memory (D8as v4)",
+                        "Ubuntu Server 20.04 LTS - Gen 2",
+                        "Attempts restoration after eviction for 2 hours"
                     ]
                 },
                 {
                     "pivotName": "virtualMachineScaleSet",
                     "content": [
-                        "Flexible scale set with auto-scale enabled"
+                        "Uniform virtual machine scale set",
+                        ""
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "128 GiB, attached SSD"
+                        "Ephemeral OS disk at no additional cost"
                     ]
                 }
             ]
