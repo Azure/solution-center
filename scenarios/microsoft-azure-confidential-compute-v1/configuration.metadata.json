@@ -36,7 +36,7 @@
         {
             "name": "virtualMachineScaleSet",
             "type": "AzureResource",
-            "azureResourceType": "Microsoft.Compute/virtualMachineScaleSet"
+            "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
         },
         {
             "name": "disks",
