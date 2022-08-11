@@ -1,12 +1,9 @@
 {
-  "icon": {
-    "resourceType": "Microsoft.Network/PublicIpAddresses",
-    "type": "AzureResource"
-  },
+  "icon": "Spot-Icon.svg",
   "title": "Spot instances",
   "shortDescription": "Purchase unused compute capacity at significant cost savings, deploying workloads that can handle interruptions and don't need to be completed within a specific period of time.",
   "cost": null,
-  "activationString": "Click to view details of the Solution",
+  "activationString": "Click to view details of the solution",
   "keywords": ["Spot","low cost", "interruptible"],
   "detailsDescription": "Soe more contextual details about what happens with this solution and why this is useful and why a user should use it.",
   "learnMoreLink": "http://go.microsoft.com/fwlink/?LinkId=2104270",
@@ -14,9 +11,6 @@
   "highlights": [
     {
       "content": "Ideal for quick proof of concept applications when workload interruption is tolerable."
-    },
-    {
-      "content": "Scale with a mix of on-demand VMs and interruptible Spot VMs."
     },
     {
       "content": "Ideal for scalable development, quality assurance, and testing enviroments."

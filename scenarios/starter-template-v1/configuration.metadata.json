@@ -1,4 +1,15 @@
 {
-    "$schema": "../../definitions/configuration.metadata.schema.json"
-    
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "",
+    "pivots": [
+        {
+            
+        }
+    ],
+    "options": [
+        {
+            
+        }
+    ],
+    "associatedResources": []
 }

@@ -1,21 +1,19 @@
 {
   "icon": "Microsoft.Arc/all",
   "title": "Get hands-on with ArcBox",
-  "shortDescription": "This sample scenario template helps illustrate how the metadata will show up in solutions center",
+  "shortDescription": "Use ArcBox to deploy an Azure Arc sandbox in less than an hour.",
   "cost": null,
-  "activationString": "Click to view details of the Solution",
+  "activationString": "View details of the solution",
   "keywords": ["Sample","solution", "template"],
-  "detailsDescription": "Soe more contextual details about what happens with this solution and why this is useful and why a user should use it.",
-  "learnMoreLink": "aka.ms/learnmoreaboutme",
-  "learnMoreLinkText": "Learn more about Sample solution",
+  "detailsDescription": "See more contextual details about what happens with this solution and why this is useful and why a user should use it.",
+  "learnMoreLink": "https://aka.ms/azure-arc-jumpstart-arcbox",
+  "learnMoreLinkText": "Learn more about ArcBox",
   "highlights": [
     {
-      "content": "Some highlight content 1",
-      "highlightLearnMoreLink": "https://aka.ms/hightlight1",
-      "highlightLearnMoreLinkText": "Learn more about highlight 1"
+      "content": "A Hyper-V host is deployed with guest virtual machines connected as Arc-enabled servers with as well as a single virtual machine also connected as Arc-enabled SQL server."
     },
     {
-      "content": "Some highlight content 2"
+      "content": "ArcBox is great for training, demos, testing, and exploration."
     }
   ]
 }
