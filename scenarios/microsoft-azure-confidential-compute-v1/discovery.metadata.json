@@ -1,13 +1,13 @@
 {
-  "icon": null,
+  "icon": "Microsoft.Network/virtualMachineScaleSets",
   "title": "Confidential virtual machine",
   "shortDescription": "All the features of trusted virtual machine and more with added hardware-guaranteed confidentiality.",
   "cost": null,
-  "activationString": "Click to view details of the Solution",
+  "activationString": "View details of the solution",
   "keywords": ["Sample","solution", "template"],
   "detailsDescription": "See more contextual details about what happens with this solution and why this is useful and why a user should use it.",
-  "learnMoreLink": "http://go.microsoft.com/fwlink/?LinkId=2104270",
-  "learnMoreLinkText": "Learn more about Azure Spot instances",
+  "learnMoreLink": "https://docs.microsoft.com/azure/confidential-computing/quick-create-confidential-vm-portal-amd",
+  "learnMoreLinkText": "Learn more",
   "highlights": [
     {
       "content": "Virtual machine memory encryption with integrity protection, where encryption key is protected by hardware and out of reach of sofware."
