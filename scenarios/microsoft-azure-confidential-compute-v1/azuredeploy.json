@@ -110,17 +110,6 @@
         "description": "Password or ssh key for the Virtual Machine."
       }
     },
-    "bootDiagnostics": {
-      "type": "string",
-      "defaultValue": "false",
-      "allowedValues": [
-        "true",
-        "false"
-      ],
-      "metadata": {
-        "description": "Boot diagnostics setting of the VM."
-      }
-    },
     "securityType": {
       "type": "string",
       "defaultValue": "DiskWithVMGuestState",
@@ -131,19 +120,8 @@
       "metadata": {
           "description": "VM security type."
       }
-    },
-    "secureBootEnabled": {
-      "type": "string",
-      "defaultValue": "true",
-      "allowedValues": [
-        "true"
-      ],
-      "metadata": {
-        "description": "Secure Boot setting of the VM."
-      }
     }
   },
-
   "variables": {
     "imageList": {
       "Windows Server 2022 Gen 2": {
@@ -327,7 +305,7 @@
         },
         "securityProfile": {
           "uefiSettings" : {
-            "secureBootEnabled": "[parameters('secureBootEnabled')]",
+            "secureBootEnabled": "true",
             "vTpmEnabled": "true"
           },
           "securityType" : "ConfidentialVM"
