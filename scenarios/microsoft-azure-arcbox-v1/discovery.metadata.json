@@ -8,10 +8,16 @@
   "detailsDescription": "See more contextual details about what happens with this solution and why this is useful and why a user should use it.",
   "highlights": [
     {
-      "content": "A Hyper-V host is deployed with guest virtual machines connected as Arc-enabled servers with as well as a single virtual machine also connected as Arc-enabled SQL server."
+      "content": "Use Azure Arc to extend your non-Azure infrastructure into Azure."
+    },
+    {
+      "content": "ArcBox deploys a Hyper-V host with guest virtual machines and enables them as Arc-enabled servers."
     },
     {
       "content": "ArcBox is great for training, demos, testing, and exploration."
+    },
+    {
+      "content": "Also includes the option to deploy a virtual machine as an Azure Arc-enabled SQL server."
     }
   ]
 }
