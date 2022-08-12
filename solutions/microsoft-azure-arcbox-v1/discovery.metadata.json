@@ -1,10 +1,17 @@
 {
-  "icon": "Microsoft.Arc/all",
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Arc/all"
+  },
   "title": "Get hands-on with ArcBox",
   "shortDescription": "Use ArcBox to deploy an Azure Arc sandbox in less than an hour.",
   "cost": null,
   "activationString": "View details of the solution",
-  "keywords": ["Sample","solution", "template"],
+  "keywords": [
+    "Sample",
+    "solution",
+    "template"
+  ],
   "detailsDescription": "See more contextual details about what happens with this solution and why this is useful and why a user should use it.",
   "highlights": [
     {
