@@ -45,7 +45,7 @@
         }
     ],
     "documentationFileName": null,
-    "options": [
+    "configurations": [
         {
             "id": "DevTestVM",
             "title": "Confidential dev/test virtual machine",
