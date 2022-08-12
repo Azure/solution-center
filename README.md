@@ -74,3 +74,7 @@ Discovery metadata is how you define your solution in a solution grouping page. 
 #### **An example configuration with three pivots**
 See `pivots` and `options` in `configuration.metadata` for implementation
 ![configuration](images/configuration.png)
+
+## How to submit a solution group
+
+So you have at least 3 solutions you'd like to help customers compare? Copy the `ExampleGroup.json` file under `scenariogroups` in the repository and add the solution IDs. Solution groups reference each individual `discovery.metadata.json` file to render the page.
