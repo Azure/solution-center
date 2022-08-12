@@ -6,8 +6,6 @@
   "activationString": "View details of the solution",
   "keywords": ["Sample","solution", "template"],
   "detailsDescription": "See more contextual details about what happens with this solution and why this is useful and why a user should use it.",
-  "learnMoreLink": "https://docs.microsoft.com/azure/confidential-computing/quick-create-confidential-vm-portal-amd",
-  "learnMoreLinkText": "Learn more",
   "highlights": [
     {
       "content": "Virtual machine memory encryption with integrity protection, where encryption key is protected by hardware and out of reach of sofware."
