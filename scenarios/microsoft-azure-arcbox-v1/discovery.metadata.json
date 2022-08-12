@@ -6,8 +6,6 @@
   "activationString": "View details of the solution",
   "keywords": ["Sample","solution", "template"],
   "detailsDescription": "See more contextual details about what happens with this solution and why this is useful and why a user should use it.",
-  "learnMoreLink": "https://aka.ms/azure-arc-jumpstart-arcbox",
-  "learnMoreLinkText": "Learn more about ArcBox",
   "highlights": [
     {
       "content": "A Hyper-V host is deployed with guest virtual machines connected as Arc-enabled servers with as well as a single virtual machine also connected as Arc-enabled SQL server."
