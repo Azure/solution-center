@@ -3,7 +3,7 @@
     "iconType": "AssetIcon",
     "asset": "Microsoft.Arc/all"
   },
-  "title": "Get hands-on with ArcBox",
+  "title": "Get hands-on with ArcBox (preview)",
   "shortDescription": "Use ArcBox to deploy an Azure Arc sandbox in less than an hour.",
   "cost": null,
   "activationString": "View details of the solution",

@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Ready to experience managing infrastructure with our hybrid cloud platform? ArcBox provides an easy-to-deploy sandbox for all things Azure Arc. It is completely self-contained within a single subscription and resource group, giving you room to train, demo, test, and explore with a pre-installed set of tools.",
+    "overviewContent": "Ready to experience managing infrastructure with our hybrid cloud platform? ArcBox provides an easy-to-deploy sandbox for all things Azure Arc. It is completely self-contained within a single subscription and resource group, giving you room to train, demo, test, and explore with a pre-installed set of tools. Note: This is a 2-step deployment process. Please refer to Documentation tab.",
     "documentationFileName": "arcbox-overview.md",
     "associatedResources": [
         {
