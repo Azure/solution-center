@@ -6,8 +6,6 @@
   "activationString": "View details of the solution",
   "keywords": ["Spot","low cost", "interruptible"],
   "detailsDescription": "Soe more contextual details about what happens with this solution and why this is useful and why a user should use it.",
-  "learnMoreLink": "http://go.microsoft.com/fwlink/?LinkId=2104270",
-  "learnMoreLinkText": "Learn more about Azure Spot instances",
   "highlights": [
     {
       "content": "Ideal for quick proof of concept applications when workload interruption is tolerable."
