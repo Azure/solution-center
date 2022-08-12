@@ -1,7 +1,7 @@
 {
   "icon": {
     "iconType": "CustomIcon",
-    "iconFileName": "Spot-Icon.svg"
+    "iconFileName": "Spot-Icon"
   },
   "title": "Spot instances",
   "shortDescription": "Purchase unused compute capacity at significant cost savings, deploying workloads that can handle interruptions and don't need to be completed within a specific period of time.",
