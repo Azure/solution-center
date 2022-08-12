@@ -1,5 +1,8 @@
 {
-  "icon": "Microsoft.Network/virtualMachineScaleSets",
+  "icon":{
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Network/virtualMachineScaleSets"
+  },
   "title": "Confidential virtual machine",
   "shortDescription": "All the features of trusted virtual machine and more with added hardware-guaranteed confidentiality.",
   "cost": null,

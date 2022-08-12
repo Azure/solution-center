@@ -1,10 +1,17 @@
 {
-  "icon": "Spot-Icon.svg",
+  "icon": {
+    "iconType": "CustomIcon",
+    "iconFileName": "Spot-Icon.svg"
+  },
   "title": "Spot instances",
   "shortDescription": "Purchase unused compute capacity at significant cost savings, deploying workloads that can handle interruptions and don't need to be completed within a specific period of time.",
   "cost": null,
   "activationString": "View details of the solution",
-  "keywords": ["Spot","low cost", "interruptible"],
+  "keywords": [
+    "Spot",
+    "low cost",
+    "interruptible"
+  ],
   "detailsDescription": "Soe more contextual details about what happens with this solution and why this is useful and why a user should use it.",
   "highlights": [
     {
