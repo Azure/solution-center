@@ -3,10 +3,12 @@
     "overviewContent": "",
     "pivots": [
         {
-            
+            "type": "Custom",
+            "name": "uniqueColumnName",
+            "displayName": "Unique Column Name"
         }
     ],
-    "options": [
+    "configurations": [
         {
             "id": "unique_id",
             "title": "Solution title",
@@ -29,7 +31,6 @@
                     ]
                 }
             ]
-
         }
     ],
     "associatedResources": [
@@ -37,7 +38,7 @@
             "resourceType": "Microsoft.Compute/virtualMachines",
             "type": "AzureResource"
         },
-        {  
+        {
             "resourceType": "",
             "displayName": "Custom resource",
             "type": "Custom",

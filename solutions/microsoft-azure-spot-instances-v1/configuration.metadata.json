@@ -49,7 +49,7 @@
         }
     ],
     "documentationFileName": "",
-    "options": [
+    "configurations": [
         {
             "id": "noncritical",
             "title": "Virtual machine for non-critical workloads",
