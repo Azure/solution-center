@@ -27,7 +27,7 @@
                 "$ref": "#/definitions/pivot"
             }
         },
-        "options": {
+        "configurations": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/configurationOption"
