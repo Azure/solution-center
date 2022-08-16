@@ -8,7 +8,7 @@ Learn more about ArcBox options, features, and deployment methods.
 
 ## Azure Arc Overview
 
-For customers who want to simplify complex and distributed environments across on-premises, edge and multi-cloud, [Azure Arc](https://docs.microsoft.com/azure/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure.
+For customers who want to simplify complex and distributed environments across on-premises, edge and multi-cloud, [Azure Arc](https://docs.microsoft.com/en-us/azure/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure.
 
 - **Organize and govern across environments** - Get databases, Kubernetes clusters, and servers sprawling across on-premises, edge and multi-cloud environments under control by centrally organizing and governing from a single place.
 
@@ -31,8 +31,6 @@ ArcBox is a solution that provides an easy to deploy sandbox for all things Azur
 ### ArcBox "Flavors"
 
 ArcBox comes in multiple "flavors", or configurations, which can be selected to best suit your needs. Currently, the available flavors are:
-
-> **NOTE: In the preview phase of the ArcBox portal experience, the "ArcBox for DevOps" flavor is currently only available from the [Azure Arc Jumpstart website](https://azurearcjumpstart.io/azure_jumpstart_arcbox/DevOps) and will be coming to the Azure portal soon.**
 
 - [ArcBox "Full"](https://azurearcjumpstart.io/azure_jumpstart_arcbox/Full)
     The core ArcBox experience with Azure Arc-enabled servers, Kubernetes, and data services capabilities.
