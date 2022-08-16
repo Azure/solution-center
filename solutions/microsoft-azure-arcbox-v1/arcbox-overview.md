@@ -4,7 +4,7 @@
 
 Learn more about ArcBox options, features, and deployment methods.
 
-> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to appropriate ArcBox flavor guides to start the post-deployment automation that will complete your ArcBox configuration: [ArcBox Full](https://aka.ms/ArcBoxFullPortal), [ArcBox IT Pros](https://aka.ms/ArcBoxITProPortal), [ArcBox DevOps](https://aka.ms/ArcBoxDevOpsPortal)**
+> **NOTE: Successful deployment of ArcBox requires 2 steps. The first of which is done through the Portal flow you are viewing now. Upon completion of this process, please refer to appropriate ArcBox flavor guides to start the post-deployment automation that will complete your ArcBox configuration: [ArcBox Full](https://aka.ms/ArcBoxFullPortal), [ArcBox IT Pros](https://aka.ms/ArcBoxITProPortal)**
 
 ## Azure Arc Overview
 
@@ -32,6 +32,8 @@ ArcBox is a solution that provides an easy to deploy sandbox for all things Azur
 
 ArcBox comes in multiple "flavors", or configurations, which can be selected to best suit your needs. Currently, the available flavors are:
 
+> **NOTE: In the preview phase of the ArcBox portal experience, the "ArcBox for DevOps" flavor is currently only available from the [Azure Arc Jumpstart website](https://azurearcjumpstart.io/azure_jumpstart_arcbox/DevOps) and will be coming to the Azure portal soon.**
+
 - [ArcBox "Full"](https://azurearcjumpstart.io/azure_jumpstart_arcbox/Full)
     The core ArcBox experience with Azure Arc-enabled servers, Kubernetes, and data services capabilities.
 
@@ -42,10 +44,10 @@ ArcBox comes in multiple "flavors", or configurations, which can be selected to 
 
     ![ArcBox for IT Pros architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_itpro.png)
 
-- [ArcBox for DevOps](https://azurearcjumpstart.io/azure_jumpstart_arcbox/DevOps)
+<!-- - [ArcBox for DevOps](https://azurearcjumpstart.io/azure_jumpstart_arcbox/DevOps)
     This essential Azure Arc-enabled Kubernetes sandbox includes capabilities such as GitOps, Open Service Mesh (OSM), secrets management, monitoring, and more.
 
-    ![ArcBox for DevOps architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_devops.png)
+    ![ArcBox for DevOps architecture diagram](https://raw.githubusercontent.com/microsoft/azure_arc/main/docs/azure_jumpstart_arcbox/arch_devops.png) -->
 
 To get started with one of the flavors of ArcBox, click the relevant links above to view the detailed README for each flavor. For additional questions, please review the [Jumpstart FAQ](https://aka.ms/Jumpstart-FAQ).
 
@@ -55,4 +57,4 @@ ArcBox incurs normal Azure consumption charges for various Azure resources such 
 
 - [ArcBox Full cost estimate](https://aka.ms/ArcBoxFullCost)
 - [ArcBox for ITPro cost estimate](https://aka.ms/ArcBoxITProCost)
-- [ArcBox for DevOps cost estimate](https://aka.ms/ArcBoxDevOpsCost)
+<!-- - [ArcBox for DevOps cost estimate](https://aka.ms/ArcBoxDevOpsCost) -->
