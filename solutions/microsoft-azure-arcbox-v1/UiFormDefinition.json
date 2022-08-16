@@ -145,7 +145,7 @@
             "windowsAdminUsername": "[steps('Create').vmClientUserName]",
             "windowsAdminPassword": "[steps('Create').vmClientCredentials.password]",
             "logAnalyticsWorkspaceName": "[parameters('logAnalyticsWorkspaceName')]",
-            "flavor": "[if(equals(parameters('flavor'), 'arcBoxITPros'), 'ITPro', if(equals(parameters('flavor'), 'arcBoxFull'), 'Full', 'DevOps'))]"
+            "flavor": "[if(equals(parameters('flavor'), 'arcBoxITPros'), 'ITPro', if(equals(parameters('flavor'), 'arcBoxFull'), 'Full'))]"
         }
     }
 }
