@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "lampCommon": {
+            "metadata": {
+                "description": "Common LAMP values"
+            },
+            "type": "object"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').vnetName]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[concat(parameters('lampCommon').vNetAddressSpace,'/16')]"
+                    ]
+                }
+            }
+        }
+    ],
+    "variables": {
+        "documentation01": "This sub-template creates a virtual network when no customer BYO-vnet is specified"
+    }
+}
