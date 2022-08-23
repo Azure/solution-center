@@ -94,10 +94,12 @@
             }
         }
     ],
+    "documentationFileName": null,
     "configurations": [
         {
             "id": "Small",
             "title": "A starter solution for dev/test scenarios",
+            "templateFileName": "azuredeploy.json",
             "subTitle": "A very affordable way to get started...",
             "cost": {
                 "value": 150,
@@ -122,6 +124,7 @@
         {
             "id": "Large",
             "title": "A starter solution for dev/test scenarios",
+            "templateFileName": "azuredeploy.json",
             "subTitle": "A very affordable way to get started...",
             "cost": {
                 "value": 999,
