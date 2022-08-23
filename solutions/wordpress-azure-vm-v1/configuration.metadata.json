@@ -1,0 +1,159 @@
+{
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "Deploy WordPress the easy way!",
+
+    "associatedResources": [
+        {
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/disks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/sshPublicKeys",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/networkinterfaces",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.DBforMySQL/flexibleServers",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Cache/Redis",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/applicationGateways",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/frontdoors",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualMachineScaleSets",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Storage/StorageAccounts",
+            "type": "AzureResource"
+        }
+    ],
+    "pivots": [
+        {
+            "name": "virtualMachineCompute",
+            "type": "Custom",
+            "displayName": "Compute Option",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "virtualMachine"
+            }
+        },
+        {
+            "name": "vmssCompute",
+            "type": "Custom",
+            "displayName": "Compute Option",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "VMSS"
+            }
+        },
+        {
+            "name": "storagePivot",
+            "type": "Custom",
+            "displayName": "Shared Network Storage",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "Storage"
+            }
+        },
+        {
+            "name": "cachingPivot",
+            "type": "Custom",
+            "displayName": "High performance Redis Cache",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "Redis"
+            }
+        }
+    ],
+    "configurations": [
+        {
+            "id": "Small",
+            "title": "A starter solution for dev/test scenarios",
+            "subTitle": "A very affordable way to get started...",
+            "cost": {
+                "value": 150,
+                "score": 1,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachineCompute",
+                    "content": [
+                        "A single VM based solution without any scale option."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "Large",
+            "title": "A starter solution for dev/test scenarios",
+            "subTitle": "A very affordable way to get started...",
+            "cost": {
+                "value": 999,
+                "score": 2,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 3,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "vmssCompute",
+                    "content": [
+                        "A scalable offering that utilizes virtual machine scale sets"
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "Azure Premium files as the responsive shared storage option"
+                    ]
+                },
+                {
+                    "pivotName": "cachingPivot",
+                    "content": [
+                        "Azure Cache for Redis for object/DB and static page caching"
+                    ]
+                }
+            ]
+        }
+    ]
+}
