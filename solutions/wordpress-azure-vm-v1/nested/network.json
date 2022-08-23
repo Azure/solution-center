@@ -1,0 +1,452 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "lampCommon": {
+            "metadata": {
+                "description": "Common LAMP values"
+            },
+            "type": "object"
+        }
+    },
+    "resources": [
+        {
+            "condition": "[equals(parameters('lampCommon').customVnetId, '')]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "name": "vnetTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "lampCommon": {
+                        "value": "[parameters('lampCommon')]"
+                    }
+                },
+                "templateLink": {
+                    "uri": "[concat(parameters('lampCommon').baseTemplateUrl,'network-vnet.json',parameters('lampCommon').artifactsSasToken)]"
+                }
+            }
+        },
+        {
+            "apiVersion": "2019-10-01",
+            "condition": "[parameters('lampCommon').ddosSwitch]",
+            "dependsOn": [
+                "Microsoft.Resources/deployments/vnetTemplate"
+            ],
+            "name": "ddosTemplate",
+            "subscriptionId": "[variables('vnetSub')]",
+            "resourceGroup": "[variables('vnetRg')]",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "lampCommon": {
+                        "value": "[parameters('lampCommon')]"
+                    },
+                    "vnetName": {
+                        "value": "[variables('vnetName')]"
+                    },
+                    "vNetAddressSpace": {
+                        "value": "[if(equals(parameters('lampCommon').customVnetId, ''), concat(parameters('lampCommon').vNetAddressSpace,'/16'), reference(parameters('lampCommon').customVnetId, '2017-10-01').addressSpace.addressPrefixes[0])]"
+                    }
+                },
+                "templateLink": {
+                    "uri": "[concat(parameters('lampCommon').baseTemplateUrl,'network-vnet-ddos.json',parameters('lampCommon').artifactsSasToken)]"
+                }
+            },
+            "type": "Microsoft.Resources/deployments"
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "dependsOn": [
+                "Microsoft.Resources/deployments/vnetTemplate",
+                "Microsoft.Resources/deployments/ddosTemplate"
+            ],
+            "name": "subnetTemplate",
+            "subscriptionId": "[variables('vnetSub')]",
+            "resourceGroup": "[variables('vnetRg')]",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "lampCommon": {
+                        "value": "[parameters('lampCommon')]"
+                    },
+                    "vnetName": {
+                        "value": "[variables('vnetName')]"
+                    }
+                },
+                "templateLink": {
+                    "uri": "[concat(parameters('lampCommon').baseTemplateUrl,'network-subnets.json',parameters('lampCommon').artifactsSasToken)]"
+                }
+            }
+        },
+        {
+            "condition": "[parameters('lampCommon').vnetGwDeploySwitch]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').gatewayPublicIPName]",
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic"
+            },
+            "tags": {
+                "displayName": "Virtual network gateway Public IP"
+            }
+        },
+        {
+            "condition": "[parameters('lampCommon').vnetGwDeploySwitch]",
+            "type": "Microsoft.Network/virtualNetworkGateways",
+            "apiVersion": "2019-04-01",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('lampCommon').gatewayPublicIPName)]",
+                "Microsoft.Resources/deployments/subnetTemplate"
+            ],
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').gatewayName]",
+            "properties": {
+                "activeActive": false,
+                "enableBgp": false,
+                "gatewayType": "[parameters('lampCommon').gatewayType]",
+                "ipConfigurations": [
+                    {
+                        "name": "vnet-Gateway-Config",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('lampCommon').gatewayPublicIPName)]"
+                            },
+                            "subnet": {
+                                "id": "[variables('subnetIdGateway')]"
+                            }
+                        }
+                    }
+                ],
+                "sku": {
+                    "name": "VpnGw1",
+                    "tier": "VpnGw1",
+                    "capacity": 2
+                },
+                "vpnType": "[parameters('lampCommon').vpnType]"
+            }
+        },
+        {
+            "condition": "[not(equals(parameters('lampCommon').httpsTermination, 'AppGw'))]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "[parameters('lampCommon').lbSku]",
+                "tier": "[parameters('lampCommon').lbTier]"
+            },
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').lbPipName]",
+            "properties": {
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('lampCommon').lbName]"
+                },
+                "publicIPAllocationMethod": "Static"
+            },
+            "tags": {
+                "displayName": "Load Balancer Public IP"
+            }
+        },
+        {
+            "condition": "[not(equals(parameters('lampCommon').httpsTermination, 'AppGw'))]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "[parameters('lampCommon').lbSku]",
+                "tier": "[parameters('lampCommon').lbTier]"
+            },
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').lbOutPipName001]",
+            "properties": {
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('lampCommon').lbOutName001]"
+                },
+                "publicIPAllocationMethod": "Static"
+            },
+            "tags": {
+                "displayName": "Load Balancer Outbound Public IP 001"
+            }
+        },
+        {
+            "condition": "[not(equals(parameters('lampCommon').httpsTermination, 'AppGw'))]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "[parameters('lampCommon').lbSku]",
+                "tier": "[parameters('lampCommon').lbTier]"
+            },
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').lbOutPipName002]",
+            "properties": {
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('lampCommon').lbOutName002]"
+                },
+                "publicIPAllocationMethod": "Static"
+            },
+            "tags": {
+                "displayName": "Load Balancer Outbound Public IP 002"
+            }
+        },
+        {
+            "condition": "[equals(parameters('lampCommon').httpsTermination, 'AppGw')]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').appGwPipName]",
+            "sku" : {
+                "name" : "[if(endswith(parameters('lampCommon').appGwSkuName,'v2'),'Standard','Basic')]"
+            },
+            "properties": {
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('lampCommon').appGwName]"
+                },
+                "publicIPAllocationMethod": "[if(endswith(parameters('lampCommon').appGwSkuName,'v2'),'Static','Dynamic')]"
+            }
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').ctlrPipName]",
+            "properties": {
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('lampCommon').ctlrPipName]"
+                },
+                "publicIPAllocationMethod": "Static"
+            },
+            "tags": {
+                "displayName": "Controller VM Public IP"
+            }
+        },
+        {
+            "condition": "[not(equals(parameters('lampCommon').httpsTermination, 'AppGw'))]",
+            "type": "Microsoft.Network/loadBalancers",
+            "sku": {
+                "name": "[parameters('lampCommon').lbSku]",
+                "tier": "[parameters('lampCommon').lbTier]"
+            },
+            "apiVersion": "2019-11-01",
+            "dependsOn": [
+                "[concat('Microsoft.Network/publicIPAddresses/',parameters('lampCommon').lbPipName)]",
+                "[concat('Microsoft.Network/publicIPAddresses/',parameters('lampCommon').lbOutPipName001)]",
+                "[concat('Microsoft.Network/publicIPAddresses/',parameters('lampCommon').lbOutPipName002)]"
+            ],
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').lbName]",
+            "properties": {
+                "backendAddressPools": [
+                    {
+                        "name": "[parameters('lampCommon').extBeName ]"
+                    }
+                ],
+                "frontendIPConfigurations": [
+                    {
+                        "name": "[parameters('lampCommon').extFeName ]",
+                        "properties": {
+                            "publicIPAddress": {
+                                "id": "[variables('lbPipID')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "[parameters('lampCommon').extOutName001 ]",
+                        "properties": {
+                            "publicIPAddress": {
+                                "id": "[variables('lbOutPip001ID')]"
+                            }
+                        }
+
+                    },
+                    {
+                        "name": "[parameters('lampCommon').extOutName002 ]",
+                        "properties": {
+                            "publicIPAddress": {
+                                "id": "[variables('lbOutPip002ID')]"
+                            }
+                        }
+                    }    
+                ],
+                "loadBalancingRules": [
+                    {
+                        "name": "HTTP",
+                        "properties": {
+                            "backendAddressPool": {
+                                "id": "[variables('extBeID')]"
+                            },
+                            "backendPort": 80,
+                            "enableFloatingIP": false,
+                            "frontendIPConfiguration": {
+                                "id": "[variables('extFeID')]"
+                            },
+                            "frontendPort": 80,
+                            "idleTimeoutInMinutes": 5,
+                            "probe": {
+                                "id": "[variables('extProbeHTTPID')]"
+                            },
+                            "protocol": "Tcp"
+                        }
+                    },
+                    {
+                        "name": "HTTPS",
+                        "properties": {
+                            "backendAddressPool": {
+                                "id": "[variables('extBeID')]"
+                            },
+                            "backendPort": 443,
+                            "enableFloatingIP": false,
+                            "frontendIPConfiguration": {
+                                "id": "[variables('extFeID')]"
+                            },
+                            "frontendPort": 443,
+                            "idleTimeoutInMinutes": 5,
+                            "probe": {
+                                "id": "[variables('extProbeHTTPSID')]"
+                            },
+                            "protocol": "Tcp"
+                        }
+                    }
+                ],
+                "probes": [
+                    {
+                        "name": "[parameters('lampCommon').extProbeHTTP  ]",
+                        "properties": {
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 3,
+                            "port": 80,
+                            "protocol": "Tcp"
+                        }
+                    },
+                    {
+                        "name": "[parameters('lampCommon').extProbeHTTPS  ]",
+                        "properties": {
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 3,
+                            "port": 443,
+                            "protocol": "Tcp"
+                        }
+                    }
+                ],
+                "inboundNatRules": [],
+                "outboundRules": [
+                    {
+                        "name": "Outboundrule001",
+                        "properties": {
+                            "allocatedOutboundPorts": 12800,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false,
+                            "idleTimeoutInMinutes": 5,
+                            "backendAddressPool": {
+                                "id": "[variables('extBeID')]"
+                            },
+                            "frontendIPConfigurations": [
+                                {
+                                    "id": "[variables('extOutID001')]"
+                                },
+                                {
+                                    "id": "[variables('extOutID002')]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "inboundNatPools": []
+            }
+        },
+        {
+            "condition": "[equals(parameters('lampCommon').httpsTermination, 'AppGw')]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "dependsOn": [
+                "Microsoft.Resources/deployments/subnetTemplate",
+                "[concat('Microsoft.Network/publicIPAddresses/',parameters('lampCommon').appGwPipName)]"
+            ],
+            "name": "appGwTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "lampCommon": {
+                        "value": "[parameters('lampCommon')]"
+                    },
+                    "subnetIdAppGw": {
+                        "value": "[variables('subnetIdAppGw')]"
+                    },
+                    "sslCertData": {
+                        "reference": {
+                            "keyVault": {
+                                "id": "[parameters('lampCommon').appGwSslCertKeyVaultResourceId]"
+                            },
+                            "secretName": "[parameters('lampCommon').appGwSslCertKeyVaultSecretName]"
+                        }
+                    }
+                },
+                "templateLink": {
+                    "uri": "[concat(parameters('lampCommon').baseTemplateUrl,'appgw.json',parameters('lampCommon').artifactsSasToken)]"
+                }
+            }
+        }
+    ],
+    "variables": {
+        "documentation01": "This sub-template creates a virtual network with a number of subnets and then creates the load-balancer (or an Azure Application Gateway) with public IP/dns",
+        "extBeID": "[concat(variables('extLbID'),'/backendAddressPools/',parameters('lampCommon').extBeName)]",
+        "extFeID": "[concat(variables('extLbID'),'/frontendIPConfigurations/',parameters('lampCommon').extFeName)]",
+        "extOutID001": "[concat(variables('extLbID'),'/frontendIPConfigurations/',parameters('lampCommon').extOutName001)]",
+        "extOutID002": "[concat(variables('extLbID'),'/frontendIPConfigurations/',parameters('lampCommon').extOutName002)]",
+        "extLbID": "[resourceId('Microsoft.Network/loadBalancers',parameters('lampCommon').lbName)]",
+        "extProbeHTTPID": "[concat(variables('extLbID'),'/probes/',parameters('lampCommon').extProbeHTTP)]",
+        "extProbeHTTPSID": "[concat(variables('extLbID'),'/probes/',parameters('lampCommon').extProbeHTTPS)]",
+        "lbPipID": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('lampCommon').lbPipName)]",
+        "lbOutPip001ID": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('lampCommon').lbOutPipName001)]",
+        "lbOutPip002ID": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('lampCommon').lbOutPipName002)]",
+        "ctlrPipID": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('lampCommon').ctlrPipName)]",
+        "customVnetIdArr":              "[split(parameters('lampCommon').customVnetId, '/')]",
+        "vnetSub":                      "[if(equals(parameters('lampCommon').customVnetId, ''), subscription().subscriptionId, variables('customVnetIdArr')[2])]",
+        "vnetRg":                       "[if(equals(parameters('lampCommon').customVnetId, ''), resourceGroup().name, variables('customVnetIdArr')[4])]",
+        "vnetName":                     "[if(equals(parameters('lampCommon').customVnetId, ''), parameters('lampCommon').vnetName, variables('customVnetIdArr')[8])]",
+        "customVnetSubnetIdWeb":        "[concat(parameters('lampCommon').customVnetId, '/subnets/', parameters('lampCommon').subnetWeb)]",
+        "customVnetSubnetIdSan":        "[concat(parameters('lampCommon').customVnetId, '/subnets/', parameters('lampCommon').subnetSan)]",
+        "customVnetSubnetIdRedis":      "[concat(parameters('lampCommon').customVnetId, '/subnets/', parameters('lampCommon').subnetRedis)]",
+        "customVnetSubnetIdGateway":    "[concat(parameters('lampCommon').customVnetId, '/subnets/', parameters('lampCommon').subnetGateway)]",
+        "customVnetSubnetIdAppGw":      "[concat(parameters('lampCommon').customVnetId, '/subnets/', parameters('lampCommon').subnetAppGw)]",
+        "subnetIdWeb":      "[if(equals(parameters('lampCommon').customVnetId, ''), resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), parameters('lampCommon').subnetWeb), variables('customVnetSubnetIdWeb'))]",
+        "subnetIdSan":      "[if(equals(parameters('lampCommon').customVnetId, ''), resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), parameters('lampCommon').subnetSan), variables('customVnetSubnetIdSan'))]",
+        "subnetIdRedis":    "[if(equals(parameters('lampCommon').customVnetId, ''), resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), parameters('lampCommon').subnetRedis), variables('customVnetSubnetIdRedis'))]",
+        "subnetIdGateway":  "[if(equals(parameters('lampCommon').customVnetId, ''), resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), parameters('lampCommon').subnetGateway), variables('customVnetSubnetIdGateway'))]",
+        "subnetIdAppGw":    "[if(equals(parameters('lampCommon').customVnetId, ''), resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), parameters('lampCommon').subnetAppGw), variables('customVnetSubnetIdAppGw'))]"
+    },
+    "outputs": {
+        "lbPubIp": {
+            "value": "[if(equals(parameters('lampCommon').httpsTermination, 'AppGw'), '0.0.0.0', reference(parameters('lampCommon').lbPipName, '2017-10-01').ipAddress)]",
+            "type": "string"
+        },
+        "lbOut001PubIp": {
+            "value": "[if(equals(parameters('lampCommon').httpsTermination, 'AppGw'), '0.0.0.0', reference(parameters('lampCommon').lbOutPipName001, '2017-10-01').ipAddress)]",
+            "type": "string"
+        },
+        "lbOut002PubIp": {
+            "value": "[if(equals(parameters('lampCommon').httpsTermination, 'AppGw'), '0.0.0.0', reference(parameters('lampCommon').lbOutPipName002, '2017-10-01').ipAddress)]",
+            "type": "string"
+        },
+        "ctlrPubIp": {
+            "value": "[reference(parameters('lampCommon').ctlrPipName, '2017-10-01').ipAddress]",
+            "type": "string"
+        },
+        "ctlrPubIpId": {
+            "value": "[variables('ctlrPipID')]",
+            "type": "string"
+        },
+        "subnetIdWeb": {
+            "value": "[variables('subnetIdWeb')]",
+            "type": "string"
+        },
+        "subnetIdSan": {
+            "value": "[variables('subnetIdSan')]",
+            "type": "string"
+        },
+        "subnetIdRedis": {
+            "value": "[variables('subnetIdRedis')]",
+            "type": "string"
+        }
+    }
+}

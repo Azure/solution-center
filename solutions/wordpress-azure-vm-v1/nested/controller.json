@@ -1,0 +1,234 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "lampCommon": {
+            "metadata": {
+                "description": "Common LAMP values"
+            },
+            "type": "object"
+        },
+        "subnetIdWeb": {
+            "metadata": {
+                "description": "Azure resource ID of the subnet where this VM is to be deployed"
+            },
+            "type": "string"
+        },
+        "ctlrPubIpId": {
+            "metadata": {
+                "description": "Resource ID of the controller VM public IP address"
+            },
+            "type": "string"
+        },
+        "vmSetupParamsObj": {
+            "metadata": {
+                "description": "JSON-structured VM setup params that'll be injected to the VM (through cloud-init) and used by the custom script (setup_controller.sh)"
+            },
+            "type": "object"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2019-11-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').ctlrNsgName]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "Allow_SSH",
+                        "properties": {
+                            "access": "Allow",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "22",
+                            "direction": "Inbound",
+                            "priority": 1000,
+                            "protocol": "Tcp",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*"
+                        }
+                    },
+                    {
+                        "name": "Allow_http",
+                        "properties": {
+                            "access": "Allow",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "80",
+                            "direction": "Inbound",
+                            "priority": 1005,
+                            "protocol": "Tcp",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*"
+                        }
+                    }
+                ]
+            },
+            "tags": {
+                "displayName": "Controller NSG"
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2019-11-01",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('lampCommon').ctlrNsgName)]"
+            ],
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').ctlrNicName]",
+            "properties": {
+                "networkSecurityGroup": {
+                    "id": "[variables('nsgRef')]"
+                },
+                "ipConfigurations": [
+                    {
+                        "name": "ipcfgctlr",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[parameters('ctlrPubIpId')]"
+                            },
+                            "subnet": {
+                                "id": "[parameters('subnetIdWeb')]"
+                            }
+                        }
+                    }
+                ],
+                "enableAcceleratedNetworking": "[parameters('lampCommon').enableAccelNwForCtlrVmSwitch]"
+            },
+            "tags": {
+                "displayName": "ctlrNic"
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('lampCommon').ctlrNicName)]"
+            ],
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').ctlrVmName]",
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('lampCommon').controllerVmSku]"
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[variables('nicRef')]"
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "adminUsername": "[parameters('lampCommon').sshUsername]",
+                    "computerName": "[parameters('lampCommon').ctlrVmName]",
+                    "secrets": "[parameters('lampCommon').ctlrVmSecrets]",
+                    "customData": "[base64(concat('#cloud-config\nwrite_files:\n- encoding: b64\n  content: ', base64(string(parameters('vmSetupParamsObj'))), '\n  owner: root:root\n  path: ', parameters('lampCommon').lampOnAzureConfigsJsonPath, '\n  permissions: ', variables('singleQuote'), '0400', variables('singleQuote')))]",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "[concat('/home/', parameters('lampCommon').sshUsername, '/.ssh/authorized_keys')]",
+                                    "keyData": "[parameters('lampCommon').sshPublicKey]"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "storageProfile": {
+                    "imageReference": "[parameters('lampCommon').ctlrVmOsType]",
+                    "osDisk": {
+                        "createOption": "FromImage",
+                        "diskSizeGB": "[parameters('lampCommon').ctlrVmOsDiskSizeInGB]",
+                        "managedDisk": {
+                            "storageAccountType": "[parameters('lampCommon').ctlrVmOsDiskStorageType]"
+                        },
+                        "name": "[parameters('lampCommon').ctlrVmName]"
+                    },
+                    "dataDisks": "[take(variables('nfsDiskArray'),if(equals(parameters('lampCommon').fileServerType,'nfs'), parameters('lampCommon').fileServerDiskCount, 0))]"
+                }
+            },
+            "tags": {
+                "displayName": "Controller Virtual Machine"
+            }
+        },
+        {
+            "condition": "[parameters('lampCommon').applyScriptsSwitch]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('lampCommon').ctlrVmName)]"
+            ],
+            "name": "[concat(parameters('lampCommon').ctlrVmName,'-ScriptProcessor')]",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "lampCommon": {
+                        "value": "[parameters('lampCommon')]"
+                    }
+                },
+                "templateLink": {
+                    "uri": "[concat(parameters('lampCommon').baseTemplateUrl, 'controllersetup.json', parameters('lampCommon').artifactsSasToken)]"
+                }
+            }
+        },
+        {
+            "condition": "[parameters('lampCommon').azureBackupSwitch]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/',parameters('lampCommon').ctlrVmName)]"
+            ],
+            "name": "[concat(parameters('lampCommon').ctlrVmName,'-Backup')]",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "lampCommon": {
+                        "value": "[parameters('lampCommon')]"
+                    },
+                    "vmName": {
+                        "value": "[parameters('lampCommon').ctlrVmName]"
+                    }
+                },
+                "templateLink": {
+                    "uri": "[concat(parameters('lampCommon').baseTemplateUrl,'recoveryservicesEnlist.json',parameters('lampCommon').artifactsSasToken)]"
+                }
+            }
+        }
+    ],
+    "variables": {
+        "documentation01": "This sub-template drives the controller/jump-box which is used as the access-point for other VMs in the cluster",
+        "documentation02": "It expects certain values in the 'common' datastructure.",
+        "documentation03": "    vnetName     - name of virtual network",
+        "documentation04": "    subnetWeb    - name of subnet for controller (and vm scale set)",
+        "documentation06": "    ctlrPipName  - name of Public IP address for the controller (note that none of the other VM's get a PIP - just the controller",
+        "documentation07": "    ctlrNicName  - name of the network interface (all VM's must hae a nic) to crate, tied to the public IP address",
+        "documentation08": "    ctlrNsgName  - name of the network security group, regulating access to/from the controller",
+        "documentation09": "This sub-template calls other sub-templates",
+        "documentation10": "    controllerconfig       - conditionally applies post-deployment script on the VM",
+        "documentation18": "    recoveryservicesEnlist - conditionally enlists the VM into the backup regimen",
+        "nicRef": "[resourceId('Microsoft.Network/networkInterfaces', parameters('lampCommon').ctlrNicName)]",
+        "nsgRef": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('lampCommon').ctlrNsgName)]",
+        "singleQuote": "'",
+        "copy": [
+            {
+                "name": "nfsDiskArray",
+                "count": 8,
+                "input": {
+                    "managedDisk": {
+                        "storageAccountType": "[parameters('lampCommon').storageAccountType]"
+                    },
+                    "diskSizeGB": "[parameters('lampCommon').fileServerDiskSize]",
+                    "lun": "[copyIndex('nfsDiskArray')]",
+                    "createOption": "Empty"
+                }
+            }
+        ]
+    },
+    "outputs": {
+        "controllerIP": {
+            "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('lampCommon').ctlrPipName), '2017-10-01').ipAddress]",
+            "type": "string"
+        }
+    }
+}

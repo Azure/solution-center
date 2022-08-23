@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "lampCommon": {
+            "metadata": {
+                "description": "Common LAMP values"
+            },
+            "type": "object"
+        },
+        "subnetIdRedis": {
+            "metadata": {
+                "description": "Azure resource ID of the subnet where this Redis instance is to be deployed"
+            },
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Cache/Redis",
+            "apiVersion": "2019-07-01",
+            "location": "[parameters('lampCommon').location]",
+            "name": "[parameters('lampCommon').redisCacheName]",
+            "properties": {
+                "enableNonSslPort": true,
+                "sku": {
+                    "capacity": "[parameters('lampCommon').redisSku.capacity]",
+                    "family": "[parameters('lampCommon').redisSku.family]",
+                    "name": "[parameters('lampCommon').redisSku.name]"
+                },
+                "subnetId": "[parameters('subnetIdRedis')]"
+            }
+        }
+    ],
+    "variables": {
+        "documentation1": "This sub-template creates a redis cache.  It expects certain values in the 'common' datastructure.",
+        "documentation2": " redisCacheName - name of cache",
+        "redisResourceId": "[resourceId('Microsoft.Cache/Redis', parameters('lampCommon').redisCacheName)]"
+    },
+    "outputs": {
+        "redisResourceId": {
+            "value": "[variables('redisResourceId')]",
+            "type": "string"
+        },
+        "redisKey": {
+            "value": "[listKeys(variables('redisResourceId'), '2019-07-01').primaryKey]",
+            "type": "string"
+        }
+    }
+}
