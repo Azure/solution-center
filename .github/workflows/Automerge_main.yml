@@ -11,14 +11,20 @@ on:
   workflow_dispatch:
 
 jobs:
- merge-branch:
+  merge-staging-to-main:
     if: github.event.pull_request.merged == true
+    timeout-minutes: 2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: everlytic/branch-merge@1.1.2
-        with:
-          github_token: ${{ github.token }}
-          source_ref: 'staging'
-          target_branch: 'main'
-          commit_message_template: '[Automated] Merged staging into target main'
+      - name: Set Git config
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+      - name: Merge staging to main
+        run: |
+          git fetch --unshallow
+          git checkout main
+          git pull
+          git merge staging -m "[Automated] Merged staging into target main"
+          git push
