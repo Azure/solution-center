@@ -6,21 +6,33 @@ on:
     branches: [ "staging" ]
     types:
       - closed
-
+  push:
+    branches:
+      - 'staging'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   merge-staging-to-main:
-    if: github.event.pull_request.merged == true
     timeout-minutes: 2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0 
+      - name: Set Git config
+        run: |
+          git config --local user.email "actions@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
       - name: Merge staging to main
         run: |
-          git fetch --unshallow
+          git fetch
           git checkout main
           git pull
           git merge staging -m "[Automated] Merged staging into target main"
-          git push
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
