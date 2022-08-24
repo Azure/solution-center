@@ -4,7 +4,7 @@
 
 This repository is the central repository for the metadata defined in the Azure Portal's [Solution center](https://aka.ms/solutioncenter/portal).
 
-## How to submit a solution
+## How to submit a solution?
 
 Solution center enables our partners to deploy and manage Azure and open-source services and software all with a single metadata-driven repository. Some examples could be deploying webapps or using inexpensive virtual machines for machine learning. Solution center uses the concept of a "solution" to help customers understand and configure services and software with ease.
 
@@ -13,7 +13,7 @@ To get started,
 2. Copy `starter-template-v1` and customize the name of the folder with your solution name (must be unique). 
 3. Follow the instructions below to author your first solution and solution card.
 4. Add an ARM template per configuration to your solution folder, and reference it using the `templateFileName`.
-5. Replace the solutionId in this URL and test your experience at: https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_SolutionCenter=flight1&feature.testmode=true#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/microsoft-azure-arcbox-v1
+5. Replace the solutionId in this URL and test your experience at: https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_SolutionCenter=flight1&feature.testmode=true#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/\<your solution id\>
 
 A solution includes:
 
