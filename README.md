@@ -34,7 +34,7 @@ Configuration metadata is how your solution looks to others. It defines pricing,
          - iconFileName: enter the name of the file, typically uploaded to the `icons` directory
 - pivots: the differences between the configurations, choose a unique name and display name for each pivot
 - documentationFileName: a markdown file in the repository which helps with architecture diagrams and addditional resources for deployment (2nd tab of solution).
-- options: the details for each configuration.
+- configurations: the details for each configuration.
    - id: Vertical column unique ID.
    - title: Vertical column header 1.
    - templateFileName: The ARM JSON with parameters specified. This will auto-load a create flow once the user selects your configuration.
@@ -79,3 +79,11 @@ See `pivots` and `options` in `configuration.metadata` for implementation
 ## How to submit a solution group
 
 So you have at least 3 solutions you'd like to help customers compare? Copy the `ExampleGroup.json` file under `scenariogroups` in the repository and add the solution IDs. Solution groups reference each individual `discovery.metadata.json` file to render the page.
+
+## Where will solutions be visible?
+
+You can direct link to a solution or solution group URI from any experience in the Azure portal.
+
+Any relevant solutions will also be accessible via VM browse / create dropdown, with 2MM monthly active users.
+
+![vm-browse](images/vm-browse.png)
