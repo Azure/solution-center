@@ -112,7 +112,7 @@
             "id": "ProdVMSS",
             "title": "Confidential production ready VMSS",
             "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
-            "templateFileName": "azuredeploy.json",
+            "templateFileName": "azuredeploy-accvmss.json",
             "cost": {
                 "type": "score",
                 "score": 3
