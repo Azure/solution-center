@@ -1,0 +1,403 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "vmSize": {
+        "type": "string",
+        "defaultValue": "Standard_DC2as_v5",
+        "allowedValues": [
+          "Standard_DC2as_v5",
+          "Standard_DC4as_v5",
+          "Standard_DC8as_v5",
+          "Standard_DC16as_v5",
+          "Standard_DC32as_v5",
+          "Standard_DC48as_v5",
+          "Standard_DC64as_v5",
+          "Standard_DC96as_v5",
+          "Standard_DC2ads_v5",
+          "Standard_DC4ads_v5",
+          "Standard_DC8ads_v5",
+          "Standard_DC16ads_v5",
+          "Standard_DC32ads_v5",
+          "Standard_DC48ads_v5",
+          "Standard_DC64ads_v5",
+          "Standard_DC96ads_v5",
+          "Standard_EC2as_v5",
+          "Standard_EC4as_v5",
+          "Standard_EC8as_v5",
+          "Standard_EC16as_v5",
+          "Standard_EC20as_v5",
+          "Standard_EC32as_v5",
+          "Standard_EC48as_v5",
+          "Standard_EC64as_v5",
+          "Standard_EC96as_v5",
+          "Standard_EC96ias_v5",
+          "Standard_EC2ads_v5",
+          "Standard_EC4ads_v5",
+          "Standard_EC8ads_v5",
+          "Standard_EC16ads_v5",
+          "Standard_EC20ads_v5",
+          "Standard_EC32ads_v5",
+          "Standard_EC48ads_v5",
+          "Standard_EC64ads_v5",
+          "Standard_EC96ads_v5",
+          "Standard_EC96iads_v5"
+        ],
+        "metadata": {
+          "description": "Size of the VM."
+        }
+      },
+      "osImageName": {
+        "type": "string",
+        "defaultValue": "Windows Server 2022 Gen 2",
+        "allowedValues": [
+          "Windows Server 2022 Gen 2",
+          "Windows Server 2019 Gen 2",
+          "Ubuntu 20.04 LTS Gen 2"
+        ],
+        "metadata": {
+          "description": "OS Image for the Virtual Machine"
+        }
+      },
+      "vmssName": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 61,
+        "metadata": {
+          "description": "String used as a base for naming resources. Must be 3-61 characters in length and globally unique across Azure. A hash is prepended to this string for some resources, and resource-specific information is appended."
+        }
+      },
+      "instanceCount": {
+        "type": "int",
+        "defaultValue": 3,
+        "minValue": 1,
+        "maxValue": 100,
+        "metadata": {
+          "description": "Number of VM instances (100 or less)."
+        }
+      },
+      "singlePlacementGroup": {
+        "type": "bool",
+        "defaultValue": true,
+        "metadata": {
+          "description": "When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true."
+        }
+      },
+      "securityType": {
+        "type": "string",
+        "defaultValue": "VMGuestStateOnly",
+        "allowedValues": [
+          "VMGuestStateOnly"
+        ],
+        "metadata": {
+          "description": "VM security type."
+        }
+      },
+      "adminUsername": {
+        "type": "string",
+        "metadata": {
+          "description": "Admin user name of the VM."
+        }
+      },
+      "authenticationType": {
+        "type": "string",
+        "defaultValue": "password",
+        "allowedValues": [
+          "password",
+          "sshPublicKey"
+        ],
+        "metadata": {
+          "description": "Type of authentication to use on the Virtual Machine."
+        }
+      },
+      "adminPasswordOrKey": {
+        "type": "securestring",
+        "metadata": {
+          "description": "Password or ssh key for the Virtual Machine."
+        }
+      },
+      "platformFaultDomainCount": {
+        "type": "int",
+        "defaultValue": 1,
+        "metadata": {
+          "description": "Fault Domain count for each placement group."
+        }
+      }
+    },
+    "variables": {
+      "imageList": {
+        "Windows Server 2022 Gen 2": {
+          "publisher": "microsoftwindowsserver",
+          "offer": "windowsserver",
+          "sku":  "2022-datacenter-smalldisk-g2",
+          "version": "latest"
+        },
+        "Windows Server 2019 Gen 2": {
+          "publisher": "microsoftwindowsserver",
+          "offer": "windowsserver",
+          "sku": "2019-datacenter-smalldisk-g2",
+          "version": "latest"
+        },
+        "Ubuntu 20.04 LTS Gen 2": {
+          "publisher": "Canonical",
+          "offer": "0001-com-ubuntu-confidential-vm-focal",
+          "sku": "20_04-lts-cvm",
+          "version": "latest"
+        },
+        "Ubuntu 18.04 LTS Gen 2": {
+          "publisher": "Canonical",
+          "offer": "0001-com-ubuntu-confidential-vm-experimental",
+          "sku": "18_04-gen2",
+          "version": "latest"
+        }
+      },
+      "imageReference": "[variables('imageList')[parameters('osImageName')]]",
+      "isWindows": "[contains(parameters('osImageName'), 'Windows')]",
+      "namingInfix": "[toLower(substring(concat(parameters('vmssName'), uniqueString(resourceGroup().id)), 0, 9))]",
+      "longNamingInfix": "[toLower(parameters('vmssName'))]",
+      "addressPrefix": "10.0.0.0/16",
+      "subnetPrefix": "10.0.0.0/24",
+      "networkSecurityGroupName": "[concat(variables('namingInfix'), '-nsg')]",
+      "networkSecurityGroupId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
+      "virtualNetworkName": "[concat(variables('namingInfix'), 'vnet')]",
+      "publicIPAddressName": "[concat(variables('namingInfix'), 'pip')]",
+      "subnetName": "[concat(variables('namingInfix'), 'subnet')]",
+      "loadBalancerName": "[concat(variables('namingInfix'), 'lb')]",
+      "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
+      "lbProbeID": "[resourceId('Microsoft.Network/loadBalancers/probes',variables('loadBalancerName'), 'tcpProbe')]",
+      "natPoolName": "[concat(variables('namingInfix'), 'natpool')]",
+      "bePoolName": "[concat(variables('namingInfix'), 'bepool')]",
+      "lbPoolID": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools',variables('loadBalancerName'),variables('bePoolName'))]",
+      "natStartPort": 50000,
+      "natEndPort": 50119,
+      "natBackendPort": "[if(variables('isWindows'), '3389', '22')]",
+      "nicName": "[concat(variables('namingInfix'), 'nic')]",
+      "ipConfigName": "[concat(variables('namingInfix'), 'ipconfig')]",
+      "frontEndIPConfigID": "[resourceId('Microsoft.Network/loadBalancers/frontendIPConfigurations',variables('loadBalancerName'),'loadBalancerFrontEnd')]",
+      "linuxConfiguration": {
+        "disablePasswordAuthentication": "true",
+        "ssh": {
+          "publicKeys": [
+            {
+              "keyData": "[parameters('adminPasswordOrKey')]",
+              "path": "[concat('/home/', parameters('adminUsername'), '/.ssh/authorized_keys')]"
+            }
+          ]
+        }
+      },
+      "windowsConfiguration": {
+        "enableAutomaticUpdates": "true",
+        "provisionVmAgent": "true"
+      }
+    },
+    "resources": [
+      {
+        "type": "Microsoft.Network/loadBalancers",
+        "apiVersion": "2020-06-01",
+        "name": "[variables('loadBalancerName')]",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+          "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))]"
+        ],
+        "properties": {
+          "frontendIPConfigurations": [
+                {
+                  "name": "LoadBalancerFrontEnd",
+                  "properties": {
+                    "publicIPAddress": {
+                        "id": "[variables('publicIPAddressID')]"
+                    }
+                  }
+                }
+            ],
+          "backendAddressPools": [
+              {
+                "name": "[variables('bePoolName')]"
+              }
+          ],
+          "inboundNatPools": [
+              {
+                "name": "[variables('natPoolName')]",
+                "properties": {
+                  "frontendIPConfiguration": {
+                      "id": "[variables('frontEndIPConfigID')]"
+                  },
+                  "protocol": "Tcp",
+                  "frontendPortRangeStart": "[variables('natStartPort')]",
+                  "frontendPortRangeEnd": "[variables('natEndPort')]",
+                  "backendPort": "[variables('natBackendPort')]"
+                }
+              }
+          ],
+          "loadBalancingRules": [
+              {
+                "name": "LBRule",
+                "properties": {
+                  "frontendIPConfiguration": {
+                      "id": "[variables('frontEndIPConfigID')]"
+                  },
+                  "backendAddressPool": {
+                      "id": "[variables('lbPoolID')]"
+                  },
+                  "protocol": "Tcp",
+                  "frontendPort": 80,
+                  "backendPort": 80,
+                  "enableFloatingIP": false,
+                  "idleTimeoutInMinutes": 5,
+                  "probe": {
+                      "id": "[variables('lbProbeID')]"
+                  }
+                }
+              }
+          ],
+          "probes": [
+              {
+                "name": "tcpProbe",
+                "properties": {
+                  "protocol": "Tcp",
+                  "port": 80,
+                  "intervalInSeconds": 5,
+                  "numberOfProbes": 2
+                }
+              }
+          ]
+        }
+      },
+      {
+        "type": "Microsoft.Compute/virtualMachineScaleSets",
+        "apiVersion": "2021-11-01",
+        "name": "[variables('namingInfix')]",
+        "location": "[resourceGroup().location]",
+        "sku": {
+          "name": "[parameters('vmSize')]",
+          "tier": "Standard",
+          "capacity": "[parameters('instanceCount')]"
+        },
+        "dependsOn": [
+          "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancerName'))]",
+          "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]"
+        ],
+        "properties": {
+          "overprovision": true,
+          "upgradePolicy": {
+              "mode": "Automatic"
+          },
+          "singlePlacementGroup": "[parameters('singlePlacementGroup')]",
+          "platformFaultDomainCount": "[parameters('platformFaultDomainCount')]",
+          "virtualMachineProfile": {
+              "storageProfile": {
+                "osDisk": {
+                  "caching": "ReadWrite",
+                  "createOption": "FromImage",
+                  "managedDisk": {
+                      "securityProfile": {
+                        "securityEncryptionType": "[parameters('securityType')]"
+                      }
+                  }
+                },
+                "imageReference": "[variables('imageReference')]"
+              },
+              "osProfile": {
+                "computerNamePrefix": "[variables('namingInfix')]",
+                "adminUsername": "[parameters('adminUsername')]",
+                "adminPassword": "[parameters('adminPasswordOrKey')]",
+                "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]",
+                "windowsConfiguration": "[if(variables('isWindows'), variables('windowsConfiguration'), json('null'))]"
+              },
+              "networkProfile": {
+                "networkInterfaceConfigurations": [
+                  {
+                      "name": "[variables('nicName')]",
+                      "properties": {
+                        "primary": true,
+                        "ipConfigurations": [
+                          {
+                              "name": "[variables('ipConfigName')]",
+                              "properties": {
+                                "subnet": {
+                                  "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
+                                },
+                                "loadBalancerBackendAddressPools": [
+                                  {
+                                      "id": "[variables('lbPoolID')]"
+                                  }
+                                ],
+                                "loadBalancerInboundNatPools": [
+                                  {
+                                      "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatPools', variables('loadBalancerName'),  variables('natPoolName'))]"
+                                  }
+                                ]
+                              }
+                          }
+                        ]
+                      }
+                  }
+                ]
+              },
+              "securityProfile": {
+                "uefiSettings": {
+                  "secureBootEnabled": true,
+                  "vTpmEnabled": true
+                },
+                "securityType": "ConfidentialVM"
+              },
+              "extensionProfile": {
+                "extensions": [ ]
+              }
+          }
+        }
+      },
+      {
+        "type": "Microsoft.Network/publicIPAddresses",
+        "apiVersion": "2020-06-01",
+        "name": "[variables('publicIPAddressName')]",
+        "location": "[resourceGroup().location]",
+        "properties": {
+          "publicIPAllocationMethod": "Static",
+          "dnsSettings": {
+              "domainNameLabel": "[variables('longNamingInfix')]"
+          }
+        }
+      },
+      {
+        "type": "Microsoft.Network/networkSecurityGroups",
+        "apiVersion": "2019-02-01",
+        "name": "[variables('networkSecurityGroupName')]",
+        "location": "[resourceGroup().location]",
+        "properties": {}
+      },
+      {
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2020-06-01",
+        "name": "[variables('virtualNetworkName')]",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+          "[variables('networkSecurityGroupId')]"
+        ],
+        "properties": {
+          "addressSpace": {
+            "addressPrefixes": [
+              "[variables('addressPrefix')]"
+            ]
+          },
+          "subnets": [
+            {
+              "name": "[variables('subnetName')]",
+              "properties": {
+                "addressPrefix": "[variables('subnetPrefix')]",
+                "networkSecurityGroup": {
+                  "id": "[variables('networkSecurityGroupId')]"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "outputs": {
+        "applicationUrl": {
+          "type": "string",
+          "value": "[concat('http://', reference(variables('publicIPAddressName')).dnsSettings.fqdn, '/MyApp')]"
+        }
+    }
+  }
