@@ -1,0 +1,1164 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.10.61.36676",
+      "templateHash": "2063226385334171473"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "allowedValues": [
+        "brazilsouth",
+        "canadacentral",
+        "centralus",
+        "eastus",
+        "eastus2",
+        "southcentralus",
+        "westus2",
+        "westus3",
+        "francecentral",
+        "germanywestcentral",
+        "northeurope",
+        "norwayeast",
+        "uksouth",
+        "westeurope",
+        "sweedencentral",
+        "switzerlandnorth",
+        "uaenorth",
+        "southafricanorth",
+        "australiaeast",
+        "centralindia",
+        "japaneast",
+        "koreacentral",
+        "southeastasia",
+        "eastasia"
+      ],
+      "minLength": 4,
+      "metadata": {
+        "description": "The location of this regional hub. All resources, including spoke resources, will be deployed to this region. This region must support availability zones."
+      }
+    },
+    "deployVpnGateway": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Set to true to include a basic VPN Gateway deployment into the hub. Set to false to leave network space for a VPN Gateway, but do not deploy one. Default is false."
+      }
+    }
+  },
+  "variables": {
+    "suffix": "[uniqueString(subscription().subscriptionId, resourceGroup().id)]",
+    "numFirewallIpAddressesToAssign": 3
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+      "apiVersion": "2022-01-01",
+      "name": "[format('{0}/{1}', format('vnet-{0}-hub', parameters('location')), format('to_{0}', format('vnet-{0}-spoke-one', parameters('location'))))]",
+      "properties": {
+        "allowForwardedTraffic": false,
+        "allowGatewayTransit": false,
+        "allowVirtualNetworkAccess": true,
+        "useRemoteGateways": false,
+        "remoteVirtualNetwork": {
+          "id": "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-one', parameters('location')))]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', format('vnet-{0}-spoke-one', parameters('location')), format('to_{0}', format('vnet-{0}-hub', parameters('location'))))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-one', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+      "apiVersion": "2022-01-01",
+      "name": "[format('{0}/{1}', format('vnet-{0}-hub', parameters('location')), format('to_{0}', format('vnet-{0}-spoke-two', parameters('location'))))]",
+      "properties": {
+        "allowForwardedTraffic": false,
+        "allowGatewayTransit": false,
+        "allowVirtualNetworkAccess": true,
+        "useRemoteGateways": false,
+        "remoteVirtualNetwork": {
+          "id": "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-two', parameters('location')))]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks/virtualNetworkPeerings', format('vnet-{0}-spoke-two', parameters('location')), format('to_{0}', format('vnet-{0}-hub', parameters('location'))))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-two', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
+      "apiVersion": "2022-01-01",
+      "name": "[format('{0}/{1}', format('fw-policies-{0}', parameters('location')), 'DefaultNetworkRuleCollectionGroup')]",
+      "properties": {
+        "priority": 200,
+        "ruleCollections": [
+          {
+            "ruleCollectionType": "FirewallPolicyFilterRuleCollection",
+            "name": "org-wide-allowed",
+            "priority": 100,
+            "action": {
+              "type": "Allow"
+            },
+            "rules": [
+              {
+                "ruleType": "NetworkRule",
+                "name": "DNS",
+                "description": "Allow DNS outbound (for simplicity, adjust as needed)",
+                "ipProtocols": [
+                  "UDP"
+                ],
+                "sourceAddresses": [
+                  "*"
+                ],
+                "sourceIpGroups": [],
+                "destinationAddresses": [
+                  "*"
+                ],
+                "destinationIpGroups": [],
+                "destinationFqdns": [],
+                "destinationPorts": [
+                  "53"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/firewallPolicies', format('fw-policies-{0}', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
+      "apiVersion": "2022-01-01",
+      "name": "[format('{0}/{1}', format('fw-policies-{0}', parameters('location')), 'DefaultApplicationRuleCollectionGroup')]",
+      "properties": {
+        "priority": 300,
+        "ruleCollections": []
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/firewallPolicies/ruleCollectionGroups', format('fw-policies-{0}', parameters('location')), 'DefaultNetworkRuleCollectionGroup')]",
+        "[resourceId('Microsoft.Network/firewallPolicies', format('fw-policies-{0}', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+      "apiVersion": "2022-01-01",
+      "name": "[format('{0}/{1}', format('vnet-{0}-spoke-one', parameters('location')), format('to_{0}', format('vnet-{0}-hub', parameters('location'))))]",
+      "properties": {
+        "allowForwardedTraffic": false,
+        "allowGatewayTransit": false,
+        "allowVirtualNetworkAccess": true,
+        "useRemoteGateways": false,
+        "remoteVirtualNetwork": {
+          "id": "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-one', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+      "apiVersion": "2022-01-01",
+      "name": "[format('{0}/{1}', format('vnet-{0}-spoke-two', parameters('location')), format('to_{0}', format('vnet-{0}-hub', parameters('location'))))]",
+      "properties": {
+        "allowForwardedTraffic": false,
+        "allowGatewayTransit": false,
+        "allowVirtualNetworkAccess": true,
+        "useRemoteGateways": false,
+        "remoteVirtualNetwork": {
+          "id": "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-two', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces",
+      "apiVersion": "2021-06-01",
+      "name": "[format('la-hub-{0}-{1}', parameters('location'), variables('suffix'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "sku": {
+          "name": "PerGB2018"
+        },
+        "retentionInDays": 90,
+        "forceCmkForQuery": false,
+        "publicNetworkAccessForIngestion": "Enabled",
+        "publicNetworkAccessForQuery": "Enabled",
+        "features": {
+          "disableLocalAuth": false,
+          "enableLogAccessUsingOnlyResourcePermissions": true
+        },
+        "workspaceCapping": {
+          "dailyQuotaGb": -1
+        }
+      },
+      "metadata": {
+        "description": "This Log Analyics Workspace stores logs from the regional hub network, its spokes, and other related resources. Workspaces are regional resource, as such there would be one workspace per hub (region)"
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.OperationalInsights/workspaces/{0}', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2022-01-01",
+      "name": "[format('nsg-{0}-bastion', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "AllowWebExperienceInbound",
+            "properties": {
+              "description": "Allow our users in. Update this to be as restrictive as possible.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowControlPlaneInbound",
+            "properties": {
+              "description": "Service Requirement. Allow control plane access. Regional Tag not yet supported.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "GatewayManager",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowHealthProbesInbound",
+            "properties": {
+              "description": "Service Requirement. Allow Health Probes.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 120,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowBastionHostToHostInbound",
+            "properties": {
+              "description": "Service Requirement. Allow Required Host to Host Communication.",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRanges": [
+                "8080",
+                "5701"
+              ],
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "priority": 130,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllInbound",
+            "properties": {
+              "description": "No further inbound traffic allowed.",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1000,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowSshToVnetOutbound",
+            "properties": {
+              "description": "Allow SSH out to the virtual network",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationPortRange": "22",
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "AllowRdpToVnetOutbound",
+            "properties": {
+              "description": "Allow RDP out to the virtual network",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationPortRange": "3389",
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "AllowControlPlaneOutbound",
+            "properties": {
+              "description": "Required for control plane outbound. Regional prefix not yet supported",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationPortRange": "443",
+              "destinationAddressPrefix": "AzureCloud",
+              "access": "Allow",
+              "priority": 120,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "AllowBastionHostToHostOutbound",
+            "properties": {
+              "description": "Service Requirement. Allow Required Host to Host Communication.",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationPortRanges": [
+                "8080",
+                "5701"
+              ],
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "priority": 130,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "AllowBastionCertificateValidationOutbound",
+            "properties": {
+              "description": "Service Requirement. Allow Required Session and Certificate Validation.",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationPortRange": "80",
+              "destinationAddressPrefix": "Internet",
+              "access": "Allow",
+              "priority": 140,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "DenyAllOutbound",
+            "properties": {
+              "description": "No further outbound traffic allowed.",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1000,
+              "direction": "Outbound"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "description": "The NSG around the Azure Bastion subnet. Source: https://learn.microsoft.com/azure/bastion/bastion-nsg"
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/networkSecurityGroups/{0}', format('nsg-{0}-bastion', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', format('nsg-{0}-bastion', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2022-01-01",
+      "name": "[format('vnet-{0}-hub', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.0.0.0/22"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "AzureBastionSubnet",
+            "properties": {
+              "addressPrefix": "10.0.1.0/26",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', format('nsg-{0}-bastion', parameters('location')))]"
+              }
+            }
+          },
+          {
+            "name": "GatewaySubnet",
+            "properties": {
+              "addressPrefix": "10.0.2.0/27"
+            }
+          },
+          {
+            "name": "AzureFirewallSubnet",
+            "properties": {
+              "addressPrefix": "10.0.3.0/26"
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', format('nsg-{0}-bastion', parameters('location')))]"
+      ],
+      "metadata": {
+        "description": "The regional hub network."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/virtualNetworks/{0}', format('vnet-{0}-hub', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+      ]
+    },
+    {
+      "copy": {
+        "name": "pipsAzureFirewall",
+        "count": "[length(range(0, variables('numFirewallIpAddressesToAssign')))]"
+      },
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2022-01-01",
+      "name": "[format('pip-fw-{0}-{1}', parameters('location'), padLeft(range(0, variables('numFirewallIpAddressesToAssign'))[copyIndex()], 2, '0'))]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "zones": [
+        "1",
+        "2",
+        "3"
+      ],
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "idleTimeoutInMinutes": 4,
+        "publicIPAddressVersion": "IPv4"
+      }
+    },
+    {
+      "copy": {
+        "name": "pipsAzureFirewall_diagnosticSetting",
+        "count": "[length(range(0, variables('numFirewallIpAddressesToAssign')))]"
+      },
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', format('pip-fw-{0}-{1}', parameters('location'), padLeft(range(0, variables('numFirewallIpAddressesToAssign'))[range(0, variables('numFirewallIpAddressesToAssign'))[copyIndex()]], 2, '0')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-fw-{0}-{1}', parameters('location'), padLeft(range(0, variables('numFirewallIpAddressesToAssign'))[range(0, variables('numFirewallIpAddressesToAssign'))[copyIndex()]], 2, '0')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/firewallPolicies",
+      "apiVersion": "2022-01-01",
+      "name": "[format('fw-policies-{0}', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "sku": {
+          "tier": "Standard"
+        },
+        "threatIntelMode": "Deny",
+        "insights": {
+          "isEnabled": true,
+          "retentionDays": 30,
+          "logAnalyticsResources": {
+            "defaultWorkspaceId": {
+              "id": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]"
+            }
+          }
+        },
+        "threatIntelWhitelist": {
+          "fqdns": [],
+          "ipAddresses": []
+        },
+        "intrusionDetection": null,
+        "dnsSettings": {
+          "servers": [],
+          "enableProxy": true
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]"
+      ],
+      "metadata": {
+        "description": "Azure Firewall Policy"
+      }
+    },
+    {
+      "type": "Microsoft.Network/azureFirewalls",
+      "apiVersion": "2022-01-01",
+      "name": "[format('fw-{0}', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "zones": [
+        "1",
+        "2",
+        "3"
+      ],
+      "properties": {
+        "copy": [
+          {
+            "name": "ipConfigurations",
+            "count": "[length(range(0, variables('numFirewallIpAddressesToAssign')))]",
+            "input": {
+              "name": "[format('pip-fw-{0}-{1}', parameters('location'), padLeft(range(0, variables('numFirewallIpAddressesToAssign'))[range(0, variables('numFirewallIpAddressesToAssign'))[copyIndex('ipConfigurations')]], 2, '0'))]",
+              "properties": {
+                "subnet": "[if(equals(0, range(0, variables('numFirewallIpAddressesToAssign'))[copyIndex('ipConfigurations')]), createObject('id', resourceId('Microsoft.Network/virtualNetworks/subnets', format('vnet-{0}-hub', parameters('location')), 'AzureFirewallSubnet')), null())]",
+                "publicIPAddress": {
+                  "id": "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-fw-{0}-{1}', parameters('location'), padLeft(range(0, variables('numFirewallIpAddressesToAssign'))[range(0, variables('numFirewallIpAddressesToAssign'))[copyIndex('ipConfigurations')]], 2, '0')))]"
+                }
+              }
+            }
+          }
+        ],
+        "sku": {
+          "name": "AZFW_VNet",
+          "tier": "Standard"
+        },
+        "firewallPolicy": {
+          "id": "[resourceId('Microsoft.Network/firewallPolicies', format('fw-policies-{0}', parameters('location')))]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/firewallPolicies/ruleCollectionGroups', format('fw-policies-{0}', parameters('location')), 'DefaultApplicationRuleCollectionGroup')]",
+        "[resourceId('Microsoft.Network/firewallPolicies/ruleCollectionGroups', format('fw-policies-{0}', parameters('location')), 'DefaultNetworkRuleCollectionGroup')]",
+        "[resourceId('Microsoft.Network/firewallPolicies', format('fw-policies-{0}', parameters('location')))]",
+        "pipsAzureFirewall",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+      ],
+      "metadata": {
+        "description": "This is the regional Azure Firewall that all regional spoke networks can egress through."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/azureFirewalls/{0}', format('fw-{0}', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/azureFirewalls', format('fw-{0}', parameters('location')))]",
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2022-01-01",
+      "name": "[format('pip-ab-{0}', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "zones": [
+        "1",
+        "2",
+        "3"
+      ],
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "idleTimeoutInMinutes": 4,
+        "publicIPAddressVersion": "IPv4"
+      },
+      "metadata": {
+        "description": "The public IP for the regional hub's Azure Bastion service."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', format('pip-ab-{0}', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-ab-{0}', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/bastionHosts",
+      "apiVersion": "2022-01-01",
+      "name": "[format('ab-{0}-{1}', parameters('location'), variables('suffix'))]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Basic"
+      },
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "hub-subnet",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', format('vnet-{0}-hub', parameters('location')), 'AzureBastionSubnet')]"
+              },
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-ab-{0}', parameters('location')))]"
+              }
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-ab-{0}', parameters('location')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+      ],
+      "metadata": {
+        "description": "This regional hub's Azure Bastion service. NSGs are configured to allow Bastion to reach any resource subnet in peered spokes."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/bastionHosts/{0}', format('ab-{0}-{1}', parameters('location'), variables('suffix')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/bastionHosts', format('ab-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]"
+      ]
+    },
+    {
+      "condition": "[parameters('deployVpnGateway')]",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2022-01-01",
+      "name": "[format('pip-vgw-{0}', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "zones": [
+        "1",
+        "2",
+        "3"
+      ],
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "idleTimeoutInMinutes": 4,
+        "publicIPAddressVersion": "IPv4"
+      },
+      "metadata": {
+        "description": "The public IPs for the regional VPN gateway. Only deployed if requested."
+      }
+    },
+    {
+      "condition": "[parameters('deployVpnGateway')]",
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', format('pip-vgw-{0}', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-vgw-{0}', parameters('location')))]"
+      ]
+    },
+    {
+      "condition": "[parameters('deployVpnGateway')]",
+      "type": "Microsoft.Network/virtualNetworkGateways",
+      "apiVersion": "2022-01-01",
+      "name": "[format('vgw-{0}-hub', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "sku": {
+          "name": "VpnGw2AZ",
+          "tier": "VpnGw2AZ"
+        },
+        "gatewayType": "Vpn",
+        "vpnGatewayGeneration": "Generation2",
+        "vpnType": "RouteBased",
+        "activeActive": false,
+        "disableIPSecReplayProtection": false,
+        "enableBgp": false,
+        "enableBgpRouteTranslationForNat": false,
+        "enableDnsForwarding": false,
+        "enablePrivateIpAddress": false,
+        "ipConfigurations": [
+          {
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-vgw-{0}', parameters('location')))]"
+              },
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', format('vnet-{0}-hub', parameters('location')), 'GatewaySubnet')]"
+              }
+            }
+          }
+        ],
+        "natRules": []
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-vgw-{0}', parameters('location')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+      ],
+      "metadata": {
+        "description": "The is the regional VPN gateway, configured with basic settings. Only deployed if requested."
+      }
+    },
+    {
+      "condition": "[parameters('deployVpnGateway')]",
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/virtualNetworkGateways/{0}', format('vgw-{0}-hub', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/virtualNetworkGateways', format('vgw-{0}-hub', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2022-01-01",
+      "name": "[format('route-to-{0}-hub-fw', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "r-nexthop-to-fw",
+            "properties": {
+              "nextHopType": "VirtualAppliance",
+              "addressPrefix": "0.0.0.0/0",
+              "nextHopIpAddress": "[reference(resourceId('Microsoft.Network/azureFirewalls', format('fw-{0}', parameters('location')))).ipConfigurations[0].properties.privateIPAddress]"
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/azureFirewalls', format('fw-{0}', parameters('location')))]"
+      ],
+      "metadata": {
+        "description": "Next hop to the regional hub's Azure Firewall"
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2022-01-01",
+      "name": "nsg-spoke-resources",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "AllowBastionRdpFromHub",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "[reference(resourceId('Microsoft.Network/virtualNetworks/subnets', format('vnet-{0}-hub', parameters('location')), 'AzureBastionSubnet'), '2022-01-01').addressPrefix]",
+              "destinationPortRanges": [
+                "3389"
+              ],
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowBastionSshFromHub",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "[reference(resourceId('Microsoft.Network/virtualNetworks/subnets', format('vnet-{0}-hub', parameters('location')), 'AzureBastionSubnet'), '2022-01-01').addressPrefix]",
+              "destinationPortRanges": [
+                "22"
+              ],
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationPortRange": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1000,
+              "direction": "Inbound"
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+      ],
+      "metadata": {
+        "description": "NSG on the resource subnet (just using a common one for all as an example, but usually would be based on the specific needs of the spoke)."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/networkSecurityGroups/{0}', 'nsg-spoke-resources')]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-resources')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2022-01-01",
+      "name": "nsg-spoke-privatelinkendpoints",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "AllowAll443InFromVnet",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationPortRange": "443",
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllInbound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationPortRange": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1000,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllOutbound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationPortRange": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1000,
+              "direction": "Outbound"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "description": "NSG on the Private Link subnet (just using a common one for all as an example, but usually would be based on the specific needs of the spoke)."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/networkSecurityGroups/{0}', 'nsg-spoke-privatelinkendpoints')]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-privatelinkendpoints')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2022-01-01",
+      "name": "[format('vnet-{0}-spoke-one', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.100.0.0/22"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "snet-resources",
+            "properties": {
+              "addressPrefix": "10.100.0.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-resources')]"
+              },
+              "privateEndpointNetworkPolicies": "Disabled",
+              "privateLinkServiceNetworkPolicies": "Disabled"
+            }
+          },
+          {
+            "name": "snet-privatelinkendpoints",
+            "properties": {
+              "addressPrefix": "10.100.1.0/26",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-privatelinkendpoints')]"
+              },
+              "privateEndpointNetworkPolicies": "Enabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-privatelinkendpoints')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-resources')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/virtualNetworks/{0}', format('vnet-{0}-spoke-one', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-one', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2022-01-01",
+      "name": "[format('vnet-{0}-spoke-two', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.200.0.0/22"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "snet-resources",
+            "properties": {
+              "addressPrefix": "10.200.0.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-resources')]"
+              },
+              "privateEndpointNetworkPolicies": "Disabled",
+              "privateLinkServiceNetworkPolicies": "Disabled"
+            }
+          },
+          {
+            "name": "snet-privatelinkendpoints",
+            "properties": {
+              "addressPrefix": "10.200.1.0/26",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-privatelinkendpoints')]"
+              },
+              "privateEndpointNetworkPolicies": "Enabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-privatelinkendpoints')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-spoke-resources')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/virtualNetworks/{0}', format('vnet-{0}-spoke-two', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-spoke-two', parameters('location')))]"
+      ]
+    }
+  ]
+}
