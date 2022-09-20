@@ -1,0 +1,368 @@
+{
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "Hub-spoke is a foundational networking topology for efficiently managing common and security requirements. A hub is a central network zone that controls and inspects egress and/or ingress traffic between zones: internet, on-premises, and spokes. The hub-spoke topology gives you an effective way to enforce security policies in a central location.",
+    "documentationFileName": "hub-spoke-overview.md",
+    "associatedResources": [
+        {
+            "resourceType": "Microsoft.OperationalInsights/workspaces",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Insights/diagnosticSettings",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/publicIPAddresses",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/firewallPolicies",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/azureFirewalls",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/bastionHosts",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/virtualNetworkGateways",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/routeTables",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "",
+            "displayName": "Azure Monitor",
+            "type": "Custom",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureMonitor"
+            }
+        }
+    ],
+    "pivots": [
+        {
+            "name": "hubNetwork",
+            "displayName": "Hub network",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Network/virtualNetworks"
+        },
+        {
+            "name": "spokeNetworks",
+            "displayName": "Spoke networks",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Network/virtualNetworks"
+        },
+        {
+            "name": "vpnGateway",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Network/virtualNetworkGateways"
+        }
+    ],
+    "configurations": [
+        {
+            "id": "basic",
+            "title": "Foundational deployment",
+            "subTitle": "This is the foundational deployment of the hub-spoke topology.  It lays out the core networking components and leaves room to grow into more advanced configurations.",
+            "cost": {
+                "value": 112,
+                "score": 3,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "daily",
+                "tooltip": "TOOL TIP HERE 00 TODO"
+            },
+            "maintenance": {
+                "score": 2,
+                "tooltip": "Maint tool tip"
+            },
+            "templateFileName": "base.json",
+            "pivotValues": [
+                {
+                    "pivotName": "hubNetwork",
+                    "content": [
+                        "empty content 0",
+                        "empty content 1",
+                        "empty content 2"
+                    ]
+                },
+                {
+                    "pivotName": "spokeNetworks",
+                    "content": [
+                        "vpn content 0",
+                        "vpn content 1",
+                        "vpn content 2"
+                    ]
+                }
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Insights/diagnosticSettings",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/publicIPAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/routeTables",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureMonitor"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "withGateway",
+            "title": "Foundational deployment with on-premises connectivity via VPN Gateway",
+            "subTitle": "This is the foundational deployment of the hub-spoke topology with on-premises connectivity provided by VPN gateway.",
+            "cost": {
+                "value": 40,
+                "score": 2,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "daily",
+                "tooltip": "TOOL TIP HERE 00 TODO"
+            },
+            "maintenance": {
+                "score": 2,
+                "tooltip": "Maint tool tip"
+            },
+            "templateFileName": "base.json",
+            "pivotValues": [
+                {
+                    "pivotName": "hubNetwork",
+                    "content": [
+                        "empty content 0",
+                        "empty content 1",
+                        "empty content 2"
+                    ]
+                },
+                {
+                    "pivotName": "spokeNetworks",
+                    "content": [
+                        "vpn content 0",
+                        "vpn content 1",
+                        "vpn content 2"
+                    ]
+                },
+                {
+                    "pivotName": "vpnGateway",
+                    "content": [
+                        "vpn content 0",
+                        "vpn content 1",
+                        "vpn content 2"
+                    ]
+                }
+
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Insights/diagnosticSettings",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/publicIPAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworkGateways",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/routeTables",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureMonitor"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "full",
+            "title": "Foundational deployment, on-premises connectivity via VPN Gateway, and networked compute.",
+            "subTitle": "This builds upon the prior configuration and adds Virtual Machines that you can use to test spoke-to-spoke communication.",
+            "cost": {
+                "value": 40,
+                "score": 2,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "daily",
+                "tooltip": "TOOL TIP HERE 02 TODO"
+            },
+            "maintenance": {
+                "score": 2,
+                "tooltip": "Maint tool tip"
+            },
+            "templateFileName": "base.json",
+            "pivotValues": [
+                {
+                    "pivotName": "hubNetwork",
+                    "content": [
+                        "empty content 0",
+                        "empty content 1",
+                        "empty content 2"
+                    ]
+                },
+                {
+                    "pivotName": "spokeNetworks",
+                    "content": [
+                        "vpn content 0",
+                        "vpn content 1",
+                        "vpn content 2"
+                    ]
+                },
+                {
+                    "pivotName": "vpnGateway",
+                    "content": [
+                        "vpn content 0",
+                        "vpn content 1",
+                        "vpn content 2"
+                    ]
+                }
+
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Insights/diagnosticSettings",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/publicIPAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworkGateways",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/routeTables",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureMonitor"
+                    }
+                }
+            ]
+        }
+    ]
+}
