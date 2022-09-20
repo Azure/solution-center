@@ -1,0 +1,25 @@
+{
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Network/virtualNetworks"
+  },
+  "title": "Hub-spoke network topology (WIP)",
+  "shortDescription": "Traditional regional network hub-spoke topology that acts as a central point of connectivity to many spoke virtual networks and can also be used as a connectivity point to your on-premises networks.",
+  "highlights": [
+    {
+      "content": "Secure egress and ingress traffic via Azure Firewall"
+    },
+    {
+      "content": "Protect spoke traffic with Network Security Groups"
+    },
+    {
+      "content": "Capture diagnostic logs in Azure Monitor"
+    },
+    {
+      "content": "Secure access to spoke Virtual Machines by using Azure Bastion for connectivity"
+    },
+    {
+      "content": "Provide connectivity to on-premises networks"
+    }
+  ]
+}
