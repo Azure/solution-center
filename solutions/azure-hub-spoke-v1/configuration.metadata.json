@@ -60,9 +60,13 @@
     "pivots": [
         {
             "name": "hubNetwork",
+            "type": "Custom",
             "displayName": "Hub network",
-            "type": "AzureResource",
-            "azureResourceType": "Microsoft.Network/virtualNetworks"
+            "azureResourceType": "Microsoft.Network/virtualNetworks",
+            "icon": {
+                "iconFileName": "47",
+                "iconType": "FrameworkIcon"
+            }
         },
         {
             "name": "spokeNetworks",
