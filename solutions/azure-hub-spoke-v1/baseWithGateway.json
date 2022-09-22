@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.10.61.36676",
-      "templateHash": "464149055209442205"
+      "templateHash": "7169234970455496492"
     }
   },
   "parameters": {
@@ -750,6 +750,114 @@
       "dependsOn": [
         "[resourceId('Microsoft.Network/bastionHosts', format('ab-{0}-{1}', parameters('location'), variables('suffix')))]",
         "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2022-01-01",
+      "name": "[format('pip-vgw-{0}', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "zones": [
+        "1",
+        "2",
+        "3"
+      ],
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "idleTimeoutInMinutes": 4,
+        "publicIPAddressVersion": "IPv4"
+      },
+      "metadata": {
+        "description": "The public IPs for the regional VPN gateway. Only deployed if requested."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', format('pip-vgw-{0}', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-vgw-{0}', parameters('location')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworkGateways",
+      "apiVersion": "2022-01-01",
+      "name": "[format('vgw-{0}-hub', parameters('location'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "sku": {
+          "name": "VpnGw2AZ",
+          "tier": "VpnGw2AZ"
+        },
+        "gatewayType": "Vpn",
+        "vpnType": "RouteBased",
+        "vpnGatewayGeneration": "Generation2",
+        "ipConfigurations": [
+          {
+            "name": "default",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-vgw-{0}', parameters('location')))]"
+              },
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', format('vnet-{0}-hub', parameters('location')), 'GatewaySubnet')]"
+              }
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('pip-vgw-{0}', parameters('location')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('vnet-{0}-hub', parameters('location')))]"
+      ],
+      "metadata": {
+        "description": "The is the regional VPN gateway, configured with basic settings. Only deployed if requested."
+      }
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/virtualNetworkGateways/{0}', format('vgw-{0}-hub', parameters('location')))]",
+      "name": "to-hub-la",
+      "properties": {
+        "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', format('la-hub-{0}-{1}', parameters('location'), variables('suffix')))]",
+        "[resourceId('Microsoft.Network/virtualNetworkGateways', format('vgw-{0}-hub', parameters('location')))]"
       ]
     },
     {
