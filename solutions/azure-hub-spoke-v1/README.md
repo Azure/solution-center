@@ -16,6 +16,7 @@ These ARM templates are generated from the Azure Architecture Center's hub-spoke
 | [base.json](./base.json) | The basic/empty deployment. |
 | [baseWithGateway.json](./baseWithGateway.json) | Adds VPN Gateway to the base deployment. |
 | [baseWithGatewayAndCompute.json](./baseWithGatewayAndCompute.json) | Adds VPN Gateway & VM resources to the base deployment. |
+| [bicep](./bicep/) | Contains the three ARM Bicep files that the ARM JSON files were generated from. |
 
 ## Documentation
 
