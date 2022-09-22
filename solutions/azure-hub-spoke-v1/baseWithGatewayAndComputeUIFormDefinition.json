@@ -15,7 +15,8 @@
                         "Microsoft.Network",
                         "Microsoft.OperationalInsights",
                         "Microsoft.Insights",
-                        "Microsoft.Compute"
+                        "Microsoft.Compute",
+                        "Microsoft.Storage"
                     ]
                 },
                 "location": {
