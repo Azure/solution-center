@@ -1,0 +1,159 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
+    "handler": "Microsoft.Azure.CreateUIDef",
+    "version": "0.1.2-preview",
+    "parameters": {
+        "config": {
+            "isWizard": false,
+            "basics": {
+                "description": "The **foundational deployment** of the [hub-spoke networking topology](https://learn.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke). It includes core networking components and leaves room to grow into more advanced configurations.\n\nThis quickstart is expected to be deployed into an _empty_ resource group.\n\n⏱️ This deployment typically takes over 30 minutes to complete.",
+                "resourceGroup": {
+                    "allowExisting": false
+                },
+                "subscription": {
+                    "resourceProviders": [
+                        "Microsoft.Network",
+                        "Microsoft.OperationalInsights",
+                        "Microsoft.Insights",
+                        "Microsoft.Compute"
+                    ]
+                },
+                "location": {
+                    "label": "Hub Region (Availability Zones required)",
+                    "toolTip": "The location of this regional hub. All resources, including spoke resources, will be deployed to this region. This region must support availability zones.",
+                    "allowedValues": [
+                        "brazilsouth",
+                        "canadacentral",
+                        "centralus",
+                        "eastus",
+                        "eastus2",
+                        "southcentralus",
+                        "westus2",
+                        "westus3",
+                        "francecentral",
+                        "germanywestcentral",
+                        "northeurope",
+                        "norwayeast",
+                        "uksouth",
+                        "westeurope",
+                        "sweedencentral",
+                        "switzerlandnorth",
+                        "uaenorth",
+                        "southafricanorth",
+                        "australiaeast",
+                        "centralindia",
+                        "japaneast",
+                        "koreacentral",
+                        "southeastasia",
+                        "eastasia"
+                    ],
+                    "visible": true
+                }
+            }
+        },
+        "resourceTypes": [
+            "Microsoft.Resources/resourceGroups",
+            "Microsoft.OperationalInsights/workspaces",
+            "Microsoft.Insights/diagnosticSettings",
+            "Microsoft.Network/virtualNetworks",
+            "Microsoft.Network/publicIPAddresses",
+            "Microsoft.Network/firewallPolicies",
+            "Microsoft.Network/azureFirewalls",
+            "Microsoft.Network/bastionHosts",
+            "Microsoft.Network/routeTables",
+            "Microsoft.Network/virtualNetworkGateways",
+            "Microsoft.Network/networkInterfaces",
+            "Microsoft.Compute/virtualMachines"
+        ],
+        "basics": [
+            {
+                "name": "sectionDetailsNetwork",
+                "type": "Microsoft.Common.Section",
+                "label": "⚙️ Additional hub and spoke network configuration",
+                "elements": [
+                    {
+                        "name": "text1",
+                        "type": "Microsoft.Common.TextBlock",
+                        "visible": true,
+                        "options": {
+                            "text": "The hub-spoke network deploys with a pre-defined topology. The hub-spoke network is deployed disconnected from any other networking you may have in your subscription."
+                        }
+                    }
+                ],
+                "visible": true
+            },
+            {
+                "name": "sectionDetailsWorkload",
+                "type": "Microsoft.Common.Section",
+                "label": "⚙️ Example workload configuration",
+                "elements": [
+                    {
+                        "name": "text1",
+                        "type": "Microsoft.Common.TextBlock",
+                        "visible": true,
+                        "options": {
+                            "text": "This selected Solution Center configuration deploys one Windows and one Linux virtual machine to allow you to experience the various routing capabilities in your network. Please configure basic access credentials. You can connect to these virtual machines with Azure Bastion deployed with this solution."
+                        }
+                    },
+                    {
+                        "name": "adminUsername",
+                        "type": "Microsoft.Compute.UserNameTextBox",
+                        "label": "Virtual machine admin username",
+                        "defaultValue": "azureadmin",
+                        "toolTip": "Username for both the Linux and Windows Virtual Machines.",
+                        "constraints": {
+                            "required": true,
+                            "regex": "^[a-z0-9A-Z]{4,20}$",
+                            "validationMessage": "Only alphanumeric characters are allowed, and the value must be 1-20 characters long."
+                        },
+                        "osPlatform": "Windows",
+                        "visible": true
+                    },
+                    {
+                        "name": "adminPassword",
+                        "type": "Microsoft.Compute.CredentialsCombo",
+                        "label": {
+                            "password": "Virtual machine admin password",
+                            "confirmPassword": "Confirm password"
+                        },
+                        "toolTip": {
+                            "password": "Password for both the Linux and Windows Virtual Machines."
+                        },
+                        "constraints": {
+                            "required": true
+                        },
+                        "options": {
+                            "hideConfirmation": false
+                        },
+                        "osPlatform": "Windows",
+                        "visible": true
+                    }
+                ],
+                "visible": true
+            },
+            {
+                "name": "sectionDetailsCleanup",
+                "type": "Microsoft.Common.Section",
+                "label": "🧹 Clean up",
+                "elements": [
+                    {
+                        "name": "infoDeleteUnusedResources",
+                        "type": "Microsoft.Common.InfoBox",
+                        "visible": true,
+                        "options": {
+                            "icon": "Info",
+                            "text": "Delete unused resources after exploring this solution to eliminate unnecessary charges."
+                        }
+                    }
+                ],
+                "visible": true
+            }
+        ],
+        "steps": [],
+        "outputs": {
+            "location": "[location()]",
+            "adminUsername": "[basics('sectionDetailsWorkload').adminUsername')]",
+            "adminPassword": "[basics('sectionDetailsWorkload').adminPassword')]"
+        }
+    }
+}
