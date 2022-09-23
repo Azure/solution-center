@@ -267,7 +267,7 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines",
-      "apiVersion": "2021-07-01",
+      "apiVersion": "2022-03-01",
       "name": "[parameters('vmName')]",
       "location": "[parameters('vmLocation')]",
       "dependsOn": [
