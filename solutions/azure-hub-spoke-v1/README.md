@@ -7,9 +7,9 @@ This directory contains the configuration and assets for the [hub-spoke networki
 * [discovery.metadata.json](./configuration.metadata.json)
 * [configuration.metadata.json](./configuration.metadata.json)
 
-## ARM Templates
+## ARM templates
 
-These ARM templates are generated from the Azure Architecture Center's hub-spoke ARM template and should generally stay in sync with them. The source bicep file is found at <https://github.com/mspnp/samples/tree/main/solutions/azure-hub-spoke/bicep>. That file contains all three variants, and undergoes a minor modification to break them into three separate files, and then are converted to ARM JSON.
+These ARM templates are generated from the Azure Architecture Center's hub-spoke ARM template and should generally stay in sync with them. The source bicep file is found at <https://github.com/mspnp/samples/tree/main/solutions/azure-hub-spoke/bicep>. That file contains all three variants, and undergoes a minor modification to break them into three separate files, and then are converted to JSON via `az bicep build`.
 
 | File | UI Definition file | Summary |
 | ---- | ------- | ------------------ |
