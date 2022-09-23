@@ -1,6 +1,6 @@
 # Azure Hub-Spoke Solution Center solution
 
-This directory contains the configuration and assets for the hub-spoke networking solution center solution.
+This directory contains the configuration and assets for the [hub-spoke networking solution center solution](https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.testmode=true#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/azure-hub-spoke-v1).
 
 ## Configuration
 
