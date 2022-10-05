@@ -63,6 +63,7 @@
                 "tooltip": "Regional hub networks are usually considered business-critical with significant governance."
             },
             "templateFileName": "base.json",
+            "uiDefinitionFileName": "baseUIFormDefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "hubNetwork",
@@ -155,6 +156,7 @@
                 "tooltip": "Regional hub networks are usually considered business-critical with significant governance, especially with cross-premises connectivity."
             },
             "templateFileName": "baseWithGateway.json",
+            "uiDefinitionFileName": "baseWithGatewayUIFormDefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "hubNetwork",
@@ -251,6 +253,7 @@
                 "tooltip": "Regional hub networks are usually considered business-critical with significant governance, especially with cross-premises connectivity and spoke resources like Virtual Machines."
             },
             "templateFileName": "baseWithGatewayAndCompute.json",
+            "uiDefinitionFileName": "baseWithGatewayAndComputeUIFormDefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "hubNetwork",
