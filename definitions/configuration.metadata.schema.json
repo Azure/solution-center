@@ -96,6 +96,10 @@
                 "templateFileName" :{
                     "type": "string",
                     "description": "The file name of the ARM template file associated with this config option."
+                },
+                "uiDefinitionFileName" :{
+                    "type": "string",
+                    "description": "The file name of the UI definition file associated with this config option."
                 }
             },
             "required": [

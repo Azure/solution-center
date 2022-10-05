@@ -30,7 +30,9 @@
                         "A second description of the features specific to this configuration."
                     ]
                 }
-            ]
+            ],
+            "templateFileName": "<ARm template file name>",
+            "uiDefinitionFileName": "<UI definition file name>"
         }
     ],
     "associatedResources": [
