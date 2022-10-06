@@ -21,6 +21,10 @@
             }
         },
         "resourceTypes": [
+            "microsoft.network/networksecuritygroups",
+            "microsoft.network/virtualnetworks",
+            "microsoft.network/networkinterfaces",
+            "microsoft.compute/virtualmachines",
             "microsoft.resources/resourcegroups"
         ],
         "basics": [
@@ -51,8 +55,16 @@
                             "value": "West US"
                         },
                         {
+                            "label": "East US",
+                            "value": "East US"
+                        },
+                        {
                             "label": "North Europe",
                             "value": "North Europe"
+                        },
+                        {
+                            "label": "West Europe",
+                            "value": "West Europe"
                         }
                     ]
                 },

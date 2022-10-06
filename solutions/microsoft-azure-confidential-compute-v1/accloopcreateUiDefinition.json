@@ -44,7 +44,7 @@
             {
                 "name": "numberOfVMs",
                 "type": "Microsoft.Common.TextBox",
-                "label": "Number Of V Ms",
+                "label": "Number Of VMs",
                 "defaultValue": "2",
                 "toolTip": "Number of confidential computing VMs to create.",
                 "constraints": {
