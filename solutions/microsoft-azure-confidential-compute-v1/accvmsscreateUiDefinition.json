@@ -1,347 +1,347 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
-    "handler": "Microsoft.Azure.CreateUIDef",
-    "version": "0.1.2-preview",
-    "parameters": {
-        "config": {
-            "isWizard": false,
-            "basics": {
-                "resourceGroup": {
-                    "allowExisting": false
-                },
-                "location": {
-                    "allowedValues": [
-                        "eastus",
-                        "westus",
-                        "northeurope",
-                        "westeurope"
-                    ],
-                    "visible": true
+    "$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
+    "view": {
+        "kind": "Form",
+        "properties": {
+            "title": "Test Form View",
+            "steps": [
+                {
+                    "name": "basics",
+                    "label": "Basics",
+                    "elements": [
+                        {
+                            "name": "resourceScope",
+                            "type": "Microsoft.Common.ResourceScope",
+                            "location": {
+                                "resourceTypes": [
+                                    "microsoft.network/loadbalancers",
+                                    "microsoft.compute/virtualmachinescalesets",
+                                    "microsoft.network/publicipaddresses",
+                                    "microsoft.network/networksecuritygroups",
+                                    "microsoft.network/virtualnetworks",
+                                    "microsoft.resources/resourcegroups"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "vmSize",
+                            "type": "Microsoft.Common.DropDown",
+                            "label": "Vm Size",
+                            "defaultValue": "Standard_DC2as_v5",
+                            "toolTip": "Size of the VM.",
+                            "constraints": {
+                                "required": false,
+                                "allowedValues": [
+                                    {
+                                        "label": "Standard_DC2as_v5",
+                                        "value": "Standard_DC2as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC4as_v5",
+                                        "value": "Standard_DC4as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC8as_v5",
+                                        "value": "Standard_DC8as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC16as_v5",
+                                        "value": "Standard_DC16as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC32as_v5",
+                                        "value": "Standard_DC32as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC48as_v5",
+                                        "value": "Standard_DC48as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC64as_v5",
+                                        "value": "Standard_DC64as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC96as_v5",
+                                        "value": "Standard_DC96as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC2ads_v5",
+                                        "value": "Standard_DC2ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC4ads_v5",
+                                        "value": "Standard_DC4ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC8ads_v5",
+                                        "value": "Standard_DC8ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC16ads_v5",
+                                        "value": "Standard_DC16ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC32ads_v5",
+                                        "value": "Standard_DC32ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC48ads_v5",
+                                        "value": "Standard_DC48ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC64ads_v5",
+                                        "value": "Standard_DC64ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_DC96ads_v5",
+                                        "value": "Standard_DC96ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC2as_v5",
+                                        "value": "Standard_EC2as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC4as_v5",
+                                        "value": "Standard_EC4as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC8as_v5",
+                                        "value": "Standard_EC8as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC16as_v5",
+                                        "value": "Standard_EC16as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC20as_v5",
+                                        "value": "Standard_EC20as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC32as_v5",
+                                        "value": "Standard_EC32as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC48as_v5",
+                                        "value": "Standard_EC48as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC64as_v5",
+                                        "value": "Standard_EC64as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC96as_v5",
+                                        "value": "Standard_EC96as_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC96ias_v5",
+                                        "value": "Standard_EC96ias_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC2ads_v5",
+                                        "value": "Standard_EC2ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC4ads_v5",
+                                        "value": "Standard_EC4ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC8ads_v5",
+                                        "value": "Standard_EC8ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC16ads_v5",
+                                        "value": "Standard_EC16ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC20ads_v5",
+                                        "value": "Standard_EC20ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC32ads_v5",
+                                        "value": "Standard_EC32ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC48ads_v5",
+                                        "value": "Standard_EC48ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC64ads_v5",
+                                        "value": "Standard_EC64ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC96ads_v5",
+                                        "value": "Standard_EC96ads_v5"
+                                    },
+                                    {
+                                        "label": "Standard_EC96iads_v5",
+                                        "value": "Standard_EC96iads_v5"
+                                    }
+                                ]
+                            },
+                            "visible": true
+                        },
+                        {
+                            "name": "osImageName",
+                            "type": "Microsoft.Common.DropDown",
+                            "label": "Os Image Name",
+                            "defaultValue": "Windows Server 2022 Gen 2",
+                            "toolTip": "OS Image for the Virtual Machine",
+                            "constraints": {
+                                "required": false,
+                                "allowedValues": [
+                                    {
+                                        "label": "Windows Server 2022 Gen 2",
+                                        "value": "Windows Server 2022 Gen 2"
+                                    },
+                                    {
+                                        "label": "Windows Server 2019 Gen 2",
+                                        "value": "Windows Server 2019 Gen 2"
+                                    },
+                                    {
+                                        "label": "Ubuntu 20.04 LTS Gen 2",
+                                        "value": "Ubuntu 20.04 LTS Gen 2"
+                                    }
+                                ]
+                            },
+                            "visible": true
+                        },
+                        {
+                            "name": "vmssName",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "Vmss Name",
+                            "defaultValue": "",
+                            "toolTip": "String used as a base for naming resources. Must be 3-61 characters in length and globally unique across Azure. A hash is prepended to this string for some resources, and resource-specific information is appended.",
+                            "constraints": {
+                                "required": true,
+                                "regex": "",
+                                "validationMessage": ""
+                            },
+                            "visible": true
+                        },
+                        {
+                            "name": "instanceCount",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "Instance Count",
+                            "defaultValue": "3",
+                            "toolTip": "Number of VM instances (100 or less).",
+                            "constraints": {
+                                "required": false,
+                                "regex": "",
+                                "validationMessage": ""
+                            },
+                            "visible": true
+                        },
+                        {
+                            "name": "singlePlacementGroup",
+                            "type": "Microsoft.Common.DropDown",
+                            "label": "Single Placement Group",
+                            "defaultValue": "true",
+                            "toolTip": "When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true.",
+                            "constraints": {
+                                "required": false,
+                                "allowedValues": [
+                                    {
+                                        "label": "true",
+                                        "value": true
+                                    },
+                                    {
+                                        "label": "false",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "visible": true
+                        },
+                        {
+                            "name": "securityType",
+                            "type": "Microsoft.Common.DropDown",
+                            "label": "Security Type",
+                            "defaultValue": "VMGuestStateOnly",
+                            "toolTip": "VM security type.",
+                            "constraints": {
+                                "required": false,
+                                "allowedValues": [
+                                    {
+                                        "label": "VMGuestStateOnly",
+                                        "value": "VMGuestStateOnly"
+                                    }
+                                ]
+                            },
+                            "visible": true
+                        },
+                        {
+                            "name": "adminUsername",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "Admin Username",
+                            "defaultValue": "",
+                            "toolTip": "Admin user name of the VM.",
+                            "constraints": {
+                                "required": true,
+                                "regex": "",
+                                "validationMessage": ""
+                            },
+                            "visible": true
+                        },
+                        {
+                            "name": "adminPasswordOrKeyauthenticationType",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                                "authenticationType": "Authentication Type",
+                                "password": "Admin Password Or Key",
+                                "sshPublicKey": "Admin Password Or Key"
+                            },
+                            "toolTip": {
+                                "authenticationType": "Type of authentication to use on the Virtual Machine.",
+                                "password": "Type of authentication to use on the Virtual Machine.",
+                                "sshPublicKey": "Password or ssh key for the Virtual Machine."
+                            },
+                            "defaultValue": {
+                                "sshPublicKey": "",
+                                "authenticationType": ""
+                            },
+                            "constraints": {
+                                "required": true
+                            },
+                            "options": {
+                                "hideConfirmation": true,
+                                "hidePassword": false
+                            },
+                            "osPlatform": "Linux",
+                            "visible": true
+                        },
+                        {
+                            "name": "platformFaultDomainCount",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "Platform Fault Domain Count",
+                            "defaultValue": "1",
+                            "toolTip": "Fault Domain count for each placement group.",
+                            "constraints": {
+                                "required": false,
+                                "regex": "",
+                                "validationMessage": ""
+                            },
+                            "visible": true
+                        }
+                    ]
                 }
-            }
+            ]
         },
-        "resourceTypes": [
-            "microsoft.network/loadbalancers",
-            "microsoft.compute/virtualmachinescalesets",
-            "microsoft.network/publicipaddresses",
-            "microsoft.network/networksecuritygroups",
-            "microsoft.network/virtualnetworks",
-            "microsoft.resources/resourcegroups"
-        ],
-        "basics": [
-            {
-                "name": "vmSize",
-                "type": "Microsoft.Common.DropDown",
-                "label": "Vm Size",
-                "defaultValue": "Standard_DC2as_v5",
-                "toolTip": "Size of the VM.",
-                "constraints": {
-                    "required": false,
-                    "allowedValues": [
-                        {
-                            "label": "Standard_DC2as_v5",
-                            "value": "Standard_DC2as_v5"
-                        },
-                        {
-                            "label": "Standard_DC4as_v5",
-                            "value": "Standard_DC4as_v5"
-                        },
-                        {
-                            "label": "Standard_DC8as_v5",
-                            "value": "Standard_DC8as_v5"
-                        },
-                        {
-                            "label": "Standard_DC16as_v5",
-                            "value": "Standard_DC16as_v5"
-                        },
-                        {
-                            "label": "Standard_DC32as_v5",
-                            "value": "Standard_DC32as_v5"
-                        },
-                        {
-                            "label": "Standard_DC48as_v5",
-                            "value": "Standard_DC48as_v5"
-                        },
-                        {
-                            "label": "Standard_DC64as_v5",
-                            "value": "Standard_DC64as_v5"
-                        },
-                        {
-                            "label": "Standard_DC96as_v5",
-                            "value": "Standard_DC96as_v5"
-                        },
-                        {
-                            "label": "Standard_DC2ads_v5",
-                            "value": "Standard_DC2ads_v5"
-                        },
-                        {
-                            "label": "Standard_DC4ads_v5",
-                            "value": "Standard_DC4ads_v5"
-                        },
-                        {
-                            "label": "Standard_DC8ads_v5",
-                            "value": "Standard_DC8ads_v5"
-                        },
-                        {
-                            "label": "Standard_DC16ads_v5",
-                            "value": "Standard_DC16ads_v5"
-                        },
-                        {
-                            "label": "Standard_DC32ads_v5",
-                            "value": "Standard_DC32ads_v5"
-                        },
-                        {
-                            "label": "Standard_DC48ads_v5",
-                            "value": "Standard_DC48ads_v5"
-                        },
-                        {
-                            "label": "Standard_DC64ads_v5",
-                            "value": "Standard_DC64ads_v5"
-                        },
-                        {
-                            "label": "Standard_DC96ads_v5",
-                            "value": "Standard_DC96ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC2as_v5",
-                            "value": "Standard_EC2as_v5"
-                        },
-                        {
-                            "label": "Standard_EC4as_v5",
-                            "value": "Standard_EC4as_v5"
-                        },
-                        {
-                            "label": "Standard_EC8as_v5",
-                            "value": "Standard_EC8as_v5"
-                        },
-                        {
-                            "label": "Standard_EC16as_v5",
-                            "value": "Standard_EC16as_v5"
-                        },
-                        {
-                            "label": "Standard_EC20as_v5",
-                            "value": "Standard_EC20as_v5"
-                        },
-                        {
-                            "label": "Standard_EC32as_v5",
-                            "value": "Standard_EC32as_v5"
-                        },
-                        {
-                            "label": "Standard_EC48as_v5",
-                            "value": "Standard_EC48as_v5"
-                        },
-                        {
-                            "label": "Standard_EC64as_v5",
-                            "value": "Standard_EC64as_v5"
-                        },
-                        {
-                            "label": "Standard_EC96as_v5",
-                            "value": "Standard_EC96as_v5"
-                        },
-                        {
-                            "label": "Standard_EC96ias_v5",
-                            "value": "Standard_EC96ias_v5"
-                        },
-                        {
-                            "label": "Standard_EC2ads_v5",
-                            "value": "Standard_EC2ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC4ads_v5",
-                            "value": "Standard_EC4ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC8ads_v5",
-                            "value": "Standard_EC8ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC16ads_v5",
-                            "value": "Standard_EC16ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC20ads_v5",
-                            "value": "Standard_EC20ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC32ads_v5",
-                            "value": "Standard_EC32ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC48ads_v5",
-                            "value": "Standard_EC48ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC64ads_v5",
-                            "value": "Standard_EC64ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC96ads_v5",
-                            "value": "Standard_EC96ads_v5"
-                        },
-                        {
-                            "label": "Standard_EC96iads_v5",
-                            "value": "Standard_EC96iads_v5"
-                        }
-                    ]
-                },
-                "visible": true
-            },
-            {
-                "name": "osImageName",
-                "type": "Microsoft.Common.DropDown",
-                "label": "Os Image Name",
-                "defaultValue": "Windows Server 2022 Gen 2",
-                "toolTip": "OS Image for the Virtual Machine",
-                "constraints": {
-                    "required": false,
-                    "allowedValues": [
-                        {
-                            "label": "Windows Server 2022 Gen 2",
-                            "value": "Windows Server 2022 Gen 2"
-                        },
-                        {
-                            "label": "Windows Server 2019 Gen 2",
-                            "value": "Windows Server 2019 Gen 2"
-                        },
-                        {
-                            "label": "Ubuntu 20.04 LTS Gen 2",
-                            "value": "Ubuntu 20.04 LTS Gen 2"
-                        }
-                    ]
-                },
-                "visible": true
-            },
-            {
-                "name": "vmssName",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Vmss Name",
-                "defaultValue": "",
-                "toolTip": "String used as a base for naming resources. Must be 3-61 characters in length and globally unique across Azure. A hash is prepended to this string for some resources, and resource-specific information is appended.",
-                "constraints": {
-                    "required": true,
-                    "regex": "",
-                    "validationMessage": ""
-                },
-                "visible": true
-            },
-            {
-                "name": "instanceCount",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Instance Count",
-                "defaultValue": "3",
-                "toolTip": "Number of VM instances (100 or less).",
-                "constraints": {
-                    "required": false,
-                    "regex": "",
-                    "validationMessage": ""
-                },
-                "visible": true
-            },
-            {
-                "name": "singlePlacementGroup",
-                "type": "Microsoft.Common.DropDown",
-                "label": "Single Placement Group",
-                "defaultValue": "true",
-                "toolTip": "When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true.",
-                "constraints": {
-                    "required": false,
-                    "allowedValues": [
-                        {
-                            "label": "true",
-                            "value": true
-                        },
-                        {
-                            "label": "false",
-                            "value": false
-                        }
-                    ]
-                },
-                "visible": true
-            },
-            {
-                "name": "securityType",
-                "type": "Microsoft.Common.DropDown",
-                "label": "Security Type",
-                "defaultValue": "VMGuestStateOnly",
-                "toolTip": "VM security type.",
-                "constraints": {
-                    "required": false,
-                    "allowedValues": [
-                        {
-                            "label": "VMGuestStateOnly",
-                            "value": "VMGuestStateOnly"
-                        }
-                    ]
-                },
-                "visible": true
-            },
-            {
-                "name": "adminUsername",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Admin Username",
-                "defaultValue": "",
-                "toolTip": "Admin user name of the VM.",
-                "constraints": {
-                    "required": true,
-                    "regex": "",
-                    "validationMessage": ""
-                },
-                "visible": true
-            },
-            {
-                "name": "adminPasswordOrKeyauthenticationType",
-                "type": "Microsoft.Compute.CredentialsCombo",
-                "label": {
-                    "authenticationType": "Authentication Type",
-                    "password": "Admin Password Or Key",
-                    "sshPublicKey": "Admin Password Or Key"
-                },
-                "toolTip": {
-                    "authenticationType": "Type of authentication to use on the Virtual Machine.",
-                    "password": "Type of authentication to use on the Virtual Machine.",
-                    "sshPublicKey": "Password or ssh key for the Virtual Machine."
-                },
-                "defaultValue": {
-                    "sshPublicKey": "",
-                    "authenticationType": ""
-                },
-                "constraints": {
-                    "required": true
-                },
-                "options": {
-                    "hideConfirmation": true,
-                    "hidePassword": false
-                },
-                "osPlatform": "Linux",
-                "visible": true
-            },
-            {
-                "name": "platformFaultDomainCount",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Platform Fault Domain Count",
-                "defaultValue": "1",
-                "toolTip": "Fault Domain count for each placement group.",
-                "constraints": {
-                    "required": false,
-                    "regex": "",
-                    "validationMessage": ""
-                },
-                "visible": true
-            }
-        ],
-        "steps": [],
         "outputs": {
-            "location": "[location()]",
-            "vmSize": "[basics('vmSize')]",
-            "osImageName": "[basics('osImageName')]",
-            "vmssName": "[basics('vmssName')]",
-            "instanceCount": "[basics('instanceCount')]",
-            "singlePlacementGroup": "[basics('singlePlacementGroup')]",
-            "securityType": "[basics('securityType')]",
-            "adminUsername": "[basics('adminUsername')]",
-            "adminPasswordOrKey": "[coalesce(basics('adminPasswordOrKeyauthenticationType').sshPublicKey, basics('adminPasswordOrKeyauthenticationType').password)]",
-            "authenticationType": "[basics('adminPasswordOrKeyauthenticationType').authenticationType]",
-            "platformFaultDomainCount": "[basics('platformFaultDomainCount')]"
+            "parameters": {
+                "vmSize": "[steps('basics').vmSize]",
+                "osImageName": "[steps('basics').osImageName]",
+                "vmssName": "[steps('basics').vmssName]",
+                "instanceCount": "[steps('basics').instanceCount]",
+                "singlePlacementGroup": "[steps('basics').singlePlacementGroup]",
+                "securityType": "[steps('basics').securityType]",
+                "adminUsername": "[steps('basics').adminUsername]",
+                "adminPasswordOrKey": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
+                "authenticationType": "[steps('basics').adminPasswordOrKeyauthenticationType.authenticationType]",
+                "platformFaultDomainCount": "[steps('basics').platformFaultDomainCount]"
+            },
+            "kind": "ResourceGroup",
+            "location": "[steps('basics').resourceScope.location.name]",
+            "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]"
         }
     }
 }
