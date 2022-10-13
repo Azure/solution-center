@@ -50,7 +50,7 @@
             "id": "DevTestVM",
             "title": "Confidential dev/test virtual machine",
             "templateFileName": "azuredeploy-devtest.json",
-            "uiDefinitionFileName": "accvmsscreateUiDefinition.json",
+            "uiDefinitionFileName": "accdevtestcreateUiDefinition.json",
             "subTitle": "Best for testing the security features functionality of a confidential virtual machine.",
             "cost": {
                 "type": "score",
