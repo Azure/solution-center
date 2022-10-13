@@ -338,7 +338,7 @@
                 "osImageName": "[steps('basics').osImageName]",
                 "osDiskType": "[steps('basics').osDiskType]",
                 "adminUsername": "[steps('basics').adminUsername]",
-                "adminPasswordOrKey": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
+                "adminPasswordOrKeyauthenticationType": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
                 "authenticationType": "[steps('basics').adminPasswordOrKeyauthenticationType.authenticationType]",
                 "securityType": "[steps('basics').securityType]"
             },

@@ -335,7 +335,7 @@
                 "singlePlacementGroup": "[steps('basics').singlePlacementGroup]",
                 "securityType": "[steps('basics').securityType]",
                 "adminUsername": "[steps('basics').adminUsername]",
-                "adminPasswordOrKey": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
+                "adminPasswordOrKeyauthenticationType": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
                 "authenticationType": "[steps('basics').adminPasswordOrKeyauthenticationType.authenticationType]",
                 "platformFaultDomainCount": "[steps('basics').platformFaultDomainCount]"
             },
