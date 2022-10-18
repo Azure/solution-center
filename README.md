@@ -1,19 +1,29 @@
-# Welcome to Solution center! :wave:
+# Azure solutions metadata repository
       
 ## Overview
 
-This repository is the central repository for the metadata defined in the Azure Portal's [Solution center](https://aka.ms/solutioncenter/portal).
+"Azure solutions" are an Azure portal tool which help customers find & create **_groups of_** Azure services and their associated software. Our "solutions" allow customers to compare full workloads in the Azure portal and enable Microsoft teams to showcase the business value of their products. 
+
+Solutions:
+- Help customers discover new products
+- Share best practices for deploying cloud workloads
+- Guide customers’ decision making – from a single content hierarchy, not multiple
+- Consolidate multiple Azure services + software – representing full workloads for customers
+
+We leverage similar discovery tools (e.g. [Architecture Center](https://github.com/mspnp/), [QuickStart Templates](https://github.com/Azure/azure-quickstart-templates), [Quickstart Center](https://ms.portal.azure.com/#view/Microsoft_Azure_Resources/QuickstartCenterBlade), [All services](https://ms.portal.azure.com/#allservices)) to define a new information hierarchy which can consolidate guidance to discover, decide, evaluate, and automate solutions.
+
+This repository contains metadata defined in the Azure Portal's [All solutions](https://aka.ms/solutions/portal) experience.
 
 ## How to submit a solution?
 
-Solution center enables our partners to deploy and manage Azure and open-source services and software all with a single metadata-driven repository. Some examples could be deploying webapps or using inexpensive virtual machines for machine learning. Solution center uses the concept of a "solution" to help customers understand and configure services and software with ease.
+Azure solutions enable partners to deploy and manage Azure and open-source services and software all with a single metadata-driven repository. Examples include deploying webapps and using inexpensive virtual machines for machine learning. 
 
 To get started, 
 1. Fork the repository.
 2. Copy `starter-template-v1` and customize the name of the folder with your solution name (must be unique). 
 3. Follow the instructions below to author your first solution and solution card.
 4. Add an ARM template per configuration to your solution folder, and reference it using the `templateFileName`.
-5. Replace the solutionId in this URL and test your experience at: https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_SolutionCenter=flight1&feature.testmode=true#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/<your solution id\>
+5. Replace **_starter-template-v1_** in this URL and test your experience at: https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_SolutionCenter=flight1&feature.testmode=true#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/starter-template-v1
 
 A solution includes:
 
@@ -48,7 +58,7 @@ Configuration metadata is how your solution looks to others. It defines pricing,
 
 ### discovery.metadata
 
-Discovery metadata is how you define your solution in a solution grouping page. It is also how your solution will look in Solution center.
+Discovery metadata is how you define your solution in a solution grouping page.
 
 - icon
 - title
@@ -66,15 +76,15 @@ Discovery metadata is how you define your solution in a solution grouping page. 
 
 #### **An example of a solution card with descriptions on**
 
-![description-on-image](images/descriptions-on.png)
+<img src="images/descriptions-on.png" width="200" />
 
 #### **An example of a solution card with descriptions off**
 
-![description-off-image](images/descriptions-off.png)
+<img src="images/descriptions-off.png" width="200" />
 
 #### **An example configuration with three pivots**
 See `pivots` and `options` in `configuration.metadata` for implementation
-![configuration](images/configuration.png)
+<img src="images/configuration.png" width="400" />
 
 ## How to submit a solution group
 
@@ -84,6 +94,6 @@ So you have at least 3 solutions you'd like to help customers compare? Copy the 
 
 You can direct link to a solution or solution group URI from any experience in the Azure portal.
 
-Any relevant solutions will also be accessible via VM browse / create dropdown, with 2MM monthly active users.
+Relevant solutions will also be accessible via VM browse / create dropdown, with 2MM monthly active users.
 
-![vm-browse](images/vm-browse.png)
+<img src="images/vm-browse.png" width="350" />
