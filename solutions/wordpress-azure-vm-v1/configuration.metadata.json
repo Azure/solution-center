@@ -59,40 +59,35 @@
     ],
     "pivots": [
         {
-            "name": "hubNetwork",
-            "type": "Custom",
-            "displayName": "Custom icon on left side",
-            "azureResourceType": "Microsoft.Network/virtualNetworks",
-            "icon": {
-                "iconNumber": 245,
-                "iconType": "FrameworkIcon"
-            }
+            "name": "virtualMachineCompute",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachines"
         }
     ],
     "configurations": [
         {
             "id": "base",
-            "title": "First configuration",
-            "subTitle": "Details on what gets deployed",
+            "title": "Dev/Test instance",
+            "subTitle": "A starter solution for quick setup with low-scale.",
             "cost": {
                 "value": 150,
                 "currency": "USD",
                 "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "cadence": "monthly"
             },
             "maintenance": {
-                "score": 2,
-                "tooltip": "Example tooltip describing cost to maintain, customizable."
+                "score": 1,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "example-template.json",
+            "templateFileName": "azuredeploy-minimal.json",
             "pivotValues": [
                 {
-                    "pivotName": "hubNetwork",
+                    "pivotName": "virtualMachineCompute",
                     "content": [
-                        "Highlight on this feature",
-                        "Highlight on this feature",
-                        "Highlight on this feature"
+                        "A single VM based solution without any scale option",
+                        "Uses NFS, MySQL, and smaller autoscale web frontend VM sku (1 core)",
+                        "Requires only 2 VM cores",
+                        "Works with free trial subscriptions"
                     ]
                 }
             ]

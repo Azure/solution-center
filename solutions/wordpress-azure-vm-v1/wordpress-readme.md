@@ -1,16 +1,9 @@
 
-# Deploy and Manage a Scalable LAMP Cluster on Azure
+# Deploy and Manage a Scalable WordPress Cluster on Azure
 
-This repo contains guides and [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) templates designed to help you deploy and manage a highly available and scalable
-[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) cluster on Azure. The template(s) provided here deploy an *empty* infrastructure/stack to deploy any general LAMP application.
+This deploys a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) cluster on Azure. The coinfigurations provided deploy [WordPress](https://wordpress.org/) on a LAMP web application.
 
-If you have Azure account you can deploy LAMP via the [Azure Portal](https://portal.azure.com) using the buttons below. Please note that while you can use an [Azure free account](https://aka.ms/azure-free-phprefarch) to get started, depending on which template configuration you choose you will likely be required to upgrade to a paid account.
-
-## Fully configurable deployment
-
-The following button will allow you to specify various configurations for your LAMP cluster deployment. The number of configuration options might be overwhelming, so some pre-defined/restricted deployment options for typical LAMP scenarios follow this.
-
-[![Deploy to Azure Fully Configurable](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FLAMP%2Fmaster%2Fazuredeploy.json)  [![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.png)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FLAMP%2Fmaster%2Fazuredeploy.json)
+While you can use an [Azure free account](https://aka.ms/azure-free-phprefarch) to get started, depending on the configuration you choose you will likely be required to upgrade to a paid account.
 
 ## Predefined deployment options
 
