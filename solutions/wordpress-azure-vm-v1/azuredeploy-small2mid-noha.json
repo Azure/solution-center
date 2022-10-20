@@ -2,13 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "_artifactsLocation": {
-            "type": "string",
-            "metadata": {
-                "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
-            },
-            "defaultValue": "https://raw.githubusercontent.com/Azure/LAMP/master/"
-        },
         "_artifactsLocationSasToken": {
             "type": "securestring",
             "metadata": {
@@ -21,17 +14,6 @@
                 "description": "ssh public key"
             },
             "type": "string"
-        },
-        "CMSApplication": {
-            "defaultValue": "WordPress",
-            "allowedValues": [
-                "WordPress",
-                "None"
-            ],
-            "metadata": {
-                "description": "Select the CMS application to be installed. If selects none it will deploy LAMP stack"
-            },
-            "type": "string"
         }
     },
     "resources": [
@@ -42,17 +24,17 @@
             "properties": {
                 "mode": "Incremental",
                 "parameters": {
-                    "_artifactsLocation":           { "value": "[parameters('_artifactsLocation')]" },
+                    "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/LAMP/master/" },
                     "_artifactsLocationSasToken":   { "value": "[parameters('_artifactsLocationSasToken')]" },
                     "redisDeploySwitch":            { "value": false },
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
                     "mysqlPgresVcores":             { "value": 8 },
                     "mysqlPgresStgSizeGB":          { "value": 128 },
                     "fileServerDiskSize":           { "value": 128 },
-                    "CMSApplication":               { "value": "[parameters('CMSApplication')]" }
+                    "CMSApplication":               { "value": "WordPress" }
                 },
                 "templateLink": {
-                    "uri": "[concat(parameters('_artifactsLocation'), 'azuredeploy.json', parameters('_artifactsLocationSasToken'))]"
+                    "uri": "[concat('https://raw.githubusercontent.com/Azure/LAMP/master/', 'azuredeploy.json', parameters('_artifactsLocationSasToken'))]"
                 }
             }
         }
