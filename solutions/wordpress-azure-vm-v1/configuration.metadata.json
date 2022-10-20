@@ -62,6 +62,21 @@
             "name": "virtualMachineCompute",
             "type": "AzureResource",
             "azureResourceType": "Microsoft.Compute/virtualMachines"
+        },
+        {
+            "name": "vmssCompute",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
+        },
+        {
+            "name": "storagePivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Storage/StorageAccounts"
+        },
+        {
+            "name": "cachingPivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Cache/Redis"
         }
     ],
     "configurations": [
@@ -88,6 +103,42 @@
                         "Uses NFS, MySQL, and smaller autoscale web frontend VM sku (1 core)",
                         "Requires only 2 VM cores",
                         "Works with free trial subscriptions"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "large",
+            "title": "Production instance",
+            "subTitle": "A starter solution for quick setup with low-scale.",
+            "cost": {
+                "value": 1000,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-minimal.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmssCompute",
+                    "content": [
+                        "A scalable offering that utilizes virtual machine scale sets"
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "Azure Premium files as the responsive shared storage option"
+                    ]
+                },
+                {
+                    "pivotName": "cachingPivot",
+                    "content": [
+                        "Azure Cache for Redis for object/DB and static page caching"
                     ]
                 }
             ]
