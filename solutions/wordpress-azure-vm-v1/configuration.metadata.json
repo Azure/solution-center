@@ -1,7 +1,8 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Deploy WordPress the easy way!",
-
+    "overviewContent": "This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
+    "documentationFileName": "wordpress-readme.md",
+    "supportsManualConfiguration": false,
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
@@ -58,102 +59,40 @@
     ],
     "pivots": [
         {
-            "name": "virtualMachineCompute",
+            "name": "hubNetwork",
             "type": "Custom",
-            "displayName": "Compute Option",
+            "displayName": "Custom icon on left side",
+            "azureResourceType": "Microsoft.Network/virtualNetworks",
             "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "virtualMachine"
-            }
-        },
-        {
-            "name": "vmssCompute",
-            "type": "Custom",
-            "displayName": "Compute Option",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "VMSS"
-            }
-        },
-        {
-            "name": "storagePivot",
-            "type": "Custom",
-            "displayName": "Shared Network Storage",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "Storage"
-            }
-        },
-        {
-            "name": "cachingPivot",
-            "type": "Custom",
-            "displayName": "High performance Redis Cache",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "Redis"
+                "iconNumber": 245,
+                "iconType": "FrameworkIcon"
             }
         }
     ],
-    "documentationFileName": null,
     "configurations": [
         {
-            "id": "Small",
-            "title": "A starter solution for dev/test scenarios",
-            "templateFileName": "azuredeploy.json",
-            "subTitle": "A very affordable way to get started...",
+            "id": "base",
+            "title": "First configuration",
+            "subTitle": "Details on what gets deployed",
             "cost": {
                 "value": 150,
-                "score": 1,
                 "currency": "USD",
                 "type": "absolute",
-                "cadence": "monthly"
+                "cadence": "monthly",
+                "tooltip": "Example tooltip describing the pricing, customizable."
             },
             "maintenance": {
-                "score": 1,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
-            },
-            "pivotValues": [
-                {
-                    "pivotName": "virtualMachineCompute",
-                    "content": [
-                        "A single VM based solution without any scale option."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "Large",
-            "title": "A starter solution for dev/test scenarios",
-            "templateFileName": "azuredeploy.json",
-            "subTitle": "A very affordable way to get started...",
-            "cost": {
-                "value": 999,
                 "score": 2,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly"
+                "tooltip": "Example tooltip describing cost to maintain, customizable."
             },
-            "maintenance": {
-                "score": 3,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
-            },
+            "templateFileName": "example-template.json",
             "pivotValues": [
                 {
-                    "pivotName": "vmssCompute",
+                    "pivotName": "hubNetwork",
                     "content": [
-                        "A scalable offering that utilizes virtual machine scale sets"
-                    ]
-                },
-                {
-                    "pivotName": "storagePivot",
-                    "content": [
-                        "Azure Premium files as the responsive shared storage option"
-                    ]
-                },
-                {
-                    "pivotName": "cachingPivot",
-                    "content": [
-                        "Azure Cache for Redis for object/DB and static page caching"
+                        "Highlight on this feature",
+                        "Highlight on this feature",
+                        "Highlight on this feature"
                     ]
                 }
             ]
