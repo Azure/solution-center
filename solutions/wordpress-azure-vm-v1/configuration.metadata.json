@@ -41,10 +41,6 @@
             "type": "AzureResource"
         },
         {
-            "resourceType": "Microsoft.Network/frontdoors",
-            "type": "AzureResource"
-        },
-        {
             "resourceType": "Microsoft.Compute/virtualMachines",
             "type": "AzureResource"
         },
@@ -69,6 +65,11 @@
             "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
         },
         {
+            "name": "databasePivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.DBforMySQL/servers"
+        },
+        {
             "name": "storagePivot",
             "type": "AzureResource",
             "azureResourceType": "Microsoft.Storage/StorageAccounts"
@@ -85,7 +86,7 @@
             "title": "Dev/Test instance",
             "subTitle": "A starter solution for quick setup with low-scale.",
             "cost": {
-                "value": 150,
+                "value": 110,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
@@ -99,48 +100,98 @@
                 {
                     "pivotName": "virtualMachineCompute",
                     "content": [
-                        "A single VM based solution without any scale option",
+                        "2 D1v2 (1 vCPU, 3.5 GB RAM) VMs without any scale option",
                         "Uses NFS, MySQL, and smaller autoscale web frontend VM sku (1 core)",
                         "Requires only 2 VM cores",
-                        "Works with free trial subscriptions"
+                        "Works with free trial subscriptions",
+                        "32 GiB P4 managed disk"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "small",
+            "title": "Small to Mid-Size",
+            "subTitle": "Supporting up to 1,000 concurrent users.",
+            "cost": {
+                "value": 975,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 2,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-small2mid-noha.json",
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachineCompute",
+                    "content": [
+                        "3 D-Series VMs, one as controller VM",
+                        "4 P10 128 GiB Disks, with Standard HDD"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 8 vCore Azure Database for MySQL",
+                        "Backup enabled"
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "128 GiB Storage"
                     ]
                 }
             ]
         },
         {
             "id": "large",
-            "title": "Production instance",
-            "subTitle": "A starter solution for quick setup with low-scale.",
+            "title": "Full Production Workload",
+            "subTitle": "Supports thousands of concurrent users, HA, and caching.",
             "cost": {
-                "value": 1000,
+                "value": 3450,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
             },
             "maintenance": {
-                "score": 1,
+                "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-minimal.json",
+            "templateFileName": "azuredeploy-maximal.json",
             "pivotValues": [
                 {
-                    "pivotName": "vmssCompute",
+                    "pivotName": "virtualMachineCompute",
                     "content": [
-                        "A scalable offering that utilizes virtual machine scale sets"
+                        "8 D-Series VMs, one as controller VM",
+                        "Standard SSDs with LRS",
+                        "Estimated with 100,000 storage transactions per VM"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 16 vCore Azure Database for MySQL",
+                        "Backup enabled"
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "Azure Premium files as the responsive shared storage option"
+                        "128 GiB Storage"
                     ]
                 },
                 {
                     "pivotName": "cachingPivot",
                     "content": [
-                        "Azure Cache for Redis for object/DB and static page caching"
+                        "Premium tier, 1 Shard per Instance",
+                        "1 Additional Replica per Shard, 1 P1 instance"
                     ]
                 }
+                
             ]
         }
     ]
