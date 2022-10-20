@@ -1,53 +1,71 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "",
+    "overviewContent": "A description of the solution.",
+    "documentationFileName": "starter-template-doc.md",
+    "supportsManualConfiguration": false,
+    "associatedResources": [],
     "pivots": [
         {
+            "name": "hubNetwork",
             "type": "Custom",
-            "name": "uniqueColumnName",
-            "displayName": "Unique Column Name"
+            "displayName": "Custom icon on left side",
+            "azureResourceType": "Microsoft.Network/virtualNetworks",
+            "icon": {
+                "iconNumber": 245,
+                "iconType": "FrameworkIcon"
+            }
         }
     ],
     "configurations": [
         {
-            "id": "unique_id",
-            "title": "Solution title",
-            "subTitle": "A one sentence description of your solution.",
+            "id": "base",
+            "title": "First configuration",
+            "subTitle": "Details on what gets deployed",
             "cost": {
-                "type": "score",
-                "score": 1,
-                "tooltip": "A relative cost measurement across the configurations."
+                "value": 150,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly",
+                "tooltip": "Example tooltip describing the pricing, customizable."
             },
             "maintenance": {
-                "score": 1,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+                "score": 2,
+                "tooltip": "Example tooltip describing cost to maintain, customizable."
             },
+            "templateFileName": "example-template.json",
             "pivotValues": [
                 {
-                    "pivotName": "uniqueColumnName",
+                    "pivotName": "hubNetwork",
                     "content": [
-                        "A description of what will get deployed.",
-                        "A second description of the features specific to this configuration."
+                        "Highlight on this feature",
+                        "Highlight on this feature",
+                        "Highlight on this feature"
                     ]
                 }
             ],
-            "templateFileName": "<ARm template file name>",
-            "uiDefinitionFileName": "<UI definition file name>"
-        }
-    ],
-    "associatedResources": [
-        {
-            "resourceType": "Microsoft.Compute/virtualMachines",
-            "type": "AzureResource"
-        },
-        {
-            "resourceType": "",
-            "displayName": "Custom resource",
-            "type": "Custom",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "MicrosoftDefender"
-            }
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "FrameworkIcon",
+                        "iconNumber": 41
+                    }
+                }
+            ]
         }
     ]
 }

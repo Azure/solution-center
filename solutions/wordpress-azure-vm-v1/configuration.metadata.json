@@ -1,7 +1,8 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Deploy WordPress the easy way!",
-
+    "overviewContent": "This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
+    "documentationFileName": "wordpress-readme.md",
+    "supportsManualConfiguration": false,
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
@@ -40,10 +41,6 @@
             "type": "AzureResource"
         },
         {
-            "resourceType": "Microsoft.Network/frontdoors",
-            "type": "AzureResource"
-        },
-        {
             "resourceType": "Microsoft.Compute/virtualMachines",
             "type": "AzureResource"
         },
@@ -59,51 +56,37 @@
     "pivots": [
         {
             "name": "virtualMachineCompute",
-            "type": "Custom",
-            "displayName": "Compute Option",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "virtualMachine"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachines"
         },
         {
             "name": "vmssCompute",
-            "type": "Custom",
-            "displayName": "Compute Option",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "VMSS"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
+        },
+        {
+            "name": "databasePivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.DBforMySQL/servers"
         },
         {
             "name": "storagePivot",
-            "type": "Custom",
-            "displayName": "Shared Network Storage",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "Storage"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Storage/StorageAccounts"
         },
         {
             "name": "cachingPivot",
-            "type": "Custom",
-            "displayName": "High performance Redis Cache",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "Redis"
-            }
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Cache/Redis"
         }
     ],
-    "documentationFileName": null,
     "configurations": [
         {
-            "id": "Small",
-            "title": "A starter solution for dev/test scenarios",
-            "templateFileName": "azuredeploy.json",
-            "subTitle": "A very affordable way to get started...",
+            "id": "base",
+            "title": "Dev/Test instance",
+            "subTitle": "A starter solution for quick setup with low-scale.",
             "cost": {
-                "value": 150,
-                "score": 1,
+                "value": 110,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
@@ -112,23 +95,64 @@
                 "score": 1,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
+            "templateFileName": "azuredeploy-minimal.json",
             "pivotValues": [
                 {
                     "pivotName": "virtualMachineCompute",
                     "content": [
-                        "A single VM based solution without any scale option."
+                        "2 D1v2 (1 vCPU, 3.5 GB RAM) VMs without any scale option",
+                        "Uses NFS, MySQL, and smaller autoscale web frontend VM sku (1 core)",
+                        "Requires only 2 VM cores",
+                        "Works with free trial subscriptions",
+                        "32 GiB P4 managed disk"
                     ]
                 }
             ]
         },
         {
-            "id": "Large",
-            "title": "A starter solution for dev/test scenarios",
-            "templateFileName": "azuredeploy.json",
-            "subTitle": "A very affordable way to get started...",
+            "id": "small",
+            "title": "Small to Mid-Size",
+            "subTitle": "Supporting up to 1,000 concurrent users.",
             "cost": {
-                "value": 999,
+                "value": 975,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
                 "score": 2,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-small2mid-noha.json",
+            "pivotValues": [
+                {
+                    "pivotName": "virtualMachineCompute",
+                    "content": [
+                        "3 D-Series VMs, one as controller VM",
+                        "4 P10 128 GiB Disks, with Standard HDD"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 8 vCore Azure Database for MySQL",
+                        "Backup enabled"
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "128 GiB Storage"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "large",
+            "title": "Full Production Workload",
+            "subTitle": "Supports thousands of concurrent users, HA, and caching.",
+            "cost": {
+                "value": 3450,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
@@ -137,25 +161,37 @@
                 "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
+            "templateFileName": "azuredeploy-maximal.json",
             "pivotValues": [
                 {
-                    "pivotName": "vmssCompute",
+                    "pivotName": "virtualMachineCompute",
                     "content": [
-                        "A scalable offering that utilizes virtual machine scale sets"
+                        "8 D-Series VMs, one as controller VM",
+                        "Standard SSDs with LRS",
+                        "Estimated with 100,000 storage transactions per VM"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 16 vCore Azure Database for MySQL",
+                        "Backup enabled"
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "Azure Premium files as the responsive shared storage option"
+                        "128 GiB Storage"
                     ]
                 },
                 {
                     "pivotName": "cachingPivot",
                     "content": [
-                        "Azure Cache for Redis for object/DB and static page caching"
+                        "Premium tier, 1 Shard per Instance",
+                        "1 Additional Replica per Shard, 1 P1 instance"
                     ]
                 }
+                
             ]
         }
     ]
