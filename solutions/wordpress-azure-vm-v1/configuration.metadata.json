@@ -55,11 +55,6 @@
     ],
     "pivots": [
         {
-            "name": "virtualMachineCompute",
-            "type": "AzureResource",
-            "azureResourceType": "Microsoft.Compute/virtualMachines"
-        },
-        {
             "name": "vmssCompute",
             "type": "AzureResource",
             "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
@@ -98,19 +93,39 @@
             "templateFileName": "azuredeploy-minimal.json",
             "pivotValues": [
                 {
-                    "pivotName": "virtualMachineCompute",
+                    "pivotName": "vmssCompute",
                     "content": [
-                        "2 D1v2 (1 vCPU, 3.5 GB RAM) VMs without any scale option",
-                        "Uses NFS, MySQL, and smaller autoscale web frontend VM sku (1 core)",
+                        "Small autoscale web front VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) Scales to a max of 10 VMs",
                         "Requires only 2 VM cores",
-                        "Works with free trial subscriptions",
-                        "32 GiB P4 managed disk"
+                        "Works with free trial subscriptions"
+                    ]
+                },
+                        
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "64GB P4 managed SSD"
+                    ]
+                },
+                
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "2 V-Core 125GB MySQL Database"
+                    ]
+                },
+
+                {
+                    "pivotName": "cachingPivot",
+                    "content": [
+                        "N/A"
                     ]
                 }
+                
             ]
         },
         {
-            "id": "small",
+            "id": "small to mid-size",
             "title": "Small to Mid-Size",
             "subTitle": "Supporting up to 1,000 concurrent users.",
             "cost": {
@@ -128,31 +143,39 @@
                 {
                     "pivotName": "virtualMachineCompute",
                     "content": [
-                        "3 D-Series VMs, one as controller VM",
-                        "4 P10 128 GiB Disks, with Standard HDD"
-                    ]
-                },
-                {
-                    "pivotName": "databasePivot",
-                    "content": [
-                        "Gen 5 8 vCore Azure Database for MySQL",
-                        "Backup enabled"
+                        "Standard_DS2_V2 VM which can scale to 10 nodes via VMSS. Stanard_DS1_v2 controller VM"
+                      
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "128 GiB Storage"
+                        "512 GiB SSD"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 8 vCore 128 GB Azure PostgresSQL",
+                        "Backup enabled"
+                    ]
+                },
+
+                {
+                    "pivotName": "cachingPivot",
+                    "content": [
+                        "N/A"
                     ]
                 }
+               
             ]
         },
         {
             "id": "large",
             "title": "Full Production Workload",
-            "subTitle": "Supports thousands of concurrent users, HA, and caching.",
+            "subTitle": "This maximal deployment will use GlusterFS (in high availability, adding 2 VMs for a GlusterFS cluster), MySQL with the highest SKU, Redis Cache, and pretty large storage sizes (for both data disks and DB).",
             "cost": {
-                "value": 3450,
+                "value": 3000,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
@@ -166,22 +189,22 @@
                 {
                     "pivotName": "virtualMachineCompute",
                     "content": [
-                        "8 D-Series VMs, one as controller VM",
-                        "Standard SSDs with LRS",
+                        "Autoscaling Standard_DS2_v2. Standard_DS1_v2 Controller VM.  "
+                
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "4096 GiB Premium Files LSR",
                         "Estimated with 100,000 storage transactions per VM"
                     ]
                 },
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Gen 5 16 vCore Azure Database for MySQL",
+                        "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
                         "Backup enabled"
-                    ]
-                },
-                {
-                    "pivotName": "storagePivot",
-                    "content": [
-                        "128 GiB Storage"
                     ]
                 },
                 {
