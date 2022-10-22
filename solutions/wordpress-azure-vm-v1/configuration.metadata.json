@@ -141,7 +141,7 @@
             "templateFileName": "azuredeploy-small2mid-noha.json",
             "pivotValues": [
                 {
-                    "pivotName": "virtualMachineCompute",
+                    "pivotName": "vmssCompute",
                     "content": [
                         "Standard_DS2_V2 VM which can scale to 10 nodes via VMSS. Stanard_DS1_v2 controller VM"
                       
@@ -187,7 +187,7 @@
             "templateFileName": "azuredeploy-maximal.json",
             "pivotValues": [
                 {
-                    "pivotName": "virtualMachineCompute",
+                    "pivotName": "vmssCompute",
                     "content": [
                         "Autoscaling Standard_DS2_v2. Standard_DS1_v2 Controller VM.  "
                 
