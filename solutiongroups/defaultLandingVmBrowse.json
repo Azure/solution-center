@@ -1,0 +1,9 @@
+{
+    "title": "More virtual machines and related solutions",
+    "description": "Discover and deploy full workloads and Azure products for your business needs.",
+    "solutions": [
+        "microsoft-azure-arcbox-v1", 
+        "microsoft-azure-confidential-compute-v1",
+        "microsoft-azure-spot-instances-v1"
+    ]
+}
