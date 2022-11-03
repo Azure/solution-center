@@ -9,13 +9,13 @@
         "wordpress-azure-vm-v1"
     ],
     "solutionsSectionTitle": "Discover the right solution for your needs",
-    "createLinksSectionTitle": "Other virtual infrastructure",
-    "createLinksSectionDescription": "See and manage your infrastructure in all your environments, including on-premises, other public clouds, and edge devices. It's free to get started.",
+    "createLinksSectionTitle": "Hybrid virtual infrastructure",
+    "createLinksSectionDescription": "Azure Arc brings Azure features that are typically available only in the public cloud to private and on-premises workspaces, including those that are using non-Microsoft cloud services.",
     "createLinks": [
         {
             "id": "azure-arc-vm",
             "title": "Azure Arc virtual machine",
-            "description": "Create a new Azure Arc virtual machine in one of your non-Azure environments",
+            "description": "Create a VM a non-Azure environments (VMware, Azure Stack HCI, SCVMM, OpenStack)",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"
