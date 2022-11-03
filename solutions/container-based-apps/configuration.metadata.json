@@ -2,13 +2,27 @@
     "$schema": "../../definitions/configuration.metadata.schema.json",
     "overviewContent": "Deploy and run a container-based app",
     "documentationFileName": "what-are-containers.md",
-    "supportsManualConfiguration": false,
     "associatedResources": [],
     "pivots": [
         {
             "name": "containerInstance",
             "type": "AzureResource",
             "azureResourceType": "Microsoft.ContainerInstance/containerGroups"
+        },
+        {
+            "name": "appService",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Web/sites"
+        },
+        {
+            "name": "aks",
+            "type": "Custom",
+            "displayName": "Azure Kubernetes Service",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureKubernetes"
+            }
+
         }
     ],
     "configurations": [
@@ -39,6 +53,67 @@
                         "Best for simple applications, task automation, and build jobs, where you don't need full container orchestration, service discovery across multiple containers, automatic scaling, or coordinated application upgrades.",
                         "Offers startup benefits over virtual machines (VMs), with the ability to start containers Azure in seconds and without the need to provision and manage VMs.",
                         "With hypervisor-level security, Azure Container Instances guarantees your application is as isolated in a container as it would be in a VM."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "appService",
+            "title": "Deploy a Docker-formatted images with App Service",
+            "subTitle": "Uses App Service fully-managed platform and integrated CI/CD capabilities.",
+            "cost": {
+                "score": 1,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "AppServiceWebAppCreateV3Blade",
+                "extension": "Websites"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "appService",
+                    "content": [
+                        "Use your favorite programming language along with your preferred dependencies.",
+                        "Leverage built-in CI/CD with Docker Hub, Azure Container Registry, or Azure DevOps Services.",
+                        "Scale manually or automatically by applying pre-configured rules.",
+                        "Choose from an extensive list of application templates in the Azure Marketplace, such as WordPress, Joomla, and Drupal.",
+                        "Easily add a custom domain or SSL certificates."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aks",
+            "title": "Deploy and manage a container-based app with Azure Kubernetes Service (AKS)",
+            "subTitle": "Best for advanced customers with existing knowledge of Kubernetes orchestration.",
+            "cost": {
+                "score": 3,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 3,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "CreateAksBlade",
+                "extension": "Microsoft_Azure_ContainerService"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "aks",
+                    "content": [
+                        "Develop in your favorite language and run with ease on Windows or Linux.",
+                        "Simplify the deployment and management of a microservices-based architecture, streamlined by horizontal scaling, self-healing, load balancing, and secrets management.",
+                        "Add a full CI/CD pipeline to your AKS clusters with automated routine tasks, and set up a Canary deployment strategy in just a few clicks.",
+                        "Gain visibility into your environment with control-plane telemetry, log aggregation, and container health, accessible in the Azure portal and automatically configured for AKS clusters."
                     ]
                 }
             ]
