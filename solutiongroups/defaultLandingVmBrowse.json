@@ -10,18 +10,34 @@
     ],
     "solutionsSectionTitle": "Discover the right solution for your needs",
     "createLinksSectionTitle": "Other virtual infrastructure",
+    "createLinksSectionDescription": "See and manage your infrastructure in all your environments, including on-premises, other public clouds, and edge devices. It's free to get started.",
     "createLinks": [
         {
             "id": "azure-arc-vm",
             "title": "Azure Arc virtual machine",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "LinuxWorkload"
+                "iconFileName": "ArcVm"
             },
             "bladeReference": {
                 "extension": "Microsoft_Azure_HybridCompute",
                 "bladeName": "ArcVmCreateBlade",
                 "inputs": {}
+            }
+        },
+        {
+            "id": "azure-avs-vm",
+            "title": "Azure VMware Solution virtual machine",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "AvsVm"
+            },
+            "bladeReference": {
+                "extension": "Microsoft_Azure_HybridCompute",
+                "bladeName": "ArcVmCreateBlade",
+                "inputs": {
+                    "vmKindFilter": "microsoft.avs"
+                }
             }
         }
     ]
