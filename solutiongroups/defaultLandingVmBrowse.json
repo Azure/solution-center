@@ -2,10 +2,27 @@
     "title": "More virtual machines and related solutions",
     "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
     "solutions": [
-        "microsoft-azure-arcbox-v1", 
+        "microsoft-azure-arcbox-v1",
         "microsoft-azure-confidential-compute-v1",
         "microsoft-azure-spot-instances-v1",
         "azure-hub-spoke-v1",
         "wordpress-azure-vm-v1"
+    ],
+    "solutionsSectionTitle": "Discover the right solution for your needs",
+    "createLinksSectionTitle": "Other virtual infrastructure",
+    "createLinks": [
+        {
+            "id": "azure-arc-vm",
+            "title": "Azure Arc virtual machine",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "LinuxWorkload"
+            },
+            "bladeReference": {
+                "extension": "Microsoft_Azure_HybridCompute",
+                "bladeName": "ArcVmCreateBlade",
+                "inputs": {}
+            }
+        }
     ]
 }
