@@ -1,0 +1,43 @@
+{
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "Deploy and run a container-based app",
+    "documentationFileName": "what-are-containers.md",
+    "supportsManualConfiguration": false,
+    "associatedResources": [],
+    "pivots": [
+        {
+            "name": "containerInstance",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.ContainerInstance/containerGroups"
+        }
+    ],
+    "configurations": [
+        {
+            "id": "containerInstances",
+            "title": "Deploy and run a container-based app with Azure Container Instances",
+            "subTitle": "Run serverless Docker containers in Azure with simplicity and speed.",
+            "cost": {
+                "score": 1,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "templateFileName": "example-template.json",
+            "pivotValues": [
+                {
+                    "pivotName": "containerInstance",
+                    "content": [
+                        "Deploy an application to a container instance on-demand when you don't need a full container orchestration platform like Azure Kubernetes Service.",
+                        "Provides a simplified platform for scenarios that can operate in isolated containers.",
+                        "Best for simple applications, task automation, and build jobs, where you don't need full container orchestration, service discovery across multiple containers, automatic scaling, or coordinated application upgrades.",
+                        "Offers startup benefits over virtual machines (VMs), with the ability to start containers Azure in seconds and without the need to provision and manage VMs.",
+                        "With hypervisor-level security, Azure Container Instances guarantees your application is as isolated in a container as it would be in a VM."
+                    ]
+                }
+            ]
+        }
+    ]
+}
