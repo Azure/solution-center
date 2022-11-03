@@ -2,13 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "_artifactsLocationSasToken": {
-            "type": "securestring",
-            "metadata": {
-                "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
-            },
-            "defaultValue": ""
-        },
         "sshPublicKey": {
             "metadata": {
                 "description": "ssh public key"
@@ -25,7 +18,6 @@
                 "mode": "Incremental",
                 "parameters": {
                     "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/LAMP/master/" },
-                    "_artifactsLocationSasToken":   { "value": "[parameters('_artifactsLocationSasToken')]" },
                     "redisDeploySwitch":            { "value": false },
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
                     "autoscaleVmSku":               { "value": "Standard_DS1_v2" },
@@ -36,7 +28,7 @@
                     "CMSApplication":               { "value": "WordPress" }
                 },
                 "templateLink": {
-                    "uri": "[concat('https://raw.githubusercontent.com/Azure/LAMP/master/', 'azuredeploy.json', parameters('_artifactsLocationSasToken'))]"
+                    "uri": "https://raw.githubusercontent.com/Azure/LAMP/master/azuredeploy.json"
                 }
             }
         }
