@@ -2,10 +2,11 @@
     "title": "More VMs and compute solutions",
     "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
     "solutions": [
-        "microsoft-azure-arcbox-v1", 
+        "microsoft-azure-arcbox-v1",
         "microsoft-azure-confidential-compute-v1",
         "microsoft-azure-spot-instances-v1",
         "azure-hub-spoke-v1",
-        "wordpress-azure-vm-v1"
+        "wordpress-azure-vm-v1",
+        "container-based-apps"
     ]
 }
