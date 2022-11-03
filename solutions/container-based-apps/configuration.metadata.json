@@ -25,7 +25,11 @@
                 "score": 1,
                 "tooltip": "The relative time to maintain your infrastructure post-deployment."
             },
-            "templateFileName": "example-template.json",
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "CreateAciBlade",
+                "extension": "Microsoft_Azure_ContainerService"
+            },
             "pivotValues": [
                 {
                     "pivotName": "containerInstance",
