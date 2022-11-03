@@ -1,7 +1,7 @@
 {
   "icon": {
-    "iconType": "AssetIcon",
-    "asset": "Microsoft.Workloads/phpworkloads"
+    "iconType": "CustomIcon",
+    "iconFileName": "LinuxWorkload"
   },
   "title": "Scalable WordPress using Azure VM",
   "shortDescription": "Get started with WordPress right away, using Azure VM.",
