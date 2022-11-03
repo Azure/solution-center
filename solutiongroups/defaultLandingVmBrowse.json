@@ -9,12 +9,13 @@
         "wordpress-azure-vm-v1"
     ],
     "solutionsSectionTitle": "Discover the right solution for your needs",
-    "createLinksSectionTitle": "Other virtual infrastructure",
-    "createLinksSectionDescription": "See and manage your infrastructure in all your environments, including on-premises, other public clouds, and edge devices. It's free to get started.",
+    "createLinksSectionTitle": "Hybrid virtual infrastructure",
+    "createLinksSectionDescription": "Azure Arc brings Azure features that are typically available only in the public cloud to private and on-premises workspaces, including those that are using non-Microsoft cloud services.",
     "createLinks": [
         {
             "id": "azure-arc-vm",
             "title": "Azure Arc virtual machine",
+            "description": "Create a VM a non-Azure environments (VMware, Azure Stack HCI, SCVMM)",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"
@@ -28,6 +29,7 @@
         {
             "id": "azure-avs-vm",
             "title": "Azure VMware Solution virtual machine",
+            "description": "Create a VMware virtual machine hosted by Azure",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "AvsVm"
@@ -38,6 +40,20 @@
                 "inputs": {
                     "vmKindFilter": "microsoft.avs"
                 }
+            }
+        },
+        {
+            "id": "azure-arc-servers",
+            "title": "Azure Arc-enabled server",
+            "description": "Manage Windows and Linux physical servers and virtual machines hosted outside of Azure",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcServer"
+            },
+            "bladeReference": {
+                "extension": "Microsoft_Azure_HybridCompute",
+                "bladeName": "HybridVmAddBlade",
+                "inputs": { }
             }
         }
     ]
