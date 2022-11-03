@@ -2,7 +2,48 @@
     "$schema": "../../definitions/configuration.metadata.schema.json",
     "overviewContent": "Deploy and run a container-based app",
     "documentationFileName": "what-are-containers.md",
-    "associatedResources": [],
+    "associatedResources": [
+        {
+            "name": "containerInstance",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.ContainerInstance/containerGroups"
+        },
+        {
+            "name": "appService",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Web/sites"
+        },
+        {
+            "name": "aks",
+            "type": "Custom",
+            "displayName": "Azure Kubernetes Service",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureKubernetes"
+            }
+
+        },
+        {
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachinescalesets",
+            "type": "AzureResource"
+        }
+    ],
     "pivots": [
         {
             "name": "containerInstance",
