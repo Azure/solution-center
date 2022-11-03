@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Deploy and run a container-based app",
+    "overviewContent": "Containerization is an approach to software development in which an application or service, its dependencies, and its configuration (abstracted as deployment manifest files) are packaged together as a container image. The containerized application can be tested as a unit and deployed as a container image instance to the host operating system (OS).",
     "documentationFileName": "what-are-containers.md",
     "associatedResources": [
         {
@@ -97,7 +97,7 @@
         },
         {
             "id": "appService",
-            "title": "Deploy with App Service",
+            "title": "Deploy a Web App with App Service",
             "subTitle": "Fully managed hosting for web applications including websites and web APIs.",
             "cost": {
                 "score": 1,
@@ -111,7 +111,7 @@
             "supportsManualConfiguration": true,
             "manualConfigurationBlade": {
                 "bladeName": "AppServiceWebAppCreateV3Blade",
-                "extension": "Websites"
+                "extension": "WebsitesExtension"
             },
             "pivotValues": [
                 {
