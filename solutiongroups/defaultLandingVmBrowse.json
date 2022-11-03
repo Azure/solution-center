@@ -15,6 +15,7 @@
         {
             "id": "azure-arc-vm",
             "title": "Azure Arc virtual machine",
+            "description": "Create a new Azure Arc virtual machine in one of your non-Azure environments",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"
@@ -28,6 +29,7 @@
         {
             "id": "azure-avs-vm",
             "title": "Azure VMware Solution virtual machine",
+            "description": "Create a VMware virtual machine hosted by Azure",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "AvsVm"
@@ -38,6 +40,20 @@
                 "inputs": {
                     "vmKindFilter": "microsoft.avs"
                 }
+            }
+        },
+        {
+            "id": "azure-arc-servers",
+            "title": "Azure Arc-enabled server",
+            "description": "Manage Windows and Linux physical servers and virtual machines hosted outside of Azure",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcServer"
+            },
+            "bladeReference": {
+                "extension": "Microsoft_Azure_HybridCompute",
+                "bladeName": "HybridVmAddBlade",
+                "inputs": { }
             }
         }
     ]
