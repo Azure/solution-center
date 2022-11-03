@@ -15,7 +15,7 @@
         {
             "id": "azure-arc-vm",
             "title": "Azure Arc virtual machine",
-            "description": "Create a VM a non-Azure environments (VMware, Azure Stack HCI, SCVMM, OpenStack)",
+            "description": "Create a VM a non-Azure environments (VMware, Azure Stack HCI, SCVMM)",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"
