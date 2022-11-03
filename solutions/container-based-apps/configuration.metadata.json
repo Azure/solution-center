@@ -4,19 +4,17 @@
     "documentationFileName": "what-are-containers.md",
     "associatedResources": [
         {
-            "name": "containerInstance",
             "type": "AzureResource",
-            "azureResourceType": "Microsoft.ContainerInstance/containerGroups"
+            "resourceType": "Microsoft.ContainerInstance/containerGroups"
         },
         {
-            "name": "appService",
             "type": "AzureResource",
-            "azureResourceType": "Microsoft.Web/sites"
+            "resourceType": "Microsoft.Web/sites"
         },
         {
-            "name": "aks",
-            "type": "Custom",
+            "resourceType": "",
             "displayName": "Azure Kubernetes Service",
+            "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "AzureKubernetes"
