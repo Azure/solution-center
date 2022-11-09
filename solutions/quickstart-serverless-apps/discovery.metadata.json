@@ -1,9 +1,9 @@
 {
   "icon": {
-    "iconType": "AssetIcon",
-    "asset": "Microsoft.Web/sites/slots"
+    "iconType": "CustomIcon",
+    "iconFileName": "Functions"
   },
-  "title": "Create a webapp",
-  "shortDescription": "Build and deploy web apps that can scale",
+  "title": "Build, deploy, and operate a serverless app",
+  "shortDescription": "Focus on coding within an event-driven architecture, while Azure handles infrastructure-related requirements",
   "highlights": [ ]
 }
