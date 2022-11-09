@@ -1,7 +1,7 @@
 
-# Deploy and Manage a Scalable WordPress Cluster on Azure
+# Deploy and Manage a LAMP Cluster on Azure
 
-This deploys a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) cluster on Azure. The coinfigurations provided deploy [WordPress](https://wordpress.org/) on a LAMP web application.
+This deploys a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) cluster on Azure. 
 
 While you can use an [Azure free account](https://aka.ms/azure-free-phprefarch) to get started, depending on the configuration you choose you will likely be required to upgrade to a paid account.
 
@@ -32,7 +32,7 @@ This template set deploys the following infrastructure core to your LAMP instanc
 
 You can install additional LAMP sites on your cluster, utilizing Nginx's virtual host feature. To manage your installed cluster, you'll first need to login to the LAMP cluster controller virtual machine. The directory you'll need to work out of is `/azlamp`. You will need privileged access which means that you'll either need to be root (superuser) or have *sudo* access.
 
-## Configuring the controller for a specific LAMP application (WordPress)
+## Configuring the controller for a specific LAMP application
 
 ### Connect via SSH
 
@@ -43,23 +43,6 @@ ssh user@ip-or-dns
 ```
 
 The username can be configured with `sshUsername`; the default value is `azureadmin`. You'll be authenticating using your SSH private key, so no password is necessary for the SSH user.
-
-### WordPress Installation Destination
-
-First, you'd need to navigate to `/azlamp/html` and create a directory based on a domain name you have in mind. An example domain name is used below:
-
-```sh
-cd /azlamp/html
-mkdir wpsitename.mydomain.com
-cd /azlamp/html/wpsitename.mydomain.com
-```
-
-Download the latest version of WordPress, for example with:
-
-```sh
-wget https://wordpress.org/latest.tar.gz
-tar xvfz latest.tar.gz --strip 1
-```
 
 ### SSL Certs
 
@@ -87,18 +70,6 @@ It's recommended that the certificate files be read-only to owner and that these
 chown www-data:www-data /azlamp/certs/wpsitename.mydomain.com/nginx.*
 chmod 400 /azlamp/certs/wpsitename.mydomain.com/nginx.*
 ```
-
-### Linking to the content/cluster data location
-
-Navigate to the WordPress content directory and run the following command:
-
-```sh
-mkdir -p /azlamp/data/wpsitename.mydomain.com/wp-content/uploads
-ln -s /azlamp/data/wpsitename.mydomain.com/wp-content/uploads /azlamp/html/wpsitename.mydomain.com/wp-content/uploads
-chmod 0777 /azlamp/data/wpsitename.mydomain.com/wp-content/uploads
-```
-
-This step is needed because the `<siteroot>/wp-content/uploads` directory need to be shared across all web frontend instances, and WordPress configuration doesn't allow an external directory to be used as the uploads repository. In fact, Drupal also has a similar design, so a similar symbolic link will be needed for Drupal as well. This is in contrary to Moodle, which allows users to configure any external directory as its file storage location.
 
 ### Update Nginx configurations on all web frontend instances
 
@@ -139,12 +110,6 @@ The last step is to let the `/azlamp/html` directory sync with `/var/www/html` i
 Once this is run and after a minute, the `/var/www/html` directory on every VMSS instance should be the same as `/azlamp/html`, and the newly added sites should be available.
 
 At this point, your app is setup to use in the LAMP cluster. If you'd like to install a separate LAMP application (WordPress or otherwise), you'll have to repeat the process listed here with a new domain for the new application.
-
-### WordPress installer
-
-Once you completed the steps above and you can see your WordPress website running in the browser, please follow the instructions here to complete configuring a database and finishing a [WordPress install](https://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Installation).
-
-If you chose `true` for the `htmlLocalCopy` switch, WordPress will be running from a read-only directory, so the installer won't be able to create a `wp-config.php` file for you. However, the installer will provide you with the full content of the required config file. On the controller VM, copy that content into the file `/azlamp/html/wpsitename.mydomain.com/wp-config.php`. You then need to trigger a replication of the data, by running the script `/usr/local/bin/update_last_modified_time.azlamp.sh` again from the controller VM, as root. Data will be replicated in around one minute.
 
 ## Code of Conduct
 

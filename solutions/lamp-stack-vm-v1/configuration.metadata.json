@@ -1,7 +1,7 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
     "overviewContent": "This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
-    "documentationFileName": "wordpress-readme.md",
+    "documentationFileName": "lamp-readme.md",
     "supportsManualConfiguration": false,
     "associatedResources": [
         {
