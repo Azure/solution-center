@@ -23,7 +23,7 @@
                     "mysqlPgresVcores":             { "value": 8 },
                     "mysqlPgresStgSizeGB":          { "value": 128 },
                     "fileServerDiskSize":           { "value": 128 },
-                    "CMSApplication":               { "value": "WordPress" }
+                    "CMSApplication":               { "value": "None" }
                 },
                 "templateLink": {
                     "uri": "https://raw.githubusercontent.com/Azure/LAMP/master/azuredeploy.json"

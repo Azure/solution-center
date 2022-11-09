@@ -27,7 +27,7 @@
                     "fileServerDiskSize":           { "value": 1024 },
                     "OSDiskSizeInGB":               { "value": 1024 },
                     "storageAccountType":           { "value": "Premium_LRS" },
-                    "CMSApplication":               { "value": "WordPress" }
+                    "CMSApplication":               { "value": "None" }
                 },
                 "templateLink": {
                     "uri": "https://raw.githubusercontent.com/Azure/LAMP/master/azuredeploy.json"
