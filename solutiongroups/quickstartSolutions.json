@@ -3,11 +3,6 @@
     "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
     "solutions": [
         "quickstart-create-a-webapp",
-        "quickstart-deploy-a-vm",
-        "quickstart-container-based-apps",
-        "quickstart-setup-a-database",
-        "quickstart-data-analytics-ml-ai",
-        "quickstart-store-backup-archive",
-        "quickstart-serverless-apps"
+        "quickstart-container-based-apps"
     ]
 }
