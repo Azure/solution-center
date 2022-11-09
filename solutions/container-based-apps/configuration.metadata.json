@@ -44,24 +44,22 @@
     ],
     "pivots": [
         {
-            "name": "containerInstance",
-            "type": "AzureResource",
-            "azureResourceType": "Microsoft.ContainerInstance/containerGroups"
-        },
-        {
-            "name": "appService",
-            "type": "AzureResource",
-            "azureResourceType": "Microsoft.Web/sites"
-        },
-        {
-            "name": "aks",
+            "name": "coreTech",
             "type": "Custom",
-            "displayName": "Azure Kubernetes Service",
+            "displayName": "Core technology used",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "AzureKubernetes"
+                "iconFileName": "AllServices"
             }
-
+        },
+        {
+            "name": "appTypes",
+            "type": "Custom",
+            "displayName": "Application types",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "Code"
+            }
         }
     ],
     "configurations": [
@@ -85,12 +83,17 @@
             },
             "pivotValues": [
                 {
-                    "pivotName": "containerInstance",
+                    "pivotName": "coreTech",
                     "content": [
                         "Deploy on-demand when you don't need a full container orchestration platform like Azure Kubernetes Service.",
                         "Provides a simplified platform for scenarios that can operate in isolated containers.",
-                        "Best for simple applications, task automation, and build jobs, where you don't need full container orchestration, automatic scaling, or coordinated application upgrades.",
                         "Hypervisor-level security, guaranteeing your application is as isolated as on a VM."
+                    ]
+                },
+                {
+                    "pivotName": "appTypes",
+                    "content": [
+                        "Best for simple applications, task automation, and build jobs, where you don't need full container orchestration, automatic scaling, or coordinated application upgrades."
                     ]
                 }
             ]
@@ -115,13 +118,18 @@
             },
             "pivotValues": [
                 {
-                    "pivotName": "appService",
+                    "pivotName": "coreTech",
                     "content": [
                         "Use your favorite programming language along with your preferred dependencies.",
                         "Leverage built-in CI/CD with Docker Hub, Azure Container Registry, or Azure DevOps Services.",
                         "Scale manually or automatically by applying pre-configured rules.",
-                        "Choose from an extensive list of application templates in the Azure Marketplace, such as WordPress, Joomla, and Drupal.",
                         "Easily add a custom domain or SSL certificates."
+                    ]
+                },
+                {
+                    "pivotName": "appTypes",
+                    "content": [
+                        "Choose from an extensive list of application templates in the Azure Marketplace, such as WordPress, Joomla, and Drupal."
                     ]
                 }
             ]
@@ -146,12 +154,17 @@
             },
             "pivotValues": [
                 {
-                    "pivotName": "aks",
+                    "pivotName": "coreTech",
                     "content": [
                         "Develop in your favorite language and run with ease on Windows or Linux.",
-                        "Manage a microservices-based architecture, streamlined by horizontal scaling, self-healing, load balancing, and secrets management.",
                         "Add full CI/CD pipeline to your AKS clusters with automated routine tasks.",
                         "Gain control-plane telemetry, log aggregation, and container health, accessible in the Azure portal and automatically configured for AKS clusters."
+                    ]
+                },
+                {
+                    "pivotName": "appTypes",
+                    "content": [
+                        "Best for existing microservices-based architecture, streamlined by horizontal scaling, self-healing, load balancing, and secrets management."
                     ]
                 }
             ]
