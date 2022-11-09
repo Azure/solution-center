@@ -1,0 +1,130 @@
+{
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "Containerization is an approach to software development in which an application or service, its dependencies, and its configuration (abstracted as deployment manifest files) are packaged together as a container image. The containerized application can be tested as a unit and deployed as a container image instance to the host operating system (OS).",
+    "documentationFileName": "about.md",
+    "associatedResources": [
+        {
+            "type": "AzureResource",
+            "resourceType": "Microsoft.ContainerInstance/containerGroups"
+        },
+        {
+            "type": "AzureResource",
+            "resourceType": "Microsoft.Web/sites"
+        },
+        {
+            "resourceType": "",
+            "displayName": "Azure Kubernetes Service",
+            "type": "Custom",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureKubernetes"
+            }
+
+        },
+        {
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachinescalesets",
+            "type": "AzureResource"
+        }
+    ],
+    "pivots": [
+        {
+            "name": "containerInstance",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.ContainerInstance/containerGroups"
+        },
+        {
+            "name": "appService",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Web/sites"
+        },
+        {
+            "name": "aks",
+            "type": "Custom",
+            "displayName": "Azure Kubernetes Service",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureKubernetes"
+            }
+
+        }
+    ],
+    "configurations": [
+        {
+            "id": "config1",
+            "title": "Build and host a web app with Azure Web Apps",
+            "subTitle": "Azure App Service lets you build and run web apps using .NET, NodeJS, PHP, Java, Python, .NET Core, HTML5, or Ruby without managing infrastructure",
+            "cost": {
+                "score": 1,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "CreateAciBlade",
+                "extension": "Microsoft_Azure_ContainerService"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "containerInstance",
+                    "content": [
+                        "Deploy on-demand when you don't need a full container orchestration platform like Azure Kubernetes Service.",
+                        "Provides a simplified platform for scenarios that can operate in isolated containers.",
+                        "Best for simple applications, task automation, and build jobs, where you don't need full container orchestration, automatic scaling, or coordinated application upgrades.",
+                        "Hypervisor-level security, guaranteeing your application is as isolated as on a VM."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "config2",
+            "title": "Create a CI/CD pipeline with Azure DevOps Projects",
+            "subTitle": "With Azure DevOps Projects, you can easily apply DevOps practices on a new web app with an integrated CI/CD pipeline that's powered by Azure DevOps Services",
+            "cost": {
+                "score": 1,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "AppServiceWebAppCreateV3Blade",
+                "extension": "WebsitesExtension"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "appService",
+                    "content": [
+                        "Use your favorite programming language along with your preferred dependencies.",
+                        "Leverage built-in CI/CD with Docker Hub, Azure Container Registry, or Azure DevOps Services.",
+                        "Scale manually or automatically by applying pre-configured rules.",
+                        "Choose from an extensive list of application templates in the Azure Marketplace, such as WordPress, Joomla, and Drupal.",
+                        "Easily add a custom domain or SSL certificates."
+                    ]
+                }
+            ]
+        }
+    ]
+}
