@@ -1,0 +1,9 @@
+{
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Web/sites/slots"
+  },
+  "title": "Create a webapp",
+  "shortDescription": "Build and deploy web apps that can scale",
+  "highlights": [ ]
+}
