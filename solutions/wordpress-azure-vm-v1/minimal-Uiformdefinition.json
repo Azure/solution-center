@@ -3,7 +3,7 @@
     "view": {
         "kind": "Form",
         "properties": {
-            "title": "Test Form View",
+            "title": "Dev/Test instance",
             "steps": [
                 {
                     "name": "basics",
@@ -20,31 +20,42 @@
                         },
                         {
                             "name": "sshPublicKey",
-                            "type": "Microsoft.Common.TextBox",
-                            "label": "Ssh Public Key",
-                            "defaultValue": "",
-                            "toolTip": "ssh public key",
-                            "constraints": {
-                                "required": true,
-                                "regex": "",
-                                "validationMessage": ""
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                                "authenticationType": "Authentication Type",
+                                "password": "Admin Password Or Key",
+                                "sshPublicKey": "Ssh Public Key"
                             },
+                            "toolTip": {
+                                "authenticationType": "Type of authentication to use on the Virtual Machine.",
+                                "password": "Type of authentication to use on the Virtual Machine.",
+                                "sshPublicKey": "Ssh Public Key"
+                            },
+                            "defaultValue": {
+                                "sshPublicKey": "",
+                                "authenticationType": ""
+                            },
+                            "constraints": {
+                                "required": true
+                            },
+                            "options": {
+                                "hideConfirmation": true,
+                                "hidePassword": true
+                            },
+                            "osPlatform": "Linux",
                             "visible": true
                         }
                     ]
                 }
-            ],
-            "deployment": {
-                "parameters": {
-                    "sshPublicKey": "[steps('basics').sshPublicKey]"
-                },
-                "kind": "ResourceGroup",
-                "location": "[steps('basics').resourceScope.location.name]",
-                "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
-                "template": {
-                    "file": "<ARM deployment template relative path>"
-                }
-            }
+            ]
+        },
+        "outputs": {
+            "parameters": {
+                "sshPublicKey": "[steps('basics').sshPublicKey]"
+            },
+            "kind": "ResourceGroup",
+            "location": "[steps('basics').resourceScope.location.name]",
+            "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]"
         }
     }
 }
