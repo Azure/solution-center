@@ -19,7 +19,7 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_DC2as_v5",
+      "defaultValue": "Standard_DC4ads_v5",
       "allowedValues": [
         "Standard_DC2as_v5",
         "Standard_DC4as_v5",
