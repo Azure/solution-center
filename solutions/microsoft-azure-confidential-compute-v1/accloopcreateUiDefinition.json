@@ -3,7 +3,7 @@
     "view": {
         "kind": "Form",
         "properties": {
-            "title": "Test Form View",
+            "title": "Confidential production ready virtual machines",
             "steps": [
                 {
                     "name": "basics",
