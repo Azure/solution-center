@@ -44,7 +44,6 @@
             "azureResourceType": "Microsoft.Compute/disks"
         }
     ],
-    "documentationFileName": null,
     "configurations": [
         {
             "id": "DevTestVM",
