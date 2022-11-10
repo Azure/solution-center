@@ -7,6 +7,6 @@
         "microsoft-azure-spot-instances-v1",
         "azure-hub-spoke-v1",
         "wordpress-azure-vm-v1",
-        "container-based-apps"
+        "quickstart-container-based-apps"
     ]
 }

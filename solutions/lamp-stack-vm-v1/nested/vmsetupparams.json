@@ -1,0 +1,98 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "lampCommon": {
+            "metadata": {
+                "description": "Common LAMP values"
+            },
+            "type": "object"
+        },
+        "dbFQDN": {
+            "metadata": {
+                "description": "FQDN of the deployed SQL DB"
+            },
+            "type": "string"
+        },
+        "storageAccountName": {
+            "metadata": {
+                "description": "Storage account name from the storage account deployment."
+            },
+            "type": "string"
+        },
+        "storageAccountKey": {
+            "metadata": {
+                "description": "Storage account key from the storage account deployment."
+            },
+            "type": "string"
+        },
+        "redisKey": {
+            "metadata": {
+                "description": "Redis cache key from the redis deployment ('None' if redis is not selected). This just gets passed through to the controllersetup.json."
+            },
+            "type": "string"
+        }
+    },
+    "resources": [],
+    "variables": {
+        "documentation01": "This sub-template doesn't create any Azure resource, but just constructs/returns a JSON object that'll be injected to controller & VMSS VMs (through cloud-init) so that VM setup custom script can read/use, instead of receiving these as a long list of cmdline args",
+        "vmSetupParamsObj": {
+            "siteProfile": {
+                "siteURL": "[parameters('lampCommon').siteURL]",
+                "frontDoorFQDN": "[parameters('lampCommon').frontDoorFQDN]",
+                "httpsTermination": "[parameters('lampCommon').httpsTermination]",
+                "thumbprintSslCert": "[parameters('lampCommon').thumbprintSslCert]",
+                "thumbprintCaCert": "[parameters('lampCommon').thumbprintCaCert]"
+            },
+            "lampProfile": {
+                "storageAccountName": "[parameters('storageAccountName')]",
+                "storageAccountKey": "[parameters('storageAccountKey')]",
+                "storageAccountType": "[parameters('lampCommon').storageAccountType]",
+                "redisDeploySwitch": "[parameters('lampCommon').redisDeploySwitch]",
+                "redisDns": "[parameters('lampCommon').redisDns]",
+                "redisKey": "[parameters('redisKey')]",
+                "syslogServer": "[parameters('lampCommon').ctlrVmName]",
+                "htmlLocalCopySwitch": "[parameters('lampCommon').htmlLocalCopySwitch]"
+            },
+            "dbServerProfile": {
+                "type": "[parameters('lampCommon').dbServerType]",
+                "fqdn": "[parameters('dbFQDN')]",
+                "adminLogin": "[parameters('lampCommon').dbLogin]",
+                "adminLoginAzure": "[concat(parameters('lampCommon').dbLogin, '@', parameters('lampCommon').serverName)]",
+                "adminPassword": "[parameters('lampCommon').dbLoginPassword]",
+                "mssqlDbServiceObjectiveName": "[parameters('lampCommon').mssqlDbServiceObjectiveName]",
+                "mssqlDbEdition": "[parameters('lampCommon').mssqlDbEdition]",
+                "mssqlDbSize": "[parameters('lampCommon').mssqlDbSize]"
+            },
+            "fileServerProfile": {
+                "type": "[parameters('lampCommon').fileServerType]",
+                "nfsVmName": "[parameters('lampCommon').ctlrVmName]",
+                "glusterVmName": "[concat(parameters('lampCommon').gfsNameRoot, '0')]",
+                "glusterVolName": "data",
+                "nfsByoIpExportPath": "[parameters('lampCommon').nfsByoIpExportPath]",
+                "nfsHaLbIP": "[parameters('lampCommon').nfsHaLbIP]",
+                "nfsHaExportPath": "[parameters('lampCommon').nfsHaExportPath]",
+                "fileServerDiskSize": "[parameters('lampCommon').fileServerDiskSize]"
+
+            },
+            "phpProfile": {
+                "phpVersion": "[parameters('lampCommon').phpVersion]"
+            },
+            "applicationProfile": {
+                "cmsApplication": "[parameters('lampCommon').CMSApplication]",
+                "lbDns": "[parameters('lampCommon').lbDns]",
+                "applicationDbName": "[parameters('lampCommon').applicationDbName]",
+                "wpAdminPass": "[parameters('lampCommon').wpAdminPass]",
+                "wpDbUserPass": "[parameters('lampCommon').wpDbUserPass]",
+                "wpVersion": "[parameters('lampCommon').wpVersion]",
+                "sshUsername": "[parameters('lampCommon').sshUsername]"
+            }
+        }
+    },
+    "outputs": {
+        "vmSetupParamsObj": {
+            "value": "[variables('vmSetupParamsObj')]",
+            "type": "object"
+        }
+    }
+}

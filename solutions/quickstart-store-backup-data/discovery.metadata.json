@@ -1,0 +1,9 @@
+{
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Storage/StorageAccounts"
+  },
+  "title": "Store, back up, or archive data",
+  "shortDescription": "Extend data storage to the cloud and leverage it for disaster recovery",
+  "highlights": [ ]
+}

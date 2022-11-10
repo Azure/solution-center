@@ -1,0 +1,25 @@
+{
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Compute/virtualMachines"
+  },
+  "title": "LAMP stack using Azure VM",
+  "shortDescription": "Get started with LAMP (Linux, Apache, MySQL, PHP) using Azure VM.",
+  "highlights": [
+    {
+      "content": "Deploy across one or multiple VMs"
+    },
+    {
+      "content": "Autoscaling web frontend layer (with nginx and PHP-FPM)"
+    },
+    {
+      "content": "Private Virtual Network for frontend instances"
+    },
+    {
+      "content": "Azure Load balancer to balance across the autoscaling instances"
+    },
+    {
+      "content": "Choose your database. Optionally add Redis for caching"
+    }
+  ]
+}

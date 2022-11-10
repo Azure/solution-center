@@ -1,0 +1,9 @@
+{
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Compute/virtualMachines"
+  },
+  "title": "Deploy a virtual machine",
+  "shortDescription": "Run your workloads in the cloud and reduce the redundancy and maintenance of physical hardware",
+  "highlights": [ ]
+}
