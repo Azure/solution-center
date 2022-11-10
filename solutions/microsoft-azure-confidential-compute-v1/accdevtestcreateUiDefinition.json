@@ -45,35 +45,6 @@
                             "visible": true
                         },
                         {
-                            "name": "vmLocation",
-                            "type": "Microsoft.Common.DropDown",
-                            "label": "Vm Location",
-                            "defaultValue": " ",
-                            "toolTip": "Location of the VM.",
-                            "constraints": {
-                                "required": true,
-                                "allowedValues": [
-                                    {
-                                        "label": "West US",
-                                        "value": "West US"
-                                    },
-                                    {
-                                        "label": "East US",
-                                        "value": "East US"
-                                    },
-                                    {
-                                        "label": "North Europe",
-                                        "value": "North Europe"
-                                    },
-                                    {
-                                        "label": "West Europe",
-                                        "value": "West Europe"
-                                    }
-                                ]
-                            },
-                            "visible": true
-                        },
-                        {
                             "name": "vmSize",
                             "type": "Microsoft.Common.DropDown",
                             "label": "Vm Size",
@@ -294,7 +265,7 @@
                             "visible": true
                         },
                         {
-                            "name": "adminPasswordOrKeyauthenticationType",
+                            "name": "adminPasswordOrKey",
                             "type": "Microsoft.Compute.CredentialsCombo",
                             "label": {
                                 "authenticationType": "Authentication Type",
@@ -347,15 +318,14 @@
         },
         "outputs": {
             "parameters": {
-                "location": "[steps('basics').resourceScope.location.name]",
+                "vmLocation": "[steps('basics').resourceScope.location.name]",
                 "vmName": "[steps('basics').vmName]",
-                "vmLocation": "[steps('basics').vmLocation]",
                 "vmSize": "[steps('basics').vmSize]",
                 "osImageName": "[steps('basics').osImageName]",
                 "osDiskType": "[steps('basics').osDiskType]",
                 "adminUsername": "[steps('basics').adminUsername]",
-                "adminPasswordOrKeyauthenticationType": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
-                "authenticationType": "[steps('basics').adminPasswordOrKeyauthenticationType.authenticationType]",
+                "adminPasswordOrKey": "[coalesce(steps('basics').adminPasswordOrKey.sshPublicKey,steps('basics').adminPasswordOrKey.password)]",
+                "authenticationType": "[steps('basics').adminPasswordOrKey.authenticationType]",
                 "securityType": "[steps('basics').securityType]"
             },
             "kind": "ResourceGroup",
