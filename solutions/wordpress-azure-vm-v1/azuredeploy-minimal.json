@@ -6,7 +6,7 @@
             "metadata": {
                 "description": "ssh public key"
             },
-            "type": "string"
+            "type": "securestring"
         }
     },
     "resources": [
