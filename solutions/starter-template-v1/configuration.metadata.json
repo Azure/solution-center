@@ -1,51 +1,129 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "",
+    "overviewContent": "A description of the solution.",
+    "documentationFileName": "starter-template-doc.md",
+    "associatedResources": [],
     "pivots": [
         {
+            "name": "hubNetwork",
             "type": "Custom",
-            "name": "uniqueColumnName",
-            "displayName": "Unique Column Name"
+            "displayName": "Custom icon on left side",
+            "azureResourceType": "Microsoft.Network/virtualNetworks",
+            "icon": {
+                "iconNumber": 245,
+                "iconType": "FrameworkIcon"
+            }
         }
     ],
     "configurations": [
         {
-            "id": "unique_id",
-            "title": "Solution title",
-            "subTitle": "A one sentence description of your solution.",
+            "id": "base",
+            "title": "First configuration",
+            "subTitle": "Details on what gets deployed",
             "cost": {
-                "type": "score",
-                "score": 1,
-                "tooltip": "A relative cost measurement across the configurations."
+                "value": 150,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly",
+                "tooltip": "Example tooltip describing the pricing, customizable."
             },
             "maintenance": {
-                "score": 1,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+                "score": 2,
+                "tooltip": "Example tooltip describing cost to maintain, customizable."
+            },
+            "templateFileName": "example-template.json",
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "CreateVmBlade",
+                "extension": "Microsoft_Azure_Compute"
             },
             "pivotValues": [
                 {
-                    "pivotName": "uniqueColumnName",
+                    "pivotName": "hubNetwork",
                     "content": [
-                        "A description of what will get deployed.",
-                        "A second description of the features specific to this configuration."
+                        "Highlight on this feature",
+                        "Highlight on this feature",
+                        "Highlight on this feature"
                     ]
                 }
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "FrameworkIcon",
+                        "iconNumber": 41
+                    }
+                }
             ]
-        }
-    ],
-    "associatedResources": [
-        {
-            "resourceType": "Microsoft.Compute/virtualMachines",
-            "type": "AzureResource"
         },
         {
-            "resourceType": "",
-            "displayName": "Custom resource",
-            "type": "Custom",
-            "icon": {
-                "iconType": "CustomIcon",
-                "iconFileName": "MicrosoftDefender"
-            }
+            "id": "base2",
+            "title": "Second configuration",
+            "subTitle": "Details on what gets deployed",
+            "cost": {
+                "value": 150,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly",
+                "tooltip": "Example tooltip describing the pricing, customizable."
+            },
+            "maintenance": {
+                "score": 2,
+                "tooltip": "Example tooltip describing cost to maintain, customizable."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "CreateVmBlade",
+                "extension": "Microsoft_Azure_Compute"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "hubNetwork",
+                    "content": [
+                        "Highlight on this feature",
+                        "Highlight on this feature",
+                        "Highlight on this feature"
+                    ]
+                }
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "",
+                    "displayName": "Azure Monitor",
+                    "type": "Custom",
+                    "icon": {
+                        "iconType": "FrameworkIcon",
+                        "iconNumber": 41
+                    }
+                }
+            ]
         }
     ]
 }

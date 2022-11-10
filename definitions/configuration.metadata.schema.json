@@ -6,9 +6,6 @@
         "$schema": {
             "type": "string"
         },
-        "supportsManualConfiguration": {
-            "type": "boolean"
-        },
         "documentationFileName": {
             "type": "string"
         },
@@ -93,9 +90,19 @@
                 "cost": {
                     "$ref": "#/definitions/cost"
                 },
-                "templateFileName" :{
+                "templateFileName": {
                     "type": "string",
                     "description": "The file name of the ARM template file associated with this config option."
+                },
+                "uiDefinitionFileName": {
+                    "type": "string",
+                    "description": "The file name of the UI definition file associated with this config option."
+                },
+                "supportsManualConfiguration": {
+                    "type": "boolean"
+                },
+                "manualConfigurationBlade": {
+                    "$ref": "#/definitions/bladeReference"
                 }
             },
             "required": [
@@ -103,6 +110,25 @@
                 "title",
                 "subTitle",
                 "pivotValues"
+            ]
+        },
+        "bladeReference": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "bladeName": {
+                    "type": "string"
+                },
+                "extension": {
+                    "type": "string"
+                },
+                "inputs": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "bladeName",
+                "extension"
             ]
         },
         "cost": {

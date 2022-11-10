@@ -1,5 +1,25 @@
 {
-  "icon": null,
-  "title": "Starter template",
-  "shortDescription": "This sample scenario template helps illustrate how the metadata will show up in solutions center"
+  "icon": {
+    "iconType": "CustomIcon",
+    "iconFileName": "LinuxWorkload"
+  },
+  "title": "Scalable WordPress using Azure VM",
+  "shortDescription": "Get started with WordPress right away, using Azure VM.",
+  "highlights": [
+    {
+      "content": "Deploy WordPress across one or multiple VMs"
+    },
+    {
+      "content": "Autoscaling web frontend layer (with nginx and PHP-FPM)"
+    },
+    {
+      "content": "Private Virtual Network for frontend instances"
+    },
+    {
+      "content": "Azure Load balancer to balance across the autoscaling instances"
+    },
+    {
+      "content": "Choose your database. Optionally add Redis for caching"
+    }
+  ]
 }

@@ -1,0 +1,173 @@
+{
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "Containerization is an approach to software development in which an application or service, its dependencies, and its configuration (abstracted as deployment manifest files) are packaged together as a container image. The containerized application can be tested as a unit and deployed as a container image instance to the host operating system (OS).",
+    "documentationFileName": "what-are-containers.md",
+    "associatedResources": [
+        {
+            "type": "AzureResource",
+            "resourceType": "Microsoft.ContainerInstance/containerGroups"
+        },
+        {
+            "type": "AzureResource",
+            "resourceType": "Microsoft.Web/sites"
+        },
+        {
+            "resourceType": "",
+            "displayName": "Azure Kubernetes Service",
+            "type": "Custom",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureKubernetes"
+            }
+
+        },
+        {
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualmachinescalesets",
+            "type": "AzureResource"
+        }
+    ],
+    "pivots": [
+        {
+            "name": "coreTech",
+            "type": "Custom",
+            "displayName": "Core technology used",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "Tools"
+            }
+        },
+        {
+            "name": "appTypes",
+            "type": "Custom",
+            "displayName": "Application types",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "Code"
+            }
+        }
+    ],
+    "configurations": [
+        {
+            "id": "containerInstances",
+            "title": "Deploy with Azure Container Instances",
+            "subTitle": "Run serverless Docker containers in Azure with simplicity and speed.",
+            "cost": {
+                "score": 1,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "CreateAciBlade",
+                "extension": "Microsoft_Azure_ContainerService"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "coreTech",
+                    "content": [
+                        "Deploy on-demand when you don't need a full container orchestration platform like Azure Kubernetes Service.",
+                        "Provides a simplified platform for scenarios that can operate in isolated containers.",
+                        "Hypervisor-level security, guaranteeing your application is as isolated as on a VM."
+                    ]
+                },
+                {
+                    "pivotName": "appTypes",
+                    "content": [
+                        "Best for simple applications, task automation, and build jobs, where you don't need full container orchestration, automatic scaling, or coordinated application upgrades."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "appService",
+            "title": "Deploy a Web App with App Service",
+            "subTitle": "Fully managed hosting for web applications including websites and web APIs.",
+            "cost": {
+                "score": 1,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "AppServiceWebAppCreateV3Blade",
+                "extension": "WebsitesExtension"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "coreTech",
+                    "content": [
+                        "Use your favorite programming language along with your preferred dependencies.",
+                        "Leverage built-in CI/CD with Docker Hub, Azure Container Registry, or Azure DevOps Services.",
+                        "Scale manually or automatically by applying pre-configured rules.",
+                        "Easily add a custom domain or SSL certificates."
+                    ]
+                },
+                {
+                    "pivotName": "appTypes",
+                    "content": [
+                        "Choose from an extensive list of application templates in the Azure Marketplace, such as WordPress, Joomla, and Drupal."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aks",
+            "title": "Deploy and manage with Azure Kubernetes Service (AKS)",
+            "subTitle": "Best for advanced customers with existing knowledge of Kubernetes orchestration.",
+            "cost": {
+                "score": 3,
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "score": 3,
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "supportsManualConfiguration": true,
+            "manualConfigurationBlade": {
+                "bladeName": "CreateAksBlade",
+                "extension": "Microsoft_Azure_ContainerService"
+            },
+            "pivotValues": [
+                {
+                    "pivotName": "coreTech",
+                    "content": [
+                        "Develop in your favorite language and run with ease on Windows or Linux.",
+                        "Add full CI/CD pipeline to your AKS clusters with automated routine tasks.",
+                        "Gain control-plane telemetry, log aggregation, and container health, accessible in the Azure portal and automatically configured for AKS clusters."
+                    ]
+                },
+                {
+                    "pivotName": "appTypes",
+                    "content": [
+                        "Best for existing microservices-based architecture, streamlined by horizontal scaling, self-healing, load balancing, and secrets management."
+                    ]
+                }
+            ]
+        }
+    ]
+}
