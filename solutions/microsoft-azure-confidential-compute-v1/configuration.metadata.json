@@ -49,7 +49,8 @@
         {
             "id": "DevTestVM",
             "title": "Confidential dev/test virtual machine",
-            "templateFileName": "azuredeploy.json",
+            "templateFileName": "azuredeploy-devtest.json",
+            "uiDefinitionFileName": "accdevtestcreateUiDefinition.json",
             "subTitle": "Best for testing the security features functionality of a confidential virtual machine.",
             "cost": {
                 "type": "score",
@@ -79,9 +80,10 @@
         },
         {
             "id": "ProdVM",
-            "title": "Confidential production ready virtual machine",
-            "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
-            "templateFileName": "azuredeploy.json",
+            "title": "Confidential production ready virtual machines",
+            "subTitle": "Deploy multiple virtual machines protected against advanced and persistent attack techniques.",
+            "templateFileName": "azuredeploy-accloop.json",
+            "uiDefinitionFileName": "accloopcreateUiDefinition.json",
             "cost": {
                 "type": "score",
                 "score": 2
@@ -111,8 +113,9 @@
         {
             "id": "ProdVMSS",
             "title": "Confidential production ready VMSS",
-            "subTitle": "Best for production and active protection against advanced and persistent attack techniques.",
+            "subTitle": "Deploy a Virtual Machine Scale Set (VMSS) of virtual machines protected against advanced and persistent attack techniques.",
             "templateFileName": "azuredeploy-accvmss.json",
+            "uiDefinitionFileName": "accdevtestcreateUiDefinition.json",
             "cost": {
                 "type": "score",
                 "score": 3
