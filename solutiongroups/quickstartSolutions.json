@@ -1,0 +1,13 @@
+{
+    "title": "QuickStart solutions",
+    "description": "Learn about popular Azure services and create your first Azure project.",
+    "solutions": [
+        "quickstart-create-a-webapp",
+        "quickstart-deploy-a-vm",
+        "quickstart-container-based-apps",
+        "quickstart-setup-database",
+        "quickstart-data-ai-ml",
+        "quickstart-store-backup-data",
+        "quickstart-serverless-apps"
+    ]
+}

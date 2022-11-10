@@ -1,0 +1,9 @@
+{
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Sql/azuresql"
+  },
+  "title": "Set up a database",
+  "shortDescription": "Explore options for managing relational or nonrelational databases in the cloud",
+  "highlights": [ ]
+}

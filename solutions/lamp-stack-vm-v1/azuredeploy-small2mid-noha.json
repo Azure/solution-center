@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sshPublicKey": {
+            "metadata": {
+                "description": "ssh public key"
+            },
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "name": "mainTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/LAMP/master/" },
+                    "redisDeploySwitch":            { "value": false },
+                    "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
+                    "mysqlPgresVcores":             { "value": 8 },
+                    "mysqlPgresStgSizeGB":          { "value": 128 },
+                    "fileServerDiskSize":           { "value": 128 },
+                    "CMSApplication":               { "value": "None" }
+                },
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/Azure/LAMP/master/azuredeploy.json"
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "mainTemplateOutputs": {
+            "type": "object",
+            "value": "[reference('mainTemplate').outputs]"
+        }
+    },
+    "variables": {
+        "documentation01": "This wrapper template calls the main-template with pre-defined configs for small-to-mid size workloads (without high availability) and the only required parameter (sshPublicKey).",
+        "documentation02": "For the expected small-to-mid size workloads, other parameters are fixed in this tempalte and overriden as above."
+    }
+}
