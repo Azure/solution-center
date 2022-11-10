@@ -11,8 +11,10 @@
     "vmLocation": {
       "type": "string",
       "allowedValues": [
-        "West US",
-        "North Europe"
+        "eastus",
+        "westus",
+        "northeurope",
+        "westeurope"
       ],
       "metadata": {
         "description": "Location of the VM."

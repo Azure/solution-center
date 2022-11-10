@@ -3,7 +3,7 @@
     "view": {
         "kind": "Form",
         "properties": {
-            "title": "Test Form View",
+            "title": "Confidential production ready virtual machines",
             "steps": [
                 {
                     "name": "basics",
@@ -278,7 +278,7 @@
                             "visible": true
                         },
                         {
-                            "name": "adminPasswordOrKeyauthenticationType",
+                            "name": "adminPasswordOrKey",
                             "type": "Microsoft.Compute.CredentialsCombo",
                             "label": {
                                 "authenticationType": "Authentication Type",
@@ -338,8 +338,8 @@
                 "osImageName": "[steps('basics').osImageName]",
                 "osDiskType": "[steps('basics').osDiskType]",
                 "adminUsername": "[steps('basics').adminUsername]",
-                "adminPasswordOrKeyauthenticationType": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
-                "authenticationType": "[steps('basics').adminPasswordOrKeyauthenticationType.authenticationType]",
+                "adminPasswordOrKey": "[coalesce(steps('basics').adminPasswordOrKey.sshPublicKey,steps('basics').adminPasswordOrKey.password)]",
+                "authenticationType": "[steps('basics').adminPasswordOrKey.authenticationType]",
                 "securityType": "[steps('basics').securityType]"
             },
             "kind": "ResourceGroup",

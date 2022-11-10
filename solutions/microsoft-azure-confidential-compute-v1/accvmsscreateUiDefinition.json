@@ -3,7 +3,7 @@
     "view": {
         "kind": "Form",
         "properties": {
-            "title": "Test Form View",
+            "title": "Confidential production ready VMSS",
             "steps": [
                 {
                     "name": "basics",
@@ -283,7 +283,7 @@
                             "visible": true
                         },
                         {
-                            "name": "adminPasswordOrKeyauthenticationType",
+                            "name": "adminPasswordOrKey",
                             "type": "Microsoft.Compute.CredentialsCombo",
                             "label": {
                                 "authenticationType": "Authentication Type",
@@ -335,8 +335,8 @@
                 "singlePlacementGroup": "[steps('basics').singlePlacementGroup]",
                 "securityType": "[steps('basics').securityType]",
                 "adminUsername": "[steps('basics').adminUsername]",
-                "adminPasswordOrKeyauthenticationType": "[coalesce(steps('basics').adminPasswordOrKeyauthenticationType.sshPublicKey,steps('basics').adminPasswordOrKeyauthenticationType.password)]",
-                "authenticationType": "[steps('basics').adminPasswordOrKeyauthenticationType.authenticationType]",
+                "adminPasswordOrKey": "[coalesce(steps('basics').adminPasswordOrKey.sshPublicKey,steps('basics').adminPasswordOrKey.password)]",
+                "authenticationType": "[steps('basics').adminPasswordOrKey.authenticationType]",
                 "platformFaultDomainCount": "[steps('basics').platformFaultDomainCount]"
             },
             "kind": "ResourceGroup",
