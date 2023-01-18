@@ -23,7 +23,7 @@ To get started,
 2. Copy `starter-template-v1` and customize the name of the folder with your solution name (must be unique). 
 3. Follow the instructions below to author your first solution and solution card.
 4. Add an ARM template per configuration to your solution folder, and reference it using the `templateFileName`.
-5. Replace **_starter-template-v1_** in this URL and test your experience at: https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_SolutionCenter=flight1&feature.testmode=true#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/starter-template-v1
+5. Replace **_starter-template-v1_** in this URL and test your experience at: https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_SolutionCenter=flight2&feature.testmode=true#view/Microsoft_Azure_SolutionCenter/SolutionInfo.ReactView/solutionId/starter-template-v1
 
 A solution includes:
 
