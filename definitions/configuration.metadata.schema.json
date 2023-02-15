@@ -34,7 +34,7 @@
         }
     },
     "required": [
-        "options",
+        "configurations",
         "overviewContent",
         "associatedResources",
         "pivots"
