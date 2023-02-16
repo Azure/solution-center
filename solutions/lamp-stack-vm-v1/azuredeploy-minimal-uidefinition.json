@@ -37,7 +37,7 @@
 								"hideConfirmation": false,
 								"hidePassword": true
 							},
-							"osPlatform": "Windows",
+							"osPlatform": "Linux",
 							"visible": true
 						}
 					]
