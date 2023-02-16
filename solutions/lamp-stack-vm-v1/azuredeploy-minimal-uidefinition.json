@@ -46,7 +46,7 @@
 		},
 		"outputs": {
 			"parameters": {
-				"sshPublicKey": "[steps('basics').sshPublicKey]"
+				"sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
 			},
 			"kind": "ResourceGroup",
 			"location": "[steps('basics').resourceScope.location.name]",
