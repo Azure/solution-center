@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
+	"view": {
+		"kind": "Form",
+		"properties": {
+			"title": "LAMP stack with Azure VM",
+			"steps": [
+				{
+					"name": "basics",
+					"label": "Basics",
+					"elements": [
+						{
+							"name": "resourceScope",
+							"type": "Microsoft.Common.ResourceScope",
+							"location": {
+								"resourceTypes": [
+									"microsoft.resources/resourcegroups"
+								]
+							}
+						},
+						{
+							"name": "sshPublicKey",
+							"type": "Microsoft.Compute.CredentialsCombo",
+							"label": {
+								"password": "Password",
+								"confirmPassword": "Confirm password"
+							},
+							"toolTip": {
+								"password": ""
+							},
+							"constraints": {
+								"required": true,
+								"customPasswordRegex": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{12,}$",
+								"customValidationMessage": "The password must be alphanumeric, contain at least 12 characters, and have at least 1 letter and 1 number."
+							},
+							"options": {
+								"hideConfirmation": false,
+								"hidePassword": true
+							},
+							"osPlatform": "Linux",
+							"visible": true
+						}
+					]
+				}
+			]
+		},
+		"outputs": {
+			"parameters": {
+				"sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
+			},
+			"kind": "ResourceGroup",
+			"location": "[steps('basics').resourceScope.location.name]",
+			"resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]"
+		}
+	}
+}
