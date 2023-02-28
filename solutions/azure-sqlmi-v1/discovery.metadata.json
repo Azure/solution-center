@@ -1,0 +1,16 @@
+{
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Compute/virtualMachines"
+  },
+  "title": "IaaS + SQL MI title place holder",
+  "shortDescription": "Do great stuff with SQL MI and VMs/VMSS",
+  "highlights": [
+    {
+      "content": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+    },
+    {
+      "content": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+    }
+  ]
+}
