@@ -28,7 +28,7 @@
                     "CMSApplication":               { "value": "WordPress" }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/Azure/LAMP/master/azuredeploy.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/wordpress-azure-vm-v1/azuredeploy.json"
                 }
             }
         }
