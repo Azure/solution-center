@@ -1566,7 +1566,7 @@
             "sshPublicKey": "[parameters('sshPublicKey')]",
             "sshUsername": "[parameters('sshUsername')]",
             "sslEnforcement": "[parameters('sslEnforcement')]",
-            "storageAccountName": "[tolower(concat('abs',variables('resourceprefix')))]",
+            "storageAccountName": "[tolower(variables('resourceprefix'))]",
             "storageAccountType": "[parameters('storageAccountType')]",
             "subnetAppGw": "[concat('appgw-subnet-',variables('resourceprefix'))]",
             "subnetAppGwPrefix": "[concat(variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),6)))]",
@@ -1626,7 +1626,7 @@
             }
         ],
         "octets": "[split(parameters('vNetAddressSpace'), '.')]",
-        "resourceprefix": "[concat(parameters('_resourceNamePrefix'), substring(uniqueString(resourceGroup().id, deployment().name), 3, 6))]",
+        "resourceprefix": "[concat(parameters('_resourceNamePrefix'), '-' , substring(uniqueString(resourceGroup().id, deployment().name), 3, 6))]",
         "subnetSanPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),2)))]",
         "subnetWebRange": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),0)), '.0/24')]",
         "defaults": {
