@@ -823,7 +823,7 @@
             "dependsOn": [
                 "Microsoft.Resources/deployments/networkTemplate"
             ],
-            "name": "[concat('myLampFrontDoor', variables('resourceprefix'))]",
+            "name": "[concat('myLampFrontDoor', '-', variables('resourceprefix'))]",
             "location": "global",
             "properties": {
                 "routingRules": [
@@ -1524,7 +1524,7 @@
             "mssqlDbSize": "[parameters('mssqlDbSize')]",
             "mssqlDbEdition": "[parameters('mssqlDbEdition')]",
             "mssqlVersion": "[parameters('mssqlVersion')]",
-            "myLampFrontDoor": "[concat('myLampFrontDoor', variables('resourceprefix'))]",
+            "myLampFrontDoor": "[concat('myLampFrontDoor', '-', variables('resourceprefix'))]",
             "mysqlPgresBackupRetentionDays": "[parameters('mysqlPgresBackupRetentionDays')]",
             "mysqlPgresComputeSize": "[parameters('mysqlPgresComputeSize')]",
             "mysqlPgresHASwitch": "[parameters('mysqlPgresHASwitch')]",
