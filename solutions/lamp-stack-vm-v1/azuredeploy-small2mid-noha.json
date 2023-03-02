@@ -17,7 +17,7 @@
             "properties": {
                 "mode": "Incremental",
                 "parameters": {
-                    "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/LAMP/master/" },
+                    "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/lamp-stack-vm-v1/" },
                     "redisDeploySwitch":            { "value": false },
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
                     "mysqlPgresVcores":             { "value": 8 },
