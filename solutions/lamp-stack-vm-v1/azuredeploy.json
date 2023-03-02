@@ -20,6 +20,13 @@
             },
             "defaultValue": ""
         },
+        "_resourceNamePrefix": {
+            "type": "string",
+            "metadata": {
+                "description": "The prefix that will uniquely identify the resources that comprise this solution"
+            },
+            "defaultValue":  "myResource"
+        },
         "applyScriptsSwitch": {
             "defaultValue": true,
             "metadata": {
@@ -1619,7 +1626,7 @@
             }
         ],
         "octets": "[split(parameters('vNetAddressSpace'), '.')]",
-        "resourceprefix": "[substring(uniqueString(resourceGroup().id, deployment().name), 3, 6)]",
+        "resourceprefix": "[concat(parameters('_resourceNamePrefix'), substring(uniqueString(resourceGroup().id, deployment().name), 3, 6))]",
         "subnetSanPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),2)))]",
         "subnetWebRange": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),0)), '.0/24')]",
         "defaults": {
