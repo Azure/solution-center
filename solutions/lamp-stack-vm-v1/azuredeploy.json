@@ -1566,7 +1566,7 @@
             "sshPublicKey": "[parameters('sshPublicKey')]",
             "sshUsername": "[parameters('sshUsername')]",
             "sslEnforcement": "[parameters('sslEnforcement')]",
-            "storageAccountName": "[tolower(variables('resourceprefix'))]",
+            "storageAccountName": "[tolower(concat(parameters('_resourceNamePrefix') , substring(uniqueString(resourceGroup().id, deployment().name), 3, 6), 'sa'))]",
             "storageAccountType": "[parameters('storageAccountType')]",
             "subnetAppGw": "[concat('appgw-subnet-',variables('resourceprefix'))]",
             "subnetAppGwPrefix": "[concat(variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),6)))]",
