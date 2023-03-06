@@ -106,7 +106,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
-            "name": "networkTemplate",
+            "name": "miTemplate",
             "dependsOn": [
                 "Microsoft.Resources/deployments/networkTemplate"
             ],

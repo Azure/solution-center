@@ -99,7 +99,7 @@
                 "score": 2,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy.json",
+            "templateFileName": "azuredeploy-mid.json",
             "pivotValues": [
                 {
                     "pivotName": "vmCompute",
@@ -138,7 +138,7 @@
                 "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy.json",
+            "templateFileName": "azuredeploy-max.json",
             "pivotValues": [
                 {
                     "pivotName": "vmCompute",
