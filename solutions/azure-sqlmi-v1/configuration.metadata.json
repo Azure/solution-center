@@ -60,8 +60,7 @@
                 "score": 1,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy.json",
-            "uiDefinitionFileName": "azuredeploy-minimal-uidefinition.json",
+            "templateFileName": "azuredeploy-minimal.json",
             "pivotValues": [
                 {
                     "pivotName": "vmCompute",
