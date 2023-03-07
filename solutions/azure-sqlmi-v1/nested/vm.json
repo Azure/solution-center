@@ -101,6 +101,9 @@
             "apiVersion": "2019-07-01",
             "name": "[variables('networkInterfaceName')]",
             "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[variables('networkSecurityGroupName')]"
+            ],
             "properties": {
                 "ipConfigurations": [
                     {
