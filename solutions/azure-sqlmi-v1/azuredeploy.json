@@ -141,9 +141,52 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
-            "name": "vmTemplate",
+            "name": "miTemplate",
             "dependsOn": [
                 "Microsoft.Resources/deployments/networkTemplate"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "managedInstanceName": {
+                        "value": "[parameters('managedInstanceName')]"
+                    },
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "subnetId": {
+                        "value": "[reference('networkTemplate').outputs.miSubnetId.value]"
+                    },
+                    "skuName": {
+                        "value": "[parameters('skuName')]"
+                    },
+                    "vCores": {
+                        "value": "[parameters('vCores')]"
+                    },
+                    "storageSizeInGB": {
+                        "value": "[parameters('storageSizeInGB')]"
+                    },
+                    "administratorLogin": {
+                        "value": "[parameters('administratorLogin')]"
+                    },
+                    "administratorLoginPassword": {
+                        "value": "[parameters('administratorLoginPassword')]"
+                    },
+                    "requestedBackupStorageRedundancy": {
+                        "value": "[parameters('requestedBackupStorageRedundancy')]"
+                    }
+                },
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/managedinstance.json"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "name": "vmTemplate",
+            "dependsOn": [
+                "Microsoft.Resources/deployments/miTemplate"
             ],
             "properties": {
                 "mode": "Incremental",
