@@ -1,7 +1,7 @@
 
 # Deploy and Manage a Scalable WordPress Cluster on Azure
 
-This deploys a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) cluster on Azure. The coinfigurations provided deploy [WordPress](https://wordpress.org/) on a LAMP web application.
+This deploys a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) cluster on Azure. The configurations provided deploy [WordPress](https://wordpress.org/) on a LAMP web application.
 
 While you can use an [Azure free account](https://aka.ms/azure-free-phprefarch) to get started, depending on the configuration you choose you will likely be required to upgrade to a paid account.
 
