@@ -11,7 +11,7 @@
             "metadata": {
                 "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
             },
-            "defaultValue": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/wordpress-azure-vm-v1/"
+            "defaultValue": "https://raw.githubusercontent.com/Azure/LAMP/master/"
         },
         "_artifactsLocationSasToken": {
             "type": "securestring",
@@ -19,13 +19,6 @@
                 "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
             },
             "defaultValue": ""
-        },
-        "_resourceNamePrefix": {
-            "type": "string",
-            "metadata": {
-                "description": "The prefix that will uniquely identify the resources that comprise this solution"
-            },
-            "defaultValue":  "myResource"
         },
         "applyScriptsSwitch": {
             "defaultValue": true,
@@ -823,7 +816,7 @@
             "dependsOn": [
                 "Microsoft.Resources/deployments/networkTemplate"
             ],
-            "name": "[concat('myLampFrontDoor', '-', variables('resourceprefix'))]",
+            "name": "[concat('myLampFrontDoor', variables('resourceprefix'))]",
             "location": "global",
             "properties": {
                 "routingRules": [
@@ -1499,7 +1492,7 @@
             "fileServerVmCount": 2,
             "fileServerVmSku": "[parameters('fileServerVmSku')]",
             "flexDbDomainName": ".mysql.database.azure.com",
-            "frontDoorFQDN": "[format('{0}.azurefd.net', concat('myLampFrontDoor', '-', variables('resourceprefix')))]",
+            "frontDoorFQDN": "[format('{0}.azurefd.net', concat('myLampFrontDoor', variables('resourceprefix')))]",
             "gatewayName": "[concat('vnet-gateway-',variables('resourceprefix'))]",
             "gatewayPublicIPName": "[concat('vnet-gw-ip-',variables('resourceprefix'))]",
             "gatewayType": "[parameters('gatewayType')]",
@@ -1524,7 +1517,7 @@
             "mssqlDbSize": "[parameters('mssqlDbSize')]",
             "mssqlDbEdition": "[parameters('mssqlDbEdition')]",
             "mssqlVersion": "[parameters('mssqlVersion')]",
-            "myLampFrontDoor": "[concat('myLampFrontDoor', '-', variables('resourceprefix'))]",
+            "myLampFrontDoor": "[concat('myLampFrontDoor', variables('resourceprefix'))]",
             "mysqlPgresBackupRetentionDays": "[parameters('mysqlPgresBackupRetentionDays')]",
             "mysqlPgresComputeSize": "[parameters('mysqlPgresComputeSize')]",
             "mysqlPgresHASwitch": "[parameters('mysqlPgresHASwitch')]",
@@ -1566,7 +1559,7 @@
             "sshPublicKey": "[parameters('sshPublicKey')]",
             "sshUsername": "[parameters('sshUsername')]",
             "sslEnforcement": "[parameters('sslEnforcement')]",
-            "storageAccountName": "[tolower(concat(parameters('_resourceNamePrefix') , substring(uniqueString(resourceGroup().id, deployment().name), 3, 6), 'sa'))]",
+            "storageAccountName": "[tolower(concat('abs',variables('resourceprefix')))]",
             "storageAccountType": "[parameters('storageAccountType')]",
             "subnetAppGw": "[concat('appgw-subnet-',variables('resourceprefix'))]",
             "subnetAppGwPrefix": "[concat(variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),6)))]",
@@ -1626,7 +1619,7 @@
             }
         ],
         "octets": "[split(parameters('vNetAddressSpace'), '.')]",
-        "resourceprefix": "[concat(parameters('_resourceNamePrefix'), '-' , substring(uniqueString(resourceGroup().id, deployment().name), 3, 6))]",
+        "resourceprefix": "[substring(uniqueString(resourceGroup().id, deployment().name), 3, 6)]",
         "subnetSanPrefix": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),2)))]",
         "subnetWebRange": "[concat( variables('octets')[0], '.', variables('octets')[1], '.', string(add(int(variables('octets')[2]),0)), '.0/24')]",
         "defaults": {

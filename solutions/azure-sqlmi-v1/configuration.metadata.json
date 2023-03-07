@@ -1,26 +1,10 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
-    "documentationFileName": "wordpress-readme.md",
+    "overviewContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec metus nec risus semper feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi cursus blandit fermentum. Curabitur vestibulum efficitur nisl a lacinia. Quisque sit amet pulvinar arcu, nec feugiat lacus. Praesent sagittis lorem tortor, quis rhoncus elit ornare quis.",
+    "documentationFileName": "sqlmi-docs.md",
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
-            "type": "AzureResource"
-        },
-        {
-            "resourceType": "Microsoft.Network/virtualNetworks",
-            "type": "AzureResource"
-        },
-        {
-            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
-            "type": "AzureResource"
-        },
-        {
-            "resourceType": "Microsoft.Compute/disks",
-            "type": "AzureResource"
-        },
-        {
-            "resourceType": "Microsoft.Compute/sshPublicKeys",
             "type": "AzureResource"
         },
         {
@@ -76,7 +60,7 @@
     ],
     "configurations": [
         {
-            "id": "wordpress-base",
+            "id": "base",
             "title": "Dev/Test instance",
             "subTitle": "A starter solution for quick setup with low-scale.",
             "cost": {
@@ -89,8 +73,8 @@
                 "score": 1,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-minimal.json",
-            "uiDefinitionFileName": "minimal-Uiformdefinition.json",
+            "templateFileName": "azuredeploy.json",
+            "uiDefinitionFileName": "azuredeploy-minimal-uidefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
@@ -126,7 +110,7 @@
             ]
         },
         {
-            "id": "wordpress-s2m",
+            "id": "small to mid-size",
             "title": "Small to Mid-Size",
             "subTitle": "Supporting up to 1,000 concurrent users.",
             "cost": {
@@ -139,7 +123,7 @@
                 "score": 2,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-small2mid-noha.json",
+            "templateFileName": "azuredeploy.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
@@ -174,7 +158,7 @@
             ]
         },
         {
-            "id": "wordpress-large",
+            "id": "large",
             "title": "Full Production Workload",
             "subTitle": "This maximal deployment will use GlusterFS (in high availability, adding 2 VMs for a GlusterFS cluster), MySQL with the highest SKU, Redis Cache, and pretty large storage sizes (for both data disks and DB).",
             "cost": {
@@ -187,7 +171,7 @@
                 "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-maximal.json",
+            "templateFileName": "azuredeploy.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
