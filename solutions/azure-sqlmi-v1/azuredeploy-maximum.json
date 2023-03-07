@@ -30,7 +30,7 @@
                 "mode": "Incremental",
                 "parameters": {
                     "managedInstanceName": {
-                        "value": "[parameters('managedInstanceName)]"
+                        "value": "[parameters('managedInstanceName')]"
                     },
                     "skuName": {
                         "value": "GP_Gen8IM"

@@ -127,7 +127,7 @@
                 "mode": "Incremental",
                 "parameters": {
                     "resourceName": {
-                        "value": "[parameters('managedInstanceName)]"
+                        "value": "[parameters('managedInstanceName')]"
                     },
                     "location": {
                         "value": "[parameters('location')]"
@@ -149,7 +149,7 @@
                 "mode": "Incremental",
                 "parameters": {
                     "resourceName": {
-                        "value": "[parameters('managedInstanceName)]"
+                        "value": "[parameters('managedInstanceName')]"
                     },
                     "subnetId": {
                         "value": "[reference('networkTemplate').outputs.vmSubnetId.value]"
