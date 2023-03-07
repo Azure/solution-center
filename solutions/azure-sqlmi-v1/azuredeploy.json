@@ -134,7 +134,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/azure-sqlmi-v1/network.json"
+                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/network.json"
                 }
             }
         },
@@ -171,7 +171,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/azure-sqlmi-v1/vm.json"
+                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/vm.json"
                 }
             }
         }
