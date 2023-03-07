@@ -108,7 +108,7 @@
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
                             "subnet": {
-                                "id": "[parameter('subnetId')]"
+                                "id": "[parameters('subnetId')]"
                             }
                         }
                     }
