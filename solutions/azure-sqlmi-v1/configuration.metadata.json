@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec metus nec risus semper feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi cursus blandit fermentum. Curabitur vestibulum efficitur nisl a lacinia. Quisque sit amet pulvinar arcu, nec feugiat lacus. Praesent sagittis lorem tortor, quis rhoncus elit ornare quis.",
+    "overviewContent": "Lorem ipsum dolorf sit amet, consectetur adipiscing elit. Ut nec metus nec risus semper feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi cursus blandit fermentum. Curabitur vestibulum efficitur nisl a lacinia. Quisque sit amet pulvinar arcu, nec feugiat lacus. Praesent sagittis lorem tortor, quis rhoncus elit ornare quis.",
     "documentationFileName": "sqlmi-docs.md",
     "associatedResources": [
         {
