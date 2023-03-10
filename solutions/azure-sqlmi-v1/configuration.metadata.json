@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Lorem ipsum dolorf sit amet, consectetur adipiscing elit. Ut nec metus nec risus semper feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi cursus blandit fermentum. Curabitur vestibulum efficitur nisl a lacinia. Quisque sit amet pulvinar arcu, nec feugiat lacus. Praesent sagittis lorem tortor, quis rhoncus elit ornare quis.",
+    "overviewContent": "This solution deploys a web frontend layer, private Virtual Network for frontend instances, Azure Key vault for handling secrets and supporting BYOK scenarios, Azure SQL Managed Instance with different tiers and configuration as per selected solution template. Additionally, for the Disaster Recovery scenarios, there is a possibility to configure Failover Groups for Small to Mid-Size and Full Production tiers.",
     "documentationFileName": "sqlmi-docs.md",
     "associatedResources": [
         {
