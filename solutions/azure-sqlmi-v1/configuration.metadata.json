@@ -46,7 +46,7 @@
             "displayName": "Failover group",
             "azureResourceType": "Microsoft.Sql/managedInstances",
             "icon": {
-                "iconFileName": "Region Management",
+                "iconFileName": "RegionManagement",
                 "iconType": "FrameworkIcon"
             }
         },
