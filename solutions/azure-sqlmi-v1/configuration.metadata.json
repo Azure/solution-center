@@ -42,7 +42,12 @@
         },
         {
             "name": "fogPivot",
-            "type": "AzureResource"
+            "type": "Custom",
+            "azureResourceType": "Microsoft.Sql/managedInstances",
+            "icon": {
+                "iconNumber": 71,
+                "iconType": "FrameworkIcon"
+            }
         },
         {
             "name": "akvPivot",
