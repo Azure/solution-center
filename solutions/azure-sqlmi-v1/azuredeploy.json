@@ -211,6 +211,9 @@
                     },
                     "securityType": {
                         "value": "[parameters('securityType')]"
+                    },
+                     "sshPublicKey": {
+                        "value": "[parameters('sshPublicKey')]"
                     }
                 },
                 "templateLink": {
