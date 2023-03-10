@@ -43,9 +43,10 @@
         {
             "name": "fogPivot",
             "type": "Custom",
+            "displayName": "Failover group",
             "azureResourceType": "Microsoft.Sql/managedInstances",
             "icon": {
-                "iconNumber": 71,
+                "iconFileName": "Region Management",
                 "iconType": "FrameworkIcon"
             }
         },
