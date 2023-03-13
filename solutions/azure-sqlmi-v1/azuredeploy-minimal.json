@@ -19,12 +19,6 @@
           "metadata": {
             "description": "The password of the Managed Instance admin."
           }
-        },
-        "sshPublicKey": {
-            "metadata": {
-                "description": "ssh public key"
-            },
-            "type": "string"
         }
     },
     "resources": [
