@@ -111,7 +111,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/network.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/nested/network.json"
                 }
             }
         },
@@ -154,7 +154,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/managedinstance.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/nested/managedinstance.json"
                 }
             }
         },
@@ -185,7 +185,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/vm.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/nested/vm.json"
                 }
             }
         },
@@ -201,7 +201,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/keyVauld.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/nested/keyVauld.json"
                 }
             }
         }
