@@ -154,7 +154,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/managedinstance.json"
+                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/nested/managedInstance.json"
                 }
             }
         },
