@@ -174,7 +174,7 @@
                     "subnetId": {
                         "value": "[reference('networkTemplate').outputs.vmSubnetId.value]"
                     },
-                    "adminUserName": {
+                    "adminUsername": {
                         "value": "[parameters('administratorLogin')]"
                     },
                     "adminPassword": {

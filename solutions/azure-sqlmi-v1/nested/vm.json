@@ -23,6 +23,12 @@
         },
         "vmSize": {
             "type": "string"
+        },
+        "resourceName": {
+            "metadata": {
+                "description": "Name of the parent resource"
+            },
+            "type": "string"
         }
     },
     "variables": {
