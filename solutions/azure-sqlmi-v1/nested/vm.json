@@ -109,7 +109,7 @@
             }
         },
         {
-            "name": "[parameters('vmName')]",
+            "name": "[variables('vmName')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2022-03-01",
             "location": "[parameters('location')]",
