@@ -37,7 +37,7 @@
         "networkInterfaceName": "[concat(parameters('resourceName'), '-vm-nic')]",
         "networkSecurityGroupName": "[concat(parameters('resourceName'), '-vm-nsg')]",
         "publicIpAddressName": "[concat(parameters('resourceName'), '-vm-ip')]",
-        "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
+        "nsgId": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
     },
     "resources": [
         {
@@ -46,8 +46,8 @@
             "apiVersion": "2021-08-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]",
-                "[concat('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]"
+                "[variables('networkSecurityGroupName')]",
+                "[variables('publicIpAddressName')]"
             ],
             "properties": {
                 "ipConfigurations": [
@@ -59,7 +59,7 @@
                             },
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIpAddress": {
-                                "id": "[resourceId(resourceGroup().name, 'Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]",
+                                "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]",
                                 "properties": {
                                     "deleteOption": "Detach"
                                 }
@@ -114,7 +114,7 @@
             "apiVersion": "2022-03-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkInterfaces/', variables('networkInterfaceName'))]"
+                "[variables('networkInterfaceName')]"
             ],
             "properties": {
                 "hardwareProfile": {

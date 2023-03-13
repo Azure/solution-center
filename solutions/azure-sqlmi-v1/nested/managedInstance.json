@@ -171,9 +171,6 @@
         }
       }
     },
-    "variables": {
-      "deploymentName": "[concat('deployRequiredNetworkingResources_', uniqueString(resourceGroup().id))]"
-    },
     "resources": [
       {
         "type": "Microsoft.Sql/managedInstances",
