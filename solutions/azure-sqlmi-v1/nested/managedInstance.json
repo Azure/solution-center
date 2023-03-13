@@ -15,13 +15,6 @@
           "description": "The name of the Managed Instance."
         }
       },
-      "virtualNetworkResourceGroupName": {
-        "type": "string",
-        "defaultValue": "[resourceGroup().name]",
-        "metadata": {
-          "description": "The resource group where the networking resources will be created or updated. Default is the same resource group as Managed Instance."
-        }
-      },
       "subnetId": {
         "type": "string",
         "metadata": {
@@ -157,17 +150,6 @@
           "description": "The password of the Managed Instance admin."
         }
       },
-      "administrators": {
-        "type": "object",
-        "defaultValue": {}
-      },
-      "managedInstanceTags": {
-        "type": "object",
-        "defaultValue": {},
-        "metadata": {
-          "description": "Resource tags to associate with the instance."
-        }
-      },
       "requestedBackupStorageRedundancy": {
         "type": "string",
         "defaultValue": "Geo",
@@ -181,27 +163,12 @@
           "description": "Option for configuring backup storage redundancy. Selecting 'Geo' will enable 'RA-GRS'."
         }
       },
-      "maintenanceConfigurationId": {
-        "type": "string",
-        "defaultValue": "",
-        "metadata": {
-          "description": "Maintenance configuration id assigned to the database. This configuration defines the period when the maintenance updates will occur."
-        }
-      },
       "zoneRedundant": {
         "type": "bool",
         "defaultValue": false,
         "metadata": {
           "description": "Determines whether zone redundancy will be enabled."
         }
-      },
-      "enableADS": {
-        "type": "bool",
-        "defaultValue": false
-      },
-      "enableVA": {
-        "type": "bool",
-        "defaultValue": false
       }
     },
     "variables": {
@@ -229,7 +196,9 @@
           "minimalTlsVersion": "[parameters('minimalTlsVersion')]",
           "timezoneId": "[parameters('timezoneId')]",
           "requestedBackupStorageRedundancy": "[parameters('requestedBackupStorageRedundancy')]",
-          "zoneRedundant": "[parameters('zoneRedundant')]"
+          "zoneRedundant": "[parameters('zoneRedundant')]",
+          "administratorLogin": "[parameters('administratorLogin')]",
+          "administratorLoginPassword": "[parameters('administratorLoginPassword')]"
         }
       }
     ]

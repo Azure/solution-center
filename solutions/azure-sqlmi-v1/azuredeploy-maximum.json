@@ -35,6 +35,9 @@
                     "skuName": {
                         "value": "BC_Gen8IM"
                     },
+                    "skuEdition": {
+                        "value": "BusinessCritical"
+                    },
                     "vCores": {
                         "value": 16
                     },
