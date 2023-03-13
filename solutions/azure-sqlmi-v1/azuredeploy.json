@@ -163,7 +163,7 @@
             "apiVersion": "2019-10-01",
             "name": "vmTemplate",
             "dependsOn": [
-                "Microsoft.Resources/deployments/miTemplate"
+                "Microsoft.Resources/deployments/networkTemplate"
             ],
             "properties": {
                 "mode": "Incremental",
