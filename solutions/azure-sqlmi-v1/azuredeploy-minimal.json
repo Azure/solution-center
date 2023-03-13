@@ -58,7 +58,7 @@
                     },
                     "sshPublicKey": {
                         "value": "[parameters('sshPublicKey')]"
-                    },
+                    }
                 },
                 "templateLink": {
                     "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/iaas-mi/solutions/azure-sqlmi-v1/azuredeploy.json"
@@ -71,14 +71,5 @@
             "type": "object",
             "value": "[reference('mainTemplate').outputs]"
         }
-    },
-    "variables": {
-        "documentation01": "This wrapper template calls the main-template with bare minimum configs and the only required parameter (sshPublicKey).",
-        "documentation02": "To speed up deployment and consume least resources, other parameters are fixed in this tempalte and overriden as follows:",
-        "documentation03": "   - fileServerType: nfs",
-        "documentation04": "   - autoscaleVmSku: Standard_DS1_v2",
-        "documentation05": "   - fileServerDiskCount: 2",
-        "documentation06": "   - dbServerType: mysql",
-        "documentation07": "   - redisDeploySwitch: false"
     }
 }

@@ -49,6 +49,9 @@
                     },
                     "requestedBackupStorageRedundancy": {
                         "value": "Geo"
+                    },
+                    "vmSku": {
+                        "value": "Standard_D8s_v3"
                     }
                 },
                 "templateLink": {
