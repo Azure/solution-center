@@ -6,9 +6,6 @@
             "type": "string",
             "defaultValue": "[resourceGroup().location]"
         },
-        "subnetName": {
-            "type": "string"
-        },
         "adminUsername": {
             "type": "string"
         },
