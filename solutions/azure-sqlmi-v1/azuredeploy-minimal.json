@@ -49,9 +49,6 @@
                     },
                     "requestedBackupStorageRedundancy": {
                         "value": "Local"
-                    },
-                    "sshPublicKey": {
-                        "value": "[parameters('sshPublicKey')]"
                     }
                 },
                 "templateLink": {
