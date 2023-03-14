@@ -1,0 +1,69 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "managedInstanceName": {
+            "metadata": {
+                "description": "name"
+            },
+            "type": "string"
+        },
+        "administratorLogin": {
+          "type": "string",
+          "metadata": {
+            "description": "The login of the Managed Instance admin."
+          }
+        },
+        "administratorLoginPassword": {
+          "type": "securestring",
+          "metadata": {
+            "description": "The password of the Managed Instance admin."
+          }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "name": "mainTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "managedInstanceName": {
+                        "value": "[parameters('managedInstanceName')]"
+                    },
+                    "skuName": {
+                        "value": "BC_Gen8IM"
+                    },
+                    "skuEdition": {
+                        "value": "BusinessCritical"
+                    },
+                    "vCores": {
+                        "value": 16
+                    },
+                    "storageSizeInGB": {
+                        "value": 512
+                    },
+                    "administratorLogin": {
+                        "value": "[parameters('administratorLogin')]"
+                    },
+                    "administratorLoginPassword": {
+                        "value": "[parameters('administratorLoginPassword')]"
+                    },
+                    "vmSku": {
+                        "value": "Standard_E32s_v3"
+                    }
+                },
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/azuredeploy.json"
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "mainTemplateOutputs": {
+            "type": "object",
+            "value": "[reference('mainTemplate').outputs]"
+        }
+    }
+}

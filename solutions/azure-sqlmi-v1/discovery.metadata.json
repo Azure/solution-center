@@ -3,7 +3,7 @@
     "iconType": "AssetIcon",
     "asset": "Microsoft.Compute/virtualMachines"
   },
-  "title": "IaaS + SQL MI title place holder",
+  "title": "IaaS + SQL MI (Preview)",
   "shortDescription": "Do great stuff with SQL MI and VMs/VMSS",
   "highlights": [
     {
