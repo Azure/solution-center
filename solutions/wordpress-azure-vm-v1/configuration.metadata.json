@@ -2,7 +2,6 @@
     "$schema": "../../definitions/configuration.metadata.schema.json",
     "overviewContent": "This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
     "documentationFileName": "wordpress-readme.md",
-    "supportsManualConfiguration": false,
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
@@ -77,7 +76,7 @@
     ],
     "configurations": [
         {
-            "id": "base",
+            "id": "wordpress-base",
             "title": "Dev/Test instance",
             "subTitle": "A starter solution for quick setup with low-scale.",
             "cost": {
@@ -91,6 +90,7 @@
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
             "templateFileName": "azuredeploy-minimal.json",
+            "uiDefinitionFileName": "minimal-Uiformdefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
@@ -126,7 +126,7 @@
             ]
         },
         {
-            "id": "small to mid-size",
+            "id": "wordpress-s2m",
             "title": "Small to Mid-Size",
             "subTitle": "Supporting up to 1,000 concurrent users.",
             "cost": {
@@ -174,7 +174,7 @@
             ]
         },
         {
-            "id": "large",
+            "id": "wordpress-large",
             "title": "Full Production Workload",
             "subTitle": "This maximal deployment will use GlusterFS (in high availability, adding 2 VMs for a GlusterFS cluster), MySQL with the highest SKU, Redis Cache, and pretty large storage sizes (for both data disks and DB).",
             "cost": {

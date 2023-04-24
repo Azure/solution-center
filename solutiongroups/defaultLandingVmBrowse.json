@@ -3,12 +3,7 @@
     "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
     "solutions": [
         "lamp-stack-vm-v1",
-        "wordpress-azure-vm-v1",
-        "azure-hub-spoke-v1",
-        "microsoft-azure-spot-instances-v1",
-        "microsoft-azure-confidential-compute-v1",
-        "microsoft-azure-arcbox-v1",
-        "quickstart-container-based-apps"
+        "wordpress-azure-vm-v1"
     ],
     "solutionsSectionTitle": "Discover the right solution for your needs",
     "createLinksSectionTitle": "Hybrid virtual infrastructure",
@@ -17,7 +12,7 @@
         {
             "id": "azure-arc-vm",
             "title": "Azure Arc virtual machine",
-            "description": "Create a VM a non-Azure environments (VMware, Azure Stack HCI, SCVMM)",
+            "description": "Create a new Azure Arc virtual machine in one of your non-Azure environments (VMware, Azure Stack HCI, SCVMM)",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"

@@ -17,7 +17,7 @@
             "properties": {
                 "mode": "Incremental",
                 "parameters": {
-                    "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/LAMP/master/" },
+                    "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/wordpress-azure-vm-v1/" },
                     "redisDeploySwitch":            { "value": true },
                     "azureBackupSwitch":            { "value": true },
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
@@ -30,7 +30,7 @@
                     "CMSApplication":               { "value": "WordPress" }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/Azure/LAMP/master/azuredeploy.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/wordpress-azure-vm-v1/azuredeploy.json"
                 }
             }
         }

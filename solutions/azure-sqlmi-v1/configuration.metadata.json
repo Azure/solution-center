@@ -1,0 +1,194 @@
+{
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "This solution deploys a web frontend layer, private Virtual Network for frontend instances, Azure Key vault for handling secrets and supporting BYOK scenarios, Azure SQL Managed Instance with different tiers and configuration as per selected solution template. Additionally, for the Disaster Recovery scenarios, there is a possibility to configure Failover Groups for Small to Mid-Size and Full Production tiers.",
+    "documentationFileName": "sqlmi-docs.md",
+    "associatedResources": [
+        {
+            "resourceType": "Microsoft.Network/PublicIpAddresses",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/networkinterfaces",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Sql/managedInstances",
+            "type": "AzureResource",
+            "displayName": "Azure SQL Managed Instance"
+        },
+        {
+            "resourceType": "Microsoft.Network/applicationGateways",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.KeyVault/vaults",
+            "type": "AzureResource"
+        }
+    ],
+    "pivots": [
+        {
+            "name": "vmCompute",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachines"
+        },
+        {
+            "name": "miPivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Sql/managedInstances"
+        },
+        {
+            "name": "fogPivot",
+            "type": "Custom",
+            "displayName": "Failover group",
+            "icon": {
+                "iconFileName": "RegionManagement",
+                "iconType": "CustomIcon"
+            }
+        },
+        {
+            "name": "akvPivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.KeyVault/vaults"
+        }
+    ],
+    "configurations": [
+        {
+            "id": "base",
+            "title": "Dev/Test instance",
+            "subTitle": "A starter solution for quick setup with low-scale.",
+            "cost": {
+                "value": 1055,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-minimal.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmCompute",
+                    "content": [
+                        "D4s v3 (4 CPU vCores)"
+                    ]
+                },
+                        
+                {
+                    "pivotName": "miPivot",
+                    "content": [
+                        "General Purpose", "4 CPU vCores", "20 GB RAM, Standard Series", "32 GB of disk space", "LRS Backup Storage"
+                    ]
+                },
+
+                {
+                    "pivotName": "fogPivot",
+                    "content": [
+                        "N/A"
+                    ]
+                },
+                        
+                {
+                    "pivotName": "akvPivot",
+                    "content": [
+                        "Standard"
+                    ]
+                }
+                
+            ]
+        },
+        {
+            "id": "small to mid-size",
+            "title": "Small to Mid-Size",
+            "subTitle": "Small to Medium-sized production workload, that does not require the highest availability or very high number of concurrent users.",
+            "cost": {
+                "value": 2125,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 2,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-mid.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmCompute",
+                    "content": [
+                        "D8s_v3 (8 CPU vCores)"
+                    ]
+                },
+                        
+                {
+                    "pivotName": "miPivot",
+                    "content": [
+                        "General Purpose", "8 CPU vCores", "40 GB RAM, Standard Series", "128 GB of disk space", "GRS Backup Storage"
+                    ]
+                },
+                {
+                    "pivotName": "fogPivot",
+                    "content": [
+                        "Available"
+                    ]
+                },     
+                {
+                    "pivotName": "akvPivot",
+                    "content": [
+                        "Standard"
+                    ]
+                }
+               
+            ]
+        },
+        {
+            "id": "large",
+            "title": "Full Production Workload",
+            "subTitle": "This deployment will be provide a better configuration for more intensive full production workload with higher number of users and significantly improved response time, while providing Business Critical type high availability.",
+            "cost": {
+                "value": 12400,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 3,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-max.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmCompute",
+                    "content": [
+                        "E32s_v3 (32 CPU vCores)"
+                    ]
+                },
+                        
+                {
+                    "pivotName": "miPivot",
+                    "content": [
+                        "Business Critical", "16 CPU vCores", "112 GB RAM, Premium Series", "512 GB of disk space", "GRS Backup Storage"
+                    ]
+                },
+                {
+                    "pivotName": "fogPivot",
+                    "content": [
+                        "Available"
+                    ]
+                },    
+                {
+                    "pivotName": "akvPivot",
+                    "content": [
+                        "Standard"
+                    ]
+                }
+                
+            ]
+        }
+    ]
+}

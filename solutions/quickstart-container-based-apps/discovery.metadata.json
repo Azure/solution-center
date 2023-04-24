@@ -4,7 +4,7 @@
     "iconFileName": "ContainerInstances"
   },
   "title": "Deploy and run a container-based app",
-  "shortDescription": "Build and run your container-based applications",
+  "shortDescription": "Build and run your container-based applications.",
   "highlights": [
     {
       "content": "Deploy an application or service, its dependencies, and its configuration as a container image. "

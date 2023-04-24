@@ -44,7 +44,6 @@
             "azureResourceType": "Microsoft.Compute/disks"
         }
     ],
-    "documentationFileName": null,
     "configurations": [
         {
             "id": "DevTestVM",
@@ -115,7 +114,7 @@
             "title": "Confidential production ready VMSS",
             "subTitle": "Deploy a Virtual Machine Scale Set (VMSS) of virtual machines protected against advanced and persistent attack techniques.",
             "templateFileName": "azuredeploy-accvmss.json",
-            "uiDefinitionFileName": "accdevtestcreateUiDefinition.json",
+            "uiDefinitionFileName": "accvmsscreateUiDefinition.json",
             "cost": {
                 "type": "score",
                 "score": 3
