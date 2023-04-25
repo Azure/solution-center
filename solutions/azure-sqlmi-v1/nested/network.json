@@ -1,0 +1,258 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "metadata": {
+                "description": "Location of the resource"
+            },
+            "type": "string"
+        },
+        "resourceName": {
+            "metadata": {
+                "description": "Name of the parent resource"
+            },
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('defaultNetworkSecurityGroupName')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+              "copy": [
+                {
+                  "name": "securityRules",
+                  "count": "[length(variables('defaultNSGs'))]",
+                  "input": {
+                    "name": "[variables('defaultNSGs')[copyIndex('securityRules')].name]",
+                    "properties": "[variables('defaultNSGs')[copyIndex('securityRules')].properties]"
+                  }
+                }
+              ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/routeTables",
+            "name": "[variables('defaultRouteTableName')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "disableBgpRoutePropagation": false
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[variables('virtualNetworkName')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+              "[variables('defaultRouteTableName')]",
+              "[variables('defaultNetworkSecurityGroupName')]"
+            ],
+            "properties": {
+              "addressSpace": {
+                "addressPrefixes": [
+                  "[variables('defaultVirtualNetworkAddressPrefix')]"
+                ]
+              },
+              "subnets": [
+                {
+                  "name": "[variables('subnetName')]",
+                  "properties": {
+                    "addressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                    "routeTable": {
+                      "id": "[resourceId('Microsoft.Network/routeTables', variables('defaultRouteTableName'))]"
+                    },
+                    "networkSecurityGroup": {
+                      "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('defaultNetworkSecurityGroupName'))]"
+                    },
+                    "delegations": "[variables('delegationsObject')]"
+                  }
+                },
+                {
+                  "name": "[variables('vmSubnetName')]",
+                  "properties": {
+                    "addressPrefix": "[variables('defaultVMSubnetAddressPrefix')]",
+                    "networkSecurityGroup": {
+                      "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('defaultNetworkSecurityGroupName'))]"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+    ],
+    "outputs": {
+      "miSubnetId": {
+        "type": "string",
+        "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
+      },
+      "vmSubnetId": {
+        "type": "string",
+        "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('vmSubnetName'))]"
+      }
+    },
+    "variables": {
+        "delegationsObject": [
+            {
+                "name": "[concat('dlg-', parameters('resourceName'))]",
+                "properties": {
+                "serviceName": "Microsoft.Sql/managedInstances"
+                }
+            }
+        ],
+        "virtualNetworkName": "[concat('vnet-', parameters('resourceName'))]",
+        "subnetName": "ManagedInstance",
+        "vmSubnetName": "vm",
+        "defaultVirtualNetworkAddressPrefix": "10.0.0.0/16",
+        "defaultSubnetAddressPrefix": "10.0.0.0/24",
+        "defaultVMSubnetAddressPrefix": "10.0.1.0/24",
+        "defaultRouteTableName": "[concat('rt-', parameters('resourceName'))]",
+        "defaultNetworkSecurityGroupName": "[concat('nsg-', parameters('resourceName'))]",
+        "defaultNSGs": [
+            {
+              "name": "allow_tds_inbound",
+              "properties": {
+                "description": "Allow access to data via TDS",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "1433",
+                "sourceAddressPrefix": "VirtualNetwork",
+                "destinationAddressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                "access": "Allow",
+                "priority": 1000,
+                "direction": "Inbound"
+              }
+            },
+            {
+              "name": "allow_redirect_inbound",
+              "properties": {
+                "description": "Allow inbound TDS redirect traffic to Managed Instance inside the virtual network",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "11000-11999",
+                "sourceAddressPrefix": "VirtualNetwork",
+                "destinationAddressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                "access": "Allow",
+                "priority": 1100,
+                "direction": "Inbound"
+              }
+            },
+            {
+              "name": "allow_geodr_inbound",
+              "properties": {
+                "description": "Allow inbound GeoDR traffic inside the virtual network",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "5022",
+                "sourceAddressPrefix": "VirtualNetwork",
+                "destinationAddressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                "access": "Allow",
+                "priority": 1200,
+                "direction": "Inbound"
+              }
+            },
+            {
+              "name": "deny_all_inbound",
+              "properties": {
+                "description": "Deny all other inbound traffic",
+                "protocol": "*",
+                "sourcePortRange": "*",
+                "destinationPortRange": "*",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Deny",
+                "priority": 4096,
+                "direction": "Inbound"
+              }
+            },
+            {
+              "name": "allow_linkedserver_outbound",
+              "properties": {
+                "description": "Allow outbound linked server traffic inside the virtual network",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "1433",
+                "sourceAddressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                "destinationAddressPrefix": "VirtualNetwork",
+                "access": "Allow",
+                "priority": 1000,
+                "direction": "Outbound"
+              }
+            },
+            {
+              "name": "allow_redirect_outbound",
+              "properties": {
+                "description": "Allow outbound TDS redirect traffic from Managed Instance inside the virtual network",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "11000-11999",
+                "sourceAddressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                "destinationAddressPrefix": "VirtualNetwork",
+                "access": "Allow",
+                "priority": 1100,
+                "direction": "Outbound"
+              }
+            },
+            {
+              "name": "allow_geodr_outbound",
+              "properties": {
+                "description": "Allow outbound GeoDR traffic inside the virtual network",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "5022",
+                "sourceAddressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                "destinationAddressPrefix": "VirtualNetwork",
+                "access": "Allow",
+                "priority": 1200,
+                "direction": "Outbound"
+              }
+            },
+            {
+              "name": "allow_privatelink_outbound",
+              "properties": {
+                "description": "Allow outbound Private Link traffic inside the virtual network",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "443",
+                "sourceAddressPrefix": "[variables('defaultSubnetAddressPrefix')]",
+                "destinationAddressPrefix": "VirtualNetwork",
+                "access": "Allow",
+                "priority": 1300,
+                "direction": "Outbound"
+              }
+            },
+            {
+              "name": "allow_azurecloud_outbound",
+              "properties": {
+                "description": "Allow outbound traffic to Azure Cloud, port 443",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "443",
+                "sourceAddressPrefix": "VirtualNetwork",
+                "destinationAddressPrefix": "AzureCloud",
+                "access": "Allow",
+                "priority": 1400,
+                "direction": "Outbound"
+              }
+            },
+            {
+              "name": "deny_all_outbound",
+              "properties": {
+                "description": "Deny all other outbound traffic",
+                "protocol": "*",
+                "sourcePortRange": "*",
+                "destinationPortRange": "*",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Deny",
+                "priority": 4096,
+                "direction": "Outbound"
+              }
+            }
+        ]
+    }
+}
