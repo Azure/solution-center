@@ -1,55 +1,52 @@
 {
-	"$schema": "../../../Definitions/dx.schema.json",
-	"view": {
-		"kind": "Form",
-		"properties": {
-			"title": "LAMP stack with Azure VM",
-			"steps": [
-				{
-					"name": "basics",
-					"label": "Basics",
-					"elements": [
-						{
-							"name": "resourceScope",
-							"type": "Microsoft.Common.ResourceScope",
-							"location": {
-								"resourceTypes": [
-									"microsoft.resources/resourcegroups"
-								]
-							}
-						},
-						{
-                "name": "dropDown1",
-                "type": "Microsoft.Common.DropDown",
-                "label": "Example drop down",
-                "placeholder": "",
-                "defaultValue": "Value two",
-                "toolTip": "",
-                "constraints": {
-                    "allowedValues": [
+    "$schema": "../../Definitions/dx.schema.json",
+    "stringSource": "DashboardTemplateView.resjson",
+    "view": {
+        "kind": "Form",
+        "properties": {
+            "title": "formTemplateViewTitle",
+            "steps": [
+                {
+                    "name": "basics",
+                    "label": "formTemplateViewLabel",
+                    "elements": [
                         {
-                            "label": "Value one",
-                            "value": "one"
+                            "type": "Microsoft.Common.SubscriptionSelector",
+                            "name": "subscription"
                         },
                         {
-                            "label": "Value two",
-                            "value": "two"
+                            "name": "resourceSelector",
+                            "constraints": {
+                                "required": true
+                            },
+                            "type": "Microsoft.Solutions.ResourceSelector",
+                            "label": "formResSelectorLabel",
+                            "resourceType": "[parameters('resourceType')]",
+                            "scope": {
+                                "subscriptionId": "[steps('basics').subscription.subscriptionId]"
+                            }
+                        },
+                        {
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "formDashTextLabel",
+                            "name": "dashboardName",
+                            "constraints": {
+                                "required": true,
+                                "validations": [
+                                    {
+                                        "regex": "^.{1,200}$",
+                                        "message": "formDashValLabel"
+                                    }
+                                ]
+                            }
                         }
-                    ],
-                    "required": true
-                },
-                "visible": true
-            }
-						
-					]
-				}
-			]
-		},
-		"outputs": {
-			"parameters": {			},
-			"kind": "ResourceGroup",
-			"location": "[steps('basics').resourceScope.location.name]",
-			"resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]"
-		}
-	}
+                    ]
+                }
+            ]
+        },
+        "outputs": {
+            "resourceId": "[steps('basics').resourceSelector]",
+            "dashboardName": "[steps('basics').dashboardName]"
+        }
+    }
 }
