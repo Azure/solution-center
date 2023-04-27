@@ -1,5 +1,4 @@
 {
-    "$schema": "../../Definitions/dx.schema.json",
     "stringSource": "DashboardTemplateView.resjson",
     "view": {
         "kind": "Form",
