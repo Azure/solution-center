@@ -1,5 +1,5 @@
 {
-	"$schema": "dx.view.json",
+	"$schema": "../../../Definitions/dx.schema.json",
 	"view": {
 		"kind": "Form",
 		"properties": {
