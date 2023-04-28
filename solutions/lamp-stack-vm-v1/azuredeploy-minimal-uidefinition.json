@@ -1,38 +1,47 @@
 {
     "$schema": "../../Definitions/dx.schema.json",
-    "stringSource": "../Resources/CreateStrings.resjson",
+    "stringSource": "DashboardTemplateView.resjson",
     "view": {
         "kind": "Form",
         "properties": {
-            "title": "[parameters('title')]",
+            "title": "formTemplateViewTitle",
             "steps": [
                 {
                     "name": "basics",
-                    "label": "Basics",
+                    "label": "formTemplateViewLabel",
                     "elements": [
                         {
-                            "name": "resourceScope",
-                            "type": "Microsoft.Common.ResourceScope",
-                            "location": {
-                                "resourceTypes": [
-                                    "microsoft.resources/resourcegroups"
-                                ]
-                            },
-                            "resourceName": {
-                                "label": "Name",
-                                "toolTip": "This prefix will be used for all resources deployed as part of this solution" ,
-                                "constraints": {
-                                   "validations": [
-                                        {
-                                            "regex": "^[a-z0-9]{1,15}$",
-                                            "message": "Only lowercase alphanumeric characters are allowed, and the value must be 1-15 characters long."
-                                        }
-                                   ]
-                                }
-                             }
+                            "type": "Microsoft.Common.SubscriptionSelector",
+                            "name": "subscription"
                         },
                         {
-                            "name": "sshPublicKey",
+                            "name": "resourceSelector",
+                            "constraints": {
+                                "required": true
+                            },
+                            "type": "Microsoft.Solutions.ResourceSelector",
+                            "label": "formResSelectorLabel",
+                            "resourceType": "[parameters('resourceType')]",
+                            "scope": {
+                                "subscriptionId": "[steps('basics').subscription.subscriptionId]"
+                            }
+                        },
+                        {
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "formDashTextLabel",
+                            "name": "dashboardName",
+                            "constraints": {
+                                "required": true,
+                                "validations": [
+                                    {
+                                        "regex": "^.{1,200}$",
+                                        "message": "formDashValLabel"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "element1",
                             "type": "Microsoft.Compute.CredentialsCombo",
                             "label": {
                               "authenticationType": "Authentication type",
@@ -41,32 +50,29 @@
                               "sshPublicKey": "SSH public key"
                             },
                             "toolTip": {
+                              "authenticationType": "",
+                              "password": "",
                               "sshPublicKey": ""
                             },
                             "constraints": {
-                              "required": true
+                              "required": true,
+                              "customPasswordRegex": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{12,}$",
+                              "customValidationMessage": "The password must be alphanumeric, contain at least 12 characters, and have at least 1 letter and 1 number."
                             },
                             "options": {
-                              "hidePassword": true
+                              "hideConfirmation": false,
+                              "hidePassword": false
                             },
                             "osPlatform": "Linux",
                             "visible": true
                           }
                     ]
                 }
-            ],
-            "deployment": {
-                "parameters": {
-                    "resourceNamePrefix": "[steps('basics').resourceScope.resourceName]",
-                    "sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
-                },
-                "kind": "ResourceGroup",
-                "location": "[steps('basics').resourceScope.location.name]",
-                "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
-                "template": {
-                    "file": "../Deployments/LAMP/azuredeploy-small2mid-noha.json"
-                }
-            }
+            ]
+        },
+        "outputs": {
+            "resourceId": "[steps('basics').resourceSelector]",
+            "dashboardName": "[steps('basics').dashboardName]"
         }
     }
 }
