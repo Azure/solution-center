@@ -30,28 +30,7 @@
                                    ]
                                 }
                              }
-                        },
-                        {
-                            "name": "sshPublicKey",
-                            "type": "Microsoft.Compute.CredentialsCombo",
-                            "label": {
-                              "authenticationType": "Authentication type",
-                              "password": "Password",
-                              "confirmPassword": "Confirm password",
-                              "sshPublicKey": "SSH public key"
-                            },
-                            "toolTip": {
-                              "sshPublicKey": ""
-                            },
-                            "constraints": {
-                              "required": true
-                            },
-                            "options": {
-                              "hidePassword": true
-                            },
-                            "osPlatform": "Linux",
-                            "visible": true
-                          }
+                        }
                     ]
                 }
             ],
