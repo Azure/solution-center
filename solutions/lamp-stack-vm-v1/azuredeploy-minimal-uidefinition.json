@@ -11,26 +11,26 @@
                     "label": "Basics",
                     "elements": [
                         {
-                            "name": "resourceScope",
-                            "type": "Microsoft.Common.ResourceScope",
-                            "location": {
-                                "resourceTypes": [
-                                    "microsoft.resources/resourcegroups"
-                                ]
+                            "name": "sshPublicKey",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                              "authenticationType": "Authentication type",
+                              "password": "Password",
+                              "confirmPassword": "Confirm password",
+                              "sshPublicKey": "SSH public key"
                             },
-                            "resourceName": {
-                                "label": "Name",
-                                "toolTip": "This prefix will be used for all resources deployed as part of this solution" ,
-                                "constraints": {
-                                   "validations": [
-                                        {
-                                            "regex": "^[a-z0-9]{1,15}$",
-                                            "message": "Only lowercase alphanumeric characters are allowed, and the value must be 1-15 characters long."
-                                        }
-                                   ]
-                                }
-                             }
-                        }
+                            "toolTip": {
+                              "sshPublicKey": ""
+                            },
+                            "constraints": {
+                              "required": true
+                            },
+                            "options": {
+                              "hidePassword": true
+                            },
+                            "osPlatform": "Linux",
+                            "visible": true
+                          }
                     ]
                 }
             ],
