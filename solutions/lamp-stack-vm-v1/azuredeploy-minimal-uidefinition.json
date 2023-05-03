@@ -64,7 +64,7 @@
                     "location": "[steps('basics').resourceScope.location.name]",
                     "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
                     "template": {
-                        "file": "azuredeploy-minimal.json"
+                        "file": "deploymentTemplate"
                     }
                 }
             }
