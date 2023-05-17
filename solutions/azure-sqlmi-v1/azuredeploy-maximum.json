@@ -39,7 +39,7 @@
                         "value": "BusinessCritical"
                     },
                     "vCores": {
-                        "value": 16
+                        "value": 8
                     },
                     "storageSizeInGB": {
                         "value": 512
@@ -51,7 +51,7 @@
                         "value": "[parameters('administratorLoginPassword')]"
                     },
                     "vmSku": {
-                        "value": "Standard_E32s_v3"
+                        "value": "Standard_E16s_v3"
                     }
                 },
                 "templateLink": {
