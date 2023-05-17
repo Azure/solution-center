@@ -48,12 +48,7 @@
             "azureResourceType": "Microsoft.DBforMySQL/servers"
         },
         {
-            "name": "storagePivot",
-            "type": "AzureResource",
-            "azureResourceType": "Microsoft.Storage/StorageAccounts"
-        },
-        {
-            "name": "cachingPivot",
+            "name": "akvPivot",
             "type": "AzureResource",
             "azureResourceType": "Microsoft.Cache/Redis"
         }
@@ -92,14 +87,6 @@
                         "64 GiB Premium Files LSR"
                     ]
                 },
-                
-                {
-                    "pivotName": "databasePivot",
-                    "content": [
-                        "2 V-Core 125GB MySQL Database"
-                    ]
-                },
-
                 {
                     "pivotName": "cachingPivot",
                     "content": [
@@ -141,14 +128,6 @@
                     ]
                 },
                 {
-                    "pivotName": "databasePivot",
-                    "content": [
-                        "Gen 5 8 vCore 128 GB Azure PostgresSQL",
-                        "Backup enabled"
-                    ]
-                },
-
-                {
                     "pivotName": "cachingPivot",
                     "content": [
                         "N/A"
@@ -162,38 +141,27 @@
             "title": "Full Production Workload",
             "subTitle": "This maximal deployment will use GlusterFS (in high availability, adding 2 VMs for a GlusterFS cluster), MySQL with the highest SKU, Redis Cache, and pretty large storage sizes (for both data disks and DB).",
             "cost": {
-                "value": 3000,
+                "value": 5499,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
             },
             "maintenance": {
-                "score": 3,
+                "score": 2,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy.json",
+            "templateFileName": "azuredeploy-maximum.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Autoscaling Standard_DS2_v2 VMSS.", 
-                        "1024 GiB Local SSD per node",
-                        "Standard_DS1_v2 Controller VM."
-                
+                        "E16s_v3 (16 CPU vCores)"
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "1024 GiB Premium Files LSR",
-                        "Estimated with 100,000 storage transactions per VM"
-                    ]
-                },
-                {
-                    "pivotName": "databasePivot",
-                    "content": [
-                        "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
-                        "Backup enabled"
+                        "Business Critical", "8 CPU vCores", "56 GB RAM, Premium Series", "512 GB of disk space", "GRS Backup Storage"
                     ]
                 },
                 {
