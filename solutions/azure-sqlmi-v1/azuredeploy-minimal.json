@@ -52,7 +52,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/staging/solutions/azure-sqlmi-v1/azuredeploy.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/azuredeploy.json"
                 }
             }
         }

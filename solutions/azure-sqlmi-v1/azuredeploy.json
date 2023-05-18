@@ -122,7 +122,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/staging/solutions/azure-sqlmi-v1/nested/network.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/nested/network.json"
                 }
             }
         },
@@ -168,7 +168,7 @@
                     }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/milanbrkic-ms/solution-center/staging/solutions/azure-sqlmi-v1/nested/managedInstance.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/staging/solutions/azure-sqlmi-v1/nested/managedInstance.json"
                 }
             }
         },
