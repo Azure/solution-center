@@ -35,6 +35,9 @@
                     "skuName": {
                         "value": "BC_G8IM"
                     },
+                    "skuEdition": {
+                        "value": "BusinessCritical"
+                    },
                     "vCores": {
                         "value": 8
                     },

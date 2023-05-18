@@ -32,6 +32,17 @@
                 "description": "Managed instance SKU. If SKU is not set, skuEdition and hardwareFamily values have to be populated."
             }
         },
+        "skuEdition": {
+          "type": "string",
+          "defaultValue": "GeneralPurpose",
+          "allowedValues": [
+            "GeneralPurpose",
+            "BusinessCritical"
+          ],
+          "metadata": {
+            "description": "SKU Edition for the Managed Instance. In case skuName is set this parameter is ignored."
+          }
+        },
         "storageSizeInGB": {
             "type": "int",
             "defaultValue": 256,
@@ -136,6 +147,9 @@
                     },
                     "skuName": {
                         "value": "[parameters('skuName')]"
+                    },
+                    "skuEdition": {
+                        "value": "[parameters('skuEdition')]"
                     },
                     "vCores": {
                         "value": "[parameters('vCores')]"
