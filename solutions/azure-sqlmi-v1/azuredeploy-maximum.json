@@ -33,7 +33,7 @@
                         "value": "[parameters('managedInstanceName')]"
                     },
                     "skuName": {
-                        "value": "BC_Gen8IM"
+                        "value": "BC_G8IM"
                     },
                     "vCores": {
                         "value": 8
