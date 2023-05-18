@@ -35,9 +35,6 @@
                     "skuName": {
                         "value": "BC_Gen8IM"
                     },
-                    "skuEdition": {
-                        "value": "BusinessCritical"
-                    },
                     "vCores": {
                         "value": 8
                     },
@@ -49,6 +46,9 @@
                     },
                     "administratorLoginPassword": {
                         "value": "[parameters('administratorLoginPassword')]"
+                    },
+                    "requestedBackupStorageRedundancy": {
+                        "value": "Geo"
                     },
                     "vmSku": {
                         "value": "Standard_E16s_v3"
