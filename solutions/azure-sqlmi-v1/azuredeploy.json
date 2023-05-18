@@ -88,7 +88,7 @@
             "allowedValues": [
                 "Standard_D4s_v3",
                 "Standard_D8s_v3",
-                "Standard_E32s_v3"
+                "Standard_E16s_v3"
             ],
             "metadata": {
                 "description": "Size of the VM."
