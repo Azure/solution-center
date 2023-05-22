@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "This solution deploys a web frontend layer, private Virtual Network for frontend instances, Azure Key vault for handling secrets and supporting BYOK scenarios, Azure SQL Managed Instance with different tiers and configuration as per selected solution template. Additionally, for the Disaster Recovery scenarios, there is a possibility to configure Failover Groups for Small to Mid-Size and Full Production tiers.",
+    "overviewContent": "This solution deploys a web frontend layer, private Virtual Network for frontend instances, Azure Key vault for handling secrets and supporting BYOK scenarios, Azure SQL Managed Instance with different tiers and configuration as per selected solution template.",
     "documentationFileName": "sqlmi-docs.md",
     "associatedResources": [
         {
@@ -41,15 +41,6 @@
             "azureResourceType": "Microsoft.Sql/managedInstances"
         },
         {
-            "name": "fogPivot",
-            "type": "Custom",
-            "displayName": "Failover group",
-            "icon": {
-                "iconFileName": "RegionManagement",
-                "iconType": "CustomIcon"
-            }
-        },
-        {
             "name": "akvPivot",
             "type": "AzureResource",
             "azureResourceType": "Microsoft.KeyVault/vaults"
@@ -85,14 +76,6 @@
                         "General Purpose", "4 CPU vCores", "20 GB RAM, Standard Series", "32 GB of disk space", "LRS Backup Storage"
                     ]
                 },
-
-                {
-                    "pivotName": "fogPivot",
-                    "content": [
-                        "N/A"
-                    ]
-                },
-                        
                 {
                     "pivotName": "akvPivot",
                     "content": [
@@ -132,12 +115,6 @@
                     ]
                 },
                 {
-                    "pivotName": "fogPivot",
-                    "content": [
-                        "Available"
-                    ]
-                },     
-                {
                     "pivotName": "akvPivot",
                     "content": [
                         "Standard"
@@ -151,34 +128,28 @@
             "title": "Full Production Workload",
             "subTitle": "This deployment will be provide a better configuration for more intensive full production workload with higher number of users and significantly improved response time, while providing Business Critical type high availability.",
             "cost": {
-                "value": 12400,
+                "value": 5499,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
             },
             "maintenance": {
-                "score": 3,
+                "score": 2,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-max.json",
+            "templateFileName": "azuredeploy-maximum.json",
             "pivotValues": [
                 {
                     "pivotName": "vmCompute",
                     "content": [
-                        "E32s_v3 (32 CPU vCores)"
+                        "E16s_v3 (16 CPU vCores)"
                     ]
                 },
                         
                 {
                     "pivotName": "miPivot",
                     "content": [
-                        "Business Critical", "16 CPU vCores", "112 GB RAM, Premium Series", "512 GB of disk space", "GRS Backup Storage"
-                    ]
-                },
-                {
-                    "pivotName": "fogPivot",
-                    "content": [
-                        "Available"
+                        "Business Critical", "8 CPU vCores", "56 GB RAM, Premium Series", "512 GB of disk space", "GRS Backup Storage"
                     ]
                 },    
                 {
