@@ -140,6 +140,7 @@
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
             "templateFileName": "azuredeploy-small2mid-noha.json",
+            "uiDefinitionFileName": "minimal-Uiformdefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
@@ -188,6 +189,7 @@
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
             "templateFileName": "azuredeploy-maximal.json",
+            "uiDefinitionFileName": "minimal-Uiformdefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
