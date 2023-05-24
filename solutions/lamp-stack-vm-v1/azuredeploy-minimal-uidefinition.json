@@ -1,6 +1,5 @@
 {
         "$schema": "../../Definitions/dx.schema.json",
-        "__internal__skipValidation": true,
         "view": {
             "kind": "Form",
             "properties": {
