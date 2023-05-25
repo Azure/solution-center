@@ -1,6 +1,5 @@
 {
-    "$schema": "../../Definitions/dx.schema.json",
-    "stringSource": "../Resources/CreateStrings.resjson",
+    "$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
     "view": {
         "kind": "Form",
         "properties": {
@@ -41,12 +40,15 @@
                               "sshPublicKey": "SSH public key"
                             },
                             "toolTip": {
-                              "sshPublicKey": ""
+                                "authenticationType": "Type of authentication to use on the Virtual Machine.",
+                                "password": "",
+                                "sshPublicKey": ""
                             },
                             "constraints": {
                               "required": true
                             },
                             "options": {
+                              "hideConfirmation": true,
                               "hidePassword": true
                             },
                             "osPlatform": "Linux",
