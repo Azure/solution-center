@@ -33,13 +33,13 @@
                         "value": "[parameters('managedInstanceName')]"
                     },
                     "skuName": {
-                        "value": "BC_Gen8IM"
+                        "value": "BC_G8IM"
                     },
                     "skuEdition": {
                         "value": "BusinessCritical"
                     },
                     "vCores": {
-                        "value": 16
+                        "value": 8
                     },
                     "storageSizeInGB": {
                         "value": 512
@@ -50,8 +50,11 @@
                     "administratorLoginPassword": {
                         "value": "[parameters('administratorLoginPassword')]"
                     },
+                    "requestedBackupStorageRedundancy": {
+                        "value": "Geo"
+                    },
                     "vmSku": {
-                        "value": "Standard_E32s_v3"
+                        "value": "Standard_E16s_v3"
                     }
                 },
                 "templateLink": {
