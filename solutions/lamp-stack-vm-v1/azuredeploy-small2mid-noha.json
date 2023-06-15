@@ -7,23 +7,34 @@
                 "description": "ssh public key"
             },
             "type": "string"
+        },
+        "resourceNamePrefix": {
+            "metadata": {
+                "description": "resource name prefix"
+            },
+            "type": "string"
+        },
+        "epochTime": {
+            "type": "int",
+            "defaultValue": "[dateTimeToEpoch(dateTimeAdd(utcNow(), 'P0Y'))]"
         }
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
-            "name": "mainTemplate",
+            "name": "[concat('Deployment-SolutionCenter-Lamp-Small2mid', '_', parameters('epochTime'))]",
             "properties": {
                 "mode": "Incremental",
                 "parameters": {
-                    "_artifactsLocation":           { "value": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/lamp-stack-vm-v1/" },
-                    "redisDeploySwitch":            { "value": false },
-                    "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
-                    "mysqlPgresVcores":             { "value": 8 },
-                    "mysqlPgresStgSizeGB":          { "value": 128 },
-                    "fileServerDiskSize":           { "value": 128 },
-                    "CMSApplication":               { "value": "None" }
+                    "_artifactsLocation": { "value": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/lamp-stack-vm-v1/" },
+                    "_resourceNamePrefix": { "value": "[parameters('resourceNamePrefix')]" },
+                    "redisDeploySwitch": { "value": false },
+                    "sshPublicKey": { "value": "[parameters('sshPublicKey')]" },
+                    "mysqlPgresVcores": { "value": 8 },
+                    "mysqlPgresStgSizeGB": { "value": 128 },
+                    "fileServerDiskSize": { "value": 128 },
+                    "CMSApplication": { "value": "None" }
                 },
                 "templateLink": {
                     "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/lamp-stack-vm-v1/azuredeploy.json"
@@ -31,12 +42,6 @@
             }
         }
     ],
-    "outputs": {
-        "mainTemplateOutputs": {
-            "type": "object",
-            "value": "[reference('mainTemplate').outputs]"
-        }
-    },
     "variables": {
         "documentation01": "This wrapper template calls the main-template with pre-defined configs for small-to-mid size workloads (without high availability) and the only required parameter (sshPublicKey).",
         "documentation02": "For the expected small-to-mid size workloads, other parameters are fixed in this tempalte and overriden as above."
