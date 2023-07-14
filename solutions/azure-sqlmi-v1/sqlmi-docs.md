@@ -12,4 +12,4 @@ Below are a list of pre-defined/restricted deployment options based on typical d
 | --- | --- | 
 | Dev/Test  | [link](https://azure.com/e/e2a7174f8459473dad9ae0914a759b3e)|
 | Small to Mid-Size | [link](https://azure.com/e/483df22b299e4e529d4ace3436f1401c)|
-| Full Production Workload |[link](https://azure.com/e/a9660539f1f34e448ffe642954366e7a)|
+| Full Production Workload |[link](https://azure.com/e/f71a0e8bb4e24379bc32539485cab49f)|

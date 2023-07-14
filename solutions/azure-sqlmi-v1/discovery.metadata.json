@@ -1,16 +1,16 @@
 {
   "icon": {
     "iconType": "AssetIcon",
-    "asset": "Microsoft.Compute/virtualMachines"
+    "asset": "Microsoft.Sql/managedInstances"
   },
-  "title": "IaaS + SQL MI (Preview)",
-  "shortDescription": "Do great stuff with SQL MI and VMs/VMSS",
+  "title": "IaaS frontend & PaaS backend with Azure VM & Azure SQL MI",
+  "shortDescription": "Get started with application frontend using Azure VM and backend PaaS database using Azure SQL Managed Instance",
   "highlights": [
     {
-      "content": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+      "content": "Choose one of the preconfigured tiers for development/test, small-mid size or full-scaled production"
     },
     {
-      "content": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+      "content": "Get a private Azure Key Vault for managing your own keys"
     }
   ]
 }

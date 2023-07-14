@@ -1,0 +1,74 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
+    "view": {
+        "kind": "Form",
+        "properties": {
+            "title": "[parameters('title')]",
+            "steps": [
+                {
+                    "name": "basics",
+                    "label": "Basics",
+                    "elements": [
+                        {
+                            "name": "resourceScope",
+                            "type": "Microsoft.Common.ResourceScope",
+                            "location": {
+                                "resourceTypes": [
+                                    "microsoft.resources/resourcegroups"
+                                ]
+                            },
+                            "resourceName": {
+                                "label": "Name",
+                                "toolTip": "This prefix will be used for all resources deployed as part of this solution" ,
+                                "constraints": {
+                                   "validations": [
+                                        {
+                                            "regex": "^[a-z0-9]{1,13}$",
+                                            "message": "Only lowercase alphanumeric characters are allowed, and the value must be 1-13 characters long."
+                                        }
+                                   ]
+                                }
+                             }
+                        },
+                        {
+                            "name": "sshPublicKey",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                              "authenticationType": "Authentication type",
+                              "password": "Password",
+                              "confirmPassword": "Confirm password",
+                              "sshPublicKey": "SSH public key"
+                            },
+                            "toolTip": {
+                                "authenticationType": "Type of authentication to use on the Virtual Machine.",
+                                "password": "",
+                                "sshPublicKey": ""
+                            },
+                            "constraints": {
+                              "required": true
+                            },
+                            "options": {
+                              "hideConfirmation": true,
+                              "hidePassword": true
+                            },
+                            "osPlatform": "Linux",
+                            "visible": true
+                          }
+                    ]
+                }
+            ],
+            "deployment": {
+                "parameters": {
+                    "resourceNamePrefix": "[steps('basics').resourceScope.resourceName]",
+                    "sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
+                },
+                "kind": "ResourceGroup",
+                "location": "[steps('basics').resourceScope.location.name]",
+                "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
+                "template": {
+                    "file": "deploymentTemplate"
+                }
+            }
+        }
+    }
+}
