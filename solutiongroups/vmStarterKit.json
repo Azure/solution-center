@@ -1,0 +1,8 @@
+{
+    "title": "Virtal Machine Starter Kit",
+    "description": "Get started quickly with Azure VM's. These pre configured setups can be a simple setup or add additional capabailities like remote managment, monitoring, backup and even adding availability and scalability.",
+    "solutions": [
+        "vm-starter-kit-linux-v1",
+        "vm-starter-kit-windows-v1"
+    ]
+}
