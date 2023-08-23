@@ -49,7 +49,7 @@
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "daily",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "tooltip": "The daily cost of this solution."
             },
             "templateFileName": "azuredeploy_tier1.json",
             "uiDefinitionFileName": "uiform.json",
@@ -127,7 +127,7 @@
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "daily",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "tooltip": "The daily cost of this solution."
             },
             "templateFileName": "azuredeploy_tier2.json",
             "uiDefinitionFileName": "uiform.json",
@@ -251,7 +251,7 @@
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "daily",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "tooltip": "The daily cost of this solution."
             },
             "templateFileName": "azuredeploy_tier3.json",
             "uiDefinitionFileName": "uiform-locationrestriction.json",
