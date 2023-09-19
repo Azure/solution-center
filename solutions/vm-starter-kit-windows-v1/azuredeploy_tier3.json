@@ -1,0 +1,1519 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "allowedValues": [
+        "brazilsouth",
+        "canadacentral",
+        "centralus",
+        "eastus",
+        "eastus2",
+        "southcentralus",
+        "westus2",
+        "westus3",
+        "francecentral",
+        "northeurope",
+        "norwayeast",
+        "uksouth",
+        "westeurope",
+        "swedencentral",
+        "switzerlandnorth",
+        "polandcentral",
+        "qatarcentral",
+        "uaenorth",
+        "southafricanorth",
+        "australiaeast",
+        "centralindia",
+        "japaneast",
+        "koreacentral",
+        "southeastasia",
+        "eastasia"
+      ]
+    },
+    "bastionName": {
+      "type": "string",
+      "defaultValue": "BastionHost"
+    },
+    "networkName": {
+      "type": "string",
+      "defaultValue": "VmStarterKit"
+    },
+    "vmSubnetName": {
+      "type": "string",
+      "defaultValue": "VMs"
+    },
+    "vmNamePrefix": {
+      "type": "string",
+      "defaultValue": "VM-"
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_D2s_v5"
+    },
+    "windowsOffer": {
+      "type": "string",
+      "defaultValue": "WindowsServer"
+    },
+    "windowsSku": {
+      "type": "string",
+      "defaultValue": "2022-datacenter-azure-edition-core"
+    },
+    "adminUsername": {
+      "type": "string"
+    },
+    "adminPassword": {
+      "type": "secureString"
+    },
+    "recoveryServicesVaultName": {
+      "type": "string",
+      "defaultValue": "rsv-VmBackupVault"
+    },
+    "loadBalancerName": {
+      "type": "string",
+      "defaultValue": "lbe-LoadBalancer"
+    },
+    "loadBalancerIpAddressName": {
+      "type": "string",
+      "defaultValue": "pip-LoadBalancer"
+    }
+  },
+  "functions": [],
+  "variables": {
+    "recoveryVaultPolicyName": "DefaultPolicy",
+    "loadBalancerFrontEndName": "LoadBalancerFrontEnd",
+    "loadBalancerBackendPoolName": "LoadBalancerBackEndPool",
+    "loadBalancerProbeName80": "loadBalancerHealthProbePort80",
+    "vmScaleSetName": "vmss-VmStarterKit"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.RecoveryServices/vaults",
+      "apiVersion": "2022-10-01",
+      "name": "[parameters('recoveryServicesVaultName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "RS0",
+        "tier": "Standard"
+      },
+      "properties": {
+        "publicNetworkAccess": "Disabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2022-07-01",
+      "name": "[parameters('loadBalancerIpAddressName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "properties": {
+        "publicIPAddressVersion": "IPv4",
+        "publicIPAllocationMethod": "Static"
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers",
+      "apiVersion": "2021-08-01",
+      "name": "[parameters('loadBalancerName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "[variables('loadBalancerFrontEndName')]",
+            "properties": {
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('loadBalancerIpAddressName'))]"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "[variables('loadBalancerBackendPoolName')]"
+          }
+        ],
+        "loadBalancingRules": [
+          {
+            "name": "HTTP",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/frontendIPConfigurations', parameters('loadBalancerName'), variables('loadBalancerFrontEndName'))]"
+              },
+              "backendAddressPool": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', parameters('loadBalancerName'), variables('loadBalancerBackendPoolName'))]"
+              },
+              "frontendPort": 80,
+              "backendPort": 80,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "protocol": "Tcp",
+              "disableOutboundSnat": true,
+              "probe": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/probes', parameters('loadBalancerName'), variables('loadBalancerProbeName80'))]"
+              }
+            }
+          }
+        ],
+        "probes": [
+          {
+            "name": "[variables('loadBalancerProbeName80')]",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 80,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 3
+            }
+          }
+        ],
+        "outboundRules": [
+          {
+            "name": "AllowOutboundTraffic",
+            "properties": {
+              "backendAddressPool": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', parameters('loadBalancerName'), variables('loadBalancerBackendPoolName'))]"
+              },
+              "frontendIPConfigurations": [
+                {
+                  "id": "[resourceId('Microsoft.Network/loadBalancers/frontendIPConfigurations', parameters('loadBalancerName'), variables('loadBalancerFrontEndName'))]"
+                }
+              ],
+              "protocol": "All",
+              "enableTcpReset": false,
+              "idleTimeoutInMinutes": 5,
+              "allocatedOutboundPorts": 128
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', parameters('loadBalancerIpAddressName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/loadBalancers/{0}', parameters('loadBalancerName'))]",
+      "name": "[format('{0}-diagnosticsettings', parameters('loadBalancerName'))]",
+      "properties": {
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ],
+        "workspaceId": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.logAnalyticsWorkspaceId.value]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancerName'))]",
+        "[resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', parameters('loadBalancerIpAddressName'))]",
+      "name": "[format('{0}-diagnosticsettings', parameters('loadBalancerIpAddressName'))]",
+      "properties": {
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ],
+        "workspaceId": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.logAnalyticsWorkspaceId.value]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', parameters('loadBalancerIpAddressName'))]",
+        "[resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "apiVersion": "2021-05-01-preview",
+      "scope": "[format('Microsoft.RecoveryServices/vaults/{0}', parameters('recoveryServicesVaultName'))]",
+      "name": "[format('{0}-diagnosticsettings', parameters('recoveryServicesVaultName'))]",
+      "properties": {
+        "logs": [
+          {
+            "categoryGroup": "allLogs",
+            "enabled": true
+          }
+        ],
+        "metrics": [
+          {
+            "category": "AllMetrics",
+            "enabled": true
+          }
+        ],
+        "workspaceId": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.logAnalyticsWorkspaceId.value]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure')]",
+        "[resourceId('Microsoft.RecoveryServices/vaults', parameters('recoveryServicesVaultName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "vnet",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "networkName": {
+            "value": "[parameters('networkName')]"
+          },
+          "vmSubnetName": {
+            "value": "[parameters('vmSubnetName')]"
+          },
+          "openWebPorts": {
+            "value": true
+          },
+          "logAnalyticsWorkspaceId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.logAnalyticsWorkspaceId.value]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "networkName": {
+              "type": "string"
+            },
+            "vmSubnetName": {
+              "type": "string"
+            },
+            "openWebPorts": {
+              "type": "bool",
+              "defaultValue": false
+            },
+            "logAnalyticsWorkspaceId": {
+              "type": "string",
+              "defaultValue": ""
+            }
+          },
+          "functions": [],
+          "variables": {
+            "vNetName": "[format('vnet-{0}', parameters('networkName'))]",
+            "vNetAddressPrefix": "10.1.0.0/16",
+            "bastionSubnetAddressPrefix": "10.1.0.0/24",
+            "vmSubnetAddressPrefix": "10.1.1.0/24",
+            "nsgName": "[format('nsg-subnet-{0}', parameters('vmSubnetName'))]",
+            "bastionSubnetName": "AzureBastionSubnet"
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/networkSecurityGroups",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('nsgName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "securityRules": "[if(equals(parameters('openWebPorts'), false()), createArray(), createArray(createObject('name', 'AllowHttpInbound', 'properties', createObject('protocol', 'Tcp', 'sourcePortRange', '*', 'destinationPortRange', '80', 'sourceAddressPrefix', 'Internet', 'destinationAddressPrefix', '*', 'access', 'Allow', 'priority', 100, 'direction', 'Inbound'))))]"
+              }
+            },
+            {
+              "type": "Microsoft.Network/virtualNetworks",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('vNetName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "[variables('vNetAddressPrefix')]"
+                  ]
+                },
+                "subnets": [
+                  {
+                    "name": "[variables('bastionSubnetName')]",
+                    "properties": {
+                      "addressPrefix": "[variables('bastionSubnetAddressPrefix')]",
+                      "privateEndpointNetworkPolicies": "Disabled"
+                    }
+                  },
+                  {
+                    "name": "[parameters('vmSubnetName')]",
+                    "properties": {
+                      "addressPrefix": "[variables('vmSubnetAddressPrefix')]",
+                      "privateEndpointNetworkPolicies": "Disabled",
+                      "networkSecurityGroup": {
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+                      }
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/virtualNetworks/{0}', variables('vNetName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('vNetName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('vNetName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/networkSecurityGroups/{0}', variables('nsgName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('nsgName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+              ]
+            }
+          ],
+          "outputs": {
+            "vNetName": {
+              "type": "string",
+              "value": "[variables('vNetName')]"
+            },
+            "bastionSubnetName": {
+              "type": "string",
+              "value": "[variables('bastionSubnetName')]"
+            }
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "bastion",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "bastionName": {
+            "value": "[parameters('bastionName')]"
+          },
+          "vNetName": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'vnet'), '2019-10-01').outputs.vNetName.value]"
+          },
+          "bastionSubnetName": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'vnet'), '2019-10-01').outputs.bastionSubnetName.value]"
+          },
+          "logAnalyticsWorkspaceId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.logAnalyticsWorkspaceId.value]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "bastionName": {
+              "type": "string"
+            },
+            "vNetName": {
+              "type": "string"
+            },
+            "bastionSubnetName": {
+              "type": "string"
+            },
+            "logAnalyticsWorkspaceId": {
+              "type": "string",
+              "defaultValue": ""
+            }
+          },
+          "functions": [],
+          "variables": {
+            "bastionHostName": "[format('bas-{0}', parameters('bastionName'))]",
+            "bastionIpAddressName": "[format('pip-{0}', parameters('bastionName'))]"
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/publicIPAddresses",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('bastionIpAddressName')]",
+              "location": "[parameters('location')]",
+              "sku": {
+                "name": "Standard"
+              },
+              "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4
+              }
+            },
+            {
+              "type": "Microsoft.Network/bastionHosts",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('bastionHostName')]",
+              "location": "[parameters('location')]",
+              "sku": {
+                "name": "Basic"
+              },
+              "properties": {
+                "ipConfigurations": [
+                  {
+                    "name": "ipconfig01",
+                    "properties": {
+                      "privateIPAllocationMethod": "Dynamic",
+                      "publicIPAddress": {
+                        "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('bastionIpAddressName'))]"
+                      },
+                      "subnet": {
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNetName'), parameters('bastionSubnetName'))]"
+                      }
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('bastionIpAddressName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/bastionHosts/{0}', variables('bastionHostName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('bastionHostName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/bastionHosts', variables('bastionHostName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', variables('bastionIpAddressName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('bastionIpAddressName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('bastionIpAddressName'))]"
+              ]
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure')]",
+        "[resourceId('Microsoft.Resources/deployments', 'vnet')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "monitoring-infrastructure",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "createDataCollectionRule": {
+            "value": false
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "storageAccountName": {
+              "type": "string",
+              "defaultValue": "[format('stvmlogs{0}', uniqueString(resourceGroup().id))]"
+            },
+            "logAnalyticsWorkspaceName": {
+              "type": "string",
+              "defaultValue": "log-VmStarterKit"
+            },
+            "logAnalyticsSku": {
+              "type": "string",
+              "defaultValue": "PerGB2018",
+              "allowedValues": [
+                "CapacityReservation",
+                "Free",
+                "LACluster",
+                "PerGB2018",
+                "PerNode",
+                "Premium",
+                "Standalone",
+                "Standard"
+              ]
+            },
+            "logAnalyticsRetentionInDays": {
+              "type": "int",
+              "defaultValue": 30
+            },
+            "createDataCollectionRule": {
+              "type": "bool",
+              "defaultValue": true
+            },
+            "dataCollectionRuleName": {
+              "type": "string",
+              "defaultValue": "MSVMI-ama-vmi-vmss-dcr"
+            }
+          },
+          "functions": [],
+          "variables": {
+            "vmInsightsName": "[format('VMInsights({0})', parameters('logAnalyticsWorkspaceName'))]"
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Storage/storageAccounts",
+              "apiVersion": "2022-09-01",
+              "name": "[parameters('storageAccountName')]",
+              "location": "[parameters('location')]",
+              "sku": {
+                "name": "Standard_LRS"
+              },
+              "kind": "StorageV2"
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces",
+              "apiVersion": "2022-10-01",
+              "name": "[parameters('logAnalyticsWorkspaceName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "sku": {
+                  "name": "[parameters('logAnalyticsSku')]"
+                },
+                "retentionInDays": "[parameters('logAnalyticsRetentionInDays')]"
+              }
+            },
+            {
+              "condition": "[parameters('createDataCollectionRule')]",
+              "type": "Microsoft.Insights/dataCollectionRules",
+              "apiVersion": "2021-04-01",
+              "name": "[parameters('dataCollectionRuleName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "description": "Data collection rule for VM Insights",
+                "dataSources": {
+                  "performanceCounters": [
+                    {
+                      "name": "VMInsightsPerfCounters",
+                      "streams": [
+                        "Microsoft-InsightsMetrics"
+                      ],
+                      "samplingFrequencyInSeconds": 60,
+                      "counterSpecifiers": [
+                        "\\VmInsights\\DetailedMetrics"
+                      ]
+                    }
+                  ],
+                  "extensions": [
+                    {
+                      "streams": [
+                        "Microsoft-ServiceMap"
+                      ],
+                      "extensionName": "DependencyAgent",
+                      "name": "DependencyAgentDataSource"
+                    }
+                  ]
+                },
+                "destinations": {
+                  "logAnalytics": [
+                    {
+                      "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]",
+                      "name": "VMInsightsPerf-Logs-Dest"
+                    }
+                  ]
+                },
+                "dataFlows": [
+                  {
+                    "streams": [
+                      "Microsoft-InsightsMetrics"
+                    ],
+                    "destinations": [
+                      "VMInsightsPerf-Logs-Dest"
+                    ]
+                  },
+                  {
+                    "streams": [
+                      "Microsoft-ServiceMap"
+                    ],
+                    "destinations": [
+                      "VMInsightsPerf-Logs-Dest"
+                    ]
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.OperationsManagement/solutions",
+              "apiVersion": "2015-11-01-preview",
+              "name": "[variables('vmInsightsName')]",
+              "location": "[parameters('location')]",
+              "plan": {
+                "name": "[variables('vmInsightsName')]",
+                "product": "OMSGallery/VMInsights",
+                "publisher": "Microsoft",
+                "promotionCode": ""
+              },
+              "properties": {
+                "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+              "apiVersion": "2022-01-31-preview",
+              "name": "id-StarterKitVMs",
+              "location": "[parameters('location')]"
+            },
+            {
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.OperationalInsights/workspaces/{0}', parameters('logAnalyticsWorkspaceName'))]",
+              "name": "[format('{0}-blob-diagnosticsettings', parameters('logAnalyticsWorkspaceName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Storage/storageAccounts/{0}', parameters('storageAccountName'))]",
+              "name": "[format('{0}-diagnosticsettings', parameters('storageAccountName'))]",
+              "properties": {
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+              ]
+            },
+            {
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Storage/storageAccounts/{0}/blobServices/{1}', parameters('storageAccountName'), 'default')]",
+              "name": "[format('{0}-blob-diagnosticsettings', parameters('storageAccountName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+              ]
+            }
+          ],
+          "outputs": {
+            "storageAccountName": {
+              "type": "string",
+              "value": "[parameters('storageAccountName')]"
+            },
+            "storageUri": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))).primaryEndpoints.blob]"
+            },
+            "dataCollectionRuleName": {
+              "type": "string",
+              "value": "[parameters('dataCollectionRuleName')]"
+            },
+            "managedIdentityResourceId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', 'id-StarterKitVMs')]"
+            },
+            "managedIdentityClientId": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', 'id-StarterKitVMs')).clientId]"
+            },
+            "logAnalyticsWorkspaceId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "backup-and-monitoring-policies",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "recoveryVaultPolicyId": {
+            "value": "[resourceId('Microsoft.RecoveryServices/vaults/backupPolicies', parameters('recoveryServicesVaultName'), variables('recoveryVaultPolicyName'))]"
+          },
+          "logAnalyticsResourceId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.logAnalyticsWorkspaceId.value]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "recoveryVaultPolicyId": {
+              "type": "string"
+            },
+            "logAnalyticsResourceId": {
+              "type": "string"
+            },
+            "backupPolicyName": {
+              "type": "string",
+              "defaultValue": "Backup VMs"
+            },
+            "backupPolicyDefinitionId": {
+              "type": "string",
+              "defaultValue": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913"
+            },
+            "monitorVmssPolicyName": {
+              "type": "string",
+              "defaultValue": "Monitor VMSS"
+            },
+            "monitorVmssPolicyDefinitionId": {
+              "type": "string",
+              "defaultValue": "/providers/Microsoft.Authorization/policyDefinitions/c7f3bf36-b807-4f18-82dc-f480ad713635"
+            },
+            "monitorVmPolicyName": {
+              "type": "string",
+              "defaultValue": "Monitor VMs"
+            },
+            "monitorVmPolicyDefinitionId": {
+              "type": "string",
+              "defaultValue": "/providers/Microsoft.Authorization/policyDefinitions/a0f27bdc-5b15-4810-b81d-7c4df9df1a37"
+            }
+          },
+          "functions": [],
+          "resources": [
+            {
+              "type": "Microsoft.Authorization/policyAssignments",
+              "apiVersion": "2022-06-01",
+              "name": "[guid(format('{0}-{1}', resourceGroup().id, parameters('backupPolicyName')))]",
+              "location": "[parameters('location')]",
+              "identity": {
+                "type": "SystemAssigned"
+              },
+              "properties": {
+                "displayName": "[parameters('backupPolicyName')]",
+                "policyDefinitionId": "[parameters('backupPolicyDefinitionId')]",
+                "parameters": {
+                  "vaultLocation": {
+                    "value": "[parameters('location')]"
+                  },
+                  "backupPolicyId": {
+                    "value": "[parameters('recoveryVaultPolicyId')]"
+                  }
+                },
+                "resourceSelectors": [
+                  {
+                    "name": "Resources to be monitored",
+                    "selectors": [
+                      {
+                        "kind": "resourceType",
+                        "in": [
+                          "Microsoft.Compute/virtualMachines"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Authorization/policyAssignments",
+              "apiVersion": "2022-06-01",
+              "name": "[guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmssPolicyName')))]",
+              "location": "[parameters('location')]",
+              "identity": {
+                "type": "SystemAssigned"
+              },
+              "properties": {
+                "displayName": "[parameters('monitorVmssPolicyName')]",
+                "policyDefinitionId": "[parameters('monitorVmssPolicyDefinitionId')]",
+                "parameters": {
+                  "workspaceResourceId": {
+                    "value": "[parameters('logAnalyticsResourceId')]"
+                  },
+                  "userGivenDcrName": {
+                    "value": "ama-vmi-vmss"
+                  },
+                  "enableProcessesAndDependencies": {
+                    "value": true
+                  }
+                },
+                "resourceSelectors": [
+                  {
+                    "name": "Resources to be monitored",
+                    "selectors": [
+                      {
+                        "kind": "resourceType",
+                        "in": [
+                          "Microsoft.Compute/virtualMachineScaleSets"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Authorization/policyAssignments",
+              "apiVersion": "2022-06-01",
+              "name": "[guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmPolicyName')))]",
+              "location": "[parameters('location')]",
+              "identity": {
+                "type": "SystemAssigned"
+              },
+              "properties": {
+                "displayName": "[parameters('monitorVmPolicyName')]",
+                "policyDefinitionId": "[parameters('monitorVmPolicyDefinitionId')]",
+                "parameters": {
+                  "workspaceResourceId": {
+                    "value": "[parameters('logAnalyticsResourceId')]"
+                  },
+                  "userGivenDcrName": {
+                    "value": "ama-vmi-vmss"
+                  },
+                  "enableProcessesAndDependencies": {
+                    "value": true
+                  }
+                },
+                "resourceSelectors": [
+                  {
+                    "name": "Resources to be monitored",
+                    "selectors": [
+                      {
+                        "kind": "resourceType",
+                        "in": [
+                          "Microsoft.Compute/virtualMachines"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "outputs": {
+            "backupPolicyAssignmentId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Authorization/policyAssignments', guid(format('{0}-{1}', resourceGroup().id, parameters('backupPolicyName'))))]"
+            },
+            "backupPolicyPrincipalId": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Authorization/policyAssignments', guid(format('{0}-{1}', resourceGroup().id, parameters('backupPolicyName')))), '2022-06-01', 'full').identity.principalId]"
+            },
+            "monitorVmssPolicyAssignmentId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Authorization/policyAssignments', guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmssPolicyName'))))]"
+            },
+            "monitorVmssPolicyPrincipalId": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Authorization/policyAssignments', guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmssPolicyName')))), '2022-06-01', 'full').identity.principalId]"
+            },
+            "monitorVmPolicyAssignmentId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Authorization/policyAssignments', guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmPolicyName'))))]"
+            },
+            "monitorVmPolicyPrincipalId": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Authorization/policyAssignments', guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmPolicyName')))), '2022-06-01', 'full').identity.principalId]"
+            }
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "policy-role-assignments",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "backupPolicyPrincipalId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies'), '2019-10-01').outputs.backupPolicyPrincipalId.value]"
+          },
+          "monitorVmssPolicyPrincipalId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies'), '2019-10-01').outputs.monitorVmssPolicyPrincipalId.value]"
+          },
+          "monitorVmPolicyPrincipalId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies'), '2019-10-01').outputs.monitorVmPolicyPrincipalId.value]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "backupPolicyPrincipalId": {
+              "type": "string"
+            },
+            "monitorVmssPolicyPrincipalId": {
+              "type": "string"
+            },
+            "monitorVmPolicyPrincipalId": {
+              "type": "string"
+            }
+          },
+          "functions": [],
+          "resources": [
+            {
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "name": "[guid(format('{0}-{1}-vmcontributor', resourceGroup().id, parameters('backupPolicyPrincipalId')))]",
+              "properties": {
+                "principalId": "[parameters('backupPolicyPrincipalId')]",
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', '9980e02c-c2be-4d73-94e8-173b1dc7cf3c')]",
+                "principalType": "ServicePrincipal"
+              },
+              "dependsOn": []
+            },
+            {
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "name": "[guid(format('{0}-{1}-backupcontributor', resourceGroup().id, parameters('backupPolicyPrincipalId')))]",
+              "properties": {
+                "principalId": "[parameters('backupPolicyPrincipalId')]",
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', '5e467623-bb1f-42f4-a55d-6e525e11384b')]",
+                "principalType": "ServicePrincipal"
+              },
+              "dependsOn": []
+            },
+            {
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "name": "[guid(format('{0}-{1}-monitoringcontributor', resourceGroup().id, parameters('monitorVmssPolicyPrincipalId')))]",
+              "properties": {
+                "principalId": "[parameters('monitorVmssPolicyPrincipalId')]",
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', '749f88d5-cbae-40b8-bcfc-e573ddc772fa')]",
+                "principalType": "ServicePrincipal"
+              },
+              "dependsOn": []
+            },
+            {
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "name": "[guid(format('{0}-{1}-monitoringcontributor', resourceGroup().id, parameters('monitorVmPolicyPrincipalId')))]",
+              "properties": {
+                "principalId": "[parameters('monitorVmPolicyPrincipalId')]",
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', '749f88d5-cbae-40b8-bcfc-e573ddc772fa')]",
+                "principalType": "ServicePrincipal"
+              },
+              "dependsOn": []
+            },
+            {
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "name": "[guid(format('{0}-{1}-loganalyticscontributor', resourceGroup().id, parameters('monitorVmssPolicyPrincipalId')))]",
+              "properties": {
+                "principalId": "[parameters('monitorVmssPolicyPrincipalId')]",
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', '92aaf0da-9dab-42b6-94a3-d43ce8d16293')]",
+                "principalType": "ServicePrincipal"
+              },
+              "dependsOn": []
+            },
+            {
+              "type": "Microsoft.Authorization/roleAssignments",
+              "apiVersion": "2022-04-01",
+              "name": "[guid(format('{0}-{1}-loganalyticscontributor', resourceGroup().id, parameters('monitorVmPolicyPrincipalId')))]",
+              "properties": {
+                "principalId": "[parameters('monitorVmPolicyPrincipalId')]",
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', '92aaf0da-9dab-42b6-94a3-d43ce8d16293')]",
+                "principalType": "ServicePrincipal"
+              },
+              "dependsOn": []
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "vm-scale-set",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "vmScaleSetName": {
+            "value": "[variables('vmScaleSetName')]"
+          },
+          "vNetName": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'vnet'), '2019-10-01').outputs.vNetName.value]"
+          },
+          "vmSubnetName": {
+            "value": "[parameters('vmSubnetName')]"
+          },
+          "loggingStorageUri": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.storageUri.value]"
+          },
+          "vmNamePrefix": {
+            "value": "[parameters('vmNamePrefix')]"
+          },
+          "vmSize": {
+            "value": "[parameters('vmSize')]"
+          },
+          "windowsOffer": {
+            "value": "[parameters('windowsOffer')]"
+          },
+          "windowsSku": {
+            "value": "[parameters('windowsSku')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "loadBalancerName": {
+            "value": "[parameters('loadBalancerName')]"
+          },
+          "loadBalancerBackendPoolName": {
+            "value": "[variables('loadBalancerBackendPoolName')]"
+          },
+          "managedIdentityResourceId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.managedIdentityResourceId.value]"
+          },
+          "managedIdentityClientId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure'), '2019-10-01').outputs.managedIdentityClientId.value]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "vmScaleSetName": {
+              "type": "string"
+            },
+            "vNetName": {
+              "type": "string"
+            },
+            "vmSubnetName": {
+              "type": "string"
+            },
+            "loggingStorageUri": {
+              "type": "string"
+            },
+            "vmNamePrefix": {
+              "type": "string"
+            },
+            "vmSize": {
+              "type": "string"
+            },
+            "windowsOffer": {
+              "type": "string"
+            },
+            "windowsSku": {
+              "type": "string"
+            },
+            "adminUsername": {
+              "type": "string"
+            },
+            "adminPassword": {
+              "type": "secureString"
+            },
+            "loadBalancerName": {
+              "type": "string"
+            },
+            "loadBalancerBackendPoolName": {
+              "type": "string"
+            },
+            "managedIdentityResourceId": {
+              "type": "string"
+            },
+            "managedIdentityClientId": {
+              "type": "string"
+            }
+          },
+          "functions": [],
+          "resources": [
+            {
+              "type": "Microsoft.Compute/virtualMachineScaleSets",
+              "apiVersion": "2023-03-01",
+              "name": "[parameters('vmScaleSetName')]",
+              "location": "[parameters('location')]",
+              "sku": {
+                "name": "[parameters('vmSize')]",
+                "tier": "Standard",
+                "capacity": 3
+              },
+              "identity": {
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                  "[parameters('managedIdentityResourceId')]": {}
+                }
+              },
+              "properties": {
+                "singlePlacementGroup": false,
+                "orchestrationMode": "Flexible",
+                "platformFaultDomainCount": 1,
+                "virtualMachineProfile": {
+                  "storageProfile": {
+                    "imageReference": {
+                      "publisher": "MicrosoftWindowsServer",
+                      "offer": "[parameters('windowsOffer')]",
+                      "sku": "[parameters('windowsSku')]",
+                      "version": "latest"
+                    },
+                    "osDisk": {
+                      "managedDisk": {
+                        "storageAccountType": "Premium_LRS"
+                      },
+                      "caching": "ReadWrite",
+                      "createOption": "FromImage"
+                    }
+                  },
+                  "networkProfile": {
+                    "networkApiVersion": "2020-11-01",
+                    "networkInterfaceConfigurations": [
+                      {
+                        "name": "nic",
+                        "properties": {
+                          "primary": true,
+                          "ipConfigurations": [
+                            {
+                              "name": "ipconfig1",
+                              "properties": {
+                                "subnet": {
+                                  "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNetName'), parameters('vmSubnetName'))]"
+                                },
+                                "loadBalancerBackendAddressPools": [
+                                  {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', parameters('loadBalancerName'), parameters('loadBalancerBackendPoolName'))]"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "osProfile": {
+                    "computerNamePrefix": "[parameters('vmNamePrefix')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                      "provisionVMAgent": true,
+                      "patchSettings": {
+                        "patchMode": "AutomaticByPlatform",
+                        "enableHotpatching": true,
+                        "automaticByPlatformSettings": {
+                          "bypassPlatformSafetyChecksOnUserSchedule": false
+                        }
+                      },
+                      "enableAutomaticUpdates": true
+                    }
+                  },
+                  "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                      "enabled": true,
+                      "storageUri": "[parameters('loggingStorageUri')]"
+                    }
+                  },
+                  "extensionProfile": {
+                    "extensions": [
+                      {
+                        "name": "InstallIIS",
+                        "properties": {
+                          "publisher": "Microsoft.Compute",
+                          "type": "CustomScriptExtension",
+                          "typeHandlerVersion": "1.7",
+                          "autoUpgradeMinorVersion": true,
+                          "settings": {
+                            "commandToExecute": "powershell.exe Install-WindowsFeature -name Web-Server -IncludeManagementTools && powershell.exe remove-item 'C:\\inetpub\\wwwroot\\iisstart.htm' && powershell.exe Add-Content -Path 'C:\\inetpub\\wwwroot\\iisstart.htm' -Value $('Hello World from ' + $env:computername)"
+                          }
+                        }
+                      },
+                      {
+                        "name": "HealthExtension",
+                        "properties": {
+                          "publisher": "Microsoft.ManagedServices",
+                          "type": "ApplicationHealthWindows",
+                          "typeHandlerVersion": "1.0",
+                          "autoUpgradeMinorVersion": true,
+                          "settings": {
+                            "protocol": "http",
+                            "port": 80,
+                            "requestPath": "/",
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 1
+                          }
+                        }
+                      },
+                      {
+                        "name": "DependencyAgentWindows",
+                        "properties": {
+                          "publisher": "Microsoft.Azure.Monitoring.DependencyAgent",
+                          "type": "DependencyAgentWindows",
+                          "typeHandlerVersion": "9.5",
+                          "autoUpgradeMinorVersion": true,
+                          "settings": {
+                            "enableAMA": true
+                          }
+                        }
+                      },
+                      {
+                        "name": "AzureMonitorWindowsAgent",
+                        "properties": {
+                          "publisher": "Microsoft.Azure.Monitor",
+                          "type": "AzureMonitorWindowsAgent",
+                          "typeHandlerVersion": "1.0",
+                          "autoUpgradeMinorVersion": true,
+                          "enableAutomaticUpgrade": true,
+                          "settings": {
+                            "authentication": {
+                              "managedIdentity": {
+                                "identifier-name": "client_id",
+                                "identifier-value": "[parameters('managedIdentityClientId')]"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "zones": [
+                "1",
+                "2",
+                "3"
+              ]
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancerName'))]",
+        "[resourceId('Microsoft.Resources/deployments', 'monitoring-infrastructure')]",
+        "[resourceId('Microsoft.Resources/deployments', 'vnet')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "policy-remediation",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "backupPolicyAssignmentId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies'), '2019-10-01').outputs.backupPolicyAssignmentId.value]"
+          },
+          "monitorVmssPolicyAssignmentId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies'), '2019-10-01').outputs.monitorVmssPolicyAssignmentId.value]"
+          },
+          "monitorVmPolicyAssignmentId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies'), '2019-10-01').outputs.monitorVmPolicyAssignmentId.value]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "backupPolicyAssignmentId": {
+              "type": "string"
+            },
+            "monitorVmssPolicyAssignmentId": {
+              "type": "string"
+            },
+            "monitorVmPolicyAssignmentId": {
+              "type": "string"
+            }
+          },
+          "functions": [],
+          "resources": [
+            {
+              "type": "Microsoft.PolicyInsights/remediations",
+              "apiVersion": "2021-10-01",
+              "name": "[guid(format('{0}-{1}', resourceGroup().id, parameters('backupPolicyAssignmentId')))]",
+              "properties": {
+                "policyAssignmentId": "[parameters('backupPolicyAssignmentId')]",
+                "resourceDiscoveryMode": "ReEvaluateCompliance"
+              }
+            },
+            {
+              "type": "Microsoft.PolicyInsights/remediations",
+              "apiVersion": "2021-10-01",
+              "name": "[guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmssPolicyAssignmentId')))]",
+              "properties": {
+                "policyAssignmentId": "[parameters('monitorVmssPolicyAssignmentId')]",
+                "resourceDiscoveryMode": "ReEvaluateCompliance"
+              }
+            },
+            {
+              "type": "Microsoft.PolicyInsights/remediations",
+              "apiVersion": "2021-10-01",
+              "name": "[guid(format('{0}-{1}', resourceGroup().id, parameters('monitorVmPolicyAssignmentId')))]",
+              "properties": {
+                "policyAssignmentId": "[parameters('monitorVmPolicyAssignmentId')]",
+                "resourceDiscoveryMode": "ReEvaluateCompliance"
+              }
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'backup-and-monitoring-policies')]",
+        "[resourceId('Microsoft.Resources/deployments', 'policy-role-assignments')]",
+        "[resourceId('Microsoft.Resources/deployments', 'vm-scale-set')]"
+      ]
+    }
+  ],
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.3.126.58533",
+      "templateHash": "15040425440441117121"
+    }
+  }
+}

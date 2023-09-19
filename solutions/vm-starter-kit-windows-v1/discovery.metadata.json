@@ -1,5 +1,8 @@
 {
-  "icon": null,
-  "title": "Starter template",
-  "shortDescription": "This sample scenario template helps illustrate how the metadata will show up in solutions center"
+  "icon": {
+    "iconType": "AssetIcon",
+    "asset": "Microsoft.Compute/virtualMachines"
+  },
+  "title": "VM Starter Kit Windows",
+  "shortDescription": "Get started quickly with Azure VM's. These pre configured setups can be a simple setup or add additional capabilities like remote management, monitoring, backup and even adding availability and scalability."
 }

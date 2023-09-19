@@ -1,63 +1,225 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "A description of the solution.",
-    "documentationFileName": "starter-template-doc.md",
+    "overviewContent": "A way to evaluate Azure Virtual Machines by simplifying the deployment of Azure VMs configured with capabilities like remote management, monitoring, backup, availability, and scalability.",
+    "documentationFileName": "vm-starter-kit-linux-doc.md",
+    "supportsManualConfiguration": false,
     "associatedResources": [],
     "pivots": [
         {
-            "name": "hubNetwork",
+            "name": "VirtualMachines",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachines"
+        },
+        {
+            "name": "VMSS",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
+        },
+        {
+            "name": "BastionService",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Network/bastionHosts"
+        },
+        {
             "type": "Custom",
-            "displayName": "Custom icon on left side",
-            "azureResourceType": "Microsoft.Network/virtualNetworks",
+            "displayName": "Azure Backup",
             "icon": {
-                "iconNumber": 245,
-                "iconType": "FrameworkIcon"
+                "iconType": "CustomIcon",
+                "iconFileName": "AzureBackupVault"
+            },
+            "name": "AzureBackup"
+        },
+        {
+            "name": "AzureMonitor",
+            "displayName": "Azure Monitor",
+            "type": "Custom",
+            "icon": {
+                "iconType": "FrameworkIcon",
+                "iconNumber": 41
             }
         }
     ],
     "configurations": [
         {
             "id": "base",
-            "title": "First configuration",
-            "subTitle": "Details on what gets deployed",
+            "title": "Get Connected",
+            "subTitle": "A starter solution to get setup quickly plus remote management",
             "cost": {
-                "value": 150,
+                "value": 8,
                 "currency": "USD",
                 "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "cadence": "daily",
+                "tooltip": "The daily cost of this solution."
             },
-            "maintenance": {
-                "score": 2,
-                "tooltip": "Example tooltip describing cost to maintain, customizable."
-            },
-            "templateFileName": "example-template.json",
-            "supportsManualConfiguration": true,
-            "manualConfigurationBlade": {
-                "bladeName": "CreateVmBlade",
-                "extension": "Microsoft_Azure_Compute"
-            },
+            "templateFileName": "azuredeploy_tier1.json",
+            "uiDefinitionFileName": "uiform.json",
             "pivotValues": [
                 {
-                    "pivotName": "hubNetwork",
+                    "pivotName": "VirtualMachines",
                     "content": [
-                        "Highlight on this feature",
-                        "Highlight on this feature",
-                        "Highlight on this feature"
+                        "Standard D2s v5 VM",
+                        "30 GiB Premium SSD"
+                    ]
+                },
+                {
+                    "pivotName": "VMSS",
+                    "content": [
+                        "N/A"
+                    ]
+                },
+                {
+                    "pivotName": "BastionService",
+                    "content": [
+                        "Basic tier enabling RDP/SSH connectivity to",
+                        "virtual machines without exposing public IP's."
+                    ]
+                },
+                {
+                    "pivotName": "AzureBackup",
+                    "content": [
+                       "N/A"
+                    ]
+                },
+                {
+                    "pivotName": "AzureMonitor",
+                    "content": [
+                       "N/A"
                     ]
                 }
             ],
             "associatedResources": [
                 {
+                    "resourceType": "Microsoft.Compute/virtualMachines",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/publicIPAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkInterfaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/disks",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/virtualNetworks",
+                    "type": "AzureResource"
+                }
+            ]
+        },
+        {
+            "id": "base2",
+            "title": "Backup & Monitoring",
+            "subTitle": "Builds on connecting to a Virtual Machine with Backup and Monitoring.",
+            "cost": {
+                "value": 12,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "daily",
+                "tooltip": "The daily cost of this solution."
+            },
+            "templateFileName": "azuredeploy_tier2.json",
+            "uiDefinitionFileName": "uiform.json",
+            "pivotValues": [
+               {
+                    "pivotName": "VirtualMachines",
+                    "content": [
+                        "Standard D2s v5 VM",
+                        "30 GiB Premium SSD"
+                    ]
+                },
+                {
+                    "pivotName": "VMSS",
+                    "content": [
+                        "N/A"
+                    ]
+                },
+                {
+                    "pivotName": "BastionService",
+                    "content": [
+                        "Basic tier enabling RDP/SSH connectivity to",
+                        "Virtual machines without exposing public IP's."
+                    ]
+                },
+                {
+                    "pivotName": "AzureBackup",
+                    "content": [
+                        "Securely backup data",
+                        "Role-Based Access Control",
+                        "Soft Delete functionality"
+                    ]
+                },
+                {
+                    "pivotName": "AzureMonitor",
+                    "content": [
+                        "Azure Monitor Agent",
+                        "VM Insights",
+                        "VM Logs and Metrics"
+                    ]
+                }
+            ],
+            "associatedResources": [
+                {
+                    "resourceType": "Microsoft.Compute/virtualMachines",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/publicIPAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkInterfaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/disks",
+                    "type": "AzureResource"
+                },
+                {
                     "resourceType": "Microsoft.Network/virtualNetworks",
                     "type": "AzureResource"
                 },
                 {
-                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "resourceType": "Microsoft.RecoveryServices/vaults",
                     "type": "AzureResource"
                 },
                 {
-                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "resourceType": "Microsoft.Storage/storageAccounts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.OperationsManagement/solutions",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.ManagedIdentity/userAssignedIdentities",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Insights/dataCollectionRules",
                     "type": "AzureResource"
                 },
                 {
@@ -68,50 +230,132 @@
                         "iconType": "FrameworkIcon",
                         "iconNumber": 41
                     }
+                },
+                {
+                    "resourceType": "",
+                    "type": "Custom",
+                    "displayName": "Azure Backup",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureBackupVault"
+                    }
                 }
             ]
         },
         {
-            "id": "base2",
-            "title": "Second configuration",
-            "subTitle": "Details on what gets deployed",
+            "id": "base3",
+            "title": "Availability & Scale",
+            "subTitle": "Expands a connected solution with availability and scale for a robust solution. ",
             "cost": {
-                "value": 150,
+                "value": 18,
                 "currency": "USD",
                 "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "cadence": "daily",
+                "tooltip": "The daily cost of this solution."
             },
-            "maintenance": {
-                "score": 2,
-                "tooltip": "Example tooltip describing cost to maintain, customizable."
-            },
-            "supportsManualConfiguration": true,
-            "manualConfigurationBlade": {
-                "bladeName": "CreateVmBlade",
-                "extension": "Microsoft_Azure_Compute"
-            },
+            "templateFileName": "azuredeploy_tier3.json",
+            "uiDefinitionFileName": "uiform-locationrestriction.json",
             "pivotValues": [
                 {
-                    "pivotName": "hubNetwork",
+                    "pivotName": "VirtualMachines",
                     "content": [
-                        "Highlight on this feature",
-                        "Highlight on this feature",
-                        "Highlight on this feature"
+                        "",
+                      "N/A",
+                      ""
+                    ]
+                },
+                {
+                    "pivotName": "VMSS",
+                    "content": [
+                        "3 Standard_D2s_v5 VMSS nodes",
+                        "30 GiB Premium SSD LRS",
+                        "Flexible orchestration mode",
+                        "NGINX web server"
+                    ]
+                },
+                {
+                    "pivotName": "BastionService",
+                    "content": [
+                        "Basic tier enabling RDP/SSH connectivity to",
+                        "Virtual machines without exposing public IP's."
+                    ]
+                },
+                {
+                    "pivotName": "AzureBackup",
+                    "content": [
+                        "Securely backup data",
+                        "Role-Based Access Control",
+                        "Soft Delete functionality"
+                    ]
+                },
+                {
+                    "pivotName": "AzureMonitor",
+                    "content": [
+                       "Azure Monitor Agent",
+                       "VM Insights",
+                       "VM Logs and Metrics"
                     ]
                 }
             ],
             "associatedResources": [
                 {
+                    "resourceType": "Microsoft.Compute/virtualMachines",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkSecurityGroups",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/bastionHosts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/publicIPAddresses",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Network/networkInterfaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Compute/disks",
+                    "type": "AzureResource"
+                },
+                {
                     "resourceType": "Microsoft.Network/virtualNetworks",
                     "type": "AzureResource"
                 },
                 {
-                    "resourceType": "Microsoft.Network/azureFirewalls",
+                    "resourceType": "Microsoft.Network/loadBalancers",
                     "type": "AzureResource"
                 },
                 {
-                    "resourceType": "Microsoft.Network/firewallPolicies",
+                    "resourceType": "Microsoft.Compute/virtualMachineScaleSets",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.RecoveryServices/vaults",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Storage/storageAccounts",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.OperationsManagement/solutions",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.OperationalInsights/workspaces",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.ManagedIdentity/userAssignedIdentities",
+                    "type": "AzureResource"
+                },
+                {
+                    "resourceType": "Microsoft.Insights/dataCollectionRules",
                     "type": "AzureResource"
                 },
                 {
@@ -121,6 +365,15 @@
                     "icon": {
                         "iconType": "FrameworkIcon",
                         "iconNumber": 41
+                    }
+                },
+                {
+                    "resourceType": "",
+                    "type": "Custom",
+                    "displayName": "Azure Backup",
+                    "icon": {
+                        "iconType": "CustomIcon",
+                        "iconFileName": "AzureBackupVault"
                     }
                 }
             ]

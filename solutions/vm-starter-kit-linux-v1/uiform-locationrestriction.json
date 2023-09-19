@@ -1,0 +1,98 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
+    "view": {
+        "kind": "Form",
+        "properties": {
+            "title": "VM Starter Kit",
+            "steps": [
+                {
+                    "name": "basics",
+                    "label": "Basics",
+                    "elements": [
+                        {
+                            "name": "resourceScope",
+                            "type": "Microsoft.Common.ResourceScope",
+                            "location": {
+                                "allowedValues": [
+                                "brazilsouth",
+                                "canadacentral",
+                                "centralus",
+                                "eastus",
+                                "eastus2",
+                                "southcentralus",
+                                "westus2",
+                                "westus3",
+                                "francecentral",
+                                "northeurope",
+                                "norwayeast",
+                                "uksouth",
+                                "westeurope",
+                                "swedencentral",
+                                "switzerlandnorth",
+                                "polandcentral",
+                                "qatarcentral",
+                                "uaenorth",   
+                                "southafricanorth", 
+                                "australiaeast",
+                                "centralindia",
+                                "japaneast",
+                                "koreacentral",
+                                "southeastasia",
+                                "eastasia"
+                                ],
+                                "resourceTypes": [
+                                    "microsoft.resources/resourcegroups"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "adminUsername",
+                            "type": "Microsoft.Compute.UserNameTextBox",
+                            "label": "Admin Username",
+                            "defaultValue": "azureadmin",
+                            "toolTip": "User name to use on the Virtual Machine. ",
+                            "constraints": {
+                                "required": true
+                            },
+                            "osPlatform": "Linux",
+                            "visible": true
+                        },
+                        {
+                            "name": "sshPublicKey",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                                "authenticationType": "Authentication Type",
+                                "password": "Admin Password Or Key",
+                                "sshPublicKey": "Ssh Public Key"
+                            },
+                            "toolTip": {
+                                "authenticationType": "Type of authentication to use on the Virtual Machine.",
+                                "password": "Type of authentication to use on the Virtual Machine.",
+                                "sshPublicKey": "Ssh Public Key"
+                            },
+                            "constraints": {
+                                "required": true
+                            },
+                            "options": {
+                                "hideConfirmation": true,
+                                "hidePassword": true
+                            },
+                            "osPlatform": "Linux",
+                            "visible": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "outputs": {
+            "parameters": {
+                "location": "[steps('basics').resourceScope.location.name]",
+                "adminUsername": "[steps('basics').adminUsername.adminUsername]",
+                "sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
+            },
+            "kind": "ResourceGroup",
+            "location": "[steps('basics').resourceScope.location.name]",
+            "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]"
+        }
+    }
+}
