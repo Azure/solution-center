@@ -1,0 +1,508 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    },
+    "bastionName": {
+      "type": "string",
+      "defaultValue": "BastionHost"
+    },
+    "networkName": {
+      "type": "string",
+      "defaultValue": "VmStarterKit"
+    },
+    "vmSubnetName": {
+      "type": "string",
+      "defaultValue": "VMs"
+    },
+    "vmName": {
+      "type": "string",
+      "defaultValue": "vm-01"
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_D2s_v5"
+    },
+    "windowsOffer": {
+      "type": "string",
+      "defaultValue": "WindowsServer"
+    },
+    "windowsSku": {
+      "type": "string",
+      "defaultValue": "2022-datacenter-azure-edition-core"
+    },
+    "adminUsername": {
+      "type": "string"
+    },
+    "adminPassword": {
+      "type": "secureString"
+    }
+  },
+  "functions": [],
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "vnet",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "networkName": {
+            "value": "[parameters('networkName')]"
+          },
+          "vmSubnetName": {
+            "value": "[parameters('vmSubnetName')]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "networkName": {
+              "type": "string"
+            },
+            "vmSubnetName": {
+              "type": "string"
+            },
+            "openWebPorts": {
+              "type": "bool",
+              "defaultValue": false
+            },
+            "logAnalyticsWorkspaceId": {
+              "type": "string",
+              "defaultValue": ""
+            }
+          },
+          "functions": [],
+          "variables": {
+            "vNetName": "[format('vnet-{0}', parameters('networkName'))]",
+            "vNetAddressPrefix": "10.1.0.0/16",
+            "bastionSubnetAddressPrefix": "10.1.0.0/24",
+            "vmSubnetAddressPrefix": "10.1.1.0/24",
+            "nsgName": "[format('nsg-subnet-{0}', parameters('vmSubnetName'))]",
+            "bastionSubnetName": "AzureBastionSubnet"
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/networkSecurityGroups",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('nsgName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "securityRules": "[if(equals(parameters('openWebPorts'), false()), createArray(), createArray(createObject('name', 'AllowHttpInbound', 'properties', createObject('protocol', 'Tcp', 'sourcePortRange', '*', 'destinationPortRange', '80', 'sourceAddressPrefix', 'Internet', 'destinationAddressPrefix', '*', 'access', 'Allow', 'priority', 100, 'direction', 'Inbound'))))]"
+              }
+            },
+            {
+              "type": "Microsoft.Network/virtualNetworks",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('vNetName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "[variables('vNetAddressPrefix')]"
+                  ]
+                },
+                "subnets": [
+                  {
+                    "name": "[variables('bastionSubnetName')]",
+                    "properties": {
+                      "addressPrefix": "[variables('bastionSubnetAddressPrefix')]",
+                      "privateEndpointNetworkPolicies": "Disabled"
+                    }
+                  },
+                  {
+                    "name": "[parameters('vmSubnetName')]",
+                    "properties": {
+                      "addressPrefix": "[variables('vmSubnetAddressPrefix')]",
+                      "privateEndpointNetworkPolicies": "Disabled",
+                      "networkSecurityGroup": {
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+                      }
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/virtualNetworks/{0}', variables('vNetName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('vNetName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('vNetName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/networkSecurityGroups/{0}', variables('nsgName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('nsgName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+              ]
+            }
+          ],
+          "outputs": {
+            "vNetName": {
+              "type": "string",
+              "value": "[variables('vNetName')]"
+            },
+            "bastionSubnetName": {
+              "type": "string",
+              "value": "[variables('bastionSubnetName')]"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "bastion",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "bastionName": {
+            "value": "[parameters('bastionName')]"
+          },
+          "vNetName": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'vnet'), '2019-10-01').outputs.vNetName.value]"
+          },
+          "bastionSubnetName": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'vnet'), '2019-10-01').outputs.bastionSubnetName.value]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "bastionName": {
+              "type": "string"
+            },
+            "vNetName": {
+              "type": "string"
+            },
+            "bastionSubnetName": {
+              "type": "string"
+            },
+            "logAnalyticsWorkspaceId": {
+              "type": "string",
+              "defaultValue": ""
+            }
+          },
+          "functions": [],
+          "variables": {
+            "bastionHostName": "[format('bas-{0}', parameters('bastionName'))]",
+            "bastionIpAddressName": "[format('pip-{0}', parameters('bastionName'))]"
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/publicIPAddresses",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('bastionIpAddressName')]",
+              "location": "[parameters('location')]",
+              "sku": {
+                "name": "Standard"
+              },
+              "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4
+              }
+            },
+            {
+              "type": "Microsoft.Network/bastionHosts",
+              "apiVersion": "2022-07-01",
+              "name": "[variables('bastionHostName')]",
+              "location": "[parameters('location')]",
+              "sku": {
+                "name": "Basic"
+              },
+              "properties": {
+                "ipConfigurations": [
+                  {
+                    "name": "ipconfig01",
+                    "properties": {
+                      "privateIPAllocationMethod": "Dynamic",
+                      "publicIPAddress": {
+                        "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('bastionIpAddressName'))]"
+                      },
+                      "subnet": {
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNetName'), parameters('bastionSubnetName'))]"
+                      }
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('bastionIpAddressName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/bastionHosts/{0}', variables('bastionHostName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('bastionHostName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/bastionHosts', variables('bastionHostName'))]"
+              ]
+            },
+            {
+              "condition": "[not(empty(parameters('logAnalyticsWorkspaceId')))]",
+              "type": "Microsoft.Insights/diagnosticSettings",
+              "apiVersion": "2021-05-01-preview",
+              "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', variables('bastionIpAddressName'))]",
+              "name": "[format('{0}-diagnosticsettings', variables('bastionIpAddressName'))]",
+              "properties": {
+                "logs": [
+                  {
+                    "categoryGroup": "allLogs",
+                    "enabled": true
+                  }
+                ],
+                "metrics": [
+                  {
+                    "category": "AllMetrics",
+                    "enabled": true
+                  }
+                ],
+                "workspaceId": "[parameters('logAnalyticsWorkspaceId')]"
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('bastionIpAddressName'))]"
+              ]
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'vnet')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "[format('virtual-machine-{0}', parameters('vmName'))]",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "vmName": {
+            "value": "[parameters('vmName')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "vmSize": {
+            "value": "[parameters('vmSize')]"
+          },
+          "windowsOffer": {
+            "value": "[parameters('windowsOffer')]"
+          },
+          "windowsSku": {
+            "value": "[parameters('windowsSku')]"
+          },
+          "vNetName": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'vnet'), '2019-10-01').outputs.vNetName.value]"
+          },
+          "vmSubnetName": {
+            "value": "[parameters('vmSubnetName')]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]"
+            },
+            "vNetName": {
+              "type": "string"
+            },
+            "vmSubnetName": {
+              "type": "string"
+            },
+            "vmName": {
+              "type": "string"
+            },
+            "vmSize": {
+              "type": "string"
+            },
+            "windowsOffer": {
+              "type": "string"
+            },
+            "windowsSku": {
+              "type": "string"
+            },
+            "adminUsername": {
+              "type": "string"
+            },
+            "adminPassword": {
+              "type": "secureString"
+            }
+          },
+          "functions": [],
+          "resources": [
+            {
+              "type": "Microsoft.Network/networkInterfaces",
+              "apiVersion": "2022-07-01",
+              "name": "[format('{0}-nic', parameters('vmName'))]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "ipConfigurations": [
+                  {
+                    "name": "ipconfig1",
+                    "properties": {
+                      "primary": true,
+                      "privateIPAllocationMethod": "Dynamic",
+                      "subnet": {
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNetName'), parameters('vmSubnetName'))]"
+                      }
+                    }
+                  }
+                ],
+                "enableIPForwarding": false
+              }
+            },
+            {
+              "type": "Microsoft.Compute/virtualMachines",
+              "apiVersion": "2022-08-01",
+              "name": "[parameters('vmName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "hardwareProfile": {
+                  "vmSize": "[parameters('vmSize')]"
+                },
+                "osProfile": {
+                  "computerName": "[parameters('vmName')]",
+                  "adminUsername": "[parameters('adminUsername')]",
+                  "adminPassword": "[parameters('adminPassword')]",
+                  "windowsConfiguration": {
+                    "patchSettings": {
+                      "patchMode": "AutomaticByPlatform",
+                      "enableHotpatching": true
+                    }
+                  }
+                },
+                "storageProfile": {
+                  "imageReference": {
+                    "publisher": "MicrosoftWindowsServer",
+                    "offer": "[parameters('windowsOffer')]",
+                    "sku": "[parameters('windowsSku')]",
+                    "version": "latest"
+                  },
+                  "osDisk": {
+                    "name": "[format('{0}-osdisk', parameters('vmName'))]",
+                    "managedDisk": {
+                      "storageAccountType": "Premium_LRS"
+                    },
+                    "caching": "ReadWrite",
+                    "createOption": "FromImage"
+                  }
+                },
+                "networkProfile": {
+                  "networkInterfaces": [
+                    {
+                      "id": "[resourceId('Microsoft.Network/networkInterfaces', format('{0}-nic', parameters('vmName')))]"
+                    }
+                  ]
+                }
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', format('{0}-nic', parameters('vmName')))]"
+              ]
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'vnet')]"
+      ]
+    }
+  ],
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.3.126.58533",
+      "templateHash": "12897471974930090393"
+    }
+  }
+}
