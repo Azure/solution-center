@@ -19,9 +19,8 @@
             },
             "bladeReference": {
                 "extension": "Microsoft_Azure_HybridCompute",
-                "bladeName": "ArcVmCreate.ReactView",
-                "inputs": {},
-                "doesProvisioning": true
+                "bladeName": "ArcVmCreateBlade",
+                "inputs": {}
             }
         },
         {
@@ -34,11 +33,10 @@
             },
             "bladeReference": {
                 "extension": "Microsoft_Azure_HybridCompute",
-                "bladeName": "ArcVmCreate.ReactView",
+                "bladeName": "ArcVmCreateBlade",
                 "inputs": {
-                    "vmKind": "microsoft.avs"
-                },
-                "doesProvisioning": true
+                    "vmKindFilter": "microsoft.avs"
+                }
             }
         },
         {
