@@ -61,36 +61,37 @@
                             "name": "adminPassword",
                             "type": "Microsoft.Compute.CredentialsCombo",
                             "label": {
-                                "authenticationType": "Authentication Type",
                                 "password": "Admin Password Or Key"
                             },
                             "toolTip": {
-                                "authenticationType": "Type of authentication to use on the Virtual Machine.",
                                 "password": "Type of authentication to use on the Virtual Machine."
                             },
                             "constraints": {
                                 "required": true
                             },
                             "options": {
-                                "hideConfirmation": true,
-                                "hidePassword": true
+                                "hideConfirmation": true
                             },
                             "osPlatform": "Windows",
                             "visible": true
                         }
                     ]
                 }
-            ]
-        },
-        "outputs": {
-            "parameters": {
+            ],
+            "deployment": {
+                "parameters": {
+                    "location": "[steps('basics').resourceScope.location.name]",
+                    "adminUsername": "[steps('basics').adminUsername.adminUsername]",
+                    "adminPassword": "[steps('basics').adminPassword.password]"
+                },
+                "kind": "ResourceGroup",
                 "location": "[steps('basics').resourceScope.location.name]",
-                "adminUsername": "[steps('basics').adminUsername.adminUsername]",
-                "adminPassword": "[steps('basics').adminPassword.password]"
-            },
-            "kind": "ResourceGroup",
-            "location": "[steps('basics').resourceScope.location.name]",
-            "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]"
+                "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
+                "template": {
+                    "file": "deploymentTemplate"
+                }
+            }
         }
+        
     }
 }
