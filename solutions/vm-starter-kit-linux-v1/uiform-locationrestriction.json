@@ -63,7 +63,8 @@
                             "label": {
                                 "authenticationType": "Authentication Type",
                                 "password": "Admin Password Or Key",
-                                "sshPublicKey": "Ssh Public Key"
+                                "sshPublicKey": "Ssh Public Key",
+                                "confirmPassword": "Confirm password"
                             },
                             "toolTip": {
                                 "authenticationType": "Type of authentication to use on the Virtual Machine.",
@@ -82,17 +83,20 @@
                         }
                     ]
                 }
-            ]
-        },
-        "outputs": {
-            "parameters": {
+            ],
+            "deployment" : {
+                "parameters": {
+                    "location": "[steps('basics').resourceScope.location.name]",
+                    "adminUsername": "[steps('basics').adminUsername.adminUsername]",
+                    "sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
+                },
+                "kind": "ResourceGroup",
                 "location": "[steps('basics').resourceScope.location.name]",
-                "adminUsername": "[steps('basics').adminUsername.adminUsername]",
-                "sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
-            },
-            "kind": "ResourceGroup",
-            "location": "[steps('basics').resourceScope.location.name]",
-            "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]"
+                "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
+                "template": {
+                    "file": "deploymentTemplate"
+                }
+            }
         }
     }
 }
