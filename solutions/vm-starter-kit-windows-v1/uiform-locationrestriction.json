@@ -61,7 +61,8 @@
                             "name": "adminPassword",
                             "type": "Microsoft.Compute.CredentialsCombo",
                             "label": {
-                                "password": "Admin Password Or Key"
+                                "password": "Admin Password Or Key",
+                                "confirmPassword": "Confirm password"
                             },
                             "toolTip": {
                                 "password": "Type of authentication to use on the Virtual Machine."
