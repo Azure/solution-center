@@ -1,0 +1,70 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
+    "view": {
+        "kind": "Form",
+        "properties": {
+            "title": "VM Starter Kit",
+            "steps": [
+                {
+                    "name": "basics",
+                    "label": "Basics",
+                    "elements": [
+                        {
+                            "name": "resourceScope",
+                            "type": "Microsoft.Common.ResourceScope",
+                            "location": {
+                                "resourceTypes": [
+                                    "microsoft.resources/resourcegroups"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "adminUsername",
+                            "type": "Microsoft.Compute.UserNameTextBox",
+                            "label": "Admin Username",
+                            "defaultValue": "azureadmin",
+                            "toolTip": "User name to use on the Virtual Machine. ",
+                            "constraints": {
+                                "required": true
+                            },
+                            "osPlatform": "Windows",
+                            "visible": true
+                        },
+                        {
+                            "name": "adminPassword",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                                "password": "Admin Password",
+                                "confirmPassword": "Confirm password"
+                            },
+                            "toolTip": {
+                                "password": "Type of authentication to use on the Virtual Machine."
+                            },
+                            "constraints": {
+                                "required": true
+                            },
+                            "options": {
+                                "hideConfirmation": true
+                            },
+                            "osPlatform": "Windows",
+                            "visible": true
+                        }
+                    ]
+                }
+            ],
+            "deployment":{
+                "parameters": {
+                    "location": "[steps('basics').resourceScope.location.name]",
+                    "adminUsername": "[steps('basics').adminUsername.adminUsername]",
+                    "adminPassword": "[steps('basics').adminPassword.password]"
+                },
+                "kind": "ResourceGroup",
+                "location": "[steps('basics').resourceScope.location.name]",
+                "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
+                "template": {
+                    "file": "deploymentTemplate"
+                }
+            }
+        }
+    }
+}
