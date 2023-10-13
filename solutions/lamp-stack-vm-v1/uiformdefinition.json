@@ -53,7 +53,34 @@
                                 },
                                 "osPlatform": "Linux",
                                 "visible": true
+                            },
+                            {
+                              "name": "usagesAPI",
+                              "type": "Microsoft.Solutions.ArmApiControl",
+                              "condition": "[greater(length(steps('basics').resourceScope.resourceGroup.id), 0)]",
+                              "request": {
+                                  "method": "GET",
+                                  "path": "[concat(concat(concat(steps('basics').resourceScope.subscription.id, '/providers/Microsoft.Network/locations/'), steps('basics').resourceScope.location.name'), '/usages?api-version=2023-05-01')]",
+                                  "transforms": {
+                                      "list": "value[?name.value == 'PublicIPAddresses'].[limit, currentValue][0]"
+                                  }
                               }
+                            },
+                            {
+                              "name": "textBoxTest",
+                              "label": "Label",
+                              "type": "Microsoft.Common.TextBox",
+                              "constraints": {
+                                  "validations": [
+                                      {
+                                          "skip": "[equals(0, length(steps('basics').resourceScope.resourceGroup.id)))]",
+                                          "await": "[basics('usagesAPI').done]",
+                                          "isValid": "[greater(steps('basics').usagesAPI.list[0], steps('basics').usagesAPI.list[1] + 2)]",
+                                          "message": "Number of Public IPs is too many"
+                                      }
+                                  ]
+                              }
+                          }
                         ]
                     }
                 ],
