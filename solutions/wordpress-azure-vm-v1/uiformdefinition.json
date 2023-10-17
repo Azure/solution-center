@@ -10,6 +10,18 @@
                     "label": "Basics",
                     "elements": [
                         {
+                            "name": "usagesAPI",
+                            "type": "Microsoft.Solutions.ArmApiControl",
+                            "condition": "[greater(length(steps('basics').resourceScope.resourceGroup.id), 0)]",
+                            "request": {
+                                "method": "GET",
+                                "path": "[concat(concat(concat(steps('basics').resourceScope.subscription.id,'/providers/Microsoft.Network/locations/'),steps('basics').resourceScope.location.name),'/usages?api-version=2023-05-01')]",
+                                "transforms": {
+                                    "list": "value[?name.value == 'PublicIPAddresses'].[limit, currentValue][0]"
+                                }
+                            }
+                        },	
+                        {
                             "name": "resourceScope",
                             "type": "Microsoft.Common.ResourceScope",
                             "location": {
@@ -19,16 +31,20 @@
                             },
                             "resourceName": {
                                 "label": "Name",
-                                "toolTip": "This prefix will be used for all resources deployed as part of this solution" ,
+                                "toolTip": "This prefix will be used for all resources deployed as part of this solution",
                                 "constraints": {
-                                   "validations": [
+                                    "validations": [
                                         {
                                             "regex": "^[a-z0-9]{1,13}$",
                                             "message": "Only lowercase alphanumeric characters are allowed, and the value must be 1-13 characters long."
+                                        },
+                                        {
+                                            "isValid": "[greater(first(filter(steps('basics').usagesAPI.value, (filter) => equals(filter.name.value, 'PublicIPAddresses'))).limit, add(first(filter(steps('basics').usagesAPI.value, (filter) => equals(filter.name.value, 'PublicIPAddresses'))).currentValue, 1))]",
+                                            "message": "This subscription in this region does not have the capacity for 2 more public ip addresses."
                                         }
-                                   ]
+                                    ]
                                 }
-                             }
+                            }
                         },
                         {
                             "name": "sshPublicKey",
