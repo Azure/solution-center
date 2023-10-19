@@ -27,6 +27,10 @@
                                             "message": "Only lowercase alphanumeric characters are allowed, and the value must be 1-13 characters long."
                                         },
                                         {
+                                            "isValid": "[greater(length(steps('basics').resourceScope.resourceGroup.name), 0)]",
+                                            "message": "Please select a Resource Group"
+                                        },
+                                        {
                                             "isValid": "[greater(first(filter(steps('basics').usagesAPI.value, (filter) => equals(filter.name.value, 'PublicIPAddresses'))).limit, add(first(filter(steps('basics').usagesAPI.value, (filter) => equals(filter.name.value, 'PublicIPAddresses'))).currentValue, 1))]",
                                             "message": "This subscription in this region does not have the capacity for 2 more public ip addresses."
                                         }
