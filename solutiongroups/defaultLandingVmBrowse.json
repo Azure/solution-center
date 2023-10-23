@@ -23,7 +23,7 @@
                 "extension": "Microsoft_Azure_HybridCompute",
                 "bladeName": "ArcVmCreate.ReactView",
                 "inputs": {
-                    "experience": "ConsolidatedVmBrowse"
+                    "experience": "SolutionCenter"
                 }
             }
         },
@@ -39,7 +39,7 @@
                 "extension": "Microsoft_Azure_HybridCompute",
                 "bladeName": "ArcVmCreate.ReactView",
                 "inputs": {
-                    "experience": "ConsolidatedVmBrowse",
+                    "experience": "SolutionCenter",
                     "vmCreateProps": {
                         "customLocationId": "",
                         "vmKind": "microsoft.avs"
