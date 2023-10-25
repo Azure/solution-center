@@ -22,7 +22,8 @@
             "bladeReference": {
                 "extension": "Microsoft_Azure_HybridCompute",
                 "bladeName": "ArcVmCreate.ReactView",
-                "inputs": {
+                "referenceType": 3,
+                "parameters": {
                     "experience": "SolutionCenter"
                 }
             }
@@ -38,7 +39,8 @@
             "bladeReference": {
                 "extension": "Microsoft_Azure_HybridCompute",
                 "bladeName": "ArcVmCreate.ReactView",
-                "inputs": {
+                "referenceType": 3,
+                "parameters": {
                     "experience": "SolutionCenter",
                     "vmCreateProps": {
                         "customLocationId": "",
