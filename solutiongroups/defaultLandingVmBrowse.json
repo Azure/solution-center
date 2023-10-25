@@ -20,7 +20,7 @@
                 "iconFileName": "ArcVm"
             },
             "bladeReference": {
-                "extension": "Microsoft_Azure_HybridCompute",
+                "extensionName": "Microsoft_Azure_HybridCompute",
                 "bladeName": "ArcVmCreate.ReactView",
                 "referenceType": 3,
                 "parameters": {
@@ -37,7 +37,7 @@
                 "iconFileName": "AvsVm"
             },
             "bladeReference": {
-                "extension": "Microsoft_Azure_HybridCompute",
+                "extensionName": "Microsoft_Azure_HybridCompute",
                 "bladeName": "ArcVmCreate.ReactView",
                 "referenceType": 3,
                 "parameters": {
