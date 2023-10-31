@@ -1,0 +1,46 @@
+name: Automerge src -> target
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      source-branch:
+        type: choice
+        options:
+          - dev
+          - staging
+        required: true
+        default: 'dev'
+        description: 'source branch from where changes will be merged'
+      target-branch:
+        type: choice
+        options:
+          - main
+          - staging
+        required: true
+        default: 'staging'
+        description: 'target branch to where changes will be merged'
+jobs:
+  merge-source-to-destination:
+    timeout-minutes: 2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0 
+      - name: Set Git config
+        run: |
+          git config --local user.email "actions@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: Merge ${{inputs.source-branch}} to ${{inputs.target-branch}}
+        run: |
+          git fetch
+          git checkout ${{inputs.target-branch}}
+          git pull
+          git merge ${{inputs.source-branch}} -m "[Automated] Merged ${{inputs.source-branch}} into target ${{inputs.target-branch}}"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{inputs.target-branch}}

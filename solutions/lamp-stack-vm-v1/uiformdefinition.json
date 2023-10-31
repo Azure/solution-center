@@ -1,74 +1,94 @@
 {
-        "$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
-        "view": {
-            "kind": "Form",
-            "properties": {
-                "title": "[parameters('title')]",
-                "steps": [
-                    {
-                        "name": "basics",
-                        "label": "Basics",
-                        "elements": [
-                            {
-                                "name": "resourceScope",
-                                "type": "Microsoft.Common.ResourceScope",
-                                "location": {
-                                    "resourceTypes": [
-                                        "microsoft.resources/resourcegroups"
-                                    ]
-                                },
-                                "resourceName": {
-                                    "label": "Name",
-                                    "toolTip": "This prefix will be used for all resources deployed as part of this solution",
-                                    "constraints": {
-                                       "validations": [
-                                            {
-                                                "regex": "^[a-z0-9]{1,13}$",
-                                                "message": "Only lowercase alphanumeric characters are allowed, and the value must be 1-13 characters long."
-                                            }
-                                       ]
-                                    }
-                                 }
+    "$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
+    "view": {
+        "kind": "Form",
+        "properties": {
+            "title": "[parameters('title')]",
+            "steps": [
+                {
+                    "name": "basics",
+                    "label": "Basics",
+                    "elements": [	
+                        {
+                            "name": "resourceScope",
+                            "type": "Microsoft.Common.ResourceScope",
+                            "location": {
+                                "resourceTypes": [
+                                    "microsoft.resources/resourcegroups"
+                                ]
                             },
-                            {
-                                "name": "sshPublicKey",
-                                "type": "Microsoft.Compute.CredentialsCombo",
-                                "label": {
-                                  "authenticationType": "Authentication type",
-                                  "password": "Password",
-                                  "confirmPassword": "Confirm password",
-                                  "sshPublicKey": "SSH public key"
-                                },
-                                "toolTip": {
-                                  "sshPublicKey": ""
-                                },
+                            "resourceName": {
+                                "label": "Name",
+                                "toolTip": "This prefix will be used for all resources deployed as part of this solution",
                                 "constraints": {
-                                  "required": true,
-                                  "customPasswordRegex": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{12,}$",
-				  "customValidationMessage": "The password must be alphanumeric, contain at least 12 characters, and have at least 1 letter and 1 number."
-                                },
-                                "options": {
-                                  "hideConfirmation": false,
-                                  "hidePassword": true
-                                },
-                                "osPlatform": "Linux",
-                                "visible": true
-                              }
-                        ]
-                    }
-                ],
-                "deployment": {
-                    "parameters": {
-                        "resourceNamePrefix": "[steps('basics').resourceScope.resourceName]",
-                        "sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
-                    },
-                    "kind": "ResourceGroup",
-                    "location": "[steps('basics').resourceScope.location.name]",
-                    "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
-                    "template": {
-                        "file": "deploymentTemplate"
-                    }
+                                    "validations": [
+                                        {
+                                            "regex": "^[a-z0-9]{1,13}$",
+                                            "message": "Only lowercase alphanumeric characters are allowed, and the value must be 1-13 characters long."
+                                        },
+                                        {
+                                            "isValid": "[greater(length(steps('basics').resourceScope.resourceGroup.name), 0)]",
+                                            "message": "Please select a Resource Group"
+                                        },
+                                        {
+                                            "isValid": "[greater(first(filter(steps('basics').usagesAPI.value, (filter) => equals(filter.name.value, 'PublicIPAddresses'))).limit, add(first(filter(steps('basics').usagesAPI.value, (filter) => equals(filter.name.value, 'PublicIPAddresses'))).currentValue, 1))]",
+                                            "message": "This subscription in this region does not have the capacity for 2 more public ip addresses."
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "usagesAPI",
+                            "type": "Microsoft.Solutions.ArmApiControl",
+                            "condition": "[greater(length(steps('basics').resourceScope.resourceGroup.id), 0)]",
+                            "request": {
+                                "method": "GET",
+                                "path": "[concat(concat(concat(steps('basics').resourceScope.subscription.id,'/providers/Microsoft.Network/locations/'),steps('basics').resourceScope.location.name),'/usages?api-version=2023-05-01')]",
+                                "transforms": {
+                                    "list": "value[?name.value == 'PublicIPAddresses'].[limit, currentValue][0]"
+                                }
+                            }
+                        },
+                        {
+                            "name": "sshPublicKey",
+                            "type": "Microsoft.Compute.CredentialsCombo",
+                            "label": {
+                                "authenticationType": "Authentication type",
+                                "password": "Password",
+                                "confirmPassword": "Confirm password",
+                                "sshPublicKey": "SSH public key"
+                            },
+                            "toolTip": {
+                                "sshPublicKey": ""
+                            },
+                            "constraints": {
+                                "required": true,
+                                "customPasswordRegex": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{12,}$",
+                                "customValidationMessage": "The password must be alphanumeric, contain at least 12 characters, and have at least 1 letter and 1 number."
+                            },
+                            "options": {
+                                "hideConfirmation": false,
+                                "hidePassword": true
+                            },
+                            "osPlatform": "Linux",
+                            "visible": true
+                        }
+                    ]
+                }
+            ],
+            "deployment": {
+                "parameters": {
+                    "resourceNamePrefix": "[steps('basics').resourceScope.resourceName]",
+                    "sshPublicKey": "[steps('basics').sshPublicKey.sshPublicKey]"
+                },
+                "kind": "ResourceGroup",
+                "location": "[steps('basics').resourceScope.location.name]",
+                "resourceGroupId": "[steps('basics').resourceScope.resourceGroup.id]",
+                "template": {
+                    "file": "deploymentTemplate"
                 }
             }
         }
     }
+}
