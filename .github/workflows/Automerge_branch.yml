@@ -38,7 +38,7 @@ jobs:
           git fetch
           git checkout ${{inputs.target-branch}}
           git pull
-          git merge ${{inputs.source-branch}} -m "[Automated] Merged ${{inputs.source-branch}} into target ${{inputs.target-branch}}"
+          git merge origin/${{inputs.source-branch}} -m "[Automated] Merged ${{inputs.source-branch}} into target ${{inputs.target-branch}}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
