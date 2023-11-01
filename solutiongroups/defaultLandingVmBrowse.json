@@ -58,9 +58,9 @@
                 "iconFileName": "ArcServer"
             },
             "bladeReference": {
-                "extension": "Microsoft_Azure_HybridCompute",
+                "extensionName": "Microsoft_Azure_HybridCompute",
                 "bladeName": "HybridVmAddBlade",
-                "inputs": { }
+                "parameters": {}
             }
         }
     ]
