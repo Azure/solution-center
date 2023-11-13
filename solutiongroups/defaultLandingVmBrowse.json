@@ -3,9 +3,7 @@
     "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
     "solutions": [
         "vm-starter-kit-linux-v1",
-        "vm-starter-kit-windows-v1",
-        "lamp-stack-vm-v1",
-        "wordpress-azure-vm-v1"
+        "vm-starter-kit-windows-v1"
     ],
     "solutionsSectionTitle": "Discover the right solution for your needs",
     "createLinksSectionTitle": "Hybrid virtual infrastructure",
