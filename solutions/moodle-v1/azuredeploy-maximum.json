@@ -1,0 +1,53 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sshPublicKey": {
+            "metadata": {
+                "description": "ssh public key"
+            },
+            "type": "string"
+        },
+        "resourceNamePrefix": {
+            "metadata": {
+                "description": "resource name prefix"
+            },
+            "type": "string"
+        },
+        "epochTime": {
+            "type": "int",
+            "defaultValue": "[dateTimeToEpoch(dateTimeAdd(utcNow(), 'P0Y'))]"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "name": "[concat('Deployment-SolutionCenter-Moodle-Maximum', '_', parameters('epochTime'))]",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "_artifactsLocation": { "value": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/moodle-v1/" },
+                    "_resourceNamePrefix": { "value": "[parameters('resourceNamePrefix')]" },
+                    "redisDeploySwitch": { "value": true },
+                    "azureBackupSwitch": { "value": true },
+                    "sshPublicKey": { "value": "[parameters('sshPublicKey')]" },
+                    "mysqlPgresVcores": { "value": 16 },
+                    "mysqlPgresStgSizeGB": { "value": 512 },
+                    "fileServerType": { "value": "azurefiles" },
+                    "fileServerDiskSize": { "value": 1024 },
+                    "OSDiskSizeInGB": { "value": 1024 },
+                    "storageAccountType": { "value": "Premium_LRS" },
+                    "CMSApplication": { "value": "None" }
+                },
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/moodle-v1/azuredeploy.json"
+                }
+            }
+        }
+    ],
+    "variables": {
+        "documentation01": "This wrapper template calls the main-template with maximum configs and the only required parameter (sshPublicKey).",
+        "documentation02": "For the best-possible performance, and highly available. Other parameters are fixed in this tempalte and overriden as above."
+    }
+}

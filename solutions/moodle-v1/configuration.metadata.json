@@ -1,0 +1,184 @@
+{
+    "$schema": "../../definitions/configuration.metadata.schema.json",
+    "overviewContent": "This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
+    "documentationFileName": "moodle-readme.md",
+    "associatedResources": [
+        {
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Network/NetworkSecurityGroups",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/disks",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/sshPublicKeys",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.DBforMySQL/flexibleServers",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Compute/virtualMachineScaleSets",
+            "type": "AzureResource"
+        },
+        {
+            "resourceType": "Microsoft.Storage/StorageAccounts",
+            "type": "AzureResource"
+        }
+    ],
+    "pivots": [
+        {
+            "name": "vmssCompute",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Compute/virtualMachineScaleSets"
+        },
+        {
+            "name": "databasePivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.DBforMySQL/servers"
+        },
+        {
+            "name": "storagePivot",
+            "type": "AzureResource",
+            "azureResourceType": "Microsoft.Storage/StorageAccounts"
+        }
+    ],
+    "configurations": [
+        {
+            "id": "moodle-minimal",
+            "title": "Minimal instance",
+            "subTitle": "This deployment will use NFS, Azure Database for MySQL Flexible Server, and smaller autoscale web frontend VM sku that'll give faster deployment time and requires only 2 VM cores.",
+            "cost": {
+                "value": 110,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 1,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-minimal.json",
+            "uiDefinitionFileName": "uiformdefinition.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmssCompute",
+                    "content": [
+                        "Small autoscale web front VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) Scales to a max of 10 nodes",
+                        "256 GiB SSD per node",
+                        "Requires only 2 VM cores",
+                        "Works with free trial subscriptions"
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "64 GiB Premium Files LSR"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "2 V-Core 125GB MySQL Database"
+                    ]
+                }
+
+            ]
+        },
+        {
+            "id": "moodle-s2m",
+            "title": "Small to Mid-Size",
+            "subTitle": "Supporting up to 1,000 concurrent users.",
+            "cost": {
+                "value": 975,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 2,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-s2m.json",
+            "uiDefinitionFileName": "uiformdefinition.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmssCompute",
+                    "content": [
+                        "Standard_DS2_V2 VM which can scale to 10 nodes VMSS.", 
+                        "256 GiB SSD per node",
+                        "Standard_DS1_v2 controller VM"
+
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "512 GiB Premium Files LSR "
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 8 vCore 128 GB Azure PostgresSQL",
+                        "Backup enabled"
+                    ]
+                }
+
+            ]
+        },
+        {
+            "id": "moodle-maximum",
+            "title": "Maximum Workload",
+            "subTitle": "This maximal deployment will use Gluster, Azure Database for MySQL, redis cache, elastic search, and pretty large storage sizes.",
+            "cost": {
+                "value": 4000,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 3,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-maximum.json",
+            "uiDefinitionFileName": "uiformdefinition.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmssCompute",
+                    "content": [
+                        "Autoscaling Standard_DS2_v2 VMSS.", 
+                        "1024 GiB Local SSD per node",
+                        "Standard_DS1_v2 Controller VM."
+
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "1024 GiB Premium Files LSR",
+                        "Estimated with 100,000 storage transactions per VM"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
+                        "Backup enabled"
+                    ]
+                }
+
+            ]
+        }
+    ]
+}

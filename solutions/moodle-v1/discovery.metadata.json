@@ -1,0 +1,13 @@
+{
+    "icon": {
+      "iconType": "AssetIcon",
+      "asset": "Microsoft.Compute/virtualMachines"
+    },
+    "title": "Moodle",
+    "shortDescription": "Get started with a Scalable Moodle Cluster using Azure VM.",
+    "highlights": [
+      {
+        "content": "Deploy and manage a highly available and scalable Moodle cluster on Azure"
+      }
+    ]
+  }
