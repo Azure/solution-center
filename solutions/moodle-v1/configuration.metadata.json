@@ -109,7 +109,7 @@
                 "score": 2,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-small2mid-noha.json",
+            "templateFileName": "azuredeploy-s2m.json",
             "uiDefinitionFileName": "uiformdefinition.json",
             "pivotValues": [
                 {
@@ -138,49 +138,6 @@
             ]
         },
         {
-            "id": "moodle-large",
-            "title": "Large Workload",
-            "subTitle": "Supporting more than 2000 concurrent users.",
-            "cost": {
-                "value": 3000,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly"
-            },
-            "maintenance": {
-                "score": 3,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
-            },
-            "templateFileName": "azuredeploy-maximal.json",
-            "uiDefinitionFileName": "uiformdefinition.json",
-            "pivotValues": [
-                {
-                    "pivotName": "vmssCompute",
-                    "content": [
-                        "Autoscaling Standard_DS2_v2 VMSS.", 
-                        "1024 GiB Local SSD per node",
-                        "Standard_DS1_v2 Controller VM."
-
-                    ]
-                },
-                {
-                    "pivotName": "storagePivot",
-                    "content": [
-                        "1024 GiB Premium Files LSR",
-                        "Estimated with 100,000 storage transactions per VM"
-                    ]
-                },
-                {
-                    "pivotName": "databasePivot",
-                    "content": [
-                        "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
-                        "Backup enabled"
-                    ]
-                }
-
-            ]
-        },
-        {
             "id": "moodle-maximum",
             "title": "Maximum Workload",
             "subTitle": "This maximal deployment will use Gluster, Azure Database for MySQL, redis cache, elastic search, and pretty large storage sizes.",
@@ -194,7 +151,7 @@
                 "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-maximal.json",
+            "templateFileName": "azuredeploy-maximum.json",
             "uiDefinitionFileName": "uiformdefinition.json",
             "pivotValues": [
                 {
