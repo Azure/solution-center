@@ -27,7 +27,7 @@
             "properties": {
                 "mode": "Incremental",
                 "parameters": {
-                    "_artifactsLocation": { "value": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/lamp-stack-vm-v1/" },
+                    "_artifactsLocation": { "value": "https://raw.githubusercontent.com/Azure/LAMP/master/" },
                     "_resourceNamePrefix": { "value": "[parameters('resourceNamePrefix')]" },
                     "redisDeploySwitch": { "value": false },
                     "sshPublicKey": { "value": "[parameters('sshPublicKey')]" },
@@ -37,7 +37,7 @@
                     "CMSApplication": { "value": "None" }
                 },
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/lamp-stack-vm-v1/azuredeploy.json"
+                    "uri": "https://raw.githubusercontent.com/Azure/LAMP/main/azuredeploy.json"
                 }
             }
         }
