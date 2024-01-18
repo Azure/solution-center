@@ -28,7 +28,6 @@
                 "mode": "Incremental",
                 "parameters": {
                     "_artifactsLocation": { "value": "https://raw.githubusercontent.com/Azure/LAMP/master/" },
-                    "_resourceNamePrefix": { "value": "[parameters('resourceNamePrefix')]" },
                     "redisDeploySwitch": { "value": false },
                     "sshPublicKey": { "value": "[parameters('sshPublicKey')]" },
                     "autoscaleVmSku": { "value": "Standard_DS1_v2" },
