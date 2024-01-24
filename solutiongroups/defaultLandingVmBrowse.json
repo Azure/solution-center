@@ -2,6 +2,8 @@
     "title": "More virtual machines and related solutions",
     "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
     "solutions": [
+        "lamp-stack-vm-v1",
+        "wordpress-azure-vm-v1",
         "vm-starter-kit-linux-v1",
         "vm-starter-kit-windows-v1"
     ],
