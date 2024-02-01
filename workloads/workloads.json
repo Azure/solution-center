@@ -4,7 +4,7 @@
         "id": "lamp-stack-vm",
         "description": "Deploy a LAMP stack on an Azure virtual machine. LAMP is an open-source solution stack that is commonly used to run dynamic web sites and servers. It includes Linux, Apache, MySQL, and PHP/Python/Perl and is considered by many the platform of choice for development and deployment of high-performance web applications.",
         "author": "Microsoft",
-        "source": "<github package URL here>",
+        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/lamp-stack-vm",
         "tags": [
             "LAMP",
             "Azure",
