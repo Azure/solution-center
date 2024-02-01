@@ -17,9 +17,10 @@
             "Perl"
         ],
         "deploymentOptions": [
-            "ArmTemplate",
-            "Terraform",
-            "Bicep",
+            "Arm Template",
+            "Terraform Script",
+            "Bicep Script",
+            "CLI Script",
             "OneClick",
             "LearnMode"
         ],
