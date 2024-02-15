@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceNamePrefix": {
+            "value": "linux-vm-"
+        },
+        "sshPublicKey": {
+            "value": ""
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "vmSize": {
+            "value": "Standard_DS2_v2"
+        },
+        "adminUsername": {
+            "value": "adminuser"
+        },
+        "adminPassword": {
+            "value": "password123"
+        }
+    }
+}

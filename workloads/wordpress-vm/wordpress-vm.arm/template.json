@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sshPublicKey": {
+            "metadata": {
+                "description": "ssh public key"
+            },
+            "type": "securestring"
+        },
+        "resourceNamePrefix": {
+            "metadata": {
+                "description": "resource name prefix"
+            },
+            "type": "string"
+        },
+        "epochTime": {
+            "type": "int",
+            "defaultValue": "[dateTimeToEpoch(dateTimeAdd(utcNow(), 'P0Y'))]"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "name": "[concat('Deployment-SolutionCenter-Wordpress-Minimal', '_', parameters('epochTime'))]",
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "_artifactsLocation": { "value": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/wordpress-azure-vm-v1/" },
+                    "_resourceNamePrefix": { "value": "[parameters('resourceNamePrefix')]" },
+                    "redisDeploySwitch": { "value": false },
+                    "sshPublicKey": { "value": "[parameters('sshPublicKey')]" },
+                    "autoscaleVmSku": { "value": "Standard_DS1_v2" },
+                    "enableAccelNwForOtherVmsSwitch": { "value": false },
+                    "dbServerType": { "value": "mysql" },
+                    "fileServerDiskCount": { "value": 2 },
+                    "fileServerDiskSize": { "value": 32 },
+                    "CMSApplication": { "value": "WordPress" }
+                },
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/Azure/solution-center/main/solutions/wordpress-azure-vm-v1/azuredeploy.json"
+                }
+            }
+        }
+    ],
+    "variables": {
+        "documentation01": "This wrapper template calls the main-template with bare minimum configs and the only required parameter (sshPublicKey).",
+        "documentation02": "To speed up deployment and consume least resources, other parameters are fixed in this tempalte and overriden as follows:",
+        "documentation03": "   - fileServerType: nfs",
+        "documentation04": "   - autoscaleVmSku: Standard_DS1_v2",
+        "documentation05": "   - fileServerDiskCount: 2",
+        "documentation06": "   - dbServerType: mysql",
+        "documentation07": "   - redisDeploySwitch: false"
+    }
+}
