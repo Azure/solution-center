@@ -74,14 +74,14 @@
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) ",
+                        "Small autoscale web front VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) Scales to a max of 10 nodes",
                         "Works with free trial subscriptions"
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "64 GiB Premium Files LSR"
+                        "32 GiB Premium Files LSR "
                     ]
                 },
                 {
@@ -113,23 +113,20 @@
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Standard_DS2_V2 VM which can scale to 10 nodes VMSS.", 
-                        "256 GiB SSD per node",
-                        "Standard_DS1_v2 controller VM"
+                        "Standard_D8ds_V4 VM which can scale to 10 nodes VMSS."
 
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "512 GiB Premium Files LSR "
+                        "128 GiB Premium Files LSR "
                     ]
                 },
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Gen 5 8 vCore 128 GB Azure PostgresSQL",
-                        "Backup enabled"
+                        "MySQL Flexible Server(General Purpose SKU 8 vCores)"
                     ]
                 }
 
@@ -155,24 +152,20 @@
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Autoscaling Standard_DS2_v2 VMSS.", 
-                        "1024 GiB Local SSD per node",
-                        "Standard_DS1_v2 Controller VM."
+                        "Autoscaling Standard_DS3_v2 VMSS Scales max 20 nodes." 
 
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "1024 GiB Premium Files LSR",
-                        "Estimated with 100,000 storage transactions per VM"
+                        "1024 GiB Premium Files LSR"
                     ]
                 },
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
-                        "Backup enabled"
+                        "Azure Database for MySQL Flexible Server (General Purpose SKU 16 vCores)"
                     ]
                 }
 
@@ -198,10 +191,7 @@
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Autoscaling Standard_DS2_v2 VMSS.", 
-                        "1024 GiB Local SSD per node",
-                        "Standard_DS1_v2 Controller VM."
-
+                        "Autoscaling Standard_DS3_v2 VMSS.", 
                     ]
                 },
                 {
@@ -214,8 +204,10 @@
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Gen 5 64 vCore 512GB Azure PostgresSQL Database",
-                        "Backup enabled"
+                        "Azure Database for MySQL (Business Critical SKU 64 vCores)",
+                        "Redis Cache"
+                        "Elastic Search"
+
                     ]
                 }
 
