@@ -98,7 +98,7 @@
             "title": "Small to Mid-Size",
             "subTitle": "Supporting up to 1,000 concurrent users.",
             "cost": {
-                "value": 970,
+                "value": 975,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
@@ -137,7 +137,7 @@
             "title": "Maximum Workload",
             "subTitle": "This Large size deployment will use Gluster, Azure Database for MySQL, redis cache.",
             "cost": {
-                "value": 3000,
+                "value": 4000,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
