@@ -204,9 +204,7 @@
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Azure Database for MySQL (Business Critical SKU 64 vCores)",
-                        "Redis Cache",
-                        "Elastic Search"
+                        "Azure Database for MySQL (Business Critical SKU 64 vCores)"
 
                     ]
                 }
