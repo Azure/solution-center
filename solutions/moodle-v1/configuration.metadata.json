@@ -98,7 +98,7 @@
             "title": "Small to Mid-Size",
             "subTitle": "Supporting up to 1,000 concurrent users.",
             "cost": {
-                "value": 975,
+                "value": 970,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
