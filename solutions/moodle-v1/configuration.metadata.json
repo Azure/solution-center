@@ -134,8 +134,8 @@
         },
         {
             "id": "moodle-halarge",
-            "title": "High Available Large Workload",
-            "subTitle": "This Large size deployment will use Gluster, Azure Database for MySQL, redis cache",
+            "title": "HA Large Workload",
+            "subTitle": "This Large size deployment will use Gluster, Azure Database for MySQL, redis cache.",
             "cost": {
                 "value": 3000,
                 "currency": "USD",
