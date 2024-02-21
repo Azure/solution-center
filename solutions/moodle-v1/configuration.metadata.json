@@ -176,7 +176,7 @@
             "title": "Maximum Workload",
             "subTitle": "This maximal deployment will use Gluster, Azure Database for MySQL, redis cache, elastic search, and pretty large storage sizes.",
             "cost": {
-                "value": 4000,
+                "value": 5000,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
