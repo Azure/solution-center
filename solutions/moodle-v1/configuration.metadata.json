@@ -134,10 +134,10 @@
         },
         {
             "id": "moodle-halarge",
-            "title": "Maximum Workload",
-            "subTitle": "This maximal deployment will use Gluster, Azure Database for MySQL, redis cache, elastic search, and pretty large storage sizes.",
+            "title": "High Available Large Workload",
+            "subTitle": "This Large size deployment will use Gluster, Azure Database for MySQL, redis cache",
             "cost": {
-                "value": 4000,
+                "value": 3000,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
