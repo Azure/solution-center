@@ -75,21 +75,19 @@
                     "pivotName": "vmssCompute",
                     "content": [
                         "Small autoscale web front VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) Scales to a max of 10 nodes",
-                        "256 GiB SSD per node",
-                        "Requires only 2 VM cores",
                         "Works with free trial subscriptions"
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "64 GiB Premium Files LSR"
+                        "32 GiB Premium Files LSR "
                     ]
                 },
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "2 V-Core 125GB MySQL Database"
+                        "MySQL Flexible Server (Burstable SKU 2 vCores)"
                     ]
                 }
 
@@ -109,29 +107,65 @@
                 "score": 2,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-s2m.json",
+            "templateFileName": "azuredeploy-small2mid-noha.json",
             "uiDefinitionFileName": "uiformdefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Standard_DS2_V2 VM which can scale to 10 nodes VMSS.", 
-                        "256 GiB SSD per node",
-                        "Standard_DS1_v2 controller VM"
+                        "Standard_D8ds_V4 VM which can scale to 10 nodes VMSS."
 
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "512 GiB Premium Files LSR "
+                        "128 GiB Premium Files LSR "
                     ]
                 },
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Gen 5 8 vCore 128 GB Azure PostgresSQL",
-                        "Backup enabled"
+                        "MySQL Flexible Server(General Purpose SKU 8 vCores)"
+                    ]
+                }
+
+            ]
+        },
+        {
+            "id": "moodle-halarge",
+            "title": "Maximum Workload",
+            "subTitle": "This Large size deployment will use Gluster, Azure Database for MySQL, redis cache.",
+            "cost": {
+                "value": 3000,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 3,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-large-ha.json",
+            "uiDefinitionFileName": "uiformdefinition.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmssCompute",
+                    "content": [
+                        "Autoscaling Standard_DS3_v2 VMSS Scales max 20 nodes." 
+
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "1024 GiB Premium Files LSR"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Azure Database for MySQL Flexible Server (General Purpose SKU 16 vCores)"
                     ]
                 }
 
@@ -151,16 +185,13 @@
                 "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-maximum.json",
+            "templateFileName": "azuredeploy-maximal.json",
             "uiDefinitionFileName": "uiformdefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Autoscaling Standard_DS2_v2 VMSS.", 
-                        "1024 GiB Local SSD per node",
-                        "Standard_DS1_v2 Controller VM."
-
+                        "Autoscaling Standard_DS3_v2 VMSS.", 
                     ]
                 },
                 {
@@ -173,8 +204,10 @@
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
-                        "Backup enabled"
+                        "Azure Database for MySQL (Business Critical SKU 64 vCores)",
+                        "Redis Cache",
+                        "Elastic Search"
+
                     ]
                 }
 
