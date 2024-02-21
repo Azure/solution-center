@@ -74,9 +74,7 @@
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Small autoscale web front VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) Scales to a max of 10 nodes",
-                        "256 GiB SSD per node",
-                        "Requires only 2 VM cores",
+                        "VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) ",
                         "Works with free trial subscriptions"
                     ]
                 },
@@ -89,7 +87,7 @@
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "2 V-Core 125GB MySQL Database"
+                        "MySQL Flexible Server (Burstable SKU 2 vCores)"
                     ]
                 }
 
@@ -109,7 +107,7 @@
                 "score": 2,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-s2m.json",
+            "templateFileName": "azuredeploy-small2mid-noha.json",
             "uiDefinitionFileName": "uiformdefinition.json",
             "pivotValues": [
                 {
@@ -138,7 +136,7 @@
             ]
         },
         {
-            "id": "moodle-maximum",
+            "id": "moodle-halarge",
             "title": "Maximum Workload",
             "subTitle": "This maximal deployment will use Gluster, Azure Database for MySQL, redis cache, elastic search, and pretty large storage sizes.",
             "cost": {
@@ -151,7 +149,7 @@
                 "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-maximum.json",
+            "templateFileName": "azuredeploy-large-ha.json",
             "uiDefinitionFileName": "uiformdefinition.json",
             "pivotValues": [
                 {
@@ -174,6 +172,49 @@
                     "pivotName": "databasePivot",
                     "content": [
                         "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
+                        "Backup enabled"
+                    ]
+                }
+
+            ]
+        },
+        {
+            "id": "moodle-maximum",
+            "title": "Maximum Workload",
+            "subTitle": "This maximal deployment will use Gluster, Azure Database for MySQL, redis cache, elastic search, and pretty large storage sizes.",
+            "cost": {
+                "value": 4000,
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "score": 3,
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "templateFileName": "azuredeploy-maximal.json",
+            "uiDefinitionFileName": "uiformdefinition.json",
+            "pivotValues": [
+                {
+                    "pivotName": "vmssCompute",
+                    "content": [
+                        "Autoscaling Standard_DS2_v2 VMSS.", 
+                        "1024 GiB Local SSD per node",
+                        "Standard_DS1_v2 Controller VM."
+
+                    ]
+                },
+                {
+                    "pivotName": "storagePivot",
+                    "content": [
+                        "1024 GiB Premium Files LSR",
+                        "Estimated with 100,000 storage transactions per VM"
+                    ]
+                },
+                {
+                    "pivotName": "databasePivot",
+                    "content": [
+                        "Gen 5 64 vCore 512GB Azure PostgresSQL Database",
                         "Backup enabled"
                     ]
                 }
