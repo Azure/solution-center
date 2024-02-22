@@ -165,7 +165,8 @@
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Azure Database for MySQL Flexible Server (General Purpose SKU 16 vCores)"
+                        "Azure Database for MySQL Flexible Server (General Purpose SKU 16 vCores)",
+                        "Redis Cache"
                     ]
                 }
 
@@ -191,7 +192,7 @@
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Autoscaling Standard_DS3_v2 VMSS Scales max 20 nodes." 
+                        "Autoscaling Standard_DS3_v2 VMSS." 
 
                     ]
                 },
@@ -204,7 +205,9 @@
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Azure Database for MySQL Flexible Server (General Purpose SKU 16 vCores)"
+                        "Azure Database for MySQL Flexible Server  (Business Critical SKU 64 vCores)",
+                        "Redis Cache",
+                        "Elastic Search"
                     ]
                 }
 
