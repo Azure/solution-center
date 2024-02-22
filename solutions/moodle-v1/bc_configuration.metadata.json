@@ -134,10 +134,10 @@
         },
         {
             "id": "moodle-halarge",
-            "title": "Maximum Workload",
+            "title": "HA Workload",
             "subTitle": "This Large size deployment will use Gluster, Azure Database for MySQL, redis cache.",
             "cost": {
-                "value": 3000,
+                "value": 4000,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
@@ -165,7 +165,8 @@
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Azure Database for MySQL Flexible Server (General Purpose SKU 16 vCores)"
+                        "Azure Database for MySQL Flexible Server (General Purpose SKU 16 vCores)",
+                        "Redis Cache"
                     ]
                 }
 
@@ -174,9 +175,9 @@
         {
             "id": "moodle-maximum",
             "title": "Maximum Workload",
-            "subTitle": "This maximal deployment will use Gluster, Azure Database for MySQL, redis cache, elastic search, and pretty large storage sizes.",
+            "subTitle": "This Large size deployment will use Gluster, Azure Database for MySQL, redis cache.",
             "cost": {
-                "value": 5000,
+                "value": 4000,
                 "currency": "USD",
                 "type": "absolute",
                 "cadence": "monthly"
@@ -185,29 +186,28 @@
                 "score": 3,
                 "tooltip": "The expected maintenance overhead associated with managing this configuration."
             },
-            "templateFileName": "azuredeploy-maximal.json",
+            "templateFileName": "azuredeploy-large-ha.json",
             "uiDefinitionFileName": "uiformdefinition.json",
             "pivotValues": [
                 {
                     "pivotName": "vmssCompute",
                     "content": [
-                        "Autoscaling Standard_DS3_v2 VMSS.", 
+                        "Autoscaling Standard_DS3_v2 VMSS." 
+
                     ]
                 },
                 {
                     "pivotName": "storagePivot",
                     "content": [
-                        "1024 GiB Premium Files LSR",
-                        "Estimated with 100,000 storage transactions per VM"
+                        "1024 GiB Premium Files LSR"
                     ]
                 },
                 {
                     "pivotName": "databasePivot",
                     "content": [
-                        "Azure Database for MySQL (Business Critical SKU 64 vCores)",
+                        "Azure Database for MySQL Flexible Server  (Business Critical SKU 64 vCores)",
                         "Redis Cache",
                         "Elastic Search"
-
                     ]
                 }
 
