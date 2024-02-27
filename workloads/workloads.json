@@ -31,5 +31,96 @@
             "How to deploy LAMP stack on Azure VM",
             "LAMP stack using Azure VM"
         ]
+    },
+    {
+        "title": "Scalable WordPress using Azure VM",
+        "id": "wordpress-vm",
+        "description": "WordPress is a popular content management system (CMS) that allows users to create and manage websites and blogs. It provides a user-friendly interface, a wide range of themes and plugins, and powerful customization options. With WordPress, you can easily publish and update content, manage user roles and permissions, and optimize your website for search engines.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/wordpress-vm",
+        "tags": [
+            "Wordpress",
+            "Azure",
+            "VM",
+            "Linux",
+            "Agw",
+            "Bicep",
+            "PHP",
+            "JavaScript"
+        ],
+        "deploymentOptions": [
+            "Arm Template",
+            "Terraform Script",
+            "Bicep Script",
+            "CLI Script",
+            "OneClick",
+            "LearnMode"
+        ],
+        "products": [
+            "Azure VM"
+        ],
+        "sampleQueries": [
+            "How to deploy Wordpress on Azure VM",
+            "Wordpress using Azure VM",
+            "Scalable Wordpress using Azure VM"
+        ]
+    },
+    {
+        "title": "VM Starter Kit Linux",
+        "id": "vm-starter-kit-linux",
+        "description": "This solution provides a starter kit for deploying a Linux virtual machine (VM) in Azure. It includes a set of ARM templates and scripts that can be used to deploy a VM with a variety of configurations, including different sizes, operating systems, and storage options.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/vm-starter-kit-linux",
+        "tags": [
+            "VM",
+            "Azure",
+            "Linux",
+            "ARM",
+            "Bastion"
+        ],
+        "deploymentOptions": [
+            "Arm Template",
+            "Terraform Script",
+            "Bicep Script",
+            "CLI Script",
+            "OneClick",
+            "LearnMode"
+        ],
+        "products": [
+            "Azure VM"
+        ],
+        "sampleQueries": [
+            "How to deploy a Linux VM in Azure",
+            "VM Starter Kit for Linux"
+        ]
+    },
+    {
+        "title": "VM Starter Kit Windows",
+        "id": "vm-starter-kit-windows",
+        "description": "This solution provides a starter kit for deploying a Windows virtual machine (VM) in Azure. It includes a set of ARM templates and scripts that can be used to deploy a VM with a variety of configurations, including different sizes, operating systems, and storage options.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/vm-starter-kit-windowa",
+        "tags": [
+            "VM",
+            "Azure",
+            "Windows",
+            "ARM",
+            "Bastion"
+        ],
+        "deploymentOptions": [
+            "Arm Template",
+            "Terraform Script",
+            "Bicep Script",
+            "CLI Script",
+            "OneClick",
+            "LearnMode"
+        ],
+        "products": [
+            "Azure VM"
+        ],
+        "sampleQueries": [
+            "How to deploy a Windows VM in Azure",
+            "VM Starter Kit for Windows"
+        ]
     }
 ]
