@@ -122,5 +122,85 @@
             "How to deploy a Windows VM in Azure",
             "VM Starter Kit for Windows"
         ]
+    },
+    {
+        "title": "LAMP Stack using Azure AppService",
+        "id": "lamp-stack-as",
+        "description": "LAMP is an acronym for Linux, Apache, MySQL, and PHP. It is a popular open-source web platform commonly used to run dynamic web sites and servers. Azure App Service is a fully managed platform for building, deploying, and scaling web apps. You can host web apps, mobile app backends, and RESTful APIs in the programming language of your choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Azure DevOps, or any Git repo. With Azure App Service, you can easily run and scale LAMP applications in the cloud.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/lamp-stack-as",
+        "tags": [
+            "LAMP",
+            "Azure",
+            "AppService",
+            "Linux",
+            "Apache",
+            "MySQL",
+            "PHP",
+            "Python",
+            "Perl"
+        ],
+        "deploymentOptions": [
+            "Bicep Script",
+            "CLI Script"
+        ],
+        "products": [
+            "Azure AppService"
+        ],
+        "sampleQueries": [
+            "How to deploy LAMP stack on Azure AppService",
+            "LAMP stack using Azure AppService"
+        ]
+    },
+    {
+        "title": "WordPress using Azure AppService",
+        "id": "wordpress-as",
+        "description": "WordPress is a popular open-source content management system (CMS) that allows users to create and manage websites with ease. It is based on PHP and MySQL and can be used to create a wide variety of websites, from personal blogs to large corporate sites. Azure App Service is a fully managed platform for building, deploying, and scaling web apps. With Azure App Service, you can easily host and scale WordPress applications in the cloud. Azure App Service provides a highly available and scalable environment for running WordPress, with features such as automatic backups, custom domains, and SSL support. Additionally, Azure App Service integrates with other Azure services, such as Azure Database for MySQL, to provide a complete solution for hosting WordPress applications in the cloud.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/wordpress-as",
+        "tags": [
+            "Wordpress",
+            "Azure",
+            "AppService",
+            "Linux",
+            "Agw",
+            "Bicep",
+            "PHP",
+            "JavaScript"
+        ],
+        "deploymentOptions": [
+            "CLI Script"
+        ],
+        "products": [
+            "Azure AppService"
+        ],
+        "sampleQueries": [
+            "How to deploy Wordpress on Azure AppService",
+            "Wordpress using Azure AppService",
+            "Scalable Wordpress using Azure AppService"
+        ]
+    }, 
+    {
+        "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+        "id": "azure-search-openai-demo",
+        "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
+        "tags": [
+            "OpenAI",
+            "Azure",
+            "AI Search",
+            "ChatGPT",
+            "Enterprise"
+        ],
+        "deploymentOptions": [
+            "Bicep Script"
+        ],
+        "products": [
+            "Azure OpenAI and AI Search"
+        ],
+        "sampleQueries": [
+            "How to use Azure AI Search to power ChatGPT-style and Q&A experiences"
+        ]
     }
 ]
