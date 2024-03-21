@@ -17,12 +17,12 @@
             "Perl"
         ],
         "deploymentOptions": [
-            "Arm Template",
-            "Terraform Script",
-            "Bicep Script",
-            "CLI Script",
-            "OneClick",
-            "LearnMode"
+            "ARM",
+            "Terraform",
+            "Bicep",
+            "CLI",
+            "One Click",
+            "Learn Mode"
         ],
         "products": [
             "Azure VM"
@@ -49,12 +49,12 @@
             "JavaScript"
         ],
         "deploymentOptions": [
-            "Arm Template",
-            "Terraform Script",
-            "Bicep Script",
-            "CLI Script",
-            "OneClick",
-            "LearnMode"
+            "ARM",
+            "Terraform",
+            "Bicep",
+            "CLI",
+            "One Click",
+            "Learn Mode"
         ],
         "products": [
             "Azure VM"
@@ -79,12 +79,12 @@
             "Bastion"
         ],
         "deploymentOptions": [
-            "Arm Template",
-            "Terraform Script",
-            "Bicep Script",
-            "CLI Script",
-            "OneClick",
-            "LearnMode"
+            "ARM",
+            "Terraform",
+            "Bicep",
+            "CLI",
+            "One Click",
+            "Learn Mode"
         ],
         "products": [
             "Azure VM"
@@ -108,12 +108,12 @@
             "Bastion"
         ],
         "deploymentOptions": [
-            "Arm Template",
-            "Terraform Script",
-            "Bicep Script",
-            "CLI Script",
-            "OneClick",
-            "LearnMode"
+            "ARM",
+            "Terraform",
+            "Bicep",
+            "CLI",
+            "One Click",
+            "Learn Mode"
         ],
         "products": [
             "Azure VM"
@@ -141,8 +141,8 @@
             "Perl"
         ],
         "deploymentOptions": [
-            "Bicep Script",
-            "CLI Script"
+            "Bicep",
+            "CLI"
         ],
         "products": [
             "Azure AppService"
@@ -169,7 +169,7 @@
             "JavaScript"
         ],
         "deploymentOptions": [
-            "CLI Script"
+            "CLI"
         ],
         "products": [
             "Azure AppService"
@@ -194,7 +194,7 @@
             "Enterprise"
         ],
         "deploymentOptions": [
-            "Bicep Script"
+            "Bicep"
         ],
         "products": [
             "Azure OpenAI and AI Search"
