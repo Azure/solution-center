@@ -194,7 +194,7 @@
             "Enterprise"
         ],
         "deploymentOptions": [
-            "Bicep"
+            "AzD"
         ],
         "products": [
             "Azure OpenAI and AI Search"
