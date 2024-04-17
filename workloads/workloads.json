@@ -62,60 +62,6 @@
         ]
     },
     {
-        "title": "VM Starter Kit Linux",
-        "id": "vm-starter-kit-linux",
-        "description": "This solution provides a starter kit for deploying a Linux virtual machine (VM) in Azure. It includes a set of ARM templates and scripts that can be used to deploy a VM with a variety of configurations, including different sizes, operating systems, and storage options.",
-        "author": "Microsoft",
-        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/vm-starter-kit-linux",
-        "tags": [
-            "VM",
-            "Azure",
-            "Linux",
-            "ARM",
-            "Bastion"
-        ],
-        "deploymentOptions": [
-            "ARM",
-            "Terraform",
-            "Bicep",
-            "CLI"
-        ],
-        "products": [
-            "Azure VM"
-        ],
-        "sampleQueries": [
-            "How to deploy a Linux VM in Azure",
-            "VM Starter Kit for Linux"
-        ]
-    },
-    {
-        "title": "VM Starter Kit Windows",
-        "id": "vm-starter-kit-windows",
-        "description": "This solution provides a starter kit for deploying a Windows virtual machine (VM) in Azure. It includes a set of ARM templates and scripts that can be used to deploy a VM with a variety of configurations, including different sizes, operating systems, and storage options.",
-        "author": "Microsoft",
-        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/vm-starter-kit-windowa",
-        "tags": [
-            "VM",
-            "Azure",
-            "Windows",
-            "ARM",
-            "Bastion"
-        ],
-        "deploymentOptions": [
-            "ARM",
-            "Terraform",
-            "Bicep",
-            "CLI"
-        ],
-        "products": [
-            "Azure VM"
-        ],
-        "sampleQueries": [
-            "How to deploy a Windows VM in Azure",
-            "VM Starter Kit for Windows"
-        ]
-    },
-    {
         "title": "LAMP Stack using Azure AppService",
         "id": "lamp-stack-as",
         "description": "LAMP is an acronym for Linux, Apache, MySQL, and PHP. It is a popular open-source web platform commonly used to run dynamic web sites and servers. Azure App Service is a fully managed platform for building, deploying, and scaling web apps. You can host web apps, mobile app backends, and RESTful APIs in the programming language of your choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Azure DevOps, or any Git repo. With Azure App Service, you can easily run and scale LAMP applications in the cloud.",
@@ -171,7 +117,7 @@
             "Wordpress using Azure AppService",
             "Scalable Wordpress using Azure AppService"
         ]
-    }, 
+    },
     {
         "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
         "id": "azure-search-openai-demo",
@@ -194,5 +140,1544 @@
         "sampleQueries": [
             "How to use Azure AI Search to power ChatGPT-style and Q&A experiences"
         ]
+    },
+    {
+        "title": "Starter - Bicep",
+        "description": "A starter template with Bicep as infrastructure provider",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/azd-starter-bicep",
+        "tags": [
+            "bicep",
+            "msft"
+        ],
+        "id": "6772728c-49cd-48c5-99fb-2f1435b2a62f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Starter - Terraform",
+        "description": "A starter template with Terraform as infrastructure provider",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/azd-starter-terraform",
+        "tags": [
+            "terraform",
+            "msft"
+        ],
+        "id": "550708e7-b74e-448d-9de8-b60eb57e8208",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "WordPress with Azure Container Apps",
+        "description": "A blueprint to easily and quickly create and deploy your first scalable and secure WordPress site to Azure, leveraging Azure Container Apps with Azure Database for MariaDb.",
+        "author": "Konstantinos Pantos",
+        "source": "https://github.com/Azure-Samples/apptemplate-wordpress-on-ACA",
+        "tags": [
+            "php",
+            "javascript",
+            "aca",
+            "agw",
+            "rediscache",
+            "monitor",
+            "keyvault",
+            "bicep",
+            "msft"
+        ],
+        "id": "bdc334e1-d0da-4401-b3a0-ac1b6a03f2d9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Web App with C# API and MongoDB",
+        "description": "A blueprint for getting a React web app with a C# API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-csharp-cosmos-sql",
+        "tags": [
+            "dotnetCsharp",
+            "typescript",
+            "javascript",
+            "appservice",
+            "cosmosdb",
+            "mongodb",
+            "monitor",
+            "keyvault",
+            "reactjs",
+            "bicep",
+            "msft"
+        ],
+        "id": "a8b10a54-9384-4fed-b59b-c71ed95c131c",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Web App with Node.js API and MongoDB",
+        "description": "A blueprint for getting a React web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting web apps and APIs without worrying about the infrastructure.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo",
+        "tags": [
+            "bicep",
+            "nodejs",
+            "typescript",
+            "javascript",
+            "appservice",
+            "cosmosdb",
+            "monitor",
+            "keyvault",
+            "mongodb",
+            "reactjs",
+            "msft"
+        ],
+        "id": "12d2cfbe-830b-4b06-aa07-8ce09c372d77",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Static React Web App + Functions with Node.js API and MongoDB",
+        "description": "A blueprint for getting a React web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting static web apps with serverless logic and functionality.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo-swa-func",
+        "tags": [
+            "bicep",
+            "swa",
+            "functions",
+            "nodejs",
+            "typescript",
+            "javascript",
+            "cosmosdb",
+            "monitor",
+            "keyvault",
+            "mongodb",
+            "reactjs",
+            "appservice",
+            "msft"
+        ],
+        "id": "efbd5a95-560b-409d-8b5c-407d5f15d0e9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Static React Web App + Functions with Python API and MongoDB",
+        "description": "A blueprint for getting a React.js web app with Python (FastAPI) API and a MongoDB API in Cosmos database onto Azure. The frontend, currently a ToDo application, is designed as a placeholder that can easily be removed and replaced with your own frontend code. This architecture is for hosting static web apps with serverless logic and functionality.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-python-mongo-swa-func",
+        "tags": [
+            "bicep",
+            "swa",
+            "functions",
+            "python",
+            "typescript",
+            "javascript",
+            "cosmosdb",
+            "monitor",
+            "keyvault",
+            "mongodb",
+            "reactjs",
+            "appservice",
+            "fastapi",
+            "msft"
+        ],
+        "id": "9df1ed02-2102-415e-bf5d-dec8dd6787cb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Web App with Python API and MongoDB - Terraform",
+        "description": "A blueprint for getting a React.js web app with Python (FastAPI) API and a MongoDB API in Cosmos database onto Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Terraform) to get up and running quickly. This architecture is for hosting web apps and APIs without worrying about the infrastructure.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-python-mongo-terraform",
+        "tags": [
+            "python",
+            "typescript",
+            "javascript",
+            "cosmosdb",
+            "mongodb",
+            "monitor",
+            "keyvault",
+            "reactjs",
+            "terraform",
+            "appservice",
+            "fastapi",
+            "msft"
+        ],
+        "id": "616b6d54-c34b-44dd-b2d3-6557daee156e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Web App with Node.js API and MongoDB - Terraform",
+        "description": "A blueprint for getting a React web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Terraform) to get up and running quickly. This architecture is for hosting web apps and APIs without worrying about the infrastructure.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo-terraform",
+        "tags": [
+            "nodejs",
+            "typescript",
+            "javascript",
+            "cosmosdb",
+            "mongodb",
+            "monitor",
+            "keyvault",
+            "reactjs",
+            "terraform",
+            "appservice",
+            "msft"
+        ],
+        "id": "a1e493de-1f5b-4cc1-b9e1-18b07f073abe",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Web App with Python API and MongoDB",
+        "description": "A blueprint for getting a React.js web app with Python (FastAPI) API and a MongoDB API in Cosmos database onto Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting web apps and APIs without worrying about the infrastructure.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-python-mongo",
+        "tags": [
+            "bicep",
+            "python",
+            "typescript",
+            "javascript",
+            "appservice",
+            "cosmosdb",
+            "monitor",
+            "keyvault",
+            "mongodb",
+            "reactjs",
+            "fastapi",
+            "msft"
+        ],
+        "id": "07b915d6-29cc-45ee-a973-c338de02310f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Containerized React Web App with Node.js API and MongoDB",
+        "description": "A blueprint for getting a React web app with a Node.js API and a MongoDB database onto Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for running containerized apps or microservices on a serverless platform   This architecture is for running containerized microservices without managing the servers.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo-aca",
+        "tags": [
+            "bicep",
+            "nodejs",
+            "typescript",
+            "javascript",
+            "appservice",
+            "cosmosdb",
+            "monitor",
+            "keyvault",
+            "mongodb",
+            "reactjs",
+            "aca",
+            "msft"
+        ],
+        "id": "3bdd6e9a-60f5-4189-9caa-b5859d2c33a4",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Containerized React Web App with Python API and MongoDB",
+        "description": "A blueprint for getting a React.js web app with Python (FastAPI) API and a MongoDB API in Cosmos database onto Azure. The frontend, currently a ToDo application, is designed as a placeholder that can easily be removed and replaced with your own frontend code. This architecture is for running containerized apps or microservices on a serverless platform.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-python-mongo-aca",
+        "tags": [
+            "bicep",
+            "python",
+            "typescript",
+            "javascript",
+            "aca",
+            "cosmosdb",
+            "monitor",
+            "keyvault",
+            "mongodb",
+            "reactjs",
+            "fastapi",
+            "msft"
+        ],
+        "id": "b808d61c-f3af-4fa6-842d-39710b893b81",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Web App with C# API and SQL Database ",
+        "description": "A blueprint for getting a React web app with a C# API and a SQL database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-csharp-sql",
+        "tags": [
+            "bicep",
+            "dotnetCsharp",
+            "typescript",
+            "javascript",
+            "appservice",
+            "azuresql",
+            "monitor",
+            "keyvault",
+            "mongodb",
+            "reactjs",
+            "msft"
+        ],
+        "id": "1a0d0c97-261a-4bce-a699-f72b83e5bcea",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Web App with Java API and MongoDB ",
+        "description": "A blueprint for getting a React.js web app with a Java API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting web apps and APIs without worrying about the infrastructure.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-java-mongo",
+        "tags": [
+            "bicep",
+            "java",
+            "typescript",
+            "appservice",
+            "cosmosdb",
+            "keyvault",
+            "monitor",
+            "mongodb",
+            "reactjs",
+            "msft"
+        ],
+        "id": "c1af6086-4f34-4350-aea5-81e103d7e3eb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Containerized React Web App with Java API and MongoDB",
+        "description": "A blueprint for getting a React web app with a Java API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for running containerized apps or microservices on a serverless platform.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-java-mongo-aca",
+        "tags": [
+            "bicep",
+            "java",
+            "typescript",
+            "appservice",
+            "cosmosdb",
+            "keyvault",
+            "monitor",
+            "mongodb",
+            "reactjs",
+            "msft"
+        ],
+        "id": "f5d0f91a-0ebc-4fe4-86cd-6414f810d54d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Static React Web App + Functions with C# API and SQL Database",
+        "description": "A blueprint for getting a React web app with a C# API and a SQL database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting static web apps with serverless logic and functionality.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-csharp-sql-swa-func",
+        "tags": [
+            "bicep",
+            "swa",
+            "functions",
+            "dotnetCsharp",
+            "typescript",
+            "javascript",
+            "monitor",
+            "keyvault",
+            "reactjs",
+            "appservice",
+            "azuresql",
+            "msft"
+        ],
+        "id": "262a5d45-4d80-4aaa-8fba-f27d2876dcdb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Kubernetes React Web App with Node.js API and MongoDB",
+        "description": "A blueprint for getting a React.js web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for running Kubernetes clusters without setting up the control plane.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo-aks",
+        "tags": [
+            "bicep",
+            "nodejs",
+            "typescript",
+            "javascript",
+            "mongodb",
+            "monitor",
+            "keyvault",
+            "reactjs",
+            "appservice",
+            "cosmosdb",
+            "aks",
+            "msft"
+        ],
+        "id": "93b22870-f071-4104-ada9-ba45e71329a1",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Static React Web App with Java API and PostgreSQL",
+        "description": "A blueprint for getting a React web app with a Java API and a Azure Database for PostgreSQL - Flexible Server on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting web apps and APIs without worrying about the infrastructure.",
+        "author": "Yi Liu",
+        "source": "https://github.com/Azure-Samples/ASA-Samples-Web-Application",
+        "tags": [
+            "bicep",
+            "java",
+            "nodejs",
+            "spring",
+            "webapps",
+            "azurespringapps",
+            "azuredb-postgreSQL",
+            "msft"
+        ],
+        "id": "757881c8-74ad-4f62-9633-7af22a2be3aa",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "ChatGPT Plugin using Python (FastAPI)",
+        "description": "This is a quickstart for creating a ChatGPT Plugin using Python and Azure.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/openai-plugin-fastapi",
+        "tags": [
+            "bicep",
+            "python",
+            "aca",
+            "cosmosdb",
+            "monitor",
+            "fastapi",
+            "ai",
+            "msft"
+        ],
+        "id": "e64314dd-aa61-4175-959d-ffa624b0423d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "ChatGPT + Enterprise Data with Azure OpenAI and Cognitive Search",
+        "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure Cognitive Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/azure-search-openai-demo-csharp",
+        "tags": [
+            "bicep",
+            "dotnetCsharp",
+            "aks",
+            "kubernetes",
+            "aca",
+            "cognitivesearch",
+            "openai",
+            "chatgpt",
+            "rediscache",
+            "ai",
+            "msft"
+        ],
+        "id": "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Simple Chat Application using Azure OpenAI",
+        "description": "A sample chat app that uses Python and the Flask framework to stream ChatGPT completions as server-sent events to a simple frontend.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/chatgpt-quickstart",
+        "tags": [
+            "bicep",
+            "python",
+            "openai",
+            "chatgpt",
+            "ai",
+            "flask",
+            "aca",
+            "msft"
+        ],
+        "id": "3f85f8e5-619f-495b-bf49-c5bd6edaa350",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Spring ChatGPT Application using Azure OpenAI on Azure Spring Apps",
+        "description": "A sample that uses Java Spring framework to build ChatGPT-style application running in Azure Spring Apps.",
+        "author": "Yi Liu",
+        "source": "https://github.com/Azure-Samples/spring-chatgpt-sample",
+        "tags": [
+            "bicep",
+            "java",
+            "openai",
+            "chatgpt",
+            "ai",
+            "blobstorage",
+            "azurespringapps",
+            "msft"
+        ],
+        "id": "27170e89-7227-4bd0-a593-9a292498366f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Enterprise-Grade Reference Architecture for JavaScript",
+        "description": "A reference architecture and components for building enterprise-grade modern composable frontends (or micro-frontends) and cloud-native applications. It is a collection of best practices, architecture patterns, and functional components that can be used to build and deploy modern JavaScript applications to Azure.",
+        "author": "JavaScript Advocacy Team, Natalia Venditto",
+        "source": "https://github.com/Azure-Samples/contoso-real-estate",
+        "tags": [
+            "bicep",
+            "javascript",
+            "swa",
+            "aca",
+            "keyvault",
+            "blobstorage",
+            "azuredb-postgreSQL",
+            "cosmosdb",
+            "apim",
+            "enterprisepatterns",
+            "msft",
+            "popular"
+        ],
+        "id": "25a3dda0-8840-44dc-b850-4f2468991ecb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Python (Django) Web App with PostgreSQL in VNet",
+        "description": "A restaurants review web app that uses whitenoise for static assets and PostgreSQL for the database. Ready for deployment on App Service with a PostgreSQL Flexible Server inside a VNet.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/msdocs-django-postgresql-sample-app",
+        "tags": [
+            "python",
+            "django",
+            "webapps",
+            "azuredb-postgreSQL",
+            "appservice",
+            "vnets",
+            "msft",
+            "popular"
+        ],
+        "id": "aeb56402-db75-42d0-8d21-839d9d1e8158",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Python (Django) Web App with PostgreSQL via Azure Container Apps",
+        "description": "A space tourism web app that uses PostgreSQL for the database. The web app is containerize and deploy with Azure Container Apps with secrets managed by Azure Key Vault",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/azure-django-postgres-aca",
+        "tags": [
+            "python",
+            "django",
+            "aca",
+            "azuredb-postgreSQL",
+            "bicep",
+            "msft"
+        ],
+        "id": "1eab6419-b143-41d3-9b86-c8aeb9158fda",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Python (Flask) Web App with PostgreSQL in VNet",
+        "description": "A restaurants review web app with a PostgreSQL database, written in the Python Flask framework plus SQL-Alchemy plus Alembic for database interactions. Ready for deployment on App Service with a PostgreSQL Flexible Server inside a VNet.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/msdocs-flask-postgresql-sample-app",
+        "tags": [
+            "python",
+            "webapps",
+            "azuredb-postgreSQL",
+            "appservice",
+            "vnets",
+            "flask",
+            "msft",
+            "popular"
+        ],
+        "id": "6f229853-0a89-4b5c-8e7b-6fcca519147b",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr PubSub C# ACA ServiceBus",
+        "description": "A complete microservice application featuring Dapr Pub-Sub, deployed to Azure Container Apps and Azure Service Bus Topics with dead-lettering support.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/pubsub-dapr-csharp-servicebus",
+        "tags": [
+            "bicep",
+            "dotnetCsharp",
+            "aca",
+            "dapr",
+            "servicebus",
+            "msft"
+        ],
+        "id": "fc959a8e-de77-48a5-b01c-d3effdb5265d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr PubSub Python ACA ServiceBus",
+        "description": "A complete microservice application featuring Dapr Pub-Sub, deployed to Azure Container Apps and Azure Service Bus Topics with dead-lettering support.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/pubsub-dapr-python-servicebus",
+        "tags": [
+            "bicep",
+            "python",
+            "aca",
+            "dapr",
+            "servicebus",
+            "msft"
+        ],
+        "id": "3689e30c-5ea3-4c69-9a3c-e34ee217a770",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr PubSub Node.js ACA ServiceBus",
+        "description": "A complete microservice application featuring Dapr Pub-Sub, deployed to Azure Container Apps and Azure Service Bus Topics with dead-lettering support.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/pubsub-dapr-nodejs-servicebus",
+        "tags": [
+            "bicep",
+            "javascript",
+            "nodejs",
+            "aca",
+            "dapr",
+            "servicebus",
+            "msft"
+        ],
+        "id": "17c7f10c-45ff-4f1b-bba8-9e98cf1a8d54",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr Bindings Cron C# ACA PostgreSQL",
+        "description": "Create microservice to demonstrate Dapr's bindings API to work with external systems as inputs and outputs. The service listens to input binding events from a system CRON and then outputs the contents of local data to a PostgreSQL output binding.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/bindings-dapr-csharp-cron-postgres",
+        "tags": [
+            "dapr",
+            "dotnetCsharp",
+            "azuredb-postgreSQL",
+            "aca",
+            "msft"
+        ],
+        "id": "a3c9e1b9-b2fc-4957-a5e2-bd3a4fd9f601",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr Bindings Cron Python ACA PostgreSQL",
+        "description": "Create a microservice app to demonstrate Dapr's bindings API to work with external systems as inputs and outputs. The service listens to input binding events from a system CRON and then outputs the contents of local data to a postgreSQL output binding.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/bindings-dapr-python-cron-postgres",
+        "tags": [
+            "dapr",
+            "python",
+            "azuredb-postgreSQL",
+            "aca",
+            "msft"
+        ],
+        "id": "e2515292-52ac-4d22-b87b-d8c3fd9219fa",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr Bindings Cron Node.js ACA PostgreSQL",
+        "description": "Create a microservice app to demonstrate Dapr's bindings API to work with external systems as inputs and outputs. The service listens to input binding events from a system CRON and then outputs the contents of local data to a postgreSQL output binding.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/bindings-dapr-nodejs-cron-postgres",
+        "tags": [
+            "dapr",
+            "nodejs",
+            "azuredb-postgreSQL",
+            "javascript",
+            "aca",
+            "msft"
+        ],
+        "id": "21a01a78-5c09-4fae-b42c-5b5793246560",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr Service Invoke Node.js ACA",
+        "description": "Create two microservices that communicate using Dapr's Service Invocation API. The Service Invocation API enables your applications to communicate reliably and securely by leveraging auto-mTLS and built-in retries.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/svc-invoke-dapr-nodejs",
+        "tags": [
+            "dapr",
+            "nodejs",
+            "aca",
+            "msft"
+        ],
+        "id": "a98c5bd6-a080-44cf-a10c-5fcbf6588f30",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr Service Invoke Python ACA",
+        "description": "Create two microservices that communicate using Dapr's Service Invocation API. The Service Invocation API enables your applications to communicate reliably and securely by leveraging auto-mTLS and built-in retries.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/svc-invoke-dapr-python",
+        "tags": [
+            "dapr",
+            "python",
+            "aca",
+            "msft"
+        ],
+        "id": "46306dfe-017e-4d99-9240-e48309ba3726",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr Service Invoke C# ACA",
+        "description": "Create two microservices that communicate using Dapr's Service Invocation API. The Service Invocation API enables your applications to communicate reliably and securely by leveraging auto-mTLS and built-in retries.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/svc-invoke-dapr-csharp",
+        "tags": [
+            "dapr",
+            "dotnetCsharp",
+            "aca",
+            "msft"
+        ],
+        "id": "b9afbe11-5351-4a6d-bd8a-77cf44a24e4f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
+        "description": "Demonstration of how to leverage Azure OpenAI and Cognitive Search to enable Information Search and Discovery over organizational content.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
+        "tags": [
+            "openai",
+            "chatgpt",
+            "cognitivesearch",
+            "python",
+            "typescript",
+            "bicep",
+            "nodejs",
+            "ai",
+            "msft",
+            "popular"
+        ],
+        "id": "eebc5dce-43e7-4fc3-8b91-13573c8076df",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "FastAPI on Azure Functions",
+        "description": "A simple FastAPI app deployed to Azure Functions. Can also be run and debugged locally with the Azure Functions Core Tool emulator.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/fastapi-on-azure-functions",
+        "tags": [
+            "python",
+            "fastapi",
+            "functions",
+            "msft"
+        ],
+        "id": "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Spring PetClinic - Java Spring MySQL",
+        "description": "Spring PetClinic application using a set of Azure solutions. Azure App Service for app hosting, Azure Database for MySQL for storage, Azure Key Vault for securing secret and Azure Application Insights for monitoring and logging.",
+        "author": "Miller Wang",
+        "source": "https://github.com/Azure-Samples/spring-petclinic-java-mysql",
+        "tags": [
+            "java",
+            "appservice",
+            "azuresql",
+            "monitor",
+            "keyvault",
+            "appinsights",
+            "bicep",
+            "spring",
+            "thymeleaf",
+            "msft",
+            "popular"
+        ],
+        "id": "a10a1a26-6f9a-4ca8-8b9b-e6a99a641d08",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Event Driven Java Application with Azure Service Bus on Azure Spring Apps",
+        "description": "A complete event-driven application that includes everything you need to build, deploy, and monitor an Azure solution. ",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/ASA-Samples-Event-Driven-Application",
+        "tags": [
+            "java",
+            "servicebus",
+            "monitor",
+            "keyvault",
+            "azurespringapps",
+            "bicep",
+            "spring",
+            "msft"
+        ],
+        "id": "e18d18a8-e26f-4be3-b1fb-cee3acd730ed",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "SAP Cloud SDK on Azure App Service Quickstart (TypeScript)",
+        "description": "This repos serves as quick-start project showcasing SAP Cloud SDK for JavaScript OData consumption running on Azure App Services. Its primary purpose is to set you up for success for your SAP extension project on Azure and reduce the lead time to your first successful deployment as much as possible with developer friendly commands.",
+        "author": "Martin Pankraz, Christian Lechner",
+        "source": "https://github.com/Azure-Samples/app-service-javascript-sap-cloud-sdk-quickstart",
+        "tags": [
+            "typescript",
+            "nodejs",
+            "bicep",
+            "webapps",
+            "apim",
+            "keyvault",
+            "appinsights",
+            "nestjs",
+            "sap",
+            "sapcloudsdk",
+            "msft"
+        ],
+        "id": "85052c4b-9602-421e-a654-573a6d3b429f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Functions - Text Summarization using AI Cognitive Language Service (C#-Isolated)",
+        "description": "This sample shows how to take text documents as a input via BlobTrigger, does Text Summarization processing using the AI Congnitive Language service, and then outputs to another text document using BlobOutput binding.",
+        "author": "Paul Yuknewicz",
+        "source": "https://github.com/Azure-Samples/function-csharp-ai-textsummarize",
+        "tags": [
+            "functions",
+            "cognitivesearch",
+            "dotnetCsharp",
+            "azureai",
+            "ai",
+            "msft"
+        ],
+        "id": "abdec121-45cb-4e73-a005-d944579a8db0",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Functions - Text Summarization using AI Cognitive Language Service (Python v2 Function)",
+        "description": "This sample shows how to take text documents as a input via BlobTrigger, does Text Summarization processing using the AI Congnitive Language service, and then outputs to another text document using BlobOutput binding.",
+        "author": "Paul Yuknewicz",
+        "source": "https://github.com/Azure-Samples/function-python-ai-textsummarize",
+        "tags": [
+            "functions",
+            "cognitivesearch",
+            "python",
+            "azureai",
+            "ai",
+            "msft"
+        ],
+        "id": "df35a2f8-da36-43b2-92df-aba105170e8c",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Reliable Web App Pattern for .NET",
+        "description": "A multi-region enterprise web app with a 99.9% SLO and a focus on 12-factor apps and the well-architected framework. The sample app creates a concert booking application.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure/reliable-web-app-pattern-dotnet",
+        "tags": [
+            "dotnetCsharp",
+            "bicep",
+            "appservice",
+            "keyvault",
+            "frontdoor",
+            "azuresql",
+            "appinsights",
+            "blobstorage",
+            "webapps",
+            "enterprisepatterns",
+            "msft"
+        ],
+        "id": "33da45cd-d26c-42c1-8b0a-ae4b79847dde",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "React Component Toolkit with ChatGPT and OpenAI ",
+        "description": "A sample demo for building and testing react components and includes a set of unique features including AI component generation and automatic conversion to Azure APIM Widgets",
+        "author": "Jenny Chen",
+        "source": "https://github.com/Azure-Samples/react-component-toolkit-openai-demo",
+        "tags": [
+            "bicep",
+            "openai",
+            "chatgpt",
+            "ai",
+            "apim",
+            "reactjs",
+            "typescript",
+            "javascript",
+            "msft"
+        ],
+        "id": "8d6366f6-78e8-4339-8073-ab55f900ecbd",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Java Spring Apps with Azure OpenAI",
+        "description": "AI Shopping Cart is a sample app template that supercharges your shopping experience with the power of AI. It leverages Azure OpenAI and Azure Spring Apps to build a recommendation engine that is not only scalable, resilient, and secure, but also personalized to your needs.",
+        "author": "Pierre Malarme",
+        "source": "https://github.com/Azure-Samples/app-templates-java-openai-springapps",
+        "tags": [
+            "spring",
+            "openai",
+            "ai",
+            "aca",
+            "azurespringapps",
+            "azuredb-postgreSQL",
+            "monitor",
+            "reactjs",
+            "bicep",
+            "msft"
+        ],
+        "id": "1376d15a-343c-40d6-aaf3-38902d78c5ea",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Java - ChatGPT + Enterprise data with Azure OpenAI and Cognitive Search",
+        "description": "This repo is the java conversion of the well known chatGPT + Enterprise data code sample originally developed in python",
+        "author": "Davide Antelmo",
+        "source": "https://github.com/Azure-Samples/azure-search-openai-demo-java",
+        "tags": [
+            "java",
+            "spring",
+            "openai",
+            "ai",
+            "appservice",
+            "cognitivesearch",
+            "semantickernel",
+            "reactjs",
+            "bicep",
+            "msft"
+        ],
+        "id": "554ba579-08d0-49ac-9c12-01087c0096f6",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "ChatGPT and RAG with Azure OpenAI and Cognitive Search for JavaScript",
+        "description": "A reference sample to build Retrieval Augmented Generation applications using Azure Cognitive Search and Azure OpenAI.",
+        "author": "JavaScript Advocacy Team, Natalia Venditto, Shibani Basava",
+        "source": "https://github.com/Azure-Samples/azure-search-openai-javascript",
+        "tags": [
+            "ai",
+            "bicep",
+            "chatgpt",
+            "cognitivesearch",
+            "javascript",
+            "nodejs",
+            "openai",
+            "typescript",
+            "webcomponents",
+            "microfrontend",
+            "msft"
+        ],
+        "id": "f343a991-c4a1-4edb-bd4f-c0b05aadf26e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Bicep template to bootstrap Azure Deployment Environments",
+        "description": "A template to deploy Azure DevCenter with the minimun configuration to start using Azure Deployment Environments and supercharge your platform engineering story. Infrastructure as Code (written in Bicep) will get you started quickly to enable developers to self-serve environments via the Developer Portal, Azure CLI or CI/CD pipelines.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/azd-deployment-environments",
+        "tags": [
+            "bicep",
+            "platformengineering",
+            "ade",
+            "msft"
+        ],
+        "id": "7e5276d7-b80c-4aa6-b8e6-750939a42ecd",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure OpenAI Conference Session Recommender",
+        "description": "Build a recommender using OpenAI, Azure Functions, Azure Static Web Apps, Azure SQL DB, Data API builder and Text Embeddings",
+        "author": "Davide Mauri",
+        "source": "https://github.com/Azure-Samples/azure-sql-db-session-recommender",
+        "tags": [
+            "msft",
+            "reactjs",
+            "appservice",
+            "functions",
+            "azuresql",
+            "swa",
+            "appinsights",
+            "openai",
+            "azureai",
+            "enterprisepatterns",
+            "ai"
+        ],
+        "id": "8e354d6e-1957-4441-80d6-0d350fe8bea5",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Microservices App - Dapr PubSub Java AKS",
+        "description": "Demonstrate event-driven communication between microservices by leveraging the pub/sub messaging architecture using Dapr for a Java application running in an AKS cluster.",
+        "author": "Mahmut Canga",
+        "source": "https://github.com/Azure-Samples/pubsub-dapr-aks-java",
+        "tags": [
+            "dapr",
+            "java",
+            "aks",
+            "msft"
+        ],
+        "id": "27a9a8be-9479-4433-8ff6-9ce9af9c92b6",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Functions - Chat using ChatGPT (Node.js JavaScript Function)",
+        "description": "This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.",
+        "author": "Paul Yuknewicz",
+        "source": "https://github.com/Azure-Samples/function-javascript-ai-openai-chatgpt",
+        "tags": [
+            "functions",
+            "openai",
+            "javascript",
+            "ai",
+            "chatgpt",
+            "msft"
+        ],
+        "id": "c0405eae-fd20-4404-a742-a1c69c6004e7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Functions - Chat using ChatGPT (Python v2 Function)",
+        "description": "This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.",
+        "author": "Paul Yuknewicz",
+        "source": "https://github.com/Azure-Samples/function-python-ai-openai-chatgpt",
+        "tags": [
+            "functions",
+            "openai",
+            "python",
+            "ai",
+            "chatgpt",
+            "msft"
+        ],
+        "id": "120f1e71-3110-44e7-9cc6-03e611083e9d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Functions - LangChain with Azure OpenAI and ChatGPT (Python v2 Function)",
+        "description": "This sample shows how to take a human prompt as HTTP Get or Post input, calculates the completions using chains of human input and templates. This is a starting point that can be used for more sophisticated chains.",
+        "author": "Paul Yuknewicz",
+        "source": "https://github.com/Azure-Samples/function-python-ai-langchain",
+        "tags": [
+            "functions",
+            "python",
+            "ai",
+            "msft"
+        ],
+        "id": "0d1ed1f5-b136-4320-b31f-c516f959bbaf",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Multi-repo ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
+        "description": "Azure OpenAI at scale in a secure manner.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure/GPT-RAG",
+        "tags": [
+            "openai",
+            "chatgpt",
+            "cognitivesearch",
+            "python",
+            "typescript",
+            "bicep",
+            "nodejs",
+            "ai",
+            "msft"
+        ],
+        "id": "adbc2d95-6bb8-4b0d-b0cb-2c0f34c19c11",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Function with Event Hub with optional virtual network capabilities",
+        "description": "An Azure Function app which sends events to and consumes from an Event Hub. The Function app can optionally be configured to integrate with a virtual network, and dependent resources configured with virtual network private endpoints. Managed identity is used for authentication to dependent resources.",
+        "author": "Michael S. Collier",
+        "source": "https://github.com/Azure-Samples/function-eventhub-vnet",
+        "tags": [
+            "bicep",
+            "dotnetCsharp",
+            "functions",
+            "appinsights",
+            "keyvault",
+            "eventhub",
+            "azurestorage",
+            "vnets",
+            "msft"
+        ],
+        "id": "9a4d5000-89de-4ec2-beb4-9212d335edd7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "URL Shortener using Microsoft Orleans and Azure for hosting and data",
+        "description": "An ASP.NET Core 8.0 web application to illustrate basic Microsoft Orleans concepts; such as working with Grains, Silos, and persistent state. Uses Azure Developer CLI (azd) to build, deploy, and monitor.",
+        "author": "Azure Cosmos DB Content Team",
+        "source": "https://github.com/azure-samples/orleans-url-shortener",
+        "tags": [
+            "bicep",
+            "dotnetCsharp",
+            "cosmosdb",
+            "msft",
+            "aca"
+        ],
+        "id": "904f5d00-aed0-40e9-9e00-12c9482ae5c9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure OpenAI priority-based load balancer with Azure Container Apps",
+        "description": "A load balancer crafted specifically for Azure OpenAI, which is aware of 'retry-after' headers and intelligently pause traffic when certain OpenAI endpoints reach maximum capacity.",
+        "author": "Andre Dewes",
+        "source": "https://github.com/Azure-Samples/openai-aca-lb",
+        "tags": [
+            "aca",
+            "openai",
+            "ai",
+            "msft",
+            "bicep",
+            "dotnetCsharp"
+        ],
+        "id": "c3694deb-a6d7-4c20-8bbf-f12486a503e3",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Kubernetes Service Store Demo",
+        "description": "Sample microservices app for AKS demos, tutorials, and experiments.",
+        "author": "AKS Content Team",
+        "source": "https://github.com/azure-samples/aks-store-demo",
+        "tags": [
+            "terraform",
+            "aks",
+            "openai",
+            "ai",
+            "msft",
+            "kubernetes",
+            "helm"
+        ],
+        "id": "eff16b17-9019-4b60-8438-f49781946266",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Setting up Azure OpenAI as a central capability within your organization",
+        "description": "Unleash the power of Azure AI to all your application developers in a secure & manageable way with Azure API Management and Azure Container Apps, utilizing Azure OpenAI PTUs across your organization with chargeback capabilities.",
+        "author": "Azure AI Content Team, Remco Brosky, Mick Vleeshouwer, Pascal van der Heiden",
+        "source": "https://github.com/Azure/enterprise-azureai",
+        "tags": [
+            "bicep",
+            "apim",
+            "openai",
+            "ai",
+            "appinsights",
+            "monitor",
+            "enterprisepatterns",
+            "aca",
+            "dotnetCsharp",
+            "msft"
+        ],
+        "id": "94b2c974-76a2-4df6-b9a7-7a9dbc9b707f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "SAP Cloud SDK on Azure Functions Quickstart (TypeScript)",
+        "description": "This repos serves as quick-start project showcasing SAP Cloud SDK for JavaScript OData consumption running on Azure Functions. Its primary purpose is to set you up for success for your SAP extension project on Azure and reduce the lead time to your first successful deployment as much as possible with developer friendly commands.",
+        "author": "Martin Pankraz, Christian Lechner",
+        "source": "https://github.com/Azure-Samples/functions-javascript-sap-cloud-sdk-quickstart",
+        "tags": [
+            "typescript",
+            "nodejs",
+            "bicep",
+            "webapps",
+            "apim",
+            "keyvault",
+            "appinsights",
+            "nestjs",
+            "sap",
+            "sapcap",
+            "msft"
+        ],
+        "id": "e2835a74-6bb9-4a15-b4d8-dae78ee6f0ad",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "SAP CAP on Azure App Service Quickstart",
+        "description": "This repos serves as quick-start project showcasing SAP Cloud Application Programming Model (CAP) for Node.js OData consumption from SAP S/4HANA running on Azure App Services backed with Azure Cosmos DB for PostgreSQL. SAP offers a native module cds-dbs for PostgreSQL integration.",
+        "author": "Martin Pankraz, Volker Buzek",
+        "source": "https://github.com/Azure-Samples/app-service-javascript-sap-cap-quickstart",
+        "tags": [
+            "nodejs",
+            "bicep",
+            "webapps",
+            "apim",
+            "keyvault",
+            "appinsights",
+            "nestjs",
+            "sap",
+            "cosmosdb",
+            "azuredb-postgreSQL",
+            "sapcloudsdk",
+            "msft"
+        ],
+        "id": "87cca4d5-958c-4255-87ae-5df122ec34ad",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure API Management policy for priority-based routing to Azure OpenAI",
+        "description": "A load balancer policy crafted specifically for Azure OpenAI, which is aware of 'retry-after' headers and intelligently pause traffic when certain OpenAI endpoints reach maximum capacity.",
+        "author": "Andre Dewes, Chris Ayers",
+        "source": "https://github.com/Azure-Samples/openai-apim-lb",
+        "tags": [
+            "apim",
+            "openai",
+            "ai",
+            "msft",
+            "bicep"
+        ],
+        "id": "c0e05ee1-7abc-4c7e-b609-0b8374d221b8",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Langfuse on Azure",
+        "description": "Deploy Langfuse (open-source LLM observability platform) to Azure Container Apps with PostgreSQL Flexible Server.",
+        "author": "Pamela Fox",
+        "source": "https://github.com/Azure-Samples/langfuse-on-azure",
+        "tags": [
+            "aca",
+            "azuredb-postgreSQL",
+            "keyvault",
+            "ai",
+            "msft",
+            "bicep"
+        ],
+        "id": "3a69118c-f6c3-4d59-90c4-188975527db2",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "PostgreSQL + Pgvector",
+        "description": "Deploy a PostgreSQL Flexible Server with Pgvector extension and keyless auth, then access it from Python scripts.",
+        "author": "Pamela Fox",
+        "source": "https://github.com/Azure-Samples/azure-postgres-pgvector-python",
+        "tags": [
+            "azuredb-postgreSQL",
+            "ai",
+            "msft",
+            "bicep",
+            "python"
+        ],
+        "id": "fa79ba6d-e558-4025-b5ea-23970851b075",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Open AI management and logging via Azure API Management",
+        "description": "To use Azure Open AI in production, you need to manage each application and user by issuing new keys, and monitor their usage such as number of tokens they consume and types of endpoint and mode they use. The solution uses Azure APIM and other resources to support such requirements.",
+        "author": "Kenichiro Nakamura",
+        "source": "https://github.com/microsoft/aoai-logging-with-apim",
+        "tags": [
+            "bicep",
+            "msft",
+            "ai",
+            "openai",
+            "apim",
+            "keyvault",
+            "dotnetCsharp"
+        ],
+        "id": "c0b0b2c7-596f-45ca-9df8-ff9355ac471e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": ".NET AI samples with Azure OpenAI",
+        "description": ".NET samples demonstrating how to use AI in your .NET applications. Each sample demonstrate a specific AI scenario with only a few lines of code. It consists of a console application, running locally, that will send request(s) to an Azure OpenAI Service deployed in your Azure subscription",
+        "author": "Frank Boucher",
+        "source": "https://github.com/dotnet/ai-samples",
+        "tags": [
+            "ai",
+            "openai",
+            "dotnetCsharp",
+            "azureai",
+            "msft",
+            "gpt",
+            "dall-e",
+            "semantickernel",
+            "bicep"
+        ],
+        "id": "b33ac45a-f158-449d-8933-29f998143284",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure OpenAI Conference Session Assistant",
+        "description": "Build a conference assistant using using Vector Search and Retrieval Augmented Generator to allow attendees to ask questions about conference in natural language",
+        "author": "Davide Mauri",
+        "source": "https://github.com/Azure-Samples/azure-sql-db-session-recommender-v2",
+        "tags": [
+            "bicep",
+            "msft",
+            "reactjs",
+            "appservice",
+            "functions",
+            "azuresql",
+            "swa",
+            "appinsights",
+            "openai",
+            "azureai",
+            "enterprisepatterns",
+            "ai"
+        ],
+        "id": "24831952-5b15-471d-9eb9-4dbdb61ae196",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Dynamic Configuration for AKS workloads (w/o changing ConfigMaps or with Azure App Configuration)",
+        "description": "A sample that demonstrates how to dynamically configure an Azure Kubernetes Service (AKS) workload with Azure App Configuration.",
+        "author": "Azure App Configuration",
+        "source": "https://github.com/Azure-Samples/azure-appconfig-aks",
+        "tags": [
+            "azureappconfig",
+            "kubernetes",
+            "aks",
+            "dotnetCsharp",
+            "bicep",
+            "webapps",
+            "msft",
+            "new"
+        ],
+        "id": "3b4599e6-bb03-4f19-bce8-5151a0225c7b",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Chat with your Data Solution Accelerator",
+        "description": "A Solution Accelerator for the RAG pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences. This includes most common requirements and best practices.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator",
+        "tags": [
+            "bicep",
+            "python",
+            "typescript",
+            "flask",
+            "cognitivesearch",
+            "openai",
+            "chatgpt",
+            "ai",
+            "msft",
+            "new"
+        ],
+        "id": "3450a16f-3b71-48ba-9bd5-c6568f105300",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
     }
 ]
