@@ -1,7 +1,7 @@
 [
     {
         "title": "LAMP Stack using Azure VM",
-        "id": "lamp-stack-vm",
+        "id": "d6e60af8-afd7-45ff-af0f-9dba5fef2ef1",
         "description": "Deploy a LAMP stack on an Azure virtual machine. LAMP is an open-source solution stack that is commonly used to run dynamic web sites and servers. It includes Linux, Apache, MySQL, and PHP/Python/Perl and is considered by many the platform of choice for development and deployment of high-performance web applications.",
         "author": "Microsoft",
         "source": "https://github.com/Azure/solution-center/tree/dev/workloads/lamp-stack-vm",
@@ -32,7 +32,7 @@
     },
     {
         "title": "Scalable WordPress using Azure VM",
-        "id": "wordpress-vm",
+        "id": "fb8f5d3f-7dcb-4fd5-b039-aaf45d1bd2df",
         "description": "WordPress is a popular content management system (CMS) that allows users to create and manage websites and blogs. It provides a user-friendly interface, a wide range of themes and plugins, and powerful customization options. With WordPress, you can easily publish and update content, manage user roles and permissions, and optimize your website for search engines.",
         "author": "Microsoft",
         "source": "https://github.com/Azure/solution-center/tree/dev/workloads/wordpress-vm",
@@ -63,7 +63,7 @@
     },
     {
         "title": "LAMP Stack using Azure AppService",
-        "id": "lamp-stack-as",
+        "id": "80648e82-8206-48ad-b381-631267725e6f",
         "description": "LAMP is an acronym for Linux, Apache, MySQL, and PHP. It is a popular open-source web platform commonly used to run dynamic web sites and servers. Azure App Service is a fully managed platform for building, deploying, and scaling web apps. You can host web apps, mobile app backends, and RESTful APIs in the programming language of your choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Azure DevOps, or any Git repo. With Azure App Service, you can easily run and scale LAMP applications in the cloud.",
         "author": "Microsoft",
         "source": "https://github.com/Azure/solution-center/tree/dev/workloads/lamp-stack-as",
@@ -92,7 +92,7 @@
     },
     {
         "title": "WordPress using Azure AppService",
-        "id": "wordpress-as",
+        "id": "52104ac1-063d-4838-8a05-ffe7d963ffe0",
         "description": "WordPress is a popular open-source content management system (CMS) that allows users to create and manage websites with ease. It is based on PHP and MySQL and can be used to create a wide variety of websites, from personal blogs to large corporate sites. Azure App Service is a fully managed platform for building, deploying, and scaling web apps. With Azure App Service, you can easily host and scale WordPress applications in the cloud. Azure App Service provides a highly available and scalable environment for running WordPress, with features such as automatic backups, custom domains, and SSL support. Additionally, Azure App Service integrates with other Azure services, such as Azure Database for MySQL, to provide a complete solution for hosting WordPress applications in the cloud.",
         "author": "Microsoft",
         "source": "https://github.com/Azure/solution-center/tree/dev/workloads/wordpress-as",
@@ -120,7 +120,7 @@
     },
     {
         "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
-        "id": "azure-search-openai-demo",
+        "id": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e",
         "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
         "author": "Microsoft",
         "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
@@ -1674,6 +1674,78 @@
             "new"
         ],
         "id": "3450a16f-3b71-48ba-9bd5-c6568f105300",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure Kubernetes Service Store Demo",
+        "description": "Sample microservices app for AKS demos, tutorials, and experiments.",
+        "author": "AKS Content Team",
+        "source": "https://github.com/azure-samples/aks-store-demo",
+        "tags": [
+            "aks",
+            "kubernetes",
+            "terraform",
+            "openAI",
+            "app",
+            "helm",
+            "ai",
+            "Azure"
+        ],
+        "id": "9d295613-0607-4337-97b3-bdf702cd9252",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Containerized Apps on Azure Kubernetes Service",
+        "description": "A base Azure Kubernetes Service template with placeholders to include the application source code (no application source code included) and Kubernetes manifest files.",
+        "author": "Ahmed Sabbour",
+        "source": "https://github.com/sabbour/aks-app-template",
+        "tags": [
+            "aks",
+            "kubernetes",
+            "bicep",
+            "grafana",
+            "app",
+            "keda",
+            "prometheus",
+            "Azure",
+            "containers"
+        ],
+        "id": "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Kubernetes React Web App with Node.js API and MongoDB",
+        "description": "A blueprint for getting a React.js web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for running Kubernetes clusters without setting up the control plane.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo-aks",
+        "tags": [
+            "aks",
+            "kubernetes",
+            "bicep",
+            "cosmosdb",
+            "javascript",
+            "keyvault",
+            "mongodb",
+            "monitor",
+            "nodejs",
+            "reactjs",
+            "typescript",
+            "app",
+            "Azure"
+        ],
+        "id": "f408ffe0-f200-4faa-b35e-2674e901cd12",
         "deploymentOptions": [
             "AzD"
         ],
