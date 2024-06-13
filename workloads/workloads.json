@@ -1896,7 +1896,7 @@
     },
     {
         "title": "Azure AI Studio Starter Template",
-        "description": "To learn how to get started with any template, this quickstart will show you how to authenticate on Azure, initialize using a template, provision infrastructure and deploy code on Azure.",
+        "description": "This template helps users learn how to use Azure AI Studio. It creates an Azure AI Studio hub, project and required dependent resources including Azure Open AI Service, Cognitive Search and more.",
         "author": "Microsoft",
         "source": "https://github.com/Azure-Samples/azd-aistudio-starter",
         "tags": [
