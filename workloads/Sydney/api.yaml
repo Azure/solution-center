@@ -52,6 +52,8 @@ paths:
 }'
         '400':
           description: Bad Request - Invalid request format.
+        '401':
+          description: Unauthorized - User is not authenticated.
         '500':
           description: Internal Server Error - An error occurred on the server.
           
