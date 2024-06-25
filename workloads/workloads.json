@@ -1843,5 +1843,235 @@
         ],
         "products": [],
         "sampleQueries": []
+    },
+    {
+        "title": "Azure OpenAI RAG Chat Experience with Node.js",
+        "description": "This sample shows how to build an AI chat experience with Retrieval-Augmented Generation (RAG) using LangChain4J and OpenAI language models. The application is hosted on Azure Static Web Apps and Azure Container Apps, with Azure AI Search as the vector database. You can use it as a starting point for building more complex AI applications.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/azure-openai-rag-workshop",
+        "tags": [
+            "openAI",
+            "rag",
+            "azure",
+            "nodejs",
+            "langchain",
+            "app",
+            "chat",
+            "search",
+            "ai",
+            "model"
+        ],
+        "id": "7ea19a29-b97a-47e9-b5b8-3e974d77db88",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Serverless AI Chat with RAG using LangChain.js",
+        "description": "This sample shows how to build a serverless AI chat experience with Retrieval-Augmented Generation using LangChain.js and Azure. The application is hosted on Azure Static Web Apps and Azure Functions, with Azure AI Search as the vector database. You can use it as a starting point for building more complex AI applications.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/serverless-chat-langchainjs",
+        "tags": [
+            "serverless",
+            "ai",
+            "chat",
+            "azure",
+            "langchain",
+            "search",
+            "app",
+            "openAI"
+        ],
+        "id": "ff16119d-5fa9-4011-b0f3-62ef2b71650f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Use Key Vault from App Service with Azure Managed Identity",
+        "description": "This sample shows how to use Azure KeyVault from App Service with Azure Managed Identity.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet",
+        "tags": [
+            "key",
+            "vault",
+            "appservice",
+            "azure",
+            "identity",
+            "dotnet",
+            "azure",
+            "msi"
+        ],
+        "id": "7215fa5f-57b0-4b7e-a347-cd07c2fc2fd1",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [
+            "azure",
+            "dotnet",
+            "aspnet",
+            "azure-app-service",
+            "azure-key-vault"
+        ],
+        "sampleQueries": []
+    },
+    {
+        "title": "ASP.NET sample for Azure App Service",
+        "description": "This is an ASP.NET MVC web app that you can deploy to Azure App Service using Git.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/app-service-web-dotnet-get-started",
+        "tags": [
+            "dotnet",
+            "azure",
+            "appservice",
+            "git",
+            "web",
+            "app",
+            "mvc",
+            "aspnet"
+        ],
+        "id": "9b718fe5-05b1-4444-96be-7e5706f876d7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure AI Search Comparison Tool",
+        "description": "This repository contains a React application that demonstrates the Azure AI Search Comparison Tool. This tool provides a web interface for visualizing different retrieval modes available in Azure AI Search. Additionally, the tool supports image search using text-to-image and image-to-image search functionalities. It leverages Azure OpenAI for text embeddings and Azure AI Vision API for image embeddings.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/azure-search-comparison-tool",
+        "tags": [
+            "azure",
+            "ai",
+            "search",
+            "react",
+            "app",
+            "web",
+            "openAI",
+            "image-to-image",
+            "text-to-image",
+            "retrieval"
+        ],
+        "id": "a470d1ed-7e75-421b-8794-9c6165b73c79",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure OpenAI Chat Frontend",
+        "description": "This folder contains a Lit implementation, consisting of multiple LitElements that can be used to interact with the Azure OpenAI API. It is a classic chat UI that can be used to send messages to the API and receive responses.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/azure-openai-chat-frontend",
+        "tags": [
+            "lit",
+            "azure",
+            "openAI",
+            "typescript",
+            "litelement",
+            "vite",
+            "rollup",
+            "frontend"
+        ],
+        "id": "8a8499b2-ad33-4e73-846d-5715aed9f8f7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Azure AI Studio Starter Template",
+        "description": "This template helps users learn how to use Azure AI Studio. It creates an Azure AI Studio hub, project and required dependent resources including Azure Open AI Service, Cognitive Search and more.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/azd-aistudio-starter",
+        "tags": [
+            "azd",
+            "bicep",
+            "azure",
+            "ai",
+            "template",
+            "openAI",
+            "cognitive",
+            "aistudio"
+        ],
+        "id": "3b2621a8-62cf-418c-9811-916dae3df1d4",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Contoso Chat Retail with Azure AI Studio and Promptflow",
+        "description": "This sample creates a customer support chat agent for an online retailer called Contoso Outdoors. The solution uses a retrieval-augmented generation pattern to ground responses in the company's product and customer data. Customers can ask questions about the retailer's product catalog, and also get recommendations based on their prior purchases.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/contoso-chat",
+        "tags": [
+            "python",
+            "bicep",
+            "azure",
+            "prompty",
+            "openAI",
+            "cosmos-db",
+            "prompt-flow",
+            "RAG"
+        ],
+        "id": "892c1998-ab31-4592-a453-8c8ec947df6a",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "HTML sample for Azure App Service",
+        "description": "This is a simple HTML/CSS/JS web app that can be deployed to Azure App Service using Git. It is built on the Carousel template by Bootstrap.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/app-service-web-html-get-started",
+        "tags": [
+            "javascript",
+            "azure",
+            "app-service",
+            "html",
+            "web-app",
+            "css",
+            "git",
+            "bootstrap"
+        ],
+        "id": "92455774-ab16-49b7-968c-e5963cbe880d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "SAP Deployment Automation Framework",
+        "description": "The SAP deployment automation framework on Azure is an open-source orchestration tool for deploying, installing and maintaining SAP environments. You can create infrastructure for SAP landscapes based on SAP HANA and NetWeaver with AnyDB on any of the SAP-supported operating system versions and deploy them into any Azure region. The framework uses Terraform for infrastructure deployment, and Ansible for the operating system and application configuration.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure/sap-automation",
+        "tags": [
+            "SAP",
+            "azure",
+            "terraform",
+            "ansible",
+            "deploy",
+            "db",
+            "automation",
+            "framework"
+        ],
+        "id": "42ed645b-37f7-4468-95f4-ca5a515b63e5",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "products": [],
+        "sampleQueries": []
     }
 ]
