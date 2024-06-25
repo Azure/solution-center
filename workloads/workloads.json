@@ -1753,6 +1753,98 @@
         "sampleQueries": []
     },
     {
+        "title": "Create a Linux VM and SSH",
+        "description": "Install the latest Ubuntu image, generate a private key, and connect to it using SSH.",
+        "author": "Microsoft",
+        "source": "CreateLinuxVMAndSSH",
+        "tags": [
+            "linux",
+            "vm",
+            "virtual",
+            "machine",
+            "ssh",
+            "azure",
+            "ubuntu",
+            "image",
+            "msft",
+            "microsoft",
+            "private",
+            "key",
+            "create"
+        ],
+        "id": "41443844-9f80-464d-bb95-5c58c3aafd26",
+        "deploymentOptions": [
+            "ExecDocs",
+            "CreateLinuxVMAndSSH",
+            "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Fquick-create-cli.md"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Create a LEMP stack on a Linux VM",
+        "description": "Deploy a NGINX web server, MySQL, and PHP (the LEMP stack) on an Ubuntu VM.",
+        "author": "Microsoft",
+        "source": "CreateLinuxVMLAMP",
+        "tags": [
+            "create",
+            "lemp",
+            "stack",
+            "linux",
+            "vm",
+            "virtual",
+            "machine",
+            "nginx",
+            "web",
+            "server",
+            "microsoft",
+            "msft",
+            "azure",
+            "mysql",
+            "php",
+            "ubuntu"
+        ],
+        "id": "77579e2d-96c8-4e7f-b41e-8e404293c62e",
+        "deploymentOptions": [
+            "ExecDocs",
+            "CreateLinuxVMLAMP",
+            "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Ftutorial-lemp-stack.md"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
+        "title": "Create an AKS cluster with a custom domain and HTTPS",
+        "description": "Create an AKS cluster with a NGINX Ingress Controller and custom domain secured via a Let's Encrypt certificate.",
+        "author": "Microsoft",
+        "source": "CreateAKSDeployment",
+        "tags": [
+            "AKS",
+            "cluster",
+            "Create",
+            "domain",
+            "HTTPS",
+            "NGINX",
+            "Ingress",
+            "nginx",
+            "Controller",
+            "certificate",
+            "microsoft",
+            "msft",
+            "azure",
+            "custom",
+            "kubernetes"
+        ],
+        "id": "45f4ae32-bcf5-40d4-b146-0ab4aa704c35",
+        "deploymentOptions": [
+            "ExecDocs",
+            "CreateAKSDeployment",
+            "CreateAKSWebApp%2FREADME.md"
+        ],
+        "products": [],
+        "sampleQueries": []
+    },
+    {
         "title": "Azure OpenAI RAG Chat Experience with Node.js",
         "description": "This sample shows how to build an AI chat experience with Retrieval-Augmented Generation (RAG) using LangChain4J and OpenAI language models. The application is hosted on Azure Static Web Apps and Azure Container Apps, with Azure AI Search as the vector database. You can use it as a starting point for building more complex AI applications.",
         "author": "Microsoft",
