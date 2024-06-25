@@ -1774,7 +1774,9 @@
         ],
         "id": "41443844-9f80-464d-bb95-5c58c3aafd26",
         "deploymentOptions": [
-            "ExecDocs"
+            "ExecDocs",
+            "CreateLinuxVMAndSSH",
+            "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Fquick-create-cli.md"
         ],
         "products": [],
         "sampleQueries": []
@@ -1804,7 +1806,9 @@
         ],
         "id": "77579e2d-96c8-4e7f-b41e-8e404293c62e",
         "deploymentOptions": [
-            "ExecDocs"
+            "ExecDocs",
+            "CreateLinuxVMLAMP",
+            "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Ftutorial-lemp-stack.md"
         ],
         "products": [],
         "sampleQueries": []
@@ -1833,7 +1837,9 @@
         ],
         "id": "45f4ae32-bcf5-40d4-b146-0ab4aa704c35",
         "deploymentOptions": [
-            "ExecDocs"
+            "ExecDocs",
+            "CreateAKSDeployment",
+            "CreateAKSWebApp%2FREADME.md"
         ],
         "products": [],
         "sampleQueries": []
