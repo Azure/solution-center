@@ -1,124 +1,5 @@
 [
     {
-        "title": "LAMP Stack using Azure VM",
-        "id": "d6e60af8-afd7-45ff-af0f-9dba5fef2ef1",
-        "description": "Deploy a LAMP stack on an Azure virtual machine. LAMP is an open-source solution stack that is commonly used to run dynamic web sites and servers. It includes Linux, Apache, MySQL, and PHP/Python/Perl and is considered by many the platform of choice for development and deployment of high-performance web applications.",
-        "author": "Microsoft",
-        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/lamp-stack-vm",
-        "tags": [
-            "LAMP",
-            "Azure",
-            "VM",
-            "Linux",
-            "Apache",
-            "MySQL",
-            "PHP",
-            "Python",
-            "Perl"
-        ],
-        "deploymentOptions": [
-            "ARM",
-            "Terraform",
-            "Bicep",
-            "CLI"
-        ],
-        "products": [
-            "Azure VM"
-        ],
-        "sampleQueries": [
-            "How to deploy LAMP stack on Azure VM",
-            "LAMP stack using Azure VM"
-        ]
-    },
-    {
-        "title": "Scalable WordPress using Azure VM",
-        "id": "fb8f5d3f-7dcb-4fd5-b039-aaf45d1bd2df",
-        "description": "WordPress is a popular content management system (CMS) that allows users to create and manage websites and blogs. It provides a user-friendly interface, a wide range of themes and plugins, and powerful customization options. With WordPress, you can easily publish and update content, manage user roles and permissions, and optimize your website for search engines.",
-        "author": "Microsoft",
-        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/wordpress-vm",
-        "tags": [
-            "Wordpress",
-            "Azure",
-            "VM",
-            "Linux",
-            "Agw",
-            "Bicep",
-            "PHP",
-            "JavaScript"
-        ],
-        "deploymentOptions": [
-            "ARM",
-            "Terraform",
-            "Bicep",
-            "CLI"
-        ],
-        "products": [
-            "Azure VM"
-        ],
-        "sampleQueries": [
-            "How to deploy Wordpress on Azure VM",
-            "Wordpress using Azure VM",
-            "Scalable Wordpress using Azure VM"
-        ]
-    },
-    {
-        "title": "LAMP Stack using Azure AppService",
-        "id": "80648e82-8206-48ad-b381-631267725e6f",
-        "description": "LAMP is an acronym for Linux, Apache, MySQL, and PHP. It is a popular open-source web platform commonly used to run dynamic web sites and servers. Azure App Service is a fully managed platform for building, deploying, and scaling web apps. You can host web apps, mobile app backends, and RESTful APIs in the programming language of your choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Azure DevOps, or any Git repo. With Azure App Service, you can easily run and scale LAMP applications in the cloud.",
-        "author": "Microsoft",
-        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/lamp-stack-as",
-        "tags": [
-            "LAMP",
-            "Azure",
-            "AppService",
-            "Linux",
-            "Apache",
-            "MySQL",
-            "PHP",
-            "Python",
-            "Perl"
-        ],
-        "deploymentOptions": [
-            "Bicep",
-            "CLI"
-        ],
-        "products": [
-            "Azure AppService"
-        ],
-        "sampleQueries": [
-            "How to deploy LAMP stack on Azure AppService",
-            "LAMP stack using Azure AppService"
-        ]
-    },
-    {
-        "title": "WordPress using Azure AppService",
-        "id": "52104ac1-063d-4838-8a05-ffe7d963ffe0",
-        "description": "WordPress is a popular open-source content management system (CMS) that allows users to create and manage websites with ease. It is based on PHP and MySQL and can be used to create a wide variety of websites, from personal blogs to large corporate sites. Azure App Service is a fully managed platform for building, deploying, and scaling web apps. With Azure App Service, you can easily host and scale WordPress applications in the cloud. Azure App Service provides a highly available and scalable environment for running WordPress, with features such as automatic backups, custom domains, and SSL support. Additionally, Azure App Service integrates with other Azure services, such as Azure Database for MySQL, to provide a complete solution for hosting WordPress applications in the cloud.",
-        "author": "Microsoft",
-        "source": "https://github.com/Azure/solution-center/tree/dev/workloads/wordpress-as",
-        "tags": [
-            "Wordpress",
-            "Azure",
-            "AppService",
-            "Linux",
-            "Agw",
-            "Bicep",
-            "PHP",
-            "JavaScript"
-        ],
-        "deploymentOptions": [
-            "CLI"
-        ],
-        "products": [
-            "Azure AppService"
-        ],
-        "sampleQueries": [
-            "How to deploy Wordpress on Azure AppService",
-            "Wordpress using Azure AppService",
-            "Scalable Wordpress using Azure AppService"
-        ]
-    },
-    {
         "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
         "id": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e",
         "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
@@ -139,7 +20,8 @@
         ],
         "sampleQueries": [
             "How to use Azure AI Search to power ChatGPT-style and Q&A experiences"
-        ]
+        ],
+        "sourceType": "Azd"
     },
     {
         "title": "Starter - Bicep",
@@ -155,7 +37,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Starter - Terraform",
@@ -171,7 +54,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "WordPress with Azure Container Apps",
@@ -194,7 +78,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with C# API and MongoDB",
@@ -219,7 +104,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Node.js API and MongoDB",
@@ -244,7 +130,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App + Functions with Node.js API and MongoDB",
@@ -271,7 +158,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App + Functions with Python API and MongoDB",
@@ -299,7 +187,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Python API and MongoDB - Terraform",
@@ -325,7 +214,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Node.js API and MongoDB - Terraform",
@@ -350,7 +240,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Python API and MongoDB",
@@ -376,7 +267,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized React Web App with Node.js API and MongoDB",
@@ -402,7 +294,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized React Web App with Python API and MongoDB",
@@ -428,7 +321,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with C# API and SQL Database ",
@@ -453,7 +347,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Java API and MongoDB ",
@@ -477,7 +372,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized React Web App with Java API and MongoDB",
@@ -501,7 +397,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App + Functions with C# API and SQL Database",
@@ -527,7 +424,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Kubernetes React Web App with Node.js API and MongoDB",
@@ -553,7 +451,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App with Java API and PostgreSQL",
@@ -575,7 +474,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT Plugin using Python (FastAPI)",
@@ -597,7 +497,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT + Enterprise Data with Azure OpenAI and Cognitive Search",
@@ -622,7 +523,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Simple Chat Application using Azure OpenAI",
@@ -644,7 +546,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Spring ChatGPT Application using Azure OpenAI on Azure Spring Apps",
@@ -666,7 +569,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Enterprise-Grade Reference Architecture for JavaScript",
@@ -692,7 +596,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Python (Django) Web App with PostgreSQL in VNet",
@@ -714,7 +619,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Python (Django) Web App with PostgreSQL via Azure Container Apps",
@@ -734,7 +640,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Python (Flask) Web App with PostgreSQL in VNet",
@@ -756,7 +663,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub C# ACA ServiceBus",
@@ -776,7 +684,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub Python ACA ServiceBus",
@@ -796,7 +705,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub Node.js ACA ServiceBus",
@@ -817,7 +727,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Bindings Cron C# ACA PostgreSQL",
@@ -836,7 +747,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Bindings Cron Python ACA PostgreSQL",
@@ -855,7 +767,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Bindings Cron Node.js ACA PostgreSQL",
@@ -875,7 +788,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Service Invoke Node.js ACA",
@@ -893,7 +807,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Service Invoke Python ACA",
@@ -911,7 +826,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Service Invoke C# ACA",
@@ -929,7 +845,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
@@ -953,7 +870,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "FastAPI on Azure Functions",
@@ -971,7 +889,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Spring PetClinic - Java Spring MySQL",
@@ -996,7 +915,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Event Driven Java Application with Azure Service Bus on Azure Spring Apps",
@@ -1018,7 +938,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "SAP Cloud SDK on Azure App Service Quickstart (TypeScript)",
@@ -1043,7 +964,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Text Summarization using AI Cognitive Language Service (C#-Isolated)",
@@ -1063,7 +985,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Text Summarization using AI Cognitive Language Service (Python v2 Function)",
@@ -1083,7 +1006,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Reliable Web App Pattern for .NET",
@@ -1108,7 +1032,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "React Component Toolkit with ChatGPT and OpenAI ",
@@ -1131,7 +1056,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Java Spring Apps with Azure OpenAI",
@@ -1155,7 +1081,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Java - ChatGPT + Enterprise data with Azure OpenAI and Cognitive Search",
@@ -1179,7 +1106,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT and RAG with Azure OpenAI and Cognitive Search for JavaScript",
@@ -1204,7 +1132,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Bicep template to bootstrap Azure Deployment Environments",
@@ -1222,7 +1151,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure OpenAI Conference Session Recommender",
@@ -1247,7 +1177,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub Java AKS",
@@ -1265,7 +1196,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Chat using ChatGPT (Node.js JavaScript Function)",
@@ -1285,7 +1217,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Chat using ChatGPT (Python v2 Function)",
@@ -1305,7 +1238,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - LangChain with Azure OpenAI and ChatGPT (Python v2 Function)",
@@ -1323,7 +1257,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Multi-repo ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
@@ -1346,7 +1281,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Function with Event Hub with optional virtual network capabilities",
@@ -1369,7 +1305,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "URL Shortener using Microsoft Orleans and Azure for hosting and data",
@@ -1388,7 +1325,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure OpenAI priority-based load balancer with Azure Container Apps",
@@ -1408,7 +1346,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Kubernetes Service Store Demo",
@@ -1429,7 +1368,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Setting up Azure OpenAI as a central capability within your organization",
@@ -1453,7 +1393,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "SAP Cloud SDK on Azure Functions Quickstart (TypeScript)",
@@ -1478,7 +1419,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "SAP CAP on Azure App Service Quickstart",
@@ -1504,7 +1446,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure API Management policy for priority-based routing to Azure OpenAI",
@@ -1523,7 +1466,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Langfuse on Azure",
@@ -1543,7 +1487,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "PostgreSQL + Pgvector",
@@ -1562,7 +1507,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Open AI management and logging via Azure API Management",
@@ -1583,7 +1529,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": ".NET AI samples with Azure OpenAI",
@@ -1606,7 +1553,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure OpenAI Conference Session Assistant",
@@ -1632,7 +1580,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Dynamic Configuration for AKS workloads (w/o changing ConfigMaps or with Azure App Configuration)",
@@ -1654,7 +1603,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Chat with your Data Solution Accelerator",
@@ -1678,7 +1628,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Kubernetes Service Store Demo",
@@ -1700,7 +1651,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized Apps on Azure Kubernetes Service",
@@ -1723,7 +1675,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Kubernetes React Web App with Node.js API and MongoDB",
@@ -1750,99 +1703,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
-    },
-    {
-        "title": "Create a Linux VM and SSH",
-        "description": "Install the latest Ubuntu image, generate a private key, and connect to it using SSH.",
-        "author": "Microsoft",
-        "source": "CreateLinuxVMAndSSH",
-        "tags": [
-            "linux",
-            "vm",
-            "virtual",
-            "machine",
-            "ssh",
-            "azure",
-            "ubuntu",
-            "image",
-            "msft",
-            "microsoft",
-            "private",
-            "key",
-            "create"
-        ],
-        "id": "41443844-9f80-464d-bb95-5c58c3aafd26",
-        "deploymentOptions": [
-            "ExecDocs",
-            "CreateLinuxVMAndSSH",
-            "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Fquick-create-cli.md"
-        ],
-        "products": [],
-        "sampleQueries": []
-    },
-    {
-        "title": "Create a LEMP stack on a Linux VM",
-        "description": "Deploy a NGINX web server, MySQL, and PHP (the LEMP stack) on an Ubuntu VM.",
-        "author": "Microsoft",
-        "source": "CreateLinuxVMLAMP",
-        "tags": [
-            "create",
-            "lemp",
-            "stack",
-            "linux",
-            "vm",
-            "virtual",
-            "machine",
-            "nginx",
-            "web",
-            "server",
-            "microsoft",
-            "msft",
-            "azure",
-            "mysql",
-            "php",
-            "ubuntu"
-        ],
-        "id": "77579e2d-96c8-4e7f-b41e-8e404293c62e",
-        "deploymentOptions": [
-            "ExecDocs",
-            "CreateLinuxVMLAMP",
-            "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Ftutorial-lemp-stack.md"
-        ],
-        "products": [],
-        "sampleQueries": []
-    },
-    {
-        "title": "Create an AKS cluster with a custom domain and HTTPS",
-        "description": "Create an AKS cluster with a NGINX Ingress Controller and custom domain secured via a Let's Encrypt certificate.",
-        "author": "Microsoft",
-        "source": "CreateAKSDeployment",
-        "tags": [
-            "AKS",
-            "cluster",
-            "Create",
-            "domain",
-            "HTTPS",
-            "NGINX",
-            "Ingress",
-            "nginx",
-            "Controller",
-            "certificate",
-            "microsoft",
-            "msft",
-            "azure",
-            "custom",
-            "kubernetes"
-        ],
-        "id": "45f4ae32-bcf5-40d4-b146-0ab4aa704c35",
-        "deploymentOptions": [
-            "ExecDocs",
-            "CreateAKSDeployment",
-            "CreateAKSWebApp%2FREADME.md"
-        ],
-        "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "Azd"
     },
     {
         "title": "Azure OpenAI RAG Chat Experience with Node.js",
@@ -1866,7 +1728,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Serverless AI Chat with RAG using LangChain.js",
@@ -1888,7 +1751,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Use Key Vault from App Service with Azure Managed Identity",
@@ -1916,7 +1780,8 @@
             "azure-app-service",
             "azure-key-vault"
         ],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "ASP.NET sample for Azure App Service",
@@ -1938,7 +1803,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Azure AI Search Comparison Tool",
@@ -1962,7 +1828,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Azure OpenAI Chat Frontend",
@@ -1984,7 +1851,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Azure AI Studio Starter Template",
@@ -2006,7 +1874,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Contoso Chat Retail with Azure AI Studio and Promptflow",
@@ -2028,7 +1897,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "HTML sample for Azure App Service",
@@ -2050,7 +1920,8 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     },
     {
         "title": "SAP Deployment Automation Framework",
@@ -2072,6 +1943,7 @@
             "AzD"
         ],
         "products": [],
-        "sampleQueries": []
+        "sampleQueries": [],
+        "sourceType": "AzureSamples"
     }
 ]
