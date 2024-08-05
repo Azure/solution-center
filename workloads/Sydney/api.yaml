@@ -1,0 +1,68 @@
+openapi: 3.0.1
+info:
+  title: Workloads API
+  description: API for fetching workloads based on user input.
+  version: 1.0.0
+servers:
+  - url: https://static-workloads.eastus2.inference.ml.azure.com/score
+paths:
+  /:
+    post:
+      summary: Fetch Workload
+      description: Fetches workload based on user input.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+                  description: "User's current input."
+                chat_history:
+                  type: array
+                  items:
+                    type: string
+                  description: "Array of previous chat messages."
+              required:
+                - input
+                - chat_history
+              example: 
+                input: "Do you have a suggestion for an app using Open AI?"
+                chat_history: ["Hi, I have a question.", "Sure, what's your question?"]
+      responses:
+        '200':
+          description: Successful response with workload data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  current_query_intent:
+                    type: string
+                    example: "Do you have a suggestion for an Open AI app?"
+                  reply:
+                    type: string
+                    description: "Response to the user's query in a JSON format."
+                    example: '{
+    "response": "Yes, I have a suggestion for an Open AI app. The 'ChatGPT + Enterprise data with Azure OpenAI and AI Search' template is a sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences. You can use it as a starting point for building more complex AI applications.",
+    "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+    "source": "https://github.com/Azure-Samples/azure-search-openai-demo"
+}'
+        '400':
+          description: Bad Request - Invalid request format.
+        '401':
+          description: Unauthorized - User is not authenticated.
+        '500':
+          description: Internal Server Error - An error occurred on the server.
+          
+      security:
+        - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Bearer token for authentication.
