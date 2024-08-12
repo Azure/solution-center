@@ -1582,7 +1582,6 @@
         "sampleQueries": [],
         "sourceType": "ExecDocs",
         "deploymentConfig": [
-            "CreateAksClusterAzureCli",
             "azure-docs%2Farticles%2Faks%2Flearn%2Fquick-kubernetes-deploy-cli.md"
         ]
     },
@@ -1608,7 +1607,6 @@
         "sampleQueries": [],
         "sourceType": "ExecDocs",
         "deploymentConfig": [
-            "CreateWordpressAks",
             "azure-docs%2Farticles%2Fmysql%2Fflexible-server%2Ftutorial-deploy-wordpress-on-aks.md"
         ]
     },
@@ -1634,7 +1632,6 @@
         "sampleQueries": [],
         "sourceType": "ExecDocs",
         "deploymentConfig": [
-            "CreateStaticWebAppAzureCli",
             "azure-docs%2Farticles%2Fstatic-web-apps%2Fget-started-cli.md"
         ]
     },
@@ -1660,7 +1657,6 @@
         "sampleQueries": [],
         "sourceType": "ExecDocs",
         "deploymentConfig": [
-            "CreateVmFlexibleScaleSet",
             "azure-docs%2Farticles%2Fvirtual-machine-scale-sets%2Fflexible-virtual-machine-scale-sets-cli.md"
         ]
     },
@@ -1686,7 +1682,6 @@
         "sampleQueries": [],
         "sourceType": "ExecDocs",
         "deploymentConfig": [
-            "DeployInspektorGadget",
             "DeployIGonAKS%2FREADME.md"
         ]
     },
@@ -1713,7 +1708,6 @@
         "sampleQueries": [],
         "sourceType": "ExecDocs",
         "deploymentConfig": [
-            "DeployScalableAKS",
             "CreateAKSWebApp%2FREADME.md"
         ]
     },
