@@ -1,7 +1,6 @@
 [
     {
         "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
-        "id": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e",
         "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
         "author": "Microsoft",
         "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
@@ -12,14 +11,18 @@
             "ChatGPT",
             "Enterprise"
         ],
+        "id": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [
             "Azure OpenAI and AI Search"
         ],
         "sampleQueries": [
             "How to use Azure AI Search to power ChatGPT-style and Q&A experiences"
         ],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Starter - Bicep",
@@ -31,10 +34,13 @@
             "msft"
         ],
         "id": "6772728c-49cd-48c5-99fb-2f1435b2a62f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Starter - Terraform",
@@ -46,10 +52,13 @@
             "msft"
         ],
         "id": "550708e7-b74e-448d-9de8-b60eb57e8208",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "WordPress with Azure Container Apps",
@@ -68,10 +77,13 @@
             "msft"
         ],
         "id": "bdc334e1-d0da-4401-b3a0-ac1b6a03f2d9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with C# API and MongoDB",
@@ -92,10 +104,13 @@
             "msft"
         ],
         "id": "a8b10a54-9384-4fed-b59b-c71ed95c131c",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Node.js API and MongoDB",
@@ -116,10 +131,13 @@
             "msft"
         ],
         "id": "12d2cfbe-830b-4b06-aa07-8ce09c372d77",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App + Functions with Node.js API and MongoDB",
@@ -142,10 +160,13 @@
             "msft"
         ],
         "id": "efbd5a95-560b-409d-8b5c-407d5f15d0e9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App + Functions with Python API and MongoDB",
@@ -169,10 +190,13 @@
             "msft"
         ],
         "id": "9df1ed02-2102-415e-bf5d-dec8dd6787cb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Python API and MongoDB - Terraform",
@@ -194,10 +218,13 @@
             "msft"
         ],
         "id": "616b6d54-c34b-44dd-b2d3-6557daee156e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Node.js API and MongoDB - Terraform",
@@ -218,10 +245,13 @@
             "msft"
         ],
         "id": "a1e493de-1f5b-4cc1-b9e1-18b07f073abe",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Python API and MongoDB",
@@ -243,10 +273,13 @@
             "msft"
         ],
         "id": "07b915d6-29cc-45ee-a973-c338de02310f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized React Web App with Node.js API and MongoDB",
@@ -268,10 +301,13 @@
             "msft"
         ],
         "id": "3bdd6e9a-60f5-4189-9caa-b5859d2c33a4",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized React Web App with Python API and MongoDB",
@@ -293,10 +329,13 @@
             "msft"
         ],
         "id": "b808d61c-f3af-4fa6-842d-39710b893b81",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with C# API and SQL Database ",
@@ -317,10 +356,13 @@
             "msft"
         ],
         "id": "1a0d0c97-261a-4bce-a699-f72b83e5bcea",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Web App with Java API and MongoDB ",
@@ -340,10 +382,13 @@
             "msft"
         ],
         "id": "c1af6086-4f34-4350-aea5-81e103d7e3eb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized React Web App with Java API and MongoDB",
@@ -363,10 +408,13 @@
             "msft"
         ],
         "id": "f5d0f91a-0ebc-4fe4-86cd-6414f810d54d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App + Functions with C# API and SQL Database",
@@ -388,10 +436,13 @@
             "msft"
         ],
         "id": "262a5d45-4d80-4aaa-8fba-f27d2876dcdb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Kubernetes React Web App with Node.js API and MongoDB",
@@ -413,10 +464,13 @@
             "msft"
         ],
         "id": "93b22870-f071-4104-ada9-ba45e71329a1",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Static React Web App with Java API and PostgreSQL",
@@ -434,10 +488,13 @@
             "msft"
         ],
         "id": "757881c8-74ad-4f62-9633-7af22a2be3aa",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT Plugin using Python (FastAPI)",
@@ -455,10 +512,13 @@
             "msft"
         ],
         "id": "e64314dd-aa61-4175-959d-ffa624b0423d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT + Enterprise Data with Azure OpenAI and Cognitive Search",
@@ -479,10 +539,13 @@
             "msft"
         ],
         "id": "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Simple Chat Application using Azure OpenAI",
@@ -500,10 +563,13 @@
             "msft"
         ],
         "id": "3f85f8e5-619f-495b-bf49-c5bd6edaa350",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Spring ChatGPT Application using Azure OpenAI on Azure Spring Apps",
@@ -521,10 +587,13 @@
             "msft"
         ],
         "id": "27170e89-7227-4bd0-a593-9a292498366f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Enterprise-Grade Reference Architecture for JavaScript",
@@ -546,10 +615,13 @@
             "popular"
         ],
         "id": "25a3dda0-8840-44dc-b850-4f2468991ecb",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Python (Django) Web App with PostgreSQL in VNet",
@@ -567,10 +639,13 @@
             "popular"
         ],
         "id": "aeb56402-db75-42d0-8d21-839d9d1e8158",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Python (Django) Web App with PostgreSQL via Azure Container Apps",
@@ -586,10 +661,13 @@
             "msft"
         ],
         "id": "1eab6419-b143-41d3-9b86-c8aeb9158fda",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Python (Flask) Web App with PostgreSQL in VNet",
@@ -607,10 +685,13 @@
             "popular"
         ],
         "id": "6f229853-0a89-4b5c-8e7b-6fcca519147b",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub C# ACA ServiceBus",
@@ -626,10 +707,13 @@
             "msft"
         ],
         "id": "fc959a8e-de77-48a5-b01c-d3effdb5265d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub Python ACA ServiceBus",
@@ -645,10 +729,13 @@
             "msft"
         ],
         "id": "3689e30c-5ea3-4c69-9a3c-e34ee217a770",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub Node.js ACA ServiceBus",
@@ -665,10 +752,13 @@
             "msft"
         ],
         "id": "17c7f10c-45ff-4f1b-bba8-9e98cf1a8d54",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Bindings Cron C# ACA PostgreSQL",
@@ -683,10 +773,13 @@
             "msft"
         ],
         "id": "a3c9e1b9-b2fc-4957-a5e2-bd3a4fd9f601",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Bindings Cron Python ACA PostgreSQL",
@@ -701,10 +794,13 @@
             "msft"
         ],
         "id": "e2515292-52ac-4d22-b87b-d8c3fd9219fa",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Bindings Cron Node.js ACA PostgreSQL",
@@ -720,10 +816,13 @@
             "msft"
         ],
         "id": "21a01a78-5c09-4fae-b42c-5b5793246560",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Service Invoke Node.js ACA",
@@ -737,10 +836,13 @@
             "msft"
         ],
         "id": "a98c5bd6-a080-44cf-a10c-5fcbf6588f30",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Service Invoke Python ACA",
@@ -754,10 +856,13 @@
             "msft"
         ],
         "id": "46306dfe-017e-4d99-9240-e48309ba3726",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr Service Invoke C# ACA",
@@ -771,10 +876,13 @@
             "msft"
         ],
         "id": "b9afbe11-5351-4a6d-bd8a-77cf44a24e4f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
@@ -794,10 +902,13 @@
             "popular"
         ],
         "id": "eebc5dce-43e7-4fc3-8b91-13573c8076df",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "FastAPI on Azure Functions",
@@ -811,10 +922,13 @@
             "msft"
         ],
         "id": "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Spring PetClinic - Java Spring MySQL",
@@ -835,10 +949,13 @@
             "popular"
         ],
         "id": "a10a1a26-6f9a-4ca8-8b9b-e6a99a641d08",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Event Driven Java Application with Azure Service Bus on Azure Spring Apps",
@@ -856,10 +973,13 @@
             "msft"
         ],
         "id": "e18d18a8-e26f-4be3-b1fb-cee3acd730ed",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "SAP Cloud SDK on Azure App Service Quickstart (TypeScript)",
@@ -880,10 +1000,13 @@
             "msft"
         ],
         "id": "85052c4b-9602-421e-a654-573a6d3b429f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Text Summarization using AI Cognitive Language Service (C#-Isolated)",
@@ -899,10 +1022,13 @@
             "msft"
         ],
         "id": "abdec121-45cb-4e73-a005-d944579a8db0",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Text Summarization using AI Cognitive Language Service (Python v2 Function)",
@@ -918,10 +1044,13 @@
             "msft"
         ],
         "id": "df35a2f8-da36-43b2-92df-aba105170e8c",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Reliable Web App Pattern for .NET",
@@ -942,10 +1071,13 @@
             "msft"
         ],
         "id": "33da45cd-d26c-42c1-8b0a-ae4b79847dde",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "React Component Toolkit with ChatGPT and OpenAI ",
@@ -964,10 +1096,13 @@
             "msft"
         ],
         "id": "8d6366f6-78e8-4339-8073-ab55f900ecbd",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Java Spring Apps with Azure OpenAI",
@@ -987,10 +1122,13 @@
             "msft"
         ],
         "id": "1376d15a-343c-40d6-aaf3-38902d78c5ea",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Java - ChatGPT + Enterprise data with Azure OpenAI and Cognitive Search",
@@ -1010,10 +1148,13 @@
             "msft"
         ],
         "id": "554ba579-08d0-49ac-9c12-01087c0096f6",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "ChatGPT and RAG with Azure OpenAI and Cognitive Search for JavaScript",
@@ -1034,10 +1175,13 @@
             "msft"
         ],
         "id": "f343a991-c4a1-4edb-bd4f-c0b05aadf26e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Bicep template to bootstrap Azure Deployment Environments",
@@ -1051,10 +1195,13 @@
             "msft"
         ],
         "id": "7e5276d7-b80c-4aa6-b8e6-750939a42ecd",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure OpenAI Conference Session Recommender",
@@ -1075,10 +1222,13 @@
             "ai"
         ],
         "id": "8e354d6e-1957-4441-80d6-0d350fe8bea5",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Microservices App - Dapr PubSub Java AKS",
@@ -1092,10 +1242,13 @@
             "msft"
         ],
         "id": "27a9a8be-9479-4433-8ff6-9ce9af9c92b6",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Chat using ChatGPT (Node.js JavaScript Function)",
@@ -1111,10 +1264,13 @@
             "msft"
         ],
         "id": "c0405eae-fd20-4404-a742-a1c69c6004e7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - Chat using ChatGPT (Python v2 Function)",
@@ -1130,10 +1286,13 @@
             "msft"
         ],
         "id": "120f1e71-3110-44e7-9cc6-03e611083e9d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Functions - LangChain with Azure OpenAI and ChatGPT (Python v2 Function)",
@@ -1147,10 +1306,13 @@
             "msft"
         ],
         "id": "0d1ed1f5-b136-4320-b31f-c516f959bbaf",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Multi-repo ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
@@ -1169,10 +1331,13 @@
             "msft"
         ],
         "id": "adbc2d95-6bb8-4b0d-b0cb-2c0f34c19c11",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Function with Event Hub with optional virtual network capabilities",
@@ -1191,10 +1356,13 @@
             "msft"
         ],
         "id": "9a4d5000-89de-4ec2-beb4-9212d335edd7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "URL Shortener using Microsoft Orleans and Azure for hosting and data",
@@ -1209,10 +1377,13 @@
             "aca"
         ],
         "id": "904f5d00-aed0-40e9-9e00-12c9482ae5c9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure OpenAI priority-based load balancer with Azure Container Apps",
@@ -1228,10 +1399,13 @@
             "dotnetCsharp"
         ],
         "id": "c3694deb-a6d7-4c20-8bbf-f12486a503e3",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Kubernetes Service Store Demo",
@@ -1248,10 +1422,13 @@
             "helm"
         ],
         "id": "eff16b17-9019-4b60-8438-f49781946266",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Setting up Azure OpenAI as a central capability within your organization",
@@ -1271,10 +1448,13 @@
             "msft"
         ],
         "id": "94b2c974-76a2-4df6-b9a7-7a9dbc9b707f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "SAP Cloud SDK on Azure Functions Quickstart (TypeScript)",
@@ -1295,10 +1475,13 @@
             "msft"
         ],
         "id": "e2835a74-6bb9-4a15-b4d8-dae78ee6f0ad",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "SAP CAP on Azure App Service Quickstart",
@@ -1320,10 +1503,13 @@
             "msft"
         ],
         "id": "87cca4d5-958c-4255-87ae-5df122ec34ad",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure API Management policy for priority-based routing to Azure OpenAI",
@@ -1338,10 +1524,13 @@
             "bicep"
         ],
         "id": "c0e05ee1-7abc-4c7e-b609-0b8374d221b8",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Langfuse on Azure",
@@ -1357,10 +1546,13 @@
             "bicep"
         ],
         "id": "3a69118c-f6c3-4d59-90c4-188975527db2",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "PostgreSQL + Pgvector",
@@ -1375,10 +1567,13 @@
             "python"
         ],
         "id": "fa79ba6d-e558-4025-b5ea-23970851b075",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Open AI management and logging via Azure API Management",
@@ -1395,10 +1590,13 @@
             "dotnetCsharp"
         ],
         "id": "c0b0b2c7-596f-45ca-9df8-ff9355ac471e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": ".NET AI samples with Azure OpenAI",
@@ -1417,10 +1615,13 @@
             "bicep"
         ],
         "id": "b33ac45a-f158-449d-8933-29f998143284",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure OpenAI Conference Session Assistant",
@@ -1442,10 +1643,13 @@
             "ai"
         ],
         "id": "24831952-5b15-471d-9eb9-4dbdb61ae196",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Dynamic Configuration for AKS workloads (w/o changing ConfigMaps or with Azure App Configuration)",
@@ -1463,10 +1667,13 @@
             "new"
         ],
         "id": "3b4599e6-bb03-4f19-bce8-5151a0225c7b",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Chat with your Data Solution Accelerator",
@@ -1486,10 +1693,13 @@
             "new"
         ],
         "id": "3450a16f-3b71-48ba-9bd5-c6568f105300",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Azure Kubernetes Service Store Demo",
@@ -1507,10 +1717,13 @@
             "Azure"
         ],
         "id": "9d295613-0607-4337-97b3-bdf702cd9252",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Containerized Apps on Azure Kubernetes Service",
@@ -1529,10 +1742,13 @@
             "containers"
         ],
         "id": "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Kubernetes React Web App with Node.js API and MongoDB",
@@ -1555,10 +1771,13 @@
             "Azure"
         ],
         "id": "f408ffe0-f200-4faa-b35e-2674e901cd12",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "Azd",
-        "deploymentConfig": []
+        "sourceType": "Azd"
     },
     {
         "title": "Quickstart: Deploy an Azure Kubernetes Service (AKS) cluster using Azure CLI",
@@ -1578,12 +1797,16 @@
             "provision"
         ],
         "id": "faf0d1e7-daca-4783-b19e-ba2527d2d9d3",
+        "deploymentOptions": [
+            "execDocs"
+        ],
+        "deploymentConfig": { "execDocs": {
+            "path": "azure-docs%2Farticles%2Faks%2Flearn%2Fquick-kubernetes-deploy-cli.md"
+            }
+        },
         "products": [],
         "sampleQueries": [],
-        "sourceType": "ExecDocs",
-        "deploymentConfig": [
-            "azure-docs%2Farticles%2Faks%2Flearn%2Fquick-kubernetes-deploy-cli.md"
-        ]
+        "sourceType": "ExecDocs"
     },
     {
         "title": "Tutorial: Deploy WordPress on AKS cluster by using Azure CLI",
@@ -1603,12 +1826,16 @@
             "tutorial"
         ],
         "id": "75a2b5f3-82ec-4d00-af34-f07c61583d2a",
+        "deploymentOptions": [
+            "execDocs"
+        ],
+        "deploymentConfig": { "execDocs": {
+            "path": "azure-docs%2Farticles%2Fmysql%2Fflexible-server%2Ftutorial-deploy-wordpress-on-aks.md"
+            }
+        },
         "products": [],
         "sampleQueries": [],
-        "sourceType": "ExecDocs",
-        "deploymentConfig": [
-            "azure-docs%2Farticles%2Fmysql%2Fflexible-server%2Ftutorial-deploy-wordpress-on-aks.md"
-        ]
+        "sourceType": "ExecDocs"
     },
     {
         "title": "Quickstart: Building your first static site with the Azure Static Web Apps using the CLI",
@@ -1628,12 +1855,16 @@
             "AzureCLI"
         ],
         "id": "199d0d86-8cb0-431e-8acf-a3c5d9527fd0",
+        "deploymentOptions": [
+            "execDocs"
+        ],
+        "deploymentConfig": { "execDocs": {
+            "path": "azure-docs%2Farticles%2Fstatic-web-apps%2Fget-started-cli.md"
+            }
+        },
         "products": [],
         "sampleQueries": [],
-        "sourceType": "ExecDocs",
-        "deploymentConfig": [
-            "azure-docs%2Farticles%2Fstatic-web-apps%2Fget-started-cli.md"
-        ]
+        "sourceType": "ExecDocs"
     },
     {
         "title": "Create virtual machines in a Flexible scale set using Azure CLI",
@@ -1653,12 +1884,16 @@
           "oneclick"
         ],
         "id": "1ef90b47-d262-4370-8731-e6568014100f",
+        "deploymentOptions": [
+            "execDocs"
+        ],
+        "deploymentConfig": { "execDocs": {
+            "path": "azure-docs%2Farticles%2Fvirtual-machine-scale-sets%2Fflexible-virtual-machine-scale-sets-cli.md"
+            }
+        },
         "products": [],
         "sampleQueries": [],
-        "sourceType": "ExecDocs",
-        "deploymentConfig": [
-            "azure-docs%2Farticles%2Fvirtual-machine-scale-sets%2Fflexible-virtual-machine-scale-sets-cli.md"
-        ]
+        "sourceType": "ExecDocs"
     },
     {
         "title": "Deploy Inspektor Gadget in an Azure Kubernetes Service cluster",
@@ -1678,12 +1913,16 @@
           "monitoring"
         ],
         "id": "cf9941e7-df14-400d-86a3-4ef82f016d05",
+        "deploymentOptions": [
+            "execDocs"
+        ],
+        "deploymentConfig": { "execDocs": {
+            "path": "DeployIGonAKS%2FREADME.md"
+            }
+        },
         "products": [],
         "sampleQueries": [],
-        "sourceType": "ExecDocs",
-        "deploymentConfig": [
-            "DeployIGonAKS%2FREADME.md"
-        ]
+        "sourceType": "ExecDocs"
     },
     {
         "title": "Deploy a Scalable & Secure Azure Kubernetes Service cluster using the Azure CLI",
@@ -1704,12 +1943,16 @@
           "one click"
         ],
         "id": "dc1f07b7-6a62-42d8-b683-6d666f56dd64",
+        "deploymentOptions": [
+            "execDocs"
+        ],
+        "deploymentConfig": { "execDocs": {
+            "path": "CreateAKSWebApp%2FREADME.md"
+            }
+        },
         "products": [],
         "sampleQueries": [],
-        "sourceType": "ExecDocs",
-        "deploymentConfig": [
-            "CreateAKSWebApp%2FREADME.md"
-        ]
+        "sourceType": "ExecDocs"
     },
     {
         "title": "Azure OpenAI RAG Chat Experience with Node.js",
@@ -1729,10 +1972,13 @@
             "model"
         ],
         "id": "7ea19a29-b97a-47e9-b5b8-3e974d77db88",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Serverless AI Chat with RAG using LangChain.js",
@@ -1750,10 +1996,13 @@
             "openAI"
         ],
         "id": "ff16119d-5fa9-4011-b0f3-62ef2b71650f",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Use Key Vault from App Service with Azure Managed Identity",
@@ -1771,6 +2020,10 @@
             "msi"
         ],
         "id": "7215fa5f-57b0-4b7e-a347-cd07c2fc2fd1",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [
             "azure",
             "dotnet",
@@ -1779,8 +2032,7 @@
             "azure-key-vault"
         ],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "ASP.NET sample for Azure App Service",
@@ -1798,10 +2050,13 @@
             "aspnet"
         ],
         "id": "9b718fe5-05b1-4444-96be-7e5706f876d7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Azure AI Search Comparison Tool",
@@ -1821,10 +2076,13 @@
             "retrieval"
         ],
         "id": "a470d1ed-7e75-421b-8794-9c6165b73c79",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Azure OpenAI Chat Frontend",
@@ -1842,10 +2100,13 @@
             "frontend"
         ],
         "id": "8a8499b2-ad33-4e73-846d-5715aed9f8f7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Azure AI Studio Starter Template",
@@ -1863,10 +2124,13 @@
             "aistudio"
         ],
         "id": "3b2621a8-62cf-418c-9811-916dae3df1d4",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "Contoso Chat Retail with Azure AI Studio and Promptflow",
@@ -1884,10 +2148,13 @@
             "RAG"
         ],
         "id": "892c1998-ab31-4592-a453-8c8ec947df6a",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "HTML sample for Azure App Service",
@@ -1905,10 +2172,13 @@
             "bootstrap"
         ],
         "id": "92455774-ab16-49b7-968c-e5963cbe880d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     },
     {
         "title": "SAP Deployment Automation Framework",
@@ -1926,9 +2196,12 @@
             "framework"
         ],
         "id": "42ed645b-37f7-4468-95f4-ca5a515b63e5",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples",
-        "deploymentConfig": []
+        "sourceType": "AzureSamples"
     }
 ]
