@@ -1707,6 +1707,169 @@
         "sourceType": "Azd"
     },
     {
+        "title": "Quickstart: Deploy an Azure Kubernetes Service (AKS) cluster using Azure CLI",
+        "description": "Learn how to quickly deploy a Kubernetes cluster and deploy an application in Azure Kubernetes Service (AKS) using Azure CLI.",
+        "author": "Microsoft",
+        "source": "CreateAksClusterAzureCli",
+        "tags": [
+            "kubernetes",
+            "azure",
+            "CLI",
+            "aks",
+            "deployment",
+            "cluster",
+            "application",
+            "setup",
+            "tutorial",
+            "provision"
+        ],
+        "id": "faf0d1e7-daca-4783-b19e-ba2527d2d9d3",
+        "deploymentOptions": [
+            "ExecDocs",
+            "CreateAksClusterAzureCli",
+            "azure-docs%2Farticles%2Faks%2Flearn%2Fquick-kubernetes-deploy-cli.md"
+        ],
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "ExecDocs"
+    },
+    {
+        "title": "Tutorial: Deploy WordPress on AKS cluster by using Azure CLI",
+        "description": "Learn how to quickly build and deploy WordPress on AKS with Azure Database for MySQL - Flexible Server.",
+        "author": "Microsoft",
+        "source": "CreateWordpressAks",
+        "tags": [
+            "wordpress",
+            "aks",
+            "azure",
+            "mysql",
+            "deployment",
+            "database",
+            "container",
+            "server",
+            "build",
+            "tutorial"
+        ],
+        "id": "75a2b5f3-82ec-4d00-af34-f07c61583d2a",
+        "deploymentOptions": [
+            "ExecDocs",
+            "CreateWordpressAks",
+            "azure-docs%2Farticles%2Fmysql%2Fflexible-server%2Ftutorial-deploy-wordpress-on-aks.md"
+        ],
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "ExecDocs"
+    },
+    {
+        "title": "Quickstart: Building your first static site with the Azure Static Web Apps using the CLI",
+        "description": "Learn to deploy a static site to Azure Static Web Apps with the Azure CLI.",
+        "author": "Microsoft",
+        "source": "CreateStaticWebAppAzureCli",
+        "tags": [
+            "static",
+            "azure",
+            "webapp",
+            "apps",
+            "deployment",
+            "cli",
+            "tutorial",
+            "site",
+            "build",
+            "AzureCLI"
+        ],
+        "id": "199d0d86-8cb0-431e-8acf-a3c5d9527fd0",
+        "deploymentOptions": [
+            "ExecDocs",
+            "CreateStaticWebAppAzureCli",
+            "azure-docs%2Farticles%2Fstatic-web-apps%2Fget-started-cli.md"
+        ],
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "ExecDocs"
+    },
+    {
+        "title": "Create virtual machines in a Flexible scale set using Azure CLI",
+        "description": "Learn how to create a Virtual Machine Scale Set in Flexible orchestration mode using Azure CLI.",
+        "author": "Microsoft",
+        "source": "CreateVmFlexibleScaleSet",
+        "tags": [
+          "virtual",
+          "scaleset",
+          "azure",
+          "cli",
+          "orchestration",
+          "flexible",
+          "deployment",
+          "machine",
+          "tutorial",
+          "oneclick"
+        ],
+        "id": "1ef90b47-d262-4370-8731-e6568014100f",
+        "deploymentOptions": [
+            "ExecDocs",
+            "CreateVmFlexibleScaleSet",
+            "azure-docs%2Farticles%2Fvirtual-machine-scale-sets%2Fflexible-virtual-machine-scale-sets-cli.md"
+        ],
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "ExecDocs"
+    },
+    {
+        "title": "Deploy Inspektor Gadget in an Azure Kubernetes Service cluster",
+        "description": "This tutorial shows how to deploy Inspektor Gadget in an AKS cluster",
+        "author": "Microsoft",
+        "source": "DeployInspektorGadget",
+        "tags": [
+          "tutorial",
+          "inspektor",
+          "gadget",
+          "aks",
+          "cluster",
+          "deployment",
+          "kubernetes",
+          "setup",
+          "install",
+          "monitoring"
+        ],
+        "id": "cf9941e7-df14-400d-86a3-4ef82f016d05",
+        "deploymentOptions": [
+            "ExecDocs",
+            "DeployInspektorGadget",
+            "DeployIGonAKS%2FREADME.md"
+        ],
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "ExecDocs"
+    },
+    {
+        "title": "Deploy a Scalable & Secure Azure Kubernetes Service cluster using the Azure CLI",
+        "description": "This tutorial where we will take you step by step in creating an Azure Kubernetes Web Application that is secured via https.",
+        "author": "Microsoft",
+        "source": "DeployScalableAKS",
+        "tags": [
+          "tutorial",
+          "azure",
+          "kubernetes",
+          "web",
+          "application",
+          "HTTPS",
+          "secure",
+          "deployment",
+          "setup",
+          "step-by-step",
+          "one click"
+        ],
+        "id": "dc1f07b7-6a62-42d8-b683-6d666f56dd64",
+        "deploymentOptions": [
+            "ExecDocs",
+            "DeployScalableAKS",
+            "CreateAKSWebApp%2FREADME.md"
+        ],
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "ExecDocs"
+    },
+    {
         "title": "Azure OpenAI RAG Chat Experience with Node.js",
         "description": "This sample shows how to build an AI chat experience with Retrieval-Augmented Generation (RAG) using LangChain4J and OpenAI language models. The application is hosted on Azure Static Web Apps and Azure Container Apps, with Azure AI Search as the vector database. You can use it as a starting point for building more complex AI applications.",
         "author": "Microsoft",
