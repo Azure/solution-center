@@ -1698,7 +1698,7 @@
         ],
         "deploymentConfig": {},
         "products": [],
-        "sampleQueries": [],
+        "sampleQueries": ["RAG app with python", "rag with python", "RAG using python", "RAG app", "Retrieval Augemented generation with Python"],
         "sourceType": "Azd"
     },
     {
