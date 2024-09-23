@@ -1800,8 +1800,9 @@
         "deploymentOptions": [
             "execDocs"
         ],
-        "deploymentConfig": { "execDocs": {
-            "path": "azure-docs%2Farticles%2Faks%2Flearn%2Fquick-kubernetes-deploy-cli.md"
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "azure-docs%2Farticles%2Faks%2Flearn%2Fquick-kubernetes-deploy-cli.md"
             }
         },
         "products": [],
@@ -1829,8 +1830,9 @@
         "deploymentOptions": [
             "execDocs"
         ],
-        "deploymentConfig": { "execDocs": {
-            "path": "azure-docs%2Farticles%2Fmysql%2Fflexible-server%2Ftutorial-deploy-wordpress-on-aks.md"
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "azure-docs%2Farticles%2Fmysql%2Fflexible-server%2Ftutorial-deploy-wordpress-on-aks.md"
             }
         },
         "products": [],
@@ -1858,8 +1860,9 @@
         "deploymentOptions": [
             "execDocs"
         ],
-        "deploymentConfig": { "execDocs": {
-            "path": "azure-docs%2Farticles%2Fstatic-web-apps%2Fget-started-cli.md"
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "azure-docs%2Farticles%2Fstatic-web-apps%2Fget-started-cli.md"
             }
         },
         "products": [],
@@ -1872,23 +1875,24 @@
         "author": "Microsoft",
         "source": "CreateVmFlexibleScaleSet",
         "tags": [
-          "virtual",
-          "scaleset",
-          "azure",
-          "cli",
-          "orchestration",
-          "flexible",
-          "deployment",
-          "machine",
-          "tutorial",
-          "oneclick"
+            "virtual",
+            "scaleset",
+            "azure",
+            "cli",
+            "orchestration",
+            "flexible",
+            "deployment",
+            "machine",
+            "tutorial",
+            "oneclick"
         ],
         "id": "1ef90b47-d262-4370-8731-e6568014100f",
         "deploymentOptions": [
             "execDocs"
         ],
-        "deploymentConfig": { "execDocs": {
-            "path": "azure-docs%2Farticles%2Fvirtual-machine-scale-sets%2Fflexible-virtual-machine-scale-sets-cli.md"
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "azure-docs%2Farticles%2Fvirtual-machine-scale-sets%2Fflexible-virtual-machine-scale-sets-cli.md"
             }
         },
         "products": [],
@@ -1901,23 +1905,24 @@
         "author": "Microsoft",
         "source": "DeployInspektorGadget",
         "tags": [
-          "tutorial",
-          "inspektor",
-          "gadget",
-          "aks",
-          "cluster",
-          "deployment",
-          "kubernetes",
-          "setup",
-          "install",
-          "monitoring"
+            "tutorial",
+            "inspektor",
+            "gadget",
+            "aks",
+            "cluster",
+            "deployment",
+            "kubernetes",
+            "setup",
+            "install",
+            "monitoring"
         ],
         "id": "cf9941e7-df14-400d-86a3-4ef82f016d05",
         "deploymentOptions": [
             "execDocs"
         ],
-        "deploymentConfig": { "execDocs": {
-            "path": "DeployIGonAKS%2FREADME.md"
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "DeployIGonAKS%2FREADME.md"
             }
         },
         "products": [],
@@ -1930,24 +1935,25 @@
         "author": "Microsoft",
         "source": "DeployScalableAKS",
         "tags": [
-          "tutorial",
-          "azure",
-          "kubernetes",
-          "web",
-          "application",
-          "HTTPS",
-          "secure",
-          "deployment",
-          "setup",
-          "step-by-step",
-          "one click"
+            "tutorial",
+            "azure",
+            "kubernetes",
+            "web",
+            "application",
+            "HTTPS",
+            "secure",
+            "deployment",
+            "setup",
+            "step-by-step",
+            "one click"
         ],
         "id": "dc1f07b7-6a62-42d8-b683-6d666f56dd64",
         "deploymentOptions": [
             "execDocs"
         ],
-        "deploymentConfig": { "execDocs": {
-            "path": "CreateAKSWebApp%2FREADME.md"
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "CreateAKSWebApp%2FREADME.md"
             }
         },
         "products": [],
@@ -2002,7 +2008,7 @@
         "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples"
+        "sourceType": "Azd"
     },
     {
         "title": "Use Key Vault from App Service with Azure Managed Identity",
@@ -2106,7 +2112,7 @@
         "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples"
+        "sourceType": "Azd"
     },
     {
         "title": "Azure AI Studio Starter Template",
@@ -2130,7 +2136,7 @@
         "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples"
+        "sourceType": "Azd"
     },
     {
         "title": "Contoso Chat Retail with Azure AI Studio and Promptflow",
@@ -2154,7 +2160,7 @@
         "deploymentConfig": {},
         "products": [],
         "sampleQueries": [],
-        "sourceType": "AzureSamples"
+        "sourceType": "Azd"
     },
     {
         "title": "HTML sample for Azure App Service",
@@ -2203,5 +2209,464 @@
         "products": [],
         "sampleQueries": [],
         "sourceType": "AzureSamples"
+    },
+    {
+        "title": "Azure AI Starter",
+        "description": "Bicep template that deploys Azure AI services with configured machine learning models.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/azd-ai-starter",
+        "tags": [
+            "bicep",
+            "ai",
+            "azureai",
+            "openai",
+            "msft"
+        ],
+        "id": "51b84127-0563-45c3-b2d2-03a66433ca70",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Simple Chat Application using Azure OpenAI (Python)",
+        "description": "Build a chat application using Azure OpenAI GPT models.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/openai-chat-app-quickstart",
+        "tags": [
+            "msft",
+            "aicollection",
+            "python",
+            "openai",
+            "aca",
+            "bicep",
+            "ai"
+        ],
+        "id": "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "RAG on PostgreSQL",
+        "description": "A RAG app to ask questions about rows in a database table. Deployable on Azure Container Apps with PostgreSQL Flexible Server.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/rag-postgres-openai-python",
+        "tags": [
+            "msft",
+            "aicollection",
+            "python",
+            "openai",
+            "aca",
+            "bicep",
+            "ai",
+            "azuredb-postgreSQL",
+            "rag"
+        ],
+        "id": "7fce9298-6849-439b-9080-7901412ac48e",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Creative Writing Assistant: Working with Agents using Promptflow (Python Implementation)",
+        "description": "A creative writing multi-agent solution to help users write articles.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/agent-openai-python-prompty",
+        "tags": [
+            "msft",
+            "aicollection",
+            "python",
+            "openai",
+            "aks",
+            "terraform",
+            "ai",
+            "aisearch"
+        ],
+        "id": "eac0f912-29ba-40fc-8d1b-2e495fc94abd",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Process Automation: Speech to Text and Summarization with AI Studio",
+        "description": "This solution converts speech to text and then processes and summarizes the text based on the prompt scenario.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/summarization-openai-python-promptflow",
+        "tags": [
+            "msft",
+            "aicollection",
+            "python",
+            "openai",
+            "aca",
+            "bicep",
+            "ai",
+            "speechservice"
+        ],
+        "id": "abb9e776-88e4-4519-9d59-73bccf78f635",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Function Calling with Prompty, LangChain and Elastic Search",
+        "description": "Function calling for vector database lookup based on user question.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/agent-python-openai-prompty-langchain",
+        "tags": [
+            "msft",
+            "aicollection",
+            "python",
+            "openai",
+            "aistudio",
+            "bicep",
+            "ai"
+        ],
+        "id": "b2aa83fb-7911-4f5f-bf5f-4f429ca1d67d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Function Calling with Prompty, LangChain and Pinecone",
+        "description": "Function calling for vector database lookup based on user question.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/agent-openai-python-prompty-langchain-pinecone",
+        "tags": [
+            "msft",
+            "aicollection",
+            "python",
+            "openai",
+            "aistudio",
+            "bicep",
+            "ai",
+            "pinecone"
+        ],
+        "id": "283300a7-84d2-4768-9c38-27eb6eac18bd",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "API Center Analyzer",
+        "description": "This sample provides an Azure API Center along with Azure Functions and Azure Event Grid to analyze API specs when registering or updating API specs to Azure API Center.",
+        "author": "Justin Yoo, Pierce Boggan",
+        "source": "https://github.com/Azure/APICenter-Analyzer",
+        "tags": [
+            "msft",
+            "bicep",
+            "apicenter",
+            "functions",
+            "eventgrid",
+            "managedidentity",
+            "appinsights",
+            "loganalytics",
+            "diagnosticsettings",
+            "typescript"
+        ],
+        "id": "69c72097-2d94-4ce6-84f6-39660e086d6a",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "API Center Portal",
+        "description": "This sample provides an Azure API Center along with Azure Static Web Apps that governs API specs registered on Azure API Center for developers and stakeholders.",
+        "author": "Justin Yoo, Pierce Boggan",
+        "source": "https://github.com/Azure/APICenter-Portal-Starter",
+        "tags": [
+            "msft",
+            "bicep",
+            "apicenter",
+            "swa",
+            "serviceprincipal",
+            "typescript"
+        ],
+        "id": "7a19b6ec-5aa0-424e-a00e-182ba93ef5d9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "API Center Reference Sample",
+        "description": "This sample provides an Azure API Center along with Azure App Service, Static Web Apps and Azure Functions that governs, analyzes and performs service discovery of API specs registered on Azure API Center.",
+        "author": "Justin Yoo",
+        "source": "https://github.com/Azure-Samples/APICenter-Reference",
+        "tags": [
+            "msft",
+            "bicep",
+            "apicenter",
+            "appservice",
+            "functions",
+            "eventgrid",
+            "managedidentity",
+            "appinsights",
+            "loganalytics",
+            "diagnosticsettings",
+            "swa",
+            "serviceprincipal",
+            "logicapps",
+            "apim",
+            "dotnetCsharp",
+            "typescript"
+        ],
+        "id": "c6a63f43-1a2f-4e19-9af9-d28f2818da1d",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "GPT Video Analysis-In-A-Box",
+        "description": "The GPT Video Analysis in-a-Box project leverages Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory to provide a low-code solution for analyzing images and videos, making AI adoption simpler and more efficient. This solution, part of the AI-in-a-Box framework by Microsoft Customer Engineers and Architects, ensures quality, efficiency, and rapid deployment of AI and ML solutions across various industries.",
+        "author": "AI-in-a-Box Team",
+        "source": "https://github.com/Azure-Samples/gpt-video-analysis-in-a-box",
+        "tags": [
+            "msft",
+            "openai",
+            "bicep",
+            "cosmosdb",
+            "azuredatafactory",
+            "blobstorage",
+            "ai"
+        ],
+        "id": "8000f86e-cd2f-43e0-8441-5112c5c31120",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Build a Copilot app using Azure Cosmos DB, Azure OpenAI Service and Azure App Service",
+        "description": "Build a copilot application with Azure OpenAI Service, Azure Cosmos DB for NoSQL vector database & Azure App Service.",
+        "author": "Azure Cosmos DB Content Team",
+        "source": "https://github.com/AzureCosmosDB/cosmosdb-nosql-copilot",
+        "tags": [
+            "msft",
+            "openai",
+            "gpt",
+            "cosmosdb",
+            "bicep",
+            "ai",
+            "dotnetCsharp",
+            "managedidentity",
+            "appservice",
+            "semantickernel",
+            "blazor"
+        ],
+        "id": "ca134ac5-31fc-4221-851b-a3c2f2bf98d9",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Serverless Azure OpenAI Quick Start with LlamaIndex (Python)",
+        "description": "This sample shows how to quickly get started with LlamaIndex.ai on Azure. The application is hosted on Azure Container Apps. You can use it as a starting point for building more complex RAG applications.",
+        "author": "Marlene Mhangami",
+        "source": "https://github.com/Azure-Samples/llama-index-python",
+        "tags": [
+            "msft",
+            "openai",
+            "gpt",
+            "bicep",
+            "ai",
+            "python",
+            "managedidentity",
+            "aca",
+            "ai",
+            "rag",
+            "aicollection"
+        ],
+        "id": "0c327019-e4d4-49bf-b310-36e1e0914995",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Serverless Azure OpenAI Quick Start with LlamaIndex (JavaScript)",
+        "description": "This sample shows how to quickly get started with LlamaIndex.ai on Azure. The application is hosted on Azure Container Apps. You can use it as a starting point for building more complex RAG applications.",
+        "author": "Wassim Chegham",
+        "source": "https://github.com/Azure-Samples/llama-index-javascript",
+        "tags": [
+            "msft",
+            "openai",
+            "bicep",
+            "javascript",
+            "nodejs",
+            "ai",
+            "aca",
+            "rag",
+            "aicollection"
+        ],
+        "id": "444b9fdf-aeac-43d8-9c10-73eea3b44c9c",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "NLP to SQL In-A-Box",
+        "description": "NLP-SQL-in-a-Box is part of Microsoft's AI-in-a-Box framework, designed to simplify the deployment of AI and ML solutions. This project enables users to interact with SQL databases using natural language and speech, leveraging Azure OpenAI, Semantic Kernel, and Azure AI Speech Service to translate spoken queries into SQL statements, execute them, and deliver results audibly, ensuring an intuitive and user-friendly experience.",
+        "author": "AI-in-a-Box Team",
+        "source": "https://github.com/Azure-Samples/nlp-sql-in-a-box",
+        "tags": [
+            "msft",
+            "openai",
+            "gpt",
+            "bicep",
+            "ai",
+            "python",
+            "azuresql",
+            "speechservice",
+            "azureai",
+            "managedidentity",
+            "semantickernel",
+            "new"
+        ],
+        "id": "c1ea7827-0596-4556-a9be-01b772fd94a7",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "RAG using Kernel Memory on Azure",
+        "description": "Kernel Memory (KM) is a multi-modal AI Service specialized in the efficient indexing of datasets through custom continuous data hybrid pipelines, with support for Retrieval Augmented Generation (RAG), synthetic memory, prompt engineering, and custom semantic memory processing.",
+        "author": "Kernel Memory Team",
+        "source": "https://github.com/microsoft/kernel-memory",
+        "tags": [
+            "msft",
+            "openai",
+            "aca",
+            "ai",
+            "aisearch",
+            "azureai",
+            "bicep",
+            "managedidentity",
+            "blobstorage",
+            "dotnetCsharp",
+            "gpt",
+            "agw",
+            "semantickernel",
+            "azurestorage",
+            "appinsights",
+            "vnets",
+            "kernelmemory",
+            "promptengineering",
+            "new",
+            "rag"
+        ],
+        "id": "eb384955-4583-41de-a87f-42bf6bfb1439",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Serverless Azure OpenAI Assistant Quick Start with Function Calling",
+        "description": "Allows you to create AI assistants tailored to your needs via custom instructions and tools like code interpreter and custom functions.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/azure-openai-assistant-javascript",
+        "tags": [
+            "javascript",
+            "gpt",
+            "swa",
+            "functions",
+            "openai",
+            "managedidentity",
+            "openai",
+            "aicollection",
+            "msft",
+            "new"
+        ],
+        "id": "9691c16c-500a-40c2-9b55-994fff837a35",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
+    },
+    {
+        "title": "Chat + Vision using Azure OpenAI",
+        "description": "A demonstration of chatting with uploaded images using OpenAI vision models like gpt-4o.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/openai-chat-vision-quickstart",
+        "tags": [
+            "python",
+            "managedidentity",
+            "aca",
+            "azureai",
+            "aicollection",
+            "msft",
+            "new"
+        ],
+        "id": "0f6f3413-2d11-49fd-87a9-a87121f3a70a",
+        "deploymentOptions": [
+            "AzD"
+        ],
+        "deploymentConfig": {},
+        "products": [],
+        "sampleQueries": [],
+        "sourceType": "Azd"
     }
 ]
