@@ -521,8 +521,8 @@
         "sourceType": "Azd"
     },
     {
-        "title": "ChatGPT + Enterprise Data with Azure OpenAI and Cognitive Search",
-        "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure Cognitive Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
+        "title": "ChatGPT + Enterprise Data with Azure OpenAI and AI Search",
+        "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
         "author": "Azure Content Team",
         "source": "https://github.com/Azure-Samples/azure-search-openai-demo-csharp",
         "tags": [
@@ -531,12 +531,14 @@
             "aks",
             "kubernetes",
             "aca",
-            "cognitivesearch",
+            "aisearch",
             "openai",
-            "chatgpt",
+            "gpt",
             "rediscache",
             "ai",
-            "msft"
+            "msft",
+            "popular",
+            "aicollection"
         ],
         "id": "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
         "deploymentOptions": [
@@ -556,7 +558,7 @@
             "bicep",
             "python",
             "openai",
-            "chatgpt",
+            "gpt",
             "ai",
             "flask",
             "aca",
@@ -580,7 +582,7 @@
             "bicep",
             "java",
             "openai",
-            "chatgpt",
+            "gpt",
             "ai",
             "blobstorage",
             "azurespringapps",
@@ -885,21 +887,25 @@
         "sourceType": "Azd"
     },
     {
-        "title": "ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
-        "description": "Demonstration of how to leverage Azure OpenAI and Cognitive Search to enable Information Search and Discovery over organizational content.",
+        "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+        "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
         "author": "Azure Content Team",
         "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
         "tags": [
             "openai",
-            "chatgpt",
-            "cognitivesearch",
+            "gpt",
+            "aisearch",
             "python",
             "typescript",
             "bicep",
             "nodejs",
             "ai",
             "msft",
-            "popular"
+            "popular",
+            "blobstorage",
+            "appservice",
+            "aicollection",
+            "speechservice"
         ],
         "id": "eebc5dce-43e7-4fc3-8b91-13573c8076df",
         "deploymentOptions": [
@@ -945,8 +951,7 @@
             "bicep",
             "spring",
             "thymeleaf",
-            "msft",
-            "popular"
+            "msft"
         ],
         "id": "a10a1a26-6f9a-4ca8-8b9b-e6a99a641d08",
         "deploymentOptions": [
@@ -1015,7 +1020,7 @@
         "source": "https://github.com/Azure-Samples/function-csharp-ai-textsummarize",
         "tags": [
             "functions",
-            "cognitivesearch",
+            "aisearch",
             "dotnetCsharp",
             "azureai",
             "ai",
@@ -1037,7 +1042,7 @@
         "source": "https://github.com/Azure-Samples/function-python-ai-textsummarize",
         "tags": [
             "functions",
-            "cognitivesearch",
+            "aisearch",
             "python",
             "azureai",
             "ai",
@@ -1087,7 +1092,7 @@
         "tags": [
             "bicep",
             "openai",
-            "chatgpt",
+            "gpt",
             "ai",
             "apim",
             "reactjs",
@@ -1131,7 +1136,7 @@
         "sourceType": "Azd"
     },
     {
-        "title": "Java - ChatGPT + Enterprise data with Azure OpenAI and Cognitive Search",
+        "title": "Java - ChatGPT + Enterprise data with Azure OpenAI and AI Search",
         "description": "This repo is the java conversion of the well known chatGPT + Enterprise data code sample originally developed in python",
         "author": "Davide Antelmo",
         "source": "https://github.com/Azure-Samples/azure-search-openai-demo-java",
@@ -1141,11 +1146,12 @@
             "openai",
             "ai",
             "appservice",
-            "cognitivesearch",
+            "aisearch",
             "semantickernel",
             "reactjs",
             "bicep",
-            "msft"
+            "msft",
+            "aicollection"
         ],
         "id": "554ba579-08d0-49ac-9c12-01087c0096f6",
         "deploymentOptions": [
@@ -1157,22 +1163,24 @@
         "sourceType": "Azd"
     },
     {
-        "title": "ChatGPT and RAG with Azure OpenAI and Cognitive Search for JavaScript",
-        "description": "A reference sample to build Retrieval Augmented Generation applications using Azure Cognitive Search and Azure OpenAI.",
+        "title": "ChatGPT and RAG with Azure OpenAI and AI Search for JavaScript",
+        "description": "A reference sample to build Retrieval Augmented Generation applications using Azure AI Search and Azure OpenAI.",
         "author": "JavaScript Advocacy Team, Natalia Venditto, Shibani Basava",
         "source": "https://github.com/Azure-Samples/azure-search-openai-javascript",
         "tags": [
             "ai",
             "bicep",
-            "chatgpt",
-            "cognitivesearch",
+            "gpt",
+            "aisearch",
             "javascript",
             "nodejs",
             "openai",
             "typescript",
             "webcomponents",
             "microfrontend",
-            "msft"
+            "msft",
+            "aicollection",
+            "rag"
         ],
         "id": "f343a991-c4a1-4edb-bd4f-c0b05aadf26e",
         "deploymentOptions": [
@@ -1260,7 +1268,7 @@
             "openai",
             "javascript",
             "ai",
-            "chatgpt",
+            "gpt",
             "msft"
         ],
         "id": "c0405eae-fd20-4404-a742-a1c69c6004e7",
@@ -1282,7 +1290,7 @@
             "openai",
             "python",
             "ai",
-            "chatgpt",
+            "gpt",
             "msft"
         ],
         "id": "120f1e71-3110-44e7-9cc6-03e611083e9d",
@@ -1315,14 +1323,14 @@
         "sourceType": "Azd"
     },
     {
-        "title": "Multi-repo ChatGPT and Enterprise data with Azure OpenAI and Cognitive Search",
+        "title": "Multi-repo ChatGPT and Enterprise data with Azure OpenAI and AI Search",
         "description": "Azure OpenAI at scale in a secure manner.",
         "author": "Azure Content Team",
         "source": "https://github.com/Azure/GPT-RAG",
         "tags": [
             "openai",
-            "chatgpt",
-            "cognitivesearch",
+            "gpt",
+            "aisearch",
             "python",
             "typescript",
             "bicep",
@@ -1663,8 +1671,7 @@
             "dotnetCsharp",
             "bicep",
             "webapps",
-            "msft",
-            "new"
+            "msft"
         ],
         "id": "3b4599e6-bb03-4f19-bce8-5151a0225c7b",
         "deploymentOptions": [
@@ -1685,12 +1692,12 @@
             "python",
             "typescript",
             "flask",
-            "cognitivesearch",
+            "aisearch",
             "openai",
-            "chatgpt",
+            "gpt",
             "ai",
             "msft",
-            "new"
+            "rag"
         ],
         "id": "3450a16f-3b71-48ba-9bd5-c6568f105300",
         "deploymentOptions": [
@@ -1698,7 +1705,13 @@
         ],
         "deploymentConfig": {},
         "products": [],
-        "sampleQueries": ["RAG app with python", "rag with python", "RAG using python", "RAG app", "Retrieval Augemented generation with Python"],
+        "sampleQueries": [
+            "RAG app with python",
+            "rag with python",
+            "RAG using python",
+            "RAG app",
+            "Retrieval Augemented generation with Python"
+        ],
         "sourceType": "Azd"
     },
     {
@@ -1707,14 +1720,13 @@
         "author": "AKS Content Team",
         "source": "https://github.com/azure-samples/aks-store-demo",
         "tags": [
-            "aks",
-            "kubernetes",
             "terraform",
-            "openAI",
-            "app",
-            "helm",
+            "aks",
+            "openai",
             "ai",
-            "Azure"
+            "msft",
+            "kubernetes",
+            "helm"
         ],
         "id": "9d295613-0607-4337-97b3-bdf702cd9252",
         "deploymentOptions": [
@@ -1756,19 +1768,18 @@
         "author": "Azure Dev",
         "source": "https://github.com/Azure-Samples/todo-nodejs-mongo-aks",
         "tags": [
-            "aks",
-            "kubernetes",
             "bicep",
-            "cosmosdb",
+            "nodejs",
+            "typescript",
             "javascript",
-            "keyvault",
             "mongodb",
             "monitor",
-            "nodejs",
+            "keyvault",
             "reactjs",
-            "typescript",
-            "app",
-            "Azure"
+            "appservice",
+            "cosmosdb",
+            "aks",
+            "msft"
         ],
         "id": "f408ffe0-f200-4faa-b35e-2674e901cd12",
         "deploymentOptions": [
@@ -1987,19 +1998,28 @@
         "sourceType": "AzureSamples"
     },
     {
-        "title": "Serverless AI Chat with RAG using LangChain.js",
-        "description": "This sample shows how to build a serverless AI chat experience with Retrieval-Augmented Generation using LangChain.js and Azure. The application is hosted on Azure Static Web Apps and Azure Functions, with Azure AI Search as the vector database. You can use it as a starting point for building more complex AI applications.",
-        "author": "Microsoft",
+        "title": "Serverless ChatGPT with RAG using LangChain.js",
+        "description": "A Serverless ChatGPT-like experience with Retrieval-Augmented Generation using LangChain.js, TypeScript and Azure",
+        "author": "Glaucia Lemos, Yohan Lasorsa",
         "source": "https://github.com/Azure-Samples/serverless-chat-langchainjs",
         "tags": [
-            "serverless",
             "ai",
-            "chat",
-            "azure",
+            "bicep",
+            "gpt",
+            "serverlessapi",
+            "javascript",
+            "nodejs",
+            "openai",
+            "typescript",
+            "webcomponents",
+            "cosmosdb",
+            "msft",
             "langchain",
-            "search",
-            "app",
-            "openAI"
+            "functions",
+            "swa",
+            "azureai",
+            "aicollection",
+            "rag"
         ],
         "id": "ff16119d-5fa9-4011-b0f3-62ef2b71650f",
         "deploymentOptions": [
@@ -2092,18 +2112,17 @@
     },
     {
         "title": "Azure OpenAI Chat Frontend",
-        "description": "This folder contains a Lit implementation, consisting of multiple LitElements that can be used to interact with the Azure OpenAI API. It is a classic chat UI that can be used to send messages to the API and receive responses.",
-        "author": "Microsoft",
+        "description": "Features a Chat-GPT-like user interface, including additional capabilities to debug responses, restyle, revisit history and reset the chat.",
+        "author": "Azure Content Team",
         "source": "https://github.com/Azure-Samples/azure-openai-chat-frontend",
         "tags": [
-            "lit",
-            "azure",
-            "openAI",
+            "javascript",
             "typescript",
-            "litelement",
-            "vite",
-            "rollup",
-            "frontend"
+            "aicollection",
+            "openai",
+            "blobstorage",
+            "aisearch",
+            "msft"
         ],
         "id": "8a8499b2-ad33-4e73-846d-5715aed9f8f7",
         "deploymentOptions": [
@@ -2115,19 +2134,16 @@
         "sourceType": "Azd"
     },
     {
-        "title": "Azure AI Studio Starter Template",
-        "description": "This template helps users learn how to use Azure AI Studio. It creates an Azure AI Studio hub, project and required dependent resources including Azure Open AI Service, Cognitive Search and more.",
-        "author": "Microsoft",
+        "title": "Azure AI Studio Starter",
+        "description": "Bicep template that deploys everything you need to get started with Azure AI Studio.  Includes AI Hub with dependent resources, AI project, AI Services and an online endpoint",
+        "author": "Azure Dev",
         "source": "https://github.com/Azure-Samples/azd-aistudio-starter",
         "tags": [
-            "azd",
             "bicep",
-            "azure",
             "ai",
-            "template",
-            "openAI",
-            "cognitive",
-            "aistudio"
+            "azureai",
+            "openai",
+            "msft"
         ],
         "id": "3b2621a8-62cf-418c-9811-916dae3df1d4",
         "deploymentOptions": [
@@ -2140,18 +2156,20 @@
     },
     {
         "title": "Contoso Chat Retail with Azure AI Studio and Promptflow",
-        "description": "This sample creates a customer support chat agent for an online retailer called Contoso Outdoors. The solution uses a retrieval-augmented generation pattern to ground responses in the company's product and customer data. Customers can ask questions about the retailer's product catalog, and also get recommendations based on their prior purchases.",
-        "author": "Microsoft",
+        "description": "This sample has the full End2End process of creating RAG application with Prompt Flow and AI Studio. It includes GPT 3.5 Turbo LLM application code, evaluations, deployment automation with AZD CLI, GitHub actions for evaluation and deployment and intent mapping for multiple LLM task mapping.",
+        "author": "Azure Content Team",
         "source": "https://github.com/Azure-Samples/contoso-chat",
         "tags": [
+            "msft",
+            "aicollection",
             "python",
+            "openai",
+            "aistudio",
             "bicep",
-            "azure",
-            "prompty",
-            "openAI",
-            "cosmos-db",
-            "prompt-flow",
-            "RAG"
+            "cosmosdb",
+            "aisearch",
+            "ai",
+            "rag"
         ],
         "id": "892c1998-ab31-4592-a453-8c8ec947df6a",
         "deploymentOptions": [
