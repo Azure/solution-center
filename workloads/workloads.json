@@ -17,23 +17,20 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure OpenAI Service",
-            "Azure AI Search",
+            "Azure OpenAI",
+            "Azure Cognitive Search",
             "Azure App Service",
             "Azure Blob Storage",
             "Azure Monitor"
         ],
         "sampleQueries": [
-            "How can I create a ChatGPT-like application using Azure OpenAI for my enterprise data?",
-            "What is the Retrieval-Augmented Generation pattern in Azure, and how do I implement it?",
-            "How do I set up Azure AI Search to work with large language models for an enterprise chat solution?"
+            "How do I set up a Retrieval-Augmented Generation pattern with Azure?",
+            "What is required to run a sample app that combines Azure AI Search with ChatGPT?",
+            "Where can I find examples of enterprise-level implementations of Azure OpenAI and AI Search?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Python",
-            "JavaScript",
-            ".NET",
-            "Java"
+            "Python"
         ]
     },
     {
@@ -52,6 +49,7 @@
         ],
         "deploymentConfig": {},
         "products": [
+            "Azure Developer CLI",
             "Azure Key Vault",
             "Azure App Service",
             "Azure Functions",
@@ -59,12 +57,14 @@
             "Azure Active Directory"
         ],
         "sampleQueries": [
-            "How to initialize a Bicep infrastructure template with Azure Developer CLI?",
-            "Can I set up continuous deployment for my Azure Bicep project using GitHub Actions?",
-            "What steps do I follow to configure application settings in Azure using a Bicep template?"
+            "How do I get started with a Bicep template for my infrastructure on Azure?",
+            "Where can I find a starter template using Bicep as an infrastructure provider for Azure?",
+            "Can I use the Starter - Bicep template from a GitHub repository to deploy Azure infrastructure?"
         ],
         "sourceType": "Azd",
-        "tech": []
+        "tech": [
+            "Bicep"
+        ]
     },
     {
         "title": "Starter - Terraform",
@@ -82,16 +82,16 @@
         ],
         "deploymentConfig": {},
         "products": [
+            "Azure Developer CLI",
+            "Azure Functions",
             "Azure App Service",
             "Azure Key Vault",
-            "Azure Kubernetes Service",
-            "Azure Functions",
-            "Azure Active Directory"
+            "Azure Kubernetes Service"
         ],
         "sampleQueries": [
-            "How can I start using the Azure Developer CLI Terraform Starter for deploying an application on Azure?",
-            "What are the steps to deploy an application code along with infrastructure using Terraform on Azure?",
-            "Where can I find Terraform modules for Azure resources as mentioned in the Terraform Starter guide?"
+            "How to create infrastructure using the Terraform starter template on Azure?",
+            "Can I deploy my infrastructure on Azure using the Starter - Terraform template?",
+            "What is the Starter - Terraform template for Azure and how do I use it?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -122,24 +122,21 @@
         "deploymentConfig": {},
         "products": [
             "Azure Container Apps",
-            "Azure Database for MariaDB",
             "Azure Application Gateway",
             "Azure Key Vault",
             "Azure Monitor",
-            "Azure Cache for Redis",
-            "Azure Storage",
-            "Azure Log Analytics",
-            "App Insights"
+            "Azure Cache for Redis"
         ],
         "sampleQueries": [
-            "How to deploy WordPress using Azure Container Apps",
-            "What are the steps to create a scalable WordPress site on Azure with MariaDB?",
-            "Can I integrate Redis Cache with my WordPress application in Azure Container Apps?"
+            "How can I deploy WordPress using Azure Container Apps?",
+            "What is the best way to secure a WordPress site on Azure?",
+            "Can Azure Database for MariaDb be integrated with a scalable WordPress application on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
             "PHP",
-            "JavaScript"
+            "JavaScript",
+            "Bicep"
         ]
     },
     {
@@ -173,18 +170,19 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How to deploy a React web app with C# API and MongoDB on Azure using AzD templates",
-            "Can I use the React Web App with C# API and MongoDB blueprint to create a ToDo web app on Azure?",
-            "What are the steps for setting up a CI/CD pipeline using Azure Developer CLI for a React and C# application?"
+            "How do I set up a React web app with a C# API and MongoDB on Azure?",
+            "What are the steps to replace the ToDo app in the React Web App with C# API blueprint with my own code?",
+            "Can I use the Bicep templates provided to deploy a React app with Azure Cosmos DB backend?"
         ],
         "sourceType": "Azd",
         "tech": [
             "C#",
             "Bicep",
             "Typescript",
+            "HTML",
             "Javascript",
             "Reactjs",
-            "HTML"
+            "CosmosDB"
         ]
     },
     {
@@ -218,18 +216,18 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I deploy a React web app with Node.js API and MongoDB on Azure using Bicep?",
-            "What is the architecture of a React web app with Node.js back end and MongoDB using Azure services?",
-            "How can I replace the ToDo app code in the Azure React Node.js and MongoDB blueprint with my own code?"
+            "How can I deploy a React app with a Node.js backend and MongoDB on Azure?",
+            "Is there a GitHub blueprint for setting up a full-stack web app with React, Node.js, and MongoDB in Azure?",
+            "What Azure services should I use for hosting a React web application with a Node.js API?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "Node.js",
+            "Nodejs",
             "Typescript",
-            "JavaScript",
-            "HTML",
-            "React"
+            "Javascript",
+            "Reactjs",
+            "MongoDB"
         ]
     },
     {
@@ -266,18 +264,18 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How can I deploy a React web app with a Node.js API and MongoDB on Azure?",
-            "What are the steps to initialize and deploy a ToDo app using an AzD template with a MongoDB database?",
-            "Can I use Bicep templates to provision infrastructure for a React web app with Azure Functions and Node.js backend?"
+            "How can I deploy a React web app with Node.js backend and MongoDB on Azure?",
+            "What is the best way to use Azure Functions with a React and Node.js application?",
+            "Can I find a blueprint for a Static Web App using React, Node.js, and Azure CosmosDB?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
             "Nodejs",
             "Typescript",
-            "HTML",
             "Javascript",
-            "Reactjs"
+            "Reactjs",
+            "MongoDB"
         ]
     },
     {
@@ -315,18 +313,19 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How to deploy a React.js web app with Python API and MongoDB on Azure?",
-            "What is the architecture of a static web app using Azure Functions and Cosmos DB API for MongoDB?",
-            "Can I monitor a React web app with Azure Monitor when using FastAPI and Azure Cosmos DB?"
+            "How to deploy a React app with a Python FastAPI backend and MongoDB on Azure?",
+            "What's the best way to integrate a MongoDB Cosmos database with a React and FastAPI project in Azure?",
+            "Can I use Azure functions to add serverless capabilities to my React and FastAPI web application?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Python",
             "Typescript",
-            "JavaScript",
-            "React",
-            "FastAPI",
-            "HTML"
+            "Javascript",
+            "Reactjs",
+            "MongoDB",
+            "FastAPI"
         ]
     },
     {
@@ -361,19 +360,20 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How to deploy a React app with Python FastAPI and MongoDB on Azure using Terraform?",
-            "What is the best way to start a project with the React Web App with Python API and MongoDB Azure sample?",
-            "Can I store my web app's secrets securely on Azure when using the ToDo Python Mongo Terraform blueprint?"
+            "How do I set up a React.js web app with a Python FastAPI backend and MongoDB on Azure?",
+            "Can I use Terraform to deploy a full-stack application with React, Python API, and MongoDB in Cosmos DB?",
+            "What is the best way to replace the sample ToDo app code in the React Web App blueprint with my own code?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
-            "Typescript",
-            "Javascript",
-            "Reactjs",
             "Terraform",
+            "Typescript",
+            "JavaScript",
+            "HTML",
             "FastAPI",
-            "HTML"
+            "MongoDB",
+            "Reactjs"
         ]
     },
     {
@@ -407,18 +407,19 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How can I deploy a React web app with Node.js API and MongoDB on Azure using Terraform?",
-            "What are the steps to initialize and deploy a ToDo app using the Azure Developer CLI?",
-            "Is there a blueprint available for setting up a React web app with Azure Cosmos DB for MongoDB storage?"
+            "How can I deploy a React and Node.js application with MongoDB on Azure using Terraform?",
+            "What are the steps to replace the sample ToDo web app with my own code in the Azure DevOps React Web App blueprint?",
+            "Is there a blueprint for setting up a React app with Node.js API and MongoDB on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Node.js",
-            "Terraform",
+            "Nodejs",
             "Typescript",
-            "HTML",
             "Javascript",
-            "Reactjs"
+            "MongoDB",
+            "Terraform",
+            "Reactjs",
+            "HTML"
         ]
     },
     {
@@ -453,17 +454,19 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How can I deploy a React app with a Python API on Azure?",
-            "What are the steps to start with the React Web App with Python API and MongoDB blueprint on Azure?",
-            "How do I use Azure Developer CLI to set up a React web app with FastAPI backend and MongoDB?"
+            "How do I deploy a React web app with a Python FastAPI backend and MongoDB on Azure?",
+            "What is the Infrastructure as Code setup for running a ToDo web app using React.js, FastAPI, and MongoDB in Azure?",
+            "Can I use AzD templates to quickly set up a React.js application with Python API and MongoDB Cosmos DB on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Python",
             "Bicep",
+            "Python",
+            "Javascript",
             "Typescript",
-            "JavaScript",
+            "HTML",
             "Reactjs",
+            "MongoDB",
             "FastAPI"
         ]
     },
@@ -497,13 +500,12 @@
             "Azure Cosmos DB",
             "Azure Monitor",
             "Azure Key Vault",
-            "Azure Container Apps",
-            "Azure Container Registry"
+            "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How can I deploy a containerized React web app with Node.js API on Azure?",
-            "What are the steps to use Azure Cosmos DB API for MongoDB with a React and Node.js application?",
-            "How do I set up Azure Monitor for a Node.js API and MongoDB application?"
+            "How can I deploy a containerized React and Node.js app with MongoDB on Azure?",
+            "What resources does Azure provide for hosting microservices based on React, Node.js, and MongoDB?",
+            "Is there a blueprint for setting up a React web application with Node.js API on Azure using MongoDB as the database?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -512,7 +514,9 @@
             "Typescript",
             "HTML",
             "Javascript",
-            "React"
+            "React.js",
+            "MongoDB",
+            "Cosmos DB"
         ]
     },
     {
@@ -547,9 +551,9 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How to deploy a React web app with Python API and MongoDB on Azure?",
-            "What is the architecture of a containerized React web app with FastAPI and MongoDB on Azure?",
-            "How to monitor and log a React web application using Azure Monitor?"
+            "How can I deploy a React.js web application with a Python FastAPI backend on Azure?",
+            "What are the steps to setup a MongoDB API in Cosmos database for a containerized web app?",
+            "Can I use the provided ToDo application blueprint as a starting point for my own React.js frontend code?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -558,8 +562,8 @@
             "Typescript",
             "Javascript",
             "Reactjs",
-            "FastAPI",
-            "HTML"
+            "MongoDB",
+            "FastAPI"
         ]
     },
     {
@@ -593,19 +597,19 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I get started with a React web app using a C# API and SQL Database on Azure?",
-            "What is the process to deploy a React app with C# backend and Azure SQL using Azure Developer CLI?",
-            "Can I find a sample React and C# project integrated with Azure services like App Service, SQL Database, Monitor, and Key Vault?"
+            "How can I set up a React web app with a C# backend and SQL database on Azure?",
+            "What are the steps to replace the ToDo app code in the Azure React and C# API blueprint with my own code?",
+            "Can I use the provided Bicep templates for deploying a full stack application with React, C#, and Azure SQL?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "C#",
+            "Csharp",
             "Typescript",
             "Javascript",
             "Reactjs",
-            "HTML",
-            "ASP.NET Core"
+            "Azure SQL Database",
+            "HTML"
         ]
     },
     {
@@ -638,9 +642,9 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How can I deploy a React web app with Java API and MongoDB on Azure?",
-            "What steps are required to set up a ToDo app using the React Web App with Java API and MongoDB blueprint?",
-            "Is there a GitHub repository available with a template for setting up a React app with Java backend and MongoDB on Azure?"
+            "How do I set up a React.js web app with a Java API using Azure?",
+            "What's the quickest way to deploy a React application with MongoDB on Azure?",
+            "Can I find an example blueprint for a ToDo app using React.js and Java on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -648,7 +652,9 @@
             "Java",
             "Typescript",
             "HTML",
-            "Reactjs"
+            "Reactjs",
+            "MongoDB",
+            "CosmosDB"
         ]
     },
     {
@@ -677,24 +683,23 @@
         "products": [
             "Azure App Service",
             "Azure Cosmos DB",
-            "Azure Monitor",
-            "Azure Key Vault",
             "Azure Container Apps",
             "Azure Container Registry",
-            "Azure Pipelines"
+            "Azure Monitor",
+            "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I deploy a containerized React web app with a Java API on Azure using the Azure Developer CLI?",
-            "What steps are required to set up a MongoDB database with Azure Cosmos DB for a containerized web app?",
-            "Can I use Bicep templates to automate the infrastructure setup for a React application with Java API back end on Azure?"
+            "How can I containerize a React and Java application on Azure?",
+            "What are the steps to deploy a React web app with Java API and MongoDB on Azure?",
+            "Can I find a blueprint for a serverless microservices architecture on Azure with React and Java?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Java",
             "Bicep",
+            "Java",
             "Typescript",
             "HTML",
-            "Javascript",
+            "MongoDB",
             "Reactjs"
         ]
     },
@@ -731,9 +736,9 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I deploy a Static React Web App with a C# API and SQL Database using Azure?",
-            "What is the process to initialize and deploy a ToDo web app using Azure Developer CLI?",
-            "Can I monitor and log a Static React Web App with Azure Functions and Azure SQL Database?"
+            "How do I deploy a React web app with a C# API and SQL database on Azure?",
+            "What is the process to use Bicep templates for setting up a static web app with Azure functions?",
+            "Can I integrate Azure Key Vault with a Static React Web App and C# backend?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -742,7 +747,7 @@
             "Typescript",
             "Javascript",
             "Reactjs",
-            "HTML"
+            "Azure SQL Database"
         ]
     },
     {
@@ -777,18 +782,19 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How to deploy a Kubernetes React web app with a Node.js API and MongoDB using Azure Developer CLI",
-            "What is the architecture for a ToDo app with MongoDB using Azure services?",
-            "Can I use Bicep for Infrastructure as Code when setting up a React app with Kubernetes on Azure?"
+            "How do I deploy a React.js web app with Node.js and MongoDB on Azure using Kubernetes?",
+            "What is the process to replace the ToDo app in Kubernetes React Web App Azure blueprint with my own code?",
+            "Can I set up a Kubernetes cluster on Azure without managing the control plane for a Node.js API?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "Node.js",
+            "Nodejs",
             "Typescript",
             "Javascript",
-            "React.js",
-            "HTML"
+            "Reactjs",
+            "MongoDB",
+            "CosmosDB"
         ]
     },
     {
@@ -817,19 +823,17 @@
             "Azure Database for PostgreSQL"
         ],
         "sampleQueries": [
-            "How can I deploy a React web app with Java API on Azure using Azure Developer CLI?",
-            "What are the prerequisites for setting up a Static React Web App with Java API and PostgreSQL on Azure?",
-            "How do I integrate Azure Database for PostgreSQL with a React and Java application on Azure?"
+            "How can I set up a React web app with a Java API and PostgreSQL on Azure using Bicep templates?",
+            "Can I use the provided ToDo web app blueprint to create my own React and Java applications on Azure?",
+            "What is the quickest way to deploy a web app with Azure Database for PostgreSQL using Azure Spring Apps?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Java",
             "Bicep",
+            "Java",
             "Typescript",
             "HTML",
-            "Node.js",
-            "Spring",
-            "React"
+            "PostgreSQL"
         ]
     },
     {
@@ -859,9 +863,9 @@
             "Azure Monitor"
         ],
         "sampleQueries": [
-            "How can I deploy a ChatGPT plugin on Azure using Azure Developer CLI?",
-            "What are the steps to create a ChatGPT plugin with Python and FastAPI?",
-            "Can I use GitHub Codespaces for developing a ChatGPT plugin to run on Azure Container Apps?"
+            "How to create a ChatGPT Plugin using Python on Azure?",
+            "What are the steps to deploy a FastAPI application with ChatGPT support on Azure?",
+            "Can I use CosmosDB and Azure Monitor with a Python ChatGPT plugin on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -894,24 +898,26 @@
         ],
         "deploymentConfig": {},
         "products": [
+            "Azure Kubernetes Service",
+            "Azure Container Apps",
             "Azure Cognitive Search",
             "Azure OpenAI",
-            "Azure Container Apps",
+            "Azure Cache for Redis",
             "Azure Blob Storage",
             "Azure Monitor"
         ],
         "sampleQueries": [
-            "How to set up a ChatGPT-style Q&A app using Azure OpenAI and Cognitive Search",
-            "What steps are involved in deploying a .NET ChatGPT application with Azure OpenAI?",
-            "Can I integrate Azure Cognitive Search with ChatGPT to answer questions from enterprise data?"
+            "How do I set up Azure Cognitive Search with Azure OpenAI for a ChatGPT-based solution?",
+            "Can I use the sample app to implement Retrieval-Augmented Generation with ChatGPT in Azure?",
+            "What are the steps to deploy ChatGPT with enterprise data on AKS using Azure Cognitive Search?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
             "C#",
             "HTML",
-            "ASP.NET Core",
-            "Blazor"
+            "Blazor",
+            "ASP.NET Core"
         ]
     },
     {
@@ -937,21 +943,18 @@
         "deploymentConfig": {},
         "products": [
             "Azure OpenAI",
-            "Azure Container Apps",
-            "Azure Container Registry",
-            "Azure Log Analytics"
+            "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How can I set up a simple chat app using Azure OpenAI and Flask in Python?",
-            "What are the steps to deploy a Python chat application to Azure Container Apps?",
-            "Can I integrate my Python chat application with local LLMs during development?"
+            "How do I create a chat application using Azure OpenAI and Python?",
+            "What is needed to stream ChatGPT completions through Flask in Azure?",
+            "Can I use the Azure Container Apps service to deploy a Flask ChatGPT application?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Python",
-            "Flask",
-            "Quart",
-            "Openai"
+            "Flask"
         ]
     },
     {
@@ -981,16 +984,14 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How can I deploy a Spring ChatGPT application using Azure OpenAI on Azure Spring Apps?",
-            "What are the steps to run the Spring ChatGPT sample with Azure Developer CLI?",
-            "How do I integrate my private data with a ChatGPT-like application in Azure Spring Apps?"
+            "How to build a ChatGPT application with Java Spring on Azure Spring Apps",
+            "Using Azure OpenAI with Java Spring framework for a ChatGPT-style application",
+            "Step by step guide for setting up ChatGPT with Azure OpenAI and Java Spring"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Java",
             "Bicep",
-            "Javascript",
-            "Html",
+            "Java",
             "OpenAI"
         ]
     },
@@ -1020,30 +1021,33 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure Static Web Apps",
             "Azure Container Apps",
-            "Azure Key Vault",
-            "Azure Blob Storage",
-            "Azure Database for PostgreSQL",
+            "Azure Container Registry",
             "Azure Cosmos DB",
+            "Azure Database for PostgreSQL",
             "Azure Functions",
-            "Azure API Management"
+            "Azure Key Vault",
+            "Azure Monitor",
+            "Azure Static Web Apps",
+            "Azure Storage"
         ],
         "sampleQueries": [
-            "What is the best architecture for building modern JavaScript cloud-native applications?",
-            "How can I deploy an enterprise-grade micro-frontend application on Azure?",
-            "What are the best practices for integrating OpenAI chatbot with a JavaScript application in Azure?"
+            "How can I use the Enterprise-Grade Reference Architecture to build JavaScript applications in Azure?",
+            "What are the best practices for setting up micro-frontends on Azure using the Enterprise-Grade Reference Architecture?",
+            "Is there a sample implementation of cloud-native applications with Azure components like blob storage and Cosmos DB?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Javascript",
+            "Bicep",
+            "JavaScript",
             "Typescript",
             "Nodejs",
-            "Bicep",
             "Angular",
             "Next.js",
             "Strapi",
-            "Fastify"
+            "Fastify",
+            "MongoDB",
+            "PostgreSQL"
         ]
     },
     {
@@ -1073,19 +1077,16 @@
             "Azure Redis Cache"
         ],
         "sampleQueries": [
-            "How can I deploy a Python Django web app with PostgreSQL on Azure using AzD?",
-            "What is the process for adding Azure Redis Cache to a Django web application?",
-            "Are there any examples of Python (Django) web apps in Azure that integrate with Azure Database for PostgreSQL?"
+            "How do I deploy a Django web app with PostgreSQL on Azure App Service within a VNet?",
+            "What is the best way to set up a Python Django web app with Azure Database for PostgreSQL on Azure?",
+            "Can I use the AzD template to launch a restaurant review app with PostgreSQL in a virtual network?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
             "Django",
             "HTML",
-            "Psycopg-binary",
-            "Python-dotenv",
-            "Whitenoise",
-            "Django-redis"
+            "PostgreSQL"
         ]
     },
     {
@@ -1109,19 +1110,21 @@
         "deploymentConfig": {},
         "products": [
             "Azure Container Apps",
-            "Azure Key Vault",
-            "Azure Database for PostgreSQL"
+            "Azure Database for PostgreSQL",
+            "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I deploy a Django web app with PostgreSQL on Azure Container Apps?",
-            "What are the steps to set up a space tourism web application using Azure Container Apps and PostgreSQL?",
-            "How can I manage secrets with Azure Key Vault when deploying a Python Django app on Azure?"
+            "How can I deploy a Python Django web application using Azure Container Apps?",
+            "What is the process for integrating PostgreSQL with a Django application on Azure?",
+            "Can I manage my Django app's secrets with Azure Key Vault when using Azure Container Apps?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
             "Django",
-            "HTML"
+            "Bicep",
+            "HTML",
+            "PostgreSQL"
         ]
     },
     {
@@ -1151,17 +1154,17 @@
         ],
         "sampleQueries": [
             "How can I deploy a Python Flask web app with PostgreSQL on Azure?",
-            "Is there a Flask and Azure PostgreSQL example app that I can start with for my project?",
-            "What steps should I follow to develop and deploy a restaurants review app using Flask and Azure services?"
+            "What's the best way to manage database interactions in a Flask Web App with SQLAlchemy on Azure?",
+            "How do I set up a Flask web app with PostgreSQL inside a VNet on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
+            "Bicep",
+            "HTML",
             "Flask",
             "SQLAlchemy",
-            "Alembic",
-            "psycopg2",
-            "WTForms"
+            "PostgreSQL"
         ]
     },
     {
@@ -1188,15 +1191,14 @@
             "Azure Service Bus"
         ],
         "sampleQueries": [
-            "How can I implement a microservices application with Dapr Pub-Sub in Azure?",
-            "What are the steps to deploy a microservices app with Azure Container Apps and Service Bus using Azure Dev CLI?",
-            "How to build a publisher and subscriber microservice using Dapr and .NET in Azure?"
+            "How do I deploy a microservices app with Dapr PubSub in Azure Container Apps using C#?",
+            "What is the best way to use Azure Service Bus Topics with Dapr in a .NET microservice architecture?",
+            "How to handle dead-lettering in microservices using Azure Container Apps and Dapr?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "C#",
             "Bicep",
-            "Dapr"
+            "C#"
         ]
     },
     {
@@ -1223,14 +1225,14 @@
             "Azure Service Bus"
         ],
         "sampleQueries": [
-            "How do I create a publisher and subscriber microservices using Dapr Pub-Sub with Python?",
-            "What are the steps to deploy microservices with Dapr on Azure Container Apps using Azure Service Bus?",
-            "Can you show me how to integrate Dapr Pub-Sub in microservices on Azure for asynchronous communication?"
+            "How do I deploy a Python microservices app using Dapr PubSub on Azure?",
+            "Can Azure Container Apps and Service Bus be used for Pub-Sub messaging in microservices?",
+            "What is an example of using dead-lettering in Azure Service Bus Topics for a microservices application?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Python",
             "Bicep",
+            "Python",
             "Dapr"
         ]
     },
@@ -1259,15 +1261,16 @@
             "Azure Service Bus"
         ],
         "sampleQueries": [
-            "How to deploy a microservices application with Dapr and Azure Service Bus using the Azure Developer CLI",
-            "What are the necessary steps to run a Node.js microservices app with Dapr Pub-Sub pattern on Azure?",
-            "Can I use Azure Container Apps to set up a Node.js publisher and subscriber microservice with dead-lettering"
+            "How do I set up a microservices app with Dapr PubSub in Azure Container Apps using Node.js?",
+            "What is the method for deploying a Node.js microservices app with Azure Service Bus and dead-lettering?",
+            "Can I use bicep templates to deploy a Dapr-enabled microservices application on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Dapr",
+            "Bicep",
             "Javascript",
-            "Nodejs"
+            "Nodejs",
+            "Dapr"
         ]
     },
     {
@@ -1292,15 +1295,16 @@
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How to work with Dapr bindings using C# for event-driven microservices?",
-            "What are the steps to deploy a microservices app with PostgreSQL and Dapr cron bindings on Azure?",
-            "Can I use the Azd templates for setting up a C# microservice with Dapr bindings for system CRON inputs and PostgreSQL?"
+            "How do I create a microservice using Dapr bindings with a CRON input and PostgreSQL output?",
+            "Can you show me an example of a C# microservices app that uses Dapr with Azure Container Apps?",
+            "What is the best way to integrate CRON jobs with Azure Database for PostgreSQL in a microservices architecture?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Dapr",
             "C#",
-            "PostgreSQL"
+            "PostgreSQL",
+            "Bicep"
         ]
     },
     {
@@ -1325,14 +1329,15 @@
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How can I use Dapr bindings with a Python microservices application?",
-            "Is there a guide to integrate CRON events with Azure Container Apps using Dapr?",
-            "What steps are involved in deploying a Dapr cron binding app to Azure PostgreSQL?"
+            "How can I create a microservice with Dapr bindings in Python on Azure?",
+            "What's the best way to implement a CRON input binding with Dapr and Azure?",
+            "Can I use Azure Container Apps and PostgreSQL with Dapr for microservices?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Dapr",
             "Python",
+            "Bicep",
             "PostgreSQL"
         ]
     },
@@ -1359,15 +1364,16 @@
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How do I use Dapr bindings with CRON in a Node.js application on Azure Container Apps?",
-            "Can I integrate Node.js microservices with PostgreSQL using Dapr bindings?",
-            "What are the steps to deploy a CRON job driven microservice on Azure using Dapr and Node.js?"
+            "How to use Dapr bindings in a Node.js microservices app on Azure?",
+            "Can I use Azure Database for PostgreSQL as an output binding with Dapr?",
+            "How to schedule tasks in a Node.js app with CRON and process them using Azure Container Apps?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Dapr",
             "Nodejs",
             "Javascript",
+            "Bicep",
             "PostgreSQL"
         ]
     },
@@ -1391,9 +1397,9 @@
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How do I use Dapr Service Invocation with Node.js in Azure Container Apps?",
-            "What are the steps to establish communication between microservices using Dapr in Node.js?",
-            "How to deploy a Node.js microservices application with Dapr on Azure?"
+            "How do I use Dapr's Service Invocation API for microservices communication in Node.js?",
+            "What are the benefits of using auto-mTLS with Dapr on Azure?",
+            "Can you show me an example of microservices communicating securely with Dapr and Node.js on ACA?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -1423,14 +1429,15 @@
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How do I implement microservice communication using Dapr's Service Invocation API in Python?",
-            "What steps are involved in deploying a Python app with auto-mTLS and retries on Azure Container Apps?",
-            "Can you guide me on setting up secure microservices with Dapr on Azure?"
+            "How can I create microservices that communicate with each other using Dapr in Python?",
+            "What is Dapr's Service Invocation API and how to implement it in a Python microservices app?",
+            "How to use auto-mTLS and built-in retries in microservices communication on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Python",
             "Dapr",
-            "Python"
+            "Bicep"
         ]
     },
     {
@@ -1453,14 +1460,14 @@
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How can I use Dapr's Service Invocation API for microservice communication in C#?",
-            "What steps should I follow to implement secure microservices communication with auto-mTLS using Azure Container Apps?",
-            "How to deploy a microservices application using Azure's Dapr Service Invocation on Azure Container Apps?"
+            "How do I use Dapr's Service Invocation API with C# microservices on Azure?",
+            "What is the best way to setup secure microservices communication with Dapr on Azure?",
+            "How to implement microservices with auto-mTLS and built-in retries using Dapr in Azure Container Apps?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Dapr",
-            "C#"
+            "C#",
+            "Bicep"
         ]
     },
     {
@@ -1489,23 +1496,21 @@
         "products": [
             "Azure OpenAI",
             "Azure Cognitive Search",
-            "Azure AI Document Intelligence",
             "Azure Blob Storage",
             "Azure Monitor",
-            "Azure App Service",
-            "Azure Container Apps"
+            "Azure App Service"
         ],
         "sampleQueries": [
-            "How to build a ChatGPT-like app using Azure OpenAI and Cognitive Search",
-            "What is the process to index and retrieve enterprise data with Azure Cognitive Search?",
-            "Can I integrate my organizational content with a ChatGPT-style interface using Python and TypeScript on Azure?"
+            "What is the best way to use Azure OpenAI with Cognitive Search for enterprise data discovery?",
+            "How can I integrate ChatGPT with Azure Cognitive Search in my organization?",
+            "Can Azure OpenAI be used to improve search results over company-specific content?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
-            "JavaScript",
-            ".NET",
-            "Java"
+            "Typescript",
+            "Nodejs",
+            "Bicep"
         ]
     },
     {
@@ -1529,13 +1534,14 @@
         ],
         "sampleQueries": [
             "How do I deploy a FastAPI app to Azure Functions?",
-            "What are the prerequisites for running FastAPI with Azure Functions?",
-            "Can I test the FastAPI Azure Function locally before deploying?"
+            "Is there an example FastAPI application for Azure Functions?",
+            "Can I debug a FastAPI Azure Function locally with the Azure Functions Core Tool?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
-            "FastAPI"
+            "FastAPI",
+            "Bicep"
         ]
     },
     {
@@ -1570,15 +1576,18 @@
             "Azure Application Insights"
         ],
         "sampleQueries": [
-            "How to set up Azure App Service hosting for a Java Spring application with MySQL",
-            "How can I use Azure Key Vault to secure secrets in a Spring PetClinic app?",
-            "What steps are involved in monitoring a Spring PetClinic application using Azure Application Insights?"
+            "How can I deploy the Java Spring PetClinic using Azure App Service and MySQL?",
+            "What Azure solutions are best for hosting Spring-based applications like PetClinic?",
+            "Can I secure application secrets using Azure Key Vault in the Spring PetClinic app?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Java",
+            "Bicep",
+            "HTML",
             "Spring",
-            "Thymeleaf"
+            "Thymeleaf",
+            "MySQL"
         ]
     },
     {
@@ -1609,9 +1618,9 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I deploy an Event Driven Java Application using Azure Service Bus with Azure Spring Apps?",
-            "What are the steps to monitor an Azure Spring application with integrated Service Bus and Azure Monitor?",
-            "Can I use Key Vault to store secrets for an event-driven application on Azure Spring Apps?"
+            "How can I start an event-driven Java application using Azure Service Bus and Azure Spring Apps?",
+            "What are the best practices for monitoring Java applications on Azure Spring Apps?",
+            "Can I secure Java applications on Azure with Service Bus and Key Vault integration?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -1646,21 +1655,22 @@
         "deploymentConfig": {},
         "products": [
             "Azure App Service",
-            "Azure API Management",
+            "Azure Monitor",
             "Azure Key Vault",
-            "Azure Monitor"
+            "Azure API Management"
         ],
         "sampleQueries": [
-            "How to deploy SAP Cloud SDK on Azure App Service using TypeScript",
-            "What are the steps to consume OData with SAP Cloud SDK in Azure App Services?",
-            "How to set up Azure API Management integration for SAP APIs"
+            "How can I quickly start an SAP extension project on Azure using TypeScript?",
+            "What are the steps to set up the SAP Cloud SDK for JavaScript on Azure App Service?",
+            "Is there an AzD quickstart for connecting SAP OData services with Azure App Services?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "TypeScript",
-            "Node.js",
+            "Typescript",
+            "Nodejs",
+            "Bicep",
             "NestJS",
-            "SAP Cloud SDK for JavaScript"
+            "SAPCloudSDK"
         ]
     },
     {
@@ -1683,17 +1693,17 @@
         "deploymentConfig": {},
         "products": [
             "Azure Functions",
-            "Azure Cognitive Search",
-            "Azure AI"
+            "Azure Cognitive Search"
         ],
         "sampleQueries": [
-            "How to perform text summarization with Azure Functions and AI Cognitive Language Service?",
-            "What are the steps to process text documents using BlobTrigger and AI Cognitive Services in Azure?",
-            "Can I use C# to trigger text summarization with Azure Cognitive Language Services in Azure Functions?"
+            "How do I set up Azure Functions for AI-based text summarization using Cognitive Language Service?",
+            "What is the process to use BlobTrigger for text summarization in an Azure Function?",
+            "Can I use C#-Isolated mode to perform text summarization with Azure AI Cognitive Language?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "C#"
+            "C#",
+            "Bicep"
         ]
     },
     {
@@ -1716,17 +1726,18 @@
         "deploymentConfig": {},
         "products": [
             "Azure Functions",
-            "Azure Cognitive Search",
-            "AI Services"
+            "Azure Cognitive Services",
+            "Azure Blob Storage"
         ],
         "sampleQueries": [
-            "How do I create a BlobTrigger in Azure Functions for text summarization?",
-            "Can Azure AI Cognitive Language Service be used for summarizing text in blobs with Python?",
-            "What are the steps to set up a Python Azure Function that summarizes text documents?"
+            "How can I use Azure Functions for AI-powered text summarization?",
+            "Can I process documents with Text Summarization using Azure's AI Cognitive Language Service in Python?",
+            "What is an example of using Azure Functions with BlobTrigger and BlobOutput for text summarization?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Python"
+            "Python",
+            "Bicep"
         ]
     },
     {
@@ -1758,22 +1769,24 @@
             "Azure Key Vault",
             "Azure Front Door",
             "Azure SQL Database",
-            "Azure Blob Storage",
             "Azure Cache for Redis",
-            "Microsoft Entra",
+            "Microsoft Entra ID",
             "Azure Private DNS",
+            "Azure Firewall",
+            "Azure Bastion",
             "Azure Application Insights",
             "Azure App Configuration"
         ],
         "sampleQueries": [
-            "How to implement a multi-region .NET web app with a high SLO using Azure services?",
-            "What are the best practices for building a scalable and reliable .NET web application in Azure?",
-            "How can I migrate my on-premises .NET web app to Azure with the reliable web app pattern?"
+            "How do I set up a multi-region enterprise web app with a 99.9% SLO using Azure?",
+            "Can I create a concert booking application that follows the 12-factor app methodology on Azure?",
+            "What Azure services are required to implement the Reliable Web App Pattern for .NET?"
         ],
         "sourceType": "Azd",
         "tech": [
             "C#",
-            "ASP.NET"
+            "Bicep",
+            "Azure SQL Database"
         ]
     },
     {
@@ -1803,16 +1816,18 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How can I create React components using ChatGPT with the React Component Toolkit?",
-            "What is the process for converting React components into Azure APIM Widgets?",
-            "How to set up the React Component Toolkit with Azure OpenAI for my project?"
+            "How to generate React components using ChatGPT and OpenAI?",
+            "Can I automatically convert React components to Azure APIM Widgets?",
+            "Is there a toolkit for React with AI features including component testing?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Reactjs",
             "Typescript",
             "Javascript",
-            "CSS"
+            "CSS",
+            "Node.js"
         ]
     },
     {
@@ -1847,19 +1862,19 @@
             "Azure Database for PostgreSQL"
         ],
         "sampleQueries": [
-            "How to integrate Azure OpenAI with Java Spring applications to build a recommendation engine?",
-            "What steps should I follow to deploy AI Shopping Cart using Azure Spring Apps and OpenAI on Azure?",
-            "Can I create an Azure shopping cart application with nutrition analysis and recipe generation using OpenAI?"
+            "How do I integrate Azure OpenAI into a Java Spring application for personalized recommendations?",
+            "What's a good Azure-based architecture for a scalable and secure AI-powered shopping cart?",
+            "Can I use Azure Spring Apps and Azure DB for PostgreSQL to create an AI shopping experience?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Spring",
-            "OpenAI",
             "Java",
-            "Typescript",
+            "Spring",
             "Bicep",
             "HTML",
-            "Reactjs"
+            "Typescript",
+            "Azure OpenAI",
+            "PostgreSQL"
         ]
     },
     {
@@ -1894,16 +1909,18 @@
             "Azure Monitor"
         ],
         "sampleQueries": [
-            "How to integrate Java with Azure OpenAI for enterprise data applications?",
-            "What are the steps to deploy a ChatGPT-like app using Java on Azure Kubernetes Service?",
-            "Can I create a chat interface with private documents using Java and Azure Cognitive Search?"
+            "How can I implement ChatGPT with enterprise data in Java using Azure OpenAI?",
+            "Is there a Java version of the ChatGPT and Cognitive Search integration?",
+            "What's the process to set up a Semantic Kernel for Cognitive Search in a Java spring application?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Java",
-            "Spring",
-            "OpenAI",
-            "Reactjs"
+            "Bicep",
+            "Typescript",
+            "HTML",
+            "Reactjs",
+            "OpenAI"
         ]
     },
     {
@@ -1931,19 +1948,24 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure OpenAI",
-            "Azure Cognitive Search"
+            "Azure OpenAI Service",
+            "Azure Cognitive Search",
+            "Azure Container Apps",
+            "Azure Static Web Apps",
+            "Azure Blob Storage",
+            "Azure Monitor"
         ],
         "sampleQueries": [
-            "How can I create a ChatGPT app with Azure OpenAI and Azure Cognitive Search in JavaScript?",
-            "What are the steps to set up a Retrieval-Augmented Generation application using Azure services?",
-            "How do I integrate Azure OpenAI's gpt-3.5-turbo model with Azure AI Search for a web application?"
+            "How can I create a Retrieval Augmented Generation application using Azure Cognitive Search and Azure OpenAI?",
+            "Is there a JavaScript example for integrating ChatGPT with Azure Cognitive Search?",
+            "What is the best way to use Azure OpenAI for building a RAG application in Node.js?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "JavaScript",
-            "Nodejs",
-            "TypeScript"
+            "Bicep",
+            "Javascript",
+            "Node.js",
+            "Typescript"
         ]
     },
     {
@@ -1968,9 +1990,9 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I get started with Infrastructure as Code using the Bicep template for Azure Deployment Environments?",
-            "What are the prerequisites for deploying Azure DevCenter using an Azd template?",
-            "Can I customize environment types and projects in Azure DevCenter after deploying with the provided Bicep template?"
+            "How can I use Bicep templates to start with Azure Deployment Environments?",
+            "What is the minimum configuration for setting up Azure DevCenter with Bicep?",
+            "How do I enable developers to self-serve environments in Azure using Bicep?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -2001,22 +2023,21 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure Static Web Apps",
-            "Azure OpenAI",
             "Azure Functions",
+            "Azure Static Web Apps",
             "Azure SQL Database",
-            "Azure Application Insights"
+            "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How do I set up an Azure OpenAI conference session recommender?",
-            "What steps are necessary to deploy a text embedding solution using Azure SQL and OpenAI?",
-            "Can I implement a vector similarity search with Azure SQL Database and Azure OpenAI for conference session recommendations?"
+            "How do I create a conference session recommender with Azure and OpenAI?",
+            "What are the steps to build an app using Azure Functions and OpenAI for session recommendations?",
+            "Can I integrate Text Embeddings with Azure SQL DB for a session recommendation system?"
         ],
         "sourceType": "Azd",
         "tech": [
             "C#",
             "SQL",
-            "T-SQL",
+            "TSQL",
             "Javascript",
             "HTML",
             "Bicep"
@@ -2040,20 +2061,18 @@
         "deploymentConfig": {},
         "products": [
             "Azure Kubernetes Service",
-            "Azure Container Registry",
-            "Azure Key Vault",
             "Azure Cache for Redis"
         ],
         "sampleQueries": [
-            "How to deploy a Java microservices application with Dapr on AKS?",
-            "Can I use Azure Kubernetes Service to run Java applications with Dapr Pub/Sub?",
-            "What are the steps to setup event-driven microservices in AKS using Dapr for Java applications?"
+            "How can I implement pub/sub messaging in a Java microservices app using Dapr on AKS?",
+            "What is the best way to demonstrate event-driven communication between microservices in AKS?",
+            "Can I use Dapr for pub/sub architecture in a Java application? How do I set it up on AKS?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Dapr",
             "Java",
-            "Spring Boot"
+            "Bicep"
         ]
     },
     {
@@ -2079,14 +2098,15 @@
             "Azure Blob Storage"
         ],
         "sampleQueries": [
-            "How do I deploy an Azure Function that uses OpenAI and Node.js to create chat applications?",
-            "What are the requirements for running Node.js Azure Functions with ChatGPT?",
-            "Can I cache ChatGPT responses in Azure Blob Storage when building a chat application?"
+            "How do I create an Azure Function to process ChatGPT prompts using Node.js?",
+            "Is it possible to cache ChatGPT completions in Azure Blob with a JavaScript Function?",
+            "Can OpenAI's ChatGPT be integrated with Azure Functions for HTTP interaction?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Javascript",
             "Node.js",
+            "JavaScript",
+            "Bicep",
             "HTML"
         ]
     },
@@ -2109,18 +2129,17 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure Functions",
-            "Azure Blob Storage"
+            "Azure Functions"
         ],
         "sampleQueries": [
-            "How do I deploy a Python Azure Function that uses ChatGPT for chat operations?",
-            "What do I need to set up a HTTP-based ChatGPT chatbot with Azure Functions?",
-            "Can I cache OpenAI ChatGPT responses in Azure Blob Store using Azure Functions?"
+            "How to implement ChatGPT in Azure Functions using Python",
+            "Can we cache ChatGPT responses in Blob storage with Azure Functions?",
+            "What is the best way to use OpenAI ChatGPT service with Azure Functions?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
-            "OpenAI"
+            "Bicep"
         ]
     },
     {
@@ -2144,9 +2163,9 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How do I use LangChain with Azure OpenAI in an Azure Function?",
-            "What are the steps to process HTTP POST requests using Python Azure Functions and OpenAI?",
-            "Can you show me an example of Azure Functions Python code that integrates with ChatGPT and OpenAI?"
+            "How can I create a chatbot with Azure Functions using LangChain and Azure OpenAI?",
+            "What is the process for setting up LangChain with Azure OpenAI in Python Azure Functions?",
+            "Can Azure Functions be used to calculate completions with LangChain and ChatGPT templates?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -2181,15 +2200,16 @@
             "Azure Cognitive Search"
         ],
         "sampleQueries": [
-            "How do I set up a multi-repo ChatGPT with Azure OpenAI and Cognitive Search?",
-            "Can I integrate my enterprise data into ChatGPT using Azure OpenAI at scale?",
-            "What is the process for deploying a secure and scalable ChatGPT application using Azure AI?"
+            "How to scale Azure OpenAI for enterprise use with ChatGPT?",
+            "What is the best way to integrate ChatGPT with Azure Cognitive Search?",
+            "Can I use a Multi-repo approach with Azure OpenAI and Cognitive Search for AI applications?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
             "Typescript",
-            "Nodejs"
+            "Nodejs",
+            "Bicep"
         ]
     },
     {
@@ -2220,17 +2240,18 @@
             "Azure Key Vault",
             "Azure Storage",
             "Azure Virtual Network",
-            "Application Insights"
+            "Azure Monitor",
+            "Azure Application Insights",
+            "Log Analytics"
         ],
         "sampleQueries": [
-            "How to deploy an Azure Function with Event Hub using Azure Developer CLI?",
-            "Can I configure private endpoints for Azure Functions with Virtual Network integration?",
-            "What are the steps to run Azure Functions with Event Hub triggers locally for development?"
+            "How do I deploy an Azure Function that connects to an Event Hub?",
+            "Can I set up a virtual network with private endpoints when using Azure Functions and Event Hub?",
+            "What is the best way to use Managed Identity with Azure Functions for Event Hub authentication?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            ".NET",
             "C#",
             "Dockerfile"
         ]
@@ -2258,15 +2279,16 @@
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How can I get started with Microsoft Orleans for building a URL shortener?",
-            "What steps are required to deploy a URL Shortener using Azure and Orleans?",
-            "Can I use the Azure Developer CLI to monitor an ASP.NET Core application using Cosmos DB?"
+            "How do I create a URL Shortener with Microsoft Orleans and Azure?",
+            "What steps are involved in deploying an ASP.NET Core web app using Azure Developer CLI?",
+            "Can I use CosmosDB for state persistence with Microsoft Orleans in an Azure-hosted application?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Orleans",
-            "ASP.NET Core",
-            "C#"
+            "Bicep",
+            "C#",
+            "CosmosDB",
+            "ASP.NET"
         ]
     },
     {
@@ -2289,18 +2311,18 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure OpenAI",
-            "Azure Container Apps"
+            "Azure Container Apps",
+            "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How do I deploy an OpenAI load balancer using Azure Container Apps?",
-            "What is the smart load balancing approach for OpenAI endpoints on Azure?",
-            "Can the Azure OpenAI priority-based load balancer handle too many requests with retry strategy?"
+            "How do I set up a priority-based load balancer for Azure OpenAI services?",
+            "What is the best way to manage traffic to Azure OpenAI endpoints with a load balancer?",
+            "Can I use Azure Container Apps to intelligently handle OpenAI 'retry-after' responses?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "C#"
+            "DotnetCsharp"
         ]
     },
     {
@@ -2335,20 +2357,20 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How can I deploy the AKS Store Demo on Azure Kubernetes Service with Terraform?",
-            "What is the procedure to integrate OpenAI GPT-3 for generating product descriptions in the AKS Store Demo?",
-            "How to run the Azure Kubernetes Service Store Demo locally using Docker Compose?"
+            "How do I set up a microservices app on Azure Kubernetes Service?",
+            "What is a good AKS demo for learning Kubernetes with Terraform?",
+            "Can I use Helm to deploy apps on the Azure Kubernetes Service?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Go",
+            "Golang",
             "Javascript",
-            "Nodejs",
-            "Python",
             "Rust",
-            "Terraform",
+            "Vue.js",
             "Dockerfile",
-            "Vue.js"
+            "Python",
+            "Bicep",
+            "Terraform"
         ]
     },
     {
@@ -2377,25 +2399,24 @@
         "products": [
             "Azure API Management",
             "Azure Container Apps",
-            "Azure OpenAI",
-            "Azure Monitor"
+            "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How do I set up a centralized Azure OpenAI capability for my developers using Azure API Management?",
-            "What steps are needed to implement usage monitoring and cost chargeback for Azure OpenAI in my organization?",
-            "How can I configure Azure OpenAI PTUs across my organization with Azure Container Apps?"
+            "How do I manage Azure OpenAI services across my organization using API Management and Container Apps?",
+            "What is the best way to implement Azure OpenAI for enterprise-level chargeback capabilities?",
+            "Can I monitor Azure OpenAI usage and performance using Application Insights in a .NET C# environment?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "C#",
-            "JavaScript",
+            "Csharp",
+            "Nodejs",
+            "Bash",
+            "Powershell",
             "Dockerfile",
             "Json",
             "Xml",
-            "Powershell",
-            "Bash",
-            "Nodejs"
+            ".NET"
         ]
     },
     {
@@ -2424,22 +2445,21 @@
         "deploymentConfig": {},
         "products": [
             "Azure Functions",
-            "Azure Key Vault",
             "Azure API Management",
-            "Azure Monitor"
+            "Azure Monitor",
+            "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I get started with SAP Cloud SDK on Azure Functions using TypeScript?",
-            "What steps are required for consuming SAP OData services in an Azure Function app?",
-            "How to deploy an SAP Cloud SDK project on Azure Functions with Azure Developer CLI?"
+            "How do I start a project using SAP Cloud SDK on Azure Functions with TypeScript?",
+            "What's the fastest way to deploy an SAP extension project on Azure using the Azure Quickstart?",
+            "Can I use Node.js and the SAP Cloud SDK on Azure Functions for OData consumption?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Typescript",
-            "Javascript",
             "Nodejs",
-            "Nestjs",
-            "SAP"
+            "Bicep",
+            "Nestjs"
         ]
     },
     {
@@ -2470,21 +2490,20 @@
         "products": [
             "Azure App Service",
             "Azure API Management",
-            "Azure Key Vault",
-            "Azure Monitor",
             "Azure Cosmos DB",
             "Azure Database for PostgreSQL"
         ],
         "sampleQueries": [
-            "How can I quickly start an SAP CAP project on Azure App Service?",
-            "What are the best practices for integrating SAP CAP with Azure Cosmos DB for PostgreSQL?",
-            "Is there a quickstart guide for running Node.js OData services from SAP S/4HANA on Azure?"
+            "How do I get started with the SAP Cloud Application Programming Model on Azure?",
+            "What is required to integrate SAP S/4HANA with Azure Cosmos DB using Node.js?",
+            "Can Azure App Service support SAP CAP with PostgreSQL backed by Azure Cosmos DB?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Nodejs",
+            "Bicep",
             "Nestjs",
-            "SAP Cloud SDK"
+            "Javascript"
         ]
     },
     {
@@ -2510,9 +2529,9 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How can I set up a priority-based routing policy in Azure API Management for OpenAI?",
-            "What is the best way to handle OpenAI endpoint throttling with Azure API Management?",
-            "Can I dynamically balance traffic between OpenAI backends using Azure API Management policies?"
+            "How do I set up priority-based routing for Azure OpenAI using API Management?",
+            "What is the best way to implement retry-after headers in Azure API Management for OpenAI services?",
+            "Can I use Azure Bicep templates to configure load balancing policies for OpenAI endpoints?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -2543,18 +2562,18 @@
         "deploymentConfig": {},
         "products": [
             "Azure Container Apps",
-            "Azure Database for PostgreSQL",
-            "Azure Key Vault"
+            "Azure Database for PostgreSQL"
         ],
         "sampleQueries": [
-            "How do I deploy Langfuse to Azure Container Apps using Azure Developer CLI?",
-            "What are the steps to set up Entra-based authentication for Langfuse on Azure?",
-            "Can I store observability data for my LLM application using PostgreSQL and Langfuse in Azure?"
+            "How can I deploy Langfuse to Azure Container Apps?",
+            "What is needed to use PostgreSQL Flexible Server with Langfuse on Azure?",
+            "Can I integrate Azure Key Vault with Langfuse for enhanced observability?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "Python"
+            "Python",
+            "PostgreSQL"
         ]
     },
     {
@@ -2579,14 +2598,15 @@
             "Azure Database for PostgreSQL"
         ],
         "sampleQueries": [
-            "How to deploy PostgreSQL with Pgvector on Azure using Bicep templates?",
-            "What is the process of authenticating to Azure PostgreSQL Flexible Server with Entra?",
-            "How can I use Python scripts to interact with PostgreSQL and Pgvector in Azure?"
+            "How do I deploy a PostgreSQL Flexible Server with Pgvector on Azure?",
+            "Can I use keyless auth to access a PostgreSQL server provisioned with Pgvector?",
+            "How to access PostgreSQL with Pgvector from Python scripts?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "Python"
+            "Python",
+            "PostgreSQL"
         ]
     },
     {
@@ -2615,14 +2635,14 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I manage keys and monitor usage for Azure OpenAI applications using Azure API Management?",
-            "Can Azure API Management help set different throttling settings and log token usage for Azure OpenAI?",
-            "What is the approach to handle key management and endpoint access consolidation for Azure OpenAI with APIM?"
+            "How do I manage and log Azure Open AI applications with Azure API Management?",
+            "What Azure resources are needed to track usage and issue new keys for Open AI services?",
+            "Can I use Azure Key Vault and APIM to secure my Open AI applications?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "C#"
+            "CSharp"
         ]
     },
     {
@@ -2648,18 +2668,18 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure AI",
-            "Azure OpenAI Service"
+            "Azure AI Services",
+            "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How can I integrate AI into my .NET applications using Azure OpenAI?",
-            "What are the .NET samples available for AI scenarios with Azure OpenAI?",
-            "Where can I find practical examples of AI infused .NET applications using Azure AI services?"
+            "How do I create a .NET application using Azure OpenAI for AI-powered features?",
+            "What are some examples of AI integration in .NET apps with Azure OpenAI?",
+            "Can I use GPT and DALL-E models in my .NET C# projects on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "C#",
-            "PowerShell"
+            "Bicep",
+            "C#"
         ]
     },
     {
@@ -2694,19 +2714,19 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How to deploy a conference session assistant using Azure OpenAI?",
-            "What's the architecture for a session recommender with Azure SQL DB and Vector Search?",
-            "Can I build a session recommendation system with OpenAI and Azure SQL using Jamstack?"
+            "How do I build a natural language conference assistant using Azure's OpenAI?",
+            "Can I use Azure Functions and Azure SQL together for a Vector Search assisted conference app?",
+            "What are the steps to integrate Vector Search with Azure OpenAI for a conference session assistant?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
             "Csharp",
-            "SQL",
+            "Sql",
             "Tsql",
             "Javascript",
             "Html",
-            "Reactjs"
+            "AzureOpenAI"
         ]
     },
     {
@@ -2736,17 +2756,17 @@
             "Azure App Configuration"
         ],
         "sampleQueries": [
-            "How do I dynamically manage AKS configurations with Azure App Configuration?",
-            "What are the steps to set up an AKS workload using Azure Developer CLI templates?",
-            "Can I integrate Azure App Configuration into an AKS cluster without modifying ConfigMaps?"
+            "How do I dynamically configure AKS workloads using Azure App Configuration?",
+            "Can Azure App Configuration be used with AKS without changing ConfigMaps?",
+            "What is the best way to manage settings for a .NET C# web app running on AKS with Azure App Configuration?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Csharp",
-            "PowerShell",
+            "Powershell",
             "Bash",
-            "HTML",
-            "Bicep"
+            "HTML"
         ]
     },
     {
@@ -2779,22 +2799,21 @@
             "Azure Bot Service",
             "Azure Document Intelligence",
             "Azure Functions",
-            "Azure Storage Account",
+            "Azure Storage Accounts",
             "Azure Speech Service",
             "Azure Cosmos DB"
         ],
         "sampleQueries": [
-            "How can I implement RAG pattern with Azure AI and Large Language Models?",
-            "What is the process to deploy Chat with your Data Solution Accelerator on Azure?",
-            "Can I customize Chat with your Data Solution Accelerator to use my company's internal documents?"
+            "What is the Chat with your Data Solution Accelerator and how does it work?",
+            "How can I implement a ChatGPT-style Q&A experience with Azure AI Search?",
+            "Can I integrate OpenAI's language models with Azure Cognitive Search using the Solution Accelerator?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Python",
             "Typescript",
-            "Bicep",
-            "Flask",
-            "OpenAI"
+            "Flask"
         ]
     },
     {
@@ -2830,17 +2849,21 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How do I deploy the Azure Kubernetes Service Store Demo using AKS and Terraform?",
-            "What components are included in the AKS Store Demo application?",
-            "Can I integrate AI-powered product descriptions using OpenAI in the AKS Store Demo?"
+            "How do I deploy a microservices app on Azure Kubernetes Service?",
+            "What is the best way to use Terraform with AKS for app deployment?",
+            "Can I integrate OpenAI models into my Kubernetes app hosted on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Go",
             "Javascript",
             "Rust",
+            "Python",
+            "Bicep",
+            "Terraform",
             "Vue.js",
-            "Python"
+            "Dockerfile",
+            "Nodejs"
         ]
     },
     {
@@ -2872,14 +2895,13 @@
             "Azure Monitor"
         ],
         "sampleQueries": [
-            "How to deploy a containerized app on Azure Kubernetes Service using the AzD template?",
-            "What are the prerequisites for using the Azure Kubernetes Service AKS app template on GitHub?",
-            "How do I integrate Prometheus and Grafana for monitoring in Azure Kubernetes Service?"
+            "How do I start containerizing my app for AKS with an AzD template?",
+            "What is the process to deploy a Bicep template to Azure Kubernetes Service?",
+            "Can I monitor AKS containers with Grafana and Prometheus using the provided AzD workload?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Bicep",
-            "Shell"
+            "Bicep"
         ]
     },
     {
@@ -2915,17 +2937,19 @@
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How to deploy a React web app with Node.js API and MongoDB on Azure using AKS",
-            "What's needed to set up a Kubernetes cluster for a ToDo web app with Azure Cosmos DB for MongoDB storage?",
-            "How can I monitor my React and Node.js application on Azure after deployment?"
+            "How do I deploy a React web app with Node.js API and MongoDB on Azure Kubernetes?",
+            "What is the process to replace the ToDo app with my own code in the Kubernetes React Web App template?",
+            "Can I use Azure Key Vault to secure my Kubernetes deployed React application?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Node.js",
             "Bicep",
+            "Nodejs",
             "Typescript",
             "Javascript",
-            "React.js",
+            "Reactjs",
+            "MongoDB",
+            "CosmosDB",
             "HTML"
         ]
     },
@@ -2961,12 +2985,15 @@
             "Azure CLI"
         ],
         "sampleQueries": [
-            "How do I deploy an application in Azure Kubernetes Service using the CLI?",
-            "Can I set up a Kubernetes cluster in Azure with the Azure CLI?",
-            "What are the steps for provisioning an AKS cluster using an ExecDocs tutorial?"
+            "How do I deploy a Kubernetes cluster in Azure using the Azure CLI?",
+            "What are the steps to set up an AKS cluster and deploy an application using Azure CLI?",
+            "Can I find a tutorial for provisioning AKS with ExecDocs?"
         ],
         "sourceType": "ExecDocs",
-        "tech": []
+        "tech": [
+            "Kubernetes",
+            "Azure CLI"
+        ]
     },
     {
         "title": "Tutorial: Deploy WordPress on AKS cluster by using Azure CLI",
@@ -2997,12 +3024,12 @@
         },
         "products": [
             "Azure Kubernetes Service",
-            "Azure Database for MySQL"
+            "Azure Database for MySQL Flexible Server"
         ],
         "sampleQueries": [
-            "How do I deploy WordPress on an AKS cluster using Azure CLI?",
-            "Can I use Azure Database for MySQL - Flexible Server with AKS for my WordPress site?",
-            "What are the steps to build a containerized WordPress site on Azure Kubernetes Service?"
+            "How do I deploy WordPress on an Azure Kubernetes Service (AKS) cluster using Azure CLI?",
+            "Can I use Azure Database for MySQL to create a flexible server for my WordPress site on AKS?",
+            "Is there a tutorial to help me build and deploy WordPress on AKS with the Azure platform?"
         ],
         "sourceType": "ExecDocs",
         "tech": [
@@ -3038,13 +3065,12 @@
             }
         },
         "products": [
-            "Azure Static Web Apps",
-            "Azure CLI"
+            "Azure Static Web Apps"
         ],
         "sampleQueries": [
-            "How do I deploy a static website on Azure using the CLI?",
-            "What is the best way to build and deploy a static site with Azure Static Web Apps?",
-            "Can you guide me through deploying a static site to Azure using the Azure CLI?"
+            "How do I deploy a static site using Azure CLI?",
+            "Can I build and deploy a static web app on Azure without any prior experience?",
+            "Where can I find a tutorial to get started with Azure Static Web Apps using the CLI?"
         ],
         "sourceType": "ExecDocs",
         "tech": []
@@ -3081,9 +3107,9 @@
             "Azure CLI"
         ],
         "sampleQueries": [
-            "How do I create a VM Scale Set in Flexible orchestration mode using Azure CLI?",
-            "Is there a tutorial for deploying virtual machines in a Flexible scale set on Azure?",
-            "Can I use Azure CLI to manage Virtual Machine Scale Sets in Azure?"
+            "How do I create a Flexible VM Scale Set using Azure CLI?",
+            "What are the steps to deploy a virtual machine in a Flexible scale set with Azure?",
+            "Can I find a tutorial for setting up virtual machines in a scale set via one-click in Azure?"
         ],
         "sourceType": "ExecDocs",
         "tech": []
@@ -3119,14 +3145,12 @@
             "Azure Kubernetes Service"
         ],
         "sampleQueries": [
-            "How can I set up Inspektor Gadget on an Azure Kubernetes Service cluster?",
-            "What is the deployment process for Inspektor Gadget in AKS?",
-            "Can I install Inspektor Gadget for monitoring in a Kubernetes cluster on Azure?"
+            "How to deploy Inspektor Gadget on an Azure Kubernetes Service cluster?",
+            "What are the steps to set up Inspektor Gadget for monitoring in AKS?",
+            "Can I install Inspektor Gadget in my AKS cluster for better deployment insights?"
         ],
         "sourceType": "ExecDocs",
-        "tech": [
-            "Kubernetes"
-        ]
+        "tech": []
     },
     {
         "title": "Deploy a Scalable & Secure Azure Kubernetes Service cluster using the Azure CLI",
@@ -3161,9 +3185,9 @@
             "Azure CLI"
         ],
         "sampleQueries": [
-            "How do I set up a secure HTTPS Kubernetes web application in Azure?",
-            "What is the process of deploying a scalable Azure Kubernetes Service cluster?",
-            "Where can I find a step-by-step tutorial for setting up a secure web application on Azure Kubernetes Service?"
+            "How can I deploy a secure HTTPS web application with Azure Kubernetes Service?",
+            "Is there a step-by-step tutorial for setting up a scalable Kubernetes cluster in Azure?",
+            "What is the process for deploying a web application on Azure Kubernetes Service with security features?"
         ],
         "sourceType": "ExecDocs",
         "tech": []
@@ -3194,18 +3218,15 @@
             "Azure AI Search"
         ],
         "sampleQueries": [
-            "How can I create an AI chat experience using Azure OpenAI and Node.js?",
-            "What are the steps to deploy the Azure OpenAI RAG Chat Experience on Azure?",
-            "How to use LangChain.js for building a chatbot with Retrieval-Augmented Generation?"
+            "How can I create an AI chat application using Node.js and OpenAI on Azure?",
+            "What is the Retrieval-Augmented Generation pattern and how can it be implemented in Azure with LangChain4J?",
+            "Can Azure Static Web Apps host applications with AI language models and Azure AI Search?"
         ],
         "sourceType": "AzureSamples",
         "tech": [
-            "Javascript",
             "Node.js",
-            "Typescript",
             "LangChain.js",
-            "OpenAI SDK",
-            "Fastify"
+            "TypeScript"
         ]
     },
     {
@@ -3231,21 +3252,21 @@
         "products": [
             "Azure Static Web Apps",
             "Azure Functions",
-            "Azure Cognitive Search",
             "Azure Cosmos DB",
             "Azure Blob Storage"
         ],
         "sampleQueries": [
-            "How can I create a serverless AI chat application using Azure and LangChain.js?",
-            "What are the steps to deploy a Retrieval-Augmented Generation chat experience on Azure?",
-            "Can I integrate my own enterprise documents into the serverless AI chat with RAG provided by Azure Samples?"
+            "How to create a serverless AI chat application on Azure using LangChain.js",
+            "What is the process to set up Retrieval-Augmented Generation for a chat application in Azure?",
+            "Can LangChain.js be used to integrate Azure AI Search in an AI chat app hosted on Azure Static Web Apps?"
         ],
         "sourceType": "Azd",
         "tech": [
             "JavaScript",
-            "LangChain.js",
             "TypeScript",
-            "Lit"
+            "Node.js",
+            "AzureFunctions",
+            "AzureCosmosDB"
         ]
     },
     {
@@ -3272,9 +3293,9 @@
             "Azure Managed Identity"
         ],
         "sampleQueries": [
-            "How do I store secrets using Azure Key Vault in an App Service app?",
-            "Can I use Azure Managed Identity with App Service to access Key Vault?",
-            "What's the best way to integrate Azure Key Vault with .NET applications on App Service?"
+            "How can I access Azure Key Vault from an App Service using Managed Identity?",
+            "Is there a sample for integrating Azure Key Vault with Azure App Service in .NET?",
+            "What's the process to set up Azure Managed Identity for accessing Key Vault from App Service?"
         ],
         "sourceType": "AzureSamples",
         "tech": [
@@ -3304,11 +3325,14 @@
         ],
         "sampleQueries": [
             "How do I deploy an ASP.NET MVC web app to Azure App Service using Git?",
-            "What are the steps to get started with web apps in Azure App Service?",
-            "Can I use Visual Studio to create an ASP.NET app for Azure App Service?"
+            "What is a good ASP.NET sample for starting a web app on Azure?",
+            "Are there any AzureSamples for building an ASP.NET app with Azure App Service?"
         ],
         "sourceType": "AzureSamples",
-        "tech": "None"
+        "tech": [
+            "ASP.NET",
+            "C#"
+        ]
     },
     {
         "title": "Azure AI Search Comparison Tool",
@@ -3332,20 +3356,19 @@
         "deploymentConfig": {},
         "products": [
             "Azure Cognitive Search",
-            "Azure OpenAI",
+            "Azure OpenAI Service",
             "Azure Computer Vision"
         ],
         "sampleQueries": [
-            "How do I use Azure AI Search for image search with text-to-image functionality?",
-            "What is the process to set up Azure AI Vision API for image embeddings in the Azure AI Search Comparison Tool?",
-            "Can Azure AI Search perform hybrid queries combining text and vector search?"
+            "How can I visualize different search retrieval modes with Azure AI Search?",
+            "What is the Azure AI Search Comparison Tool and how does it support image search?",
+            "How to implement text-to-image and image-to-image search with Azure OpenAI?"
         ],
         "sourceType": "AzureSamples",
         "tech": [
             "React",
             "Node.js",
             "Python",
-            "Powershell",
             "JavaScript"
         ]
     },
@@ -3373,17 +3396,19 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How do I integrate the Azure OpenAI API with a Lit frontend?",
-            "What is the process for setting up a classic chat UI using Azure OpenAI and LitElements?",
-            "Can I deploy an Azure OpenAI Chat Frontend using TypeScript and Vite?"
+            "How can I implement a chat UI with LitElement to interact with Azure OpenAI?",
+            "What is involved in setting up a frontend for Azure OpenAI using TypeScript and Vite?",
+            "Can I create a chat interface using Azure's OpenAI API with the Lit framework?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Lit",
-            "Typescript",
-            "Litelement",
+            "LitElement",
+            "TypeScript",
             "Vite",
-            "Rollup"
+            "Rollup",
+            "ESLint",
+            "Prettier"
         ]
     },
     {
@@ -3408,21 +3433,24 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure AI Studio",
-            "Azure OpenAI Service",
+            "Azure Machine Learning",
+            "Azure OpenAI",
             "Azure Cognitive Search",
             "Azure Storage",
             "Azure Key Vault",
             "Azure Application Insights",
-            "Azure Container Registry"
+            "Azure Container Registry",
+            "Azure Log Analytics"
         ],
         "sampleQueries": [
-            "How do I start a new project using the Azure AI Studio Starter Template?",
-            "What Azure resources are created with the Azure AI Studio starter template?",
-            "How to configure the Azure AI Studio starter template to disable AI Search Service?"
+            "What is the Azure AI Studio Starter Template and how do I use it?",
+            "How can I set up an AI project in Azure AI Studio using the AzD template?",
+            "Can I integrate OpenAI services with Azure Cognitive Search using the Azure AI Studio Starter Template?"
         ],
         "sourceType": "Azd",
-        "tech": []
+        "tech": [
+            "Bicep"
+        ]
     },
     {
         "title": "Contoso Chat Retail with Azure AI Studio and Promptflow",
@@ -3447,19 +3475,18 @@
         "deploymentConfig": {},
         "products": [
             "Azure OpenAI",
-            "Azure Cognitive Search",
+            "Azure AI Search",
             "Azure Cosmos DB",
             "Azure Container Apps"
         ],
         "sampleQueries": [
-            "How can I create a customer support chatbot using Azure AI Studio and Promptflow?",
-            "Is there a GitHub repository for a retail copilot solution using retrieval augmented generation?",
-            "Can I get product recommendations in a chatbot using Azure Cosmos DB and Azure AI?"
+            "How can I set up a chatbot for Contoso using Azure AI and Promptflow?",
+            "What is the way to use Cosmos DB for product recommendations in Azure AI chatbots?",
+            "Can I deploy a retrieval-augmented generation pattern on Azure for customer support?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
-            "Bash",
             "Bicep",
             "Prompty"
         ]
@@ -3487,8 +3514,8 @@
         ],
         "sampleQueries": [
             "How do I deploy a simple HTML/CSS/JS web app to Azure App Service?",
-            "Can I use Git to deploy a Bootstrap-based web application on Azure?",
-            "What's the process for deploying web apps built with the Carousel Bootstrap template to Azure App Service?"
+            "Where can I find a Bootstrap Carousel template-based web app for Azure?",
+            "What steps are needed to use Git for deploying a web app to Azure App Service?"
         ],
         "sourceType": "AzureSamples",
         "tech": [
@@ -3520,9 +3547,9 @@
         "deploymentConfig": {},
         "products": [],
         "sampleQueries": [
-            "How do I automate SAP deployments on Azure using Terraform and Ansible?",
-            "What is the SAP deployment automation framework and how does it integrate with Azure?",
-            "Can I deploy SAP HANA and NetWeaver on Azure regions using the SAP deployment automation framework?"
+            "How can I automate the deployment of SAP HANA using the SAP Deployment Automation Framework on Azure?",
+            "What tools are involved in setting up an automated SAP environment on Azure?",
+            "Does the SAP Deployment Automation Framework support AnyDB with Terraform and Ansible?"
         ],
         "sourceType": "AzureSamples",
         "tech": [
@@ -3552,9 +3579,9 @@
             "Azure AI"
         ],
         "sampleQueries": [
-            "How do I start using the Azure AI starter template with Bicep on Azure?",
-            "What are the prerequisites for deploying the bicep template for Azure AI services?",
-            "Can I integrate my own machine learning models with the Azure AI starter template?"
+            "How can I deploy Azure AI services with pre-configured machine learning models?",
+            "What is the Azure AI Starter and how does it use Bicep templates?",
+            "Can I find a GitHub repository that helps me quickly start with Azure AI using OpenAI models?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -3588,14 +3615,15 @@
             "Azure Log Analytics"
         ],
         "sampleQueries": [
-            "How can I create a chat application using Azure OpenAI with Python?",
-            "What are the steps to deploy a Python chat app on Azure using Azure OpenAI GPT models?",
-            "Is there a guided experience for setting up a Python-based Azure OpenAI chat application?"
+            "How do I create a chat application using Azure OpenAI in Python?",
+            "What are the steps to set up a simple chat application with Azure OpenAI SDK?",
+            "Can I use Bicep templates for deploying an Azure Chat Application with OpenAI integration?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
             "Quart",
+            "Bicep",
             "OpenAI"
         ]
     },
@@ -3623,14 +3651,14 @@
         "deploymentConfig": {},
         "products": [
             "Azure Container Apps",
-            "Azure Database for PostgreSQL Flexible Server",
+            "Azure Database for PostgreSQL",
             "Azure OpenAI",
             "Azure Monitor"
         ],
         "sampleQueries": [
-            "How to deploy a RAG application with PostgreSQL on Azure Container Apps?",
-            "What is the best way to use OpenAI with PostgreSQL for creating a RAG application?",
-            "How can I integrate Azure OpenAI into a web-based chat application using PostgreSQL?"
+            "How to set up RAG with PostgreSQL on Azure Container Apps?",
+            "What is the Azure database for PostgreSQL Flexible Server used for in the RAG app?",
+            "Can I use the RAG app to perform question-answering with data from a PostgreSQL database table?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -3638,7 +3666,8 @@
             "FastAPI",
             "React",
             "FluentUI",
-            "Node.js"
+            "PostgreSQL",
+            "Bicep"
         ]
     },
     {
@@ -3663,22 +3692,21 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure OpenAI",
-            "Azure Bing Web Search",
+            "Azure Kubernetes Service",
             "Azure Cognitive Search"
         ],
         "sampleQueries": [
-            "How can I use Promptflow with Azure's OpenAI service for creative writing?",
-            "What is needed to deploy a multi-agent creative writing solution on Azure?",
-            "Can I integrate Azure Cognitive Search with a Python application to assist in article writing?"
+            "How can I implement a creative writing assistant with Python and OpenAI?",
+            "What is Promptflow and how is it used for creative writing solutions?",
+            "Can I deploy a multi-agent creative writing system on AKS using Terraform?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
-            "Javascript",
-            "Typescript",
-            "Bash",
-            "Bicep"
+            "Bicep",
+            "Terraform",
+            "JavaScript",
+            "Typescript"
         ]
     },
     {
@@ -3707,9 +3735,9 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How can I automate speech to text and summarization using Azure AI?",
-            "What steps are involved in setting up the Process Automation solution on Azure?",
-            "Can I process audio reports with Speech Service and get summarized text in Azure?"
+            "How to automate speech to text conversion using AI Studio on Azure",
+            "What is the process for summarizing text with Azure's AI services?",
+            "Can I use Azure for processing and summarizing audio recordings with AI?"
         ],
         "sourceType": "Azd",
         "tech": [
@@ -3737,18 +3765,19 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure AI Studio",
+            "Azure OpenAI",
             "Azure Key Vault"
         ],
         "sampleQueries": [
-            "How can I build a language model search agent using Prompty, LangChain, and Elastic Search on Azure?",
-            "What is function calling for vector database lookup and how is it implemented in Azure with Elastic Search?",
-            "Can I integrate the Retrieval-Augmented Generation technology using Azure AI with Elastic Search for better query responses?"
+            "How do I use Prompty and LangChain for function calling in Elastic Search?",
+            "What is the best way to look up data in a vector database using OpenAI models?",
+            "Can I integrate OpenAI with Elastic Search for automated function calling?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
-            "Elasticsearch"
+            "Elasticsearch",
+            "Bicep"
         ]
     },
     {
@@ -3778,13 +3807,14 @@
             "Azure Machine Learning"
         ],
         "sampleQueries": [
-            "How do I set up a vector database lookup using Prompty, LangChain, and Pinecone?",
-            "What is the process for deploying an LLM search agent with Azure OpenAI?",
-            "Can I integrate Azure Key Vault with Pinecone for secure API key management in a vector database search application?"
+            "How do I use Prompty and LangChain to look up information in a vector database with Pinecone?",
+            "What's the best way to implement function calling in Pinecone for AI applications?",
+            "Can I integrate OpenAI with Pinecone to create vector-based database lookups?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Python"
+            "Python",
+            "Bicep"
         ]
     },
     {
@@ -3819,12 +3849,13 @@
             "Azure Log Analytics"
         ],
         "sampleQueries": [
-            "How do I register and analyze new API specs with Azure API Center?",
-            "What are the steps to update API specs using Azure Functions and Azure Event Grid?",
-            "Can I use TypeScript to handle Azure API Center spec registrations and updates?"
+            "How can I use Azure Functions and Event Grid to analyze API specs with Azure API Center?",
+            "What's the process for setting up API spec analysis in Azure using the API Center Analyzer sample?",
+            "Can I automatically track and diagnose my API spec updates with the API Center Analyzer on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Typescript"
         ]
     },
@@ -3852,14 +3883,15 @@
             "Azure Static Web Apps"
         ],
         "sampleQueries": [
-            "How to deploy the Azure API Center portal using azd?",
-            "What steps are required to run the API Center Portal locally?",
-            "How can I host my own API Center portal on Azure Static Web Apps?"
+            "How can I use the Azure API Center with Static Web Apps for API governance?",
+            "What's the process to register API specs on Azure API Center using TypeScript?",
+            "Is there a sample Azure DevOps template for setting up an API portal with governance features?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "TypeScript"
+            "Typescript",
+            "Node.js"
         ]
     },
     {
@@ -3894,24 +3926,27 @@
         "products": [
             "Azure API Management",
             "Azure App Service",
+            "Azure Static Web Apps",
             "Azure Functions",
             "Azure Event Grid",
+            "Azure Logic Apps",
             "Azure Managed Identity",
             "Azure Application Insights",
-            "Azure Log Analytics",
-            "Azure Static Web Apps",
-            "Azure Logic Apps"
+            "Azure Log Analytics"
         ],
         "sampleQueries": [
-            "How to set up Azure API Center using the API Center Reference Sample?",
-            "What are the steps to integrate API Center with Azure Static Web Apps and Azure Functions?",
-            "Can I manage custom metadata in Azure API Center and how?"
+            "How can I set up an Azure API Center using Azure App Service and Azure Functions?",
+            "What is the best way to manage and analyze API specs with Azure API Center?",
+            "Can you show me a reference example of integrating Static Web Apps with Azure Functions and App Service?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Bicep",
-            "DotnetCsharp",
-            "Typescript"
+            ".NET",
+            "C#",
+            "Typescript",
+            "Node.js",
+            "JavaScript"
         ]
     },
     {
@@ -3937,20 +3972,20 @@
         "products": [
             "Azure OpenAI",
             "Azure Data Factory",
+            "Azure Key Vault",
             "Azure Blob Storage",
             "Azure Cosmos DB",
-            "Azure Key Vault",
             "Azure Computer Vision"
         ],
         "sampleQueries": [
-            "How can I implement GPT-4 Turbo with Vision for video analysis using Azure Data Factory?",
-            "What is the process for analyzing vehicle damage in videos using Azure OpenAI and Azure AI Vision?",
-            "How to deploy the GPT Video Analysis-in-a-Box solution on Azure for image and video analysis in the AI-in-a-Box framework?"
+            "How do I use Azure OpenAI GPT-4 to analyze videos and images?",
+            "What is the GPT Video Analysis-In-A-Box project, and how does it simplify AI adoption?",
+            "Can Azure Data Factory be integrated with AI for video and image analysis solutions?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Powershell",
-            "Bicep"
+            "Bicep",
+            "Powershell"
         ]
     },
     {
@@ -3979,17 +4014,19 @@
         "deploymentConfig": {},
         "products": [
             "Azure Cosmos DB",
-            "Azure App Service",
-            "Azure OpenAI"
+            "Azure OpenAI Service",
+            "Azure App Service"
         ],
         "sampleQueries": [
-            "How to build a multi-tenant Generative-AI chat application with Azure Cosmos DB and OpenAI",
-            "What are the steps to implement RAG Pattern with Azure Cosmos DB vector search in a Copilot app?",
-            "Can you integrate Semantic Kernel SDK with Azure OpenAI Service for a Copilot application?"
+            "How can I integrate Azure Cosmos DB with Azure OpenAI for a Copilot app?",
+            "What are the steps to create a Copilot application using Azure App Service and OpenAI?",
+            "Can I use managed identities and Blazor in an AI-powered Copilot app hosted on Azure?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "C#",
+            "NoSQL",
             "Blazor"
         ]
     },
@@ -4022,17 +4059,15 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How to deploy a serverless LlamaIndex.ai application on Azure Container Apps",
-            "What's needed to start building RAG applications with Azure OpenAI and LlamaIndex in Python?",
-            "Can I add my own data sources to a LlamaIndex RAG chatbot hosted on Azure?"
+            "How do I set up a serverless OpenAI application using Azure Container Apps?",
+            "What is LlamaIndex.ai and how can I integrate it with Azure for RAG applications?",
+            "Can you give me an example of how to build a complex RAG application on Azure with Python?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
             "JavaScript",
-            "TypeScript",
-            "FastAPI",
-            "Next.js"
+            "Bicep"
         ]
     },
     {
@@ -4062,15 +4097,15 @@
             "Azure OpenAI"
         ],
         "sampleQueries": [
-            "How to deploy a Serverless LlamaIndex application on Azure using JavaScript?",
-            "What is the process to integrate LlamaIndex with Azure OpenAI for building RAG applications?",
-            "Can I host a full-stack chat application powered by Azure OpenAI and LlamaIndex on Azure Container Apps?"
+            "How can I set up a serverless Azure application with LlamaIndex and OpenAI?",
+            "What is the best way to start with RAG applications using the Azure OpenAI Quick Start template?",
+            "Can I build a RAG application with LlamaIndex.ai hosted on Azure Container Apps?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Javascript",
-            "Nodejs",
-            "Typescript"
+            "Nodejs"
         ]
     },
     {
@@ -4099,18 +4134,18 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure OpenAI",
-            "Azure SQL Database",
+            "Azure OpenAI Service",
             "Azure AI Speech Service",
-            "Azure Managed Identity"
+            "Azure SQL Database"
         ],
         "sampleQueries": [
-            "How to set up NLP to SQL translation using Azure services?",
-            "What are the steps to deploy the NLP-SQL-in-a-Box solution on Azure?",
-            "Can Azure AI Speech Service be integrated with SQL databases for voice-enabled querying?"
+            "How can I use my voice to query SQL databases using Azure's AI services?",
+            "Is there a way to implement natural language processing to interact with Azure SQL databases?",
+            "What is the process to set up Azure AI Speech Service for translating spoken queries into SQL?"
         ],
         "sourceType": "Azd",
         "tech": [
+            "Bicep",
             "Python"
         ]
     },
@@ -4148,23 +4183,24 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure AI",
+            "Azure AI Search",
+            "Azure App Service",
             "Azure Blob Storage",
-            "Azure Monitor",
-            "Azure Application Insights",
-            "Azure Virtual Networks",
-            "Azure Managed Identity",
-            "Azure Container Apps"
+            "Azure Cosmos DB",
+            "Azure Cognitive Services",
+            "Azure OpenAI",
+            "Azure Queue Storage"
         ],
         "sampleQueries": [
-            "How to deploy Kernel Memory on Azure for multi-modal AI services",
-            "Can I use Kernel Memory for RAG processes with datasets in Azure?",
-            "What are the best practices for setting up Kernel Memory with custom semantic memory processing?"
+            "How do I use Kernel Memory for efficient indexing of datasets on Azure?",
+            "Can I create custom continuous data hybrid pipelines with Azure's Kernel Memory?",
+            "What are the steps to implement Retrieval Augmented Generation with Kernel Memory in an Azure environment?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "C#",
-            ".NET"
+            "Bicep",
+            ".NET",
+            "C#"
         ]
     },
     {
@@ -4195,13 +4231,14 @@
             "Azure Managed Identity"
         ],
         "sampleQueries": [
-            "How to set up a serverless Azure OpenAI Assistant with Function Calling",
-            "What are the prerequisites for running the Serverless Azure OpenAI Assistant Quick Start?",
-            "How can I use Azure Functions to extend the capabilities of my OpenAI Assistant?"
+            "How can I build a serverless OpenAI assistant using Azure?",
+            "What is the process to set up custom AI functions with Azure's serverless capabilities?",
+            "Can I implement a code interpreter in my Azure OpenAI assistant?"
         ],
         "sourceType": "Azd",
         "tech": [
-            "Javascript"
+            "Javascript",
+            "OpenAI"
         ]
     },
     {
@@ -4224,22 +4261,22 @@
         ],
         "deploymentConfig": {},
         "products": [
-            "Azure Container Apps",
             "Azure OpenAI",
+            "Azure Container Apps",
+            "Azure Developer CLI",
             "Azure Container Registry",
-            "Azure Log Analytics",
-            "Managed Identity"
+            "Azure Log Analytics"
         ],
         "sampleQueries": [
-            "How can I integrate OpenAI's vision models with a chat application using Azure?",
-            "What are the steps to deploy a Python chat app with image upload on Azure Container Apps?",
-            "Can I use Azure OpenAI for generating responses to user messages and images in real-time?"
+            "How do I chat with uploaded images using Azure OpenAI vision models like gpt-4o?",
+            "What's the best way to implement a Chat + Vision feature with Azure AI?",
+            "Can I integrate Azure Managed Identity with a Python application using Azure AI for image-related conversations?"
         ],
         "sourceType": "Azd",
         "tech": [
             "Python",
             "Quart",
-            "Openai"
+            "OpenAI"
         ]
     }
 ]
