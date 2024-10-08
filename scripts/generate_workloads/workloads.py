@@ -1,11 +1,10 @@
 import os
-
-from openai import AzureOpenAI
 from utils.file_functions import read_file, write_file
 from utils.get_responses import get_responses
+from openai import AzureOpenAI
 
 FILE_PATH = "workloads/workloads.json"
-DEPLOYMENT_MODEL = "gpt4-turbo-preview"
+DEPLOYMENT_MODEL = "gpt4o"
 FAILED_WORKLOADS = "failed_workloads.json"
 SUCCESSFUL_WORKLOADS = "new_workloads.json"
 
