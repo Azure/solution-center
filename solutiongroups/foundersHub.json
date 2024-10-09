@@ -1,0 +1,53 @@
+{
+    "title": "Founders' Hub",
+    "description": " ",
+    "solutions": [
+    ],
+    "solutionsSectionTitle": " ",
+    "createLinksSectionTitle": "AI starter templates",
+    "createLinksSectionDescription": "These templates help you get started with setting up End-to-End scenarios.",
+    "createLinks": [
+        {
+            "id": "openai-chat-app-quickstart",
+            "title": "Simple Chat Application using Azure OpenAI (Python)",
+            "description": "Build a chat application using Azure OpenAI GPT models.",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcVm"
+            },
+            "bladeReference": {
+                "extensionName": "Microsoft_Azure_CloudNative",
+                "bladeName": "DeploymentOverview.ReactView",
+                "referenceType": 3,
+                "parameters": {
+                    "tutorialKey": null,
+                    "correlationId": "DEMO",
+                    "referer": "DEMO",
+                    "scenariosVersion": null,
+                    "azdTutorialId": "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167"
+                }
+            }
+        },
+        {
+            "id": "azure-search-openai-demo",
+            "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+            "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcVm"
+            },
+            "bladeReference": {
+                "extensionName": "Microsoft_Azure_CloudNative",
+                "bladeName": "DeploymentOverview.ReactView",
+                "referenceType": 3,
+                "parameters": {
+                    "tutorialKey": null,
+                    "correlationId": "DEMO",
+                    "referer": "DEMO",
+                    "scenariosVersion": null,
+                    "azdTutorialId": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e"
+                }
+            }
+        }
+    ]
+}
