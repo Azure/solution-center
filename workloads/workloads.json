@@ -31,6 +31,17 @@
         "sourceType": "Azd",
         "tech": [
             "Python"
+        ],
+        "keyFeatures": [
+            "Chat (multi-turn) and Q&A (single turn) interfaces",
+            "Renders citations and thought process for each answer",
+            "Includes settings directly in the UI to tweak the behavior and experiment with options",
+            "Integrates Azure AI Search for indexing and retrieval of documents",
+            "Supports many document formats as well as integrated vectorization",
+            "Optional usage of GPT-4 with vision to reason over image-heavy documents",
+            "Optional addition of speech input/output for accessibility",
+            "Optional automation of user login and data access via Microsoft Entra",
+            "Performance tracing and monitoring with Application Insights"
         ]
     },
     {
@@ -64,6 +75,16 @@
         "sourceType": "Azd",
         "tech": [
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Infrastructure-as-code Bicep files for resource provisioning and resource tagging",
+            "Dev container configuration for creating cloud-hosted developer environments",
+            "Continuous deployment workflows for CI providers such as GitHub Actions and Azure Pipelines",
+            "Instructions to add application code and validate with azd package",
+            "Guidance on provisioning Azure resources using Bicep files",
+            "Steps to tie application and infrastructure together, including application settings, managed identities, and Azure Key Vault",
+            "Command usage details for validating and deploying changes with azd",
+            "Clear steps to get application running on Azure"
         ]
     },
     {
@@ -96,6 +117,18 @@
         "sourceType": "Azd",
         "tech": [
             "Terraform"
+        ],
+        "keyFeatures": [
+            "Infrastructure-as-code (IaC) Terraform modules under the 'infra' directory",
+            "Dev container configuration file under the '.devcontainer' directory",
+            "Continuous deployment workflows for CI providers such as GitHub Actions and Azure Pipelines",
+            "Integration with Azure Developer CLI (azd)",
+            "Guidance for adding application code and updating 'azure.yaml'",
+            "Provisioning of Azure resources using Terraform modules",
+            "Application settings configuration for Azure services",
+            "Managed identities for securing communication between services",
+            "Azure Key Vault for storing secrets securely",
+            "Host configuration options for services like 'appservice' and 'aks'"
         ]
     },
     {
@@ -137,6 +170,23 @@
             "PHP",
             "JavaScript",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Scalable WordPress deployment",
+            "Secure WordPress site",
+            "Uses Azure Container Apps",
+            "Leverages Azure Database for MariaDB",
+            "Single-click deployment with Bicep and GitHub Actions",
+            "High performance object cache with Redis Cache",
+            "Secret management with Azure Key Vault",
+            "Traffic management with Azure Application Gateway",
+            "Secure networking with Azure Networking",
+            "Persistent state with Azure Storage",
+            "Application monitoring with Azure Log Analytics and Application Insights",
+            "Supports Azure Developer CLI",
+            "CI/CD automation via GitHub Actions",
+            "Potential extensions with Azure FrontDoor and Azure Container registry",
+            "Supports blue/green deployment"
         ]
     },
     {
@@ -181,6 +231,23 @@
             "Javascript",
             "Reactjs",
             "CosmosDB"
+        ],
+        "keyFeatures": [
+            "React web app with C# API",
+            "MongoDB database",
+            "Sample application code (ToDo web app)",
+            "Infrastructure as Code assets (Bicep)",
+            "Azure App Services",
+            "Azure Cosmos DB for NoSQL",
+            "Azure Monitor",
+            "Azure Key Vault",
+            "Uses Azure Developer CLI (azd)",
+            "Provision and deploy to Azure",
+            "Configure CI/CD pipeline",
+            "Monitor application with Azure Monitor",
+            "Run and debug locally with Visual Studio Code",
+            "Managed identity in Azure AD",
+            "Securely store secrets with Azure Key Vault"
         ]
     },
     {
@@ -226,6 +293,22 @@
             "Javascript",
             "Reactjs",
             "MongoDB"
+        ],
+        "keyFeatures": [
+            "React web app with a Node.js API",
+            "MongoDB database integration",
+            "Sample application code (ToDo web app)",
+            "Infrastructure as Code assets written in Bicep",
+            "Hosted on Azure App Services",
+            "Uses Azure Cosmos DB API for MongoDB",
+            "Integration with Azure Monitor",
+            "Secure secrets management with Azure Key Vault",
+            "Azure Developer CLI support for building, deploying, and monitoring",
+            "CI/CD pipeline setup with Azure DevOps or GitHub Actions",
+            "Local testing and debugging via Visual Studio Code and Azure Developer CLI extension",
+            "Provisioning and deployment automation with azd commands",
+            "Managed identity for authentication with Azure AD",
+            "Optional features like API Management (APIM)"
         ]
     },
     {
@@ -274,6 +357,23 @@
             "Javascript",
             "Reactjs",
             "MongoDB"
+        ],
+        "keyFeatures": [
+            "React web app with Node.js API",
+            "MongoDB database",
+            "Azure Static Web Apps for hosting",
+            "Azure Function Apps for serverless backend",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Sample ToDo application code included",
+            "Infrastructure as Code with Bicep",
+            "Azure Developer CLI for build, deploy, and monitor",
+            "Support for CI/CD pipeline configuration with GitHub Actions or Azure DevOps",
+            "Local development support with Azure Functions Core Tools",
+            "Deployment limited to specific Azure regions",
+            "Commands for provisioning, deploying, and tearing down resources",
+            "Optional features like APIM for enhanced backend protection and observability"
         ]
     },
     {
@@ -324,6 +424,21 @@
             "Reactjs",
             "MongoDB",
             "FastAPI"
+        ],
+        "keyFeatures": [
+            "Static React web application",
+            "Python (FastAPI) API backend",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Static Web Apps for hosting the frontend",
+            "Azure Function Apps for hosting the backend API",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Azure Developer CLI (azd) for build, deploy, and monitor",
+            "CI/CD pipeline configuration using GitHub Actions or Azure DevOps",
+            "Local debugging and testing using Visual Studio Code and Azure Developer CLI extension",
+            "Provisioning and deploying resources using Bicep templates",
+            "Serverless logic and functionality",
+            "Integrated managed identity for Azure AD authentication"
         ]
     },
     {
@@ -371,6 +486,27 @@
             "FastAPI",
             "MongoDB",
             "Reactjs"
+        ],
+        "keyFeatures": [
+            "React.js web app with Python (FastAPI) API",
+            "MongoDB API in Cosmos database",
+            "Sample ToDo web app code",
+            "Replaceable application code",
+            "Infrastructure as Code using Terraform",
+            "Azure App Services for hosting",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Utilizes Azure Developer CLI",
+            "CI/CD pipeline configuration via azd pipeline config",
+            "Monitoring via azd monitor",
+            "Local debugging with Visual Studio Code and Azure Developer CLI extension",
+            "azd commands for managing resources",
+            "Managed identity for app authentication",
+            "Secure storage using Azure Key Vault",
+            "Support for enhanced backend API protection and observability via optional features",
+            "Quick provisioning and deployment using azd up",
+            "Resource grouping in a single Azure resource group"
         ]
     },
     {
@@ -416,6 +552,23 @@
             "Terraform",
             "Reactjs",
             "HTML"
+        ],
+        "keyFeatures": [
+            "React web app with Node.js API",
+            "MongoDB database",
+            "Sample ToDo application code",
+            "Azure hosting",
+            "Infrastructure as Code with Terraform",
+            "Quick start with Azure Developer CLI",
+            "Azure App Services hosting",
+            "Azure Cosmos DB for MongoDB",
+            "Azure Monitor integration",
+            "Azure Key Vault for securing secrets",
+            "CI/CD pipeline setup with Azure Developer CLI",
+            "Local development with Visual Studio Code",
+            "Managed identity for authentication",
+            "Secure storage with Azure Key Vault",
+            "Comprehensive documentation and quickstart guide"
         ]
     },
     {
@@ -463,6 +616,26 @@
             "Reactjs",
             "MongoDB",
             "FastAPI"
+        ],
+        "keyFeatures": [
+            "React.js web app",
+            "Python (FastAPI) API",
+            "MongoDB API in Cosmos database",
+            "Sample ToDo web app code",
+            "Replaceable application code",
+            "Infrastructure as Code (Bicep)",
+            "Hosted on Azure",
+            "Azure App Services for Web frontend and API backend",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Monitor for logging and monitoring",
+            "Azure Key Vault for securing secrets",
+            "Azure Developer CLI (azd) integration",
+            "Quickstart guide and commands",
+            "Managed identity for Azure AD authentication",
+            "Secure storage of connection strings in Azure Key Vault",
+            "CI/CD pipeline setup with GitHub Actions or Azure DevOps",
+            "Local run and debug using Visual Studio Code",
+            "Full removal of resources with 'azd down'"
         ]
     },
     {
@@ -512,6 +685,22 @@
             "React.js",
             "MongoDB",
             "Cosmos DB"
+        ],
+        "keyFeatures": [
+            "React web app with Node.js API",
+            "MongoDB database",
+            "Sample application code (ToDo web app)",
+            "Infrastructure as Code assets (Bicep)",
+            "Containerized apps or microservices on serverless platform",
+            "Azure Developer CLI for building, deploying, and monitoring",
+            "Azure Container Apps for hosting frontend and backend",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Support for Azure DevOps (azdo) CI/CD pipelines",
+            "Ability to run and debug locally using Visual Studio Code",
+            "Managed identity for Azure AD authentication",
+            "Secure storage in Azure Key Vault"
         ]
     },
     {
@@ -558,6 +747,30 @@
             "Reactjs",
             "MongoDB",
             "FastAPI"
+        ],
+        "keyFeatures": [
+            "React.js web app frontend",
+            "Python (FastAPI) API backend",
+            "MongoDB API in Cosmos database",
+            "Infrastructure as Code with Bicep",
+            "Running containerized apps or microservices on Azure",
+            "Azure Container Apps for hosting frontend and backend",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Azure Developer CLI for building, deploying, and monitoring",
+            "Quickstart provisioning and deployment with Azure Developer CLI",
+            "Support for multiple Azure locations",
+            "Architecture diagram and high-level overview",
+            "Managed identity and Azure AD authentication",
+            "Secure secret storage with Azure Key Vault",
+            "Cost estimation using Azure Pricing Calculator",
+            "Setup CI/CD pipeline with azd pipeline config",
+            "Monitoring with azd monitor",
+            "Run and debug locally with azd and Visual Studio Code",
+            "Delete resources with azd down",
+            "Optional features like APIM for enhanced backend API protection and observability",
+            "GitHub Discussions for community support",
+            "Reporting issues and feedback mechanism"
         ]
     },
     {
@@ -603,6 +816,27 @@
             "Reactjs",
             "Azure SQL Database",
             "HTML"
+        ],
+        "keyFeatures": [
+            "React web app with C# API",
+            "SQL database",
+            "Infrastructure as Code with Bicep",
+            "Azure App Services for hosting",
+            "Azure SQL Database for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Azure Developer CLI for build, deploy, and monitor",
+            "Sample ToDo application",
+            "Supports replacing sample code with own application code",
+            "Quickstart guide for Azure setup",
+            "Application architecture diagram",
+            "Cost estimation with pricing calculator",
+            "CI/CD pipeline configuration with Azure Developer CLI",
+            "Local run and debug using Visual Studio Code",
+            "Azure DevOps integration",
+            "Managed identity for authentication",
+            "Role-based access control",
+            "Secure credential storage in Key Vault"
         ]
     },
     {
@@ -647,6 +881,25 @@
             "Reactjs",
             "MongoDB",
             "CosmosDB"
+        ],
+        "keyFeatures": [
+            "React.js web app",
+            "Java API",
+            "MongoDB database",
+            "Azure Developer CLI (azd) for build, deploy, and monitor",
+            "Infrastructure as Code assets written in Bicep",
+            "Sample application code (ToDo web app)",
+            "Azure App Services for hosting web frontend and API backend",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "GitHub Codespaces integration",
+            "Visual Studio Code Dev Containers integration",
+            "CI/CD pipeline configuration with azd pipeline config",
+            "Application monitoring with azd monitor",
+            "Run and debug locally using Visual Studio Code",
+            "Managed identity for Azure Active Directory tenant authentication",
+            "Securely storing secrets with Azure Key Vault"
         ]
     },
     {
@@ -693,6 +946,24 @@
             "HTML",
             "MongoDB",
             "Reactjs"
+        ],
+        "keyFeatures": [
+            "React web app with Java API",
+            "MongoDB database",
+            "Azure Container Apps hosting",
+            "Azure Cosmos DB for storage",
+            "Azure Developer CLI integration",
+            "Sample ToDo app",
+            "Infrastructure as Code with Bicep",
+            "Supports containerized apps",
+            "Serverless platform",
+            "Azure Monitor for logging and monitoring",
+            "Azure Key Vault for secrets management",
+            "Supports CI/CD pipeline configuration via Azure DevOps or GitHub Actions",
+            "Visual Studio Code integration for local debugging and running",
+            "Managed identity for authentication",
+            "Quick deployment with azd commands",
+            "Specific Azure location support"
         ]
     },
     {
@@ -740,6 +1011,24 @@
             "Javascript",
             "Reactjs",
             "Azure SQL Database"
+        ],
+        "keyFeatures": [
+            "Static React web app",
+            "C# API backend",
+            "SQL database",
+            "Sample application code (ToDo web app)",
+            "Infrastructure as Code assets (written in Bicep)",
+            "Azure Static Web Apps for hosting",
+            "Azure Function Apps for API backend",
+            "Azure SQL for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Azure Developer CLI for building, deploying, and monitoring",
+            "Support for creating and configuring CI/CD pipelines",
+            "Run and debug locally using Visual Studio Code",
+            "Azure DevOps support",
+            "Managed identity for Azure AD authentication",
+            "Securely store secrets in Azure Key Vault"
         ]
     },
     {
@@ -786,6 +1075,22 @@
             "Reactjs",
             "MongoDB",
             "CosmosDB"
+        ],
+        "keyFeatures": [
+            "React.js web app",
+            "Node.js API",
+            "MongoDB database",
+            "Azure Developer CLI (azd)",
+            "Infrastructure as Code with Bicep",
+            "Azure Kubernetes Service (AKS)",
+            "Azure Cosmos DB API for MongoDB",
+            "Azure Monitor",
+            "Azure Key Vault",
+            "Sample ToDo web app code included",
+            "Kubernetes deployment manifests",
+            "Pipeline setup with Azure DevOps or GitHub Actions",
+            "Azure role-based access control",
+            "Helm and Kustomize support"
         ]
     },
     {
@@ -825,6 +1130,27 @@
             "HTML",
             "PostgreSQL",
             "Spring"
+        ],
+        "keyFeatures": [
+            "React web app",
+            "Java API",
+            "Azure Database for PostgreSQL - Flexible Server",
+            "Sample application code (a ToDo web app)",
+            "Infrastructure as Code assets (written in Bicep)",
+            "Runs containerized apps or microservices on a serverless platform",
+            "Deploy to Azure Spring Apps",
+            "Java 17 or later for API backend",
+            "Node.js with npm (16.13.1+) for the Web frontend",
+            "Docker",
+            "Azure Developer CLI (azd) for build, deploy, and run",
+            "Powershell 7 if using Windows",
+            "Quickstart guide for setup",
+            "Supports multiple plans (Consumption, Basic/Standard, Enterprise)",
+            "High level architecture using a Resource Group",
+            "Application Resource: Azure Spring Apps",
+            "Application Resource: Azure PostgreSQL - Flexible Server",
+            "Template structured to follow the Azure Developer CLI",
+            "azd commands for managing lifecycle (azd up, azd down, etc.)"
         ]
     },
     {
@@ -862,6 +1188,16 @@
         "tech": [
             "Python",
             "FastAPI"
+        ],
+        "keyFeatures": [
+            "One-click setup with GitHub Codespaces",
+            "Add API routes quickly with GitHub Copilot",
+            "Run the API locally, in Dev Container, or in Codespaces",
+            "Easy deployment to Azure using Azure Developer CLI or GitHub Actions",
+            "Test the plugin directly in ChatGPT",
+            "Automatic updates and debugging with VS Code",
+            "Use FastAPI for API development",
+            "Templates for Azure Container Apps deployment"
         ]
     },
     {
@@ -910,6 +1246,29 @@
             "HTML",
             "Blazor",
             "ASP.NET Core"
+        ],
+        "keyFeatures": [
+            "Voice Chat, Chat and Q&A interfaces",
+            "Explores various options to help users evaluate the trustworthiness of responses with citations, tracking of source content, etc.",
+            "Shows possible approaches for data preparation, prompt construction, and orchestration of interaction between model (ChatGPT) and retriever (Azure AI Search)",
+            "Settings directly in the UX to tweak the behavior and experiment with options",
+            "User interface - The application\u2019s chat interface is a Blazor WebAssembly application",
+            "Backend - The application backend is an ASP.NET Core Minimal API",
+            "Orchestration of interactions among Azure AI Search, Azure OpenAI Service, and Semantic Kernel",
+            "Azure AI Search indexes documents from the data stored in an Azure Storage Account",
+            "Azure OpenAI Service provides the Large Language Models to generate responses using gpt-4o-mini",
+            "Azure Developer CLI and .NET 8 support",
+            "Different deployment options including GitHub Codespaces, VS Code Remote Containers, and local environment setup",
+            "Enabling optional features like Application Insights and authentication",
+            "Cost estimation guide with recommendations for minimizing costs",
+            "Support for running locally and sharing environments",
+            "Clean up resources command to avoid unnecessary costs",
+            "Adjustable token per minute capacity for OpenAI",
+            "Recommendation for using Standard_ZRS in Azure Storage for resiliency",
+            "Azure AI Search scaling options",
+            "Azure Container Apps auto-scaling and scheduled scaling rules",
+            "Networking recommendations including Virtual Network and Azure API Management",
+            "Loadtesting recommendation"
         ]
     },
     {
@@ -947,6 +1306,22 @@
             "Bicep",
             "Python",
             "Flask"
+        ],
+        "keyFeatures": [
+            "Uses Python and Flask framework",
+            "Streams ChatGPT completions as server-sent events",
+            "Generates responses with Azure OpenAI",
+            "Includes infrastructure and configuration for Azure Container Apps",
+            "Uses managed identity for authenticating with Azure OpenAI",
+            "Supports deployment via Azure Developer CLI",
+            "Python Quart backend for generating responses",
+            "Basic HTML/JS frontend with JSON Lines and ReadableStream",
+            "Provisioning Azure resources with Bicep files",
+            "GitHub Codespaces and VS Code Dev Containers setup",
+            "Local environment setup instructions",
+            "Continuous deployment with GitHub Actions",
+            "Managed Identity authentication",
+            "Security guidelines and best practices"
         ]
     },
     {
@@ -986,6 +1361,34 @@
             "Java",
             "OpenAI",
             "Spring"
+        ],
+        "keyFeatures": [
+            "Build a ChatGPT-like application with Java in Spring",
+            "Run on Azure Spring Apps",
+            "Use private data to answer questions",
+            "Convert user's query text to an embedding",
+            "Query nearest text chunks from the vector store by cosine similarity",
+            "Populate the prompt template with text chunks",
+            "Call OpenAI text completion API",
+            "Load documents from local disk or Azure storage",
+            "Split text into chunks and convert to embeddings",
+            "Save embeddings into Vector Store",
+            "Provision and run application on Azure with Azure Developer CLI (AZD)",
+            "Deploy a fully functional ChatGPT app to the cloud",
+            "Host application on Azure Spring Apps",
+            "Utilize Azure OpenAI for ChatGPT capabilities",
+            "Use Azure Storage for persistent storage",
+            "Pre-built documentation vector store available",
+            "Custom document loading into vector store",
+            "Application architecture utilizes Azure Spring Apps, Azure OpenAI, and Azure Storage",
+            "Use Azure CLI as an alternative to AZD",
+            "Preprocess documents and load them into the vector store",
+            "Run the application locally and on Azure Spring Apps",
+            "Deploy with Azure CLI by creating resource groups and environments",
+            "Create model deployments for text-embedding-ada-002 and gpt-35-turbo",
+            "Add persistent storage to the app",
+            "Deploy app JAR file to Azure Spring Apps",
+            "Delete resources using AZD down command"
         ]
     },
     {
@@ -1041,6 +1444,40 @@
             "Fastify",
             "MongoDB",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Enterprise-grade modern composable frontends",
+            "Cloud-native applications",
+            "Best practices",
+            "Architecture patterns",
+            "Functional components",
+            "AI Chatbot integration (RAG Pattern)",
+            "Payments integration with Stripe",
+            "Real-time Notifications",
+            "Portal application with listings, favorites, user authentication and profile",
+            "Headless CMS and blog",
+            "Angular frontend",
+            "Next.js frontend",
+            "Playwright for end-to-end testing",
+            "Azure Static Web Apps for hosting",
+            "Strapi CMS",
+            "Stripe for payment processing",
+            "Fastify API",
+            "Azure Functions API",
+            "MongoDB for Azure Cosmos DB",
+            "Azure Database for PostgreSQL",
+            "Azure Storage",
+            "Azure Container Apps for hosting",
+            "Azure Application Insights for monitoring",
+            "API Management",
+            "Azure CLI for provisioning and deployment",
+            "GitHub Actions for CI/CD",
+            "Azure Developer CLI for CI/CD",
+            "Visual Studio Code IDE",
+            "GitHub Codespaces for cloud IDE",
+            "Azure Static Web Apps CLI",
+            "Node.js Development Environments",
+            "Azure OpenAI integration"
         ]
     },
     {
@@ -1080,6 +1517,20 @@
             "Django",
             "HTML",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Django web application framework",
+            "PostgreSQL database integration",
+            "Whitenoise for static file serving",
+            "Deployment on Azure App Service",
+            "VNet integration for PostgreSQL Flexible Server",
+            "Azure Redis Cache integration",
+            "Development and deployment with Azure Developer CLI (AZD)",
+            "Dev container configuration for local development",
+            "Sample application demonstrating restaurant review functionality",
+            "Environment variable management with python-dotenv",
+            "Quick deployment with Azure Developer CLI",
+            "Support for Django superuser creation via Azure Portal"
         ]
     },
     {
@@ -1117,6 +1568,23 @@
             "Bicep",
             "HTML",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Deploys a web application for a space travel agency using Django with Python",
+            "Uses PostgreSQL for the database",
+            "Can be deployed with Azure Container Apps",
+            "Secrets managed by Azure Key Vault",
+            "Supports deployment via Azure Developer CLI",
+            "Dev Container support for GitHub Codespaces and local VS Code",
+            "Local PostgreSQL server setup instructions",
+            "Python virtual environment setup and activation",
+            "Database migrations and seed initial data",
+            "Built-in Django admin interface",
+            "Instructions for creating superuser and accessing admin interface",
+            "Running the application locally",
+            "Development requirements and testing setup",
+            "Provisioning and deploying resources using Azure Developer CLI",
+            "CI/CD pipeline with GitHub Actions workflow for deployment"
         ]
     },
     {
@@ -1156,6 +1624,22 @@
             "Flask",
             "SQLAlchemy",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Python Flask framework",
+            "PostgreSQL database",
+            "SQL-Alchemy",
+            "Alembic for database migrations",
+            "Azure App Service deployment",
+            "VNet integration",
+            "Run locally and deploy to Azure",
+            "Dev container configuration",
+            "GitHub Codespaces compatibility",
+            "Azure Developer CLI (azd) support",
+            "Environment variables with python-dotenv",
+            "WTForms for form rendering, validation, and CSRF protection",
+            "Video deployment guide",
+            "Documentation and support via GitHub Issues"
         ]
     },
     {
@@ -1190,6 +1674,17 @@
         "tech": [
             "Bicep",
             "C#"
+        ],
+        "keyFeatures": [
+            "Dapr Pub-Sub pattern implementation",
+            "Publisher microservice to generate messages",
+            "Subscriber microservice to listen for messages",
+            "Support for Azure Service Bus with dead-lettering",
+            "Deployment to Azure Container Apps",
+            "Uses Dapr client SDK",
+            ".NET 6 SDK based implementation",
+            "Docker support for local development",
+            "Azure Dev CLI for deployment initialization and management"
         ]
     },
     {
@@ -1225,6 +1720,14 @@
             "Bicep",
             "Python",
             "Dapr"
+        ],
+        "keyFeatures": [
+            "Dapr Pub-Sub integration",
+            "Azure Container Apps deployment",
+            "Azure Service Bus Topics with dead-lettering support",
+            "Python microservice publisher and subscriber",
+            "Docker and Dapr CLI dependencies",
+            "Azure Dev CLI deployment"
         ]
     },
     {
@@ -1262,6 +1765,18 @@
             "Javascript",
             "Nodejs",
             "Dapr"
+        ],
+        "keyFeatures": [
+            "Dapr Pub-Sub pattern",
+            "Azure Container Apps deployment",
+            "Azure Service Bus Topics with dead-lettering support",
+            "Node.js microservices (publisher and subscriber)",
+            "Dapr client SDK usage",
+            "Docker integration",
+            "Azure Dev CLI for deployment",
+            "Sample application with message generator and subscriber",
+            "Bicep infrastructure as code",
+            "Async microservice communication"
         ]
     },
     {
@@ -1296,6 +1811,18 @@
             "C#",
             "PostgreSQL",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Microservice created with C#",
+            "Demonstrates Dapr's bindings API",
+            "Works with external systems as inputs and outputs",
+            "Listens to input binding events from a system CRON",
+            "Outputs contents of local data to a PostgreSQL output binding",
+            "Supports running and developing locally using Docker Compose",
+            "Runs .NET service with Dapr",
+            "Processes a JSON file and outputs data to a SQL database",
+            "Deploys to Azure with Azure Container Apps and Azure PostgreSQL",
+            "Supports Azure Dev CLI for project initialization and deployment"
         ]
     },
     {
@@ -1330,6 +1857,17 @@
             "Python",
             "Bicep",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Dapr bindings API integration",
+            "Python-based microservice",
+            "CRON input binding",
+            "PostgreSQL output binding",
+            "Azure Container Apps deployment",
+            "Docker Compose for PostgreSQL container",
+            "Event-driven processing",
+            "Batch script execution every 10 seconds",
+            "Deployable via Azure Dev CLI"
         ]
     },
     {
@@ -1366,6 +1904,17 @@
             "Javascript",
             "Bicep",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Demonstrates Dapr's bindings API to work with external systems",
+            "Listens to input binding events from a system CRON",
+            "Outputs the contents of local data to a PostgreSQL output binding",
+            "Utilizes Node.js and JavaScript",
+            "Runs locally using Docker Compose",
+            "Deployable to Azure using Azure Container Apps and Azure PostgreSQL",
+            "Automated batch script runs every 10 seconds",
+            "Processes JSON data and inserts into a SQL database",
+            "Includes setup and deployment commands for Azure Dev CLI"
         ]
     },
     {
@@ -1398,6 +1947,18 @@
             "Nodejs",
             "Javascript",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Microservice communication using Dapr's Service Invocation API",
+            "Reliability and security via auto-mTLS",
+            "Built-in retries",
+            "Node.js implementation",
+            "Running locally with Dapr",
+            "Order-processor service (callee)",
+            "Checkout service (caller)",
+            "Output verification for service invocation",
+            "Deploy to Azure Container Apps",
+            "Azure Dev CLI integration"
         ]
     },
     {
@@ -1428,6 +1989,16 @@
             "Python",
             "Dapr",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Create two microservices that communicate using Dapr's Service Invocation API",
+            "Leverages auto-mTLS for secure communication",
+            "Built-in retries for reliable communication",
+            "Run and develop locally using Dapr",
+            "Deploy to Azure using Azure Container Apps",
+            "Initialize project with Azure Developer CLI",
+            "Provision and deploy resources with azd up command",
+            "Logs requests in Azure Container App resources"
         ]
     },
     {
@@ -1458,6 +2029,15 @@
         "tech": [
             "C#",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Create two microservices with C# that communicate using Dapr's Service Invocation API",
+            "Reliable and secure communication using auto-mTLS and built-in retries",
+            "Run and develop locally using Dapr",
+            "Deploy to Azure Container Apps for development and testing",
+            "Dapr helps with service invocation for microservices",
+            "Sample involves an order-processing service and a checkout service",
+            "Use Azure Developer CLI for deployment"
         ]
     },
     {
@@ -1505,6 +2085,16 @@
             "Typescript",
             "Nodejs",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Chat (multi-turn) and Q&A (single turn) interfaces",
+            "Renders citations and thought process for each answer",
+            "Includes settings directly in the UI to tweak the behavior and experiment with options",
+            "Integrates Azure AI Search for indexing and retrieval of documents, with support for many document formats as well as integrated vectorization",
+            "Optional usage of GPT-4 with vision to reason over image-heavy documents",
+            "Optional addition of speech input/output for accessibility",
+            "Optional automation of user login and data access via Microsoft Entra",
+            "Performance tracing and monitoring with Application Insights"
         ]
     },
     {
@@ -1535,6 +2125,18 @@
             "Python",
             "FastAPI",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Supports WSGI and ASGI-compatible frameworks",
+            "HTTP-triggered Python functions",
+            "Deployable to Azure Functions",
+            "Can be run and debugged locally",
+            "Includes FastAPI framework",
+            "Sample app with predefined routes (/sample and /hello/{name})",
+            "Deployable using VS Code, Azure CLI, or Azure Developer CLI",
+            "Automatic provisioning of Function App, Storage account, and Log Analytics workspace",
+            "Support for CI/CD pipeline setup",
+            "Testable locally and in Azure"
         ]
     },
     {
@@ -1581,6 +2183,19 @@
             "Thymeleaf",
             "MySQL",
             "Spring"
+        ],
+        "keyFeatures": [
+            "Azure App Service for app hosting",
+            "Azure Database for MySQL for storage",
+            "Azure Key Vault for securing secrets/passwords",
+            "Azure Application Insights for monitoring and logging",
+            "Integration with Azure Developer CLI (azd) for quick setup",
+            "Run locally with IntelliJ IDEA and VSCode",
+            "Infrastructure as code with Bicep",
+            "Supports Java and Spring framework",
+            "Template for easy provisioning and deployment",
+            "Example of role-based access with managed identities",
+            "Secure secret management with Azure Key Vault"
         ]
     },
     {
@@ -1619,6 +2234,25 @@
             "Java",
             "Bicep",
             "Spring"
+        ],
+        "keyFeatures": [
+            "Event-driven architecture",
+            "Build and deploy with Azure Developer CLI",
+            "Java application",
+            "Azure Service Bus for messaging",
+            "Azure Key Vault for secrets management",
+            "Azure Monitor for monitoring and logging",
+            "Azure Spring Apps for hosting",
+            "Infrastructure as Code with Bicep",
+            "Sample GitHub Actions pipeline",
+            "Support for different Azure Spring Apps plans",
+            "Managed identity for Azure AD authentication",
+            "VS Code configuration included",
+            "Quickstart guide",
+            "Pipeline setup with azd pipeline config",
+            "Resource cleanup with azd down command",
+            "Scalable with Azure resources",
+            "Security best practices with managed identity and Key Vault"
         ]
     },
     {
@@ -1663,6 +2297,16 @@
             "Bicep",
             "NestJS",
             "SAPCloudSDK"
+        ],
+        "keyFeatures": [
+            "One code base to run on both Azure App Service and SAP Business Technology Platform",
+            "Built in resiliency and caching patterns",
+            "Native Azure authentication and token handling with Entra ID",
+            "Configurable Azure API Management integration for SAP APIs",
+            "Native Azure virtual network integration next to the SAP workload",
+            "Enabled for SAP Private Link and Azure Private Link / Private Endpoint",
+            "OData v2 and v4 + entity and client generator managed by SAP",
+            "OpenAPI + client generator managed by SAP"
         ]
     },
     {
@@ -1695,6 +2339,22 @@
         "tech": [
             "C#",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Text documents input via BlobTrigger",
+            "Text Summarization using AI Cognitive Language service",
+            "Outputs to another text document using BlobOutput binding",
+            "Sample code in C# (Isolated)",
+            "Usage of Azure Functions",
+            "Integration with Azure Cognitive Services",
+            "Local development support with .NET 8 SDK and Visual Studio 2022",
+            "Azure Functions Core Tools for local running",
+            "Support for Azurite for local Azure Storage emulation",
+            "Environment variables for API key and endpoint configuration",
+            "Azure Storage Explorer for managing storage",
+            "Option to run with Visual Studio or VS Code",
+            "Runs and debugs with Visual Studio or VS Code",
+            "Deployment support with Azure Developer CLI"
         ]
     },
     {
@@ -1729,6 +2389,18 @@
         "tech": [
             "Python",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Takes text documents as input via BlobTrigger",
+            "Performs Text Summarization using AI Cognitive Language Service",
+            "Outputs summarized text to another document using BlobOutput binding",
+            "Implemented in Python v2 Function",
+            "Suitable for local development with Python 3.7-3.11",
+            "Requires Azure Functions Core Tools and Azurite",
+            "Supports deployment via Azure Developer CLI",
+            "Visual Studio Code integration for local development",
+            "Environment variables support for storing API credentials",
+            "Uses Azure Storage Explorer for managing blob storage"
         ]
     },
     {
@@ -1778,6 +2450,29 @@
             "C#",
             "Bicep",
             "Azure SQL Database"
+        ],
+        "keyFeatures": [
+            "multi-region deployment",
+            "99.9% SLO",
+            "focus on 12-factor apps",
+            "well-architected framework",
+            "concert booking application",
+            "production-grade implementation",
+            "simulated migration from on-premises to Azure",
+            "hub and spoke network topology",
+            "cost-efficient resource reuse",
+            "network traffic control and security",
+            "global traffic routing with Azure Front Door",
+            "Azure Web Application Firewall for security inspection",
+            "static and dynamic content delivery",
+            "session state management with Azure Cache for Redis",
+            "user authentication with Microsoft Entra ID",
+            "API interaction and token management",
+            "payment and checkout flow",
+            "purchase and ticket generation",
+            "networking and access control",
+            "monitoring and telemetry with Application Insights",
+            "configuration and secrets management with Azure App Configuration and Azure Key Vault"
         ]
     },
     {
@@ -1819,6 +2514,14 @@
             "Javascript",
             "CSS",
             "Node.js"
+        ],
+        "keyFeatures": [
+            "Integrates with Azure Open AI allowing the creation of components from a description alone",
+            "Can convert a react component into an Azure API Management Widget",
+            "Can be tested standalone using ladle which is built into the toolkit stack",
+            "Includes a few example components including a markdown viewer, force-graph-3d component, etc.",
+            "Automatically adds dependencies for created components",
+            "Uses css as code through Styled Components out of the box"
         ]
     },
     {
@@ -1866,6 +2569,23 @@
             "Typescript",
             "Azure OpenAI",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Supercharges shopping experience with AI",
+            "Leverages Azure OpenAI for recommendation engine",
+            "Utilizes Azure Spring Apps",
+            "Scalable, resilient, and secure",
+            "Personalized recommendations",
+            "Performs nutrition analysis",
+            "Generates top 3 recipes from cart items",
+            "Uses Azure Developer CLI for deployment",
+            "Hosts frontend in Azure Container Apps",
+            "Hosts backend in Azure Spring Apps",
+            "Stores data in Azure Database for PostgreSQL",
+            "Monitors with Azure Monitor",
+            "Azure OpenAI integration for AI functionalities",
+            "Supports both GPT-4 and GPT-3.5 Turbo models",
+            "Structured to follow Azure Developer CLI template conventions"
         ]
     },
     {
@@ -1914,6 +2634,18 @@
             "Reactjs",
             "OpenAI",
             "Spring"
+        ],
+        "keyFeatures": [
+            "Chat and Q&A interfaces",
+            "Evaluates trustworthiness of responses with citations and source tracking",
+            "Data preparation, prompt construction, and interaction orchestration",
+            "AI orchestration with plain Java Open AI SDK or Java Semantic Kernel SDK",
+            "User experience settings for behavior tweaking and experimentation",
+            "Supports deployment on Azure App Service, Azure Container Apps, and Azure Kubernetes Service",
+            "Different RAG implementation options with Java and Semantic Kernel",
+            "Development options with dev containers or GitHub codespaces",
+            "Platform-specific guidance for App Service, Azure Container Apps, and Azure Kubernetes Service",
+            "Azure Application Landing Zones for production deployment"
         ]
     },
     {
@@ -1961,6 +2693,21 @@
             "Javascript",
             "Node.js",
             "Typescript"
+        ],
+        "keyFeatures": [
+            "Chat and Q&A interfaces",
+            "Evaluates trustworthiness of responses with citations and source tracking",
+            "Data preparation, prompt construction, and interaction orchestration between ChatGPT and Azure AI Search",
+            "Settings in UX to tweak behavior and experiment with options",
+            "Optional performance tracing and monitoring with Application Insights",
+            "Sample data for end-to-end application trials",
+            "Search service for search and retrieval capabilities",
+            "Indexer service for data indexing",
+            "Frontend web app for user interface and backend service interaction",
+            "Multiple deployment methods: GitHub Codespaces, VS Code Remote Containers, Local environment",
+            "Azure resources deployment with cost estimation guidelines",
+            "Environment sharing and authentication setup",
+            "Clean up resources with azd down command"
         ]
     },
     {
@@ -1991,6 +2738,21 @@
         "sourceType": "Azd",
         "tech": [
             "Bicep"
+        ],
+        "keyFeatures": [
+            "A template to deploy Azure DevCenter with minimum configuration",
+            "Infrastructure as Code (IaC) using Bicep",
+            "Quick start for Azure Developer CLI",
+            "Enables developers to self-serve environments",
+            "Deploys several Azure resources including resource groups, DevCenter, and Key Vault",
+            "Sample environment types and projects included",
+            "Modifiable DevCenter configuration",
+            "Supports ARM templates and Terraform",
+            "Uses catalogs with environment definitions",
+            "Requires Azure subscription with Owner role",
+            "Supports custom GitHub PAT for authentication with custom catalogs",
+            "Provides Developer Portal for creating environments",
+            "Supports Azure CLI and CI/CD pipelines for deployment"
         ]
     },
     {
@@ -2035,6 +2797,19 @@
             "Javascript",
             "HTML",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Azure Static Web Apps integration",
+            "Azure OpenAI integration for generating text embeddings",
+            "Azure Functions for event-driven architecture",
+            "Azure SQL Database for storing and searching vector embeddings",
+            "Data API builder for generating REST and GraphQL APIs",
+            "Jamstack architecture",
+            "Vector Similarity Search using cosine distance",
+            "Integration with various Azure tools like Static Web App CLI, Azure Function CLI, Azure Data Studio, and SQL Server Management Studio",
+            "GitHub Actions integration for CI/CD pipelines",
+            "Custom authentication provider support for Azure Static Web Apps",
+            "Retrieval Augmented Generation (RAG) support in enhanced version"
         ]
     },
     {
@@ -2066,6 +2841,23 @@
             "Dapr",
             "Java",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Event-driven communication between microservices",
+            "Pub/Sub messaging architecture",
+            "Leveraging Dapr",
+            "Java-based application",
+            "Running in AKS cluster",
+            "Asynchronous processing",
+            "Sidecar pattern",
+            "Kubernetes deployment",
+            "Redis as message broker",
+            "Multi-service deployment (Public API, Fraud Service, Account Service)",
+            "Local and cloud (Azure) deployment options",
+            "Automated build and deployment with Make",
+            "Support for Azure Developer CLI",
+            "Supports both local and Azure Kubernetes clusters",
+            "Open source setup via Docker and Kind"
         ]
     },
     {
@@ -2101,6 +2893,23 @@
             "JavaScript",
             "Bicep",
             "HTML"
+        ],
+        "keyFeatures": [
+            "Handles HTTP Get or Post input",
+            "Uses OpenAI ChatGPT service for completions",
+            "Returns output and caches in Blob state store",
+            "Implemented with Node.js and JavaScript",
+            "Utilizes Azure Functions",
+            "Requires Node.js 18 or higher",
+            "Requires Azure Functions Core Tools 4.0.5198 or higher",
+            "Requires OpenAPI API key",
+            "Local development support with local.settings.json",
+            "CLI support for running with npm and func",
+            "Supports REST clients and curl for testing",
+            "Stores chat output in Blob for state management",
+            "Customizable code with OpenAI",
+            "Provision and deploy using Azure Dev CLI (AZD)",
+            "GitHub Codespaces support"
         ]
     },
     {
@@ -2133,6 +2942,17 @@
         "tech": [
             "Python",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Handles ChatGPT prompts as HTTP Get or Post input",
+            "Calculates completions using OpenAI ChatGPT service",
+            "Returns output and caches results in a Blob state store",
+            "Supports local development with Azure Functions Core Tools",
+            "Python 3.8+ compatibility",
+            "Can be deployed to Azure via Azure Dev CLI",
+            "Includes example usage with curl, Postman, and VS Code RestClient",
+            "Utilizes OpenAI API key for authentication",
+            "Source code customizable with OpenAI examples and Playground"
         ]
     },
     {
@@ -2164,6 +2984,20 @@
         "tech": [
             "Python",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Handles HTTP Get or Post input as human prompts",
+            "Calculates completions using chains of human input and templates",
+            "Built using Python v2 for Azure Functions",
+            "Integrates with Azure OpenAI and ChatGPT",
+            "Supports more sophisticated chain customization",
+            "Can be run locally with Python 3.8+ and Azure Functions Core Tools",
+            "Requires Azure OpenAPI API key, endpoint, and deployment",
+            "Includes example configuration for local.settings.json",
+            "Uses Functions CLI or Visual Studio Code for local development and testing",
+            "Provides examples for REST clients like PostMan, curl, and RestClient in VS Code",
+            "Deployable to Azure using Azure Dev CLI",
+            "Key source code available for customization"
         ]
     },
     {
@@ -2203,6 +3037,24 @@
             "Typescript",
             "Nodejs",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Retrieval-Augmented Generation pattern",
+            "Azure AI Search for retrieval",
+            "Azure OpenAI large language models",
+            "Zero-trust security",
+            "Responsible AI",
+            "Enterprise-grade deployment",
+            "Modular architecture with data ingestion, orchestrator, and app front-end",
+            "Quick setup options with Azure Developer CLI",
+            "Basic Architecture Deployment for quick demos",
+            "Zero Trust Architecture Deployment for secure environments",
+            "Integration with Azure services",
+            "Customizable deployment settings",
+            "Multi-environment CI/CD deployment guides",
+            "Performance testing guide",
+            "Conversation data querying and analysis",
+            "Governance and pricing models"
         ]
     },
     {
@@ -2246,6 +3098,21 @@
             "Bicep",
             "C#",
             "Dockerfile"
+        ],
+        "keyFeatures": [
+            "Azure Function app with optional virtual network integration",
+            "Sends events to and consumes events from Event Hub",
+            "Managed identity for authentication to dependent resources",
+            "Virtual network with optional private endpoints",
+            "Azure Function Premium plan",
+            "Application Insights integration",
+            "Log Analytics workspace",
+            "Key Vault with optional private endpoints",
+            "Storage account with optional private endpoints",
+            "Function triggers: Timer trigger and Event Hub trigger",
+            "Supports local development and debugging",
+            "Uses Azure Developer CLI for provisioning and deployment",
+            "Optional use of virtual network and private endpoints"
         ]
     },
     {
@@ -2281,6 +3148,15 @@
             "C#",
             "CosmosDB",
             "ASP.NET"
+        ],
+        "keyFeatures": [
+            "Uses ASP.NET Core 8.0",
+            "Illustrates basic Microsoft Orleans concepts",
+            "Working with Grains and Silos",
+            "Persistent state management",
+            "Uses Azure Developer CLI (azd) for build, deploy, and monitor",
+            "Hosted on Azure",
+            "Integration with Azure Cosmos DB"
         ]
     },
     {
@@ -2315,6 +3191,22 @@
         "tech": [
             "Bicep",
             "DotnetCsharp"
+        ],
+        "keyFeatures": [
+            "Aware of HTTP status code error 429 and Retry-After headers",
+            "Intelligently sends traffic to other OpenAI backends that are not throttling",
+            "Priority-based backend consumption",
+            "Immediate retries to different endpoints without waiting intervals",
+            "Seamless exposure of a single endpoint while consuming two or more backends",
+            "Built using the YARP C# reverse-proxy framework",
+            "Dockerfile provided for building and deploying custom images",
+            "Deployable using Azure Developer CLI",
+            "Multiple deployment options including pre-built Docker image",
+            "Configurable OpenAI endpoints via environment variables",
+            "Global scope load balancer settings",
+            "Logs generated for successful redirects and 429 errors",
+            "Supports server-side failovers and scalability",
+            "Passive health checks for backend state evaluation"
         ]
     },
     {
@@ -2363,6 +3255,19 @@
             "Python",
             "Bicep",
             "Terraform"
+        ],
+        "keyFeatures": [
+            "Group of containerized microservices",
+            "Easily deployable into an Azure Kubernetes Service (AKS) cluster",
+            "Polyglot architecture",
+            "Event-driven design",
+            "Integration with OpenAI's GPT-3 models for product descriptions",
+            "Multiple services: makeline-service, order-service, product-service, store-front, store-admin, virtual-customer, virtual-worker, ai-service, mongodb, rabbitmq",
+            "Support for K8s deployment including AKS and other K8s providers",
+            "Run locally with Docker Compose",
+            "Run in cloud environments using GitHub Codespaces",
+            "Azure Resource integrations: Azure OpenAI, Azure Kubernetes Service, Azure Cosmos DB, Azure Container Registry, Azure Service Bus, Azure Monitor, Azure Log Analytics, Azure Managed Grafana, Azure Key Vault",
+            "Use of public images from GitHub Container Registry and Microsoft Container Registry"
         ]
     },
     {
@@ -2408,6 +3313,29 @@
             "Json",
             "Xml",
             ".NET"
+        ],
+        "keyFeatures": [
+            "Infrastructure-as-code",
+            "CI/CD pipeline",
+            "Secure Access Management",
+            "Usage Monitoring & Cost Control",
+            "Load Balance",
+            "Streaming requests",
+            "End-to-end sample",
+            "Azure Redis Cache",
+            "Secondary Azure OpenAI location",
+            "Managed identities",
+            "Virtual Network",
+            "Azure Private DNS Zone",
+            "Application Insights",
+            "Log Analytics",
+            "Azure Monitor Private Link Scope",
+            "Private Endpoint",
+            "Azure Container Apps",
+            "Azure Container Registry",
+            "Azure Cosmos DB",
+            "Azure Key Vault",
+            "Sample ChatApp"
         ]
     },
     {
@@ -2450,6 +3378,17 @@
             "Nodejs",
             "Bicep",
             "Nestjs"
+        ],
+        "keyFeatures": [
+            "One code base to run on both Azure Functions and SAP Business Technology Platform",
+            "Built in resiliency and caching patterns",
+            "Native Azure authentication and token handling with Azure AD without any coding effort",
+            "Configurable Azure API Management integration for SAP APIs including policy enforcement for use cases like request throttling and SAP token caching",
+            "Native Azure virtual network integration next to the SAP workload",
+            "Enabled for SAP Private Link and Azure Private Link / Private Endpoint",
+            "OData v2 and v4 + entity and client generator managed by SAP",
+            "OpenAPI + client generator managed by SAP",
+            "Example uses the NEST framework module azure-func-http compatible with Azure Functions runtime v3"
         ]
     },
     {
@@ -2493,6 +3432,27 @@
             "Bicep",
             "Nestjs",
             "Javascript"
+        ],
+        "keyFeatures": [
+            "Showcase of SAP Cloud Application Programming Model (CAP) for Node.js",
+            "OData consumption from SAP S/4HANA",
+            "Running on Azure App Services",
+            "Integration with Azure Cosmos DB for PostgreSQL",
+            "Native module cds-dbs for PostgreSQL integration",
+            "Azure Developer CLI best practices",
+            "Business Partner OData v2 API from SAP S/4HANA",
+            "One code base for both Azure App Service and SAP Business Technology Platform",
+            "Built-in resiliency and caching patterns",
+            "Azure authentication and token handling with Entra ID",
+            "Azure API Management integration for SAP APIs",
+            "Azure virtual network integration",
+            "Enabled for SAP Private Link and Azure Private Link / Private Endpoint",
+            "OData v2 and v4 + entity and client generator managed by SAP",
+            "OpenAPI + client generator managed by SAP",
+            "Integration with Azure native databases",
+            "Frictionless integration of Azure App Service app roles with SAP CAP authorization model via cds-entra-id",
+            "Out-of-the-box support for remote debugging",
+            "UI5-based app for UI rendering"
         ]
     },
     {
@@ -2527,6 +3487,18 @@
             "Python",
             "XML",
             "YAML"
+        ],
+        "keyFeatures": [
+            "Prioritized Traffic Routing",
+            "No Delay in Backend Switching",
+            "Provisioned Throughput Deployment (PTU)",
+            "Fallback S0 Tier Deployments",
+            "Manual Setup Instructions",
+            "Azure Developer CLI (azd) Setup",
+            "Detailed Explanation of API Management Policies",
+            "FAQ Section",
+            "Productionizing Guide",
+            "Intelligent Handling of OpenAI Throttling"
         ]
     },
     {
@@ -2561,6 +3533,18 @@
             "Bicep",
             "Python",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Deploy Langfuse to Azure Container Apps",
+            "Uses PostgreSQL Flexible Server",
+            "Azure Developer CLI for deployment",
+            "Open-source LLM observability platform",
+            "Set up Entra-based authentication",
+            "Integrate SDK into LLM applications",
+            "Options for setup with GitHub Codespaces, VS Code Dev Containers, or local environment",
+            "Script to set up necessary resources and environment variables",
+            "Detailed deployment instructions",
+            "Langfuse documentation integration"
         ]
     },
     {
@@ -2594,6 +3578,21 @@
             "Bicep",
             "Python",
             "PostgreSQL"
+        ],
+        "keyFeatures": [
+            "Deploy a PostgreSQL Flexible Server with pgvector extension enabled",
+            "Password authentication disabled and Entra (Active Directory) authentication enabled",
+            "Infrastructure-as-code (Bicep) to deploy PostgreSQL server",
+            "Example Python scripts to demonstrate how to use pgvector",
+            "Vector similarity search engine for PostgreSQL using vector embeddings",
+            "GitHub Codespaces support",
+            "VS Code Dev Containers support",
+            "Local environment setup instructions",
+            "Azure Developer CLI integration",
+            "Python virtual environment and package installation support",
+            "Azure account login and resource provisioning commands",
+            "Configuration script to set environment variables for PostgreSQL server",
+            "Example Python scripts for vector operations using pgvector with SQLAlchemy, psycopg2, asyncpg, and SQLModel"
         ]
     },
     {
@@ -2630,6 +3629,25 @@
         "tech": [
             "Bicep",
             "CSharp"
+        ],
+        "keyFeatures": [
+            "Key Management",
+            "Different throttling settings",
+            "Monitor Token Usage",
+            "Monitor Request/Response body and headers",
+            "Different Formats",
+            "Content Safety for Stream Response",
+            "Create Usage Dashboard",
+            "Multiple Endpoints",
+            "Consolidate the endpoint access by hiding APIs behind the APIM instance",
+            "Granular access control by issuing keys using subscriptions feature",
+            "Use policies to manage APIs",
+            "Manage APIs by using backends and security store keys and connection strings by using named values",
+            "Out-of-box monitor capabilities and custom logger for detailed logging",
+            "Use custom logging to log the request and response body",
+            "APIM Policy handles network traffic and logging",
+            "Solution uses VNet and Private Endpoints to secure Azure resources",
+            "Supports azd CLI for deployment"
         ]
     },
     {
@@ -2667,6 +3685,21 @@
         "tech": [
             "Bicep",
             "C#"
+        ],
+        "keyFeatures": [
+            "Demonstrates AI scenarios with .NET applications",
+            "Uses Azure OpenAI Service",
+            "Console applications running locally",
+            "Tutorials for integrating AI into .NET apps",
+            "Examples on using Semantic Kernel",
+            "Quickstarts with OpenAI and Azure OpenAI SDK",
+            "Chat application samples",
+            "LLM core concepts",
+            "End-to-End examples",
+            "Local model implementation",
+            "Vector databases and tokenizers",
+            "Part of .NET Foundation",
+            "MIT licensed"
         ]
     },
     {
@@ -2716,6 +3749,23 @@
             "Javascript",
             "Html",
             "AzureOpenAI"
+        ],
+        "keyFeatures": [
+            "Vector Search",
+            "Retrieval Augmented Generation (RAG)",
+            "Azure Static Web Apps",
+            "Azure Functions",
+            "Azure SQL Database",
+            "Azure OpenAI",
+            "Jamstack architecture",
+            "Event-Driven architecture",
+            "Azure Functions SQL Trigger Binding",
+            "Data API builder",
+            "Azure Developer CLI (azd) integration",
+            "GitHub Actions integration",
+            "Fluent UI for UI components",
+            "Support for both native vector functions and classic T-SQL vector operations",
+            "Manual deployment for private preview features"
         ]
     },
     {
@@ -2754,6 +3804,21 @@
             "Powershell",
             "Bash",
             "HTML"
+        ],
+        "keyFeatures": [
+            "Dynamic configuration for AKS workloads using Azure App Configuration",
+            "Utilizes Azure Developer CLI and Bicep",
+            "Includes Azure CLI configuration",
+            "Provision and deploy to Azure with 'azd up'",
+            "Predeploy hooks for installing additional cluster components",
+            "Infrastructure as code with Bicep templates",
+            "Deploy ASP.NET web application to AKS cluster",
+            "Azure Kubernetes Service (AKS) cluster creation",
+            "Azure Container Registry integration",
+            "Azure App Configuration service integration",
+            "Customizable application source and configuration updates",
+            "Automated Kubernetes manifest application and token replacement",
+            "Easy clean-up of deployed resources with 'azd down'"
         ]
     },
     {
@@ -2801,6 +3866,14 @@
             "Python",
             "Typescript",
             "Flask"
+        ],
+        "keyFeatures": [
+            "Private LLM access on your data",
+            "Single application access to your full data set",
+            "Natural language interaction with your unstructured data",
+            "Easy access to source documentation when querying",
+            "Data upload",
+            "Accessible orchestration"
         ]
     },
     {
@@ -2849,6 +3922,22 @@
             "Vue.js",
             "Dockerfile",
             "Nodejs"
+        ],
+        "keyFeatures": [
+            "Containerized microservices deployment",
+            "Polyglot architecture",
+            "Event-driven design",
+            "Integration with RabbitMQ and MongoDB",
+            "Generative AI using OpenAI's GPT-3 models",
+            "Runs on Azure Kubernetes Service (AKS)",
+            "Supports deployment via Kubernetes",
+            "Local deployment using Docker Compose",
+            "GitHub Codespaces support",
+            "Azure Developer CLI deployment",
+            "Sample order processing services",
+            "Web applications for customers and store employees",
+            "Scheduled order simulation services",
+            "Optional AI service for text and graphics generation"
         ]
     },
     {
@@ -2887,6 +3976,20 @@
         "sourceType": "Azd",
         "tech": [
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Azure Developer CLI configuration",
+            "Bicep templates",
+            "Azure Kubernetes Service (AKS) cluster",
+            "Azure Container Registry",
+            "Azure Managed Grafana",
+            "Azure Monitor managed service for Prometheus",
+            "Event hooks for workflow customization",
+            "Placeholder for application source code",
+            "Placeholder for Kubernetes manifest files",
+            "Dockerfile and Kubernetes manifest generation support",
+            "Continuous integration/continuous deployment support",
+            "Resources cleanup with azd down command"
         ]
     },
     {
@@ -2934,6 +4037,20 @@
             "MongoDB",
             "CosmosDB",
             "HTML"
+        ],
+        "keyFeatures": [
+            "Blueprint for React web app with Node.js API and MongoDB database on Azure",
+            "Includes sample ToDo app code",
+            "Infrastructure as Code assets written in Bicep",
+            "Running Kubernetes clusters without setting up the control plane",
+            "Azure Developer CLI for build, deploy, and monitor",
+            "Azure Kubernetes Service (AKS) for hosting",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Supports Helm and Kustomize for AKS cluster configuration",
+            "CI/CD pipeline configuration with GitHub Actions or Azure DevOps",
+            "Local debugging and testing using Visual Studio Code and Azure Developer CLI extension"
         ]
     },
     {
@@ -2976,7 +4093,8 @@
         "tech": [
             "Kubernetes",
             "Azure CLI"
-        ]
+        ],
+        "keyFeatures": []
     },
     {
         "title": "Tutorial: Deploy WordPress on AKS cluster by using Azure CLI",
@@ -3018,7 +4136,8 @@
         "tech": [
             "Wordpress",
             "MySQL"
-        ]
+        ],
+        "keyFeatures": []
     },
     {
         "title": "Quickstart: Building your first static site with the Azure Static Web Apps using the CLI",
@@ -3056,7 +4175,8 @@
             "Where can I find a tutorial to get started with Azure Static Web Apps using the CLI?"
         ],
         "sourceType": "ExecDocs",
-        "tech": []
+        "tech": [],
+        "keyFeatures": []
     },
     {
         "title": "Create virtual machines in a Flexible scale set using Azure CLI",
@@ -3095,7 +4215,8 @@
             "Can I find a tutorial for setting up virtual machines in a scale set via one-click in Azure?"
         ],
         "sourceType": "ExecDocs",
-        "tech": []
+        "tech": [],
+        "keyFeatures": []
     },
     {
         "title": "Deploy Inspektor Gadget in an Azure Kubernetes Service cluster",
@@ -3133,7 +4254,8 @@
             "Can I install Inspektor Gadget in my AKS cluster for better deployment insights?"
         ],
         "sourceType": "ExecDocs",
-        "tech": []
+        "tech": [],
+        "keyFeatures": []
     },
     {
         "title": "Deploy a Scalable & Secure Azure Kubernetes Service cluster using the Azure CLI",
@@ -3173,7 +4295,8 @@
             "What is the process for deploying a web application on Azure Kubernetes Service with security features?"
         ],
         "sourceType": "ExecDocs",
-        "tech": []
+        "tech": [],
+        "keyFeatures": []
     },
     {
         "title": "Azure OpenAI RAG Chat Experience with Node.js",
@@ -3210,6 +4333,28 @@
             "Node.js",
             "LangChain.js",
             "TypeScript"
+        ],
+        "keyFeatures": [
+            "AI chat experience",
+            "Retrieval-Augmented Generation (RAG)",
+            "LangChain4J",
+            "OpenAI language models",
+            "Azure Static Web Apps",
+            "Azure Container Apps",
+            "Azure AI Search",
+            "Fastify",
+            "Node.js service",
+            "Monorepo structure",
+            "GitHub Codespaces integration",
+            "Docker and Dev Containers support",
+            "Azure prerequisites",
+            "Azure account permissions",
+            "Easy deployment with Azure CLI",
+            "Clean up with Azure CLI",
+            "Other versions available with different configurations",
+            "Microsoft Open Source Code of Conduct",
+            "Contributor License Agreement (CLA)",
+            "Trademarks and usage policies"
         ]
     },
     {
@@ -3260,6 +4405,16 @@
             "AzureFunctions",
             "AzureCosmosDB",
             "LangChain.js"
+        ],
+        "keyFeatures": [
+            "Serverless Architecture",
+            "Utilizes Azure Functions and Azure Static Web Apps for a fully serverless deployment",
+            "Retrieval-Augmented Generation (RAG)",
+            "Combines the power of Azure Cosmos DB and LangChain.js to provide relevant and accurate responses",
+            "Scalable and Cost-Effective",
+            "Leverages Azure's serverless offerings to provide a scalable and cost-effective solution",
+            "Local Development",
+            "Supports local development using Ollama for testing without any cloud costs"
         ]
     },
     {
@@ -3293,6 +4448,12 @@
         "sourceType": "AzureSamples",
         "tech": [
             "Dotnet"
+        ],
+        "keyFeatures": [
+            "Use Azure KeyVault",
+            "App Service",
+            "Azure Managed Identity",
+            "Integration with .NET applications"
         ]
     },
     {
@@ -3325,6 +4486,13 @@
         "tech": [
             "ASP.NET",
             "C#"
+        ],
+        "keyFeatures": [
+            "ASP.NET MVC web app",
+            "Deploy to Azure App Service using Git",
+            "Default MVC app generated by Visual Studio",
+            "Quick deployment guide available",
+            "Azure App Service integration"
         ]
     },
     {
@@ -3363,6 +4531,19 @@
             "Node.js",
             "Python",
             "JavaScript"
+        ],
+        "keyFeatures": [
+            "React application for Azure AI Search",
+            "Web interface for visualizing retrieval modes",
+            "Supports image search using text-to-image and image-to-image functionalities",
+            "Leverages Azure OpenAI for text embeddings",
+            "Uses Azure AI Vision API for image embeddings",
+            "Generate text embeddings and insert into a vector store in Azure AI Search",
+            "Perform vector search queries on text data",
+            "Vector searches with metadata filtering",
+            "Hybrid search (text + vectors)",
+            "Text-to-image vector searches",
+            "Image-to-image vector searches"
         ]
     },
     {
@@ -3401,6 +4582,22 @@
             "Rollup",
             "ESLint",
             "Prettier"
+        ],
+        "keyFeatures": [
+            "Classic Chat UI for interacting with Azure OpenAI API",
+            "Implemented with Lit and LitElement",
+            "Supports sending messages to and receiving responses from the OpenAI API",
+            "Configurable styles and prompts",
+            "Supports revisiting history and resetting the chat",
+            "Debugging capabilities for responses",
+            "Local and container-based deployment options",
+            "Uses technologies like Vite, Rollup, TypeScript, ESLint, Prettier",
+            "Supports using the module as a library",
+            "Supports multiple backend implementations",
+            "Instructions for connecting to deployed backend services",
+            "Security considerations for deployment in Azure Static Web Apps",
+            "Guidance for deploying with Azure Developer CLI or Azure Static Web Apps CLI",
+            "Customizable texts and labels via global configuration file"
         ]
     },
     {
@@ -3439,6 +4636,20 @@
         "sourceType": "Azd",
         "tech": [
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Creates an Azure AI Studio hub",
+            "Creates AI projects",
+            "Includes Azure OpenAI Service",
+            "Creates Online Endpoint",
+            "Includes AI Search Service (Optional, enabled by default)",
+            "Deploys specified models within infra/ai.yaml",
+            "Creates Storage Account",
+            "Creates Key Vault",
+            "Includes Application Insights (Optional, enabled by default)",
+            "Creates Container Registry (Optional, enabled by default)",
+            "Configurable options for disabling AI Search, Application Insights, and Container Registry",
+            "Override default naming conventions for resources"
         ]
     },
     {
@@ -3480,6 +4691,19 @@
             "Python",
             "Bicep",
             "Prompty"
+        ],
+        "keyFeatures": [
+            "Azure OpenAI for embeddings, chat, and evaluation models",
+            "Prompty for creating and managing prompts for rapid ideation",
+            "Azure AI Search for performing semantic similarity search",
+            "Azure CosmosDB for storing customer orders in a noSQL database",
+            "Azure Container Apps for hosting the chat AI endpoint on Azure",
+            "Sample product and customer data for rapid prototyping",
+            "Sample application code for chat and evaluation workflows",
+            "Sample datasets and custom evaluators using prompty assets",
+            "AI-assisted evaluation flows for chat response quality",
+            "Provision and deploy the solution using the Azure Developer CLI",
+            "Support for Responsible AI practices with content safety and assessments"
         ]
     },
     {
@@ -3514,6 +4738,18 @@
             "HTML",
             "CSS",
             "Bootstrap"
+        ],
+        "keyFeatures": [
+            "simple HTML/CSS/JS web app",
+            "deployable to Azure App Service using Git",
+            "built on Carousel template by Bootstrap",
+            "JavaScript support",
+            "HTML support",
+            "CSS support",
+            "integration with Azure",
+            "web app functionality",
+            "Git integration",
+            "Bootstrap template usage"
         ]
     },
     {
@@ -3546,6 +4782,17 @@
         "tech": [
             "Terraform",
             "Ansible"
+        ],
+        "keyFeatures": [
+            "open-source orchestration tool for SAP environments",
+            "deploying, installing and maintaining SAP environments",
+            "create infrastructure for SAP landscapes",
+            "supports SAP HANA and NetWeaver with AnyDB",
+            "compatible with all SAP-supported operating system versions",
+            "deployable in any Azure region",
+            "uses Terraform for infrastructure deployment",
+            "uses Ansible for OS and application configuration",
+            "partnership with SUSE and Red Hat"
         ]
     },
     {
@@ -3577,6 +4824,21 @@
         "sourceType": "Azd",
         "tech": [
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Deploys Azure AI services",
+            "Configured machine learning models",
+            "Uses Bicep templates",
+            "Supports GitHub Codespaces",
+            "VS Code Dev Containers integration",
+            "Quickstart instructions available",
+            "Supports local environment setup",
+            "Extending Bicep IaC files",
+            "Region availability guidance",
+            "Quota check scripts",
+            "Cost estimation with Azure's pricing calculator",
+            "Managed Identity or Key Vault integration",
+            "Security scanning with GitHub Action tool"
         ]
     },
     {
@@ -3616,6 +4878,18 @@
             "Quart",
             "Bicep",
             "OpenAI"
+        ],
+        "keyFeatures": [
+            "Python app using Azure OpenAI to generate responses to user messages",
+            "Provisioning Azure OpenAI resources and deploying the app to Azure Container Apps using Azure Developer CLI",
+            "Managed identity for authenticating with Azure OpenAI",
+            "Uses Quart framework and openai package for backend functionality",
+            "Includes a basic HTML/JS frontend that streams responses using JSON Lines over a ReadableStream",
+            "Bicep files for provisioning various Azure resources",
+            "Support for GitHub Codespaces and VS Code Dev Containers for development",
+            "Deployment guidance with Azure account setup and azd command",
+            "Continuous deployment setup with GitHub Actions",
+            "Cost management and security guidelines included"
         ]
     },
     {
@@ -3659,6 +4933,21 @@
             "FluentUI",
             "PostgreSQL",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Hybrid search on the PostgreSQL database table using the pgvector extension for vector search and full text search, combined using RRF (Reciprocal Rank Fusion)",
+            "OpenAI function calling to convert user queries into query filter conditions",
+            "Conversion of user queries into vectors using the OpenAI embedding API",
+            "Web-based chat application with an API backend using OpenAI chat models to answer questions about rows in a PostgreSQL database table",
+            "Frontend built with React and FluentUI",
+            "Backend written with Python and FastAPI",
+            "Deployment to Azure using the Azure Developer CLI",
+            "Hosting on Azure Container Apps",
+            "Database on Azure PostgreSQL Flexible Server",
+            "Models on Azure OpenAI",
+            "User-assigned managed identity authentication to Azure services",
+            "Logging to Azure Log Analytics",
+            "Supports GitHub Codespaces and VS Code Dev Containers for development"
         ]
     },
     {
@@ -3698,6 +4987,17 @@
             "Terraform",
             "JavaScript",
             "Typescript"
+        ],
+        "keyFeatures": [
+            "Azure OpenAI to drive various agents",
+            "Prompty to create, manage, and evaluate the prompt into the code",
+            "Bing Search API to research the provided topic",
+            "Azure AI Search for performing semantic similarity search",
+            "FastAPI app for taking topic and instruction from user",
+            "Research agent using Bing Search API",
+            "Product agent using Azure AI Search",
+            "Writer agent to combine research and product information",
+            "Editor agent to refine the article"
         ]
     },
     {
@@ -3733,6 +5033,16 @@
         "sourceType": "Azd",
         "tech": [
             "Python"
+        ],
+        "keyFeatures": [
+            "Web-based app for reporting issues via text or speech",
+            "Uses Azure AI Speech Service to translate speech into text",
+            "Employs Azure OpenAI to summarize text",
+            "Leverages Prompty and Prompt Flow for managing and evaluating prompts",
+            "Supports GitHub Codespaces and VS Code Dev Containers for setup",
+            "Includes sample data for testing (audio and text input)",
+            "Managed Identity for Azure service authentication",
+            "GitHub Action for security scanning of infrastructure-as-code files"
         ]
     },
     {
@@ -3768,6 +5078,23 @@
             "Python",
             "Elasticsearch",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Integration of Prompty, LangChain, and Elasticsearch",
+            "Retrieval-Augmented Generation (RAG) technology",
+            "Azure AI Studio integration",
+            "Agent capable of handling user questions and performing searches",
+            "Local data storage folder",
+            "Built-in evaluations with telemetry pushed to Azure AI Studio",
+            "Supports GitHub Codespaces and VS Code Dev Containers",
+            "Compatible with multiple Python versions",
+            "Requires Azure and Elasticsearch accounts",
+            "Environment variables setup for configuration",
+            "Local development and deployment capabilities",
+            "CI/CD pipeline setup with azd",
+            "Cost estimation via Azure's pricing calculator",
+            "Uses keyless authentication whenever possible",
+            "Langsmith support for further development"
         ]
     },
     {
@@ -3804,6 +5131,25 @@
         "tech": [
             "Python",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Uses Azure's Prompty tool, Langchain, and Pinecone to build a large language model (LLM) search agent",
+            "Leverages Retrieval-Augmented Generation (RAG) to enhance response capabilities",
+            "Includes a `agent.py` file to generate queries and perform searches using Elasticsearch",
+            "Stores local data in a `data` folder with index creation during initialization",
+            "Built-in evaluations to test Prompt Flow with telemetry pushed to Azure AI Studio",
+            "Runs with Azure AI Studio",
+            "Supports deployment with GitHub Codespaces and VS Code Dev Containers",
+            "Can be set up locally or with GitHub Codespaces",
+            "Requires Azure account with specific permissions",
+            "Requires Pinecone account and API key",
+            "Supports CI/CD setup with `azd pipeline config`",
+            "Includes instructions for running the app locally with necessary dependencies",
+            "Provides architecture diagram and project setup guidance",
+            "Supports cleaning up resources with `azd down` command",
+            "Includes cost estimation guidance using Azure's pricing calculator",
+            "Supports keyless authentication with managed identities",
+            "Integrates with Langsmith"
         ]
     },
     {
@@ -3846,6 +5192,18 @@
         "tech": [
             "Bicep",
             "Typescript"
+        ],
+        "keyFeatures": [
+            "Azure API Center",
+            "Azure Functions",
+            "Azure Event Grid",
+            "API specs analysis",
+            "Integration with Azure API Center",
+            "Managed identity",
+            "App Insights",
+            "Log Analytics",
+            "Diagnostic settings",
+            "TypeScript support"
         ]
     },
     {
@@ -3881,6 +5239,23 @@
             "Bicep",
             "Typescript",
             "Node.js"
+        ],
+        "keyFeatures": [
+            "Centralized API inventory management",
+            "Web-based API discovery and consumption experience",
+            "Support for multiple deployment options including Azure Static Web Apps and Azure App Service",
+            "Framework for customer-managed API portals",
+            "Customizable and extensible portal platform",
+            "Scoping filter configuration for API display",
+            "Automated deployment using Azure Developer CLI",
+            "Manual deployment with step-by-step guidance",
+            "CI/CD pipeline integration with GitHub Actions",
+            "Local development setup instructions",
+            "Prerequisites include Node.js, npm, and Vite package",
+            "Telemetry and data collection with opt-out options",
+            "Community contributions welcomed",
+            "Microsoft Open Source Code of Conduct adherence",
+            "Microsoft trademark and brand guidelines compliance"
         ]
     },
     {
@@ -3935,6 +5310,22 @@
             "Typescript",
             "Node.js",
             "JavaScript"
+        ],
+        "keyFeatures": [
+            "API Inventory showcasing API Management integration",
+            "Manual or GitHub Actions workflow-based API registration",
+            "Shift-left API governance functionality in VS Code",
+            "APIC Analyzer for server-side linting",
+            "Custom metadata management",
+            "Client SDK integration (.NET & JavaScript)",
+            "Server app scaffolding preparation (.NET & JavaScript)",
+            "API Center OSS portal management",
+            "Azure App Service integration",
+            "Azure Functions integration",
+            "Azure Static Web Apps integration",
+            "Service discovery of API specs registered on Azure API Center",
+            "CI/CD pipeline integration with GitHub Actions",
+            "Event handling through Azure Event Grid and Logic Apps"
         ]
     },
     {
@@ -3974,6 +5365,22 @@
         "tech": [
             "Bicep",
             "Powershell"
+        ],
+        "keyFeatures": [
+            "Leverages Azure OpenAI GPT-4 Turbo with Vision",
+            "Uses Azure Data Factory for orchestration",
+            "Low-code solution for analyzing images and videos",
+            "Part of AI-in-a-Box framework by Microsoft",
+            "Rapid deployment and easy customization",
+            "Examines vehicles for damage in videos and images",
+            "Applicable for multiple industries like insurance, manufacturing, and retail",
+            "Stores results in Azure Cosmos DB in JSON format",
+            "Includes sample images, videos, and prompts",
+            "Uses Managed Identities for secure integration",
+            "Parameterization for reusable pipelines",
+            "Provides a batch and real-time processing option",
+            "Supports integration with various Azure services like Azure Key Vault, Azure Blob Storage, and Azure AI Vision",
+            "Highly customizable with parameterization of prompts and system messages"
         ]
     },
     {
@@ -4016,6 +5423,17 @@
             "C#",
             "NoSQL",
             "Blazor"
+        ],
+        "keyFeatures": [
+            "Build a multi-tenant, multi-user, Generative-AI RAG Pattern application",
+            "Use Azure Cosmos DB for NoSQL with vector database capabilities",
+            "Generate completions and embeddings using Azure OpenAI Service",
+            "Manage a context window (chat history) for natural conversational interactions",
+            "Manage per-request token consumption and payload sizes for Azure OpenAI Service requests",
+            "Build a semantic cache using Azure Cosmos DB for NoSQL vector search for improved performance and cost",
+            "Use the Semantic Kernel SDK for completion and embeddings generation",
+            "Implement RAG Pattern using vector search in Azure Cosmos DB for NoSQL on custom data",
+            "Deploy on Azure App Service"
         ]
     },
     {
@@ -4056,6 +5474,21 @@
             "Python",
             "JavaScript",
             "Bicep"
+        ],
+        "keyFeatures": [
+            "Quick start with LlamaIndex on Azure",
+            "Hosted on Azure Container Apps",
+            "Supports building more complex RAG applications",
+            "Python backend using FastAPI",
+            "Javascript frontend using Next.js",
+            "Ingests various data sources including local files, websites, and databases",
+            "Supports PDF, text, CSV, Markdown, Word, and HTML files",
+            "Utilizes Azure OpenAI for answering questions",
+            "Uses gpt-35-turbo model and embeddings",
+            "Available options for GitHub Codespaces, VS Code Dev Containers, and local environment setup",
+            "Provisions and deploys Azure resources using Azure Developer CLI",
+            "CI/CD pipeline configuration",
+            "Personalize the app with custom data and appearance"
         ]
     },
     {
@@ -4093,6 +5526,21 @@
             "Bicep",
             "Javascript",
             "Nodejs"
+        ],
+        "keyFeatures": [
+            "Serverless deployment on Azure Container Apps",
+            "Integration with Azure OpenAI for question-answering",
+            "Uses gpt-35-turbo model and embeddings",
+            "Supports multiple data sources including local files, websites, and databases",
+            "Ingests PDF, text, CSV, Markdown, Word and HTML files",
+            "Full-stack Next.js application",
+            "Quickstart options with GitHub Codespaces and VS Code Dev Containers",
+            "Provisioning and deploying with Azure Developer CLI",
+            "Built-in Managed Identity or Key Vault for credential management",
+            "GitHub Action tool for security scanning",
+            "Option to configure CI/CD pipeline",
+            "Region-specific deployment recommendations",
+            "Cost-effective resource usage with Azure pricing calculator"
         ]
     },
     {
@@ -4134,6 +5582,20 @@
         "tech": [
             "Bicep",
             "Python"
+        ],
+        "keyFeatures": [
+            "Translate natural language queries into SQL",
+            "Interact with SQL databases using speech",
+            "Leverage Azure OpenAI and Semantic Kernel",
+            "Use Azure AI Speech Service to translate spoken queries",
+            "Execute SQL statements and deliver results audibly",
+            "User-friendly and intuitive experience",
+            "Python application",
+            "Deployment templates for all required resources",
+            "Security best practices (RBAC roles, Active Directory authentication)",
+            "Adaptability for more complex queries and additional use cases",
+            "No API keys access for Speech and OpenAI services",
+            "Resources deployed with no default public access"
         ]
     },
     {
@@ -4188,6 +5650,34 @@
             "Bicep",
             ".NET",
             "C#"
+        ],
+        "keyFeatures": [
+            "Multi-modal AI Service",
+            "Efficient indexing of datasets",
+            "Custom continuous data hybrid pipelines",
+            "Retrieval Augmented Generation (RAG)",
+            "Synthetic memory",
+            "Prompt engineering",
+            "Custom semantic memory processing",
+            "Available as a Web Service, Docker container, Plugin, and .NET library",
+            "Natural Language querying with citations and links",
+            "Integration with Semantic Kernel, Microsoft Copilot, and ChatGPT",
+            "Asynchronous and scalable service",
+            "Serverless mode",
+            "Web API with OpenAPI",
+            "Support for various file types and formats",
+            "Cosine similarity, Hybrid search, and Filters",
+            "Document storage with Azure Blobs, AWS S3, MongoDB Atlas, etc.",
+            "Large document ingestion with async processing",
+            "Custom data pipelines and handlers",
+            "LLM integration with Azure OpenAI, OpenAI, etc.",
+            "Security filters",
+            "Summarization",
+            "OCR via Azure Document Intelligence",
+            "Concurrent write to multiple vector DBs",
+            "Cloud deployment with Azure",
+            "Extensive customization options",
+            "Examples and tools for various integrations"
         ]
     },
     {
@@ -4226,6 +5716,22 @@
         "tech": [
             "Javascript",
             "OpenAI"
+        ],
+        "keyFeatures": [
+            "Create AI assistants tailored to your needs via custom instructions and tools",
+            "Advanced tools like code interpreter and custom functions",
+            "Retrieve financial information, such as stock values",
+            "Answer questions",
+            "Send emails",
+            "Run custom functions",
+            "Hosted on Azure Static Web Apps and Azure Functions",
+            "Uses OpenAI JavaScript SDK",
+            "Integration with GitHub Codespaces and VS Code Dev Containers",
+            "Supports gpt-35-turbo model",
+            "Support for local development",
+            "Guidance on provisioning resources and CI/CD pipeline setup",
+            "Security recommendations with Managed Identity or Key Vault",
+            "Pricing information and recommendations"
         ]
     },
     {
@@ -4264,6 +5770,23 @@
             "Python",
             "Quart",
             "OpenAI"
+        ],
+        "keyFeatures": [
+            "Python app uses Azure OpenAI to generate responses",
+            "Supports user messages and image uploads",
+            "Deploys to Azure Container Apps",
+            "Uses managed identity for authentication",
+            "Deploys a GPT-4o model with Global SKU",
+            "Basic HTML/JS frontend",
+            "Streams responses using JSON Lines over ReadableStream",
+            "Bicep files for provisioning Azure resources",
+            "Support for using local LLMs during development",
+            "Azure Developer CLI for provisioning and deployment",
+            "GitHub Codespaces and VS Code Dev Containers support",
+            "Azure account setup and resource permissions required",
+            "Continuous deployment with GitHub Actions",
+            "Local development server setup included",
+            "Security measures and cost considerations provided"
         ]
     }
 ]
