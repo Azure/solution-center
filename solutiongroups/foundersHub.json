@@ -20,7 +20,7 @@
                 "bladeName": "DeploymentOverview.ReactView",
                 "referenceType": 3,
                 "parameters": {
-                    "tutorialKey": null,
+                    "tutorialKey": "undefined",
                     "correlationId": "DEMO",
                     "referer": "DEMO",
                     "scenariosVersion": null,
@@ -41,11 +41,53 @@
                 "bladeName": "DeploymentOverview.ReactView",
                 "referenceType": 3,
                 "parameters": {
-                    "tutorialKey": null,
+                    "tutorialKey": "undefined",
                     "correlationId": "DEMO",
                     "referer": "DEMO",
                     "scenariosVersion": null,
                     "azdTutorialId": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e"
+                }
+            }
+        },
+        {
+            "id": "azure-search-openai-javascript",
+            "title": "ChatGPT and RAG with Azure OpenAI and AI Search for JavaScript",
+            "description": "A reference sample to build Retrieval Augmented Generation applications using Azure AI Search and Azure OpenAI.",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcVm"
+            },
+            "bladeReference": {
+                "extensionName": "Microsoft_Azure_CloudNative",
+                "bladeName": "DeploymentOverview.ReactView",
+                "referenceType": 3,
+                "parameters": {
+                    "tutorialKey": "undefined",
+                    "correlationId": "DEMO",
+                    "referer": "DEMO",
+                    "scenariosVersion": null,
+                    "azdTutorialId": "f343a991-c4a1-4edb-bd4f-c0b05aadf26e"
+                }
+            }
+        },
+        {
+            "id": "rag-postgres-openai-python",
+            "title": "Retrieval-Augmented Generation on PostgreSQL",
+            "description": "A RAG app to ask questions about rows in a database table. Deployable on Azure Container Apps with PostgreSQL Flexible Server.",
+            "icon": {
+                "iconType": "CustomIcon",
+                "iconFileName": "ArcVm"
+            },
+            "bladeReference": {
+                "extensionName": "Microsoft_Azure_CloudNative",
+                "bladeName": "DeploymentOverview.ReactView",
+                "referenceType": 3,
+                "parameters": {
+                    "tutorialKey": "undefined",
+                    "correlationId": "DEMO",
+                    "referer": "DEMO",
+                    "scenariosVersion": null,
+                    "azdTutorialId": "7fce9298-6849-439b-9080-7901412ac48e"
                 }
             }
         }
