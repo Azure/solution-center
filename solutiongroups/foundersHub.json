@@ -9,11 +9,11 @@
     "createLinks": [
         {
             "id": "openai-chat-app-quickstart",
-            "title": "Simple Chat Application using Azure OpenAI (Python)",
-            "description": "Build a chat application using Azure OpenAI GPT models.",
+            "title": "Launch a ChatGPT app",
+            "description": "Create a sample chat app to stream OpenAI's ChatGPT completions as server-sent events to a simple front end",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "ArcVm"
+                "iconFileName": "AzureOpenAi"
             },
             "bladeReference": {
                 "extensionName": "Microsoft_Azure_CloudNative",
@@ -24,17 +24,17 @@
                     "correlationId": "DEMO",
                     "referer": "DEMO",
                     "scenariosVersion": null,
-                    "azdTutorialId": "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167"
+                    "azdTemplateId": "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167"
                 }
             }
         },
         {
             "id": "azure-search-openai-demo",
-            "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
-            "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
+            "title": "Launch ChatGPT in an app with your data - Python",
+            "description": "Combine the power of Python and Azure AI search to create an OpenAI ChatGPT experience in your chat app based on your startup's data",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "ArcVm"
+                "iconFileName": "AzureOpenAi"
             },
             "bladeReference": {
                 "extensionName": "Microsoft_Azure_CloudNative",
@@ -45,17 +45,17 @@
                     "correlationId": "DEMO",
                     "referer": "DEMO",
                     "scenariosVersion": null,
-                    "azdTutorialId": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e"
+                    "azdTemplateId": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e"
                 }
             }
         },
         {
             "id": "azure-search-openai-javascript",
-            "title": "ChatGPT and RAG with Azure OpenAI and AI Search for JavaScript",
-            "description": "A reference sample to build Retrieval Augmented Generation applications using Azure AI Search and Azure OpenAI.",
+            "title": "Launch ChatGPT in an app with your data - JavaScript",
+            "description": "Let Javascript and Azure AI Search boost your Open AI ChatGPT performance. Upload and try your startup's data in this chat app",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "ArcVm"
+                "iconFileName": "AzureOpenAi"
             },
             "bladeReference": {
                 "extensionName": "Microsoft_Azure_CloudNative",
@@ -66,17 +66,17 @@
                     "correlationId": "DEMO",
                     "referer": "DEMO",
                     "scenariosVersion": null,
-                    "azdTutorialId": "f343a991-c4a1-4edb-bd4f-c0b05aadf26e"
+                    "azdTemplateId": "f343a991-c4a1-4edb-bd4f-c0b05aadf26e"
                 }
             }
         },
         {
             "id": "rag-postgres-openai-python",
-            "title": "Retrieval-Augmented Generation on PostgreSQL",
-            "description": "A RAG app to ask questions about rows in a database table. Deployable on Azure Container Apps with PostgreSQL Flexible Server.",
+            "title": "Launch ChatGPT with PostgreSQL",
+            "description": "Connect OpenAI's ChatGPT to a PostgreSQL database using a python and React front end",
             "icon": {
                 "iconType": "CustomIcon",
-                "iconFileName": "ArcVm"
+                "iconFileName": "AzureOpenAi"
             },
             "bladeReference": {
                 "extensionName": "Microsoft_Azure_CloudNative",
@@ -87,7 +87,7 @@
                     "correlationId": "DEMO",
                     "referer": "DEMO",
                     "scenariosVersion": null,
-                    "azdTutorialId": "7fce9298-6849-439b-9080-7901412ac48e"
+                    "azdTemplateId": "7fce9298-6849-439b-9080-7901412ac48e"
                 }
             }
         }
