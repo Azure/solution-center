@@ -4057,7 +4057,7 @@
         "title": "Quickstart: Deploy an Azure Kubernetes Service (AKS) cluster using Azure CLI",
         "description": "Learn how to quickly deploy a Kubernetes cluster and deploy an application in Azure Kubernetes Service (AKS) using Azure CLI.",
         "author": "Microsoft",
-        "source": "CreateAksClusterAzureCli",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/azure-docs/articles/aks/learn/quick-kubernetes-deploy-cli.md",
         "tags": [
             "kubernetes",
             "azure",
@@ -4094,56 +4094,22 @@
             "Kubernetes",
             "Azure CLI"
         ],
-        "keyFeatures": []
-    },
-    {
-        "title": "Tutorial: Deploy WordPress on AKS cluster by using Azure CLI",
-        "description": "Learn how to quickly build and deploy WordPress on AKS with Azure Database for MySQL - Flexible Server.",
-        "author": "Microsoft",
-        "source": "CreateWordpressAks",
-        "tags": [
-            "wordpress",
-            "aks",
-            "azure",
-            "mysql",
-            "deployment",
-            "database",
-            "container",
-            "server",
-            "build",
-            "tutorial"
-        ],
-        "id": "75a2b5f3-82ec-4d00-af34-f07c61583d2a",
-        "deploymentOptions": [
-            "azcli",
-            "bicep"
-        ],
-        "deploymentConfig": {
-            "execDocs": {
-                "path": "azure-docs%2Farticles%2Fmysql%2Fflexible-server%2Ftutorial-deploy-wordpress-on-aks.md"
-            }
-        },
-        "products": [
-            "Azure Kubernetes Service",
-            "Azure Database for MySQL Flexible Server"
-        ],
-        "sampleQueries": [
-            "How do I deploy WordPress on an Azure Kubernetes Service (AKS) cluster using Azure CLI?",
-            "Can I use Azure Database for MySQL to create a flexible server for my WordPress site on AKS?",
-            "Is there a tutorial to help me build and deploy WordPress on AKS with the Azure platform?"
-        ],
-        "sourceType": "ExecDocs",
-        "tech": [
-            "Wordpress",
-            "MySQL"
-        ],
-        "keyFeatures": []
+        "keyFeatures": [
+            "Deploy an AKS cluster using the Azure CLI",
+            "Run a sample multi-container application with a group of microservices and web front ends",
+            "Create a resource group",
+            "Download Kubernetes credentials",
+            "Connect to the cluster",
+            "Deploy the application using a manifest file",
+            "Test the application using its public IP or URL",
+            "Clean up resources if not needed"
+        ]
     },
     {
         "title": "Quickstart: Building your first static site with the Azure Static Web Apps using the CLI",
         "description": "Learn to deploy a static site to Azure Static Web Apps with the Azure CLI.",
         "author": "Microsoft",
-        "source": "CreateStaticWebAppAzureCli",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/azure-docs/articles/static-web-apps/get-started-cli.md",
         "tags": [
             "static",
             "azure",
@@ -4175,14 +4141,24 @@
             "Where can I find a tutorial to get started with Azure Static Web Apps using the CLI?"
         ],
         "sourceType": "ExecDocs",
-        "tech": [],
-        "keyFeatures": []
+        "tech": [
+            "AzureCLI",
+            "HTML"
+        ],
+        "keyFeatures": [
+            "Azure CLI",
+            "Azure Static Web Apps",
+            "GitHub integration",
+            "Web deployment",
+            "Resource group creation",
+            "Environment variables"
+        ]
     },
     {
         "title": "Create virtual machines in a Flexible scale set using Azure CLI",
         "description": "Learn how to create a Virtual Machine Scale Set in Flexible orchestration mode using Azure CLI.",
         "author": "Microsoft",
-        "source": "CreateVmFlexibleScaleSet",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/azure-docs/articles/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-cli.md",
         "tags": [
             "virtual",
             "scaleset",
@@ -4216,13 +4192,148 @@
         ],
         "sourceType": "ExecDocs",
         "tech": [],
-        "keyFeatures": []
+        "keyFeatures": [
+            "create_virtual_machine_scale_set",
+            "flexible_orchestration_mode",
+            "use_azure_cli",
+            "azure_cloud_shell",
+            "define_environment_variables",
+            "create_resource_group",
+            "create_network_resources",
+            "create_virtual_network_and_subnet",
+            "create_application_gateway",
+            "create_virtual_machine_scale_set_with_az_vmss_create",
+            "install_nginx",
+            "define_autoscale_profile",
+            "create_rule_to_autoscale_out",
+            "create_rule_to_autoscale_in",
+            "test_application_gateway_page",
+            "clean_up_resources"
+        ]
+    },
+    {
+        "title": "Quickstart: Use the Azure CLI to create a Linux Virtual Machine",
+        "description": "In this quickstart, you learn how to use the Azure CLI to create a Linux virtual machine",
+        "author": "Microsoft",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/azure-docs/articles/virtual-machines/linux/quick-create-cli.md",
+        "tags": [
+            "azure",
+            "cli",
+            "linux",
+            "vm",
+            "machine",
+            "deployment",
+            "tutorial",
+            "createvm",
+            "setup",
+            "linux vm"
+        ],
+        "id": "c3a974f8-b27a-4dcc-97c5-4e1ae508ecca",
+        "deploymentOptions": [
+            "azcli",
+            "bicep"
+        ],
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Fquick-create-cli.md"
+            }
+        },
+        "sampleQueries": [
+            "How to use Azure CLI to create a Linux virtual machine?",
+            "What are the steps to deploy a Linux VM using Azure CLI?",
+            "How to configure SSH access for a Linux VM created with Azure CLI?"
+        ],
+        "sourceType": "ExecDocs",
+        "products": [
+            "Azure Virtual Machines",
+            "Azure CLI",
+            "Azure Active Directory"
+        ],
+        "keyFeatures": [
+            "Azure CLI",
+            "Linux virtual machine",
+            "Azure Cloud Shell",
+            "Create resource group",
+            "SSH key generation",
+            "Ubuntu 22.04 image",
+            "Azure AD Login for Linux VM",
+            "VM extensions",
+            "SSH into VM"
+        ],
+        "tech": [
+            "Bash",
+            "Linux"
+        ]
+    },
+    {
+        "title": "Tutorial - Deploy a LEMP stack using WordPress on a VM",
+        "description": "In this tutorial, you learn how to install the LEMP stack, and WordPress, on a Linux virtual machine in Azure.",
+        "author": "Microsoft",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/azure-docs/articles/virtual-machines/linux/tutorial-lemp-stack.md",
+        "tags": [
+            "tutorial",
+            "LEMP",
+            "stack",
+            "wordpress",
+            "linux",
+            "virtual",
+            "machine",
+            "azure",
+            "installation",
+            "setup"
+        ],
+        "id": "e17143e1-259a-43dd-8344-9d1ea02e6a7e",
+        "deploymentOptions": [
+            "azcli",
+            "bicep"
+        ],
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "azure-docs%2Farticles%2Fvirtual-machines%2Flinux%2Ftutorial-lemp-stack.md"
+            }
+        },
+        "products": [
+            "Azure Virtual Machines",
+            "Azure Database for MySQL - Flexible Server",
+            "Azure Private DNS",
+            "Azure Network Security Groups",
+            "Azure Virtual Network",
+            "Azure Public IP",
+            "Azure Cloud Shell",
+            "Azure CLI"
+        ],
+        "sampleQueries": "",
+        "keyFeatures": [
+            "Create an Ubuntu VM",
+            "Open ports 80 and 443 for web traffic",
+            "Install and Secure NGINX, Azure Flexible MySQL Server, and PHP",
+            "Verify installation and configuration",
+            "Install WordPress",
+            "Deploy NGINX web server",
+            "Use Azure CLI for deployment",
+            "Setup Cloud-init for automation",
+            "Create and manage Azure Virtual Network",
+            "Configure Network Security Groups",
+            "Create Azure Public IP",
+            "Setup Azure Private DNS Zone for MySQL",
+            "Create Azure Database for MySQL - Flexible Server",
+            "Enable Microsoft Entra ID login for Azure Linux VM",
+            "Customize Azure Linux VM with Cloud-init"
+        ],
+        "tech": [
+            "Nginx",
+            "Php",
+            "Mysql",
+            "Ubuntu",
+            "Linux",
+            "Wordpress"
+        ]
     },
     {
         "title": "Deploy Inspektor Gadget in an Azure Kubernetes Service cluster",
         "description": "This tutorial shows how to deploy Inspektor Gadget in an AKS cluster",
         "author": "Microsoft",
-        "source": "DeployInspektorGadget",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/DeployIGonAKS/README.md",
         "tags": [
             "tutorial",
             "inspektor",
@@ -4254,14 +4365,27 @@
             "Can I install Inspektor Gadget in my AKS cluster for better deployment insights?"
         ],
         "sourceType": "ExecDocs",
-        "tech": [],
-        "keyFeatures": []
+        "tech": [
+            "Bash"
+        ],
+        "keyFeatures": [
+            "deploy to Azure",
+            "define environment variables",
+            "create resource group",
+            "create AKS cluster",
+            "install kubectl",
+            "configure credentials",
+            "verify connection",
+            "install Inspektor Gadget",
+            "install kubectl gadget plugin",
+            "deploy Inspektor Gadget DaemonSet"
+        ]
     },
     {
         "title": "Deploy a Scalable & Secure Azure Kubernetes Service cluster using the Azure CLI",
         "description": "This tutorial where we will take you step by step in creating an Azure Kubernetes Web Application that is secured via https.",
         "author": "Microsoft",
-        "source": "DeployScalableAKS",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/CreateAKSWebApp/README.md",
         "tags": [
             "tutorial",
             "azure",
@@ -4295,8 +4419,236 @@
             "What is the process for deploying a web application on Azure Kubernetes Service with security features?"
         ],
         "sourceType": "ExecDocs",
-        "tech": [],
-        "keyFeatures": []
+        "tech": [
+            "Kubernetes",
+            "Helm",
+            "Nginx",
+            "Python",
+            "YAML",
+            "Redis",
+            "Linux",
+            "RabbitMQ",
+            "Vue"
+        ],
+        "keyFeatures": [
+            "Azure Kubernetes Service",
+            "Azure CLI",
+            "Helm",
+            "Cert Manager",
+            "HTTPS",
+            "Scalability",
+            "Security",
+            "NGINX Ingress Controller"
+        ]
+    },
+    {
+        "title": "Quickstart: Use the Azure CLI to create a Red Hat Enterprise Linux Virtual Machine",
+        "description": "In this quickstart, you learn how to use the Azure CLI to create a Red Hat Enterprise Linux virtual machine",
+        "author": "Microsoft",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/CreateRHELVMAndSSH/create-rhel-vm-ssh.md",
+        "tags": [
+            "azure",
+            "azure-cli",
+            "linux",
+            "vm",
+            "rhel",
+            "virtual-machines"
+        ],
+        "id": "ccf4ac9f-a38c-42fb-bfa7-149cf6118299",
+        "deploymentOptions": [
+            "azcli",
+            "bicep"
+        ],
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "CreateRHELVMAndSSH%2Fcreate-rhel-vm-ssh.md"
+            }
+        },
+        "products": [
+            "Azure CLI",
+            "Azure Virtual Machines",
+            "Azure AD"
+        ],
+        "sampleQueries": [
+            "How to use Azure CLI to create a Red Hat Enterprise Linux VM",
+            "Can I create a Red Hat Enterprise Linux virtual machine on Azure using Azure CLI?",
+            "Steps to deploy a Red Hat Enterprise Linux VM with Azure CLI"
+        ],
+        "sourceType": "ExecDocs",
+        "tech": [
+            "Linux"
+        ],
+        "keyFeatures": [
+            "Azure CLI",
+            "Red Hat Enterprise Linux",
+            "Virtual Machine",
+            "Create and Manage Azure Resources",
+            "Azure Cloud Shell",
+            "Environment Variables",
+            "Resource Group",
+            "Generate SSH Keys",
+            "Enable Azure AD Login for Linux VM",
+            "SSH into VM",
+            "Store IP Address as Environment Variable"
+        ]
+    },
+    {
+        "title": "Quickstart: Use the Azure CLI to create an Ubuntu Virtual Machine and attach an Azure Data Disk",
+        "description": "In this quickstart, you learn how to use the Azure CLI to create an Ubuntu Linux virtual machine",
+        "author": "Microsoft",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/AttachDataDiskLinuxVM/attach-data-disk-linux-vm.md",
+        "tags": [
+            "azurecli",
+            "azure",
+            "ubuntu",
+            "linux",
+            "virtualmachine",
+            "quickstart",
+            "cli"
+        ],
+        "id": "066015b1-bc26-41b2-828b-edc5d3380598",
+        "deploymentOptions": [
+            "azcli",
+            "bicep"
+        ],
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "AttachDataDiskLinuxVM%2Fattach-data-disk-linux-vm.md"
+            }
+        },
+        "products": [
+            "Azure CLI",
+            "Azure Virtual Machines",
+            "Azure Active Directory"
+        ],
+        "sampleQueries": [
+            "How to create an Ubuntu Linux VM using Azure CLI?",
+            "How to attach a data disk to an Ubuntu VM in Azure?",
+            "Steps to set up and manage an Ubuntu Linux virtual machine on Azure with the CLI"
+        ],
+        "sourceType": "ExecDocs",
+        "tech": [
+            "Bash",
+            "Ubuntu",
+            "Linux"
+        ],
+        "keyFeatures": [
+            "use of Azure CLI",
+            "create Ubuntu Linux virtual machine",
+            "attach Azure Data Disk to VM",
+            "launch Azure Cloud Shell",
+            "create resource group",
+            "integrate with Azure Active Directory authentication",
+            "create VM with SSH keys",
+            "enable Azure AD login for VM",
+            "attach new data disk",
+            "attach existing data disk",
+            "check mounted LUNs",
+            "SSH into the VM"
+        ]
+    },
+    {
+        "title": "Quickstart: Deploy a Postgres vector database",
+        "description": "Setup a Postgres vector database and openai resources to run a RAG-LLM model",
+        "author": "Microsoft",
+        "source": "https://raw.githubusercontent.com/aamini7/postgres-rag-llm-demo/main/README.md",
+        "tags": [
+            "postgresql",
+            "openai",
+            "vector",
+            "rag-llm",
+            "azure",
+            "linux",
+            "cli",
+            "quickstart"
+        ],
+        "id": "ea616bbc-2f3d-42e6-bb9e-5630da8a13be",
+        "deploymentOptions": [
+            "azcli",
+            "bicep"
+        ],
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "PostgresRagLlmDemo%2FREADME.md"
+            }
+        },
+        "products": [
+            "Azure Database for PostgreSQL",
+            "Azure Cognitive Services"
+        ],
+        "sampleQueries": [
+            "How to deploy a Postgres vector database and integrate it with OpenAI on Azure?",
+            "What is the process to set up a RAG-LLM model using a Postgres vector database?",
+            "Can I use Azure CLI to create a Postgres vector database and deploy OpenAI resources?"
+        ],
+        "sourceType": "ExecDocs",
+        "tech": [
+            "Linux",
+            "Postgresql",
+            "Python"
+        ],
+        "keyFeatures": [
+            "postgresql",
+            "openai",
+            "vector",
+            "rag-llm",
+            "azure",
+            "linux",
+            "cli",
+            "quickstart"
+        ]
+    },
+    {
+        "title": "Deploy an AI model on Azure Kubernetes Service (AKS) with the AI toolchain operator (preview)",
+        "description": "Learn how to enable the AI toolchain operator add-on on Azure Kubernetes Service (AKS) to simplify OSS AI model management and deployment.",
+        "author": "Microsoft",
+        "source": "https://raw.githubusercontent.com/MicrosoftDocs/azure-aks-docs/refs/heads/main/articles/aks/ai-toolchain-operator.md",
+        "tags": [
+            "aks",
+            "azure",
+            "CLI",
+            "kubernetes",
+            "AI",
+            "model",
+            "deployment",
+            "gpu"
+        ],
+        "id": "17223c72-b8e2-4e73-810f-230504f8796b",
+        "deploymentOptions": [
+            "azcli",
+            "bicep"
+        ],
+        "deploymentConfig": {
+            "execDocs": {
+                "path": "AksKaito%2FREADME.md"
+            }
+        },
+        "products": [
+            "Azure Kubernetes Service (AKS)",
+            "Azure CLI"
+        ],
+        "sampleQueries": [
+            "How to deploy AI models on Azure Kubernetes Service using the AI toolchain operator?",
+            "Can I use Azure AI toolchain operator to manage OSS AI models on my AKS cluster?",
+            "How to enable GPU nodes for AI model deployment on AKS with the AI toolchain operator?"
+        ],
+        "sourceType": "ExecDocs",
+        "tech": [
+            "Kubernetes"
+        ],
+        "keyFeatures": [
+            "AI toolchain operator add-on",
+            "Azure Kubernetes Service (AKS)",
+            "automatic GPU node provisioning",
+            "inference server setup",
+            "Azure CLI",
+            "kubectl",
+            "model management and deployment",
+            "environment variable configuration",
+            "KAITO model repository",
+            "role assignment for service principal",
+            "OIDC issuer"
+        ]
     },
     {
         "title": "Azure OpenAI RAG Chat Experience with Node.js",
