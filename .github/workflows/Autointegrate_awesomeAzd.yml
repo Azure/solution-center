@@ -14,7 +14,7 @@ jobs:
         - name: Checkout respository
           uses: actions/checkout@v2
           with:
-            ref: dev
+            ref: users/jbrockett/autoIntegrate
           
         - name: Set up Python
           uses: actions/setup-python@v2
