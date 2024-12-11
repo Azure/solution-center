@@ -54,7 +54,7 @@ jobs:
         - name: Raise PR
           uses: peter-evans/create-pull-request@v4
           with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+            token: ${{ secrets.GIT_PAT }}
             branch: "auto-pr-branch"
             commit-message: "Automated update of workloads.json"
             title: "Automated PR for update of workloads.json"
