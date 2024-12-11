@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-    Commit-Workloads:
+    Workloads-PR:
       runs-on: ubuntu-latest
       environment: "AzD Integration"
 
@@ -62,34 +62,4 @@ jobs:
             body: "Triggered update of workloads.json by ${{ github.actor}}"
             author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
             labels: "automated-pr"
-            reviewers: ${{ github.actor }}
             delete-branch: true
-    
-        # - name: Commit changes
-        #   uses: stefanzweifel/git-auto-commit-action@v5
-        #   with:
-        #     create_branch: true
-        #     branch: update-workloads
-        #     push_options: '--force'
-        #     commit_message: "Automated update of workloads.json"
-        #     file_pattern: workloads/workloads.json
-
-    # Create-PR:
-    #   runs-on: ubuntu-latest
-    #   needs: Commit-Workloads
-    #   steps:
-    #     - name: Checkout respository
-    #       uses: actions/checkout@v2
-    #       with:
-    #         ref: dev
-
-    #     - name: Create Pull Request
-    #       uses: peter-evans/create-pull-request@v4
-    #       with:
-    #         token: ${{ secrets.GITHUB_TOKEN }}
-    #         commit-message: "Triggered update of workloads.json"
-    #         title: "Triggered PR for update of workloads.json"
-    #         body: "Automated update of workloads.json"
-    #         branch:  update-workloads
-    #         labels: "automated-pr"
-    #         reviewers: ${{ github.actor }}
