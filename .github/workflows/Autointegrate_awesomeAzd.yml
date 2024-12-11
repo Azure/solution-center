@@ -45,6 +45,7 @@ jobs:
             AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           run: |
             echo "Generating New Fields"
+            python ${{ github.workspace }}/scripts/generate_fields/generate_fields.py --root ${{ github.workspace }}
 
         - name: Configure Git
           run: |
@@ -55,10 +56,10 @@ jobs:
           uses: peter-evans/create-pull-request@v4
           with:
             token: ${{ secrets.GIT_PAT }}
-            branch: "auto-pr-branch"
-            commit-message: "Automated update of workloads.json"
-            title: "Automated PR for update of workloads.json"
-            body: "Automated update of workloads.json"
+            branch: "auto-pr-branch-${{ github.run_number }}"
+            commit-message: "Triggered update of workloads.json"
+            title: "Triggered PR: workloads.json update by ${{ github.actor}}"
+            body: "Triggered update of workloads.json by ${{ github.actor}}"
             author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
             labels: "automated-pr"
             reviewers: ${{ github.actor }}
