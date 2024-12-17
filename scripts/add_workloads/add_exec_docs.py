@@ -9,11 +9,13 @@ def main(root: str, input_file: str, check_quality: bool = False):
         data = json.load(f)
 
     new_workloads = []
+    active_workload_sources = set()
 
     ## Get azd workloads
     for workload in data:
         if workload["status"] == "active":
             new_workloads.append(workload)
+            active_workload_sources.add(workload["sourceUrl"])
         elif check_quality:
             if workload.get("quality", None):
                 new_workloads.append(workload)
@@ -21,6 +23,15 @@ def main(root: str, input_file: str, check_quality: bool = False):
     ## Add correct fields
     with open(workloads_file, "r") as f:
         workloads = json.load(f)
+
+    non_active_exec_docs = []
+    for workload in workloads:
+        if workload["sourceType"] == "ExecDocs" and workload["source"] not in active_workload_sources:
+            non_active_exec_docs.append(workload)
+
+    for workload in non_active_exec_docs:
+        logging.info(f"Removing workload: {workload['title']}")
+        workloads.remove(workload)
     
     correct_keys =  workloads[0].keys()
     unique_exec = {}
