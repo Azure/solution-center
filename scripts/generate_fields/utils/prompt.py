@@ -1,5 +1,30 @@
 PROMPT = """Add more sample queries to this json: """
 
+TAGS_PROMPT = """
+Tags are anything that you can associate with the workload. This can be languages, frameworks, APIs, technology, author, or key words (like "tutorial", "ai", "cli", or "application"). Here are some example
+tags based on some workloads:
+
+```
+"title": "Kubernetes React Web App with Node.js API and MongoDB",
+"description": "A blueprint for getting a React.js web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for running Kubernetes clusters without setting up the control plane.",
+"author": "Azure Dev",
+"source": "https://github.com/Azure-Samples/todo-nodejs-mongo-aks",
+"tags": ["bicep", "nodejs", "typescript", "javascript", "mongodb", "monitor", "keyvault", "reactjs", "appservice", "cosmosdb", "aks", "msft"]
+
+"title": "Quickstart: Deploy an Azure Kubernetes Service (AKS) cluster using Azure CLI",
+"description": "Learn how to quickly deploy a Kubernetes cluster and deploy an application in Azure Kubernetes Service (AKS) using Azure CLI.",
+"author": "Microsoft",
+"source": "https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/azure-docs/articles/aks/learn/quick-kubernetes-deploy-cli.md",
+"tags": ["kubernetes", "azure", "CLI", "aks", "deployment", "cluster", "application", "setup", "tutorial", "provision", "msft"]
+```
+
+A lot of these keywords are gotten from the README of the file, which I will also provide you with.
+Make a json list object that can be read with json.loads() in python that contains all tags that you think are necessary for the workload. DONT GET TOO CRAZY AND LIST TOO MANY.
+Here's the data from the README of the workload (if it's an exec doc it actually deploys using Innovation Engine and some provided steps). After looking at all the information and exmaples, Make a json list readable by json.loads():
+
+
+"""
+
 README_PROMPT = """
 This is data straight from the github readme of the workload. You can also use this in your decisions for creating the correct responses for the field you are creating.
 IF THE TECHNOLOGY IN THE README IS POINTING TO OR REFERENCING ANOTHER WEBSITE OR REPOSITORY THEN DON'T USE THAT TECHNOLOGY. FOR EXAMPLE:
@@ -20,6 +45,8 @@ tags: ["OpenAI", "Azure", "AI Search", "ChatGPT", "Enterprise"]
 Your Response:
 "["How to use Azure AI Search to power ChatGPT-style and Q&A experiences", "Can I use Azure OpenAI to enhance ChatGPT responses with my company's proprietary data?", "How to integrate Azure AI Search with ChatGPT for custom knowledge bases?"]"
 
+Avoid using verbiage like "what is the best". The questions should be more geared toward broader usage context, specific tech stack mentions, or deployment.
+
 WORKLOAD DETAILS:
 
 """
@@ -37,6 +64,7 @@ Your Response:
 
 IT IS IMPORTANT YOU ONLY USE LANGUAGES AND FRAMWORKS AND DATABASES AND APIS IN THIS, NO OTHER AZURE PRODUCTS, SERVICES, OR PLATFORMS. LETS BE CONSISTENT ESPECIALLY WITH LANGUAGES OF ALL FLAVORS, WHETHER IT'S A PROGRAMMING LANGUAGE OR A MARKUP LANGUAGE, IT BELONGS HERE.
 THIS CAN BE LEFT BLANK IF THERE ARE NO LANGUAGES OR FRAMEWORKS MENTIONED. DON'T INCLUDE PLATFORMS (HINT: ChatGPT is a platform, OpenAI is an API). AND START EVERY STRING WITH A CAPITAL LETTER AND ITS FORMAL NAME LIKE dotnetsharp=.NET OR C# AND NO SPACES! DONT FORGET BICEP OR TERRAFORM!
+Operating systems can also be mentioned, or web server like Apache, Nginx, or IIS.
 
 WORKLOAD DETAILS:
 
@@ -89,4 +117,12 @@ If AzureSamples then it's a simple github repository.
 
 
 KEY_FEATURES_PROMPT = """You are an expert at reading all the provided content and understanding the key features of the workload. Please list the key features of the workload in a json list object that can be read with json.loads() in python. THIS MEANS YOU ONLY RETURN THE LIST OBJECT WITH NO OTHER WORDS, AND STRING ARE DOUBLE QUOTED ALWAYS.
-Key features are the main capabilities of the workload that make it unique and valuable. These are the features that users would be most interested in when deciding whether to use the workload. Include anything important."""
+Key features are the main capabilities of the workload that make it unique and valuable. These are the features that users would be most interested in when deciding whether to use the workload. Include anything important.
+Your important information that you are including from the README.md should be longer than a word or two, but not overly verbose either. Short sentence length or three word bullet point key feature.
+THESE SHOULD BE OVERARCHING THEMES, NOT SOMETHING SMALL AND SPECIFIC THAT DOESN"T ENCAPSULATE GENERAL IDEAS. "CREATE A RESOURCE GROUP" DOES NOT ENCAPSUATE GENERAL IDEAS. If you want to mention that you're creating resources, explain more specific resources and why it's important to the workload.
+
+GOOD Examples:
+"React application for Azure AI Search", "Web interface for visualizing retrieval modes", and "Supports image search using text-to-image and image-to-image functionalities" are all great examples of a multi-dimensional answer.
+
+DON"T PUT SHORT BAD EXAMPLES LIKE "create a resource group" THIS IS BAD.
+"""
