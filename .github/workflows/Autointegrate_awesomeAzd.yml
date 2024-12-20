@@ -43,6 +43,8 @@ jobs:
           env:
             AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
             AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+            GIT_EMU_PAT: ${{ secrets.GIT_EMU_PAT }}
+
           run: |
             echo "Generating New Fields"
             python ${{ github.workspace }}/scripts/generate_fields/generate_fields.py --root ${{ github.workspace }}
