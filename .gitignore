@@ -1,2 +1,3 @@
 .DS_Store
 helper_functions.sh
+**/__pycache__/**

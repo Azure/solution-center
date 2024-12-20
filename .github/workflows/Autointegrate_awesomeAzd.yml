@@ -1,0 +1,67 @@
+name: Awesome-azd and Exec Docs Sync
+permissions:
+  actions: write
+  contents: write
+on:
+  workflow_dispatch:
+
+jobs:
+    Workloads-PR:
+      runs-on: ubuntu-latest
+      environment: "AzD Integration"
+
+      steps:
+        - name: Checkout respository
+          uses: actions/checkout@v2
+          with:
+            ref: dev
+          
+        - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.x'
+
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install -r ${{ github.workspace }}/scripts/generate_fields/requirements.txt
+
+        - name: Fetch workloads from azd and exec docs scenarios
+          run: |
+            curl -o ${{ github.workspace }}/templates.json https://raw.githubusercontent.com/Azure/awesome-azd/main/website/static/templates.json
+            curl -o ${{ github.workspace }}/exec_metadata.json https://raw.githubusercontent.com/MicrosoftDocs/executable-docs/main/scenarios/metadata.json
+
+        - name: Updating Workloads
+          run: |
+            echo "Running script"
+            python ${{ github.workspace }}/scripts/add_workloads/add_azd.py --root ${{ github.workspace }} --input_file ${{ github.workspace }}/templates.json
+            python ${{ github.workspace }}/scripts/add_workloads/add_exec_docs.py --root ${{ github.workspace }} --input_file ${{ github.workspace }}/exec_metadata.json
+            rm ${{ github.workspace }}/templates.json
+            rm ${{ github.workspace }}/exec_metadata.json
+
+        - name: Generating Fields
+          env:
+            AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+            AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+            GIT_EMU_PAT: ${{ secrets.GIT_EMU_PAT }}
+
+          run: |
+            echo "Generating New Fields"
+            python ${{ github.workspace }}/scripts/generate_fields/generate_fields.py --root ${{ github.workspace }}
+
+        - name: Configure Git
+          run: |
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+        - name: Raise PR
+          uses: peter-evans/create-pull-request@v4
+          with:
+            token: ${{ secrets.GIT_PAT }}
+            branch: "auto-pr-branch-${{ github.run_number }}"
+            commit-message: "Triggered update of workloads.json"
+            title: "Triggered PR: workloads.json update by ${{ github.actor}}"
+            body: "Triggered update of workloads.json by ${{ github.actor}}"
+            author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+            labels: "automated-pr"
+            delete-branch: true
