@@ -5,14 +5,16 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s] - %(levelname)s - 
 def main(root="."):
     workloads = json.load(open(f"{root}/workloads/workloads.json", "r"))
     keep_workloads = []
+    sources = set()
 
     for workload in workloads:
         res = requests.get(workload["source"])
 
         print(res.status_code, workload["source"])
-        if res.status_code == 200:
+        if res.status_code == 200 and workload["source"] not in sources:
             logging.info(f"Keeping workload {workload['title']}")
             keep_workloads.append(workload)
+            sources.add(workload["source"])
         else:
             logging.info(f"Removing workload {workload['title']}")
     
