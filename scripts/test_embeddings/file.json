@@ -1,0 +1,64 @@
+{
+    "I want to create a simple chatbot where I load a few PDFs and give a system prompt": [
+        {
+            "title": "Azure OpenAI RAG Chat Experience with Node.js",
+            "source": "https://github.com/Azure-Samples/azure-openai-rag-workshop",
+            "search_score": 0.021520942449569702,
+            "search_rerankerScore": 1.7926355600357056
+        },
+        {
+            "title": "Contoso Chat Retail with Azure AI Studio and Promptflow",
+            "source": "https://github.com/Azure-Samples/contoso-chat",
+            "search_score": 0.05962233990430832,
+            "search_rerankerScore": 1.7277677059173584
+        },
+        {
+            "title": "Microservices App - Dapr Service Invoke Python ACA",
+            "source": "https://github.com/Azure-Samples/svc-invoke-dapr-python",
+            "search_score": 0.010638297535479069,
+            "search_rerankerScore": 1.7033092975616455
+        },
+        {
+            "title": "HTML sample for Azure App Service",
+            "source": "https://github.com/Azure-Samples/app-service-web-html-get-started",
+            "search_score": 0.014285714365541935,
+            "search_rerankerScore": 1.6792054176330566
+        },
+        {
+            "title": "Azure Functions - LangChain with Azure OpenAI and ChatGPT (Python v2 Function)",
+            "source": "https://github.com/Azure-Samples/function-python-ai-langchain",
+            "search_score": 0.04182392358779907,
+            "search_rerankerScore": 1.6558104753494263
+        },
+        {
+            "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+            "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
+            "search_score": 0.028431374579668045,
+            "search_rerankerScore": 1.6359602212905884
+        },
+        {
+            "title": "Chat + Vision using Azure OpenAI",
+            "source": "https://github.com/Azure-Samples/openai-chat-vision-quickstart",
+            "search_score": 0.023113444447517395,
+            "search_rerankerScore": 1.629225254058838
+        },
+        {
+            "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+            "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
+            "search_score": 0.02524299919605255,
+            "search_rerankerScore": 1.6246172189712524
+        },
+        {
+            "title": "Java - ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+            "source": "https://github.com/Azure-Samples/azure-search-openai-demo-java",
+            "search_score": 0.02388019487261772,
+            "search_rerankerScore": 1.5462795495986938
+        },
+        {
+            "title": "Chat with your Data Solution Accelerator",
+            "source": "https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator",
+            "search_score": 0.02252747304737568,
+            "search_rerankerScore": 1.5384811162948608
+        }
+    ]
+}
