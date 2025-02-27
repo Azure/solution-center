@@ -1,0 +1,226 @@
+[
+    {
+        "title": "ChatGPT + Enterprise data with Azure OpenAI and AI Search",
+        "description": "A sample app for the Retrieval-Augmented Generation pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.",
+        "author": "Microsoft",
+        "source": "https://github.com/Azure-Samples/azure-search-openai-demo",
+        "id": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e",
+        "products": [
+            "Microsoft.Search/searchServices",
+            "Microsoft.Insights/diagnosticSettings",
+            "Microsoft.MachineLearningServices/workspaces",
+            "Microsoft.Web/sites",
+            "Microsoft.Insights/components",
+            "Microsoft.KeyVault/vaults",
+            "Microsoft.App/containerApps",
+            "Microsoft.Network/virtualNetworks",
+            "Microsoft.Storage/storageAccounts"
+        ],
+        "keyFeatures": [
+            "Chat (multi-turn) and Q&A (single turn) interfaces",
+            "Renders citations and thought process for each answer",
+            "Includes settings directly in the UI to tweak the behavior and experiment with options",
+            "Integrates Azure AI Search for indexing and retrieval of documents",
+            "Supports many document formats as well as integrated vectorization",
+            "Optional usage of GPT-4 with vision to reason over image-heavy documents",
+            "Optional addition of speech input/output for accessibility",
+            "Optional automation of user login and data access via Microsoft Entra",
+            "Performance tracing and monitoring with Application Insights"
+        ]
+    },
+    {
+        "title": "Chat with your Data Solution Accelerator",
+        "description": "A Solution Accelerator for the RAG pattern running in Azure, using Azure AI Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences. This includes most common requirements and best practices.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator",
+        "id": "3450a16f-3b71-48ba-9bd5-c6568f105300",
+        "products": [],
+        "keyFeatures": [
+            "Private LLM access on your data",
+            "Single application access to your full data set",
+            "Natural language interaction with your unstructured data",
+            "Easy access to source documentation when querying",
+            "Data upload",
+            "Accessible orchestration"
+        ]
+    },
+    {
+        "title": "ChatGPT and RAG with Azure OpenAI and AI Search for JavaScript",
+        "description": "A reference sample to build Retrieval Augmented Generation applications using Azure AI Search and Azure OpenAI.",
+        "author": "JavaScript Advocacy Team, Natalia Venditto, Shibani Basava",
+        "source": "https://github.com/Azure-Samples/azure-search-openai-javascript",
+        "id": "f343a991-c4a1-4edb-bd4f-c0b05aadf26e",
+        "products": [
+            "Microsoft.Search/searchServices",
+            "Microsoft.CognitiveServices/accounts",
+            "Microsoft.App/containerApps",
+            "Microsoft.Web/staticSites",
+            "Microsoft.Insights/components",
+            "Microsoft.Storage/storageAccounts"
+        ],
+        "keyFeatures": [
+            "Chat and Q&A interfaces",
+            "Evaluates trustworthiness of responses with citations and source tracking",
+            "Data preparation, prompt construction, and interaction orchestration between ChatGPT and Azure AI Search",
+            "Settings in UX to tweak behavior and experiment with options",
+            "Optional performance tracing and monitoring with Application Insights",
+            "Sample data for end-to-end application trials",
+            "Search service for search and retrieval capabilities",
+            "Indexer service for data indexing",
+            "Frontend web app for user interface and backend service interaction",
+            "Multiple deployment methods: GitHub Codespaces, VS Code Remote Containers, Local environment",
+            "Azure resources deployment with cost estimation guidelines",
+            "Environment sharing and authentication setup",
+            "Clean up resources with azd down command"
+        ]
+    },
+    {
+        "title": "FastAPI on Azure Functions",
+        "description": "A simple FastAPI app deployed to Azure Functions. Can also be run and debugged locally with the Azure Functions Core Tool emulator.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/fastapi-on-azure-functions",
+        "id": "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+        "products": [
+            "Microsoft.Web/sites",
+            "Microsoft.Storage/storageAccounts",
+            "Microsoft.Portal/dashboards",
+            "Microsoft.Insights/components",
+            "Microsoft.Insights/diagnosticSettings",
+            "Microsoft.OperationalInsights/workspaces"
+        ],
+        "keyFeatures": [
+            "Supports WSGI and ASGI-compatible frameworks",
+            "HTTP-triggered Python functions",
+            "Deployable to Azure Functions",
+            "Can be run and debugged locally",
+            "Includes FastAPI framework",
+            "Sample app with predefined routes (/sample and /hello/{name})",
+            "Deployable using VS Code, Azure CLI, or Azure Developer CLI",
+            "Automatic provisioning of Function App, Storage account, and Log Analytics workspace",
+            "Support for CI/CD pipeline setup",
+            "Testable locally and in Azure"
+        ]
+    },
+    {
+        "title": "Serverless ChatGPT with RAG using LangChain.js",
+        "description": "A Serverless ChatGPT-like experience with Retrieval-Augmented Generation using LangChain.js, TypeScript and Azure",
+        "author": "Glaucia Lemos, Yohan Lasorsa",
+        "source": "https://github.com/Azure-Samples/serverless-chat-langchainjs",
+        "id": "ff16119d-5fa9-4011-b0f3-62ef2b71650f",
+        "products": [],
+        "keyFeatures": [
+            "Serverless Architecture",
+            "Utilizes Azure Functions and Azure Static Web Apps for a fully serverless deployment",
+            "Retrieval-Augmented Generation (RAG)",
+            "Combines the power of Azure Cosmos DB and LangChain.js to provide relevant and accurate responses",
+            "Scalable and Cost-Effective",
+            "Leverages Azure's serverless offerings to provide a scalable and cost-effective solution",
+            "Local Development",
+            "Supports local development using Ollama for testing without any cloud costs"
+        ]
+    },
+    {
+        "title": "RAG on PostgreSQL",
+        "description": "A RAG app to ask questions about rows in a database table. Deployable on Azure Container Apps with PostgreSQL Flexible Server.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/rag-postgres-openai-python",
+        "id": "7fce9298-6849-439b-9080-7901412ac48e",
+        "products": [],
+        "keyFeatures": [
+            "Hybrid search on the PostgreSQL database table using the pgvector extension for vector search and full text search, combined using RRF (Reciprocal Rank Fusion)",
+            "OpenAI function calling to convert user queries into query filter conditions",
+            "Conversion of user queries into vectors using the OpenAI embedding API",
+            "Web-based chat application with an API backend using OpenAI chat models to answer questions about rows in a PostgreSQL database table",
+            "Frontend built with React and FluentUI",
+            "Backend written with Python and FastAPI",
+            "Deployment to Azure using the Azure Developer CLI",
+            "Hosting on Azure Container Apps",
+            "Database on Azure PostgreSQL Flexible Server",
+            "Models on Azure OpenAI",
+            "User-assigned managed identity authentication to Azure services",
+            "Logging to Azure Log Analytics",
+            "Supports GitHub Codespaces and VS Code Dev Containers for development"
+        ]
+    },
+    {
+        "title": "Simple Chat Application using Azure OpenAI (Python)",
+        "description": "Build a chat application using Azure OpenAI GPT models.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/openai-chat-app-quickstart",
+        "id": "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167",
+        "products": [
+            "Microsoft.CognitiveServices/accounts",
+            "Microsoft.App/containerApps",
+            "Microsoft.Insights/components",
+            "Microsoft.OperationalInsights/workspaces"
+        ],
+        "keyFeatures": [
+            "Python app using Azure OpenAI to generate responses to user messages",
+            "Provisioning Azure OpenAI resources and deploying the app to Azure Container Apps using Azure Developer CLI",
+            "Managed identity for authenticating with Azure OpenAI",
+            "Uses Quart framework and openai package for backend functionality",
+            "Includes a basic HTML/JS frontend that streams responses using JSON Lines over a ReadableStream",
+            "Bicep files for provisioning various Azure resources",
+            "Support for GitHub Codespaces and VS Code Dev Containers for development",
+            "Deployment guidance with Azure account setup and azd command",
+            "Continuous deployment setup with GitHub Actions",
+            "Cost management and security guidelines included"
+        ]
+    },
+    {
+        "title": "React Web App with Node.js API and MongoDB",
+        "description": "A blueprint for getting a React web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting web apps and APIs without worrying about the infrastructure.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo",
+        "id": "12d2cfbe-830b-4b06-aa07-8ce09c372d77",
+        "products": [
+            "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases",
+            "Microsoft.Storage/storageAccounts",
+            "Microsoft.Web/sites",
+            "Microsoft.App/containerApps",
+            "Microsoft.ContainerService/managedClusters",
+            "Microsoft.Insights/components"
+        ],
+        "keyFeatures": [
+            "React web app with a Node.js API",
+            "MongoDB database integration",
+            "Sample application code (ToDo web app)",
+            "Infrastructure as Code assets written in Bicep",
+            "Hosted on Azure App Services",
+            "Uses Azure Cosmos DB API for MongoDB",
+            "Integration with Azure Monitor",
+            "Secure secrets management with Azure Key Vault",
+            "Azure Developer CLI support for building, deploying, and monitoring",
+            "CI/CD pipeline setup with Azure DevOps or GitHub Actions",
+            "Local testing and debugging via Visual Studio Code and Azure Developer CLI extension",
+            "Provisioning and deployment automation with azd commands",
+            "Managed identity for authentication with Azure AD",
+            "Optional features like API Management (APIM)"
+        ]
+    },
+    {
+        "title": "Static React Web App + Functions with Node.js API and MongoDB",
+        "description": "A blueprint for getting a React web app with a Node.js API and a MongoDB database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly. This architecture is for hosting static web apps with serverless logic and functionality.",
+        "author": "Azure Dev",
+        "source": "https://github.com/Azure-Samples/todo-nodejs-mongo-swa-func",
+        "id": "efbd5a95-560b-409d-8b5c-407d5f15d0e9",
+        "products": [],
+        "keyFeatures": [
+            "React web app with Node.js API",
+            "MongoDB database",
+            "Azure Static Web Apps for hosting",
+            "Azure Function Apps for serverless backend",
+            "Azure Cosmos DB API for MongoDB for storage",
+            "Azure Monitor for monitoring and logging",
+            "Azure Key Vault for securing secrets",
+            "Sample ToDo application code included",
+            "Infrastructure as Code with Bicep",
+            "Azure Developer CLI for build, deploy, and monitor",
+            "Support for CI/CD pipeline configuration with GitHub Actions or Azure DevOps",
+            "Local development support with Azure Functions Core Tools",
+            "Deployment limited to specific Azure regions",
+            "Commands for provisioning, deploying, and tearing down resources",
+            "Optional features like APIM for enhanced backend protection and observability"
+        ]
+    }
+]
