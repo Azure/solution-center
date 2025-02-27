@@ -2,8 +2,6 @@
     "title": "More virtual machines and related solutions",
     "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
     "solutions": [
-        "vm-starter-kit-linux-v1",
-        "vm-starter-kit-windows-v1"
     ],
     "solutionsSectionTitle": "Discover the right solution for your needs",
     "createLinksSectionTitle": "Hybrid virtual infrastructure",
@@ -12,7 +10,7 @@
         {
             "id": "azure-arc-vm",
             "title": "Azure Arc virtual machine",
-            "description": "Create a new Azure Arc virtual machine in one of your non-Azure environments (VMware, Azure Stack HCI, SCVMM)",
+            "description": "Create a new Azure Arc virtual machine in one of your non-Azure environments (Azure Local, VMware, SCVMM)",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"
