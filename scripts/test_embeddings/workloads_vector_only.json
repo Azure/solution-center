@@ -1,0 +1,64 @@
+{
+    "I want to create a website based on python": [
+        {
+            "title": "Python (Django) Web App with PostgreSQL in VNet",
+            "source": "https://github.com/Azure-Samples/msdocs-django-postgresql-sample-app",
+            "search_score": 0.83078945,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "Python (Flask) Web App with PostgreSQL in VNet",
+            "source": "https://github.com/Azure-Samples/msdocs-flask-postgresql-sample-app",
+            "search_score": 0.82961214,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "Serverless Azure OpenAI Quick Start with LlamaIndex (Python)",
+            "source": "https://github.com/Azure-Samples/llama-index-python",
+            "search_score": 0.828326,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "React Web App with Python API and MongoDB - Terraform",
+            "source": "https://github.com/Azure-Samples/todo-python-mongo-terraform",
+            "search_score": 0.8278469,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "React Web App with Python API and MongoDB",
+            "source": "https://github.com/Azure-Samples/todo-python-mongo",
+            "search_score": 0.8262746,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "Static React Web App + Functions with Python API and MongoDB",
+            "source": "https://github.com/Azure-Samples/todo-python-mongo-swa-func",
+            "search_score": 0.826117,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "Python (Django) Web App with PostgreSQL via Azure Container Apps",
+            "source": "https://github.com/Azure-Samples/azure-django-postgres-aca",
+            "search_score": 0.8220776,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "Containerized React Web App with Python API and MongoDB",
+            "source": "https://github.com/Azure-Samples/todo-python-mongo-aca",
+            "search_score": 0.82124877,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "Creative Writing Assistant: Working with Agents using Promptflow (Python Implementation)",
+            "source": "https://github.com/Azure-Samples/agent-openai-python-prompty",
+            "search_score": 0.8212195,
+            "search_rerankerScore": null
+        },
+        {
+            "title": "FastAPI on Azure Functions",
+            "source": "https://github.com/Azure-Samples/fastapi-on-azure-functions",
+            "search_score": 0.8145797,
+            "search_rerankerScore": null
+        }
+    ]
+}
