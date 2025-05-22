@@ -26,7 +26,8 @@
             "Optional addition of speech input/output for accessibility",
             "Optional automation of user login and data access via Microsoft Entra",
             "Performance tracing and monitoring with Application Insights"
-        ]
+        ],
+        "loginRequired": true
     },
     {
         "title": "Chat with your Data Solution Accelerator",
@@ -42,7 +43,8 @@
             "Easy access to source documentation when querying",
             "Data upload",
             "Accessible orchestration"
-        ]
+        ],
+        "loginRequired": false
     },
     {
         "title": "ChatGPT and RAG with Azure OpenAI and AI Search for JavaScript",
@@ -72,7 +74,8 @@
             "Azure resources deployment with cost estimation guidelines",
             "Environment sharing and authentication setup",
             "Clean up resources with azd down command"
-        ]
+        ],
+        "loginRequired": false
     },
     {
         "title": "FastAPI on Azure Functions",
@@ -99,7 +102,8 @@
             "Automatic provisioning of Function App, Storage account, and Log Analytics workspace",
             "Support for CI/CD pipeline setup",
             "Testable locally and in Azure"
-        ]
+        ],
+        "loginRequired": false
     },
     {
         "title": "Serverless ChatGPT with RAG using LangChain.js",
@@ -117,7 +121,8 @@
             "Leverages Azure's serverless offerings to provide a scalable and cost-effective solution",
             "Local Development",
             "Supports local development using Ollama for testing without any cloud costs"
-        ]
+        ],
+        "loginRequired": false
     },
     {
         "title": "RAG on PostgreSQL",
@@ -140,7 +145,8 @@
             "User-assigned managed identity authentication to Azure services",
             "Logging to Azure Log Analytics",
             "Supports GitHub Codespaces and VS Code Dev Containers for development"
-        ]
+        ],
+        "loginRequired": false
     },
     {
         "title": "Simple Chat Application using Azure OpenAI (Python)",
@@ -165,7 +171,8 @@
             "Deployment guidance with Azure account setup and azd command",
             "Continuous deployment setup with GitHub Actions",
             "Cost management and security guidelines included"
-        ]
+        ],
+        "loginRequired": false
     },
     {
         "title": "React Web App with Node.js API and MongoDB",
@@ -196,7 +203,8 @@
             "Provisioning and deployment automation with azd commands",
             "Managed identity for authentication with Azure AD",
             "Optional features like API Management (APIM)"
-        ]
+        ],
+        "loginRequired": false
     },
     {
         "title": "Static React Web App + Functions with Node.js API and MongoDB",
@@ -221,6 +229,7 @@
             "Deployment limited to specific Azure regions",
             "Commands for provisioning, deploying, and tearing down resources",
             "Optional features like APIM for enhanced backend protection and observability"
-        ]
+        ],
+        "loginRequired": false
     }
 ]
