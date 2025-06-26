@@ -130,7 +130,16 @@
         "author": "Azure Content Team",
         "source": "https://github.com/Azure-Samples/rag-postgres-openai-python",
         "id": "7fce9298-6849-439b-9080-7901412ac48e",
-        "products": [],
+        "products": [
+            "Microsoft.CognitiveServices/accounts",
+            "Microsoft.CognitiveServices/accounts/connections",
+            "Microsoft.DBforPostgreSQL/flexibleServers",
+            "Microsoft.Storage/storageAccounts",
+            "Microsoft.App/containerApps",
+            "Microsoft.ContainerRegistry/registries",
+            "Microsoft.Insights/components",
+            "Microsoft.OperationalInsights/workspaces"
+        ],
         "keyFeatures": [
             "Hybrid search on the PostgreSQL database table using the pgvector extension for vector search and full text search, combined using RRF (Reciprocal Rank Fusion)",
             "OpenAI function calling to convert user queries into query filter conditions",
