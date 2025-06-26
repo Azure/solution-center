@@ -242,9 +242,8 @@
             "Microsoft.CognitiveServices/accounts",
             "Microsoft.App/containerApps",
             "Microsoft.OperationalInsights/workspaces",
-            "Microsoft.Insights/components@2020-02-02",
-            "Microsoft.ContainerRegistry/registries",
-            "Microsoft.Authorization/roleAssignments"
+            "Microsoft.Insights/components",
+            "Microsoft.ContainerRegistry/registries"
         ],
         "keyFeatures": [
             "Python app uses Azure OpenAI to generate responses",
@@ -277,7 +276,6 @@
             "Microsoft.Web/staticSites",
             "Microsoft.Storage/storageAccounts",
             "Microsoft.Web/serverfarms",
-            "Microsoft.Authorization/roleAssignments"
         ],
         "keyFeatures": [
             "Create AI assistants tailored to your needs via custom instructions and tools",
