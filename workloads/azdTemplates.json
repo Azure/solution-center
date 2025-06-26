@@ -275,7 +275,7 @@
             "Microsoft.Web/sites",
             "Microsoft.Web/staticSites",
             "Microsoft.Storage/storageAccounts",
-            "Microsoft.Web/serverfarms",
+            "Microsoft.Web/serverfarms"
         ],
         "keyFeatures": [
             "Create AI assistants tailored to your needs via custom instructions and tools",
