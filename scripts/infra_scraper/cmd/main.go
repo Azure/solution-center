@@ -21,6 +21,7 @@ type DeploymentConfig struct {
 	ExecDocs ExecDocs `json:"execDocs,omitempty"`
 }
 
+// Workload represents the structure of the JSON objects we're processing
 type Workload struct {
 	Id                string           `json:"id"`
 	Title             string           `json:"title"`
@@ -28,7 +29,7 @@ type Workload struct {
 	Author            string           `json:"author"`
 	Source            string           `json:"source"`
 	Tags              []string         `json:"tags"`
-	KeyFeatures       []string         `json:"key_features"`
+	KeyFeatures       []string         `json:"keyFeatures"`
 	DeploymentOptions []string         `json:"deploymentOptions"`
 	DeploymentConfig  DeploymentConfig `json:"deploymentConfig"`
 	Products          []string         `json:"products"`
@@ -36,6 +37,106 @@ type Workload struct {
 	SourceType        string           `json:"sourceType"`
 	Tech              []string         `json:"tech"`
 	Infrastructure    []string         `json:"infrastructure"`
+}
+
+// WorkloadTemp is a temporary struct used for custom JSON unmarshaling
+type WorkloadTemp struct {
+	Id                string           `json:"id"`
+	Title             string           `json:"title"`
+	Description       string           `json:"description"`
+	Author            string           `json:"author"`
+	Source            string           `json:"source"`
+	Tags              json.RawMessage  `json:"tags"`
+	KeyFeatures       json.RawMessage  `json:"keyFeatures"`
+	DeploymentOptions json.RawMessage  `json:"deploymentOptions"`
+	DeploymentConfig  DeploymentConfig `json:"deploymentConfig"`
+	Products          json.RawMessage  `json:"products"`
+	SampleQueries     json.RawMessage  `json:"sampleQueries"`
+	SourceType        string           `json:"sourceType"`
+	Tech              json.RawMessage  `json:"tech"`
+	Infrastructure    json.RawMessage  `json:"infrastructure"`
+}
+
+// UnmarshalJSON implements custom JSON unmarshaling for Workload
+func (w *Workload) UnmarshalJSON(data []byte) error {
+	// Use a temporary struct to parse the JSON
+	var temp WorkloadTemp
+	if err := json.Unmarshal(data, &temp); err != nil {
+		return err
+	}
+
+	// Copy the simple fields
+	w.Id = temp.Id
+	w.Title = temp.Title
+	w.Description = temp.Description
+	w.Author = temp.Author
+	w.Source = temp.Source
+	w.DeploymentConfig = temp.DeploymentConfig
+	w.SourceType = temp.SourceType
+
+	// Handle array fields that might be strings
+	var err error
+
+	w.Tags, err = parseStringOrArray(temp.Tags)
+	if err != nil {
+		w.Tags = []string{}
+	}
+
+	w.KeyFeatures, err = parseStringOrArray(temp.KeyFeatures)
+	if err != nil {
+		w.KeyFeatures = []string{}
+	}
+
+	w.DeploymentOptions, err = parseStringOrArray(temp.DeploymentOptions)
+	if err != nil {
+		w.DeploymentOptions = []string{}
+	}
+
+	w.Products, err = parseStringOrArray(temp.Products)
+	if err != nil {
+		w.Products = []string{}
+	}
+
+	w.SampleQueries, err = parseStringOrArray(temp.SampleQueries)
+	if err != nil {
+		w.SampleQueries = []string{}
+	}
+
+	w.Tech, err = parseStringOrArray(temp.Tech)
+	if err != nil {
+		w.Tech = []string{}
+	}
+
+	w.Infrastructure, err = parseStringOrArray(temp.Infrastructure)
+	if err != nil {
+		w.Infrastructure = []string{}
+	}
+
+	return nil
+}
+
+// parseStringOrArray handles fields that could be either a string or an array of strings
+func parseStringOrArray(data json.RawMessage) ([]string, error) {
+	if len(data) == 0 {
+		return []string{}, nil
+	}
+
+	// Try parsing as an array first
+	var strArray []string
+	err := json.Unmarshal(data, &strArray)
+	if err == nil {
+		return strArray, nil
+	}
+
+	// If that fails, try parsing as a single string
+	var str string
+	err = json.Unmarshal(data, &str)
+	if err != nil {
+		return nil, err
+	}
+
+	// Return the string as a single-element array
+	return []string{str}, nil
 }
 
 func main() {

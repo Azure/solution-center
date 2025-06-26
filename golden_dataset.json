@@ -1,0 +1,502 @@
+[
+  {
+    "user_requirements": "I want to deploy a static React web app with a C# API and SQL Database on Azure. It should use Bicep for infrastructure as code, Azure Monitor for logging, Azure Key Vault for secrets, support Azure Developer CLI, have a sample ToDo application, support CI/CD pipelines, allow local debugging with Visual Studio Code, utilize managed identity, and enable role-based access control.",
+    "expected_workload": "262a5d45-4d80-4aaa-8fba-f27d2876dcdb",
+    "test_case_id": 1
+  },
+  {
+    "user_requirements": "My web app must use the Django framework in Python, integrate with PostgreSQL, be deployed on Azure App Service, include VNet integration for security, support Azure Redis Cache, utilize the Azure Developer CLI for deployment, have dev container configuration, include static file handling with whitenoise, manage environment variables, and allow rapid deployment.",
+    "expected_workload": "aeb56402-db75-42d0-8d21-839d9d1e8158",
+    "test_case_id": 2
+  },
+  {
+    "user_requirements": "I need a scalable WordPress site deployed using Azure Container Apps with MariaDB, utilize Application Gateway for traffic, employ Azure Key Vault for secrets management, integrate Redis Cache, monitor with Azure Monitor, leverage Bicep for one-click deployment, persist state with Azure Storage, enable secure networking, support CI/CD automation, and allow blue/green deployments.",
+    "expected_workload": "bdc334e1-d0da-4401-b3a0-ac1b6a03f2d9",
+    "test_case_id": 3
+  },
+  {
+    "user_requirements": "My chat application must use Python and the Flask framework, stream ChatGPT completions, be hosted on Azure Container Apps, authenticate with managed identity, provision with Bicep files, support deployment via Azure Developer CLI, enable continuous deployment with GitHub Actions, offer a simple HTML/JS frontend, provide local environment setup, and follow security best practices.",
+    "expected_workload": "3f85f8e5-619f-495b-bf49-c5bd6edaa350",
+    "test_case_id": 4
+  },
+  {
+    "user_requirements": "I want a multi-region .NET web application for enterprise scenarios, achieve a 99.9% SLO, apply the 12-factor app methodology, use Azure App Service, enforce global traffic routing with Azure Front Door, manage sessions using Azure Cache for Redis, secure secrets via Key Vault, authenticate users through Microsoft Entra ID, monitor with Application Insights, and leverage Azure App Configuration.",
+    "expected_workload": "33da45cd-d26c-42c1-8b0a-ae4b79847dde",
+    "test_case_id": 5
+  },
+  {
+    "user_requirements": "I need to deploy a React web app with Node.js API and MongoDB database to Azure Kubernetes Service, utilize Bicep for IaC, monitor with Azure Monitor, secure with Azure Key Vault, support Helm and Kustomize, have managed identity for authentication, enable CI/CD pipelines, support local debugging in VS Code, provide sample ToDo code, and automate provisioning with Azure Developer CLI.",
+    "expected_workload": "93b22870-f071-4104-ada9-ba45e71329a1",
+    "test_case_id": 6
+  },
+  {
+    "user_requirements": "My AI application should use Retrieval-Augmented Generation, integrate Azure AI Search and Azure OpenAI, have multi-turn chat and single-turn Q&A interfaces, include citation rendering, allow UI-based experiment settings, support image reasoning with GPT-4 Vision, automate user login via Entra ID, provide speech input/output, offer performance monitoring, and support document vectorization.",
+    "expected_workload": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e",
+    "test_case_id": 7
+  },
+  {
+    "user_requirements": "I want a Java Spring-based ChatGPT application running on Azure Spring Apps, leverage Azure OpenAI for responses, use Azure Blob Storage for documents, support text embedding for vector search, generate and store embeddings, pre-build a documentation vector store, deploy with Azure Developer CLI, use Azure CLI as alternative, run app locally or in cloud, and delete resources easily.",
+    "expected_workload": "27170e89-7227-4bd0-a593-9a292498366f",
+    "test_case_id": 8
+  },
+  {
+    "user_requirements": "I need an event-driven Java application that uses Azure Service Bus, is hosted on Azure Spring Apps, utilizes Azure Key Vault for secrets, monitors with Azure Monitor, manages identity with Azure AD, applies infrastructure as code with Bicep, has a quickstart guide, configures pipelines using azd, ensures security best practices, and supports scalable architecture.",
+    "expected_workload": "e18d18a8-e26f-4be3-b1fb-cee3acd730ed",
+    "test_case_id": 9
+  },
+  {
+    "user_requirements": "My project requires a chat Q&A solution with ChatGPT, Azure OpenAI, and AI Search, explore trustworthiness with citations, orchestrate interactions between model and retriever, manage UI settings for behavior, include a Blazor frontend, have ASP.NET Core backend, support Application Insights monitoring, provide local and cloud deployment, offer cost estimation, and clean resources post-deployment.",
+    "expected_workload": "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+    "test_case_id": 10
+  },
+  {
+    "user_requirements": "I want to build a Python Django app for space tourism, deploy via Azure Container Apps, manage secrets with Azure Key Vault, use PostgreSQL as database, include dev container support for Codespaces, support local PostgreSQL setup, enable database migrations, utilize Django admin, run locally before deployment, and automate deployment with Azure Developer CLI.",
+    "expected_workload": "1eab6419-b143-41d3-9b86-c8aeb9158fda",
+    "test_case_id": 11
+  },
+  {
+    "user_requirements": "I need to create infrastructure for SAP environments on Azure, support SAP HANA and NetWeaver with AnyDB, work on any SAP-supported OS version, use Terraform for deployment, automate OS setup with Ansible, deploy in any Azure region, maintain SAP environments, be open-source, partner with SUSE/RedHat, and integrate with Azure DevOps workflows.",
+    "expected_workload": "42ed645b-37f7-4468-95f4-ca5a515b63e5",
+    "test_case_id": 12
+  },
+  {
+    "user_requirements": "The architecture must reference enterprise-grade patterns for JavaScript apps, embrace micro-frontends, use cloud-native components, integrate Stripe for payments, implement real-time notifications, have both Angular and Next.js frontends, utilize Azure Static Web Apps, enable API Management, leverage Cosmos DB and PostgreSQL, and incorporate OpenAI chatbot integration.",
+    "expected_workload": "25a3dda0-8840-44dc-b850-4f2468991ecb",
+    "test_case_id": 13
+  },
+  {
+    "user_requirements": "My project is a React app with Python FastAPI backend and MongoDB, uses Infrastructure as Code with Bicep, is hosted on Azure Static Web Apps and Functions, integrates CosmosDB for storage, monitors with Azure Monitor, manages secrets with Key Vault, supports CI/CD via GitHub Actions, enables local debugging, and allows Azure Developer CLI management.",
+    "expected_workload": "9df1ed02-2102-415e-bf5d-dec8dd6787cb",
+    "test_case_id": 14
+  },
+  {
+    "user_requirements": "I want to demonstrate Dapr's Pub-Sub with Python microservices, deploy to Azure Container Apps, connect with Azure Service Bus Topics, support dead-lettering, manage containers with Docker, leverage Azure Developer CLI, ensure event-driven communication, allow local debugging, facilitate testing with Dapr CLI, and deploy infrastructure as code.",
+    "expected_workload": "3689e30c-5ea3-4c69-9a3c-e34ee217a770",
+    "test_case_id": 15
+  },
+  {
+    "user_requirements": "My team needs to deploy a static site to Azure Static Web Apps using Azure CLI, manage site environments using environment variables, utilize GitHub for source control, automate CI/CD on deployment, create and manage Azure Resource Groups, use GitHub templates for starter apps, define production workflows, and ensure ease of setup for new developers.",
+    "expected_workload": "199d0d86-8cb0-431e-8acf-a3c5d9527fd0",
+    "test_case_id": 16
+  },
+  {
+    "user_requirements": "I have to deploy a Kubernetes cluster on Azure using Azure CLI, use kubectl for management, run a multi-container app, define app state via manifests, utilize managed AKS service for quick deployment, automate resource group creation, support scaling, integrate with CI/CD, and enable detailed documentation for setup.",
+    "expected_workload": "faf0d1e7-daca-4783-b19e-ba2527d2d9d3",
+    "test_case_id": 17
+  },
+  {
+    "user_requirements": "I need to enable dynamic configuration for AKS workloads using Azure App Configuration, provision resources via Azure Developer CLI, use Bicep templates, automate cluster creation, integrate with Azure Container Registry, manage configuration updates, deploy ASP.NET apps to AKS, support easy cleanup, allow custom source configuration, and document deployment steps.",
+    "expected_workload": "3b4599e6-bb03-4f19-bce8-5151a0225c7b",
+    "test_case_id": 18
+  },
+  {
+    "user_requirements": "My requirement is a chat Q&A solution with enterprise data, utilizing Python with Azure OpenAI and Cognitive Search, leveraging Retrieval-Augmented Generation, rendering citations, allowing UI settings for tweaking, integrating document vectorization, supporting optional vision and speech features, automating login with Entra ID, monitoring with Application Insights, and deploying via Azure CLI.",
+    "expected_workload": "eebc5dce-43e7-4fc3-8b91-13573c8076df",
+    "test_case_id": 19
+  },
+  {
+    "user_requirements": "The goal is to quickly deploy a Linux VM with Azure CLI, enable Azure AD login, store VM IP for SSH, use Cloud Shell for CLI access, automate script management of resources, create secure VMs, provision using Bash commands, support SSH authentication, prompt for credentials, and generate quickstart documentation.",
+    "expected_workload": "c3a974f8-b27a-4dcc-97c5-4e1ae508ecca",
+    "test_case_id": 20
+  },
+  {
+    "user_requirements": "I want to use Azure Functions to trigger text summarization, accept input via BlobTrigger, process with Cognitive Language Service, output results using BlobOutput, monitor with Application Insights, deploy with Azure Developer CLI, support local development with VS Code, configure using environment variables, store API credentials securely, and run .NET 8 workloads.",
+    "expected_workload": "abdec121-45cb-4e73-a005-d944579a8db0",
+    "test_case_id": 21
+  },
+  {
+    "user_requirements": "I would like to build a containerized React app with Java API and MongoDB, use Bicep for IaC, run on Azure Container Apps, store data in Cosmos DB, manage secrets with Key Vault, support CI/CD with GitHub Actions, run and debug with VS Code, authenticate using managed identity, and provide a sample ToDo app.",
+    "expected_workload": "f5d0f91a-0ebc-4fe4-86cd-6414f810d54d",
+    "test_case_id": 22
+  },
+  {
+    "user_requirements": "My solution should provide a creative writing assistant, use Python and OpenAI, deploy on AKS via Terraform, leverage Promptflow for prompt management, integrate Bing Search API, enable semantic search with Azure AI Search, use FastAPI for serving, coordinate multiple agents, research topics using Bing, and refine outputs with an editor agent.",
+    "expected_workload": "eac0f912-29ba-40fc-8d1b-2e495fc94abd",
+    "test_case_id": 23
+  },
+  {
+    "user_requirements": "I am looking for a deployment architecture for a copilot app using Azure OpenAI Service, Azure Cosmos DB for NoSQL vector database, support multi-tenant setup, have a semantic cache, implement RAG with custom data, use the Semantic Kernel SDK, manage context windows efficiently, support Blazor interface, provision via Bicep, and deploy to Azure App Service.",
+    "expected_workload": "ca134ac5-31fc-4221-851b-a3c2f2bf98d9",
+    "test_case_id": 24
+  },
+  {
+    "user_requirements": "I need to set up a RAG chat experience with Node.js, use LangChain4J and OpenAI models, host on Azure Static Web Apps, use Azure Container Apps for backend, employ Azure AI Search for vectors, provide a Fastify Node.js service, use monorepo configuration, support Codespaces for dev, deploy with Docker, and offer clean-up scripts.",
+    "expected_workload": "7ea19a29-b97a-47e9-b5b8-3e974d77db88",
+    "test_case_id": 25
+  },
+  {
+    "user_requirements": "I want to build an Azure AI Chat application using Python, deploy on Azure Container Apps, manage identity securely, use Quart as the backend, provide a basic HTML/JS frontend, enable streaming responses, write Bicep files for resource provisioning, allow GitHub Codespaces setup, automate deployment with Azure CLI, and set up continuous deployment.",
+    "expected_workload": "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167",
+    "test_case_id": 26
+  },
+  {
+    "user_requirements": "Our architecture requires a FastAPI app on Azure Functions, support WSGI and ASGI, handle HTTP triggers, run and debug locally, deploy with Azure CLI or Developer CLI, provision storage and log analytics automatically, configure CI/CD pipelines, test locally and on Azure, support multiple frameworks, and auto-provision Function Apps.",
+    "expected_workload": "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+    "test_case_id": 27
+  },
+  {
+    "user_requirements": "I need to set up a serverless ChatGPT app using LangChain.js and TypeScript, deploy to Azure Functions and Static Web Apps, use Azure Cosmos DB for storage, leverage Azure Blob Storage, integrate retrieval-augmented generation, provide a scalable and cost-effective solution, support local development, enable testing with Ollama, and automate Azure deployment.",
+    "expected_workload": "ff16119d-5fa9-4011-b0f3-62ef2b71650f",
+    "test_case_id": 28
+  },
+  {
+    "user_requirements": "My Java application must demonstrate Dapr Pub/Sub for microservices, run in AKS, implement the sidecar pattern, use Redis as message broker, deploy multiple services, automate builds with Make, support local and cloud deployments, utilize Bicep for infra, facilitate asynchronicity, provide support for Azure Developer CLI, and run with Docker or Kind for testing.",
+    "expected_workload": "27a9a8be-9479-4433-8ff6-9ce9af9c92b6",
+    "test_case_id": 29
+  },
+  {
+    "user_requirements": "The requirement is to use Azure Functions for AI-based text summarization with Python, trigger via Blob storage, summarize with Cognitive Language Service, output via Blob, deploy using Azure Developer CLI, provide sample code, support VS Code local development, store API credentials as environment variables, and manage blobs with Azure Storage Explorer.",
+    "expected_workload": "df35a2f8-da36-43b2-92df-aba105170e8c",
+    "test_case_id": 30
+  },
+  {
+    "user_requirements": "The architecture must provide a Postgres Flexible Server with pgvector, use Entra authentication, avoid password-based logins, create vector-enabled databases, demonstrate Python integrations, support vector similarity search, run code in Codespaces or Dev Containers, provision resources with Bicep, install required Python packages, and allow Azure CLI resource setup.",
+    "expected_workload": "fa79ba6d-e558-4025-b5ea-23970851b075",
+    "test_case_id": 31
+  },
+  {
+    "user_requirements": "I wish to deploy a scalable & secure Azure Kubernetes Service cluster using CLI, enable HTTPS for the web apps, install NGINX ingress controller with Helm, automate SSL management with Cert Manager, deploy microservices via manifests, use AKS cluster autoscaling, enable container insights, follow step-by-step documentation, and secure apps thoroughly.",
+    "expected_workload": "dc1f07b7-6a62-42d8-b683-6d666f56dd64",
+    "test_case_id": 32
+  },
+  {
+    "user_requirements": "My goal is to create a Dapr-based Node.js microservices app, deploy on Azure Container Apps, use Service Bus Topics with dead-lettering, apply Bicep for infrastructure, support deployments with Azure Developer CLI, include message publishing and listening, manage containers with Docker, automate via GitHub Actions or DevOps, and ensure asynchronous message processing.",
+    "expected_workload": "17c7f10c-45ff-4f1b-bba8-9e98cf1a8d54",
+    "test_case_id": 33
+  },
+  {
+    "user_requirements": "I need to deploy a Bicep template to bootstrap Azure Deployment Environments, create Azure DevCenter with minimum config, enable developers to self-serve environments, create resource groups/KeyVault automatically, allow catalog customization, support ARM and Terraform integration, utilize Azure CLI for deployment, configure environment types, manage via Developer Portal, and require Owner role.",
+    "expected_workload": "7e5276d7-b80c-4aa6-b8e6-750939a42ecd",
+    "test_case_id": 34
+  },
+  {
+    "user_requirements": "We require a Next.js full-stack app with JavaScript leveraging LlamaIndex.ai on Azure Container Apps, integrate with OpenAI for question-answering, support PDF/text/CSV/Markdown/Word ingestion, provide quickstart setup via Codespaces, manage Managed Identity for credentials, provision resources with Azure Developer CLI, configure CI/CD pipeline, and scan IaC for security.",
+    "expected_workload": "444b9fdf-aeac-43d8-9c10-73eea3b44c9c",
+    "test_case_id": 35
+  },
+  {
+    "user_requirements": "I want a chat frontend with classic chat UI, interact with Azure OpenAI API, support message history revisit, debugging features, use Lit/LitElement for UI, employ TypeScript and Vite for dev, support local deployment, allow custom prompts and styles, maintain security practices, and allow container-based deployment options.",
+    "expected_workload": "8a8499b2-ad33-4e73-846d-5715aed9f8f7",
+    "test_case_id": 36
+  },
+  {
+    "user_requirements": "My requirement is a reference architecture for bootstrapping AKS with Bicep, integrate Azure Container Registry, deploy app source via manifest files, enable Managed Grafana monitoring, automate with Azure Developer CLI, allow placeholder code for rapid start, generate Dockerfiles automatically, support CI/CD flows, and ensure easy clean-up of resources.",
+    "expected_workload": "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8",
+    "test_case_id": 37
+  },
+  {
+    "user_requirements": "The application must perform automated speech to text conversion, summarize the text using Azure OpenAI, employ Prompty and Prompt Flow for evaluation, provide web-based input, store data securely, use managed identity for Azure, automate setup with Codespaces, scan IaC with GitHub Actions, allow testing with sample data, and ensure cost management guidance.",
+    "expected_workload": "abb9e776-88e4-4519-9d59-73bccf78f635",
+    "test_case_id": 38
+  },
+  {
+    "user_requirements": "Our goal is to enable NLP to SQL via Azure OpenAI, allow voice-based queries with AI Speech Service, execute SQL and return results audibly, leverage Semantic Kernel, enforce RBAC and AD for security, avoid public API keys, deploy with Bicep/CLI automation, use Python backend, support adaptive queries, and limit public resource access by default.",
+    "expected_workload": "c1ea7827-0596-4556-a9be-01b772fd94a7",
+    "test_case_id": 39
+  },
+  {
+    "user_requirements": "I need a low-code solution for video/image analysis, use Azure OpenAI GPT-4 Turbo with Vision, orchestrate using Azure Data Factory, store results in Cosmos DB, manage blobs in Azure Storage, support managed identities, enable batch and real-time modes, integrate Computer Vision API, customize parameters, deploy via Bicep, and automate using Azure CLI.",
+    "expected_workload": "8000f86e-cd2f-43e0-8441-5112c5c31120",
+    "test_case_id": 40
+  },
+  {
+    "user_requirements": "My API management workload should include priority-based load balancing for Azure OpenAI, handle HTTP 429 and Retry-After headers, route traffic to available backends, expose a single endpoint, enable YARP-based reverse proxying, build Docker images for deployment, provide environment variable config, generate logs for routing and errors, scale automatically, and be deployable via CLI.",
+    "expected_workload": "c3694deb-a6d7-4c20-8bbf-f12486a503e3",
+    "test_case_id": 41
+  },
+  {
+    "user_requirements": "We require a managed FastAPI app on Azure Functions, enable HTTP endpoints, deploy with Azure Functions Core Tools, support local dev, integrate FastAPI framework, store logs and configs in environment variables, test endpoints locally, provision resources automatically, enable deployment via VS Code or CLI, and implement sample endpoints for demonstration.",
+    "expected_workload": "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+    "test_case_id": 42
+  },
+  {
+    "user_requirements": "I want a RAG demo on PostgreSQL, enable hybrid (vector + text) search with pgvector, convert user queries to vectors and filters using OpenAI, build web-based chat with Python/React, maintain log analytics, use managed identity, deploy with Azure Developer CLI, enable GitHub Codespaces, secure using Azure flexible server, and allow logging to Azure Monitor.",
+    "expected_workload": "7fce9298-6849-439b-9080-7901412ac48e",
+    "test_case_id": 43
+  },
+  {
+    "user_requirements": "The scenario is to provide an SAP CAP solution on Azure App Service, integrate with Cosmos DB for PostgreSQL, consume OData from SAP S/4HANA, use Node.js with CAP module, support Azure Developer CLI, enable resiliency and caching, enforce Azure authentication, manage API policies with APIM, provide UI5 interface, and support SAP Private Link integration.",
+    "expected_workload": "87cca4d5-958c-4255-87ae-5df122ec34ad",
+    "test_case_id": 44
+  },
+  {
+    "user_requirements": "Our app will use Azure OpenAI for chat completions, handle HTTP requests in Azure Functions, use Blob storage as a cache, require OpenAI API key, offer local dev/testing setup, deploy via Azure Dev CLI, support continuous deployment, secure with managed identity, utilize JavaScript backend, and provide sample REST testing endpoints.",
+    "expected_workload": "c0405eae-fd20-4404-a742-a1c69c6004e7",
+    "test_case_id": 45
+  },
+  {
+    "user_requirements": "We need to demonstrate function calling for vector database lookups based on user language input, integrate Prompty, LangChain, and Elasticsearch, run built-in evaluations with Azure AI Studio, support Codespaces/local setup, use Python backend, handle local data storage, automate via CI/CD, provide cost estimation scripts, enable keyless authentication, and integrate with Langsmith.",
+    "expected_workload": "b2aa83fb-7911-4f5f-bf5f-4f429ca1d67d",
+    "test_case_id": 46
+  },
+  {
+    "user_requirements": "We require a chat solution for retail using Azure AI Studio and Promptflow, integrate GPT 3.5 Turbo for LLM tasks, automate deployment with AZD CLI, use GitHub Actions for evaluation, handle intent mapping, use Cosmos DB for data, include sample workflows and datasets, provide custom evaluation assets, ensure responsible AI, and support containerized deployment.",
+    "expected_workload": "892c1998-ab31-4592-a453-8c8ec947df6a",
+    "test_case_id": 47
+  },
+  {
+    "user_requirements": "My goal is to host the Langfuse LLM observability platform on Azure Container Apps, use PostgreSQL Flexible Server as the backend, set up Entra authentication, integrate with LLM applications via SDK, allow setup with Codespaces or local dev, use Azure Developer CLI for provisioning, provide environment variable scripting, document deployment, and include Langfuse documentation.",
+    "expected_workload": "3a69118c-f6c3-4d59-90c4-188975527db2",
+    "test_case_id": 48
+  },
+  {
+    "user_requirements": "I am looking for a serverless Azure OpenAI Assistant, use JavaScript and OpenAI SDK, run on Azure Static Web Apps and Functions, support code interpreter and custom tool integration, retrieve financial information, answer queries, send emails, enable managed identity, support GitHub Codespaces, allow local development, automate provisioning, and recommend secure practices.",
+    "expected_workload": "9691c16c-500a-40c2-9b55-994fff837a35",
+    "test_case_id": 49
+  },
+  {
+    "user_requirements": "The workload needs to deploy an AKS Store Demo, use Terraform for infra as code, run polyglot container microservices, integrate with OpenAI GPT-3 models, support event-driven architectures, monitor with Azure Monitor and Log Analytics, employ Helm for deployment, allow Docker Compose for local dev, automate deployment with Codespaces, and utilize Azure Key Vault.",
+    "expected_workload": "eff16b17-9019-4b60-8438-f49781946266",
+    "test_case_id": 50
+  },
+  {
+    "user_requirements": "The application must run on AWS Lambda, use DynamoDB as a database, utilize Go for the backend, and deploy frontends using Vue.js. It should include integration with Stripe for payments, offer SAML-based authentication, deploy with Serverless Framework, leverage Amazon S3 for static file hosting, utilize AWS Fargate for container management, and allow real-time notifications with AWS SNS. No support for Azure-specific products is allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 51
+  },
+  {
+    "user_requirements": "I need a web app deployed on Google Cloud Run using Firebase as the primary database and authentication provider. It must use Kotlin on the backend, include a Next.js frontend, rely on Cloud Storage for media files, employ Google Pub/Sub for messaging, and have CI/CD orchestrated by Google Cloud Build. Roles and permissions should be managed with Firebase Auth. Application must not use Azure, AWS, or on-prem resources.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 52
+  },
+  {
+    "user_requirements": "Deploy a microservices platform with Elixir and Phoenix LiveView using Kubernetes on DigitalOcean, integrate Redis for caching, utilize RabbitMQ for messaging, deploy with Helm charts, provide monitoring via Prometheus and Grafana, configure SSL with Let's Encrypt, include GitLab CI for pipelines, and store assets in DigitalOcean Spaces. No Azure, AWS, or GCP technologies permitted.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 53
+  },
+  {
+    "user_requirements": "Our requirements are for a real-time chat app hosted on Heroku, developed using Ruby on Rails, with a React Native mobile client. The backend should use PostgreSQL, caching with Memcached, authentication via Auth0, image uploads to Cloudinary, email delivery via SendGrid, background jobs managed by Sidekiq, and analytics via Mixpanel. No Microsoft products are to be used.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 54
+  },
+  {
+    "user_requirements": "We require a CI/CD pipeline using Jenkins on IBM Cloud, building and deploying Java Spring Boot microservices with a Vue.js frontend. Database should be IBM Db2, object storage with IBM Cloud Object Storage, application monitoring through Instana, security via Okta, testing automation with Selenium, and source control with Bitbucket. Do not include any Azure, AWS, or GCP services.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 55
+  },
+  {
+    "user_requirements": "Build a scalable REST API with Scala and Akka HTTP, PostgreSQL hosted on AWS RDS, deploy via Docker Compose on EC2, automate infrastructure with AWS CDK, use Sentry for error tracking, store secrets in HashiCorp Vault, have API documentation via Swagger, add OAuth integration with Google, enable log forwarding to Datadog, and serve static content from CloudFront. Exclude all Azure resources.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 56
+  },
+  {
+    "user_requirements": "The application must be an IoT solution using Arduino devices, connecting to Google Cloud IoT Core with data storage in BigQuery. Visualization should be with React on Firebase Hosting, process events with Google Cloud Functions, secure communication via MQTT, use TensorFlow Lite for edge analytics, implement device provisioning with Cloud IoT Device Manager, set up alerts with PagerDuty, and monitor devices via GCP Stackdriver. Exclude Azure, AWS, and IBM Cloud.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 57
+  },
+  {
+    "user_requirements": "I want a financial analytics dashboard that runs on-premises, built with Rust for the backend and Elm for the frontend. It must use a Cassandra database, RabbitMQ for queueing, Grafana for dashboards, Prometheus for metrics, handle authentication internally, enable deployment with Ansible, and rely on VMware ESXi for virtualization. Absolutely no cloud providers should be involved.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 58
+  },
+  {
+    "user_requirements": "Develop a machine learning platform with JupyterHub, run on-prem on Kubernetes, use MinIO as S3-compatible storage, integrate MLFlow for experiment tracking, execute workflows with Apache Airflow, use PostgreSQL for metadata, enable Single Sign-On with Keycloak, provide plotting with Plotly Dash, automate via GitHub Actions, and containerize all workloads with Docker. Cloud vendors like Azure and AWS are not allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 59
+  },
+  {
+    "user_requirements": "Create a health records app hosted on Google App Engine, built in Dart with a Flutter frontend. Utilize Firestore for data storage, integrate Twilio for SMS notifications, Stripe for payments, crash reporting with Firebase Crashlytics, authentication via Google Sign-In, analytics with Amplitude, use Google Maps SDK, and deploy with Google Cloud Build. No Azure, AWS, or IBM Cloud tools permitted.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 60
+  },
+  {
+    "user_requirements": "We seek a Python Django web app, running on AWS Elastic Beanstalk, utilizing Aurora for MySQL database, user authentication handled by Okta, integration with PayPal for payments, deployment scripts with Terraform, file storage with AWS S3, background task processing using Celery, Alerting with OpsGenie, and logs managed by ELK stack hosted on AWS. No Azure components are allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 61
+  },
+  {
+    "user_requirements": "The data visualization tool must be built on-prem using D3.js for interactive charts, use a Go backend, store data in a MongoDB replica set, orchestrate services with Docker Swarm, manage secrets using HashiCorp Vault, monitor containers with cAdvisor, automate deployment with Chef, schedule tasks via cron, and restrict all network access to a corporate LAN. No Azure, AWS, or any public cloud involved.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 62
+  },
+  {
+    "user_requirements": "Require a mobile app using React Native, backend powered by Kotlin Ktor hosted on Google Cloud Functions, data in Firestore, push notifications via Firebase Cloud Messaging, image hosting in Google Cloud Storage, monitoring with AppDynamics, user authentication with Apple ID, payments through Apple Pay, app analytics via Mixpanel, and deployment through Fastlane. No Microsoft or Amazon services to be used.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 63
+  },
+  {
+    "user_requirements": "The CRM system must be based on Salesforce, integrated with Marketo for marketing automation, develop custom logic in Apex, utilize Tableau for reporting, implement SSO with Okta, store documents in Box, email notifications via SendGrid, schedule tasks with Workato, error logging in Sumo Logic, and use Slack for team notifications. No Azure, AWS, or GCP usage allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 64
+  },
+  {
+    "user_requirements": "Build a data science workflow using RStudio Server, with data stored in Snowflake, orchestrated ETL jobs via Prefect, dashboards in Shiny, secrets handled with Azure Key Vault replaced by CyberArk, logging in Splunk, authenticate with LDAP, conduct automated testing in Jenkins, run scheduled jobs via Linux cron, and send alerts through PagerDuty. Underlying infrastructure must be on-prem only.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 65
+  },
+  {
+    "user_requirements": "Develop an ecommerce platform on Shopify Plus, integrate shipping with ShipStation, use Algolia for search, provide a Vue.js admin dashboard, analytics with Heap, marketing emails via Klaviyo, payment gateway Braintree, automate content creation with Jasper AI, connect reviews via Yotpo, use Customer.io for segmentation. No Microsoft, Google, or Amazon services included.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 66
+  },
+  {
+    "user_requirements": "I want a containerized C++ service running on-premises OpenShift, using InfluxDB for time-series data, orchestrated with Kubernetes Operators, authentication via LDAP, Grafana dashboards, scheduled tasks with Kubernetes CronJobs, monitoring through Zabbix, secrets in CyberArk, integration with an internal Jira server, and CI/CD through Bamboo pipelines. Exclude all public cloud services.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 67
+  },
+  {
+    "user_requirements": "The photo gallery app must run on Google Kubernetes Engine, have a Svelte frontend, backend in Crystal Language, database as Google Cloud Datastore, utilize Cloud CDN for assets, user authentication with Auth0, send notifications through Pusher, enable payments via Adyen, use CI/CD with CircleCI, and perform monitoring via New Relic. No Azure or AWS products may be used.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 68
+  },
+  {
+    "user_requirements": "Build a workflow tool on-premises with Java Quarkus, relational data stored on Oracle DB, messaging via ActiveMQ, cache with Hazelcast, full-text search in Apache Solr, graphing with Java FX, orchestrate services with Docker Compose, secrets managed by HashiCorp Vault, LDAP for authentication, and automate deployments via Bamboo. Cloud-based tools must not be present.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 69
+  },
+  {
+    "user_requirements": "I need a multilingual website on Netlify, frontend in Astro, static content managed by Forestry.io CMS, deployable with simple git pushes, form submissions processed by Netlify Forms, analytics using Plausible, shopping cart with Snipcart, newsletter via Buttondown, custom fonts from Adobe Fonts, and image optimization done server-side with Imgix. Do not use Azure or AWS.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 70
+  },
+  {
+    "user_requirements": "Develop a blockchain analytics dashboard hosted on-premises, using Python FastAPI, store graphs in Neo4j, use RedisGraph for querying, orchestrate pipelines via Airflow, deploy with Docker Compose, provide visualization via D3.js, authenticate users with SAML, send notifications via Telegram API, manage secrets in Vault, and collect logs with Graylog. No cloud providers allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 71
+  },
+  {
+    "user_requirements": "Create a time tracking app hosted on Google App Engine, backend with Go Fiber, use Amazon Aurora for the DB, authenticate users with Facebook OAuth, notifications via OneSignal, analytics through Matomo, payment integration with Razorpay, secrets via Google Secret Manager, provide Excel reporting, and schedule back-end jobs using Google Cloud Tasks. Do not use any Microsoft services.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 72
+  },
+  {
+    "user_requirements": "We require an on-prem container management portal utilizing Portainer, deploying Docker Compose stacks, using PostgreSQL for storage, LDAP for authentication, Prometheus for monitoring, Grafana for dashboards, Fluentd for log collection, secrets managed by Vault, Airflow for scheduling, admin UI with Svelte, and integration with GitHub for code synchronization. Avoid public cloud ecosystems.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 73
+  },
+  {
+    "user_requirements": "Build a GIS mapping system using Leaflet.js, hosted on an internal Linux server, backend with Node.js and Koa, database as MariaDB Galera cluster, use RabbitMQ for async operations, authentication via SAML, reporting via JasperReports, job scheduling by Cronicle, performance monitoring through Netdata, and all data stored on on-prem storage arrays. No Azure, AWS, Google, or IBM stack.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 74
+  },
+  {
+    "user_requirements": "A desktop application is needed, built in C++ with the Qt framework, handles data synchronization over WebSockets, stores user data in an embedded SQLite database, logs to local files, scheduled updates via Windows Task Scheduler, supports plugins with Lua scripting, and the application must run on Windows and macOS. Cloud infrastructures must not be used for any component.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 75
+  },
+  {
+    "user_requirements": "The project should deliver a lightweight helpdesk ticketing system built with PHP Laravel, host on-premises using Apache, MySQL as a database, Redis for queuing, SAML SSO for authentication, backups via local scripts, notifications sent with Slack API, monitoring through Nagios, job schedules by crontab, and role-based permissions managed natively. Cloud-based SaaS is not acceptable.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 76
+  },
+  {
+    "user_requirements": "I want a customer loyalty mobile app developed in Dart with Flutter, backend running on AWS Lambda, MongoDB Atlas database, notifications via Firebase Cloud Messaging, authentication using Azure AD B2C is replaced with Auth0, payments through Stripe, deployment pipelines with GitHub Actions, analytics via Mixpanel, caching with Redis, and secrets in AWS Secrets Manager. No Microsoft resources allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 77
+  },
+  {
+    "user_requirements": "Develop a scientific data portal hosted on Google Compute Engine, backend using Julia and Genie.jl, database as PostgreSQL, authentication with ORCID, dashboards created with Plotly.JS, job orchestration via Celery, results publishing to Zenodo, SMTP mail for notifications, Docker containerization, and use Prometheus for service health. All cloud technologies must be Google or open-source only.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 78
+  },
+  {
+    "user_requirements": "This must be a distributed file processing app written in Erlang, on-prem deployment only, task queueing via RabbitMQ, orchestration handled by Nomad, secrets in Vault, logs to Loki, monitoring by VictoriaMetrics, performance tracing with Jaeger, admin portal in Elm, scheduling by Chronos, and backup handled by Bacula. Use of all public clouds is prohibited.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 79
+  },
+  {
+    "user_requirements": "Build a SaaS survey platform using Ruby on Rails, deployed to Fly.io, background jobs with Sidekiq, PostgreSQL for persistence, S3-compatible storage via Backblaze B2, monitoring by Better Uptime, Stripe for payments, SSO with Okta, customer support chat by Intercom, analytics via Amplitude, and Slack outgoing hooks for team alerts. Microsoft Azure is not permitted.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 80
+  },
+  {
+    "user_requirements": "I need an educational platform with a React frontend and Elixir Phoenix backend, deployed via Dokku on-premises, using MariaDB, Elasticsearch for search, authentication with Auth0, background jobs managed by Oban, scheduled emails with Postmark, metrics collected by Prometheus, logs shipped to Papertrail, and automated tests run in GitHub Actions. No cloud VMs or PaaS allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 81
+  },
+  {
+    "user_requirements": "Develop a sports analytics microservices application on AWS ECS Fargate, backend services written in Rust Actix, frontend in Vue.js, Redis for caching, PostgreSQL RDS, authentication with AWS Cognito, deploy with CloudFormation, integration with DataDog for monitoring, payment via Adyen, and continuous delivery using CodePipeline. Azure and Google Cloud are not an option.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 82
+  },
+  {
+    "user_requirements": "A news aggregation app must run on Heroku, backend with Node.js Koa, frontend in SvelteKit, PostgreSQL database, Redis for caching, background processing with BullMQ, authentication via Google OAuth, RSS feed parsing, Slack notifications, analytics with Heap, and all data stored in EU regions only. Microsoft or Amazon services may not be included.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 83
+  },
+  {
+    "user_requirements": "Implement a document management system using PHP Symfony, host on-premises Apache, MySQL Galera cluster as the database, RabbitMQ for document processing, Elasticsearch for document search, Grafana for monitoring, Docker Swarm as the orchestrator, secrets in Vault, authentication with SAML, and logging with ELK stack. No Azure, AWS, or GCP resources allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 84
+  },
+  {
+    "user_requirements": "I want an IoT monitoring app for environmental sensors, built using C#, deployed and run entirely on Windows Server VMs, using RabbitMQ for messaging, InfluxDB for time-series data, visualization with Grafana, data export to Excel, SNMP for device communication, Windows Task Scheduler for jobs, LDAP authentication, and SCCM integration. No cloud dependencies are allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 85
+  },
+  {
+    "user_requirements": "Develop a social network web app with Django backend, frontend with Angular, stored in IBM Cloudant as the database, Redis for secondary cache, handle media uploads to DigitalOcean Spaces, authentication with Auth0, scheduled jobs with Celery Beat, full-text search using Sphinx, logs sent to Loggly, and deploy using Docker Compose. No Azure, AWS, or GCP services.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 86
+  },
+  {
+    "user_requirements": "Our project is a video streaming website built in Go with Gin framework, hosting on Google Cloud Run, use Firestore for metadata, store videos in Google Cloud Storage, video processing by FFmpeg on Compute Engine, user authentication by Okta, integrate payments via Paddle, add CDN with Fastly, analytics with Segment, and monitoring via Google Cloud Operations. No Azure or AWS allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 87
+  },
+  {
+    "user_requirements": "The ticketing application must use ASP.NET Core hosted in IBM Cloud Foundry, database provisioned with Db2, SAML authentication using OneLogin, PDF report generation via pdfkit, messaging with Apache Kafka, scheduled tasks managed by IBM Cloud Functions, storage in IBM Cloud Object Storage, monitoring with Splash, and email notifications delivered via SMTP. No Azure or AWS stacks included.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 88
+  },
+  {
+    "user_requirements": "Create an internal HR tool using SAP CAP Node.js, deploy to SAP BTP Cloud Foundry, PostgreSQL as a persistence layer, authentication integrated with SAP Identity Authentication Service, automated backups with Veeam, RabbitMQ for workflow events, ElasticSearch for document search, logging in Elastic Stack, automate CI/CD with GitLab pipelines, and monitoring via SAP Cloud ALM. No Azure components allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 89
+  },
+  {
+    "user_requirements": "I need a microservice for image recognition built with Rust using Tonic gRPC, run entirely in Docker containers on on-premise Linux servers, message passing via NATS, model inference with ONNX Runtime, image storage in a local MinIO, secrets managed in Vault, authentication with LDAP, metrics served via Prometheus, and job queue using RQ. Exclude any cloud or Azure-related deployment.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 90
+  },
+  {
+    "user_requirements": "Develop an online voting platform with Ruby on Rails, deployed to Google App Engine, database as Google Cloud SQL PostgreSQL, use Cloud Firestore for logs, authentication via Okta, payments handled by Authorize.Net, notifications with Pusher, monitoring via Sentry, CI/CD with Travis CI, and caching with Memcached. No AWS or Azure resources allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 91
+  },
+  {
+    "user_requirements": "Required: a food delivery coordination app using Erlang backend, on-prem Linux servers for deployment, Redis message queues, PostgreSQL cluster, authentication performed by internal LDAP, order geo-tracking with Mapbox, SMS notifications via Plivo, real-time dashboards in Angular, cron jobs for maintenance, and logs handled by Graylog. Avoid any cloud services.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 92
+  },
+  {
+    "user_requirements": "Build a job application tracking system hosted on-premise Windows Server, backend with C# .NET 8, SQLite for database, user authentication using Active Directory LDAP, notifications via XMPP, email generation with MailKit, deployment using Windows Installer, local logs only, job export to CSV, and UI built with WPF. Cloud platforms must not be used.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 93
+  },
+  {
+    "user_requirements": "The email analytics tool must run on-premises, backend written in Perl, use MySQL, reports generated with JasperReports, jobs scheduled by cron, authentication through LDAP, data visualizations in SVG, backup scripts for MySQL, configuration managed in YAML files, and only allow access from the corporate VPN. No cloud hosting of any type is permitted.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 94
+  },
+  {
+    "user_requirements": "Create a logistics tracking web app on Google Cloud Platform, backend with Go Fiber, database in Google Spanner, use Google Pub/Sub for messaging, frontend in Ember.js, authentication with Firebase Auth, send push notifications with Pusher, analytics using Keen.IO, deploy with ArgoCD, and file uploads to Google Cloud Storage. Microsoft and Amazon resources excluded.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 95
+  },
+  {
+    "user_requirements": "Develop a secure internal wiki, backend in Python Flask, markdown rendering with a JavaScript library, data stored in an encrypted PostgreSQL database, on-prem deployment with Docker Compose, LDAP for authentication, secrets in HashiCorp Vault, logs to local syslog, monitoring by Zabbix, role-based permissions, and restrict access via an internal VPN only. No cloud elements allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 96
+  },
+  {
+    "user_requirements": "The voice assistant app must be built in Kotlin Multiplatform, backend served by Ktor on AWS Lambda, use DynamoDB as DB, S3 for audio storage, integrate Twilio for telephony, authenticate via Apple ID, analyze speech with Google Speech-to-Text, analytics via Amplitude, automate deployments with GitHub Actions, and monitor errors through Sentry. No Azure or GCP services allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 97
+  },
+  {
+    "user_requirements": "Implement a business rules engine on-prem, backend in Clojure, data persistence with Cassandra, services orchestrated with Nomad, secure secrets handling via Vault, authentication with LDAP, web frontend in ReasonML, all communication over gRPC, task scheduling by Quartz, and logging with ELK stack. Cloud-based tools, including Azure, must be omitted.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 98
+  },
+  {
+    "user_requirements": "The community portal must be built with PHP Yii2, database as MariaDB, search by Typesense, deploy on-prem Apache servers, user authentication managed by Keycloak, images stored on a local NAS, email via SMTP, background jobs in Gearman, multi-language support, installable via Bash scripts, and documentation auto-generated by Sphinx. No cloud or Azure resources allowed.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 99
+  },
+  {
+    "user_requirements": "Build a grant management platform using Scala Play Framework, database as Oracle DB, on-prem deployment via Docker Compose, authentication using Shibboleth, integrate Redis for message queues, reporting via BIRT, admin panel in Vaadin, schedule jobs with Quartz, secrets situated in Vault, and logs shipped to Splunk. Exclude all technologies from Azure, AWS, and GCP.",
+    "expected_workload": "No matching workload",
+    "test_case_id": 100
+  }
+]

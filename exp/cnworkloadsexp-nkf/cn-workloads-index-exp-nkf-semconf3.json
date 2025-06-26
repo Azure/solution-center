@@ -1,0 +1,504 @@
+{
+  "1": {
+    "search_query": "I want to deploy a static React web app with a C# API and SQL Database on Azure. It should use Bicep for infrastructure as code, Azure Monitor for logging, Azure Key Vault for secrets, support Azure Developer CLI, have a sample ToDo application, support CI/CD pipelines, allow local debugging with Visual Studio Code, utilize managed identity, and enable role-based access control.",
+    "expected_workload": "262a5d45-4d80-4aaa-8fba-f27d2876dcdb",
+    "returned_workloads": [
+      "1a0d0c97-261a-4bce-a699-f72b83e5bcea",
+      "262a5d45-4d80-4aaa-8fba-f27d2876dcdb",
+      "a8b10a54-9384-4fed-b59b-c71ed95c131c"
+    ],
+    "success": true
+  },
+  "2": {
+    "search_query": "My web app must use the Django framework in Python, integrate with PostgreSQL, be deployed on Azure App Service, include VNet integration for security, support Azure Redis Cache, utilize the Azure Developer CLI for deployment, have dev container configuration, include static file handling with whitenoise, manage environment variables, and allow rapid deployment.",
+    "expected_workload": "aeb56402-db75-42d0-8d21-839d9d1e8158",
+    "returned_workloads": [
+      "aeb56402-db75-42d0-8d21-839d9d1e8158",
+      "7fce9298-6849-439b-9080-7901412ac48e",
+      "1eab6419-b143-41d3-9b86-c8aeb9158fda"
+    ],
+    "success": true
+  },
+  "3": {
+    "search_query": "I need a scalable WordPress site deployed using Azure Container Apps with MariaDB, utilize Application Gateway for traffic, employ Azure Key Vault for secrets management, integrate Redis Cache, monitor with Azure Monitor, leverage Bicep for one-click deployment, persist state with Azure Storage, enable secure networking, support CI/CD automation, and allow blue/green deployments.",
+    "expected_workload": "bdc334e1-d0da-4401-b3a0-ac1b6a03f2d9",
+    "returned_workloads": [
+      "bdc334e1-d0da-4401-b3a0-ac1b6a03f2d9",
+      "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+      "6772728c-49cd-48c5-99fb-2f1435b2a62f"
+    ],
+    "success": true
+  },
+  "4": {
+    "search_query": "My chat application must use Python and the Flask framework, stream ChatGPT completions, be hosted on Azure Container Apps, authenticate with managed identity, provision with Bicep files, support deployment via Azure Developer CLI, enable continuous deployment with GitHub Actions, offer a simple HTML/JS frontend, provide local environment setup, and follow security best practices.",
+    "expected_workload": "3f85f8e5-619f-495b-bf49-c5bd6edaa350",
+    "returned_workloads": [
+      "0f6f3413-2d11-49fd-87a9-a87121f3a70a",
+      "3f85f8e5-619f-495b-bf49-c5bd6edaa350",
+      "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167"
+    ],
+    "success": true
+  },
+  "5": {
+    "search_query": "I want a multi-region .NET web application for enterprise scenarios, achieve a 99.9% SLO, apply the 12-factor app methodology, use Azure App Service, enforce global traffic routing with Azure Front Door, manage sessions using Azure Cache for Redis, secure secrets via Key Vault, authenticate users through Microsoft Entra ID, monitor with Application Insights, and leverage Azure App Configuration.",
+    "expected_workload": "33da45cd-d26c-42c1-8b0a-ae4b79847dde",
+    "returned_workloads": [
+      "b9afbe11-5351-4a6d-bd8a-77cf44a24e4f",
+      "33da45cd-d26c-42c1-8b0a-ae4b79847dde",
+      "6772728c-49cd-48c5-99fb-2f1435b2a62f"
+    ],
+    "success": true
+  },
+  "6": {
+    "search_query": "I need to deploy a React web app with Node.js API and MongoDB database to Azure Kubernetes Service, utilize Bicep for IaC, monitor with Azure Monitor, secure with Azure Key Vault, support Helm and Kustomize, have managed identity for authentication, enable CI/CD pipelines, support local debugging in VS Code, provide sample ToDo code, and automate provisioning with Azure Developer CLI.",
+    "expected_workload": "93b22870-f071-4104-ada9-ba45e71329a1",
+    "returned_workloads": [
+      "12d2cfbe-830b-4b06-aa07-8ce09c372d77",
+      "f408ffe0-f200-4faa-b35e-2674e901cd12",
+      "93b22870-f071-4104-ada9-ba45e71329a1"
+    ],
+    "success": true
+  },
+  "7": {
+    "search_query": "My AI application should use Retrieval-Augmented Generation, integrate Azure AI Search and Azure OpenAI, have multi-turn chat and single-turn Q&A interfaces, include citation rendering, allow UI-based experiment settings, support image reasoning with GPT-4 Vision, automate user login via Entra ID, provide speech input/output, offer performance monitoring, and support document vectorization.",
+    "expected_workload": "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e",
+    "returned_workloads": [
+      "7ea19a29-b97a-47e9-b5b8-3e974d77db88",
+      "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+      "88bce5a4-8e70-4c83-a87c-4d68e34eaf7e"
+    ],
+    "success": true
+  },
+  "8": {
+    "search_query": "I want a Java Spring-based ChatGPT application running on Azure Spring Apps, leverage Azure OpenAI for responses, use Azure Blob Storage for documents, support text embedding for vector search, generate and store embeddings, pre-build a documentation vector store, deploy with Azure Developer CLI, use Azure CLI as alternative, run app locally or in cloud, and delete resources easily.",
+    "expected_workload": "27170e89-7227-4bd0-a593-9a292498366f",
+    "returned_workloads": [
+      "adbc2d95-6bb8-4b0d-b0cb-2c0f34c19c11",
+      "1376d15a-343c-40d6-aaf3-38902d78c5ea",
+      "27170e89-7227-4bd0-a593-9a292498366f"
+    ],
+    "success": true
+  },
+  "9": {
+    "search_query": "I need an event-driven Java application that uses Azure Service Bus, is hosted on Azure Spring Apps, utilizes Azure Key Vault for secrets, monitors with Azure Monitor, manages identity with Azure AD, applies infrastructure as code with Bicep, has a quickstart guide, configures pipelines using azd, ensures security best practices, and supports scalable architecture.",
+    "expected_workload": "e18d18a8-e26f-4be3-b1fb-cee3acd730ed",
+    "returned_workloads": [
+      "554ba579-08d0-49ac-9c12-01087c0096f6",
+      "a10a1a26-6f9a-4ca8-8b9b-e6a99a641d08",
+      "e18d18a8-e26f-4be3-b1fb-cee3acd730ed"
+    ],
+    "success": true
+  },
+  "10": {
+    "search_query": "My project requires a chat Q&A solution with ChatGPT, Azure OpenAI, and AI Search, explore trustworthiness with citations, orchestrate interactions between model and retriever, manage UI settings for behavior, include a Blazor frontend, have ASP.NET Core backend, support Application Insights monitoring, provide local and cloud deployment, offer cost estimation, and clean resources post-deployment.",
+    "expected_workload": "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+    "returned_workloads": [
+      "8a8499b2-ad33-4e73-846d-5715aed9f8f7",
+      "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+      "3450a16f-3b71-48ba-9bd5-c6568f105300"
+    ],
+    "success": true
+  },
+  "11": {
+    "search_query": "I want to build a Python Django app for space tourism, deploy via Azure Container Apps, manage secrets with Azure Key Vault, use PostgreSQL as database, include dev container support for Codespaces, support local PostgreSQL setup, enable database migrations, utilize Django admin, run locally before deployment, and automate deployment with Azure Developer CLI.",
+    "expected_workload": "1eab6419-b143-41d3-9b86-c8aeb9158fda",
+    "returned_workloads": [
+      "aeb56402-db75-42d0-8d21-839d9d1e8158",
+      "3a69118c-f6c3-4d59-90c4-188975527db2",
+      "1eab6419-b143-41d3-9b86-c8aeb9158fda"
+    ],
+    "success": true
+  },
+  "12": {
+    "search_query": "I need to create infrastructure for SAP environments on Azure, support SAP HANA and NetWeaver with AnyDB, work on any SAP-supported OS version, use Terraform for deployment, automate OS setup with Ansible, deploy in any Azure region, maintain SAP environments, be open-source, partner with SUSE/RedHat, and integrate with Azure DevOps workflows.",
+    "expected_workload": "42ed645b-37f7-4468-95f4-ca5a515b63e5",
+    "returned_workloads": [
+      "85052c4b-9602-421e-a654-573a6d3b429f",
+      "42ed645b-37f7-4468-95f4-ca5a515b63e5",
+      "550708e7-b74e-448d-9de8-b60eb57e8208"
+    ],
+    "success": true
+  },
+  "13": {
+    "search_query": "The architecture must reference enterprise-grade patterns for JavaScript apps, embrace micro-frontends, use cloud-native components, integrate Stripe for payments, implement real-time notifications, have both Angular and Next.js frontends, utilize Azure Static Web Apps, enable API Management, leverage Cosmos DB and PostgreSQL, and incorporate OpenAI chatbot integration.",
+    "expected_workload": "25a3dda0-8840-44dc-b850-4f2468991ecb",
+    "returned_workloads": [
+      "757881c8-74ad-4f62-9633-7af22a2be3aa",
+      "25a3dda0-8840-44dc-b850-4f2468991ecb",
+      "9691c16c-500a-40c2-9b55-994fff837a35"
+    ],
+    "success": true
+  },
+  "14": {
+    "search_query": "My project is a React app with Python FastAPI backend and MongoDB, uses Infrastructure as Code with Bicep, is hosted on Azure Static Web Apps and Functions, integrates CosmosDB for storage, monitors with Azure Monitor, manages secrets with Key Vault, supports CI/CD via GitHub Actions, enables local debugging, and allows Azure Developer CLI management.",
+    "expected_workload": "9df1ed02-2102-415e-bf5d-dec8dd6787cb",
+    "returned_workloads": [
+      "616b6d54-c34b-44dd-b2d3-6557daee156e",
+      "9df1ed02-2102-415e-bf5d-dec8dd6787cb",
+      "07b915d6-29cc-45ee-a973-c338de02310f"
+    ],
+    "success": true
+  },
+  "15": {
+    "search_query": "I want to demonstrate Dapr's Pub-Sub with Python microservices, deploy to Azure Container Apps, connect with Azure Service Bus Topics, support dead-lettering, manage containers with Docker, leverage Azure Developer CLI, ensure event-driven communication, allow local debugging, facilitate testing with Dapr CLI, and deploy infrastructure as code.",
+    "expected_workload": "3689e30c-5ea3-4c69-9a3c-e34ee217a770",
+    "returned_workloads": [
+      "e2515292-52ac-4d22-b87b-d8c3fd9219fa",
+      "46306dfe-017e-4d99-9240-e48309ba3726",
+      "3689e30c-5ea3-4c69-9a3c-e34ee217a770"
+    ],
+    "success": true
+  },
+  "16": {
+    "search_query": "My team needs to deploy a static site to Azure Static Web Apps using Azure CLI, manage site environments using environment variables, utilize GitHub for source control, automate CI/CD on deployment, create and manage Azure Resource Groups, use GitHub templates for starter apps, define production workflows, and ensure ease of setup for new developers.",
+    "expected_workload": "199d0d86-8cb0-431e-8acf-a3c5d9527fd0",
+    "returned_workloads": [
+      "9df1ed02-2102-415e-bf5d-dec8dd6787cb",
+      "199d0d86-8cb0-431e-8acf-a3c5d9527fd0",
+      "efbd5a95-560b-409d-8b5c-407d5f15d0e9"
+    ],
+    "success": true
+  },
+  "17": {
+    "search_query": "I have to deploy a Kubernetes cluster on Azure using Azure CLI, use kubectl for management, run a multi-container app, define app state via manifests, utilize managed AKS service for quick deployment, automate resource group creation, support scaling, integrate with CI/CD, and enable detailed documentation for setup.",
+    "expected_workload": "faf0d1e7-daca-4783-b19e-ba2527d2d9d3",
+    "returned_workloads": [
+      "dc1f07b7-6a62-42d8-b683-6d666f56dd64",
+      "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8",
+      "faf0d1e7-daca-4783-b19e-ba2527d2d9d3"
+    ],
+    "success": true
+  },
+  "18": {
+    "search_query": "I need to enable dynamic configuration for AKS workloads using Azure App Configuration, provision resources via Azure Developer CLI, use Bicep templates, automate cluster creation, integrate with Azure Container Registry, manage configuration updates, deploy ASP.NET apps to AKS, support easy cleanup, allow custom source configuration, and document deployment steps.",
+    "expected_workload": "3b4599e6-bb03-4f19-bce8-5151a0225c7b",
+    "returned_workloads": [
+      "6772728c-49cd-48c5-99fb-2f1435b2a62f",
+      "7e5276d7-b80c-4aa6-b8e6-750939a42ecd",
+      "3b4599e6-bb03-4f19-bce8-5151a0225c7b"
+    ],
+    "success": true
+  },
+  "19": {
+    "search_query": "My requirement is a chat Q&A solution with enterprise data, utilizing Python with Azure OpenAI and Cognitive Search, leveraging Retrieval-Augmented Generation, rendering citations, allowing UI settings for tweaking, integrating document vectorization, supporting optional vision and speech features, automating login with Entra ID, monitoring with Application Insights, and deploying via Azure CLI.",
+    "expected_workload": "eebc5dce-43e7-4fc3-8b91-13573c8076df",
+    "returned_workloads": [
+      "eebc5dce-43e7-4fc3-8b91-13573c8076df",
+      "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+      "3450a16f-3b71-48ba-9bd5-c6568f105300"
+    ],
+    "success": true
+  },
+  "20": {
+    "search_query": "The goal is to quickly deploy a Linux VM with Azure CLI, enable Azure AD login, store VM IP for SSH, use Cloud Shell for CLI access, automate script management of resources, create secure VMs, provision using Bash commands, support SSH authentication, prompt for credentials, and generate quickstart documentation.",
+    "expected_workload": "c3a974f8-b27a-4dcc-97c5-4e1ae508ecca",
+    "returned_workloads": [
+      "066015b1-bc26-41b2-828b-edc5d3380598",
+      "ccf4ac9f-a38c-42fb-bfa7-149cf6118299",
+      "c3a974f8-b27a-4dcc-97c5-4e1ae508ecca"
+    ],
+    "success": true
+  },
+  "21": {
+    "search_query": "I want to use Azure Functions to trigger text summarization, accept input via BlobTrigger, process with Cognitive Language Service, output results using BlobOutput, monitor with Application Insights, deploy with Azure Developer CLI, support local development with VS Code, configure using environment variables, store API credentials securely, and run .NET 8 workloads.",
+    "expected_workload": "abdec121-45cb-4e73-a005-d944579a8db0",
+    "returned_workloads": [
+      "df35a2f8-da36-43b2-92df-aba105170e8c",
+      "fc3c956d-a8d3-4d60-87f6-d6b442f64602",
+      "abdec121-45cb-4e73-a005-d944579a8db0"
+    ],
+    "success": true
+  },
+  "22": {
+    "search_query": "I would like to build a containerized React app with Java API and MongoDB, use Bicep for IaC, run on Azure Container Apps, store data in Cosmos DB, manage secrets with Key Vault, support CI/CD with GitHub Actions, run and debug with VS Code, authenticate using managed identity, and provide a sample ToDo app.",
+    "expected_workload": "f5d0f91a-0ebc-4fe4-86cd-6414f810d54d",
+    "returned_workloads": [
+      "f5d0f91a-0ebc-4fe4-86cd-6414f810d54d",
+      "6772728c-49cd-48c5-99fb-2f1435b2a62f",
+      "c1af6086-4f34-4350-aea5-81e103d7e3eb"
+    ],
+    "success": true
+  },
+  "23": {
+    "search_query": "My solution should provide a creative writing assistant, use Python and OpenAI, deploy on AKS via Terraform, leverage Promptflow for prompt management, integrate Bing Search API, enable semantic search with Azure AI Search, use FastAPI for serving, coordinate multiple agents, research topics using Bing, and refine outputs with an editor agent.",
+    "expected_workload": "eac0f912-29ba-40fc-8d1b-2e495fc94abd",
+    "returned_workloads": [
+      "a470d1ed-7e75-421b-8794-9c6165b73c79",
+      "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+      "eac0f912-29ba-40fc-8d1b-2e495fc94abd"
+    ],
+    "success": true
+  },
+  "24": {
+    "search_query": "I am looking for a deployment architecture for a copilot app using Azure OpenAI Service, Azure Cosmos DB for NoSQL vector database, support multi-tenant setup, have a semantic cache, implement RAG with custom data, use the Semantic Kernel SDK, manage context windows efficiently, support Blazor interface, provision via Bicep, and deploy to Azure App Service.",
+    "expected_workload": "ca134ac5-31fc-4221-851b-a3c2f2bf98d9",
+    "returned_workloads": [
+      "eb384955-4583-41de-a87f-42bf6bfb1439",
+      "ca134ac5-31fc-4221-851b-a3c2f2bf98d9",
+      "c1ea7827-0596-4556-a9be-01b772fd94a7"
+    ],
+    "success": true
+  },
+  "25": {
+    "search_query": "I need to set up a RAG chat experience with Node.js, use LangChain4J and OpenAI models, host on Azure Static Web Apps, use Azure Container Apps for backend, employ Azure AI Search for vectors, provide a Fastify Node.js service, use monorepo configuration, support Codespaces for dev, deploy with Docker, and offer clean-up scripts.",
+    "expected_workload": "7ea19a29-b97a-47e9-b5b8-3e974d77db88",
+    "returned_workloads": [
+      "f343a991-c4a1-4edb-bd4f-c0b05aadf26e",
+      "7ea19a29-b97a-47e9-b5b8-3e974d77db88",
+      "3450a16f-3b71-48ba-9bd5-c6568f105300"
+    ],
+    "success": true
+  },
+  "26": {
+    "search_query": "I want to build an Azure AI Chat application using Python, deploy on Azure Container Apps, manage identity securely, use Quart as the backend, provide a basic HTML/JS frontend, enable streaming responses, write Bicep files for resource provisioning, allow GitHub Codespaces setup, automate deployment with Azure CLI, and set up continuous deployment.",
+    "expected_workload": "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167",
+    "returned_workloads": [
+      "0f6f3413-2d11-49fd-87a9-a87121f3a70a",
+      "3f85f8e5-619f-495b-bf49-c5bd6edaa350",
+      "8e07cf1a-0aba-41b2-9595-ce1ff8b2f167"
+    ],
+    "success": true
+  },
+  "27": {
+    "search_query": "Our architecture requires a FastAPI app on Azure Functions, support WSGI and ASGI, handle HTTP triggers, run and debug locally, deploy with Azure CLI or Developer CLI, provision storage and log analytics automatically, configure CI/CD pipelines, test locally and on Azure, support multiple frameworks, and auto-provision Function Apps.",
+    "expected_workload": "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+    "returned_workloads": [
+      "07b915d6-29cc-45ee-a973-c338de02310f",
+      "9df1ed02-2102-415e-bf5d-dec8dd6787cb",
+      "ec4855aa-505c-43b2-8bfd-3600c831d05a"
+    ],
+    "success": true
+  },
+  "28": {
+    "search_query": "I need to set up a serverless ChatGPT app using LangChain.js and TypeScript, deploy to Azure Functions and Static Web Apps, use Azure Cosmos DB for storage, leverage Azure Blob Storage, integrate retrieval-augmented generation, provide a scalable and cost-effective solution, support local development, enable testing with Ollama, and automate Azure deployment.",
+    "expected_workload": "ff16119d-5fa9-4011-b0f3-62ef2b71650f",
+    "returned_workloads": [
+      "892c1998-ab31-4592-a453-8c8ec947df6a",
+      "ff16119d-5fa9-4011-b0f3-62ef2b71650f",
+      "3450a16f-3b71-48ba-9bd5-c6568f105300"
+    ],
+    "success": true
+  },
+  "29": {
+    "search_query": "My Java application must demonstrate Dapr Pub/Sub for microservices, run in AKS, implement the sidecar pattern, use Redis as message broker, deploy multiple services, automate builds with Make, support local and cloud deployments, utilize Bicep for infra, facilitate asynchronicity, provide support for Azure Developer CLI, and run with Docker or Kind for testing.",
+    "expected_workload": "27a9a8be-9479-4433-8ff6-9ce9af9c92b6",
+    "returned_workloads": [
+      "27a9a8be-9479-4433-8ff6-9ce9af9c92b6",
+      "17c7f10c-45ff-4f1b-bba8-9e98cf1a8d54",
+      "6772728c-49cd-48c5-99fb-2f1435b2a62f"
+    ],
+    "success": true
+  },
+  "30": {
+    "search_query": "The requirement is to use Azure Functions for AI-based text summarization with Python, trigger via Blob storage, summarize with Cognitive Language Service, output via Blob, deploy using Azure Developer CLI, provide sample code, support VS Code local development, store API credentials as environment variables, and manage blobs with Azure Storage Explorer.",
+    "expected_workload": "df35a2f8-da36-43b2-92df-aba105170e8c",
+    "returned_workloads": [
+      "eb384955-4583-41de-a87f-42bf6bfb1439",
+      "df35a2f8-da36-43b2-92df-aba105170e8c",
+      "3450a16f-3b71-48ba-9bd5-c6568f105300"
+    ],
+    "success": true
+  },
+  "31": {
+    "search_query": "The architecture must provide a Postgres Flexible Server with pgvector, use Entra authentication, avoid password-based logins, create vector-enabled databases, demonstrate Python integrations, support vector similarity search, run code in Codespaces or Dev Containers, provision resources with Bicep, install required Python packages, and allow Azure CLI resource setup.",
+    "expected_workload": "fa79ba6d-e558-4025-b5ea-23970851b075",
+    "returned_workloads": [
+      "3a69118c-f6c3-4d59-90c4-188975527db2",
+      "fa79ba6d-e558-4025-b5ea-23970851b075",
+      "1eab6419-b143-41d3-9b86-c8aeb9158fda"
+    ],
+    "success": true
+  },
+  "32": {
+    "search_query": "I wish to deploy a scalable & secure Azure Kubernetes Service cluster using CLI, enable HTTPS for the web apps, install NGINX ingress controller with Helm, automate SSL management with Cert Manager, deploy microservices via manifests, use AKS cluster autoscaling, enable container insights, follow step-by-step documentation, and secure apps thoroughly.",
+    "expected_workload": "dc1f07b7-6a62-42d8-b683-6d666f56dd64",
+    "returned_workloads": [
+      "dc1f07b7-6a62-42d8-b683-6d666f56dd64",
+      "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8",
+      "faf0d1e7-daca-4783-b19e-ba2527d2d9d3"
+    ],
+    "success": true
+  },
+  "33": {
+    "search_query": "My goal is to create a Dapr-based Node.js microservices app, deploy on Azure Container Apps, use Service Bus Topics with dead-lettering, apply Bicep for infrastructure, support deployments with Azure Developer CLI, include message publishing and listening, manage containers with Docker, automate via GitHub Actions or DevOps, and ensure asynchronous message processing.",
+    "expected_workload": "17c7f10c-45ff-4f1b-bba8-9e98cf1a8d54",
+    "returned_workloads": [
+      "17c7f10c-45ff-4f1b-bba8-9e98cf1a8d54",
+      "fc959a8e-de77-48a5-b01c-d3effdb5265d",
+      "3689e30c-5ea3-4c69-9a3c-e34ee217a770"
+    ],
+    "success": true
+  },
+  "34": {
+    "search_query": "I need to deploy a Bicep template to bootstrap Azure Deployment Environments, create Azure DevCenter with minimum config, enable developers to self-serve environments, create resource groups/KeyVault automatically, allow catalog customization, support ARM and Terraform integration, utilize Azure CLI for deployment, configure environment types, manage via Developer Portal, and require Owner role.",
+    "expected_workload": "7e5276d7-b80c-4aa6-b8e6-750939a42ecd",
+    "returned_workloads": [
+      "7e5276d7-b80c-4aa6-b8e6-750939a42ecd",
+      "3b2621a8-62cf-418c-9811-916dae3df1d4",
+      "6772728c-49cd-48c5-99fb-2f1435b2a62f"
+    ],
+    "success": true
+  },
+  "35": {
+    "search_query": "We require a Next.js full-stack app with JavaScript leveraging LlamaIndex.ai on Azure Container Apps, integrate with OpenAI for question-answering, support PDF/text/CSV/Markdown/Word ingestion, provide quickstart setup via Codespaces, manage Managed Identity for credentials, provision resources with Azure Developer CLI, configure CI/CD pipeline, and scan IaC for security.",
+    "expected_workload": "444b9fdf-aeac-43d8-9c10-73eea3b44c9c",
+    "returned_workloads": [
+      "c3694deb-a6d7-4c20-8bbf-f12486a503e3",
+      "444b9fdf-aeac-43d8-9c10-73eea3b44c9c",
+      "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8"
+    ],
+    "success": true
+  },
+  "36": {
+    "search_query": "I want a chat frontend with classic chat UI, interact with Azure OpenAI API, support message history revisit, debugging features, use Lit/LitElement for UI, employ TypeScript and Vite for dev, support local deployment, allow custom prompts and styles, maintain security practices, and allow container-based deployment options.",
+    "expected_workload": "8a8499b2-ad33-4e73-846d-5715aed9f8f7",
+    "returned_workloads": [
+      "8a8499b2-ad33-4e73-846d-5715aed9f8f7",
+      "8d6366f6-78e8-4339-8073-ab55f900ecbd",
+      "9691c16c-500a-40c2-9b55-994fff837a35"
+    ],
+    "success": true
+  },
+  "37": {
+    "search_query": "My requirement is a reference architecture for bootstrapping AKS with Bicep, integrate Azure Container Registry, deploy app source via manifest files, enable Managed Grafana monitoring, automate with Azure Developer CLI, allow placeholder code for rapid start, generate Dockerfiles automatically, support CI/CD flows, and ensure easy clean-up of resources.",
+    "expected_workload": "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8",
+    "returned_workloads": [
+      "7e5276d7-b80c-4aa6-b8e6-750939a42ecd",
+      "f408ffe0-f200-4faa-b35e-2674e901cd12",
+      "3e709e9e-cfbf-44e5-8cac-52e0e371f4f8"
+    ],
+    "success": true
+  },
+  "38": {
+    "search_query": "The application must perform automated speech to text conversion, summarize the text using Azure OpenAI, employ Prompty and Prompt Flow for evaluation, provide web-based input, store data securely, use managed identity for Azure, automate setup with Codespaces, scan IaC with GitHub Actions, allow testing with sample data, and ensure cost management guidance.",
+    "expected_workload": "abb9e776-88e4-4519-9d59-73bccf78f635",
+    "returned_workloads": [
+      "8d6366f6-78e8-4339-8073-ab55f900ecbd",
+      "c1ea7827-0596-4556-a9be-01b772fd94a7",
+      "abb9e776-88e4-4519-9d59-73bccf78f635"
+    ],
+    "success": true
+  },
+  "39": {
+    "search_query": "Our goal is to enable NLP to SQL via Azure OpenAI, allow voice-based queries with AI Speech Service, execute SQL and return results audibly, leverage Semantic Kernel, enforce RBAC and AD for security, avoid public API keys, deploy with Bicep/CLI automation, use Python backend, support adaptive queries, and limit public resource access by default.",
+    "expected_workload": "c1ea7827-0596-4556-a9be-01b772fd94a7",
+    "returned_workloads": [
+      "8e354d6e-1957-4441-80d6-0d350fe8bea5",
+      "eb384955-4583-41de-a87f-42bf6bfb1439",
+      "c1ea7827-0596-4556-a9be-01b772fd94a7"
+    ],
+    "success": true
+  },
+  "40": {
+    "search_query": "I need a low-code solution for video/image analysis, use Azure OpenAI GPT-4 Turbo with Vision, orchestrate using Azure Data Factory, store results in Cosmos DB, manage blobs in Azure Storage, support managed identities, enable batch and real-time modes, integrate Computer Vision API, customize parameters, deploy via Bicep, and automate using Azure CLI.",
+    "expected_workload": "8000f86e-cd2f-43e0-8441-5112c5c31120",
+    "returned_workloads": [
+      "0f6f3413-2d11-49fd-87a9-a87121f3a70a",
+      "8000f86e-cd2f-43e0-8441-5112c5c31120",
+      "7e5276d7-b80c-4aa6-b8e6-750939a42ecd"
+    ],
+    "success": true
+  },
+  "41": {
+    "search_query": "My API management workload should include priority-based load balancing for Azure OpenAI, handle HTTP 429 and Retry-After headers, route traffic to available backends, expose a single endpoint, enable YARP-based reverse proxying, build Docker images for deployment, provide environment variable config, generate logs for routing and errors, scale automatically, and be deployable via CLI.",
+    "expected_workload": "c3694deb-a6d7-4c20-8bbf-f12486a503e3",
+    "returned_workloads": [
+      "c3694deb-a6d7-4c20-8bbf-f12486a503e3",
+      "c0e05ee1-7abc-4c7e-b609-0b8374d221b8",
+      "8d6366f6-78e8-4339-8073-ab55f900ecbd"
+    ],
+    "success": true
+  },
+  "42": {
+    "search_query": "We require a managed FastAPI app on Azure Functions, enable HTTP endpoints, deploy with Azure Functions Core Tools, support local dev, integrate FastAPI framework, store logs and configs in environment variables, test endpoints locally, provision resources automatically, enable deployment via VS Code or CLI, and implement sample endpoints for demonstration.",
+    "expected_workload": "ec4855aa-505c-43b2-8bfd-3600c831d05a",
+    "returned_workloads": [
+      "07b915d6-29cc-45ee-a973-c338de02310f",
+      "b808d61c-f3af-4fa6-842d-39710b893b81",
+      "ec4855aa-505c-43b2-8bfd-3600c831d05a"
+    ],
+    "success": true
+  },
+  "43": {
+    "search_query": "I want a RAG demo on PostgreSQL, enable hybrid (vector + text) search with pgvector, convert user queries to vectors and filters using OpenAI, build web-based chat with Python/React, maintain log analytics, use managed identity, deploy with Azure Developer CLI, enable GitHub Codespaces, secure using Azure flexible server, and allow logging to Azure Monitor.",
+    "expected_workload": "7fce9298-6849-439b-9080-7901412ac48e",
+    "returned_workloads": [
+      "fa79ba6d-e558-4025-b5ea-23970851b075",
+      "ea616bbc-2f3d-42e6-bb9e-5630da8a13be",
+      "3450a16f-3b71-48ba-9bd5-c6568f105300"
+    ],
+    "success": false
+  },
+  "44": {
+    "search_query": "The scenario is to provide an SAP CAP solution on Azure App Service, integrate with Cosmos DB for PostgreSQL, consume OData from SAP S/4HANA, use Node.js with CAP module, support Azure Developer CLI, enable resiliency and caching, enforce Azure authentication, manage API policies with APIM, provide UI5 interface, and support SAP Private Link integration.",
+    "expected_workload": "87cca4d5-958c-4255-87ae-5df122ec34ad",
+    "returned_workloads": [
+      "85052c4b-9602-421e-a654-573a6d3b429f",
+      "e2835a74-6bb9-4a15-b4d8-dae78ee6f0ad",
+      "87cca4d5-958c-4255-87ae-5df122ec34ad"
+    ],
+    "success": true
+  },
+  "45": {
+    "search_query": "Our app will use Azure OpenAI for chat completions, handle HTTP requests in Azure Functions, use Blob storage as a cache, require OpenAI API key, offer local dev/testing setup, deploy via Azure Dev CLI, support continuous deployment, secure with managed identity, utilize JavaScript backend, and provide sample REST testing endpoints.",
+    "expected_workload": "c0405eae-fd20-4404-a742-a1c69c6004e7",
+    "returned_workloads": [
+      "c0405eae-fd20-4404-a742-a1c69c6004e7",
+      "120f1e71-3110-44e7-9cc6-03e611083e9d",
+      "f343a991-c4a1-4edb-bd4f-c0b05aadf26e"
+    ],
+    "success": true
+  },
+  "46": {
+    "search_query": "We need to demonstrate function calling for vector database lookups based on user language input, integrate Prompty, LangChain, and Elasticsearch, run built-in evaluations with Azure AI Studio, support Codespaces/local setup, use Python backend, handle local data storage, automate via CI/CD, provide cost estimation scripts, enable keyless authentication, and integrate with Langsmith.",
+    "expected_workload": "b2aa83fb-7911-4f5f-bf5f-4f429ca1d67d",
+    "returned_workloads": [
+      "0d1ed1f5-b136-4320-b31f-c516f959bbaf",
+      "b2aa83fb-7911-4f5f-bf5f-4f429ca1d67d",
+      "283300a7-84d2-4768-9c38-27eb6eac18bd"
+    ],
+    "success": true
+  },
+  "47": {
+    "search_query": "We require a chat solution for retail using Azure AI Studio and Promptflow, integrate GPT 3.5 Turbo for LLM tasks, automate deployment with AZD CLI, use GitHub Actions for evaluation, handle intent mapping, use Cosmos DB for data, include sample workflows and datasets, provide custom evaluation assets, ensure responsible AI, and support containerized deployment.",
+    "expected_workload": "892c1998-ab31-4592-a453-8c8ec947df6a",
+    "returned_workloads": [
+      "892c1998-ab31-4592-a453-8c8ec947df6a",
+      "3b2621a8-62cf-418c-9811-916dae3df1d4",
+      "3450a16f-3b71-48ba-9bd5-c6568f105300"
+    ],
+    "success": true
+  },
+  "48": {
+    "search_query": "My goal is to host the Langfuse LLM observability platform on Azure Container Apps, use PostgreSQL Flexible Server as the backend, set up Entra authentication, integrate with LLM applications via SDK, allow setup with Codespaces or local dev, use Azure Developer CLI for provisioning, provide environment variable scripting, document deployment, and include Langfuse documentation.",
+    "expected_workload": "3a69118c-f6c3-4d59-90c4-188975527db2",
+    "returned_workloads": [
+      "7fce9298-6849-439b-9080-7901412ac48e",
+      "3a69118c-f6c3-4d59-90c4-188975527db2",
+      "fa79ba6d-e558-4025-b5ea-23970851b075"
+    ],
+    "success": true
+  },
+  "49": {
+    "search_query": "I am looking for a serverless Azure OpenAI Assistant, use JavaScript and OpenAI SDK, run on Azure Static Web Apps and Functions, support code interpreter and custom tool integration, retrieve financial information, answer queries, send emails, enable managed identity, support GitHub Codespaces, allow local development, automate provisioning, and recommend secure practices.",
+    "expected_workload": "9691c16c-500a-40c2-9b55-994fff837a35",
+    "returned_workloads": [
+      "444b9fdf-aeac-43d8-9c10-73eea3b44c9c",
+      "9691c16c-500a-40c2-9b55-994fff837a35",
+      "8e354d6e-1957-4441-80d6-0d350fe8bea5"
+    ],
+    "success": true
+  },
+  "50": {
+    "search_query": "The workload needs to deploy an AKS Store Demo, use Terraform for infra as code, run polyglot container microservices, integrate with OpenAI GPT-3 models, support event-driven architectures, monitor with Azure Monitor and Log Analytics, employ Helm for deployment, allow Docker Compose for local dev, automate deployment with Codespaces, and utilize Azure Key Vault.",
+    "expected_workload": "eff16b17-9019-4b60-8438-f49781946266",
+    "returned_workloads": [
+      "eff16b17-9019-4b60-8438-f49781946266",
+      "9d295613-0607-4337-97b3-bdf702cd9252",
+      "6772728c-49cd-48c5-99fb-2f1435b2a62f"
+    ],
+    "success": true
+  },
+  "total_attempts": 50,
+  "successful_searches": 49
+}
