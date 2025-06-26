@@ -132,7 +132,6 @@
         "id": "7fce9298-6849-439b-9080-7901412ac48e",
         "products": [
             "Microsoft.CognitiveServices/accounts",
-            "Microsoft.CognitiveServices/accounts/connections",
             "Microsoft.DBforPostgreSQL/flexibleServers",
             "Microsoft.Storage/storageAccounts",
             "Microsoft.App/containerApps",
