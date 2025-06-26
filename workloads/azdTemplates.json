@@ -238,7 +238,14 @@
         "author": "Azure Content Team",
         "source": "https://github.com/Azure-Samples/openai-chat-vision-quickstart",
         "id": "0f6f3413-2d11-49fd-87a9-a87121f3a70a",
-        "products": [],
+        "products": [
+            "Microsoft.CognitiveServices/accounts",
+            "Microsoft.App/containerApps",
+            "Microsoft.OperationalInsights/workspaces",
+            "Microsoft.Insights/components@2020-02-02",
+            "Microsoft.ContainerRegistry/registries",
+            "Microsoft.Authorization/roleAssignments"
+        ],
         "keyFeatures": [
             "Python app uses Azure OpenAI to generate responses",
             "Supports user messages and image uploads",
@@ -264,7 +271,14 @@
         "author": "Azure Content Team",
         "source": "https://github.com/Azure-Samples/azure-openai-assistant-javascript",
         "id": "9691c16c-500a-40c2-9b55-994fff837a35",
-        "products": [],
+        "products": [
+            "Microsoft.CognitiveServices/accounts",
+            "Microsoft.Web/sites",
+            "Microsoft.Web/staticSites",
+            "Microsoft.Storage/storageAccounts",
+            "Microsoft.Web/serverfarms",
+            "Microsoft.Authorization/roleAssignments"
+        ],
         "keyFeatures": [
             "Create AI assistants tailored to your needs via custom instructions and tools",
             "Advanced tools like code interpreter and custom functions",
