@@ -231,5 +231,56 @@
             "Optional features like APIM for enhanced backend protection and observability"
         ],
         "loginRequired": false
+    },
+    {
+        "title": "Chat + Vision using Azure OpenAI",
+        "description": "A demonstration of chatting with uploaded images using OpenAI vision models like gpt-4o.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/openai-chat-vision-quickstart",
+        "id": "0f6f3413-2d11-49fd-87a9-a87121f3a70a",
+        "products": [],
+        "keyFeatures": [
+            "Python app uses Azure OpenAI to generate responses",
+            "Supports user messages and image uploads",
+            "Deploys to Azure Container Apps",
+            "Uses managed identity for authentication",
+            "Deploys a GPT-4o model with Global SKU",
+            "Basic HTML/JS frontend",
+            "Streams responses using JSON Lines over ReadableStream",
+            "Bicep files for provisioning Azure resources",
+            "Support for using local LLMs during development",
+            "Azure Developer CLI for provisioning and deployment",
+            "GitHub Codespaces and VS Code Dev Containers support",
+            "Azure account setup and resource permissions required",
+            "Continuous deployment with GitHub Actions",
+            "Local development server setup included",
+            "Security measures and cost considerations provided"
+        ],
+        "loginRequired": false
+    },
+    {
+        "title": "Serverless Azure OpenAI Assistant Quick Start with Function Calling",
+        "description": "Allows you to create AI assistants tailored to your needs via custom instructions and tools like code interpreter and custom functions.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/azure-openai-assistant-javascript",
+        "id": "9691c16c-500a-40c2-9b55-994fff837a35",
+        "products": [],
+        "keyFeatures": [
+            "Create AI assistants tailored to your needs via custom instructions and tools",
+            "Advanced tools like code interpreter and custom functions",
+            "Retrieve financial information, such as stock values",
+            "Answer questions",
+            "Send emails",
+            "Run custom functions",
+            "Hosted on Azure Static Web Apps and Azure Functions",
+            "Uses OpenAI JavaScript SDK",
+            "Integration with GitHub Codespaces and VS Code Dev Containers",
+            "Supports gpt-35-turbo model",
+            "Support for local development",
+            "Guidance on provisioning resources and CI/CD pipeline setup",
+            "Security recommendations with Managed Identity or Key Vault",
+            "Pricing information and recommendations"
+        ],
+        "loginRequired": false
     }
 ]
