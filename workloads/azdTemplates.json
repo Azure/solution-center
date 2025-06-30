@@ -324,7 +324,19 @@
             "Microsoft.KeyVault/vaults"
         ],
         "keyFeatures": [
-            
+            "Deploys a simple chat application using Azure AI Foundry",
+            "Supports Retrieval-Augmented Generation (RAG) for enhanced responses",
+            "Utilizes Azure AI Services and AI Search for capabilities",
+            "Hosted on Azure Container Apps for efficient resource management",
+            "Seamless deployment options via GitHub Codespaces and VS Code Dev Containers",
+            "Support for local development with customizable settings",
+            "Integrated logging and tracing with Azure Monitor and Application Insights",
+            "Flexible model and embedding configurations including gpt-4o-mini",
+            "Security recommendations and best practices for production readiness",
+            "Guidance for customizing deployment and managing quotas",
+            "Detailed architecture diagram for understanding integration and flow",
+            "Resource clean-up instructions to manage costs efficiently",
+            "Comprehensive documentation for prerequisites and deployment steps"
         ],
         "loginRequired": false
     }
