@@ -302,5 +302,30 @@
             "Pricing information and recommendations"
         ],
         "loginRequired": false
+    },
+    {
+        "title": "Get Started with Chat Using Azure AI Foundry",
+        "description": "This project creates an Azure AI Foundry hub, project and connected resources including Azure AI Services, AI Search and more. It also deploys a simple chat application to Azure Container Apps.",
+        "author": "Azure Content Team",
+        "source": "https://github.com/Azure-Samples/get-started-with-ai-chat",
+        "id": "6f1269cb-c75d-4680-8e8b-fa9825995ece",
+        "products": [
+            "Microsoft.CognitiveServices/accounts",
+            "Microsoft.CognitiveServices/accounts/connections",
+            "Microsoft.CognitiveServices/accounts/projects",
+            "Microsoft.Search/searchServices",
+            "Microsoft.Storage/storageAccounts",
+            "Microsoft.Web/sites",
+            "Microsoft.Insights/components",
+            "Microsoft.ContainerService/managedClusters",
+            "Microsoft.ApiManagement/service",
+            "Microsoft.Cdn/profiles",
+            "Microsoft.Cdn/profiles/endpoints",
+            "Microsoft.KeyVault/vaults"
+        ],
+        "keyFeatures": [
+            
+        ],
+        "loginRequired": false
     }
 ]
